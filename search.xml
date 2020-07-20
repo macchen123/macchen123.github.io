@@ -1,28 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>机器学习笔记1</title>
-    <url>/2020/07/21/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B01/</url>
-    <content><![CDATA[<h1 id="机器学习笔记"><a href="#机器学习笔记" class="headerlink" title="机器学习笔记"></a>机器学习笔记</h1><h3 id="一：什么是机器学习"><a href="#一：什么是机器学习" class="headerlink" title="一：什么是机器学习"></a>一：什么是机器学习</h3><p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200706165617797.png" alt="image-20200706165617797"></p>
-<h4 id="首先先了解人类如何学习（经验学习）"><a href="#首先先了解人类如何学习（经验学习）" class="headerlink" title="首先先了解人类如何学习（经验学习）"></a>首先先了解人类如何学习（经验学习）</h4><p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200706170401290.png" alt="image-20200706170401290"></p>
-<p>####机器学习和人类学习是非常相似的</p>
-<p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200706170712331.png" alt="image-20200706170712331"></p>
-<h3 id="二：机器学习应用"><a href="#二：机器学习应用" class="headerlink" title="二：机器学习应用"></a>二：机器学习应用</h3><h4 id="1-当前应用"><a href="#1-当前应用" class="headerlink" title="1.当前应用"></a>1.当前应用</h4><p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200706171220946.png" alt="image-20200706171220946"></p>
-<h4 id="2-未来应用"><a href="#2-未来应用" class="headerlink" title="2.未来应用"></a>2.未来应用</h4><p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200706171619513.png" alt="image-20200706171619513"></p>
-<h3 id="三：机器学习的定位"><a href="#三：机器学习的定位" class="headerlink" title="三：机器学习的定位"></a>三：机器学习的定位</h3><p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200706172204133.png" alt="image-20200706172204133"></p>
-<h4 id="不要孤立的看待机器学习，它和很多领域都有密切的联系"><a href="#不要孤立的看待机器学习，它和很多领域都有密切的联系" class="headerlink" title="不要孤立的看待机器学习，它和很多领域都有密切的联系"></a>不要孤立的看待机器学习，它和很多领域都有密切的联系</h4><h3 id="四：机器学习的框架"><a href="#四：机器学习的框架" class="headerlink" title="四：机器学习的框架"></a>四：机器学习的框架</h3><p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200706172446522.png" alt="image-20200706172446522"></p>
-<p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200706172809977.png" alt="image-20200706172809977"></p>
-]]></content>
-      <categories>
-        <category>机器学习</category>
-      </categories>
-      <tags>
-        <tag>机器学习</tag>
-        <tag>Python</tag>
-        <tag>机器学习基础概念</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>机器学习笔记2</title>
     <url>/2020/07/21/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B02/</url>
     <content><![CDATA[<h3 id="机器学习基础"><a href="#机器学习基础" class="headerlink" title="机器学习基础"></a>机器学习基础</h3><h4 id="一：机器学习的数据"><a href="#一：机器学习的数据" class="headerlink" title="一：机器学习的数据"></a>一：机器学习的数据</h4><h5 id="1-以鸢尾花数据来举例"><a href="#1-以鸢尾花数据来举例" class="headerlink" title="1.以鸢尾花数据来举例"></a>1.以鸢尾花数据来举例</h5><p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200706180226511.png" alt="image-20200706180226511"></p>
@@ -150,6 +128,28 @@
 <h5 id="3-总结："><a href="#3-总结：" class="headerlink" title="3.总结："></a>3.总结：</h5><ul>
 <li><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200707014718816_1.png" alt="image-20200707014718816_1"></li>
 </ul>
+]]></content>
+      <categories>
+        <category>机器学习</category>
+      </categories>
+      <tags>
+        <tag>机器学习</tag>
+        <tag>Python</tag>
+        <tag>机器学习基础概念</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>机器学习笔记1</title>
+    <url>/2020/07/21/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B01/</url>
+    <content><![CDATA[<h1 id="机器学习笔记"><a href="#机器学习笔记" class="headerlink" title="机器学习笔记"></a>机器学习笔记</h1><h3 id="一：什么是机器学习"><a href="#一：什么是机器学习" class="headerlink" title="一：什么是机器学习"></a>一：什么是机器学习</h3><p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200706165617797.png" alt="image-20200706165617797"></p>
+<h4 id="首先先了解人类如何学习（经验学习）"><a href="#首先先了解人类如何学习（经验学习）" class="headerlink" title="首先先了解人类如何学习（经验学习）"></a>首先先了解人类如何学习（经验学习）</h4><p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200706170401290.png" alt="image-20200706170401290"></p>
+<p>####机器学习和人类学习是非常相似的</p>
+<p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200706170712331.png" alt="image-20200706170712331"></p>
+<h3 id="二：机器学习应用"><a href="#二：机器学习应用" class="headerlink" title="二：机器学习应用"></a>二：机器学习应用</h3><h4 id="1-当前应用"><a href="#1-当前应用" class="headerlink" title="1.当前应用"></a>1.当前应用</h4><p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200706171220946.png" alt="image-20200706171220946"></p>
+<h4 id="2-未来应用"><a href="#2-未来应用" class="headerlink" title="2.未来应用"></a>2.未来应用</h4><p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200706171619513.png" alt="image-20200706171619513"></p>
+<h3 id="三：机器学习的定位"><a href="#三：机器学习的定位" class="headerlink" title="三：机器学习的定位"></a>三：机器学习的定位</h3><p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200706172204133.png" alt="image-20200706172204133"></p>
+<h4 id="不要孤立的看待机器学习，它和很多领域都有密切的联系"><a href="#不要孤立的看待机器学习，它和很多领域都有密切的联系" class="headerlink" title="不要孤立的看待机器学习，它和很多领域都有密切的联系"></a>不要孤立的看待机器学习，它和很多领域都有密切的联系</h4><h3 id="四：机器学习的框架"><a href="#四：机器学习的框架" class="headerlink" title="四：机器学习的框架"></a>四：机器学习的框架</h3><p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200706172446522.png" alt="image-20200706172446522"></p>
+<p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200706172809977.png" alt="image-20200706172809977"></p>
 ]]></content>
       <categories>
         <category>机器学习</category>
