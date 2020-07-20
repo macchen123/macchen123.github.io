@@ -1,248 +1,94 @@
 <?xml version="1.0" encoding="utf-8"?>
-<search>
-  <entry>
-    <title>机器学习笔记1</title>
-    <url>/2020/07/21/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B01/</url>
-    <content><![CDATA[<h1 id="机器学习笔记"><a href="#机器学习笔记" class="headerlink" title="机器学习笔记"></a>机器学习笔记</h1><h3 id="一：什么是机器学习"><a href="#一：什么是机器学习" class="headerlink" title="一：什么是机器学习"></a>一：什么是机器学习</h3><p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200706165617797.png" alt="image-20200706165617797"></p>
-<h4 id="首先先了解人类如何学习（经验学习）"><a href="#首先先了解人类如何学习（经验学习）" class="headerlink" title="首先先了解人类如何学习（经验学习）"></a>首先先了解人类如何学习（经验学习）</h4><p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200706170401290.png" alt="image-20200706170401290"></p>
-<p>####机器学习和人类学习是非常相似的</p>
-<p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200706170712331.png" alt="image-20200706170712331"></p>
-<h3 id="二：机器学习应用"><a href="#二：机器学习应用" class="headerlink" title="二：机器学习应用"></a>二：机器学习应用</h3><h4 id="1-当前应用"><a href="#1-当前应用" class="headerlink" title="1.当前应用"></a>1.当前应用</h4><p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200706171220946.png" alt="image-20200706171220946"></p>
-<h4 id="2-未来应用"><a href="#2-未来应用" class="headerlink" title="2.未来应用"></a>2.未来应用</h4><p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200706171619513.png" alt="image-20200706171619513"></p>
-<h3 id="三：机器学习的定位"><a href="#三：机器学习的定位" class="headerlink" title="三：机器学习的定位"></a>三：机器学习的定位</h3><p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200706172204133.png" alt="image-20200706172204133"></p>
-<h4 id="不要孤立的看待机器学习，它和很多领域都有密切的联系"><a href="#不要孤立的看待机器学习，它和很多领域都有密切的联系" class="headerlink" title="不要孤立的看待机器学习，它和很多领域都有密切的联系"></a>不要孤立的看待机器学习，它和很多领域都有密切的联系</h4><h3 id="四：机器学习的框架"><a href="#四：机器学习的框架" class="headerlink" title="四：机器学习的框架"></a>四：机器学习的框架</h3><p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200706172446522.png" alt="image-20200706172446522"></p>
-<p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200706172809977.png" alt="image-20200706172809977"></p>
-]]></content>
+<search> 
+  
+  
+    
+    <entry>
+      <title>机器学习笔记3</title>
+      <link href="/2020/07/21/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B03/"/>
+      <url>/2020/07/21/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B03/</url>
+      
+        <content type="html"><![CDATA[<h3 id="KNN-K近邻算法（K-Nearest-Neighbors）"><a href="#KNN-K近邻算法（K-Nearest-Neighbors）" class="headerlink" title="KNN -K近邻算法（K-Nearest Neighbors）"></a>KNN -K近邻算法（K-Nearest Neighbors）</h3><h4 id="一：KNN–非常适合初学者入门的算法"><a href="#一：KNN–非常适合初学者入门的算法" class="headerlink" title="一：KNN–非常适合初学者入门的算法"></a>一：KNN–非常适合初学者入门的算法</h4><ul><li><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200707205845716.png" alt="image-20200707205845716"></li></ul><h5 id="1-什么是KNN"><a href="#1-什么是KNN" class="headerlink" title="1.什么是KNN"></a>1.什么是KNN</h5><ul><li><p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200707210428247.png" alt="image-20200707210428247"></p></li><li><ul><li>上图解释：红色是良性肿瘤，蓝色是恶性肿瘤，绿色是一个新的不确定的肿瘤。这里设K=3（后面会讲如何取K值），表示选取离绿色最近的三个肿瘤，然后这3个之间进行投票（以自己的标签投票），最终蓝色：红色==3:0.因此我们有很大的概率认为绿色也是恶性肿瘤。</li><li>因此，KNN表示在K个样本中，哪个样本越多，就表示目标样本有很大概率是同一类别。</li></ul></li></ul><h5 id="2-KNN的特性"><a href="#2-KNN的特性" class="headerlink" title="2.KNN的特性"></a>2.KNN的特性</h5><ul><li><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200707234150755.png" alt="image-20200707234150755"></li><li><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200707234227091.png" alt="image-20200707234227091"></li><li><ul><li>scikit_learn正是按这套流程进行的算法封装</li></ul></li></ul><h5 id="3-判断机器学习算法的性能"><a href="#3-判断机器学习算法的性能" class="headerlink" title="3.判断机器学习算法的性能"></a>3.判断机器学习算法的性能</h5><ul><li><p>考虑到真实环境下，将所有的原始数据都当成训练数据来训练模型是不恰当的，因此我们要进行训练和测试数据集切分(train test split)</p></li><li><ul><li><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200711013945748.png" alt="image-20200710224630969"></li></ul></li><li><p>注意：这里补充一下seed随机种子的直观理解：其实，设置seed（）里的数字就相当于设置了一个盛有随机数的“聚宝盆”，一个数字代表一个“聚宝盆”，当我们在seed（）的括号里设置相同的seed，“聚宝盆”就是一样的，那当然每次拿出的随机数就会相同（不要觉得就是从里面随机取数字，只要设置的seed相同取出地随机数就一样）。如果不设置seed，则每次会生成不同的随机数。（注：seed括号里的数值基本可以随便设置哦）<br>————————————————<br>版权声明：本文为CSDN博主「白糖炒栗子~」的原创文章，遵循CC 4.0 BY-SA版权协议，转载请附上原文出处链接及本声明。<br>原文链接：<a href="https://blog.csdn.net/weixin_41571493/article/details/80549833" target="_blank" rel="noopener">https://blog.csdn.net/weixin_41571493/article/details/80549833</a></p><ul><li>np.random.seed(0)<br>np.random.rand(4,3)<br>Out[362]:<br>array([[0.5488135 , 0.71518937, 0.60276338],<pre><code>[0.54488318, 0.4236548 , 0.64589411],[0.43758721, 0.891773  , 0.96366276],[0.38344152, 0.79172504, 0.52889492]])</code></pre>np.random.seed(0)<br>np.random.rand(4,3)<br>Out[364]:<br>array([[0.5488135 , 0.71518937, 0.60276338],<pre><code>[0.54488318, 0.4236548 , 0.64589411],[0.43758721, 0.891773  , 0.96366276],[0.38344152, 0.79172504, 0.52889492]])</code></pre></li></ul></li><li><p>分类准确度：accuracy：详见jupyter</p></li><li><p>超参数</p><ul><li><p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200710224630969.png" alt="image-20200711013945748"></p></li><li><p>如何寻找好的超参数</p><p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200711014228711.png" alt="image-20200711014228711"></p><ul><li><p>KNN中其实除了K还有一个超参数，那就是距离的权重（它是距离的倒数）</p><ul><li><p>设红和蓝与绿色的距离分别为1,3,4</p><p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200711021206076.png" alt="image-20200711021206076"></p><ul><li><p>若有三个类别，而k也等于3，那么就有可能出现平票的情况</p><p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200711021519742.png" alt="image-20200711021519742"></p></li><li><p>补充：明可夫斯基距离</p><ul><li><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200711023118851.png" alt="image-20200711023118851"><ul><li>当p=1时是曼哈顿距离</li><li>当p=2时是欧拉距离</li><li>当p&gt;2时是其他距离</li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></li></ul>]]></content>
+      
+      
       <categories>
-        <category>机器学习</category>
+          
+          <category> 机器学习 </category>
+          
       </categories>
-      <tags>
-        <tag>机器学习</tag>
-        <tag>Python</tag>
-        <tag>机器学习基础概念</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>机器学习笔记2</title>
-    <url>/2020/07/21/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B02/</url>
-    <content><![CDATA[<h3 id="机器学习基础"><a href="#机器学习基础" class="headerlink" title="机器学习基础"></a>机器学习基础</h3><h4 id="一：机器学习的数据"><a href="#一：机器学习的数据" class="headerlink" title="一：机器学习的数据"></a>一：机器学习的数据</h4><h5 id="1-以鸢尾花数据来举例"><a href="#1-以鸢尾花数据来举例" class="headerlink" title="1.以鸢尾花数据来举例"></a>1.以鸢尾花数据来举例</h5><p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200706180226511.png" alt="image-20200706180226511"></p>
-<p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200706180341873_1.png" alt="image-20200706180341873_1"></p>
-<ul>
-<li>注意：种类是用0,1,2来表示的。</li>
-</ul>
-<h5 id="2-从该数据集中引出的基本概念"><a href="#2-从该数据集中引出的基本概念" class="headerlink" title="2.从该数据集中引出的基本概念"></a>2.从该数据集中引出的基本概念</h5><p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200706181305828.png" alt="image-20200706181305828"></p>
-<p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200706221107817_1.png" alt="image-20200706221107817_1"></p>
-<p>注意:</p>
-<ul>
-<li>在机器学习中，大写字母表示矩阵，小写字母表示向量</li>
-<li>标记y是机器学习真正要学习（预测）的</li>
-<li>一般来说，特征向量都是列向量，所以如果表示整个特征集，需要将每个特征向量转置为行向量（看上图理解）</li>
-</ul>
-<p>#####3.为了可视化方便，取鸢尾花的前两个特征（长度，宽度）绘图</p>
-<p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200706221859929.png" alt="image-20200706221859929"></p>
-<p>解释：</p>
-<ul>
-<li>红蓝代表两种鸢尾花，一个点落入哪块儿区域就说明是哪种类型的鸢尾花。</li>
-<li>玩具数据集的特征空间切分可能是直线，但是现实中的数据集一般不可能用直线正好切分</li>
-<li>有时若在高维空间不好理解，可以类比为低维度空间理解，然后再迁移到高维空间 </li>
-</ul>
-<h5 id="4-特征不一定是具有语义的，比如下图（像素点指每一个小矩形）"><a href="#4-特征不一定是具有语义的，比如下图（像素点指每一个小矩形）" class="headerlink" title="4.特征不一定是具有语义的，比如下图（像素点指每一个小矩形）"></a>4.特征不一定是具有语义的，比如下图（像素点指每一个小矩形）</h5><p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200706223051356.png" alt="image-20200706223051356"></p>
-<h4 id="二：机器学习（监督学习）的基本任务"><a href="#二：机器学习（监督学习）的基本任务" class="headerlink" title="二：机器学习（监督学习）的基本任务"></a>二：机器学习（监督学习）的基本任务</h4><h5 id="1-机器学习（监督学习）的基本任务主要分为：分类和回归"><a href="#1-机器学习（监督学习）的基本任务主要分为：分类和回归" class="headerlink" title="1.机器学习（监督学习）的基本任务主要分为：分类和回归"></a>1.机器学习（监督学习）的基本任务主要分为：分类和回归</h5><h5 id="2-分类任务："><a href="#2-分类任务：" class="headerlink" title="2.分类任务："></a>2.分类任务：</h5><ul>
-<li><p>二分类：如垃圾邮件判断</p>
-</li>
-<li><p>多分类：</p>
-<ul>
-<li>如数字识别，图像识别</li>
-<li>其实很多复杂问题可以转换为多分类问题，比如下围棋，无人驾驶</li>
-<li>一些算法只支持二分类，但可以转换为多分类</li>
-<li>但是多分类可以转换为二分类</li>
-<li>有一些算法天然支持多分类任务</li>
-</ul>
-</li>
-<li><p>多标签分类：属于cv方向</p>
-<p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200706224809022.png" alt="image-20200706224809022"></p>
-</li>
-</ul>
-<h5 id="3-回归任务：结果是一个连续值，而不是一个类别"><a href="#3-回归任务：结果是一个连续值，而不是一个类别" class="headerlink" title="3.回归任务：结果是一个连续值，而不是一个类别"></a>3.回归任务：结果是一个连续值，而不是一个类别</h5><ul>
-<li>如房屋价格，市场分析，学生成绩，股票价格</li>
-</ul>
-<p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200706225329441.png" alt="image-20200706225329441"></p>
-<ul>
-<li>一些情况下，回归任务可以转换为分类任务<ul>
-<li>如要预测学生成绩，可以预测具体成绩（回归），也可以预测成绩评级（分类）</li>
-</ul>
-</li>
-</ul>
-<h4 id="三：机器学习的分类"><a href="#三：机器学习的分类" class="headerlink" title="三：机器学习的分类"></a>三：机器学习的分类</h4><ul>
-<li><p>监督学习：给机器的训练数据有标签（y）</p>
-<p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200706230605230.png" alt="image-20200706230605230"></p>
-<p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200706230631948.png" alt="image-20200706230631948"></p>
-</li>
-<li><p>非监督学习：给机器的训练数据没有任何标签</p>
-<p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200706230857321.png" alt="image-20200706230857321"></p>
-<p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200706231214211.png" alt="image-20200706231214211"></p>
-<ul>
-<li>特征压缩指在尽量小的损失下，将高维度数据转换为低维度数据</li>
-<li>降维处理的意义：方便可视化，因为人类无法理解四维以上的空间</li>
-</ul>
-<p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200706231654647.png" alt="image-20200706231654647"></p>
-</li>
-<li><p>半监督学习：一部分数据有标签，另一部分数据没有，更符合现实情况</p>
-<ul>
-<li>通常都是先使用无监督学习手段对数据做处理，之后用监督学习手段做模型的训练与预测</li>
-</ul>
-</li>
-<li><p>强化学习</p>
-<p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200706233156709_1.png" alt="image-20200706233156709_1"></p>
-<ul>
-<li>Agent（指算法）会根据环境（environment）来做出一些行为（action），然后Agent会收到一些反馈，有时是奖赏（reward），有时是惩罚。根据这些反馈Agent会改进自己的行为（action）模式，在一轮轮迭代中逐渐增强自己的智能</li>
-</ul>
-</li>
-</ul>
-<h4 id="四：机器学习的其他分类"><a href="#四：机器学习的其他分类" class="headerlink" title="四：机器学习的其他分类"></a>四：机器学习的其他分类</h4><ul>
-<li><p>批量学习（离线学习）（Batch learning）</p>
-<p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200706234715003_1.png" alt="image-20200706234715003_1"></p>
-<p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200706234926469.png" alt="image-20200706234926469"></p>
-<ul>
-<li>如股票预测，因为其每时每刻都在变化</li>
-<li>而垃圾邮件分类就可以定时重新批量学习，因为变化频率低 </li>
-</ul>
-</li>
-<li><p>在线学习（Online Learning）</p>
-<p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200707011631601.png" alt="image-20200707011631601"></p>
-<ul>
-<li>输入样例输入模型以后会输出预测值，同时输入样例里的真实值也会输出 ，最终真实值，预测值，它们之间的差异等构成新的学习资料传给算法进行算法修正。</li>
-<li><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200707012338369.png" alt="image-20200707012338369"></li>
-</ul>
-</li>
-<li><p>批量学习（离线学习）</p>
-</li>
-<li><p>参数学习（parametric learning）</p>
-<ul>
-<li><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200707012614143.png" alt="image-20200707012614143"><ul>
-<li>我们假设该模型的的函数是线性回归，然后想办法找到最优的a和b这两个参数</li>
-<li>一旦学到了参数，就不再需要原有的数据集</li>
-</ul>
-</li>
-</ul>
-</li>
-<li><p>非参数学习（nonparametric learning）</p>
-<ul>
-<li><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200707013028462.png" alt="image-20200707013028462"></li>
-<li>详细可参考<a href="https://www.cnblogs.com/wjunneng/p/9126906.html" target="_blank" rel="noopener">https://www.cnblogs.com/wjunneng/p/9126906.html</a></li>
-</ul>
-</li>
-</ul>
-<h4 id="五：和机器学习相关的哲学思考"><a href="#五：和机器学习相关的哲学思考" class="headerlink" title="五：和机器学习相关的哲学思考"></a>五：和机器学习相关的哲学思考</h4><h5 id="1-问题引出："><a href="#1-问题引出：" class="headerlink" title="1.问题引出："></a>1.问题引出：</h5><ul>
-<li><p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200707013704925_1.png" alt="image-20200707013704925_1"></p>
-</li>
-<li><ul>
-<li>纵坐标表示算法准确度，横坐标表示数据规模（数据量），可以看到随着数据量的增大，4种算法的准确度都处于上升状态，最终的差距越来越小</li>
-</ul>
-</li>
-</ul>
-<h5 id="2-争论点："><a href="#2-争论点：" class="headerlink" title="2.争论点："></a>2.争论点：</h5><ul>
-<li><p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200707014212423.png" alt="image-20200707014212423"></p>
-</li>
-<li><p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200707014340413.png" alt="image-20200707014340413"></p>
-</li>
-</ul>
-<h5 id="3-总结："><a href="#3-总结：" class="headerlink" title="3.总结："></a>3.总结：</h5><ul>
-<li><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200707014718816_1.png" alt="image-20200707014718816_1"></li>
-</ul>
-]]></content>
+      
+      
+        <tags>
+            
+            <tag> 机器学习 </tag>
+            
+            <tag> Python </tag>
+            
+            <tag> KNN </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>机器学习笔记1</title>
+      <link href="/2020/07/21/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B01/"/>
+      <url>/2020/07/21/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B01/</url>
+      
+        <content type="html"><![CDATA[<h1 id="机器学习笔记"><a href="#机器学习笔记" class="headerlink" title="机器学习笔记"></a>机器学习笔记</h1><h3 id="一：什么是机器学习"><a href="#一：什么是机器学习" class="headerlink" title="一：什么是机器学习"></a>一：什么是机器学习</h3><p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200706165617797.png" alt="image-20200706165617797"></p><h4 id="首先先了解人类如何学习（经验学习）"><a href="#首先先了解人类如何学习（经验学习）" class="headerlink" title="首先先了解人类如何学习（经验学习）"></a>首先先了解人类如何学习（经验学习）</h4><p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200706170401290.png" alt="image-20200706170401290"></p><p>####机器学习和人类学习是非常相似的</p><p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200706170712331.png" alt="image-20200706170712331"></p><h3 id="二：机器学习应用"><a href="#二：机器学习应用" class="headerlink" title="二：机器学习应用"></a>二：机器学习应用</h3><h4 id="1-当前应用"><a href="#1-当前应用" class="headerlink" title="1.当前应用"></a>1.当前应用</h4><p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200706171220946.png" alt="image-20200706171220946"></p><h4 id="2-未来应用"><a href="#2-未来应用" class="headerlink" title="2.未来应用"></a>2.未来应用</h4><p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200706171619513.png" alt="image-20200706171619513"></p><h3 id="三：机器学习的定位"><a href="#三：机器学习的定位" class="headerlink" title="三：机器学习的定位"></a>三：机器学习的定位</h3><p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200706172204133.png" alt="image-20200706172204133"></p><h4 id="不要孤立的看待机器学习，它和很多领域都有密切的联系"><a href="#不要孤立的看待机器学习，它和很多领域都有密切的联系" class="headerlink" title="不要孤立的看待机器学习，它和很多领域都有密切的联系"></a>不要孤立的看待机器学习，它和很多领域都有密切的联系</h4><h3 id="四：机器学习的框架"><a href="#四：机器学习的框架" class="headerlink" title="四：机器学习的框架"></a>四：机器学习的框架</h3><p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200706172446522.png" alt="image-20200706172446522"></p><p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200706172809977.png" alt="image-20200706172809977"></p>]]></content>
+      
+      
       <categories>
-        <category>机器学习</category>
+          
+          <category> 机器学习 </category>
+          
       </categories>
-      <tags>
-        <tag>机器学习</tag>
-        <tag>Python</tag>
-        <tag>机器学习基础概念</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>机器学习笔记3</title>
-    <url>/2020/07/21/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B03/</url>
-    <content><![CDATA[<h3 id="KNN-K近邻算法（K-Nearest-Neighbors）"><a href="#KNN-K近邻算法（K-Nearest-Neighbors）" class="headerlink" title="KNN -K近邻算法（K-Nearest Neighbors）"></a>KNN -K近邻算法（K-Nearest Neighbors）</h3><h4 id="一：KNN–非常适合初学者入门的算法"><a href="#一：KNN–非常适合初学者入门的算法" class="headerlink" title="一：KNN–非常适合初学者入门的算法"></a>一：KNN–非常适合初学者入门的算法</h4><ul>
-<li><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200707205845716.png" alt="image-20200707205845716"></li>
-</ul>
-<h5 id="1-什么是KNN"><a href="#1-什么是KNN" class="headerlink" title="1.什么是KNN"></a>1.什么是KNN</h5><ul>
-<li><p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200707210428247.png" alt="image-20200707210428247"></p>
-</li>
-<li><ul>
-<li>上图解释：红色是良性肿瘤，蓝色是恶性肿瘤，绿色是一个新的不确定的肿瘤。这里设K=3（后面会讲如何取K值），表示选取离绿色最近的三个肿瘤，然后这3个之间进行投票（以自己的标签投票），最终蓝色：红色==3:0.因此我们有很大的概率认为绿色也是恶性肿瘤。</li>
-<li>因此，KNN表示在K个样本中，哪个样本越多，就表示目标样本有很大概率是同一类别。</li>
-</ul>
-</li>
-</ul>
-<h5 id="2-KNN的特性"><a href="#2-KNN的特性" class="headerlink" title="2.KNN的特性"></a>2.KNN的特性</h5><ul>
-<li><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200707234150755.png" alt="image-20200707234150755"></li>
-<li><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200707234227091.png" alt="image-20200707234227091"></li>
-<li><ul>
-<li>scikit_learn正是按这套流程进行的算法封装</li>
-</ul>
-</li>
-</ul>
-<h5 id="3-判断机器学习算法的性能"><a href="#3-判断机器学习算法的性能" class="headerlink" title="3.判断机器学习算法的性能"></a>3.判断机器学习算法的性能</h5><ul>
-<li><p>考虑到真实环境下，将所有的原始数据都当成训练数据来训练模型是不恰当的，因此我们要进行训练和测试数据集切分(train test split)</p>
-</li>
-<li><ul>
-<li><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200711013945748.png" alt="image-20200710224630969"></li>
-</ul>
-</li>
-<li><p>注意：这里补充一下seed随机种子的直观理解：其实，设置seed（）里的数字就相当于设置了一个盛有随机数的“聚宝盆”，一个数字代表一个“聚宝盆”，当我们在seed（）的括号里设置相同的seed，“聚宝盆”就是一样的，那当然每次拿出的随机数就会相同（不要觉得就是从里面随机取数字，只要设置的seed相同取出地随机数就一样）。如果不设置seed，则每次会生成不同的随机数。（注：seed括号里的数值基本可以随便设置哦）<br>————————————————<br>版权声明：本文为CSDN博主「白糖炒栗子~」的原创文章，遵循CC 4.0 BY-SA版权协议，转载请附上原文出处链接及本声明。<br>原文链接：<a href="https://blog.csdn.net/weixin_41571493/article/details/80549833" target="_blank" rel="noopener">https://blog.csdn.net/weixin_41571493/article/details/80549833</a></p>
-<ul>
-<li>np.random.seed(0)<br>np.random.rand(4,3)<br>Out[362]:<br>array([[0.5488135 , 0.71518937, 0.60276338],<pre><code>[0.54488318, 0.4236548 , 0.64589411],
-[0.43758721, 0.891773  , 0.96366276],
-[0.38344152, 0.79172504, 0.52889492]])</code></pre>np.random.seed(0)<br>np.random.rand(4,3)<br>Out[364]:<br>array([[0.5488135 , 0.71518937, 0.60276338],<pre><code>[0.54488318, 0.4236548 , 0.64589411],
-[0.43758721, 0.891773  , 0.96366276],
-[0.38344152, 0.79172504, 0.52889492]])</code></pre></li>
-</ul>
-</li>
-<li><p>分类准确度：accuracy：详见jupyter</p>
-</li>
-<li><p>超参数</p>
-<ul>
-<li><p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200710224630969.png" alt="image-20200711013945748"></p>
-</li>
-<li><p>如何寻找好的超参数</p>
-<p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200711014228711.png" alt="image-20200711014228711"></p>
-<ul>
-<li><p>KNN中其实除了K还有一个超参数，那就是距离的权重（它是距离的倒数）</p>
-<ul>
-<li><p>设红和蓝与绿色的距离分别为1,3,4</p>
-<p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200711021206076.png" alt="image-20200711021206076"></p>
-<ul>
-<li><p>若有三个类别，而k也等于3，那么就有可能出现平票的情况</p>
-<p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200711021519742.png" alt="image-20200711021519742"></p>
-</li>
-<li><p>补充：明可夫斯基距离</p>
-<ul>
-<li><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200711023118851.png" alt="image-20200711023118851"><ul>
-<li>当p=1时是曼哈顿距离</li>
-<li>当p=2时是欧拉距离</li>
-<li>当p&gt;2时是其他距离</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-]]></content>
+      
+      
+        <tags>
+            
+            <tag> 机器学习 </tag>
+            
+            <tag> Python </tag>
+            
+            <tag> 机器学习基础概念 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>机器学习笔记2</title>
+      <link href="/2020/07/21/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B02/"/>
+      <url>/2020/07/21/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B02/</url>
+      
+        <content type="html"><![CDATA[<h3 id="机器学习基础"><a href="#机器学习基础" class="headerlink" title="机器学习基础"></a>机器学习基础</h3><h4 id="一：机器学习的数据"><a href="#一：机器学习的数据" class="headerlink" title="一：机器学习的数据"></a>一：机器学习的数据</h4><h5 id="1-以鸢尾花数据来举例"><a href="#1-以鸢尾花数据来举例" class="headerlink" title="1.以鸢尾花数据来举例"></a>1.以鸢尾花数据来举例</h5><p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200706180226511.png" alt="image-20200706180226511"></p><p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200706180341873_1.png" alt="image-20200706180341873_1"></p><ul><li>注意：种类是用0,1,2来表示的。</li></ul><h5 id="2-从该数据集中引出的基本概念"><a href="#2-从该数据集中引出的基本概念" class="headerlink" title="2.从该数据集中引出的基本概念"></a>2.从该数据集中引出的基本概念</h5><p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200706181305828.png" alt="image-20200706181305828"></p><p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200706221107817_1.png" alt="image-20200706221107817_1"></p><p>注意:</p><ul><li>在机器学习中，大写字母表示矩阵，小写字母表示向量</li><li>标记y是机器学习真正要学习（预测）的</li><li>一般来说，特征向量都是列向量，所以如果表示整个特征集，需要将每个特征向量转置为行向量（看上图理解）</li></ul><p>#####3.为了可视化方便，取鸢尾花的前两个特征（长度，宽度）绘图</p><p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200706221859929.png" alt="image-20200706221859929"></p><p>解释：</p><ul><li>红蓝代表两种鸢尾花，一个点落入哪块儿区域就说明是哪种类型的鸢尾花。</li><li>玩具数据集的特征空间切分可能是直线，但是现实中的数据集一般不可能用直线正好切分</li><li>有时若在高维空间不好理解，可以类比为低维度空间理解，然后再迁移到高维空间 </li></ul><h5 id="4-特征不一定是具有语义的，比如下图（像素点指每一个小矩形）"><a href="#4-特征不一定是具有语义的，比如下图（像素点指每一个小矩形）" class="headerlink" title="4.特征不一定是具有语义的，比如下图（像素点指每一个小矩形）"></a>4.特征不一定是具有语义的，比如下图（像素点指每一个小矩形）</h5><p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200706223051356.png" alt="image-20200706223051356"></p><h4 id="二：机器学习（监督学习）的基本任务"><a href="#二：机器学习（监督学习）的基本任务" class="headerlink" title="二：机器学习（监督学习）的基本任务"></a>二：机器学习（监督学习）的基本任务</h4><h5 id="1-机器学习（监督学习）的基本任务主要分为：分类和回归"><a href="#1-机器学习（监督学习）的基本任务主要分为：分类和回归" class="headerlink" title="1.机器学习（监督学习）的基本任务主要分为：分类和回归"></a>1.机器学习（监督学习）的基本任务主要分为：分类和回归</h5><h5 id="2-分类任务："><a href="#2-分类任务：" class="headerlink" title="2.分类任务："></a>2.分类任务：</h5><ul><li><p>二分类：如垃圾邮件判断</p></li><li><p>多分类：</p><ul><li>如数字识别，图像识别</li><li>其实很多复杂问题可以转换为多分类问题，比如下围棋，无人驾驶</li><li>一些算法只支持二分类，但可以转换为多分类</li><li>但是多分类可以转换为二分类</li><li>有一些算法天然支持多分类任务</li></ul></li><li><p>多标签分类：属于cv方向</p><p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200706224809022.png" alt="image-20200706224809022"></p></li></ul><h5 id="3-回归任务：结果是一个连续值，而不是一个类别"><a href="#3-回归任务：结果是一个连续值，而不是一个类别" class="headerlink" title="3.回归任务：结果是一个连续值，而不是一个类别"></a>3.回归任务：结果是一个连续值，而不是一个类别</h5><ul><li>如房屋价格，市场分析，学生成绩，股票价格</li></ul><p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200706225329441.png" alt="image-20200706225329441"></p><ul><li>一些情况下，回归任务可以转换为分类任务<ul><li>如要预测学生成绩，可以预测具体成绩（回归），也可以预测成绩评级（分类）</li></ul></li></ul><h4 id="三：机器学习的分类"><a href="#三：机器学习的分类" class="headerlink" title="三：机器学习的分类"></a>三：机器学习的分类</h4><ul><li><p>监督学习：给机器的训练数据有标签（y）</p><p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200706230605230.png" alt="image-20200706230605230"></p><p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200706230631948.png" alt="image-20200706230631948"></p></li><li><p>非监督学习：给机器的训练数据没有任何标签</p><p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200706230857321.png" alt="image-20200706230857321"></p><p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200706231214211.png" alt="image-20200706231214211"></p><ul><li>特征压缩指在尽量小的损失下，将高维度数据转换为低维度数据</li><li>降维处理的意义：方便可视化，因为人类无法理解四维以上的空间</li></ul><p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200706231654647.png" alt="image-20200706231654647"></p></li><li><p>半监督学习：一部分数据有标签，另一部分数据没有，更符合现实情况</p><ul><li>通常都是先使用无监督学习手段对数据做处理，之后用监督学习手段做模型的训练与预测</li></ul></li><li><p>强化学习</p><p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200706233156709_1.png" alt="image-20200706233156709_1"></p><ul><li>Agent（指算法）会根据环境（environment）来做出一些行为（action），然后Agent会收到一些反馈，有时是奖赏（reward），有时是惩罚。根据这些反馈Agent会改进自己的行为（action）模式，在一轮轮迭代中逐渐增强自己的智能</li></ul></li></ul><h4 id="四：机器学习的其他分类"><a href="#四：机器学习的其他分类" class="headerlink" title="四：机器学习的其他分类"></a>四：机器学习的其他分类</h4><ul><li><p>批量学习（离线学习）（Batch learning）</p><p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200706234715003_1.png" alt="image-20200706234715003_1"></p><p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200706234926469.png" alt="image-20200706234926469"></p><ul><li>如股票预测，因为其每时每刻都在变化</li><li>而垃圾邮件分类就可以定时重新批量学习，因为变化频率低 </li></ul></li><li><p>在线学习（Online Learning）</p><p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200707011631601.png" alt="image-20200707011631601"></p><ul><li>输入样例输入模型以后会输出预测值，同时输入样例里的真实值也会输出 ，最终真实值，预测值，它们之间的差异等构成新的学习资料传给算法进行算法修正。</li><li><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200707012338369.png" alt="image-20200707012338369"></li></ul></li><li><p>批量学习（离线学习）</p></li><li><p>参数学习（parametric learning）</p><ul><li><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200707012614143.png" alt="image-20200707012614143"><ul><li>我们假设该模型的的函数是线性回归，然后想办法找到最优的a和b这两个参数</li><li>一旦学到了参数，就不再需要原有的数据集</li></ul></li></ul></li><li><p>非参数学习（nonparametric learning）</p><ul><li><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200707013028462.png" alt="image-20200707013028462"></li><li>详细可参考<a href="https://www.cnblogs.com/wjunneng/p/9126906.html" target="_blank" rel="noopener">https://www.cnblogs.com/wjunneng/p/9126906.html</a></li></ul></li></ul><h4 id="五：和机器学习相关的哲学思考"><a href="#五：和机器学习相关的哲学思考" class="headerlink" title="五：和机器学习相关的哲学思考"></a>五：和机器学习相关的哲学思考</h4><h5 id="1-问题引出："><a href="#1-问题引出：" class="headerlink" title="1.问题引出："></a>1.问题引出：</h5><ul><li><p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200707013704925_1.png" alt="image-20200707013704925_1"></p></li><li><ul><li>纵坐标表示算法准确度，横坐标表示数据规模（数据量），可以看到随着数据量的增大，4种算法的准确度都处于上升状态，最终的差距越来越小</li></ul></li></ul><h5 id="2-争论点："><a href="#2-争论点：" class="headerlink" title="2.争论点："></a>2.争论点：</h5><ul><li><p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200707014212423.png" alt="image-20200707014212423"></p></li><li><p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200707014340413.png" alt="image-20200707014340413"></p></li></ul><h5 id="3-总结："><a href="#3-总结：" class="headerlink" title="3.总结："></a>3.总结：</h5><ul><li><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200707014718816_1.png" alt="image-20200707014718816_1"></li></ul>]]></content>
+      
+      
       <categories>
-        <category>机器学习</category>
+          
+          <category> 机器学习 </category>
+          
       </categories>
-      <tags>
-        <tag>机器学习</tag>
-        <tag>Python</tag>
-        <tag>KNN</tag>
-      </tags>
-  </entry>
+      
+      
+        <tags>
+            
+            <tag> 机器学习 </tag>
+            
+            <tag> Python </tag>
+            
+            <tag> 机器学习基础概念 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+  
+  
 </search>
