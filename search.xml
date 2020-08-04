@@ -1,6 +1,29 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>机器学习笔记1</title>
+    <url>/2020/07/21/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B01/</url>
+    <content><![CDATA[<h1 id="机器学习笔记"><a href="#机器学习笔记" class="headerlink" title="机器学习笔记"></a>机器学习笔记</h1><a id="more"></a>
+<h3 id="一：什么是机器学习"><a href="#一：什么是机器学习" class="headerlink" title="一：什么是机器学习"></a>一：什么是机器学习</h3><p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200706165617797.png" alt="image-20200706165617797"></p>
+<h4 id="首先先了解人类如何学习（经验学习）"><a href="#首先先了解人类如何学习（经验学习）" class="headerlink" title="首先先了解人类如何学习（经验学习）"></a>首先先了解人类如何学习（经验学习）</h4><p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200706170401290.png" alt="image-20200706170401290"></p>
+<p>####机器学习和人类学习是非常相似的</p>
+<p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200706170712331.png" alt="image-20200706170712331"></p>
+<h3 id="二：机器学习应用"><a href="#二：机器学习应用" class="headerlink" title="二：机器学习应用"></a>二：机器学习应用</h3><h4 id="1-当前应用"><a href="#1-当前应用" class="headerlink" title="1.当前应用"></a>1.当前应用</h4><p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200706171220946.png" alt="image-20200706171220946"></p>
+<h4 id="2-未来应用"><a href="#2-未来应用" class="headerlink" title="2.未来应用"></a>2.未来应用</h4><p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200706171619513.png" alt="image-20200706171619513"></p>
+<h3 id="三：机器学习的定位"><a href="#三：机器学习的定位" class="headerlink" title="三：机器学习的定位"></a>三：机器学习的定位</h3><p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200706172204133.png" alt="image-20200706172204133"></p>
+<h4 id="不要孤立的看待机器学习，它和很多领域都有密切的联系"><a href="#不要孤立的看待机器学习，它和很多领域都有密切的联系" class="headerlink" title="不要孤立的看待机器学习，它和很多领域都有密切的联系"></a>不要孤立的看待机器学习，它和很多领域都有密切的联系</h4><h3 id="四：机器学习的框架"><a href="#四：机器学习的框架" class="headerlink" title="四：机器学习的框架"></a>四：机器学习的框架</h3><p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200706172446522.png" alt="image-20200706172446522"></p>
+<p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200706172809977.png" alt="image-20200706172809977"></p>
+]]></content>
+      <categories>
+        <category>机器学习</category>
+      </categories>
+      <tags>
+        <tag>机器学习</tag>
+        <tag>Python</tag>
+        <tag>机器学习基础概念</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>机器学习笔记2</title>
     <url>/2020/07/21/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B02/</url>
     <content><![CDATA[<h3 id="机器学习基础"><a href="#机器学习基础" class="headerlink" title="机器学习基础"></a>机器学习基础</h3><h4 id="一：机器学习的数据"><a href="#一：机器学习的数据" class="headerlink" title="一：机器学习的数据"></a>一：机器学习的数据</h4><a id="more"></a>
@@ -140,29 +163,6 @@
       </tags>
   </entry>
   <entry>
-    <title>机器学习笔记1</title>
-    <url>/2020/07/21/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B01/</url>
-    <content><![CDATA[<h1 id="机器学习笔记"><a href="#机器学习笔记" class="headerlink" title="机器学习笔记"></a>机器学习笔记</h1><a id="more"></a>
-<h3 id="一：什么是机器学习"><a href="#一：什么是机器学习" class="headerlink" title="一：什么是机器学习"></a>一：什么是机器学习</h3><p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200706165617797.png" alt="image-20200706165617797"></p>
-<h4 id="首先先了解人类如何学习（经验学习）"><a href="#首先先了解人类如何学习（经验学习）" class="headerlink" title="首先先了解人类如何学习（经验学习）"></a>首先先了解人类如何学习（经验学习）</h4><p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200706170401290.png" alt="image-20200706170401290"></p>
-<p>####机器学习和人类学习是非常相似的</p>
-<p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200706170712331.png" alt="image-20200706170712331"></p>
-<h3 id="二：机器学习应用"><a href="#二：机器学习应用" class="headerlink" title="二：机器学习应用"></a>二：机器学习应用</h3><h4 id="1-当前应用"><a href="#1-当前应用" class="headerlink" title="1.当前应用"></a>1.当前应用</h4><p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200706171220946.png" alt="image-20200706171220946"></p>
-<h4 id="2-未来应用"><a href="#2-未来应用" class="headerlink" title="2.未来应用"></a>2.未来应用</h4><p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200706171619513.png" alt="image-20200706171619513"></p>
-<h3 id="三：机器学习的定位"><a href="#三：机器学习的定位" class="headerlink" title="三：机器学习的定位"></a>三：机器学习的定位</h3><p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200706172204133.png" alt="image-20200706172204133"></p>
-<h4 id="不要孤立的看待机器学习，它和很多领域都有密切的联系"><a href="#不要孤立的看待机器学习，它和很多领域都有密切的联系" class="headerlink" title="不要孤立的看待机器学习，它和很多领域都有密切的联系"></a>不要孤立的看待机器学习，它和很多领域都有密切的联系</h4><h3 id="四：机器学习的框架"><a href="#四：机器学习的框架" class="headerlink" title="四：机器学习的框架"></a>四：机器学习的框架</h3><p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200706172446522.png" alt="image-20200706172446522"></p>
-<p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200706172809977.png" alt="image-20200706172809977"></p>
-]]></content>
-      <categories>
-        <category>机器学习</category>
-      </categories>
-      <tags>
-        <tag>机器学习</tag>
-        <tag>Python</tag>
-        <tag>机器学习基础概念</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>机器学习笔记3</title>
     <url>/2020/07/21/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B03/</url>
     <content><![CDATA[<h3 id="KNN-K近邻算法（K-Nearest-Neighbors）"><a href="#KNN-K近邻算法（K-Nearest-Neighbors）" class="headerlink" title="KNN -K近邻算法（K-Nearest Neighbors）"></a>KNN -K近邻算法（K-Nearest Neighbors）</h3><a id="more"></a>
@@ -251,27 +251,88 @@
       </tags>
   </entry>
   <entry>
-    <title>机器学习笔记7</title>
-    <url>/2020/07/30/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B07/</url>
-    <content><![CDATA[<h3 id="回归算法的评价"><a href="#回归算法的评价" class="headerlink" title="回归算法的评价"></a>回归算法的评价</h3><a id="more"></a>
+    <title>机器学习笔记4</title>
+    <url>/2020/07/23/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B04/</url>
+    <content><![CDATA[<h3 id="数据归一化与标准化"><a href="#数据归一化与标准化" class="headerlink" title="数据归一化与标准化"></a>数据归一化与标准化</h3><a id="more"></a>
 
-<h4 id="一、从简单线性回归引出横梁标准"><a href="#一、从简单线性回归引出横梁标准" class="headerlink" title="一、从简单线性回归引出横梁标准"></a>一、从简单线性回归引出横梁标准</h4><p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200730220946800.png" alt="image-20200730220946800"></p>
-<h5 id="衡量标准就是测试集中的真实值与测试集中的预测值的差的平方，但是该衡量标准与样本数量m有关。为了避免不同样本量的数据集带来的模型优劣争议，我们要将这个式子除以m，得到下图"><a href="#衡量标准就是测试集中的真实值与测试集中的预测值的差的平方，但是该衡量标准与样本数量m有关。为了避免不同样本量的数据集带来的模型优劣争议，我们要将这个式子除以m，得到下图" class="headerlink" title="衡量标准就是测试集中的真实值与测试集中的预测值的差的平方，但是该衡量标准与样本数量m有关。为了避免不同样本量的数据集带来的模型优劣争议，我们要将这个式子除以m，得到下图"></a>衡量标准就是测试集中的真实值与测试集中的预测值的差的平方，但是该衡量标准与样本数量m有关。为了避免不同样本量的数据集带来的模型优劣争议，我们要将这个式子除以m，得到下图</h5><p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200730221356928.png" alt="image-20200730221356928"></p>
-<h5 id="但是MSE会使得该数据集的量纲（单位）为原来的平方（比如米变成平方米），所以我们可以给MSE开根号使得它和原数据集的量纲相同，这就是RMSE"><a href="#但是MSE会使得该数据集的量纲（单位）为原来的平方（比如米变成平方米），所以我们可以给MSE开根号使得它和原数据集的量纲相同，这就是RMSE" class="headerlink" title="但是MSE会使得该数据集的量纲（单位）为原来的平方（比如米变成平方米），所以我们可以给MSE开根号使得它和原数据集的量纲相同，这就是RMSE"></a>但是MSE会使得该数据集的量纲（单位）为原来的平方（比如米变成平方米），所以我们可以给MSE开根号使得它和原数据集的量纲相同，这就是RMSE</h5><p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200730221818237.png" alt="image-20200730221818237"></p>
-<h5 id="同样我们还可以使用以下的评价算法，注意线性回归模型找最优参数时不能用绝对值（不是处处可导），但是评价时就可以用，它们是互不影响的。"><a href="#同样我们还可以使用以下的评价算法，注意线性回归模型找最优参数时不能用绝对值（不是处处可导），但是评价时就可以用，它们是互不影响的。" class="headerlink" title="同样我们还可以使用以下的评价算法，注意线性回归模型找最优参数时不能用绝对值（不是处处可导），但是评价时就可以用，它们是互不影响的。"></a>同样我们还可以使用以下的评价算法，注意线性回归模型找最优参数时不能用绝对值（不是处处可导），但是评价时就可以用，它们是互不影响的。</h5><p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200730222124641.png" alt="image-20200730222124641"></p>
-<h3 id="二、RMSE-VS-MAE"><a href="#二、RMSE-VS-MAE" class="headerlink" title="二、RMSE VS  MAE"></a>二、RMSE VS  MAE</h3><p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200730230527231.png" alt="image-20200730230527231"></p>
-<h4 id="RMSE中的平方操作相当于放大了-max-y-true-y-predict-，所以开根号以后依然比MAE大，因此我们要想让RMSE或MSE更有意义，就要让差值尽量小。"><a href="#RMSE中的平方操作相当于放大了-max-y-true-y-predict-，所以开根号以后依然比MAE大，因此我们要想让RMSE或MSE更有意义，就要让差值尽量小。" class="headerlink" title="RMSE中的平方操作相当于放大了$$ max(y_{true}-y_{predict})$$，所以开根号以后依然比MAE大，因此我们要想让RMSE或MSE更有意义，就要让差值尽量小。"></a>RMSE中的平方操作相当于放大了$$ max(y_{true}-y_{predict})$$，所以开根号以后依然比MAE大，因此我们要想让RMSE或MSE更有意义，就要让差值尽量小。</h4><h3 id="三、最好的衡量线性回归法的指标"><a href="#三、最好的衡量线性回归法的指标" class="headerlink" title="三、最好的衡量线性回归法的指标"></a>三、最好的衡量线性回归法的指标</h3><h4 id="从分类算法的评价算法我们可以得出它可以通过0到1中的一个数来衡量模型的好坏。但由于RMSE和MSE只能得出平均差值，所以导致训练处理的模型不具有通用性（比如房价和学生成绩）"><a href="#从分类算法的评价算法我们可以得出它可以通过0到1中的一个数来衡量模型的好坏。但由于RMSE和MSE只能得出平均差值，所以导致训练处理的模型不具有通用性（比如房价和学生成绩）" class="headerlink" title="从分类算法的评价算法我们可以得出它可以通过0到1中的一个数来衡量模型的好坏。但由于RMSE和MSE只能得出平均差值，所以导致训练处理的模型不具有通用性（比如房价和学生成绩）"></a>从分类算法的评价算法我们可以得出它可以通过0到1中的一个数来衡量模型的好坏。但由于RMSE和MSE只能得出平均差值，所以导致训练处理的模型不具有通用性（比如房价和学生成绩）</h4><h4 id="因此，我们要使用以下算法来评价模型"><a href="#因此，我们要使用以下算法来评价模型" class="headerlink" title="因此，我们要使用以下算法来评价模型"></a>因此，我们要使用以下算法来评价模型</h4><p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200730232425399.png" alt="image-20200730232425399"></p>
-<p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200730232723872.png" alt="image-20200730232723872"></p>
-<h4 id="R2是衡量了我们模型没有产生错误的相应指标"><a href="#R2是衡量了我们模型没有产生错误的相应指标" class="headerlink" title="R2是衡量了我们模型没有产生错误的相应指标"></a>R2是衡量了我们模型没有产生错误的相应指标</h4><p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200730233257406.png" alt="image-20200730233257406"></p>
-<p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200730233453803.png" alt="image-20200730233453803"></p>
-<h4 id="注意，Var指方差"><a href="#注意，Var指方差" class="headerlink" title="注意，Var指方差"></a>注意，Var指方差</h4>]]></content>
+<h4 id="一，为什么要进行数据归一化或归一化"><a href="#一，为什么要进行数据归一化或归一化" class="headerlink" title="一，为什么要进行数据归一化或归一化"></a>一，为什么要进行数据归一化或归一化</h4><p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200723234524737.png" alt="image-20200723234524737"></p>
+<p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200723234716174.png" alt="image-20200723234716174"></p>
+<ul>
+<li><h4 id="这张图表示样本之间的距离又会被肿瘤大小来主导"><a href="#这张图表示样本之间的距离又会被肿瘤大小来主导" class="headerlink" title="这张图表示样本之间的距离又会被肿瘤大小来主导"></a>这张图表示样本之间的距离又会被肿瘤大小来主导</h4></li>
+<li><p>####因此我们需要统一进行数据归一化</p>
+</li>
+</ul>
+<h3 id="二，什么是数据归一化或标准化"><a href="#二，什么是数据归一化或标准化" class="headerlink" title="二，什么是数据归一化或标准化"></a>二，什么是数据归一化或标准化</h3><ul>
+<li><p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200723235207881.png" alt="image-20200723235207881"></p>
+</li>
+<li><h4 id="最值归一化（normalization）适用于分布有明显边界的情况。比如像工资就不能用最值归一化（工资无上限）"><a href="#最值归一化（normalization）适用于分布有明显边界的情况。比如像工资就不能用最值归一化（工资无上限）" class="headerlink" title="最值归一化（normalization）适用于分布有明显边界的情况。比如像工资就不能用最值归一化（工资无上限）"></a>最值归一化（normalization）适用于分布有明显边界的情况。比如像工资就不能用最值归一化（工资无上限）</h4></li>
+</ul>
+<h4 id="第二种是标准化"><a href="#第二种是标准化" class="headerlink" title="第二种是标准化"></a>第二种是标准化</h4><ul>
+<li><p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200724000028651.png" alt="image-20200724000028651"></p>
+</li>
+<li><h5 id="注意："><a href="#注意：" class="headerlink" title="注意："></a>注意：</h5><ul>
+<li><h4 id="此处老师讲错，应该为标准化，而不是均值方差归一化"><a href="#此处老师讲错，应该为标准化，而不是均值方差归一化" class="headerlink" title="此处老师讲错，应该为标准化，而不是均值方差归一化"></a>此处老师讲错，应该为标准化，而不是均值方差归一化</h4></li>
+<li><h4 id="s表示标准差。除非数据集有明确的边界，（初学情况）一般情况下都使用标准化"><a href="#s表示标准差。除非数据集有明确的边界，（初学情况）一般情况下都使用标准化" class="headerlink" title="s表示标准差。除非数据集有明确的边界，（初学情况）一般情况下都使用标准化"></a>s表示标准差。除非数据集有明确的边界，（初学情况）一般情况下都使用标准化</h4></li>
+<li><h4 id="其实就是利用标准化处理将正态分布转为了标准正态分布"><a href="#其实就是利用标准化处理将正态分布转为了标准正态分布" class="headerlink" title="其实就是利用标准化处理将正态分布转为了标准正态分布"></a>其实就是利用标准化处理将正态分布转为了标准正态分布</h4></li>
+<li><h4 id="深入了解请看https-www-jiqizhixin-com-articles-19070701-https-www-zhihu-com-question-56891433"><a href="#深入了解请看https-www-jiqizhixin-com-articles-19070701-https-www-zhihu-com-question-56891433" class="headerlink" title="深入了解请看https://www.jiqizhixin.com/articles/19070701 https://www.zhihu.com/question/56891433"></a>深入了解请看<a href="https://www.jiqizhixin.com/articles/19070701" target="_blank" rel="noopener">https://www.jiqizhixin.com/articles/19070701</a> <a href="https://www.zhihu.com/question/56891433" target="_blank" rel="noopener">https://www.zhihu.com/question/56891433</a></h4></li>
+<li><h4 id="在线演示标准正态分布https-www-shuxuele-com-data-standard-normal-distribution-table-html"><a href="#在线演示标准正态分布https-www-shuxuele-com-data-standard-normal-distribution-table-html" class="headerlink" title="在线演示标准正态分布https://www.shuxuele.com/data/standard-normal-distribution-table.html"></a>在线演示标准正态分布<a href="https://www.shuxuele.com/data/standard-normal-distribution-table.html" target="_blank" rel="noopener">https://www.shuxuele.com/data/standard-normal-distribution-table.html</a></h4></li>
+</ul>
+</li>
+</ul>
+<h3 id="三，这两种的区别"><a href="#三，这两种的区别" class="headerlink" title="三，这两种的区别"></a>三，这两种的区别</h3><h5 id="最值归一化"><a href="#最值归一化" class="headerlink" title="最值归一化"></a>最值归一化</h5><ul>
+<li>数据集必须得有边界，否则会出现偏差很悬殊的值</li>
+</ul>
+<h5 id="标准化"><a href="#标准化" class="headerlink" title="标准化"></a>标准化</h5><ul>
+<li><p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200724020154141.png" alt="image-20200724020154141"></p>
+</li>
+<li><h5 id="平均值是曲线的中心。这是曲线的最高点，因为大多数点都在平均值附近；"><a href="#平均值是曲线的中心。这是曲线的最高点，因为大多数点都在平均值附近；" class="headerlink" title="平均值是曲线的中心。这是曲线的最高点，因为大多数点都在平均值附近；"></a>平均值是曲线的中心。这是曲线的最高点，因为大多数点都在平均值附近；</h5></li>
+<li><h5 id="标准化更符合统计学假设（自然界大多数符合正态分布）：对一个数值特征来说，很大可能它是服从正态分布的。标准化其实是基于这个隐含假设，只不过是略施小技，将这个正态分布调整为均值为0，方差为1的标准正态分布而已。"><a href="#标准化更符合统计学假设（自然界大多数符合正态分布）：对一个数值特征来说，很大可能它是服从正态分布的。标准化其实是基于这个隐含假设，只不过是略施小技，将这个正态分布调整为均值为0，方差为1的标准正态分布而已。" class="headerlink" title="标准化更符合统计学假设（自然界大多数符合正态分布）：对一个数值特征来说，很大可能它是服从正态分布的。标准化其实是基于这个隐含假设，只不过是略施小技，将这个正态分布调整为均值为0，方差为1的标准正态分布而已。"></a>标准化更符合统计学假设（自然界大多数符合正态分布）：对一个数值特征来说，很大可能它是服从正态分布的。标准化其实是基于这个隐含假设，只不过是略施小技，将这个正态分布调整为均值为0，方差为1的标准正态分布而已。</h5></li>
+<li><h5 id="新的数据由于对方差进行了归一化，这时候每个维度的量纲其实已经等价了，每个维度都服从均值为0、方差1的正态分布，在计算距离的时候，每个维度都是去量纲化的，避免了不同量纲的选取对距离计算产生的巨大影响。"><a href="#新的数据由于对方差进行了归一化，这时候每个维度的量纲其实已经等价了，每个维度都服从均值为0、方差1的正态分布，在计算距离的时候，每个维度都是去量纲化的，避免了不同量纲的选取对距离计算产生的巨大影响。" class="headerlink" title="新的数据由于对方差进行了归一化，这时候每个维度的量纲其实已经等价了，每个维度都服从均值为0、方差1的正态分布，在计算距离的时候，每个维度都是去量纲化的，避免了不同量纲的选取对距离计算产生的巨大影响。"></a>新的数据由于对方差进行了归一化，这时候每个维度的量纲其实已经等价了，每个维度都服从均值为0、方差1的正态分布，在计算距离的时候，每个维度都是去量纲化的，避免了不同量纲的选取对距离计算产生的巨大影响。</h5></li>
+</ul>
+<h3 id="四，对测试数据集如何归一化或标准化"><a href="#四，对测试数据集如何归一化或标准化" class="headerlink" title="四，对测试数据集如何归一化或标准化"></a>四，对测试数据集如何归一化或标准化</h3><ul>
+<li><p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200724022251989.png" alt="image-20200724022251989"></p>
+</li>
+<li><p>####结论：因为一个模型是要投入生产生活中的，所以我们要让测试数据集也要使用训练数据集的均值和标准差</p>
+</li>
+<li><p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200724022712834.png" alt="image-20200724022712834"></p>
+</li>
+</ul>
+]]></content>
       <categories>
         <category>机器学习</category>
       </categories>
       <tags>
         <tag>机器学习</tag>
-        <tag>线性回归</tag>
-        <tag>回归算法评价</tag>
+        <tag>Python</tag>
+        <tag>数据预处理</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>机器学习笔记5</title>
+    <url>/2020/07/24/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B05/</url>
+    <content><![CDATA[<h3 id="更多有关KNN的思考"><a href="#更多有关KNN的思考" class="headerlink" title="更多有关KNN的思考"></a>更多有关KNN的思考</h3><a id="more"></a>
+
+<p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200724025657646.png" alt="image-20200724025657646"></p>
+<p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200724025727331.png" alt="image-20200724025727331"></p>
+<h4 id="解释：可以把离绿球最近的三个蓝球的均值作为绿球的值，也可以将距离权重考虑进去求加权平均数。总之，这些都是回归问题。（sklearn其实已经封装好了KNN解决回归问题的库：KNeighborsRegressor）"><a href="#解释：可以把离绿球最近的三个蓝球的均值作为绿球的值，也可以将距离权重考虑进去求加权平均数。总之，这些都是回归问题。（sklearn其实已经封装好了KNN解决回归问题的库：KNeighborsRegressor）" class="headerlink" title="解释：可以把离绿球最近的三个蓝球的均值作为绿球的值，也可以将距离权重考虑进去求加权平均数。总之，这些都是回归问题。（sklearn其实已经封装好了KNN解决回归问题的库：KNeighborsRegressor）"></a>解释：可以把离绿球最近的三个蓝球的均值作为绿球的值，也可以将距离权重考虑进去求加权平均数。总之，这些都是回归问题。（sklearn其实已经封装好了KNN解决回归问题的库：KNeighborsRegressor）</h4><h3 id="它的缺点"><a href="#它的缺点" class="headerlink" title="它的缺点"></a>它的缺点</h3><ul>
+<li><p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200724030254962.png" alt="image-20200724030254962"></p>
+</li>
+<li><p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200724030519829.png" alt="image-20200724030519829"></p>
+<ul>
+<li><h4 id="解释：缺点2：拿上图红蓝绿球来举例，假如k-3，而其中两个是红色，一个是蓝色。按照KNN就会认定绿球为红色类，但事实上绿球的标签是蓝色类"><a href="#解释：缺点2：拿上图红蓝绿球来举例，假如k-3，而其中两个是红色，一个是蓝色。按照KNN就会认定绿球为红色类，但事实上绿球的标签是蓝色类" class="headerlink" title="解释：缺点2：拿上图红蓝绿球来举例，假如k=3，而其中两个是红色，一个是蓝色。按照KNN就会认定绿球为红色类，但事实上绿球的标签是蓝色类"></a>解释：缺点2：拿上图红蓝绿球来举例，假如k=3，而其中两个是红色，一个是蓝色。按照KNN就会认定绿球为红色类，但事实上绿球的标签是蓝色类</h4></li>
+</ul>
+</li>
+<li><h4 id="缺点4："><a href="#缺点4：" class="headerlink" title="缺点4："></a>缺点4：<img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200724031158354.png" alt="image-20200724031158354"></h4></li>
+</ul>
+<h3 id="机器学习流程回顾"><a href="#机器学习流程回顾" class="headerlink" title="机器学习流程回顾"></a>机器学习流程回顾</h3><p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200724031341729.png" alt="image-20200724031341729"></p>
+]]></content>
+      <categories>
+        <category>机器学习</category>
+      </categories>
+      <tags>
+        <tag>机器学习</tag>
+        <tag>Python</tag>
+        <tag>KNN</tag>
       </tags>
   </entry>
   <entry>
@@ -331,88 +392,52 @@
       </tags>
   </entry>
   <entry>
-    <title>机器学习笔记5</title>
-    <url>/2020/07/24/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B05/</url>
-    <content><![CDATA[<h3 id="更多有关KNN的思考"><a href="#更多有关KNN的思考" class="headerlink" title="更多有关KNN的思考"></a>更多有关KNN的思考</h3><a id="more"></a>
+    <title>机器学习笔记7</title>
+    <url>/2020/07/30/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B07/</url>
+    <content><![CDATA[<h3 id="回归算法的评价"><a href="#回归算法的评价" class="headerlink" title="回归算法的评价"></a>回归算法的评价</h3><a id="more"></a>
 
-<p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200724025657646.png" alt="image-20200724025657646"></p>
-<p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200724025727331.png" alt="image-20200724025727331"></p>
-<h4 id="解释：可以把离绿球最近的三个蓝球的均值作为绿球的值，也可以将距离权重考虑进去求加权平均数。总之，这些都是回归问题。（sklearn其实已经封装好了KNN解决回归问题的库：KNeighborsRegressor）"><a href="#解释：可以把离绿球最近的三个蓝球的均值作为绿球的值，也可以将距离权重考虑进去求加权平均数。总之，这些都是回归问题。（sklearn其实已经封装好了KNN解决回归问题的库：KNeighborsRegressor）" class="headerlink" title="解释：可以把离绿球最近的三个蓝球的均值作为绿球的值，也可以将距离权重考虑进去求加权平均数。总之，这些都是回归问题。（sklearn其实已经封装好了KNN解决回归问题的库：KNeighborsRegressor）"></a>解释：可以把离绿球最近的三个蓝球的均值作为绿球的值，也可以将距离权重考虑进去求加权平均数。总之，这些都是回归问题。（sklearn其实已经封装好了KNN解决回归问题的库：KNeighborsRegressor）</h4><h3 id="它的缺点"><a href="#它的缺点" class="headerlink" title="它的缺点"></a>它的缺点</h3><ul>
-<li><p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200724030254962.png" alt="image-20200724030254962"></p>
-</li>
-<li><p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200724030519829.png" alt="image-20200724030519829"></p>
-<ul>
-<li><h4 id="解释：缺点2：拿上图红蓝绿球来举例，假如k-3，而其中两个是红色，一个是蓝色。按照KNN就会认定绿球为红色类，但事实上绿球的标签是蓝色类"><a href="#解释：缺点2：拿上图红蓝绿球来举例，假如k-3，而其中两个是红色，一个是蓝色。按照KNN就会认定绿球为红色类，但事实上绿球的标签是蓝色类" class="headerlink" title="解释：缺点2：拿上图红蓝绿球来举例，假如k=3，而其中两个是红色，一个是蓝色。按照KNN就会认定绿球为红色类，但事实上绿球的标签是蓝色类"></a>解释：缺点2：拿上图红蓝绿球来举例，假如k=3，而其中两个是红色，一个是蓝色。按照KNN就会认定绿球为红色类，但事实上绿球的标签是蓝色类</h4></li>
-</ul>
-</li>
-<li><h4 id="缺点4："><a href="#缺点4：" class="headerlink" title="缺点4："></a>缺点4：<img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200724031158354.png" alt="image-20200724031158354"></h4></li>
-</ul>
-<h3 id="机器学习流程回顾"><a href="#机器学习流程回顾" class="headerlink" title="机器学习流程回顾"></a>机器学习流程回顾</h3><p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200724031341729.png" alt="image-20200724031341729"></p>
-]]></content>
+<h4 id="一、从简单线性回归引出横梁标准"><a href="#一、从简单线性回归引出横梁标准" class="headerlink" title="一、从简单线性回归引出横梁标准"></a>一、从简单线性回归引出横梁标准</h4><p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200730220946800.png" alt="image-20200730220946800"></p>
+<h5 id="衡量标准就是测试集中的真实值与测试集中的预测值的差的平方，但是该衡量标准与样本数量m有关。为了避免不同样本量的数据集带来的模型优劣争议，我们要将这个式子除以m，得到下图"><a href="#衡量标准就是测试集中的真实值与测试集中的预测值的差的平方，但是该衡量标准与样本数量m有关。为了避免不同样本量的数据集带来的模型优劣争议，我们要将这个式子除以m，得到下图" class="headerlink" title="衡量标准就是测试集中的真实值与测试集中的预测值的差的平方，但是该衡量标准与样本数量m有关。为了避免不同样本量的数据集带来的模型优劣争议，我们要将这个式子除以m，得到下图"></a>衡量标准就是测试集中的真实值与测试集中的预测值的差的平方，但是该衡量标准与样本数量m有关。为了避免不同样本量的数据集带来的模型优劣争议，我们要将这个式子除以m，得到下图</h5><p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200730221356928.png" alt="image-20200730221356928"></p>
+<h5 id="但是MSE会使得该数据集的量纲（单位）为原来的平方（比如米变成平方米），所以我们可以给MSE开根号使得它和原数据集的量纲相同，这就是RMSE"><a href="#但是MSE会使得该数据集的量纲（单位）为原来的平方（比如米变成平方米），所以我们可以给MSE开根号使得它和原数据集的量纲相同，这就是RMSE" class="headerlink" title="但是MSE会使得该数据集的量纲（单位）为原来的平方（比如米变成平方米），所以我们可以给MSE开根号使得它和原数据集的量纲相同，这就是RMSE"></a>但是MSE会使得该数据集的量纲（单位）为原来的平方（比如米变成平方米），所以我们可以给MSE开根号使得它和原数据集的量纲相同，这就是RMSE</h5><p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200730221818237.png" alt="image-20200730221818237"></p>
+<h5 id="同样我们还可以使用以下的评价算法，注意线性回归模型找最优参数时不能用绝对值（不是处处可导），但是评价时就可以用，它们是互不影响的。"><a href="#同样我们还可以使用以下的评价算法，注意线性回归模型找最优参数时不能用绝对值（不是处处可导），但是评价时就可以用，它们是互不影响的。" class="headerlink" title="同样我们还可以使用以下的评价算法，注意线性回归模型找最优参数时不能用绝对值（不是处处可导），但是评价时就可以用，它们是互不影响的。"></a>同样我们还可以使用以下的评价算法，注意线性回归模型找最优参数时不能用绝对值（不是处处可导），但是评价时就可以用，它们是互不影响的。</h5><p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200730222124641.png" alt="image-20200730222124641"></p>
+<h3 id="二、RMSE-VS-MAE"><a href="#二、RMSE-VS-MAE" class="headerlink" title="二、RMSE VS  MAE"></a>二、RMSE VS  MAE</h3><p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200730230527231.png" alt="image-20200730230527231"></p>
+<h4 id="RMSE中的平方操作相当于放大了-max-y-true-y-predict-，所以开根号以后依然比MAE大，因此我们要想让RMSE或MSE更有意义，就要让差值尽量小。"><a href="#RMSE中的平方操作相当于放大了-max-y-true-y-predict-，所以开根号以后依然比MAE大，因此我们要想让RMSE或MSE更有意义，就要让差值尽量小。" class="headerlink" title="RMSE中的平方操作相当于放大了$$ max(y_{true}-y_{predict})$$，所以开根号以后依然比MAE大，因此我们要想让RMSE或MSE更有意义，就要让差值尽量小。"></a>RMSE中的平方操作相当于放大了$$ max(y_{true}-y_{predict})$$，所以开根号以后依然比MAE大，因此我们要想让RMSE或MSE更有意义，就要让差值尽量小。</h4><h3 id="三、最好的衡量线性回归法的指标"><a href="#三、最好的衡量线性回归法的指标" class="headerlink" title="三、最好的衡量线性回归法的指标"></a>三、最好的衡量线性回归法的指标</h3><h4 id="从分类算法的评价算法我们可以得出它可以通过0到1中的一个数来衡量模型的好坏。但由于RMSE和MSE只能得出平均差值，所以导致训练处理的模型不具有通用性（比如房价和学生成绩）"><a href="#从分类算法的评价算法我们可以得出它可以通过0到1中的一个数来衡量模型的好坏。但由于RMSE和MSE只能得出平均差值，所以导致训练处理的模型不具有通用性（比如房价和学生成绩）" class="headerlink" title="从分类算法的评价算法我们可以得出它可以通过0到1中的一个数来衡量模型的好坏。但由于RMSE和MSE只能得出平均差值，所以导致训练处理的模型不具有通用性（比如房价和学生成绩）"></a>从分类算法的评价算法我们可以得出它可以通过0到1中的一个数来衡量模型的好坏。但由于RMSE和MSE只能得出平均差值，所以导致训练处理的模型不具有通用性（比如房价和学生成绩）</h4><h4 id="因此，我们要使用以下算法来评价模型"><a href="#因此，我们要使用以下算法来评价模型" class="headerlink" title="因此，我们要使用以下算法来评价模型"></a>因此，我们要使用以下算法来评价模型</h4><p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200730232425399.png" alt="image-20200730232425399"></p>
+<p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200730232723872.png" alt="image-20200730232723872"></p>
+<h4 id="R2是衡量了我们模型没有产生错误的相应指标"><a href="#R2是衡量了我们模型没有产生错误的相应指标" class="headerlink" title="R2是衡量了我们模型没有产生错误的相应指标"></a>R2是衡量了我们模型没有产生错误的相应指标</h4><p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200730233257406.png" alt="image-20200730233257406"></p>
+<p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200730233453803.png" alt="image-20200730233453803"></p>
+<h4 id="注意，Var指方差"><a href="#注意，Var指方差" class="headerlink" title="注意，Var指方差"></a>注意，Var指方差</h4>]]></content>
       <categories>
         <category>机器学习</category>
       </categories>
       <tags>
         <tag>机器学习</tag>
-        <tag>Python</tag>
-        <tag>KNN</tag>
+        <tag>线性回归</tag>
+        <tag>回归算法评价</tag>
       </tags>
   </entry>
   <entry>
-    <title>机器学习笔记4</title>
-    <url>/2020/07/23/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B04/</url>
-    <content><![CDATA[<h3 id="数据归一化与标准化"><a href="#数据归一化与标准化" class="headerlink" title="数据归一化与标准化"></a>数据归一化与标准化</h3><a id="more"></a>
-
-<h4 id="一，为什么要进行数据归一化或归一化"><a href="#一，为什么要进行数据归一化或归一化" class="headerlink" title="一，为什么要进行数据归一化或归一化"></a>一，为什么要进行数据归一化或归一化</h4><p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200723234524737.png" alt="image-20200723234524737"></p>
-<p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200723234716174.png" alt="image-20200723234716174"></p>
-<ul>
-<li><h4 id="这张图表示样本之间的距离又会被肿瘤大小来主导"><a href="#这张图表示样本之间的距离又会被肿瘤大小来主导" class="headerlink" title="这张图表示样本之间的距离又会被肿瘤大小来主导"></a>这张图表示样本之间的距离又会被肿瘤大小来主导</h4></li>
-<li><p>####因此我们需要统一进行数据归一化</p>
-</li>
-</ul>
-<h3 id="二，什么是数据归一化或标准化"><a href="#二，什么是数据归一化或标准化" class="headerlink" title="二，什么是数据归一化或标准化"></a>二，什么是数据归一化或标准化</h3><ul>
-<li><p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200723235207881.png" alt="image-20200723235207881"></p>
-</li>
-<li><h4 id="最值归一化（normalization）适用于分布有明显边界的情况。比如像工资就不能用最值归一化（工资无上限）"><a href="#最值归一化（normalization）适用于分布有明显边界的情况。比如像工资就不能用最值归一化（工资无上限）" class="headerlink" title="最值归一化（normalization）适用于分布有明显边界的情况。比如像工资就不能用最值归一化（工资无上限）"></a>最值归一化（normalization）适用于分布有明显边界的情况。比如像工资就不能用最值归一化（工资无上限）</h4></li>
-</ul>
-<h4 id="第二种是标准化"><a href="#第二种是标准化" class="headerlink" title="第二种是标准化"></a>第二种是标准化</h4><ul>
-<li><p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200724000028651.png" alt="image-20200724000028651"></p>
-</li>
-<li><h5 id="注意："><a href="#注意：" class="headerlink" title="注意："></a>注意：</h5><ul>
-<li><h4 id="此处老师讲错，应该为标准化，而不是均值方差归一化"><a href="#此处老师讲错，应该为标准化，而不是均值方差归一化" class="headerlink" title="此处老师讲错，应该为标准化，而不是均值方差归一化"></a>此处老师讲错，应该为标准化，而不是均值方差归一化</h4></li>
-<li><h4 id="s表示标准差。除非数据集有明确的边界，（初学情况）一般情况下都使用标准化"><a href="#s表示标准差。除非数据集有明确的边界，（初学情况）一般情况下都使用标准化" class="headerlink" title="s表示标准差。除非数据集有明确的边界，（初学情况）一般情况下都使用标准化"></a>s表示标准差。除非数据集有明确的边界，（初学情况）一般情况下都使用标准化</h4></li>
-<li><h4 id="其实就是利用标准化处理将正态分布转为了标准正态分布"><a href="#其实就是利用标准化处理将正态分布转为了标准正态分布" class="headerlink" title="其实就是利用标准化处理将正态分布转为了标准正态分布"></a>其实就是利用标准化处理将正态分布转为了标准正态分布</h4></li>
-<li><h4 id="深入了解请看https-www-jiqizhixin-com-articles-19070701-https-www-zhihu-com-question-56891433"><a href="#深入了解请看https-www-jiqizhixin-com-articles-19070701-https-www-zhihu-com-question-56891433" class="headerlink" title="深入了解请看https://www.jiqizhixin.com/articles/19070701 https://www.zhihu.com/question/56891433"></a>深入了解请看<a href="https://www.jiqizhixin.com/articles/19070701" target="_blank" rel="noopener">https://www.jiqizhixin.com/articles/19070701</a> <a href="https://www.zhihu.com/question/56891433" target="_blank" rel="noopener">https://www.zhihu.com/question/56891433</a></h4></li>
-<li><h4 id="在线演示标准正态分布https-www-shuxuele-com-data-standard-normal-distribution-table-html"><a href="#在线演示标准正态分布https-www-shuxuele-com-data-standard-normal-distribution-table-html" class="headerlink" title="在线演示标准正态分布https://www.shuxuele.com/data/standard-normal-distribution-table.html"></a>在线演示标准正态分布<a href="https://www.shuxuele.com/data/standard-normal-distribution-table.html" target="_blank" rel="noopener">https://www.shuxuele.com/data/standard-normal-distribution-table.html</a></h4></li>
-</ul>
-</li>
-</ul>
-<h3 id="三，这两种的区别"><a href="#三，这两种的区别" class="headerlink" title="三，这两种的区别"></a>三，这两种的区别</h3><h5 id="最值归一化"><a href="#最值归一化" class="headerlink" title="最值归一化"></a>最值归一化</h5><ul>
-<li>数据集必须得有边界，否则会出现偏差很悬殊的值</li>
-</ul>
-<h5 id="标准化"><a href="#标准化" class="headerlink" title="标准化"></a>标准化</h5><ul>
-<li><p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200724020154141.png" alt="image-20200724020154141"></p>
-</li>
-<li><h5 id="平均值是曲线的中心。这是曲线的最高点，因为大多数点都在平均值附近；"><a href="#平均值是曲线的中心。这是曲线的最高点，因为大多数点都在平均值附近；" class="headerlink" title="平均值是曲线的中心。这是曲线的最高点，因为大多数点都在平均值附近；"></a>平均值是曲线的中心。这是曲线的最高点，因为大多数点都在平均值附近；</h5></li>
-<li><h5 id="标准化更符合统计学假设（自然界大多数符合正态分布）：对一个数值特征来说，很大可能它是服从正态分布的。标准化其实是基于这个隐含假设，只不过是略施小技，将这个正态分布调整为均值为0，方差为1的标准正态分布而已。"><a href="#标准化更符合统计学假设（自然界大多数符合正态分布）：对一个数值特征来说，很大可能它是服从正态分布的。标准化其实是基于这个隐含假设，只不过是略施小技，将这个正态分布调整为均值为0，方差为1的标准正态分布而已。" class="headerlink" title="标准化更符合统计学假设（自然界大多数符合正态分布）：对一个数值特征来说，很大可能它是服从正态分布的。标准化其实是基于这个隐含假设，只不过是略施小技，将这个正态分布调整为均值为0，方差为1的标准正态分布而已。"></a>标准化更符合统计学假设（自然界大多数符合正态分布）：对一个数值特征来说，很大可能它是服从正态分布的。标准化其实是基于这个隐含假设，只不过是略施小技，将这个正态分布调整为均值为0，方差为1的标准正态分布而已。</h5></li>
-<li><h5 id="新的数据由于对方差进行了归一化，这时候每个维度的量纲其实已经等价了，每个维度都服从均值为0、方差1的正态分布，在计算距离的时候，每个维度都是去量纲化的，避免了不同量纲的选取对距离计算产生的巨大影响。"><a href="#新的数据由于对方差进行了归一化，这时候每个维度的量纲其实已经等价了，每个维度都服从均值为0、方差1的正态分布，在计算距离的时候，每个维度都是去量纲化的，避免了不同量纲的选取对距离计算产生的巨大影响。" class="headerlink" title="新的数据由于对方差进行了归一化，这时候每个维度的量纲其实已经等价了，每个维度都服从均值为0、方差1的正态分布，在计算距离的时候，每个维度都是去量纲化的，避免了不同量纲的选取对距离计算产生的巨大影响。"></a>新的数据由于对方差进行了归一化，这时候每个维度的量纲其实已经等价了，每个维度都服从均值为0、方差1的正态分布，在计算距离的时候，每个维度都是去量纲化的，避免了不同量纲的选取对距离计算产生的巨大影响。</h5></li>
-</ul>
-<h3 id="四，对测试数据集如何归一化或标准化"><a href="#四，对测试数据集如何归一化或标准化" class="headerlink" title="四，对测试数据集如何归一化或标准化"></a>四，对测试数据集如何归一化或标准化</h3><ul>
-<li><p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200724022251989.png" alt="image-20200724022251989"></p>
-</li>
-<li><p>####结论：因为一个模型是要投入生产生活中的，所以我们要让测试数据集也要使用训练数据集的均值和标准差</p>
-</li>
-<li><p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200724022712834.png" alt="image-20200724022712834"></p>
-</li>
-</ul>
-]]></content>
+    <title>机器学习笔记8</title>
+    <url>/2020/07/30/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B08/</url>
+    <content><![CDATA[<h3 id="多元线性回归"><a href="#多元线性回归" class="headerlink" title="多元线性回归"></a>多元线性回归</h3><h4 id="一、什么是多元线性回归"><a href="#一、什么是多元线性回归" class="headerlink" title="一、什么是多元线性回归"></a>一、什么是多元线性回归</h4><p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200730235347025.png" alt="image-20200730235347025"></p>
+<h4 id="二、多元线性回归的正规方程解"><a href="#二、多元线性回归的正规方程解" class="headerlink" title="二、多元线性回归的正规方程解"></a>二、多元线性回归的正规方程解</h4><p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200731030050773.png" alt="image-20200731030050773"></p>
+<p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200731030338464.png" alt="image-20200731030338464"></p>
+<h4 id="因为X是一个特征矩阵，所以-X-i-本身就是行向量，因此-theta-必须由行向量转置为列向量"><a href="#因为X是一个特征矩阵，所以-X-i-本身就是行向量，因此-theta-必须由行向量转置为列向量" class="headerlink" title="因为X是一个特征矩阵，所以$$ X^{(i)}$$本身就是行向量，因此$$\theta$$必须由行向量转置为列向量"></a>因为X是一个特征矩阵，所以$$ X^{(i)}$$本身就是行向量，因此$$\theta$$必须由行向量转置为列向量</h4><h4 id="接下来进一步推广到整个特征矩阵"><a href="#接下来进一步推广到整个特征矩阵" class="headerlink" title="接下来进一步推广到整个特征矩阵"></a>接下来进一步推广到整个特征矩阵</h4><p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200731031136440.png" alt="image-20200731031136440"></p>
+<p>####因为$$X_b$$是m*n的矩阵，$$\theta$$ 是n行列向量，所以$$\hat{y}$$是一个m行的列向量</p>
+<p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200731032608917.png" alt="image-20200731032608917"></p>
+<p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200731032641791.png" alt="image-20200731032641791"></p>
+<p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200731032712657.png" alt="image-20200731032712657"></p>
+<h4 id="因为-theta-只是X前面的系数，与量纲无关，所以不需要归一化处理"><a href="#因为-theta-只是X前面的系数，与量纲无关，所以不需要归一化处理" class="headerlink" title="因为$$\theta$$只是X前面的系数，与量纲无关，所以不需要归一化处理"></a>因为$$\theta$$只是X前面的系数，与量纲无关，所以不需要归一化处理</h4><h4 id="三、线性回归总结"><a href="#三、线性回归总结" class="headerlink" title="三、线性回归总结"></a>三、线性回归总结</h4><p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200805000611219.png" alt="image-20200805000611219"></p>
+<p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200805000625908.png" alt="image-20200805000625908"></p>
+<p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200805000642638.png" alt="image-20200805000642638"></p>
+<h4 id="关于可解释性，我们拿波士顿房价预测来说，训练得到的参数的正负表示该特征与房价呈正相关还是负相关；绝对值大小表示对房价的影响程度，越大则对房价影响越大，具体看Jupyter。"><a href="#关于可解释性，我们拿波士顿房价预测来说，训练得到的参数的正负表示该特征与房价呈正相关还是负相关；绝对值大小表示对房价的影响程度，越大则对房价影响越大，具体看Jupyter。" class="headerlink" title="关于可解释性，我们拿波士顿房价预测来说，训练得到的参数的正负表示该特征与房价呈正相关还是负相关；绝对值大小表示对房价的影响程度，越大则对房价影响越大，具体看Jupyter。"></a>关于可解释性，我们拿波士顿房价预测来说，训练得到的参数的正负表示该特征与房价呈正相关还是负相关；绝对值大小表示对房价的影响程度，越大则对房价影响越大，具体看Jupyter。</h4>]]></content>
       <categories>
         <category>机器学习</category>
       </categories>
       <tags>
         <tag>机器学习</tag>
-        <tag>Python</tag>
-        <tag>数据预处理</tag>
+        <tag>线性回归</tag>
+        <tag>多元线性回归</tag>
+        <tag>模型可解释性</tag>
       </tags>
   </entry>
 </search>
