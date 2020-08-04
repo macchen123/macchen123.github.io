@@ -418,7 +418,9 @@
   <entry>
     <title>机器学习笔记8</title>
     <url>/2020/07/30/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B08/</url>
-    <content><![CDATA[<h3 id="多元线性回归"><a href="#多元线性回归" class="headerlink" title="多元线性回归"></a>多元线性回归</h3><h4 id="一、什么是多元线性回归"><a href="#一、什么是多元线性回归" class="headerlink" title="一、什么是多元线性回归"></a>一、什么是多元线性回归</h4><p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200730235347025.png" alt="image-20200730235347025"></p>
+    <content><![CDATA[<h3 id="多元线性回归"><a href="#多元线性回归" class="headerlink" title="多元线性回归"></a>多元线性回归</h3><a id="more"></a>
+
+<h4 id="一、什么是多元线性回归"><a href="#一、什么是多元线性回归" class="headerlink" title="一、什么是多元线性回归"></a>一、什么是多元线性回归</h4><p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200730235347025.png" alt="image-20200730235347025"></p>
 <h4 id="二、多元线性回归的正规方程解"><a href="#二、多元线性回归的正规方程解" class="headerlink" title="二、多元线性回归的正规方程解"></a>二、多元线性回归的正规方程解</h4><p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200731030050773.png" alt="image-20200731030050773"></p>
 <p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200731030338464.png" alt="image-20200731030338464"></p>
 <h4 id="因为X是一个特征矩阵，所以-X-i-本身就是行向量，因此-theta-必须由行向量转置为列向量"><a href="#因为X是一个特征矩阵，所以-X-i-本身就是行向量，因此-theta-必须由行向量转置为列向量" class="headerlink" title="因为X是一个特征矩阵，所以$$ X^{(i)}$$本身就是行向量，因此$$\theta$$必须由行向量转置为列向量"></a>因为X是一个特征矩阵，所以$$ X^{(i)}$$本身就是行向量，因此$$\theta$$必须由行向量转置为列向量</h4><h4 id="接下来进一步推广到整个特征矩阵"><a href="#接下来进一步推广到整个特征矩阵" class="headerlink" title="接下来进一步推广到整个特征矩阵"></a>接下来进一步推广到整个特征矩阵</h4><p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200731031136440.png" alt="image-20200731031136440"></p>
