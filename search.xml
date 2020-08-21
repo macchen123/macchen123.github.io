@@ -23,77 +23,6 @@
       </tags>
   </entry>
   <entry>
-    <title>机器学习笔记10</title>
-    <url>/2020/08/10/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B010/</url>
-    <content><![CDATA[<h4 id="PCA-主成分分析（Principal-Component-Analysis）"><a href="#PCA-主成分分析（Principal-Component-Analysis）" class="headerlink" title="PCA-主成分分析（Principal Component Analysis）"></a>PCA-主成分分析（Principal Component Analysis）</h4><a id="more"></a>
-<h4 id="一、PCA综述"><a href="#一、PCA综述" class="headerlink" title="一、PCA综述"></a>一、PCA综述</h4><p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200810220126595.png" alt="image-20200810220126595"></p>
-<h4 id="二、详解PCA"><a href="#二、详解PCA" class="headerlink" title="二、详解PCA"></a>二、详解PCA</h4><ul>
-<li><p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200810223917827.png" alt="image-20200810223917827"></p>
-<ul>
-<li><h4 id="我们首先想到的降维方法是舍弃特征1或舍弃特征2，这样样本点就会映射到单一坐标轴上，达到了降维的效果。如下图："><a href="#我们首先想到的降维方法是舍弃特征1或舍弃特征2，这样样本点就会映射到单一坐标轴上，达到了降维的效果。如下图：" class="headerlink" title="我们首先想到的降维方法是舍弃特征1或舍弃特征2，这样样本点就会映射到单一坐标轴上，达到了降维的效果。如下图："></a>我们首先想到的降维方法是舍弃特征1或舍弃特征2，这样样本点就会映射到单一坐标轴上，达到了降维的效果。如下图：</h4></li>
-<li><h5 id="左图为舍弃特征1；右图为舍弃特征2："><a href="#左图为舍弃特征1；右图为舍弃特征2：" class="headerlink" title="左图为舍弃特征1；右图为舍弃特征2："></a>左图为舍弃特征1；右图为舍弃特征2：</h5><p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200810224220339.png" alt="image-20200810224220339"></p>
-</li>
-<li><h4 id="显然右图的降维效果比左图好，因为样本点直接距离较大，拥有更高的可区分度"><a href="#显然右图的降维效果比左图好，因为样本点直接距离较大，拥有更高的可区分度" class="headerlink" title="显然右图的降维效果比左图好，因为样本点直接距离较大，拥有更高的可区分度"></a>显然右图的降维效果比左图好，因为样本点直接距离较大，拥有更高的可区分度</h4></li>
-</ul>
-</li>
-<li><h4 id="但是，这是最好的方案吗？显然不是。我们想象一下-能够找到下图这样的一条斜线w-将数据降维到w上-映射到w上-之后-能最好的保留原来的分布特征-且这些点分布在了一个轴上-斜线w-后点和点之间的距离也比之前的两种方案更加的大-此时的区分度也更加明显"><a href="#但是，这是最好的方案吗？显然不是。我们想象一下-能够找到下图这样的一条斜线w-将数据降维到w上-映射到w上-之后-能最好的保留原来的分布特征-且这些点分布在了一个轴上-斜线w-后点和点之间的距离也比之前的两种方案更加的大-此时的区分度也更加明显" class="headerlink" title="但是，这是最好的方案吗？显然不是。我们想象一下,能够找到下图这样的一条斜线w,将数据降维到w上(映射到w上)之后,能最好的保留原来的分布特征,且这些点分布在了一个轴上(斜线w)后点和点之间的距离也比之前的两种方案更加的大,此时的区分度也更加明显"></a>但是，这是最好的方案吗？显然不是。我们想象一下,能够找到下图这样的一条斜线w,将数据降维到w上(映射到w上)之后,能最好的保留原来的分布特征,且这些点分布在了一个轴上(斜线w)后点和点之间的距离也比之前的两种方案更加的大,此时的区分度也更加明显</h4><ul>
-<li><p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200810224703164.png" alt="image-20200810224703164"></p>
-</li>
-<li><h4 id="接下来我们要思考以下两个问题了："><a href="#接下来我们要思考以下两个问题了：" class="headerlink" title="接下来我们要思考以下两个问题了："></a>接下来我们要思考以下两个问题了：</h4><ul>
-<li><h5 id="如何找到让这个样本降维后间距最大的轴"><a href="#如何找到让这个样本降维后间距最大的轴" class="headerlink" title="如何找到让这个样本降维后间距最大的轴?"></a>如何找到让这个样本降维后间距最大的轴?</h5></li>
-<li><h5 id="如何定义样本间距"><a href="#如何定义样本间距" class="headerlink" title="如何定义样本间距?"></a>如何定义样本间距?</h5></li>
-</ul>
-</li>
-<li><h4 id="在统计学中-有一个直接的指标可以表示样本间的间距-离散程度-那就是方差-Variance"><a href="#在统计学中-有一个直接的指标可以表示样本间的间距-离散程度-那就是方差-Variance" class="headerlink" title="在统计学中,有一个直接的指标可以表示样本间的间距(离散程度),那就是方差(Variance)"></a>在统计学中,有一个直接的指标可以表示样本间的间距(离散程度),那就是方差(Variance)</h4><p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200810225109737.png" alt="image-20200810225109737"></p>
-</li>
-<li><h4 id="上述的问题就变为了：找到一个轴-使得样本空间的所有点映射到这个轴之后-方差最大"><a href="#上述的问题就变为了：找到一个轴-使得样本空间的所有点映射到这个轴之后-方差最大" class="headerlink" title="上述的问题就变为了：找到一个轴,使得样本空间的所有点映射到这个轴之后,方差最大"></a>上述的问题就变为了：找到一个轴,使得样本空间的所有点映射到这个轴之后,方差最大</h4></li>
-<li><h4 id="接下来就是求解这个轴："><a href="#接下来就是求解这个轴：" class="headerlink" title="接下来就是求解这个轴："></a>接下来就是求解这个轴：</h4><ul>
-<li><h5 id="首先，将样例的均值归为0（demean），即将所有样本减去这批样本的均值-所有的样本点都会移动，因此可以看作样本点不动，移动坐标轴-，之后就变为了下图所示"><a href="#首先，将样例的均值归为0（demean），即将所有样本减去这批样本的均值-所有的样本点都会移动，因此可以看作样本点不动，移动坐标轴-，之后就变为了下图所示" class="headerlink" title="首先，将样例的均值归为0（demean），即将所有样本减去这批样本的均值(所有的样本点都会移动，因此可以看作样本点不动，移动坐标轴)，之后就变为了下图所示"></a>首先，将样例的均值归为0（demean），即将所有样本减去这批样本的均值(所有的样本点都会移动，因此可以看作样本点不动，移动坐标轴)，之后就变为了下图所示</h5><p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200810225647955.png" alt="image-20200810225647955"></p>
-<h5 id="此时的样本的均值就为0，方差就变成了"><a href="#此时的样本的均值就为0，方差就变成了" class="headerlink" title="此时的样本的均值就为0，方差就变成了"></a>此时的样本的均值就为0，方差就变成了</h5><p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200810230237650.png" alt="image-20200810230237650"></p>
-</li>
-<li><h5 id="我们想要求w轴的方向-w1-w2-使得-Var-Xproject-最大，Xproject-是映射到w轴之后的X的坐标："><a href="#我们想要求w轴的方向-w1-w2-使得-Var-Xproject-最大，Xproject-是映射到w轴之后的X的坐标：" class="headerlink" title="我们想要求w轴的方向(w1,w2),使得 Var(Xproject) 最大，Xproject 是映射到w轴之后的X的坐标："></a>我们想要求w轴的方向(w1,w2),使得 <em>Var(X<strong>project</strong>)</em> 最大，<em>X</em>project 是映射到w轴之后的X的坐标：</h5><p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200810230906480.png" alt="image-20200810230906480"></p>
-<h5 id="注意：因为X是矩阵，X-i-是X中的一个向量，所以在公式中不能写成括号的平方，而是模的平方"><a href="#注意：因为X是矩阵，X-i-是X中的一个向量，所以在公式中不能写成括号的平方，而是模的平方" class="headerlink" title="注意：因为X是矩阵，X(i)是X中的一个向量，所以在公式中不能写成括号的平方，而是模的平方"></a>注意：因为X是矩阵，X(i)是X中的一个向量，所以在公式中不能写成括号的平方，而是模的平方</h5><h5 id="接下来求解-X-i-project-，即如何用-X-i-表示（下图点积可以参考《机器学习中的数学》13页-1-4-4）"><a href="#接下来求解-X-i-project-，即如何用-X-i-表示（下图点积可以参考《机器学习中的数学》13页-1-4-4）" class="headerlink" title="接下来求解$X^{(i)}_{project}$，即如何用$X^{(i)}$表示（下图点积可以参考《机器学习中的数学》13页 1.4.4）"></a>接下来求解$X^{(i)}_{project}$，即如何用$X^{(i)}$表示（下图点积可以参考《机器学习中的数学》13页 1.4.4）</h5><p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200810233526467.png" alt="image-20200810233526467"></p>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-<pre><code>  ##### 注意：因为我们要将样本点映射到w方向上，所以将w定义为单位向量，其实最终求得是样本点向量在w方向上的分量，即蓝色线条，它对应的就是$\vec{X^{(i)}_{project}}$
-</code></pre><ul>
-<li><h4 id="最终："><a href="#最终：" class="headerlink" title="最终："></a>最终：</h4><p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200810234231684.png" alt="image-20200810234231684"></p>
-</li>
-</ul>
-<h4 id="三、使用梯度上升法解决PCA问题"><a href="#三、使用梯度上升法解决PCA问题" class="headerlink" title="三、使用梯度上升法解决PCA问题"></a>三、使用梯度上升法解决PCA问题</h4><p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200810235951325.png" alt="image-20200810235951325"></p>
-<h4 id="接下来进行向量化，让其运行效率更高"><a href="#接下来进行向量化，让其运行效率更高" class="headerlink" title="接下来进行向量化，让其运行效率更高"></a>接下来进行向量化，让其运行效率更高</h4><ul>
-<li><h5 id="在向量化时要想清楚谁是矩阵，谁是向量，向量是行还是列向量"><a href="#在向量化时要想清楚谁是矩阵，谁是向量，向量是行还是列向量" class="headerlink" title="在向量化时要想清楚谁是矩阵，谁是向量，向量是行还是列向量"></a>在向量化时要想清楚谁是矩阵，谁是向量，向量是行还是列向量</h5></li>
-</ul>
-<p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200811000106484.png" alt="image-20200811000106484"></p>
-<h4 id="最终结果"><a href="#最终结果" class="headerlink" title="最终结果"></a>最终结果</h4><p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200811000436388.png" alt="image-20200811000436388"></p>
-<h4 id="四、求数据的前n个主成分（即新坐标系的每一个轴对应的方向）"><a href="#四、求数据的前n个主成分（即新坐标系的每一个轴对应的方向）" class="headerlink" title="四、求数据的前n个主成分（即新坐标系的每一个轴对应的方向）"></a>四、求数据的前n个主成分（即新坐标系的每一个轴对应的方向）</h4><ul>
-<li><h5 id="PCA的本质是将数据从一个坐标系转移到另一个坐标系"><a href="#PCA的本质是将数据从一个坐标系转移到另一个坐标系" class="headerlink" title="PCA的本质是将数据从一个坐标系转移到另一个坐标系"></a>PCA的本质是将数据从一个坐标系转移到另一个坐标系</h5></li>
-<li><h5 id="下面是求解过程："><a href="#下面是求解过程：" class="headerlink" title="下面是求解过程："></a>下面是求解过程：</h5><ul>
-<li><p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200814010029327.png" alt="image-20200814010029327"></p>
-<h5 id="先将-X-i-project-乘以单位向量-vec-w-变成-vec-X-i-project-，这个就是数据X在第一主成分上的分量，我们用X减去这一分量，即-vec-X-i-vec-X-i-project-，这是向量的减法，最终得出的是图中绿色的向量。"><a href="#先将-X-i-project-乘以单位向量-vec-w-变成-vec-X-i-project-，这个就是数据X在第一主成分上的分量，我们用X减去这一分量，即-vec-X-i-vec-X-i-project-，这是向量的减法，最终得出的是图中绿色的向量。" class="headerlink" title="先将$|{X^{(i)}_{project}}|$乘以单位向量$\vec{w}$变成$\vec{X^{(i)}_{project}}$，这个就是数据X在第一主成分上的分量，我们用X减去这一分量，即$\vec{X^{(i)}} - \vec{X^{(i)}_{project}}$，这是向量的减法，最终得出的是图中绿色的向量。"></a>先将$|{X^{(i)}_{project}}|$乘以单位向量$\vec{w}$变成$\vec{X^{(i)}_{project}}$，这个就是数据X在第一主成分上的分量，我们用X减去这一分量，即$\vec{X^{(i)}} - \vec{X^{(i)}_{project}}$，这是向量的减法，最终得出的是图中绿色的向量。</h5></li>
-<li><h5 id="然后在新的数据上求第一主成分（即原数据X的第二主成分），以此类推。"><a href="#然后在新的数据上求第一主成分（即原数据X的第二主成分），以此类推。" class="headerlink" title="然后在新的数据上求第一主成分（即原数据X的第二主成分），以此类推。"></a>然后在新的数据上求第一主成分（即原数据X的第二主成分），以此类推。</h5></li>
-</ul>
-</li>
-</ul>
-<h4 id="五、高维数据向低维数据映射"><a href="#五、高维数据向低维数据映射" class="headerlink" title="五、高维数据向低维数据映射"></a>五、高维数据向低维数据映射</h4><h5 id="PCA的本质是将数据从一个坐标系转换到另一个坐标系上，即原来是n维坐标系，转换后也是n维坐标系。但是我们要将高维向低维映射，所以要从转换后的n维坐标系中取前k个坐标轴形成一个k维的坐标系。然后将X中的每一行样本都乘以W中每一个维度的坐标轴。这样就从n维降到了k维："><a href="#PCA的本质是将数据从一个坐标系转换到另一个坐标系上，即原来是n维坐标系，转换后也是n维坐标系。但是我们要将高维向低维映射，所以要从转换后的n维坐标系中取前k个坐标轴形成一个k维的坐标系。然后将X中的每一行样本都乘以W中每一个维度的坐标轴。这样就从n维降到了k维：" class="headerlink" title="PCA的本质是将数据从一个坐标系转换到另一个坐标系上，即原来是n维坐标系，转换后也是n维坐标系。但是我们要将高维向低维映射，所以要从转换后的n维坐标系中取前k个坐标轴形成一个k维的坐标系。然后将X中的每一行样本都乘以W中每一个维度的坐标轴。这样就从n维降到了k维："></a>PCA的本质是将数据从一个坐标系转换到另一个坐标系上，即原来是n维坐标系，转换后也是n维坐标系。但是我们要将高维向低维映射，所以要从转换后的n维坐标系中取前k个坐标轴形成一个k维的坐标系。然后将X中的每一行样本都乘以W中每一个维度的坐标轴。这样就从n维降到了k维：</h5><p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200814224611023.png" alt="image-20200814224611023"></p>
-<h5 id="也可以从k维恢复到n维，但是恢复回来的-X-m-不等于原来的X："><a href="#也可以从k维恢复到n维，但是恢复回来的-X-m-不等于原来的X：" class="headerlink" title="也可以从k维恢复到n维，但是恢复回来的$X_m$不等于原来的X："></a>也可以从k维恢复到n维，但是恢复回来的$X_m$不等于原来的X：</h5><p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200814224911159.png" alt="image-20200814224911159"></p>
-<h4 id="六、PCA在人脸识别中的应用"><a href="#六、PCA在人脸识别中的应用" class="headerlink" title="六、PCA在人脸识别中的应用"></a>六、PCA在人脸识别中的应用</h4><p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200815183722277.png" alt="image-20200815183722277"></p>
-<h5 id="对于-W-k-来说，本身每一行代表一个方向。那么换一种思路：如果每一行看作一个样本，那么第一行表示最能反映原数据X的样本特征，以此类推。"><a href="#对于-W-k-来说，本身每一行代表一个方向。那么换一种思路：如果每一行看作一个样本，那么第一行表示最能反映原数据X的样本特征，以此类推。" class="headerlink" title="对于$W_k$来说，本身每一行代表一个方向。那么换一种思路：如果每一行看作一个样本，那么第一行表示最能反映原数据X的样本特征，以此类推。"></a>对于$W_k$来说，本身每一行代表一个方向。那么换一种思路：如果每一行看作一个样本，那么第一行表示最能反映原数据X的样本特征，以此类推。</h5><h5 id="在人脸识别中-X的每一行对应一个人脸数据，W的每一行也是一个人脸数据，这个就被称为特征脸，所以每一个特征脸其实对应一个主成分"><a href="#在人脸识别中-X的每一行对应一个人脸数据，W的每一行也是一个人脸数据，这个就被称为特征脸，所以每一个特征脸其实对应一个主成分" class="headerlink" title="在人脸识别中,X的每一行对应一个人脸数据，W的每一行也是一个人脸数据，这个就被称为特征脸，所以每一个特征脸其实对应一个主成分"></a>在人脸识别中,X的每一行对应一个人脸数据，W的每一行也是一个人脸数据，这个就被称为特征脸，所以每一个特征脸其实对应一个主成分</h5>]]></content>
-      <categories>
-        <category>机器学习</category>
-      </categories>
-      <tags>
-        <tag>机器学习</tag>
-        <tag>PCA</tag>
-        <tag>非监督学习</tag>
-        <tag>数据降维</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>机器学习笔记11</title>
     <url>/2020/08/15/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B011/</url>
     <content><![CDATA[<h3 id="多项式回归"><a href="#多项式回归" class="headerlink" title="多项式回归"></a>多项式回归</h3><a id="more"></a>
@@ -501,29 +430,6 @@
       </tags>
   </entry>
   <entry>
-    <title>机器学习笔记7</title>
-    <url>/2020/07/30/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B07/</url>
-    <content><![CDATA[<h3 id="回归算法的评价"><a href="#回归算法的评价" class="headerlink" title="回归算法的评价"></a>回归算法的评价</h3><a id="more"></a>
-<h4 id="一、从简单线性回归引出横梁标准"><a href="#一、从简单线性回归引出横梁标准" class="headerlink" title="一、从简单线性回归引出横梁标准"></a>一、从简单线性回归引出横梁标准</h4><p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200730220946800.png" alt="image-20200730220946800"></p>
-<h5 id="衡量标准就是测试集中的真实值与测试集中的预测值的差的平方，但是该衡量标准与样本数量m有关。为了避免不同样本量的数据集带来的模型优劣争议，我们要将这个式子除以m，得到下图"><a href="#衡量标准就是测试集中的真实值与测试集中的预测值的差的平方，但是该衡量标准与样本数量m有关。为了避免不同样本量的数据集带来的模型优劣争议，我们要将这个式子除以m，得到下图" class="headerlink" title="衡量标准就是测试集中的真实值与测试集中的预测值的差的平方，但是该衡量标准与样本数量m有关。为了避免不同样本量的数据集带来的模型优劣争议，我们要将这个式子除以m，得到下图"></a>衡量标准就是测试集中的真实值与测试集中的预测值的差的平方，但是该衡量标准与样本数量m有关。为了避免不同样本量的数据集带来的模型优劣争议，我们要将这个式子除以m，得到下图</h5><p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200730221356928.png" alt="image-20200730221356928"></p>
-<h5 id="但是MSE会使得该数据集的量纲（单位）为原来的平方（比如米变成平方米），所以我们可以给MSE开根号使得它和原数据集的量纲相同，这就是RMSE"><a href="#但是MSE会使得该数据集的量纲（单位）为原来的平方（比如米变成平方米），所以我们可以给MSE开根号使得它和原数据集的量纲相同，这就是RMSE" class="headerlink" title="但是MSE会使得该数据集的量纲（单位）为原来的平方（比如米变成平方米），所以我们可以给MSE开根号使得它和原数据集的量纲相同，这就是RMSE"></a>但是MSE会使得该数据集的量纲（单位）为原来的平方（比如米变成平方米），所以我们可以给MSE开根号使得它和原数据集的量纲相同，这就是RMSE</h5><p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200730221818237.png" alt="image-20200730221818237"></p>
-<h5 id="同样我们还可以使用以下的评价算法，注意线性回归模型找最优参数时不能用绝对值（不是处处可导），但是评价时就可以用，它们是互不影响的。"><a href="#同样我们还可以使用以下的评价算法，注意线性回归模型找最优参数时不能用绝对值（不是处处可导），但是评价时就可以用，它们是互不影响的。" class="headerlink" title="同样我们还可以使用以下的评价算法，注意线性回归模型找最优参数时不能用绝对值（不是处处可导），但是评价时就可以用，它们是互不影响的。"></a>同样我们还可以使用以下的评价算法，注意线性回归模型找最优参数时不能用绝对值（不是处处可导），但是评价时就可以用，它们是互不影响的。</h5><p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200730222124641.png" alt="image-20200730222124641"></p>
-<h3 id="二、RMSE-VS-MAE"><a href="#二、RMSE-VS-MAE" class="headerlink" title="二、RMSE VS  MAE"></a>二、RMSE VS  MAE</h3><p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200730230527231.png" alt="image-20200730230527231"></p>
-<h4 id="RMSE中的平方操作相当于放大了max-y-true-y-predict-，所以开根号以后依然比MAE大，因此我们要想让RMSE或MSE更有意义，就要让差值尽量小。"><a href="#RMSE中的平方操作相当于放大了max-y-true-y-predict-，所以开根号以后依然比MAE大，因此我们要想让RMSE或MSE更有意义，就要让差值尽量小。" class="headerlink" title="RMSE中的平方操作相当于放大了max(y_{true}-y_{predict})，所以开根号以后依然比MAE大，因此我们要想让RMSE或MSE更有意义，就要让差值尽量小。"></a>RMSE中的平方操作相当于放大了<script type="math/tex">max(y_{true}-y_{predict})</script>，所以开根号以后依然比MAE大，因此我们要想让RMSE或MSE更有意义，就要让差值尽量小。</h4><h3 id="三、最好的衡量线性回归法的指标"><a href="#三、最好的衡量线性回归法的指标" class="headerlink" title="三、最好的衡量线性回归法的指标"></a>三、最好的衡量线性回归法的指标</h3><h4 id="从分类算法的评价算法我们可以得出它可以通过0到1中的一个数来衡量模型的好坏。但由于RMSE和MSE只能得出平均差值，所以导致训练处理的模型不具有通用性（比如房价和学生成绩）"><a href="#从分类算法的评价算法我们可以得出它可以通过0到1中的一个数来衡量模型的好坏。但由于RMSE和MSE只能得出平均差值，所以导致训练处理的模型不具有通用性（比如房价和学生成绩）" class="headerlink" title="从分类算法的评价算法我们可以得出它可以通过0到1中的一个数来衡量模型的好坏。但由于RMSE和MSE只能得出平均差值，所以导致训练处理的模型不具有通用性（比如房价和学生成绩）"></a>从分类算法的评价算法我们可以得出它可以通过0到1中的一个数来衡量模型的好坏。但由于RMSE和MSE只能得出平均差值，所以导致训练处理的模型不具有通用性（比如房价和学生成绩）</h4><h4 id="因此，我们要使用以下算法来评价模型"><a href="#因此，我们要使用以下算法来评价模型" class="headerlink" title="因此，我们要使用以下算法来评价模型"></a>因此，我们要使用以下算法来评价模型</h4><p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200730232425399.png" alt="image-20200730232425399"></p>
-<p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200730232723872.png" alt="image-20200730232723872"></p>
-<h4 id="R2是衡量了我们模型没有产生错误的相应指标"><a href="#R2是衡量了我们模型没有产生错误的相应指标" class="headerlink" title="R2是衡量了我们模型没有产生错误的相应指标"></a>R2是衡量了我们模型没有产生错误的相应指标</h4><p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200730233257406.png" alt="image-20200730233257406"></p>
-<p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200730233453803.png" alt="image-20200730233453803"></p>
-<h4 id="注意，Var指方差"><a href="#注意，Var指方差" class="headerlink" title="注意，Var指方差"></a>注意，Var指方差</h4>]]></content>
-      <categories>
-        <category>机器学习</category>
-      </categories>
-      <tags>
-        <tag>机器学习</tag>
-        <tag>线性回归</tag>
-        <tag>回归算法评价</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>机器学习笔记8</title>
     <url>/2020/07/30/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B08/</url>
     <content><![CDATA[<h3 id="多元线性回归"><a href="#多元线性回归" class="headerlink" title="多元线性回归"></a>多元线性回归</h3><a id="more"></a>
@@ -549,12 +455,36 @@
       </tags>
   </entry>
   <entry>
+    <title>机器学习笔记7</title>
+    <url>/2020/07/30/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B07/</url>
+    <content><![CDATA[<h3 id="回归算法的评价"><a href="#回归算法的评价" class="headerlink" title="回归算法的评价"></a>回归算法的评价</h3><a id="more"></a>
+<h4 id="一、从简单线性回归引出横梁标准"><a href="#一、从简单线性回归引出横梁标准" class="headerlink" title="一、从简单线性回归引出横梁标准"></a>一、从简单线性回归引出横梁标准</h4><p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200730220946800.png" alt="image-20200730220946800"></p>
+<h5 id="衡量标准就是测试集中的真实值与测试集中的预测值的差的平方，但是该衡量标准与样本数量m有关。为了避免不同样本量的数据集带来的模型优劣争议，我们要将这个式子除以m，得到下图"><a href="#衡量标准就是测试集中的真实值与测试集中的预测值的差的平方，但是该衡量标准与样本数量m有关。为了避免不同样本量的数据集带来的模型优劣争议，我们要将这个式子除以m，得到下图" class="headerlink" title="衡量标准就是测试集中的真实值与测试集中的预测值的差的平方，但是该衡量标准与样本数量m有关。为了避免不同样本量的数据集带来的模型优劣争议，我们要将这个式子除以m，得到下图"></a>衡量标准就是测试集中的真实值与测试集中的预测值的差的平方，但是该衡量标准与样本数量m有关。为了避免不同样本量的数据集带来的模型优劣争议，我们要将这个式子除以m，得到下图</h5><p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200730221356928.png" alt="image-20200730221356928"></p>
+<h5 id="但是MSE会使得该数据集的量纲（单位）为原来的平方（比如米变成平方米），所以我们可以给MSE开根号使得它和原数据集的量纲相同，这就是RMSE"><a href="#但是MSE会使得该数据集的量纲（单位）为原来的平方（比如米变成平方米），所以我们可以给MSE开根号使得它和原数据集的量纲相同，这就是RMSE" class="headerlink" title="但是MSE会使得该数据集的量纲（单位）为原来的平方（比如米变成平方米），所以我们可以给MSE开根号使得它和原数据集的量纲相同，这就是RMSE"></a>但是MSE会使得该数据集的量纲（单位）为原来的平方（比如米变成平方米），所以我们可以给MSE开根号使得它和原数据集的量纲相同，这就是RMSE</h5><p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200730221818237.png" alt="image-20200730221818237"></p>
+<h5 id="同样我们还可以使用以下的评价算法，注意线性回归模型找最优参数时不能用绝对值（不是处处可导），但是评价时就可以用，它们是互不影响的。"><a href="#同样我们还可以使用以下的评价算法，注意线性回归模型找最优参数时不能用绝对值（不是处处可导），但是评价时就可以用，它们是互不影响的。" class="headerlink" title="同样我们还可以使用以下的评价算法，注意线性回归模型找最优参数时不能用绝对值（不是处处可导），但是评价时就可以用，它们是互不影响的。"></a>同样我们还可以使用以下的评价算法，注意线性回归模型找最优参数时不能用绝对值（不是处处可导），但是评价时就可以用，它们是互不影响的。</h5><p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200730222124641.png" alt="image-20200730222124641"></p>
+<h3 id="二、RMSE-VS-MAE"><a href="#二、RMSE-VS-MAE" class="headerlink" title="二、RMSE VS  MAE"></a>二、RMSE VS  MAE</h3><p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200730230527231.png" alt="image-20200730230527231"></p>
+<h4 id="RMSE中的平方操作相当于放大了max-y-true-y-predict-，所以开根号以后依然比MAE大，因此我们要想让RMSE或MSE更有意义，就要让差值尽量小。"><a href="#RMSE中的平方操作相当于放大了max-y-true-y-predict-，所以开根号以后依然比MAE大，因此我们要想让RMSE或MSE更有意义，就要让差值尽量小。" class="headerlink" title="RMSE中的平方操作相当于放大了max(y_{true}-y_{predict})，所以开根号以后依然比MAE大，因此我们要想让RMSE或MSE更有意义，就要让差值尽量小。"></a>RMSE中的平方操作相当于放大了<script type="math/tex">max(y_{true}-y_{predict})</script>，所以开根号以后依然比MAE大，因此我们要想让RMSE或MSE更有意义，就要让差值尽量小。</h4><h3 id="三、最好的衡量线性回归法的指标"><a href="#三、最好的衡量线性回归法的指标" class="headerlink" title="三、最好的衡量线性回归法的指标"></a>三、最好的衡量线性回归法的指标</h3><h4 id="从分类算法的评价算法我们可以得出它可以通过0到1中的一个数来衡量模型的好坏。但由于RMSE和MSE只能得出平均差值，所以导致训练处理的模型不具有通用性（比如房价和学生成绩）"><a href="#从分类算法的评价算法我们可以得出它可以通过0到1中的一个数来衡量模型的好坏。但由于RMSE和MSE只能得出平均差值，所以导致训练处理的模型不具有通用性（比如房价和学生成绩）" class="headerlink" title="从分类算法的评价算法我们可以得出它可以通过0到1中的一个数来衡量模型的好坏。但由于RMSE和MSE只能得出平均差值，所以导致训练处理的模型不具有通用性（比如房价和学生成绩）"></a>从分类算法的评价算法我们可以得出它可以通过0到1中的一个数来衡量模型的好坏。但由于RMSE和MSE只能得出平均差值，所以导致训练处理的模型不具有通用性（比如房价和学生成绩）</h4><h4 id="因此，我们要使用以下算法来评价模型"><a href="#因此，我们要使用以下算法来评价模型" class="headerlink" title="因此，我们要使用以下算法来评价模型"></a>因此，我们要使用以下算法来评价模型</h4><p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200730232425399.png" alt="image-20200730232425399"></p>
+<p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200730232723872.png" alt="image-20200730232723872"></p>
+<h4 id="R2是衡量了我们模型没有产生错误的相应指标"><a href="#R2是衡量了我们模型没有产生错误的相应指标" class="headerlink" title="R2是衡量了我们模型没有产生错误的相应指标"></a>R2是衡量了我们模型没有产生错误的相应指标</h4><p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200730233257406.png" alt="image-20200730233257406"></p>
+<p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200730233453803.png" alt="image-20200730233453803"></p>
+<h4 id="注意，Var指方差"><a href="#注意，Var指方差" class="headerlink" title="注意，Var指方差"></a>注意，Var指方差</h4>]]></content>
+      <categories>
+        <category>机器学习</category>
+      </categories>
+      <tags>
+        <tag>机器学习</tag>
+        <tag>线性回归</tag>
+        <tag>回归算法评价</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>机器学习笔记9</title>
     <url>/2020/08/07/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B09/</url>
     <content><![CDATA[<h3 id="梯度下降法"><a href="#梯度下降法" class="headerlink" title="梯度下降法"></a>梯度下降法</h3><a id="more"></a>
 <h4 id="一，什么是梯度下降法"><a href="#一，什么是梯度下降法" class="headerlink" title="一，什么是梯度下降法"></a>一，什么是梯度下降法</h4><h4 id="1、综述"><a href="#1、综述" class="headerlink" title="1、综述"></a>1、综述</h4><p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200807161901759.png" alt="image-20200807161901759"></p>
-<h4 id="2、什么是梯度下降法"><a href="#2、什么是梯度下降法" class="headerlink" title="2、什么是梯度下降法"></a>2、什么是梯度下降法</h4><h4 id="2-1、什么是梯度"><a href="#2-1、什么是梯度" class="headerlink" title="2.1、什么是梯度"></a>2.1、什么是梯度</h4><ul>
-<li><h4 id="一个函数在某点的梯度，表示该函数在该点处沿着梯度方向变化最快，变化率最大，即函数在这一点处沿着梯度方向的导数能够取得最大值"><a href="#一个函数在某点的梯度，表示该函数在该点处沿着梯度方向变化最快，变化率最大，即函数在这一点处沿着梯度方向的导数能够取得最大值" class="headerlink" title="一个函数在某点的梯度，表示该函数在该点处沿着梯度方向变化最快，变化率最大，即函数在这一点处沿着梯度方向的导数能够取得最大值"></a>一个函数在某点的梯度，表示该函数在该点处沿着梯度方向变化最快，变化率最大，即函数在这一点处沿着梯度方向的导数能够取得最大值</h4></li>
+<h4 id="2、什么是梯度下降法"><a href="#2、什么是梯度下降法" class="headerlink" title="2、什么是梯度下降法"></a>2、什么是梯度下降法</h4><h4 id="2-1、什么是梯度"><a href="#2-1、什么是梯度" class="headerlink" title="2.1、什么是梯度"></a>2.1、什么是梯度</h4><p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200821214353557.png" alt="image-20200821214353557"></p>
+<ul>
+<li><h4 id="对于函数绘制的曲面上的任意点，都有一个由偏导数组成的向量，该向量指向最大的递增方向，即函数的导数变化率最大的方向。"><a href="#对于函数绘制的曲面上的任意点，都有一个由偏导数组成的向量，该向量指向最大的递增方向，即函数的导数变化率最大的方向。" class="headerlink" title="对于函数绘制的曲面上的任意点，都有一个由偏导数组成的向量，该向量指向最大的递增方向，即函数的导数变化率最大的方向。"></a>对于函数绘制的曲面上的任意点，都有一个由偏导数组成的向量，该向量指向最大的递增方向，即函数的导数变化率最大的方向。</h4></li>
 <li><h4 id="在曲面w-w-x-y-z-上，设▽w-是一个综合了w所有偏导数的向量，则▽w-就是梯度向量，简称梯度"><a href="#在曲面w-w-x-y-z-上，设▽w-是一个综合了w所有偏导数的向量，则▽w-就是梯度向量，简称梯度" class="headerlink" title="在曲面w=w(x,y,z)上，设▽w 是一个综合了w所有偏导数的向量，则▽w 就是梯度向量，简称梯度"></a>在曲面w=w(x,y,z)上，设<strong>▽</strong>w 是一个综合了w所有偏导数的向量，则<strong>▽</strong>w 就是梯度向量，简称梯度</h4><ul>
 <li><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200808012812302.png" alt="image-20200808012812302"></li>
 </ul>
