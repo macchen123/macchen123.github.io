@@ -270,7 +270,7 @@
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>579</span>
+              <span>561</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
@@ -290,7 +290,6 @@
 
       
         <h3 id="线性回归"><a href="#线性回归" class="headerlink" title="线性回归"></a>线性回归</h3><a id="more"></a>
-
 <h4 id="一、线性回归简述"><a href="#一、线性回归简述" class="headerlink" title="一、线性回归简述"></a>一、线性回归简述</h4><p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200726225427820.png" alt="image-20200726225427820"></p>
 <ul>
 <li><h5 id="什么是线性回归"><a href="#什么是线性回归" class="headerlink" title="什么是线性回归"></a>什么是线性回归</h5><ul>
@@ -308,22 +307,19 @@
 <p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200726230701216.png" alt="image-20200726230701216"></p>
 <h4 id="说明："><a href="#说明：" class="headerlink" title="说明："></a>说明：</h4><ul>
 <li><h6 id="因为我们要考虑所有样本的差距，所以不能有正有负（可能会抵消为0），因此每个样本的差距值应该-gt-0。"><a href="#因为我们要考虑所有样本的差距，所以不能有正有负（可能会抵消为0），因此每个样本的差距值应该-gt-0。" class="headerlink" title="因为我们要考虑所有样本的差距，所以不能有正有负（可能会抵消为0），因此每个样本的差距值应该&gt;=0。"></a>因为我们要考虑所有样本的差距，所以不能有正有负（可能会抵消为0），因此每个样本的差距值应该&gt;=0。</h6></li>
-<li><p>######由于我们希望真实值和预测值差距尽量小，所以需要求极值，而绝对值函数不是连续处处可导，所以我们改差值的平方函数。</p>
-</li>
+<li><h6 id="由于我们希望真实值和预测值差距尽量小，所以需要求极值，而绝对值函数不是连续处处可导，所以我们改差值的平方函数。"><a href="#由于我们希望真实值和预测值差距尽量小，所以需要求极值，而绝对值函数不是连续处处可导，所以我们改差值的平方函数。" class="headerlink" title="由于我们希望真实值和预测值差距尽量小，所以需要求极值，而绝对值函数不是连续处处可导，所以我们改差值的平方函数。"></a>由于我们希望真实值和预测值差距尽量小，所以需要求极值，而绝对值函数不是连续处处可导，所以我们改差值的平方函数。</h6></li>
 </ul>
 <p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200726231427640.png" alt="image-20200726231427640"></p>
 <p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200726231641441.png" alt="image-20200726231641441"></p>
 <h4 id="说明：-1"><a href="#说明：-1" class="headerlink" title="说明："></a>说明：</h4><ul>
-<li><p>损失函数：度量模型没有拟合到的样本的程度</p>
-</li>
+<li>损失函数：度量模型没有拟合到的样本的程度</li>
 <li><p>效用函数：度量模型拟合到的样本的程度</p>
 </li>
 <li><p>近乎所有的参数学习算法都是这样来求解最优参数（线性回归，多项式回归，逻辑回归，SVM，神经网络等等）</p>
 </li>
 </ul>
 <p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200726232703309.png" alt="image-20200726232703309"></p>
-<p>####2.最小二乘法：</p>
-<h5 id="推导过程（求解a和b）"><a href="#推导过程（求解a和b）" class="headerlink" title="推导过程（求解a和b）"></a>推导过程（求解a和b）</h5><p>首先求解参数b</p>
+<h4 id="2-最小二乘法："><a href="#2-最小二乘法：" class="headerlink" title="2.最小二乘法："></a>2.最小二乘法：</h4><h5 id="推导过程（求解a和b）"><a href="#推导过程（求解a和b）" class="headerlink" title="推导过程（求解a和b）"></a>推导过程（求解a和b）</h5><p>首先求解参数b</p>
 <p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200726234248085.png" alt="image-20200726234248085"></p>
 <p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200726234339896.png" alt="image-20200726234339896"></p>
 <p>然后求解参数a</p>
@@ -332,7 +328,7 @@
 <h3 id="说明：其实到这里已经将参数a求了出来，但是为了编程实现方便，我们要进一步简化这个式子，请看下图，注意-bar-x和-bar-y-都是常数，所以可以提到求和符号前面"><a href="#说明：其实到这里已经将参数a求了出来，但是为了编程实现方便，我们要进一步简化这个式子，请看下图，注意-bar-x和-bar-y-都是常数，所以可以提到求和符号前面" class="headerlink" title="说明：其实到这里已经将参数a求了出来，但是为了编程实现方便，我们要进一步简化这个式子，请看下图，注意$ \bar x和\bar y $都是常数，所以可以提到求和符号前面"></a>说明：其实到这里已经将参数a求了出来，但是为了编程实现方便，我们要进一步简化这个式子，请看下图，注意$ \bar x和\bar y $都是常数，所以可以提到求和符号前面</h3><p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200727001049264.png" alt="image-20200727001049264"></p>
 <h3 id="三，向量化运算"><a href="#三，向量化运算" class="headerlink" title="三，向量化运算"></a>三，向量化运算</h3><h4 id="在代码编写过程中使用for循环会使运行效率大大降低，所以我们要把循环去掉。"><a href="#在代码编写过程中使用for循环会使运行效率大大降低，所以我们要把循环去掉。" class="headerlink" title="在代码编写过程中使用for循环会使运行效率大大降低，所以我们要把循环去掉。"></a>在代码编写过程中使用for循环会使运行效率大大降低，所以我们要把循环去掉。</h4><p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200729233852136.png" alt="image-20200729233852136"></p>
 <p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200729233924794.png" alt="image-20200729233924794"></p>
-<h4 id="所以分子为-vec-vec-x-bar-x-cdot-vec-vec-y-bar-y"><a href="#所以分子为-vec-vec-x-bar-x-cdot-vec-vec-y-bar-y" class="headerlink" title="所以分子为$$ (\vec{\vec{x}-\bar x})\cdot(\vec{\vec{y}-\bar y} )$$"></a>所以分子为$$ (\vec{\vec{x}-\bar x})\cdot(\vec{\vec{y}-\bar y} )$$</h4><h4 id="分母为-vec-vec-x-bar-x-cdot-vec-vec-x-bar-x"><a href="#分母为-vec-vec-x-bar-x-cdot-vec-vec-x-bar-x" class="headerlink" title="分母为$$ (\vec{\vec{x}-\bar x})\cdot(\vec{\vec{x}-\bar x}) $$"></a>分母为$$ (\vec{\vec{x}-\bar x})\cdot(\vec{\vec{x}-\bar x}) $$</h4><h4 id="注意，这种思想非常重要，请以后常用"><a href="#注意，这种思想非常重要，请以后常用" class="headerlink" title="注意，这种思想非常重要，请以后常用"></a>注意，这种思想非常重要，请以后常用</h4>
+<h4 id="所以分子为-vec-vec-x-bar-x-cdot-vec-vec-y-bar-y"><a href="#所以分子为-vec-vec-x-bar-x-cdot-vec-vec-y-bar-y" class="headerlink" title="所以分子为(\vec{\vec{x}-\bar x})\cdot(\vec{\vec{y}-\bar y} )"></a>所以分子为<script type="math/tex">(\vec{\vec{x}-\bar x})\cdot(\vec{\vec{y}-\bar y} )</script></h4><h4 id="分母为-vec-vec-x-bar-x-cdot-vec-vec-x-bar-x"><a href="#分母为-vec-vec-x-bar-x-cdot-vec-vec-x-bar-x" class="headerlink" title="分母为(\vec{\vec{x}-\bar x})\cdot(\vec{\vec{x}-\bar x})"></a>分母为<script type="math/tex">(\vec{\vec{x}-\bar x})\cdot(\vec{\vec{x}-\bar x})</script></h4><h4 id="注意，这种思想非常重要，请以后常用"><a href="#注意，这种思想非常重要，请以后常用" class="headerlink" title="注意，这种思想非常重要，请以后常用"></a>注意，这种思想非常重要，请以后常用</h4>
     </div>
 
     
@@ -421,7 +417,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#线性回归"><span class="nav-number">1.</span> <span class="nav-text">线性回归</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#一、线性回归简述"><span class="nav-number">1.1.</span> <span class="nav-text">一、线性回归简述</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#什么是线性回归"><span class="nav-number">1.1.1.</span> <span class="nav-text">什么是线性回归</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#注意：分类算法的横纵坐标都是样本特征；而回归算法的横纵坐标分别为样本特征和样本标签"><span class="nav-number">1.1.2.</span> <span class="nav-text">注意：分类算法的横纵坐标都是样本特征；而回归算法的横纵坐标分别为样本特征和样本标签</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#样本特征只有一个称为简单线性回归"><span class="nav-number">1.1.3.</span> <span class="nav-text">样本特征只有一个称为简单线性回归</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#二、简单线性回归"><span class="nav-number">2.</span> <span class="nav-text">二、简单线性回归</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#说明："><span class="nav-number">2.1.</span> <span class="nav-text">说明：</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#因为我们要考虑所有样本的差距，所以不能有正有负（可能会抵消为0），因此每个样本的差距值应该-gt-0。"><span class="nav-number">2.1.0.1.</span> <span class="nav-text">因为我们要考虑所有样本的差距，所以不能有正有负（可能会抵消为0），因此每个样本的差距值应该&gt;&#x3D;0。</span></a></li></ol></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#说明：-1"><span class="nav-number">2.2.</span> <span class="nav-text">说明：</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#推导过程（求解a和b）"><span class="nav-number">2.2.1.</span> <span class="nav-text">推导过程（求解a和b）</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#说明：其实到这里已经将参数a求了出来，但是为了编程实现方便，我们要进一步简化这个式子，请看下图，注意-bar-x和-bar-y-都是常数，所以可以提到求和符号前面"><span class="nav-number">3.</span> <span class="nav-text">说明：其实到这里已经将参数a求了出来，但是为了编程实现方便，我们要进一步简化这个式子，请看下图，注意$ \bar x和\bar y $都是常数，所以可以提到求和符号前面</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#三，向量化运算"><span class="nav-number">4.</span> <span class="nav-text">三，向量化运算</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#在代码编写过程中使用for循环会使运行效率大大降低，所以我们要把循环去掉。"><span class="nav-number">4.1.</span> <span class="nav-text">在代码编写过程中使用for循环会使运行效率大大降低，所以我们要把循环去掉。</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#所以分子为-vec-vec-x-bar-x-cdot-vec-vec-y-bar-y"><span class="nav-number">4.2.</span> <span class="nav-text">所以分子为$$ (\vec{\vec{x}-\bar x})\cdot(\vec{\vec{y}-\bar y} )$$</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#分母为-vec-vec-x-bar-x-cdot-vec-vec-x-bar-x"><span class="nav-number">4.3.</span> <span class="nav-text">分母为$$ (\vec{\vec{x}-\bar x})\cdot(\vec{\vec{x}-\bar x}) $$</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#注意，这种思想非常重要，请以后常用"><span class="nav-number">4.4.</span> <span class="nav-text">注意，这种思想非常重要，请以后常用</span></a></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#线性回归"><span class="nav-number">1.</span> <span class="nav-text">线性回归</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#一、线性回归简述"><span class="nav-number">1.1.</span> <span class="nav-text">一、线性回归简述</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#什么是线性回归"><span class="nav-number">1.1.1.</span> <span class="nav-text">什么是线性回归</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#注意：分类算法的横纵坐标都是样本特征；而回归算法的横纵坐标分别为样本特征和样本标签"><span class="nav-number">1.1.2.</span> <span class="nav-text">注意：分类算法的横纵坐标都是样本特征；而回归算法的横纵坐标分别为样本特征和样本标签</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#样本特征只有一个称为简单线性回归"><span class="nav-number">1.1.3.</span> <span class="nav-text">样本特征只有一个称为简单线性回归</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#二、简单线性回归"><span class="nav-number">2.</span> <span class="nav-text">二、简单线性回归</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#说明："><span class="nav-number">2.1.</span> <span class="nav-text">说明：</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#因为我们要考虑所有样本的差距，所以不能有正有负（可能会抵消为0），因此每个样本的差距值应该-gt-0。"><span class="nav-number">2.1.0.1.</span> <span class="nav-text">因为我们要考虑所有样本的差距，所以不能有正有负（可能会抵消为0），因此每个样本的差距值应该&gt;&#x3D;0。</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#由于我们希望真实值和预测值差距尽量小，所以需要求极值，而绝对值函数不是连续处处可导，所以我们改差值的平方函数。"><span class="nav-number">2.1.0.2.</span> <span class="nav-text">由于我们希望真实值和预测值差距尽量小，所以需要求极值，而绝对值函数不是连续处处可导，所以我们改差值的平方函数。</span></a></li></ol></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#说明：-1"><span class="nav-number">2.2.</span> <span class="nav-text">说明：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-最小二乘法："><span class="nav-number">2.3.</span> <span class="nav-text">2.最小二乘法：</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#推导过程（求解a和b）"><span class="nav-number">2.3.1.</span> <span class="nav-text">推导过程（求解a和b）</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#说明：其实到这里已经将参数a求了出来，但是为了编程实现方便，我们要进一步简化这个式子，请看下图，注意-bar-x和-bar-y-都是常数，所以可以提到求和符号前面"><span class="nav-number">3.</span> <span class="nav-text">说明：其实到这里已经将参数a求了出来，但是为了编程实现方便，我们要进一步简化这个式子，请看下图，注意$ \bar x和\bar y $都是常数，所以可以提到求和符号前面</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#三，向量化运算"><span class="nav-number">4.</span> <span class="nav-text">三，向量化运算</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#在代码编写过程中使用for循环会使运行效率大大降低，所以我们要把循环去掉。"><span class="nav-number">4.1.</span> <span class="nav-text">在代码编写过程中使用for循环会使运行效率大大降低，所以我们要把循环去掉。</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#所以分子为-vec-vec-x-bar-x-cdot-vec-vec-y-bar-y"><span class="nav-number">4.2.</span> <span class="nav-text">所以分子为(\vec{\vec{x}-\bar x})\cdot(\vec{\vec{y}-\bar y} )</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#分母为-vec-vec-x-bar-x-cdot-vec-vec-x-bar-x"><span class="nav-number">4.3.</span> <span class="nav-text">分母为(\vec{\vec{x}-\bar x})\cdot(\vec{\vec{x}-\bar x})</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#注意，这种思想非常重要，请以后常用"><span class="nav-number">4.4.</span> <span class="nav-text">注意，这种思想非常重要，请以后常用</span></a></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -437,7 +433,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">10</span>
+          <span class="site-state-item-count">11</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -487,13 +483,13 @@
       <i class="fa fa-chart-area"></i>
     </span>
       <span class="post-meta-item-text">站点总字数：</span>
-    <span title="站点总字数">8k</span>
+    <span title="站点总字数">9k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
       <span class="post-meta-item-text">站点阅读时长 &asymp;</span>
-    <span title="站点阅读时长">7 分钟</span>
+    <span title="站点阅读时长">8 分钟</span>
 </div>
 
         

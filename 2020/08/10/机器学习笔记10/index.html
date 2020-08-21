@@ -46,8 +46,8 @@
 <meta property="article:published_time" content="2020-08-10T13:47:10.000Z">
 <meta property="article:modified_time" content="2020-08-15T10:48:08.580Z">
 <meta property="article:author" content="macchen">
-<meta property="article:tag" content="PCA">
 <meta property="article:tag" content="机器学习">
+<meta property="article:tag" content="PCA">
 <meta property="article:tag" content="非监督学习">
 <meta property="article:tag" content="数据降维">
 <meta name="twitter:card" content="summary">
@@ -274,7 +274,7 @@
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>1.5k</span>
+              <span>1.4k</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
@@ -294,7 +294,6 @@
 
       
         <h4 id="PCA-主成分分析（Principal-Component-Analysis）"><a href="#PCA-主成分分析（Principal-Component-Analysis）" class="headerlink" title="PCA-主成分分析（Principal Component Analysis）"></a>PCA-主成分分析（Principal Component Analysis）</h4><a id="more"></a>
-
 <h4 id="一、PCA综述"><a href="#一、PCA综述" class="headerlink" title="一、PCA综述"></a>一、PCA综述</h4><p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200810220126595.png" alt="image-20200810220126595"></p>
 <h4 id="二、详解PCA"><a href="#二、详解PCA" class="headerlink" title="二、详解PCA"></a>二、详解PCA</h4><ul>
 <li><p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200810223917827.png" alt="image-20200810223917827"></p>
@@ -309,59 +308,49 @@
 <li><p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200810224703164.png" alt="image-20200810224703164"></p>
 </li>
 <li><h4 id="接下来我们要思考以下两个问题了："><a href="#接下来我们要思考以下两个问题了：" class="headerlink" title="接下来我们要思考以下两个问题了："></a>接下来我们要思考以下两个问题了：</h4><ul>
-<li><p>#####如何找到让这个样本降维后间距最大的轴?</p>
-</li>
+<li><h5 id="如何找到让这个样本降维后间距最大的轴"><a href="#如何找到让这个样本降维后间距最大的轴" class="headerlink" title="如何找到让这个样本降维后间距最大的轴?"></a>如何找到让这个样本降维后间距最大的轴?</h5></li>
 <li><h5 id="如何定义样本间距"><a href="#如何定义样本间距" class="headerlink" title="如何定义样本间距?"></a>如何定义样本间距?</h5></li>
 </ul>
 </li>
 <li><h4 id="在统计学中-有一个直接的指标可以表示样本间的间距-离散程度-那就是方差-Variance"><a href="#在统计学中-有一个直接的指标可以表示样本间的间距-离散程度-那就是方差-Variance" class="headerlink" title="在统计学中,有一个直接的指标可以表示样本间的间距(离散程度),那就是方差(Variance)"></a>在统计学中,有一个直接的指标可以表示样本间的间距(离散程度),那就是方差(Variance)</h4><p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200810225109737.png" alt="image-20200810225109737"></p>
 </li>
-<li><p>####上述的问题就变为了：找到一个轴,使得样本空间的所有点映射到这个轴之后,方差最大 </p>
-</li>
+<li><h4 id="上述的问题就变为了：找到一个轴-使得样本空间的所有点映射到这个轴之后-方差最大"><a href="#上述的问题就变为了：找到一个轴-使得样本空间的所有点映射到这个轴之后-方差最大" class="headerlink" title="上述的问题就变为了：找到一个轴,使得样本空间的所有点映射到这个轴之后,方差最大"></a>上述的问题就变为了：找到一个轴,使得样本空间的所有点映射到这个轴之后,方差最大</h4></li>
 <li><h4 id="接下来就是求解这个轴："><a href="#接下来就是求解这个轴：" class="headerlink" title="接下来就是求解这个轴："></a>接下来就是求解这个轴：</h4><ul>
 <li><h5 id="首先，将样例的均值归为0（demean），即将所有样本减去这批样本的均值-所有的样本点都会移动，因此可以看作样本点不动，移动坐标轴-，之后就变为了下图所示"><a href="#首先，将样例的均值归为0（demean），即将所有样本减去这批样本的均值-所有的样本点都会移动，因此可以看作样本点不动，移动坐标轴-，之后就变为了下图所示" class="headerlink" title="首先，将样例的均值归为0（demean），即将所有样本减去这批样本的均值(所有的样本点都会移动，因此可以看作样本点不动，移动坐标轴)，之后就变为了下图所示"></a>首先，将样例的均值归为0（demean），即将所有样本减去这批样本的均值(所有的样本点都会移动，因此可以看作样本点不动，移动坐标轴)，之后就变为了下图所示</h5><p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200810225647955.png" alt="image-20200810225647955"></p>
-<p>#####此时的样本的均值就为0，方差就变成了</p>
-<p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200810230237650.png" alt="image-20200810230237650"></p>
+<h5 id="此时的样本的均值就为0，方差就变成了"><a href="#此时的样本的均值就为0，方差就变成了" class="headerlink" title="此时的样本的均值就为0，方差就变成了"></a>此时的样本的均值就为0，方差就变成了</h5><p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200810230237650.png" alt="image-20200810230237650"></p>
 </li>
 <li><h5 id="我们想要求w轴的方向-w1-w2-使得-Var-Xproject-最大，Xproject-是映射到w轴之后的X的坐标："><a href="#我们想要求w轴的方向-w1-w2-使得-Var-Xproject-最大，Xproject-是映射到w轴之后的X的坐标：" class="headerlink" title="我们想要求w轴的方向(w1,w2),使得 Var(Xproject) 最大，Xproject 是映射到w轴之后的X的坐标："></a>我们想要求w轴的方向(w1,w2),使得 <em>Var(X<strong>project</strong>)</em> 最大，<em>X</em>project 是映射到w轴之后的X的坐标：</h5><p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200810230906480.png" alt="image-20200810230906480"></p>
-<h5 id="注意：因为X是矩阵，X-i-是X中的一个向量，所以在公式中不能写成括号的平方，而是模的平方"><a href="#注意：因为X是矩阵，X-i-是X中的一个向量，所以在公式中不能写成括号的平方，而是模的平方" class="headerlink" title="注意：因为X是矩阵，X(i)是X中的一个向量，所以在公式中不能写成括号的平方，而是模的平方"></a>注意：因为X是矩阵，X(i)是X中的一个向量，所以在公式中不能写成括号的平方，而是模的平方</h5><p>#####接下来求解$X^{(i)}_{project}$，即如何用$X^{(i)}$表示（下图点积可以参考《机器学习中的数学》13页 1.4.4）</p>
-<p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200810233526467.png" alt="image-20200810233526467"></p>
+<h5 id="注意：因为X是矩阵，X-i-是X中的一个向量，所以在公式中不能写成括号的平方，而是模的平方"><a href="#注意：因为X是矩阵，X-i-是X中的一个向量，所以在公式中不能写成括号的平方，而是模的平方" class="headerlink" title="注意：因为X是矩阵，X(i)是X中的一个向量，所以在公式中不能写成括号的平方，而是模的平方"></a>注意：因为X是矩阵，X(i)是X中的一个向量，所以在公式中不能写成括号的平方，而是模的平方</h5><h5 id="接下来求解-X-i-project-，即如何用-X-i-表示（下图点积可以参考《机器学习中的数学》13页-1-4-4）"><a href="#接下来求解-X-i-project-，即如何用-X-i-表示（下图点积可以参考《机器学习中的数学》13页-1-4-4）" class="headerlink" title="接下来求解$X^{(i)}_{project}$，即如何用$X^{(i)}$表示（下图点积可以参考《机器学习中的数学》13页 1.4.4）"></a>接下来求解$X^{(i)}_{project}$，即如何用$X^{(i)}$表示（下图点积可以参考《机器学习中的数学》13页 1.4.4）</h5><p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200810233526467.png" alt="image-20200810233526467"></p>
 </li>
 </ul>
 </li>
 </ul>
 </li>
 </ul>
-<pre><code>##### 注意：因为我们要将样本点映射到w方向上，所以将w定义为单位向量，其实最终求得是样本点向量在w方向上的分量，即蓝色线条，它对应的就是$\vec{X^{(i)}_{project}}$</code></pre><ul>
+<pre><code>  ##### 注意：因为我们要将样本点映射到w方向上，所以将w定义为单位向量，其实最终求得是样本点向量在w方向上的分量，即蓝色线条，它对应的就是$\vec{X^{(i)}_{project}}$
+</code></pre><ul>
 <li><h4 id="最终："><a href="#最终：" class="headerlink" title="最终："></a>最终：</h4><p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200810234231684.png" alt="image-20200810234231684"></p>
 </li>
 </ul>
 <h4 id="三、使用梯度上升法解决PCA问题"><a href="#三、使用梯度上升法解决PCA问题" class="headerlink" title="三、使用梯度上升法解决PCA问题"></a>三、使用梯度上升法解决PCA问题</h4><p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200810235951325.png" alt="image-20200810235951325"></p>
 <h4 id="接下来进行向量化，让其运行效率更高"><a href="#接下来进行向量化，让其运行效率更高" class="headerlink" title="接下来进行向量化，让其运行效率更高"></a>接下来进行向量化，让其运行效率更高</h4><ul>
-<li>#####在向量化时要想清楚谁是矩阵，谁是向量，向量是行还是列向量</li>
+<li><h5 id="在向量化时要想清楚谁是矩阵，谁是向量，向量是行还是列向量"><a href="#在向量化时要想清楚谁是矩阵，谁是向量，向量是行还是列向量" class="headerlink" title="在向量化时要想清楚谁是矩阵，谁是向量，向量是行还是列向量"></a>在向量化时要想清楚谁是矩阵，谁是向量，向量是行还是列向量</h5></li>
 </ul>
 <p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200811000106484.png" alt="image-20200811000106484"></p>
 <h4 id="最终结果"><a href="#最终结果" class="headerlink" title="最终结果"></a>最终结果</h4><p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200811000436388.png" alt="image-20200811000436388"></p>
-<p>####四、求数据的前n个主成分（即新坐标系的每一个轴对应的方向）</p>
-<ul>
-<li><p>#####PCA的本质是将数据从一个坐标系转移到另一个坐标系</p>
-</li>
+<h4 id="四、求数据的前n个主成分（即新坐标系的每一个轴对应的方向）"><a href="#四、求数据的前n个主成分（即新坐标系的每一个轴对应的方向）" class="headerlink" title="四、求数据的前n个主成分（即新坐标系的每一个轴对应的方向）"></a>四、求数据的前n个主成分（即新坐标系的每一个轴对应的方向）</h4><ul>
+<li><h5 id="PCA的本质是将数据从一个坐标系转移到另一个坐标系"><a href="#PCA的本质是将数据从一个坐标系转移到另一个坐标系" class="headerlink" title="PCA的本质是将数据从一个坐标系转移到另一个坐标系"></a>PCA的本质是将数据从一个坐标系转移到另一个坐标系</h5></li>
 <li><h5 id="下面是求解过程："><a href="#下面是求解过程：" class="headerlink" title="下面是求解过程："></a>下面是求解过程：</h5><ul>
 <li><p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200814010029327.png" alt="image-20200814010029327"></p>
-<p>#####先将$|{X^{(i)}<em>{project}}|$乘以单位向量$\vec{w}$变成$\vec{X^{(i)}</em>{project}}$，这个就是数据X在第一主成分上的分量，我们用X减去这一分量，即$\vec{X^{(i)}} - \vec{X^{(i)}_{project}}$，这是向量的减法，最终得出的是图中绿色的向量。</p>
-</li>
-<li><p>#####然后在新的数据上求第一主成分（即原数据X的第二主成分），以此类推。</p>
-</li>
+<h5 id="先将-X-i-project-乘以单位向量-vec-w-变成-vec-X-i-project-，这个就是数据X在第一主成分上的分量，我们用X减去这一分量，即-vec-X-i-vec-X-i-project-，这是向量的减法，最终得出的是图中绿色的向量。"><a href="#先将-X-i-project-乘以单位向量-vec-w-变成-vec-X-i-project-，这个就是数据X在第一主成分上的分量，我们用X减去这一分量，即-vec-X-i-vec-X-i-project-，这是向量的减法，最终得出的是图中绿色的向量。" class="headerlink" title="先将$|{X^{(i)}{project}}|$乘以单位向量$\vec{w}$变成$\vec{X^{(i)}{project}}$，这个就是数据X在第一主成分上的分量，我们用X减去这一分量，即$\vec{X^{(i)}} - \vec{X^{(i)}_{project}}$，这是向量的减法，最终得出的是图中绿色的向量。"></a>先将$|{X^{(i)}<em>{project}}|$乘以单位向量$\vec{w}$变成$\vec{X^{(i)}</em>{project}}$，这个就是数据X在第一主成分上的分量，我们用X减去这一分量，即$\vec{X^{(i)}} - \vec{X^{(i)}_{project}}$，这是向量的减法，最终得出的是图中绿色的向量。</h5></li>
+<li><h5 id="然后在新的数据上求第一主成分（即原数据X的第二主成分），以此类推。"><a href="#然后在新的数据上求第一主成分（即原数据X的第二主成分），以此类推。" class="headerlink" title="然后在新的数据上求第一主成分（即原数据X的第二主成分），以此类推。"></a>然后在新的数据上求第一主成分（即原数据X的第二主成分），以此类推。</h5></li>
 </ul>
 </li>
 </ul>
-<h4 id="五、高维数据向低维数据映射"><a href="#五、高维数据向低维数据映射" class="headerlink" title="五、高维数据向低维数据映射"></a>五、高维数据向低维数据映射</h4><p>#####PCA的本质是将数据从一个坐标系转换到另一个坐标系上，即原来是n维坐标系，转换后也是n维坐标系。但是我们要将高维向低维映射，所以要从转换后的n维坐标系中取前k个坐标轴形成一个k维的坐标系。然后将X中的每一行样本都乘以W中每一个维度的坐标轴。这样就从n维降到了k维：</p>
-<p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200814224611023.png" alt="image-20200814224611023"></p>
+<h4 id="五、高维数据向低维数据映射"><a href="#五、高维数据向低维数据映射" class="headerlink" title="五、高维数据向低维数据映射"></a>五、高维数据向低维数据映射</h4><h5 id="PCA的本质是将数据从一个坐标系转换到另一个坐标系上，即原来是n维坐标系，转换后也是n维坐标系。但是我们要将高维向低维映射，所以要从转换后的n维坐标系中取前k个坐标轴形成一个k维的坐标系。然后将X中的每一行样本都乘以W中每一个维度的坐标轴。这样就从n维降到了k维："><a href="#PCA的本质是将数据从一个坐标系转换到另一个坐标系上，即原来是n维坐标系，转换后也是n维坐标系。但是我们要将高维向低维映射，所以要从转换后的n维坐标系中取前k个坐标轴形成一个k维的坐标系。然后将X中的每一行样本都乘以W中每一个维度的坐标轴。这样就从n维降到了k维：" class="headerlink" title="PCA的本质是将数据从一个坐标系转换到另一个坐标系上，即原来是n维坐标系，转换后也是n维坐标系。但是我们要将高维向低维映射，所以要从转换后的n维坐标系中取前k个坐标轴形成一个k维的坐标系。然后将X中的每一行样本都乘以W中每一个维度的坐标轴。这样就从n维降到了k维："></a>PCA的本质是将数据从一个坐标系转换到另一个坐标系上，即原来是n维坐标系，转换后也是n维坐标系。但是我们要将高维向低维映射，所以要从转换后的n维坐标系中取前k个坐标轴形成一个k维的坐标系。然后将X中的每一行样本都乘以W中每一个维度的坐标轴。这样就从n维降到了k维：</h5><p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200814224611023.png" alt="image-20200814224611023"></p>
 <h5 id="也可以从k维恢复到n维，但是恢复回来的-X-m-不等于原来的X："><a href="#也可以从k维恢复到n维，但是恢复回来的-X-m-不等于原来的X：" class="headerlink" title="也可以从k维恢复到n维，但是恢复回来的$X_m$不等于原来的X："></a>也可以从k维恢复到n维，但是恢复回来的$X_m$不等于原来的X：</h5><p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200814224911159.png" alt="image-20200814224911159"></p>
 <h4 id="六、PCA在人脸识别中的应用"><a href="#六、PCA在人脸识别中的应用" class="headerlink" title="六、PCA在人脸识别中的应用"></a>六、PCA在人脸识别中的应用</h4><p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200815183722277.png" alt="image-20200815183722277"></p>
-<p>#####对于$W_k$来说，本身每一行代表一个方向。那么换一种思路：如果每一行看作一个样本，那么第一行表示最能反映原数据X的样本特征，以此类推。</p>
-<p>#####在人脸识别中,X的每一行对应一个人脸数据，W的每一行也是一个人脸数据，这个就被称为特征脸，所以每一个特征脸其实对应一个主成分</p>
-
+<h5 id="对于-W-k-来说，本身每一行代表一个方向。那么换一种思路：如果每一行看作一个样本，那么第一行表示最能反映原数据X的样本特征，以此类推。"><a href="#对于-W-k-来说，本身每一行代表一个方向。那么换一种思路：如果每一行看作一个样本，那么第一行表示最能反映原数据X的样本特征，以此类推。" class="headerlink" title="对于$W_k$来说，本身每一行代表一个方向。那么换一种思路：如果每一行看作一个样本，那么第一行表示最能反映原数据X的样本特征，以此类推。"></a>对于$W_k$来说，本身每一行代表一个方向。那么换一种思路：如果每一行看作一个样本，那么第一行表示最能反映原数据X的样本特征，以此类推。</h5><h5 id="在人脸识别中-X的每一行对应一个人脸数据，W的每一行也是一个人脸数据，这个就被称为特征脸，所以每一个特征脸其实对应一个主成分"><a href="#在人脸识别中-X的每一行对应一个人脸数据，W的每一行也是一个人脸数据，这个就被称为特征脸，所以每一个特征脸其实对应一个主成分" class="headerlink" title="在人脸识别中,X的每一行对应一个人脸数据，W的每一行也是一个人脸数据，这个就被称为特征脸，所以每一个特征脸其实对应一个主成分"></a>在人脸识别中,X的每一行对应一个人脸数据，W的每一行也是一个人脸数据，这个就被称为特征脸，所以每一个特征脸其实对应一个主成分</h5>
     </div>
 
     
@@ -370,8 +359,8 @@
 
       <footer class="post-footer">
           <div class="post-tags">
-              <a href="/tags/PCA/" rel="tag"># PCA</a>
               <a href="/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/" rel="tag"># 机器学习</a>
+              <a href="/tags/PCA/" rel="tag"># PCA</a>
               <a href="/tags/%E9%9D%9E%E7%9B%91%E7%9D%A3%E5%AD%A6%E4%B9%A0/" rel="tag"># 非监督学习</a>
               <a href="/tags/%E6%95%B0%E6%8D%AE%E9%99%8D%E7%BB%B4/" rel="tag"># 数据降维</a>
           </div>
@@ -385,7 +374,10 @@
     <a href="/2020/08/07/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B09/" rel="prev" title="机器学习笔记9">
       <i class="fa fa-chevron-left"></i> 机器学习笔记9
     </a></div>
-      <div class="post-nav-item"></div>
+      <div class="post-nav-item">
+    <a href="/2020/08/15/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B011/" rel="next" title="机器学习笔记11">
+      机器学习笔记11 <i class="fa fa-chevron-right"></i>
+    </a></div>
     </div>
       </footer>
     
@@ -448,7 +440,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#PCA-主成分分析（Principal-Component-Analysis）"><span class="nav-number">1.</span> <span class="nav-text">PCA-主成分分析（Principal Component Analysis）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#一、PCA综述"><span class="nav-number">2.</span> <span class="nav-text">一、PCA综述</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#二、详解PCA"><span class="nav-number">3.</span> <span class="nav-text">二、详解PCA</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#我们首先想到的降维方法是舍弃特征1或舍弃特征2，这样样本点就会映射到单一坐标轴上，达到了降维的效果。如下图："><span class="nav-number">4.</span> <span class="nav-text">我们首先想到的降维方法是舍弃特征1或舍弃特征2，这样样本点就会映射到单一坐标轴上，达到了降维的效果。如下图：</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#左图为舍弃特征1；右图为舍弃特征2："><span class="nav-number">4.1.</span> <span class="nav-text">左图为舍弃特征1；右图为舍弃特征2：</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#显然右图的降维效果比左图好，因为样本点直接距离较大，拥有更高的可区分度"><span class="nav-number">5.</span> <span class="nav-text">显然右图的降维效果比左图好，因为样本点直接距离较大，拥有更高的可区分度</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#但是，这是最好的方案吗？显然不是。我们想象一下-能够找到下图这样的一条斜线w-将数据降维到w上-映射到w上-之后-能最好的保留原来的分布特征-且这些点分布在了一个轴上-斜线w-后点和点之间的距离也比之前的两种方案更加的大-此时的区分度也更加明显"><span class="nav-number">6.</span> <span class="nav-text">但是，这是最好的方案吗？显然不是。我们想象一下,能够找到下图这样的一条斜线w,将数据降维到w上(映射到w上)之后,能最好的保留原来的分布特征,且这些点分布在了一个轴上(斜线w)后点和点之间的距离也比之前的两种方案更加的大,此时的区分度也更加明显</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#接下来我们要思考以下两个问题了："><span class="nav-number">7.</span> <span class="nav-text">接下来我们要思考以下两个问题了：</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#如何定义样本间距"><span class="nav-number">7.1.</span> <span class="nav-text">如何定义样本间距?</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#在统计学中-有一个直接的指标可以表示样本间的间距-离散程度-那就是方差-Variance"><span class="nav-number">8.</span> <span class="nav-text">在统计学中,有一个直接的指标可以表示样本间的间距(离散程度),那就是方差(Variance)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#接下来就是求解这个轴："><span class="nav-number">9.</span> <span class="nav-text">接下来就是求解这个轴：</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#首先，将样例的均值归为0（demean），即将所有样本减去这批样本的均值-所有的样本点都会移动，因此可以看作样本点不动，移动坐标轴-，之后就变为了下图所示"><span class="nav-number">9.1.</span> <span class="nav-text">首先，将样例的均值归为0（demean），即将所有样本减去这批样本的均值(所有的样本点都会移动，因此可以看作样本点不动，移动坐标轴)，之后就变为了下图所示</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#我们想要求w轴的方向-w1-w2-使得-Var-Xproject-最大，Xproject-是映射到w轴之后的X的坐标："><span class="nav-number">9.2.</span> <span class="nav-text">我们想要求w轴的方向(w1,w2),使得 Var(Xproject) 最大，Xproject 是映射到w轴之后的X的坐标：</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#注意：因为X是矩阵，X-i-是X中的一个向量，所以在公式中不能写成括号的平方，而是模的平方"><span class="nav-number">9.3.</span> <span class="nav-text">注意：因为X是矩阵，X(i)是X中的一个向量，所以在公式中不能写成括号的平方，而是模的平方</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#最终："><span class="nav-number">10.</span> <span class="nav-text">最终：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#三、使用梯度上升法解决PCA问题"><span class="nav-number">11.</span> <span class="nav-text">三、使用梯度上升法解决PCA问题</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#接下来进行向量化，让其运行效率更高"><span class="nav-number">12.</span> <span class="nav-text">接下来进行向量化，让其运行效率更高</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#最终结果"><span class="nav-number">13.</span> <span class="nav-text">最终结果</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#下面是求解过程："><span class="nav-number">13.1.</span> <span class="nav-text">下面是求解过程：</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#五、高维数据向低维数据映射"><span class="nav-number">14.</span> <span class="nav-text">五、高维数据向低维数据映射</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#也可以从k维恢复到n维，但是恢复回来的-X-m-不等于原来的X："><span class="nav-number">14.1.</span> <span class="nav-text">也可以从k维恢复到n维，但是恢复回来的$X_m$不等于原来的X：</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#六、PCA在人脸识别中的应用"><span class="nav-number">15.</span> <span class="nav-text">六、PCA在人脸识别中的应用</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#PCA-主成分分析（Principal-Component-Analysis）"><span class="nav-number">1.</span> <span class="nav-text">PCA-主成分分析（Principal Component Analysis）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#一、PCA综述"><span class="nav-number">2.</span> <span class="nav-text">一、PCA综述</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#二、详解PCA"><span class="nav-number">3.</span> <span class="nav-text">二、详解PCA</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#我们首先想到的降维方法是舍弃特征1或舍弃特征2，这样样本点就会映射到单一坐标轴上，达到了降维的效果。如下图："><span class="nav-number">4.</span> <span class="nav-text">我们首先想到的降维方法是舍弃特征1或舍弃特征2，这样样本点就会映射到单一坐标轴上，达到了降维的效果。如下图：</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#左图为舍弃特征1；右图为舍弃特征2："><span class="nav-number">4.1.</span> <span class="nav-text">左图为舍弃特征1；右图为舍弃特征2：</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#显然右图的降维效果比左图好，因为样本点直接距离较大，拥有更高的可区分度"><span class="nav-number">5.</span> <span class="nav-text">显然右图的降维效果比左图好，因为样本点直接距离较大，拥有更高的可区分度</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#但是，这是最好的方案吗？显然不是。我们想象一下-能够找到下图这样的一条斜线w-将数据降维到w上-映射到w上-之后-能最好的保留原来的分布特征-且这些点分布在了一个轴上-斜线w-后点和点之间的距离也比之前的两种方案更加的大-此时的区分度也更加明显"><span class="nav-number">6.</span> <span class="nav-text">但是，这是最好的方案吗？显然不是。我们想象一下,能够找到下图这样的一条斜线w,将数据降维到w上(映射到w上)之后,能最好的保留原来的分布特征,且这些点分布在了一个轴上(斜线w)后点和点之间的距离也比之前的两种方案更加的大,此时的区分度也更加明显</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#接下来我们要思考以下两个问题了："><span class="nav-number">7.</span> <span class="nav-text">接下来我们要思考以下两个问题了：</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#如何找到让这个样本降维后间距最大的轴"><span class="nav-number">7.1.</span> <span class="nav-text">如何找到让这个样本降维后间距最大的轴?</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#如何定义样本间距"><span class="nav-number">7.2.</span> <span class="nav-text">如何定义样本间距?</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#在统计学中-有一个直接的指标可以表示样本间的间距-离散程度-那就是方差-Variance"><span class="nav-number">8.</span> <span class="nav-text">在统计学中,有一个直接的指标可以表示样本间的间距(离散程度),那就是方差(Variance)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#上述的问题就变为了：找到一个轴-使得样本空间的所有点映射到这个轴之后-方差最大"><span class="nav-number">9.</span> <span class="nav-text">上述的问题就变为了：找到一个轴,使得样本空间的所有点映射到这个轴之后,方差最大</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#接下来就是求解这个轴："><span class="nav-number">10.</span> <span class="nav-text">接下来就是求解这个轴：</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#首先，将样例的均值归为0（demean），即将所有样本减去这批样本的均值-所有的样本点都会移动，因此可以看作样本点不动，移动坐标轴-，之后就变为了下图所示"><span class="nav-number">10.1.</span> <span class="nav-text">首先，将样例的均值归为0（demean），即将所有样本减去这批样本的均值(所有的样本点都会移动，因此可以看作样本点不动，移动坐标轴)，之后就变为了下图所示</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#此时的样本的均值就为0，方差就变成了"><span class="nav-number">10.2.</span> <span class="nav-text">此时的样本的均值就为0，方差就变成了</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#我们想要求w轴的方向-w1-w2-使得-Var-Xproject-最大，Xproject-是映射到w轴之后的X的坐标："><span class="nav-number">10.3.</span> <span class="nav-text">我们想要求w轴的方向(w1,w2),使得 Var(Xproject) 最大，Xproject 是映射到w轴之后的X的坐标：</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#注意：因为X是矩阵，X-i-是X中的一个向量，所以在公式中不能写成括号的平方，而是模的平方"><span class="nav-number">10.4.</span> <span class="nav-text">注意：因为X是矩阵，X(i)是X中的一个向量，所以在公式中不能写成括号的平方，而是模的平方</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#接下来求解-X-i-project-，即如何用-X-i-表示（下图点积可以参考《机器学习中的数学》13页-1-4-4）"><span class="nav-number">10.5.</span> <span class="nav-text">接下来求解$X^{(i)}_{project}$，即如何用$X^{(i)}$表示（下图点积可以参考《机器学习中的数学》13页 1.4.4）</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#最终："><span class="nav-number">11.</span> <span class="nav-text">最终：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#三、使用梯度上升法解决PCA问题"><span class="nav-number">12.</span> <span class="nav-text">三、使用梯度上升法解决PCA问题</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#接下来进行向量化，让其运行效率更高"><span class="nav-number">13.</span> <span class="nav-text">接下来进行向量化，让其运行效率更高</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#在向量化时要想清楚谁是矩阵，谁是向量，向量是行还是列向量"><span class="nav-number">13.1.</span> <span class="nav-text">在向量化时要想清楚谁是矩阵，谁是向量，向量是行还是列向量</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#最终结果"><span class="nav-number">14.</span> <span class="nav-text">最终结果</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#四、求数据的前n个主成分（即新坐标系的每一个轴对应的方向）"><span class="nav-number">15.</span> <span class="nav-text">四、求数据的前n个主成分（即新坐标系的每一个轴对应的方向）</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#PCA的本质是将数据从一个坐标系转移到另一个坐标系"><span class="nav-number">15.1.</span> <span class="nav-text">PCA的本质是将数据从一个坐标系转移到另一个坐标系</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#下面是求解过程："><span class="nav-number">15.2.</span> <span class="nav-text">下面是求解过程：</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#先将-X-i-project-乘以单位向量-vec-w-变成-vec-X-i-project-，这个就是数据X在第一主成分上的分量，我们用X减去这一分量，即-vec-X-i-vec-X-i-project-，这是向量的减法，最终得出的是图中绿色的向量。"><span class="nav-number">15.3.</span> <span class="nav-text">先将$|{X^{(i)}{project}}|$乘以单位向量$\vec{w}$变成$\vec{X^{(i)}{project}}$，这个就是数据X在第一主成分上的分量，我们用X减去这一分量，即$\vec{X^{(i)}} - \vec{X^{(i)}_{project}}$，这是向量的减法，最终得出的是图中绿色的向量。</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#然后在新的数据上求第一主成分（即原数据X的第二主成分），以此类推。"><span class="nav-number">15.4.</span> <span class="nav-text">然后在新的数据上求第一主成分（即原数据X的第二主成分），以此类推。</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#五、高维数据向低维数据映射"><span class="nav-number">16.</span> <span class="nav-text">五、高维数据向低维数据映射</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#PCA的本质是将数据从一个坐标系转换到另一个坐标系上，即原来是n维坐标系，转换后也是n维坐标系。但是我们要将高维向低维映射，所以要从转换后的n维坐标系中取前k个坐标轴形成一个k维的坐标系。然后将X中的每一行样本都乘以W中每一个维度的坐标轴。这样就从n维降到了k维："><span class="nav-number">16.1.</span> <span class="nav-text">PCA的本质是将数据从一个坐标系转换到另一个坐标系上，即原来是n维坐标系，转换后也是n维坐标系。但是我们要将高维向低维映射，所以要从转换后的n维坐标系中取前k个坐标轴形成一个k维的坐标系。然后将X中的每一行样本都乘以W中每一个维度的坐标轴。这样就从n维降到了k维：</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#也可以从k维恢复到n维，但是恢复回来的-X-m-不等于原来的X："><span class="nav-number">16.2.</span> <span class="nav-text">也可以从k维恢复到n维，但是恢复回来的$X_m$不等于原来的X：</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#六、PCA在人脸识别中的应用"><span class="nav-number">17.</span> <span class="nav-text">六、PCA在人脸识别中的应用</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#对于-W-k-来说，本身每一行代表一个方向。那么换一种思路：如果每一行看作一个样本，那么第一行表示最能反映原数据X的样本特征，以此类推。"><span class="nav-number">17.1.</span> <span class="nav-text">对于$W_k$来说，本身每一行代表一个方向。那么换一种思路：如果每一行看作一个样本，那么第一行表示最能反映原数据X的样本特征，以此类推。</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#在人脸识别中-X的每一行对应一个人脸数据，W的每一行也是一个人脸数据，这个就被称为特征脸，所以每一个特征脸其实对应一个主成分"><span class="nav-number">17.2.</span> <span class="nav-text">在人脸识别中,X的每一行对应一个人脸数据，W的每一行也是一个人脸数据，这个就被称为特征脸，所以每一个特征脸其实对应一个主成分</span></a></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -464,7 +456,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">10</span>
+          <span class="site-state-item-count">11</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -514,13 +506,13 @@
       <i class="fa fa-chart-area"></i>
     </span>
       <span class="post-meta-item-text">站点总字数：</span>
-    <span title="站点总字数">8k</span>
+    <span title="站点总字数">9k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
       <span class="post-meta-item-text">站点阅读时长 &asymp;</span>
-    <span title="站点阅读时长">7 分钟</span>
+    <span title="站点阅读时长">8 分钟</span>
 </div>
 
         
