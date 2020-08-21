@@ -1,0 +1,667 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 4.2.1">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"macchen123.github.io","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true,"position":"right"},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="PCA-主成分分析（Principal Component Analysis）">
+<meta property="og:type" content="article">
+<meta property="og:title" content="机器学习笔记10">
+<meta property="og:url" content="http://macchen123.github.io/2020/08/10/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B010/index.html">
+<meta property="og:site_name" content="MaCcHen的个人小站">
+<meta property="og:description" content="PCA-主成分分析（Principal Component Analysis）">
+<meta property="og:image" content="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200810220126595.png">
+<meta property="og:image" content="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200810223917827.png">
+<meta property="og:image" content="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200810224220339.png">
+<meta property="og:image" content="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200810224703164.png">
+<meta property="og:image" content="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200810225109737.png">
+<meta property="og:image" content="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200810225647955.png">
+<meta property="og:image" content="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200810230237650.png">
+<meta property="og:image" content="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200810230906480.png">
+<meta property="og:image" content="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200810233526467.png">
+<meta property="og:image" content="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200810234231684.png">
+<meta property="og:image" content="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200810235951325.png">
+<meta property="og:image" content="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200811000106484.png">
+<meta property="og:image" content="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200811000436388.png">
+<meta property="og:image" content="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200814010029327.png">
+<meta property="og:image" content="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200814224611023.png">
+<meta property="og:image" content="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200814224911159.png">
+<meta property="og:image" content="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200815183722277.png">
+<meta property="article:published_time" content="2020-08-10T13:47:10.000Z">
+<meta property="article:modified_time" content="2020-08-21T14:05:10.769Z">
+<meta property="article:author" content="macchen">
+<meta property="article:tag" content="机器学习">
+<meta property="article:tag" content="PCA">
+<meta property="article:tag" content="非监督学习">
+<meta property="article:tag" content="数据降维">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200810220126595.png">
+
+<link rel="canonical" href="http://macchen123.github.io/2020/08/10/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B010/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-Hans'
+  };
+</script>
+
+  <title>机器学习笔记10 | MaCcHen的个人小站</title>
+  
+
+
+  <script>
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?be46ae65323b06abe5d4115d59e20a64";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">MaCcHen的个人小站</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">谨言慎行，格物致知</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+  <div class="reading-progress-bar"></div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-Hans">
+    <link itemprop="mainEntityOfPage" href="http://macchen123.github.io/2020/08/10/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B010/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="macchen">
+      <meta itemprop="description" content="学习强国">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="MaCcHen的个人小站">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          机器学习笔记10
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-08-10 21:47:10" itemprop="dateCreated datePublished" datetime="2020-08-10T21:47:10+08:00">2020-08-10</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-08-21 22:05:10" itemprop="dateModified" datetime="2020-08-21T22:05:10+08:00">2020-08-21</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/" itemprop="url" rel="index"><span itemprop="name">机器学习</span></a>
+                </span>
+            </span>
+
+          
+            <span class="post-meta-item" title="阅读次数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">阅读次数：</span>
+              <span id="busuanzi_value_page_pv"></span>
+            </span><br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>1.4k</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>1 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h4 id="PCA-主成分分析（Principal-Component-Analysis）"><a href="#PCA-主成分分析（Principal-Component-Analysis）" class="headerlink" title="PCA-主成分分析（Principal Component Analysis）"></a>PCA-主成分分析（Principal Component Analysis）</h4><a id="more"></a>
+<h4 id="一、PCA综述"><a href="#一、PCA综述" class="headerlink" title="一、PCA综述"></a>一、PCA综述</h4><p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200810220126595.png" alt="image-20200810220126595"></p>
+<h4 id="二、详解PCA"><a href="#二、详解PCA" class="headerlink" title="二、详解PCA"></a>二、详解PCA</h4><ul>
+<li><p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200810223917827.png" alt="image-20200810223917827"></p>
+<ul>
+<li><h4 id="我们首先想到的降维方法是舍弃特征1或舍弃特征2，这样样本点就会映射到单一坐标轴上，达到了降维的效果。如下图："><a href="#我们首先想到的降维方法是舍弃特征1或舍弃特征2，这样样本点就会映射到单一坐标轴上，达到了降维的效果。如下图：" class="headerlink" title="我们首先想到的降维方法是舍弃特征1或舍弃特征2，这样样本点就会映射到单一坐标轴上，达到了降维的效果。如下图："></a>我们首先想到的降维方法是舍弃特征1或舍弃特征2，这样样本点就会映射到单一坐标轴上，达到了降维的效果。如下图：</h4></li>
+<li><h5 id="左图为舍弃特征1；右图为舍弃特征2："><a href="#左图为舍弃特征1；右图为舍弃特征2：" class="headerlink" title="左图为舍弃特征1；右图为舍弃特征2："></a>左图为舍弃特征1；右图为舍弃特征2：</h5><p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200810224220339.png" alt="image-20200810224220339"></p>
+</li>
+<li><h4 id="显然右图的降维效果比左图好，因为样本点直接距离较大，拥有更高的可区分度"><a href="#显然右图的降维效果比左图好，因为样本点直接距离较大，拥有更高的可区分度" class="headerlink" title="显然右图的降维效果比左图好，因为样本点直接距离较大，拥有更高的可区分度"></a>显然右图的降维效果比左图好，因为样本点直接距离较大，拥有更高的可区分度</h4></li>
+</ul>
+</li>
+<li><h4 id="但是，这是最好的方案吗？显然不是。我们想象一下-能够找到下图这样的一条斜线w-将数据降维到w上-映射到w上-之后-能最好的保留原来的分布特征-且这些点分布在了一个轴上-斜线w-后点和点之间的距离也比之前的两种方案更加的大-此时的区分度也更加明显"><a href="#但是，这是最好的方案吗？显然不是。我们想象一下-能够找到下图这样的一条斜线w-将数据降维到w上-映射到w上-之后-能最好的保留原来的分布特征-且这些点分布在了一个轴上-斜线w-后点和点之间的距离也比之前的两种方案更加的大-此时的区分度也更加明显" class="headerlink" title="但是，这是最好的方案吗？显然不是。我们想象一下,能够找到下图这样的一条斜线w,将数据降维到w上(映射到w上)之后,能最好的保留原来的分布特征,且这些点分布在了一个轴上(斜线w)后点和点之间的距离也比之前的两种方案更加的大,此时的区分度也更加明显"></a>但是，这是最好的方案吗？显然不是。我们想象一下,能够找到下图这样的一条斜线w,将数据降维到w上(映射到w上)之后,能最好的保留原来的分布特征,且这些点分布在了一个轴上(斜线w)后点和点之间的距离也比之前的两种方案更加的大,此时的区分度也更加明显</h4><ul>
+<li><p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200810224703164.png" alt="image-20200810224703164"></p>
+</li>
+<li><h4 id="接下来我们要思考以下两个问题了："><a href="#接下来我们要思考以下两个问题了：" class="headerlink" title="接下来我们要思考以下两个问题了："></a>接下来我们要思考以下两个问题了：</h4><ul>
+<li><h5 id="如何找到让这个样本降维后间距最大的轴"><a href="#如何找到让这个样本降维后间距最大的轴" class="headerlink" title="如何找到让这个样本降维后间距最大的轴?"></a>如何找到让这个样本降维后间距最大的轴?</h5></li>
+<li><h5 id="如何定义样本间距"><a href="#如何定义样本间距" class="headerlink" title="如何定义样本间距?"></a>如何定义样本间距?</h5></li>
+</ul>
+</li>
+<li><h4 id="在统计学中-有一个直接的指标可以表示样本间的间距-离散程度-那就是方差-Variance"><a href="#在统计学中-有一个直接的指标可以表示样本间的间距-离散程度-那就是方差-Variance" class="headerlink" title="在统计学中,有一个直接的指标可以表示样本间的间距(离散程度),那就是方差(Variance)"></a>在统计学中,有一个直接的指标可以表示样本间的间距(离散程度),那就是方差(Variance)</h4><p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200810225109737.png" alt="image-20200810225109737"></p>
+</li>
+<li><h4 id="上述的问题就变为了：找到一个轴-使得样本空间的所有点映射到这个轴之后-方差最大"><a href="#上述的问题就变为了：找到一个轴-使得样本空间的所有点映射到这个轴之后-方差最大" class="headerlink" title="上述的问题就变为了：找到一个轴,使得样本空间的所有点映射到这个轴之后,方差最大"></a>上述的问题就变为了：找到一个轴,使得样本空间的所有点映射到这个轴之后,方差最大</h4></li>
+<li><h4 id="接下来就是求解这个轴："><a href="#接下来就是求解这个轴：" class="headerlink" title="接下来就是求解这个轴："></a>接下来就是求解这个轴：</h4><ul>
+<li><h5 id="首先，将样例的均值归为0（demean），即将所有样本减去这批样本的均值-所有的样本点都会移动，因此可以看作样本点不动，移动坐标轴-，之后就变为了下图所示"><a href="#首先，将样例的均值归为0（demean），即将所有样本减去这批样本的均值-所有的样本点都会移动，因此可以看作样本点不动，移动坐标轴-，之后就变为了下图所示" class="headerlink" title="首先，将样例的均值归为0（demean），即将所有样本减去这批样本的均值(所有的样本点都会移动，因此可以看作样本点不动，移动坐标轴)，之后就变为了下图所示"></a>首先，将样例的均值归为0（demean），即将所有样本减去这批样本的均值(所有的样本点都会移动，因此可以看作样本点不动，移动坐标轴)，之后就变为了下图所示</h5><p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200810225647955.png" alt="image-20200810225647955"></p>
+<h5 id="此时的样本的均值就为0，方差就变成了"><a href="#此时的样本的均值就为0，方差就变成了" class="headerlink" title="此时的样本的均值就为0，方差就变成了"></a>此时的样本的均值就为0，方差就变成了</h5><p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200810230237650.png" alt="image-20200810230237650"></p>
+</li>
+<li><h5 id="我们想要求w轴的方向-w1-w2-使得-Var-Xproject-最大，Xproject-是映射到w轴之后的X的坐标："><a href="#我们想要求w轴的方向-w1-w2-使得-Var-Xproject-最大，Xproject-是映射到w轴之后的X的坐标：" class="headerlink" title="我们想要求w轴的方向(w1,w2),使得 Var(Xproject) 最大，Xproject 是映射到w轴之后的X的坐标："></a>我们想要求w轴的方向(w1,w2),使得 <em>Var(X<strong>project</strong>)</em> 最大，<em>X</em>project 是映射到w轴之后的X的坐标：</h5><p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200810230906480.png" alt="image-20200810230906480"></p>
+<h5 id="注意：因为X是矩阵，X-i-是X中的一个向量，所以在公式中不能写成括号的平方，而是模的平方"><a href="#注意：因为X是矩阵，X-i-是X中的一个向量，所以在公式中不能写成括号的平方，而是模的平方" class="headerlink" title="注意：因为X是矩阵，X(i)是X中的一个向量，所以在公式中不能写成括号的平方，而是模的平方"></a>注意：因为X是矩阵，X(i)是X中的一个向量，所以在公式中不能写成括号的平方，而是模的平方</h5><h5 id="接下来求解-X-i-project-，即如何用-X-i-表示（下图点积可以参考《机器学习中的数学》13页-1-4-4）"><a href="#接下来求解-X-i-project-，即如何用-X-i-表示（下图点积可以参考《机器学习中的数学》13页-1-4-4）" class="headerlink" title="接下来求解$X^{(i)}_{project}$，即如何用$X^{(i)}$表示（下图点积可以参考《机器学习中的数学》13页 1.4.4）"></a>接下来求解$X^{(i)}_{project}$，即如何用$X^{(i)}$表示（下图点积可以参考《机器学习中的数学》13页 1.4.4）</h5><p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200810233526467.png" alt="image-20200810233526467"></p>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<pre><code>  ##### 注意：因为我们要将样本点映射到w方向上，所以将w定义为单位向量，其实最终求得是样本点向量在w方向上的分量，即蓝色线条，它对应的就是$\vec{X^{(i)}_{project}}$
+</code></pre><ul>
+<li><h4 id="最终："><a href="#最终：" class="headerlink" title="最终："></a>最终：</h4><p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200810234231684.png" alt="image-20200810234231684"></p>
+</li>
+</ul>
+<h4 id="三、使用梯度上升法解决PCA问题"><a href="#三、使用梯度上升法解决PCA问题" class="headerlink" title="三、使用梯度上升法解决PCA问题"></a>三、使用梯度上升法解决PCA问题</h4><p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200810235951325.png" alt="image-20200810235951325"></p>
+<h4 id="接下来进行向量化，让其运行效率更高"><a href="#接下来进行向量化，让其运行效率更高" class="headerlink" title="接下来进行向量化，让其运行效率更高"></a>接下来进行向量化，让其运行效率更高</h4><ul>
+<li><h5 id="在向量化时要想清楚谁是矩阵，谁是向量，向量是行还是列向量"><a href="#在向量化时要想清楚谁是矩阵，谁是向量，向量是行还是列向量" class="headerlink" title="在向量化时要想清楚谁是矩阵，谁是向量，向量是行还是列向量"></a>在向量化时要想清楚谁是矩阵，谁是向量，向量是行还是列向量</h5></li>
+</ul>
+<p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200811000106484.png" alt="image-20200811000106484"></p>
+<h4 id="最终结果"><a href="#最终结果" class="headerlink" title="最终结果"></a>最终结果</h4><p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200811000436388.png" alt="image-20200811000436388"></p>
+<h4 id="四、求数据的前n个主成分（即新坐标系的每一个轴对应的方向）"><a href="#四、求数据的前n个主成分（即新坐标系的每一个轴对应的方向）" class="headerlink" title="四、求数据的前n个主成分（即新坐标系的每一个轴对应的方向）"></a>四、求数据的前n个主成分（即新坐标系的每一个轴对应的方向）</h4><ul>
+<li><h5 id="PCA的本质是将数据从一个坐标系转移到另一个坐标系"><a href="#PCA的本质是将数据从一个坐标系转移到另一个坐标系" class="headerlink" title="PCA的本质是将数据从一个坐标系转移到另一个坐标系"></a>PCA的本质是将数据从一个坐标系转移到另一个坐标系</h5></li>
+<li><h5 id="下面是求解过程："><a href="#下面是求解过程：" class="headerlink" title="下面是求解过程："></a>下面是求解过程：</h5><ul>
+<li><p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200814010029327.png" alt="image-20200814010029327"></p>
+<h5 id="先将-X-i-project-乘以单位向量-vec-w-变成-vec-X-i-project-，这个就是数据X在第一主成分上的分量，我们用X减去这一分量，即-vec-X-i-vec-X-i-project-，这是向量的减法，最终得出的是图中绿色的向量。"><a href="#先将-X-i-project-乘以单位向量-vec-w-变成-vec-X-i-project-，这个就是数据X在第一主成分上的分量，我们用X减去这一分量，即-vec-X-i-vec-X-i-project-，这是向量的减法，最终得出的是图中绿色的向量。" class="headerlink" title="先将$|{X^{(i)}_{project}}|$乘以单位向量$\vec{w}$变成$\vec{X^{(i)}_{project}}$，这个就是数据X在第一主成分上的分量，我们用X减去这一分量，即$\vec{X^{(i)}} - \vec{X^{(i)}_{project}}$，这是向量的减法，最终得出的是图中绿色的向量。"></a>先将$|{X^{(i)}_{project}}|$乘以单位向量$\vec{w}$变成$\vec{X^{(i)}_{project}}$，这个就是数据X在第一主成分上的分量，我们用X减去这一分量，即$\vec{X^{(i)}} - \vec{X^{(i)}_{project}}$，这是向量的减法，最终得出的是图中绿色的向量。</h5></li>
+<li><h5 id="然后在新的数据上求第一主成分（即原数据X的第二主成分），以此类推。"><a href="#然后在新的数据上求第一主成分（即原数据X的第二主成分），以此类推。" class="headerlink" title="然后在新的数据上求第一主成分（即原数据X的第二主成分），以此类推。"></a>然后在新的数据上求第一主成分（即原数据X的第二主成分），以此类推。</h5></li>
+</ul>
+</li>
+</ul>
+<h4 id="五、高维数据向低维数据映射"><a href="#五、高维数据向低维数据映射" class="headerlink" title="五、高维数据向低维数据映射"></a>五、高维数据向低维数据映射</h4><h5 id="PCA的本质是将数据从一个坐标系转换到另一个坐标系上，即原来是n维坐标系，转换后也是n维坐标系。但是我们要将高维向低维映射，所以要从转换后的n维坐标系中取前k个坐标轴形成一个k维的坐标系。然后将X中的每一行样本都乘以W中每一个维度的坐标轴。这样就从n维降到了k维："><a href="#PCA的本质是将数据从一个坐标系转换到另一个坐标系上，即原来是n维坐标系，转换后也是n维坐标系。但是我们要将高维向低维映射，所以要从转换后的n维坐标系中取前k个坐标轴形成一个k维的坐标系。然后将X中的每一行样本都乘以W中每一个维度的坐标轴。这样就从n维降到了k维：" class="headerlink" title="PCA的本质是将数据从一个坐标系转换到另一个坐标系上，即原来是n维坐标系，转换后也是n维坐标系。但是我们要将高维向低维映射，所以要从转换后的n维坐标系中取前k个坐标轴形成一个k维的坐标系。然后将X中的每一行样本都乘以W中每一个维度的坐标轴。这样就从n维降到了k维："></a>PCA的本质是将数据从一个坐标系转换到另一个坐标系上，即原来是n维坐标系，转换后也是n维坐标系。但是我们要将高维向低维映射，所以要从转换后的n维坐标系中取前k个坐标轴形成一个k维的坐标系。然后将X中的每一行样本都乘以W中每一个维度的坐标轴。这样就从n维降到了k维：</h5><p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200814224611023.png" alt="image-20200814224611023"></p>
+<h5 id="也可以从k维恢复到n维，但是恢复回来的-X-m-不等于原来的X："><a href="#也可以从k维恢复到n维，但是恢复回来的-X-m-不等于原来的X：" class="headerlink" title="也可以从k维恢复到n维，但是恢复回来的$X_m$不等于原来的X："></a>也可以从k维恢复到n维，但是恢复回来的$X_m$不等于原来的X：</h5><p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200814224911159.png" alt="image-20200814224911159"></p>
+<h4 id="六、PCA在人脸识别中的应用"><a href="#六、PCA在人脸识别中的应用" class="headerlink" title="六、PCA在人脸识别中的应用"></a>六、PCA在人脸识别中的应用</h4><p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200815183722277.png" alt="image-20200815183722277"></p>
+<h5 id="对于-W-k-来说，本身每一行代表一个方向。那么换一种思路：如果每一行看作一个样本，那么第一行表示最能反映原数据X的样本特征，以此类推。"><a href="#对于-W-k-来说，本身每一行代表一个方向。那么换一种思路：如果每一行看作一个样本，那么第一行表示最能反映原数据X的样本特征，以此类推。" class="headerlink" title="对于$W_k$来说，本身每一行代表一个方向。那么换一种思路：如果每一行看作一个样本，那么第一行表示最能反映原数据X的样本特征，以此类推。"></a>对于$W_k$来说，本身每一行代表一个方向。那么换一种思路：如果每一行看作一个样本，那么第一行表示最能反映原数据X的样本特征，以此类推。</h5><h5 id="在人脸识别中-X的每一行对应一个人脸数据，W的每一行也是一个人脸数据，这个就被称为特征脸，所以每一个特征脸其实对应一个主成分"><a href="#在人脸识别中-X的每一行对应一个人脸数据，W的每一行也是一个人脸数据，这个就被称为特征脸，所以每一个特征脸其实对应一个主成分" class="headerlink" title="在人脸识别中,X的每一行对应一个人脸数据，W的每一行也是一个人脸数据，这个就被称为特征脸，所以每一个特征脸其实对应一个主成分"></a>在人脸识别中,X的每一行对应一个人脸数据，W的每一行也是一个人脸数据，这个就被称为特征脸，所以每一个特征脸其实对应一个主成分</h5>
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/" rel="tag"># 机器学习</a>
+              <a href="/tags/PCA/" rel="tag"># PCA</a>
+              <a href="/tags/%E9%9D%9E%E7%9B%91%E7%9D%A3%E5%AD%A6%E4%B9%A0/" rel="tag"># 非监督学习</a>
+              <a href="/tags/%E6%95%B0%E6%8D%AE%E9%99%8D%E7%BB%B4/" rel="tag"># 数据降维</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2020/08/07/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B09/" rel="prev" title="机器学习笔记9">
+      <i class="fa fa-chevron-left"></i> 机器学习笔记9
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2020/08/15/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B011/" rel="next" title="机器学习笔记11">
+      机器学习笔记11 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+      
+      <!-- Insert clustrmaps.com -->
+      <script type="text/javascript" id="clustrmaps" src="//cdn.clustrmaps.com/map_v2.js?d=2_M6gOO_uk_5ftA8MDj1GtyvCyzGqPStnw1k5TNBneU&cl=ffffff&w=a"></script>
+
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#PCA-主成分分析（Principal-Component-Analysis）"><span class="nav-number">1.</span> <span class="nav-text">PCA-主成分分析（Principal Component Analysis）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#一、PCA综述"><span class="nav-number">2.</span> <span class="nav-text">一、PCA综述</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#二、详解PCA"><span class="nav-number">3.</span> <span class="nav-text">二、详解PCA</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#我们首先想到的降维方法是舍弃特征1或舍弃特征2，这样样本点就会映射到单一坐标轴上，达到了降维的效果。如下图："><span class="nav-number">4.</span> <span class="nav-text">我们首先想到的降维方法是舍弃特征1或舍弃特征2，这样样本点就会映射到单一坐标轴上，达到了降维的效果。如下图：</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#左图为舍弃特征1；右图为舍弃特征2："><span class="nav-number">4.1.</span> <span class="nav-text">左图为舍弃特征1；右图为舍弃特征2：</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#显然右图的降维效果比左图好，因为样本点直接距离较大，拥有更高的可区分度"><span class="nav-number">5.</span> <span class="nav-text">显然右图的降维效果比左图好，因为样本点直接距离较大，拥有更高的可区分度</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#但是，这是最好的方案吗？显然不是。我们想象一下-能够找到下图这样的一条斜线w-将数据降维到w上-映射到w上-之后-能最好的保留原来的分布特征-且这些点分布在了一个轴上-斜线w-后点和点之间的距离也比之前的两种方案更加的大-此时的区分度也更加明显"><span class="nav-number">6.</span> <span class="nav-text">但是，这是最好的方案吗？显然不是。我们想象一下,能够找到下图这样的一条斜线w,将数据降维到w上(映射到w上)之后,能最好的保留原来的分布特征,且这些点分布在了一个轴上(斜线w)后点和点之间的距离也比之前的两种方案更加的大,此时的区分度也更加明显</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#接下来我们要思考以下两个问题了："><span class="nav-number">7.</span> <span class="nav-text">接下来我们要思考以下两个问题了：</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#如何找到让这个样本降维后间距最大的轴"><span class="nav-number">7.1.</span> <span class="nav-text">如何找到让这个样本降维后间距最大的轴?</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#如何定义样本间距"><span class="nav-number">7.2.</span> <span class="nav-text">如何定义样本间距?</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#在统计学中-有一个直接的指标可以表示样本间的间距-离散程度-那就是方差-Variance"><span class="nav-number">8.</span> <span class="nav-text">在统计学中,有一个直接的指标可以表示样本间的间距(离散程度),那就是方差(Variance)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#上述的问题就变为了：找到一个轴-使得样本空间的所有点映射到这个轴之后-方差最大"><span class="nav-number">9.</span> <span class="nav-text">上述的问题就变为了：找到一个轴,使得样本空间的所有点映射到这个轴之后,方差最大</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#接下来就是求解这个轴："><span class="nav-number">10.</span> <span class="nav-text">接下来就是求解这个轴：</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#首先，将样例的均值归为0（demean），即将所有样本减去这批样本的均值-所有的样本点都会移动，因此可以看作样本点不动，移动坐标轴-，之后就变为了下图所示"><span class="nav-number">10.1.</span> <span class="nav-text">首先，将样例的均值归为0（demean），即将所有样本减去这批样本的均值(所有的样本点都会移动，因此可以看作样本点不动，移动坐标轴)，之后就变为了下图所示</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#此时的样本的均值就为0，方差就变成了"><span class="nav-number">10.2.</span> <span class="nav-text">此时的样本的均值就为0，方差就变成了</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#我们想要求w轴的方向-w1-w2-使得-Var-Xproject-最大，Xproject-是映射到w轴之后的X的坐标："><span class="nav-number">10.3.</span> <span class="nav-text">我们想要求w轴的方向(w1,w2),使得 Var(Xproject) 最大，Xproject 是映射到w轴之后的X的坐标：</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#注意：因为X是矩阵，X-i-是X中的一个向量，所以在公式中不能写成括号的平方，而是模的平方"><span class="nav-number">10.4.</span> <span class="nav-text">注意：因为X是矩阵，X(i)是X中的一个向量，所以在公式中不能写成括号的平方，而是模的平方</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#接下来求解-X-i-project-，即如何用-X-i-表示（下图点积可以参考《机器学习中的数学》13页-1-4-4）"><span class="nav-number">10.5.</span> <span class="nav-text">接下来求解$X^{(i)}_{project}$，即如何用$X^{(i)}$表示（下图点积可以参考《机器学习中的数学》13页 1.4.4）</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#最终："><span class="nav-number">11.</span> <span class="nav-text">最终：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#三、使用梯度上升法解决PCA问题"><span class="nav-number">12.</span> <span class="nav-text">三、使用梯度上升法解决PCA问题</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#接下来进行向量化，让其运行效率更高"><span class="nav-number">13.</span> <span class="nav-text">接下来进行向量化，让其运行效率更高</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#在向量化时要想清楚谁是矩阵，谁是向量，向量是行还是列向量"><span class="nav-number">13.1.</span> <span class="nav-text">在向量化时要想清楚谁是矩阵，谁是向量，向量是行还是列向量</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#最终结果"><span class="nav-number">14.</span> <span class="nav-text">最终结果</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#四、求数据的前n个主成分（即新坐标系的每一个轴对应的方向）"><span class="nav-number">15.</span> <span class="nav-text">四、求数据的前n个主成分（即新坐标系的每一个轴对应的方向）</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#PCA的本质是将数据从一个坐标系转移到另一个坐标系"><span class="nav-number">15.1.</span> <span class="nav-text">PCA的本质是将数据从一个坐标系转移到另一个坐标系</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#下面是求解过程："><span class="nav-number">15.2.</span> <span class="nav-text">下面是求解过程：</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#先将-X-i-project-乘以单位向量-vec-w-变成-vec-X-i-project-，这个就是数据X在第一主成分上的分量，我们用X减去这一分量，即-vec-X-i-vec-X-i-project-，这是向量的减法，最终得出的是图中绿色的向量。"><span class="nav-number">15.3.</span> <span class="nav-text">先将$|{X^{(i)}_{project}}|$乘以单位向量$\vec{w}$变成$\vec{X^{(i)}_{project}}$，这个就是数据X在第一主成分上的分量，我们用X减去这一分量，即$\vec{X^{(i)}} - \vec{X^{(i)}_{project}}$，这是向量的减法，最终得出的是图中绿色的向量。</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#然后在新的数据上求第一主成分（即原数据X的第二主成分），以此类推。"><span class="nav-number">15.4.</span> <span class="nav-text">然后在新的数据上求第一主成分（即原数据X的第二主成分），以此类推。</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#五、高维数据向低维数据映射"><span class="nav-number">16.</span> <span class="nav-text">五、高维数据向低维数据映射</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#PCA的本质是将数据从一个坐标系转换到另一个坐标系上，即原来是n维坐标系，转换后也是n维坐标系。但是我们要将高维向低维映射，所以要从转换后的n维坐标系中取前k个坐标轴形成一个k维的坐标系。然后将X中的每一行样本都乘以W中每一个维度的坐标轴。这样就从n维降到了k维："><span class="nav-number">16.1.</span> <span class="nav-text">PCA的本质是将数据从一个坐标系转换到另一个坐标系上，即原来是n维坐标系，转换后也是n维坐标系。但是我们要将高维向低维映射，所以要从转换后的n维坐标系中取前k个坐标轴形成一个k维的坐标系。然后将X中的每一行样本都乘以W中每一个维度的坐标轴。这样就从n维降到了k维：</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#也可以从k维恢复到n维，但是恢复回来的-X-m-不等于原来的X："><span class="nav-number">16.2.</span> <span class="nav-text">也可以从k维恢复到n维，但是恢复回来的$X_m$不等于原来的X：</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#六、PCA在人脸识别中的应用"><span class="nav-number">17.</span> <span class="nav-text">六、PCA在人脸识别中的应用</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#对于-W-k-来说，本身每一行代表一个方向。那么换一种思路：如果每一行看作一个样本，那么第一行表示最能反映原数据X的样本特征，以此类推。"><span class="nav-number">17.1.</span> <span class="nav-text">对于$W_k$来说，本身每一行代表一个方向。那么换一种思路：如果每一行看作一个样本，那么第一行表示最能反映原数据X的样本特征，以此类推。</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#在人脸识别中-X的每一行对应一个人脸数据，W的每一行也是一个人脸数据，这个就被称为特征脸，所以每一个特征脸其实对应一个主成分"><span class="nav-number">17.2.</span> <span class="nav-text">在人脸识别中,X的每一行对应一个人脸数据，W的每一行也是一个人脸数据，这个就被称为特征脸，所以每一个特征脸其实对应一个主成分</span></a></li></ol></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="macchen"
+      src="/images/avatar.jpg">
+  <p class="site-author-name" itemprop="name">macchen</p>
+  <div class="site-description" itemprop="description">学习强国</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">11</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">1</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">14</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">macchen</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-area"></i>
+    </span>
+      <span class="post-meta-item-text">站点总字数：</span>
+    <span title="站点总字数">9k</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+      <span class="post-meta-item-text">站点阅读时长 &asymp;</span>
+    <span title="站点阅读时长">8 分钟</span>
+</div>
+
+        
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-user"></i>
+      </span>
+      <span class="site-uv" title="总访客量">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>
+    </span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-eye"></i>
+      </span>
+      <span class="site-pv" title="总访问量">
+        <span id="busuanzi_value_site_pv"></span>
+      </span>
+    </span>
+</div>
+
+
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+      
+
+<script>
+  if (typeof MathJax === 'undefined') {
+    window.MathJax = {
+      loader: {
+          load: ['[tex]/mhchem'],
+        source: {
+          '[tex]/amsCd': '[tex]/amscd',
+          '[tex]/AMScd': '[tex]/amscd'
+        }
+      },
+      tex: {
+        inlineMath: {'[+]': [['$', '$']]},
+          packages: {'[+]': ['mhchem']},
+        tags: 'ams'
+      },
+      options: {
+        renderActions: {
+          findScript: [10, doc => {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(node => {
+              const display = !!node.type.match(/; *mode=display/);
+              const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+              const text = document.createTextNode('');
+              node.parentNode.replaceChild(text, node);
+              math.start = {node: text, delim: '', n: 0};
+              math.end = {node: text, delim: '', n: 0};
+              doc.math.push(math);
+            });
+          }, '', false],
+          insertedScript: [200, () => {
+            document.querySelectorAll('mjx-container').forEach(node => {
+              let target = node.parentNode;
+              if (target.nodeName.toLowerCase() === 'li') {
+                target.parentNode.classList.add('has-jax');
+              }
+            });
+          }, '', false]
+        }
+      }
+    };
+    (function () {
+      var script = document.createElement('script');
+      script.src = '//cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js';
+      script.defer = true;
+      document.head.appendChild(script);
+    })();
+  } else {
+    MathJax.startup.document.state(0);
+    MathJax.texReset();
+    MathJax.typeset();
+  }
+</script>
+
+    
+
+  
+
+  <!-- 引入custom，就这一句，控制烟花特效 -->
+  
+  
+    <canvas class="fireworks" style="position: fixed;left: 0;top: 0;z-index: 1; pointer-events: none;" ></canvas>
+    <script src="//cdn.bootcss.com/animejs/2.2.0/anime.min.js"></script>
+    <script src="/js/cursor/explosion.min.js"></script>
+  
+
+
+<!-- 樱花特效 -->
+  
+      <script async src="/js/cursor/cherry.js"></script>
+  
+
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"log":false,"model":{"jsonPath":"/live2dw/assets/wanko.model.json"},"display":{"position":"left","width":250,"height":500},"mobile":{"show":true},"react":{"opacity":0.7}});</script></body>
+</html>
