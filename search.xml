@@ -94,50 +94,6 @@
       </tags>
   </entry>
   <entry>
-    <title>机器学习笔记11</title>
-    <url>/2020/08/15/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B011/</url>
-    <content><![CDATA[<h3 id="多项式回归"><a href="#多项式回归" class="headerlink" title="多项式回归"></a>多项式回归</h3><a id="more"></a>
-<h4 id="一、什么是多项式回归"><a href="#一、什么是多项式回归" class="headerlink" title="一、什么是多项式回归"></a>一、什么是多项式回归</h4><ul>
-<li><p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200815221650806.png" alt="image-20200815221650806"></p>
-<h5 id="以上图来说明-该数据只有一个特征x，但是我们要将一些多项式当作是另一些特征，比如图上的-ax-2-，对于式子本身来说依然是具有线性关系的，但是从x的角度来看就是非线性方程。这样相比普通的线性回归能更好的拟合非线性数据。这就是多项式回归"><a href="#以上图来说明-该数据只有一个特征x，但是我们要将一些多项式当作是另一些特征，比如图上的-ax-2-，对于式子本身来说依然是具有线性关系的，但是从x的角度来看就是非线性方程。这样相比普通的线性回归能更好的拟合非线性数据。这就是多项式回归" class="headerlink" title="以上图来说明:该数据只有一个特征x，但是我们要将一些多项式当作是另一些特征，比如图上的$ax^2$，对于式子本身来说依然是具有线性关系的，但是从x的角度来看就是非线性方程。这样相比普通的线性回归能更好的拟合非线性数据。这就是多项式回归"></a>以上图来说明:该数据只有一个特征x，但是我们要将一些多项式当作是另一些特征，比如图上的$ax^2$，对于式子本身来说依然是具有线性关系的，但是从x的角度来看就是非线性方程。这样相比普通的线性回归能更好的拟合非线性数据。这就是多项式回归</h5><h5 id="本质上相当于对原数据集进行升维来更好的拟合高维数据"><a href="#本质上相当于对原数据集进行升维来更好的拟合高维数据" class="headerlink" title="本质上相当于对原数据集进行升维来更好的拟合高维数据"></a>本质上相当于对原数据集进行升维来更好的拟合高维数据</h5></li>
-</ul>
-<h4 id="二，关于sklearn中的PolynomialFeatures"><a href="#二，关于sklearn中的PolynomialFeatures" class="headerlink" title="二，关于sklearn中的PolynomialFeatures"></a>二，关于sklearn中的PolynomialFeatures</h4><ul>
-<li><p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200816004625821.png" alt="image-20200816004625821"></p>
-<h5 id="设degree-i，则它会生成所有小于等于i的多项式特征，构成新的特征集"><a href="#设degree-i，则它会生成所有小于等于i的多项式特征，构成新的特征集" class="headerlink" title="设degree=i，则它会生成所有小于等于i的多项式特征，构成新的特征集"></a>设degree=i，则它会生成所有小于等于i的多项式特征，构成新的特征集</h5></li>
-</ul>
-<h4 id="三、Pipeline"><a href="#三、Pipeline" class="headerlink" title="三、Pipeline"></a>三、Pipeline</h4><ul>
-<li><h5 id="拿多项式回归来说，共有3步：1、生成多项式特征；2、数据归一化；3、调用线性回归。而Pipeline就可以帮助我们将这3步合在一起、使得我们每次调用时不需要重复这3步"><a href="#拿多项式回归来说，共有3步：1、生成多项式特征；2、数据归一化；3、调用线性回归。而Pipeline就可以帮助我们将这3步合在一起、使得我们每次调用时不需要重复这3步" class="headerlink" title="拿多项式回归来说，共有3步：1、生成多项式特征；2、数据归一化；3、调用线性回归。而Pipeline就可以帮助我们将这3步合在一起、使得我们每次调用时不需要重复这3步"></a>拿多项式回归来说，共有3步：1、生成多项式特征；2、数据归一化；3、调用线性回归。而Pipeline就可以帮助我们将这3步合在一起、使得我们每次调用时不需要重复这3步</h5></li>
-<li><h5 id="具体看jupyter中的代码"><a href="#具体看jupyter中的代码" class="headerlink" title="具体看jupyter中的代码"></a>具体看jupyter中的代码</h5></li>
-</ul>
-<h4 id="四、过拟合和欠拟合，以及分离数据集"><a href="#四、过拟合和欠拟合，以及分离数据集" class="headerlink" title="四、过拟合和欠拟合，以及分离数据集"></a>四、过拟合和欠拟合，以及分离数据集</h4><h4 id="1-泛化能力"><a href="#1-泛化能力" class="headerlink" title="1.泛化能力"></a>1.泛化能力</h4><ul>
-<li><h5 id="泛化能力是指我们由训练数据得出了一条拟合曲线，而这个曲线在面对测试数据时它的表现好坏就是泛化能力的强弱"><a href="#泛化能力是指我们由训练数据得出了一条拟合曲线，而这个曲线在面对测试数据时它的表现好坏就是泛化能力的强弱" class="headerlink" title="泛化能力是指我们由训练数据得出了一条拟合曲线，而这个曲线在面对测试数据时它的表现好坏就是泛化能力的强弱"></a>泛化能力是指我们由训练数据得出了一条拟合曲线，而这个曲线在面对测试数据时它的表现好坏就是泛化能力的强弱</h5></li>
-</ul>
-<h4 id="2-过拟合"><a href="#2-过拟合" class="headerlink" title="2.过拟合"></a>2.过拟合</h4><ul>
-<li><h5 id="就是太过贴近于训练数据的特征了，在训练集上表现非常优秀，近乎完美的预测-区分了所有的数据，但是在新的测试集上却表现平平，泛化能力差，拿到新样本后没有办法去准确的判断。"><a href="#就是太过贴近于训练数据的特征了，在训练集上表现非常优秀，近乎完美的预测-区分了所有的数据，但是在新的测试集上却表现平平，泛化能力差，拿到新样本后没有办法去准确的判断。" class="headerlink" title="就是太过贴近于训练数据的特征了，在训练集上表现非常优秀，近乎完美的预测/区分了所有的数据，但是在新的测试集上却表现平平，泛化能力差，拿到新样本后没有办法去准确的判断。"></a>就是太过贴近于训练数据的特征了，在训练集上表现非常优秀，近乎完美的预测/区分了所有的数据，但是在新的测试集上却表现平平，泛化能力差，拿到新样本后没有办法去准确的判断。</h5></li>
-</ul>
-<h4 id="3-欠拟合"><a href="#3-欠拟合" class="headerlink" title="3.欠拟合"></a>3.欠拟合</h4><ul>
-<li><h5 id="测试样本的特性没有学到-模型不能完整的表述数据关系-，或者是模型过于简单无法拟合或区分样本。就是在测试数据上都表现的很差"><a href="#测试样本的特性没有学到-模型不能完整的表述数据关系-，或者是模型过于简单无法拟合或区分样本。就是在测试数据上都表现的很差" class="headerlink" title="测试样本的特性没有学到(模型不能完整的表述数据关系)，或者是模型过于简单无法拟合或区分样本。就是在测试数据上都表现的很差"></a>测试样本的特性没有学到(模型不能完整的表述数据关系)，或者是模型过于简单无法拟合或区分样本。就是在测试数据上都表现的很差</h5></li>
-</ul>
-<h4 id="4-总结"><a href="#4-总结" class="headerlink" title="4.总结"></a>4.总结</h4><ul>
-<li><h5 id="总之，我们训练出来的模型是要进行预测的，所以我们并不是衡量它在训练数据上表现有多好，而是在测试数据上要很好才行"><a href="#总之，我们训练出来的模型是要进行预测的，所以我们并不是衡量它在训练数据上表现有多好，而是在测试数据上要很好才行" class="headerlink" title="总之，我们训练出来的模型是要进行预测的，所以我们并不是衡量它在训练数据上表现有多好，而是在测试数据上要很好才行"></a>总之，我们训练出来的模型是要进行预测的，所以我们并不是衡量它在训练数据上表现有多好，而是在测试数据上要很好才行</h5></li>
-<li><p><strong>那么如何衡量模型的泛化能力强弱呢？那就是采用分离数据集的方法来衡量。这就是分离数据集更深层的意义</strong></p>
-<p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200816210229364.png" alt="image-20200816210229364"></p>
-</li>
-</ul>
-<h4 id="五、学习曲线（可视化查看模型的欠拟合、过拟合）"><a href="#五、学习曲线（可视化查看模型的欠拟合、过拟合）" class="headerlink" title="五、学习曲线（可视化查看模型的欠拟合、过拟合）"></a>五、学习曲线（可视化查看模型的欠拟合、过拟合）</h4><ul>
-<li><h5 id="定义：随着训练样本的逐渐增多，算法训练出的模型的表现能力"><a href="#定义：随着训练样本的逐渐增多，算法训练出的模型的表现能力" class="headerlink" title="定义：随着训练样本的逐渐增多，算法训练出的模型的表现能力"></a>定义：随着训练样本的逐渐增多，算法训练出的模型的表现能力</h5></li>
-<li><h5 id="学习曲线的解释："><a href="#学习曲线的解释：" class="headerlink" title="学习曲线的解释："></a>学习曲线的解释：</h5><ul>
-<li><h5 id="随着样本数的增加，训练模型的误差越来越大，然后趋于稳定，这是因为样本数越多，模型越难拟合；"><a href="#随着样本数的增加，训练模型的误差越来越大，然后趋于稳定，这是因为样本数越多，模型越难拟合；" class="headerlink" title="随着样本数的增加，训练模型的误差越来越大，然后趋于稳定，这是因为样本数越多，模型越难拟合；"></a>随着样本数的增加，训练模型的误差越来越大，然后趋于稳定，这是因为样本数越多，模型越难拟合；</h5></li>
-<li><h5 id="随着样本数的增加，测试模型的误差越来越小，然后趋于稳定，同时之所以测试模型的误差比训练模型高，是因为将训练模型应用到测试模型上，泛化能力会有一定的损失"><a href="#随着样本数的增加，测试模型的误差越来越小，然后趋于稳定，同时之所以测试模型的误差比训练模型高，是因为将训练模型应用到测试模型上，泛化能力会有一定的损失" class="headerlink" title="随着样本数的增加，测试模型的误差越来越小，然后趋于稳定，同时之所以测试模型的误差比训练模型高，是因为将训练模型应用到测试模型上，泛化能力会有一定的损失"></a>随着样本数的增加，测试模型的误差越来越小，然后趋于稳定，同时之所以测试模型的误差比训练模型高，是因为将训练模型应用到测试模型上，泛化能力会有一定的损失</h5></li>
-</ul>
-</li>
-<li><h5 id="欠拟合，最佳拟合，过拟合的对比"><a href="#欠拟合，最佳拟合，过拟合的对比" class="headerlink" title="欠拟合，最佳拟合，过拟合的对比"></a>欠拟合，最佳拟合，过拟合的对比</h5><p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200816214627319.png" alt="image-20200816214627319"></p>
-<p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200816214657728.png" alt="image-20200816214657728"></p>
-</li>
-</ul>
-]]></content>
-  </entry>
-  <entry>
     <title>机器学习笔记2</title>
     <url>/2020/07/21/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B02/</url>
     <content><![CDATA[<h3 id="机器学习基础"><a href="#机器学习基础" class="headerlink" title="机器学习基础"></a>机器学习基础</h3><h4 id="一：机器学习的数据"><a href="#一：机器学习的数据" class="headerlink" title="一：机器学习的数据"></a>一：机器学习的数据</h4><a id="more"></a>
@@ -274,6 +230,50 @@
         <tag>Python</tag>
         <tag>机器学习基础概念</tag>
       </tags>
+  </entry>
+  <entry>
+    <title>机器学习笔记11</title>
+    <url>/2020/08/15/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B011/</url>
+    <content><![CDATA[<h3 id="多项式回归"><a href="#多项式回归" class="headerlink" title="多项式回归"></a>多项式回归</h3><a id="more"></a>
+<h4 id="一、什么是多项式回归"><a href="#一、什么是多项式回归" class="headerlink" title="一、什么是多项式回归"></a>一、什么是多项式回归</h4><ul>
+<li><p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200815221650806.png" alt="image-20200815221650806"></p>
+<h5 id="以上图来说明-该数据只有一个特征x，但是我们要将一些多项式当作是另一些特征，比如图上的-ax-2-，对于式子本身来说依然是具有线性关系的，但是从x的角度来看就是非线性方程。这样相比普通的线性回归能更好的拟合非线性数据。这就是多项式回归"><a href="#以上图来说明-该数据只有一个特征x，但是我们要将一些多项式当作是另一些特征，比如图上的-ax-2-，对于式子本身来说依然是具有线性关系的，但是从x的角度来看就是非线性方程。这样相比普通的线性回归能更好的拟合非线性数据。这就是多项式回归" class="headerlink" title="以上图来说明:该数据只有一个特征x，但是我们要将一些多项式当作是另一些特征，比如图上的$ax^2$，对于式子本身来说依然是具有线性关系的，但是从x的角度来看就是非线性方程。这样相比普通的线性回归能更好的拟合非线性数据。这就是多项式回归"></a>以上图来说明:该数据只有一个特征x，但是我们要将一些多项式当作是另一些特征，比如图上的$ax^2$，对于式子本身来说依然是具有线性关系的，但是从x的角度来看就是非线性方程。这样相比普通的线性回归能更好的拟合非线性数据。这就是多项式回归</h5><h5 id="本质上相当于对原数据集进行升维来更好的拟合高维数据"><a href="#本质上相当于对原数据集进行升维来更好的拟合高维数据" class="headerlink" title="本质上相当于对原数据集进行升维来更好的拟合高维数据"></a>本质上相当于对原数据集进行升维来更好的拟合高维数据</h5></li>
+</ul>
+<h4 id="二，关于sklearn中的PolynomialFeatures"><a href="#二，关于sklearn中的PolynomialFeatures" class="headerlink" title="二，关于sklearn中的PolynomialFeatures"></a>二，关于sklearn中的PolynomialFeatures</h4><ul>
+<li><p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200816004625821.png" alt="image-20200816004625821"></p>
+<h5 id="设degree-i，则它会生成所有小于等于i的多项式特征，构成新的特征集"><a href="#设degree-i，则它会生成所有小于等于i的多项式特征，构成新的特征集" class="headerlink" title="设degree=i，则它会生成所有小于等于i的多项式特征，构成新的特征集"></a>设degree=i，则它会生成所有小于等于i的多项式特征，构成新的特征集</h5></li>
+</ul>
+<h4 id="三、Pipeline"><a href="#三、Pipeline" class="headerlink" title="三、Pipeline"></a>三、Pipeline</h4><ul>
+<li><h5 id="拿多项式回归来说，共有3步：1、生成多项式特征；2、数据归一化；3、调用线性回归。而Pipeline就可以帮助我们将这3步合在一起、使得我们每次调用时不需要重复这3步"><a href="#拿多项式回归来说，共有3步：1、生成多项式特征；2、数据归一化；3、调用线性回归。而Pipeline就可以帮助我们将这3步合在一起、使得我们每次调用时不需要重复这3步" class="headerlink" title="拿多项式回归来说，共有3步：1、生成多项式特征；2、数据归一化；3、调用线性回归。而Pipeline就可以帮助我们将这3步合在一起、使得我们每次调用时不需要重复这3步"></a>拿多项式回归来说，共有3步：1、生成多项式特征；2、数据归一化；3、调用线性回归。而Pipeline就可以帮助我们将这3步合在一起、使得我们每次调用时不需要重复这3步</h5></li>
+<li><h5 id="具体看jupyter中的代码"><a href="#具体看jupyter中的代码" class="headerlink" title="具体看jupyter中的代码"></a>具体看jupyter中的代码</h5></li>
+</ul>
+<h4 id="四、过拟合和欠拟合，以及分离数据集"><a href="#四、过拟合和欠拟合，以及分离数据集" class="headerlink" title="四、过拟合和欠拟合，以及分离数据集"></a>四、过拟合和欠拟合，以及分离数据集</h4><h4 id="1-泛化能力"><a href="#1-泛化能力" class="headerlink" title="1.泛化能力"></a>1.泛化能力</h4><ul>
+<li><h5 id="泛化能力是指我们由训练数据得出了一条拟合曲线，而这个曲线在面对测试数据时它的表现好坏就是泛化能力的强弱"><a href="#泛化能力是指我们由训练数据得出了一条拟合曲线，而这个曲线在面对测试数据时它的表现好坏就是泛化能力的强弱" class="headerlink" title="泛化能力是指我们由训练数据得出了一条拟合曲线，而这个曲线在面对测试数据时它的表现好坏就是泛化能力的强弱"></a>泛化能力是指我们由训练数据得出了一条拟合曲线，而这个曲线在面对测试数据时它的表现好坏就是泛化能力的强弱</h5></li>
+</ul>
+<h4 id="2-过拟合"><a href="#2-过拟合" class="headerlink" title="2.过拟合"></a>2.过拟合</h4><ul>
+<li><h5 id="就是太过贴近于训练数据的特征了，在训练集上表现非常优秀，近乎完美的预测-区分了所有的数据，但是在新的测试集上却表现平平，泛化能力差，拿到新样本后没有办法去准确的判断。"><a href="#就是太过贴近于训练数据的特征了，在训练集上表现非常优秀，近乎完美的预测-区分了所有的数据，但是在新的测试集上却表现平平，泛化能力差，拿到新样本后没有办法去准确的判断。" class="headerlink" title="就是太过贴近于训练数据的特征了，在训练集上表现非常优秀，近乎完美的预测/区分了所有的数据，但是在新的测试集上却表现平平，泛化能力差，拿到新样本后没有办法去准确的判断。"></a>就是太过贴近于训练数据的特征了，在训练集上表现非常优秀，近乎完美的预测/区分了所有的数据，但是在新的测试集上却表现平平，泛化能力差，拿到新样本后没有办法去准确的判断。</h5></li>
+</ul>
+<h4 id="3-欠拟合"><a href="#3-欠拟合" class="headerlink" title="3.欠拟合"></a>3.欠拟合</h4><ul>
+<li><h5 id="测试样本的特性没有学到-模型不能完整的表述数据关系-，或者是模型过于简单无法拟合或区分样本。就是在测试数据上都表现的很差"><a href="#测试样本的特性没有学到-模型不能完整的表述数据关系-，或者是模型过于简单无法拟合或区分样本。就是在测试数据上都表现的很差" class="headerlink" title="测试样本的特性没有学到(模型不能完整的表述数据关系)，或者是模型过于简单无法拟合或区分样本。就是在测试数据上都表现的很差"></a>测试样本的特性没有学到(模型不能完整的表述数据关系)，或者是模型过于简单无法拟合或区分样本。就是在测试数据上都表现的很差</h5></li>
+</ul>
+<h4 id="4-总结"><a href="#4-总结" class="headerlink" title="4.总结"></a>4.总结</h4><ul>
+<li><h5 id="总之，我们训练出来的模型是要进行预测的，所以我们并不是衡量它在训练数据上表现有多好，而是在测试数据上要很好才行"><a href="#总之，我们训练出来的模型是要进行预测的，所以我们并不是衡量它在训练数据上表现有多好，而是在测试数据上要很好才行" class="headerlink" title="总之，我们训练出来的模型是要进行预测的，所以我们并不是衡量它在训练数据上表现有多好，而是在测试数据上要很好才行"></a>总之，我们训练出来的模型是要进行预测的，所以我们并不是衡量它在训练数据上表现有多好，而是在测试数据上要很好才行</h5></li>
+<li><p><strong>那么如何衡量模型的泛化能力强弱呢？那就是采用分离数据集的方法来衡量。这就是分离数据集更深层的意义</strong></p>
+<p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200816210229364.png" alt="image-20200816210229364"></p>
+</li>
+</ul>
+<h4 id="五、学习曲线（可视化查看模型的欠拟合、过拟合）"><a href="#五、学习曲线（可视化查看模型的欠拟合、过拟合）" class="headerlink" title="五、学习曲线（可视化查看模型的欠拟合、过拟合）"></a>五、学习曲线（可视化查看模型的欠拟合、过拟合）</h4><ul>
+<li><h5 id="定义：随着训练样本的逐渐增多，算法训练出的模型的表现能力"><a href="#定义：随着训练样本的逐渐增多，算法训练出的模型的表现能力" class="headerlink" title="定义：随着训练样本的逐渐增多，算法训练出的模型的表现能力"></a>定义：随着训练样本的逐渐增多，算法训练出的模型的表现能力</h5></li>
+<li><h5 id="学习曲线的解释："><a href="#学习曲线的解释：" class="headerlink" title="学习曲线的解释："></a>学习曲线的解释：</h5><ul>
+<li><h5 id="随着样本数的增加，训练模型的误差越来越大，然后趋于稳定，这是因为样本数越多，模型越难拟合；"><a href="#随着样本数的增加，训练模型的误差越来越大，然后趋于稳定，这是因为样本数越多，模型越难拟合；" class="headerlink" title="随着样本数的增加，训练模型的误差越来越大，然后趋于稳定，这是因为样本数越多，模型越难拟合；"></a>随着样本数的增加，训练模型的误差越来越大，然后趋于稳定，这是因为样本数越多，模型越难拟合；</h5></li>
+<li><h5 id="随着样本数的增加，测试模型的误差越来越小，然后趋于稳定，同时之所以测试模型的误差比训练模型高，是因为将训练模型应用到测试模型上，泛化能力会有一定的损失"><a href="#随着样本数的增加，测试模型的误差越来越小，然后趋于稳定，同时之所以测试模型的误差比训练模型高，是因为将训练模型应用到测试模型上，泛化能力会有一定的损失" class="headerlink" title="随着样本数的增加，测试模型的误差越来越小，然后趋于稳定，同时之所以测试模型的误差比训练模型高，是因为将训练模型应用到测试模型上，泛化能力会有一定的损失"></a>随着样本数的增加，测试模型的误差越来越小，然后趋于稳定，同时之所以测试模型的误差比训练模型高，是因为将训练模型应用到测试模型上，泛化能力会有一定的损失</h5></li>
+</ul>
+</li>
+<li><h5 id="欠拟合，最佳拟合，过拟合的对比"><a href="#欠拟合，最佳拟合，过拟合的对比" class="headerlink" title="欠拟合，最佳拟合，过拟合的对比"></a>欠拟合，最佳拟合，过拟合的对比</h5><p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200816214627319.png" alt="image-20200816214627319"></p>
+<p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200816214657728.png" alt="image-20200816214657728"></p>
+</li>
+</ul>
+]]></content>
   </entry>
   <entry>
     <title>机器学习笔记3</title>
@@ -422,33 +422,6 @@
       </tags>
   </entry>
   <entry>
-    <title>机器学习笔记5</title>
-    <url>/2020/07/24/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B05/</url>
-    <content><![CDATA[<h3 id="更多有关KNN的思考"><a href="#更多有关KNN的思考" class="headerlink" title="更多有关KNN的思考"></a>更多有关KNN的思考</h3><a id="more"></a>
-<p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200724025657646.png" alt="image-20200724025657646"></p>
-<p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200724025727331.png" alt="image-20200724025727331"></p>
-<h4 id="解释：可以把离绿球最近的三个蓝球的均值作为绿球的值，也可以将距离权重考虑进去求加权平均数。总之，这些都是回归问题。（sklearn其实已经封装好了KNN解决回归问题的库：KNeighborsRegressor）"><a href="#解释：可以把离绿球最近的三个蓝球的均值作为绿球的值，也可以将距离权重考虑进去求加权平均数。总之，这些都是回归问题。（sklearn其实已经封装好了KNN解决回归问题的库：KNeighborsRegressor）" class="headerlink" title="解释：可以把离绿球最近的三个蓝球的均值作为绿球的值，也可以将距离权重考虑进去求加权平均数。总之，这些都是回归问题。（sklearn其实已经封装好了KNN解决回归问题的库：KNeighborsRegressor）"></a>解释：可以把离绿球最近的三个蓝球的均值作为绿球的值，也可以将距离权重考虑进去求加权平均数。总之，这些都是回归问题。（sklearn其实已经封装好了KNN解决回归问题的库：KNeighborsRegressor）</h4><h3 id="它的缺点"><a href="#它的缺点" class="headerlink" title="它的缺点"></a>它的缺点</h3><ul>
-<li><p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200724030254962.png" alt="image-20200724030254962"></p>
-</li>
-<li><p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200724030519829.png" alt="image-20200724030519829"></p>
-<ul>
-<li><h4 id="解释：缺点2：拿上图红蓝绿球来举例，假如k-3，而其中两个是红色，一个是蓝色。按照KNN就会认定绿球为红色类，但事实上绿球的标签是蓝色类"><a href="#解释：缺点2：拿上图红蓝绿球来举例，假如k-3，而其中两个是红色，一个是蓝色。按照KNN就会认定绿球为红色类，但事实上绿球的标签是蓝色类" class="headerlink" title="解释：缺点2：拿上图红蓝绿球来举例，假如k=3，而其中两个是红色，一个是蓝色。按照KNN就会认定绿球为红色类，但事实上绿球的标签是蓝色类"></a>解释：缺点2：拿上图红蓝绿球来举例，假如k=3，而其中两个是红色，一个是蓝色。按照KNN就会认定绿球为红色类，但事实上绿球的标签是蓝色类</h4></li>
-</ul>
-</li>
-<li><h4 id="缺点4："><a href="#缺点4：" class="headerlink" title="缺点4："></a>缺点4：<img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200724031158354.png" alt="image-20200724031158354"></h4></li>
-</ul>
-<h3 id="机器学习流程回顾"><a href="#机器学习流程回顾" class="headerlink" title="机器学习流程回顾"></a>机器学习流程回顾</h3><p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200724031341729.png" alt="image-20200724031341729"></p>
-]]></content>
-      <categories>
-        <category>机器学习</category>
-      </categories>
-      <tags>
-        <tag>机器学习</tag>
-        <tag>Python</tag>
-        <tag>KNN</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>机器学习笔记6</title>
     <url>/2020/07/25/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B06/</url>
     <content><![CDATA[<h3 id="线性回归"><a href="#线性回归" class="headerlink" title="线性回归"></a>线性回归</h3><a id="more"></a>
@@ -501,6 +474,33 @@
       </tags>
   </entry>
   <entry>
+    <title>机器学习笔记5</title>
+    <url>/2020/07/24/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B05/</url>
+    <content><![CDATA[<h3 id="更多有关KNN的思考"><a href="#更多有关KNN的思考" class="headerlink" title="更多有关KNN的思考"></a>更多有关KNN的思考</h3><a id="more"></a>
+<p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200724025657646.png" alt="image-20200724025657646"></p>
+<p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200724025727331.png" alt="image-20200724025727331"></p>
+<h4 id="解释：可以把离绿球最近的三个蓝球的均值作为绿球的值，也可以将距离权重考虑进去求加权平均数。总之，这些都是回归问题。（sklearn其实已经封装好了KNN解决回归问题的库：KNeighborsRegressor）"><a href="#解释：可以把离绿球最近的三个蓝球的均值作为绿球的值，也可以将距离权重考虑进去求加权平均数。总之，这些都是回归问题。（sklearn其实已经封装好了KNN解决回归问题的库：KNeighborsRegressor）" class="headerlink" title="解释：可以把离绿球最近的三个蓝球的均值作为绿球的值，也可以将距离权重考虑进去求加权平均数。总之，这些都是回归问题。（sklearn其实已经封装好了KNN解决回归问题的库：KNeighborsRegressor）"></a>解释：可以把离绿球最近的三个蓝球的均值作为绿球的值，也可以将距离权重考虑进去求加权平均数。总之，这些都是回归问题。（sklearn其实已经封装好了KNN解决回归问题的库：KNeighborsRegressor）</h4><h3 id="它的缺点"><a href="#它的缺点" class="headerlink" title="它的缺点"></a>它的缺点</h3><ul>
+<li><p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200724030254962.png" alt="image-20200724030254962"></p>
+</li>
+<li><p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200724030519829.png" alt="image-20200724030519829"></p>
+<ul>
+<li><h4 id="解释：缺点2：拿上图红蓝绿球来举例，假如k-3，而其中两个是红色，一个是蓝色。按照KNN就会认定绿球为红色类，但事实上绿球的标签是蓝色类"><a href="#解释：缺点2：拿上图红蓝绿球来举例，假如k-3，而其中两个是红色，一个是蓝色。按照KNN就会认定绿球为红色类，但事实上绿球的标签是蓝色类" class="headerlink" title="解释：缺点2：拿上图红蓝绿球来举例，假如k=3，而其中两个是红色，一个是蓝色。按照KNN就会认定绿球为红色类，但事实上绿球的标签是蓝色类"></a>解释：缺点2：拿上图红蓝绿球来举例，假如k=3，而其中两个是红色，一个是蓝色。按照KNN就会认定绿球为红色类，但事实上绿球的标签是蓝色类</h4></li>
+</ul>
+</li>
+<li><h4 id="缺点4："><a href="#缺点4：" class="headerlink" title="缺点4："></a>缺点4：<img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200724031158354.png" alt="image-20200724031158354"></h4></li>
+</ul>
+<h3 id="机器学习流程回顾"><a href="#机器学习流程回顾" class="headerlink" title="机器学习流程回顾"></a>机器学习流程回顾</h3><p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200724031341729.png" alt="image-20200724031341729"></p>
+]]></content>
+      <categories>
+        <category>机器学习</category>
+      </categories>
+      <tags>
+        <tag>机器学习</tag>
+        <tag>Python</tag>
+        <tag>KNN</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>机器学习笔记7</title>
     <url>/2020/07/30/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B07/</url>
     <content><![CDATA[<h3 id="回归算法的评价"><a href="#回归算法的评价" class="headerlink" title="回归算法的评价"></a>回归算法的评价</h3><a id="more"></a>
@@ -521,31 +521,6 @@
         <tag>机器学习</tag>
         <tag>线性回归</tag>
         <tag>回归算法评价</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>机器学习笔记8</title>
-    <url>/2020/07/30/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B08/</url>
-    <content><![CDATA[<h3 id="多元线性回归"><a href="#多元线性回归" class="headerlink" title="多元线性回归"></a>多元线性回归</h3><a id="more"></a>
-<h4 id="一、什么是多元线性回归"><a href="#一、什么是多元线性回归" class="headerlink" title="一、什么是多元线性回归"></a>一、什么是多元线性回归</h4><p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200730235347025.png" alt="image-20200730235347025"></p>
-<h4 id="二、多元线性回归的正规方程解"><a href="#二、多元线性回归的正规方程解" class="headerlink" title="二、多元线性回归的正规方程解"></a>二、多元线性回归的正规方程解</h4><p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200731030050773.png" alt="image-20200731030050773"></p>
-<p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200731030338464.png" alt="image-20200731030338464"></p>
-<h4 id="因为X是一个特征矩阵，所以X-i-本身就是行向量，因此-theta必须由行向量转置为列向量"><a href="#因为X是一个特征矩阵，所以X-i-本身就是行向量，因此-theta必须由行向量转置为列向量" class="headerlink" title="因为X是一个特征矩阵，所以X^{(i)}本身就是行向量，因此\theta必须由行向量转置为列向量"></a>因为X是一个特征矩阵，所以<script type="math/tex">X^{(i)}</script>本身就是行向量，因此<script type="math/tex">\theta</script>必须由行向量转置为列向量</h4><h4 id="接下来进一步推广到整个特征矩阵"><a href="#接下来进一步推广到整个特征矩阵" class="headerlink" title="接下来进一步推广到整个特征矩阵"></a>接下来进一步推广到整个特征矩阵</h4><p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200731031136440.png" alt="image-20200731031136440"></p>
-<h4 id="因为X-b是m-n的矩阵，-theta-是n行列向量，所以-hat-y-是一个m行的列向量"><a href="#因为X-b是m-n的矩阵，-theta-是n行列向量，所以-hat-y-是一个m行的列向量" class="headerlink" title="因为X_b是m*n的矩阵，\theta 是n行列向量，所以\hat{y}是一个m行的列向量"></a>因为<script type="math/tex">X_b</script>是m*n的矩阵，<script type="math/tex">\theta</script> 是n行列向量，所以<script type="math/tex">\hat{y}</script>是一个m行的列向量</h4><p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200731032608917.png" alt="image-20200731032608917"></p>
-<p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200731032641791.png" alt="image-20200731032641791"></p>
-<p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200731032712657.png" alt="image-20200731032712657"></p>
-<h4 id="因为-theta只是X前面的系数，与量纲无关，所以不需要归一化处理"><a href="#因为-theta只是X前面的系数，与量纲无关，所以不需要归一化处理" class="headerlink" title="因为\theta只是X前面的系数，与量纲无关，所以不需要归一化处理"></a>因为<script type="math/tex">\theta</script>只是X前面的系数，与量纲无关，所以不需要归一化处理</h4><h4 id="三、线性回归总结"><a href="#三、线性回归总结" class="headerlink" title="三、线性回归总结"></a>三、线性回归总结</h4><p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200805000611219.png" alt="image-20200805000611219"></p>
-<p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200805000625908.png" alt="image-20200805000625908"></p>
-<p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200805000642638.png" alt="image-20200805000642638"></p>
-<h4 id="关于可解释性，我们拿波士顿房价预测来说，训练得到的参数的正负表示该特征与房价呈正相关还是负相关；绝对值大小表示对房价的影响程度，越大则对房价影响越大，具体看Jupyter。"><a href="#关于可解释性，我们拿波士顿房价预测来说，训练得到的参数的正负表示该特征与房价呈正相关还是负相关；绝对值大小表示对房价的影响程度，越大则对房价影响越大，具体看Jupyter。" class="headerlink" title="关于可解释性，我们拿波士顿房价预测来说，训练得到的参数的正负表示该特征与房价呈正相关还是负相关；绝对值大小表示对房价的影响程度，越大则对房价影响越大，具体看Jupyter。"></a>关于可解释性，我们拿波士顿房价预测来说，训练得到的参数的正负表示该特征与房价呈正相关还是负相关；绝对值大小表示对房价的影响程度，越大则对房价影响越大，具体看Jupyter。</h4>]]></content>
-      <categories>
-        <category>机器学习</category>
-      </categories>
-      <tags>
-        <tag>机器学习</tag>
-        <tag>线性回归</tag>
-        <tag>多元线性回归</tag>
-        <tag>模型可解释性</tag>
       </tags>
   </entry>
   <entry>
@@ -646,6 +621,31 @@
       <tags>
         <tag>机器学习</tag>
         <tag>梯度下降</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>机器学习笔记8</title>
+    <url>/2020/07/30/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B08/</url>
+    <content><![CDATA[<h3 id="多元线性回归"><a href="#多元线性回归" class="headerlink" title="多元线性回归"></a>多元线性回归</h3><a id="more"></a>
+<h4 id="一、什么是多元线性回归"><a href="#一、什么是多元线性回归" class="headerlink" title="一、什么是多元线性回归"></a>一、什么是多元线性回归</h4><p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200730235347025.png" alt="image-20200730235347025"></p>
+<h4 id="二、多元线性回归的正规方程解"><a href="#二、多元线性回归的正规方程解" class="headerlink" title="二、多元线性回归的正规方程解"></a>二、多元线性回归的正规方程解</h4><p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200731030050773.png" alt="image-20200731030050773"></p>
+<p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200731030338464.png" alt="image-20200731030338464"></p>
+<h4 id="因为X是一个特征矩阵，所以X-i-本身就是行向量，因此-theta必须由行向量转置为列向量"><a href="#因为X是一个特征矩阵，所以X-i-本身就是行向量，因此-theta必须由行向量转置为列向量" class="headerlink" title="因为X是一个特征矩阵，所以X^{(i)}本身就是行向量，因此\theta必须由行向量转置为列向量"></a>因为X是一个特征矩阵，所以<script type="math/tex">X^{(i)}</script>本身就是行向量，因此<script type="math/tex">\theta</script>必须由行向量转置为列向量</h4><h4 id="接下来进一步推广到整个特征矩阵"><a href="#接下来进一步推广到整个特征矩阵" class="headerlink" title="接下来进一步推广到整个特征矩阵"></a>接下来进一步推广到整个特征矩阵</h4><p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200731031136440.png" alt="image-20200731031136440"></p>
+<h4 id="因为X-b是m-n的矩阵，-theta-是n行列向量，所以-hat-y-是一个m行的列向量"><a href="#因为X-b是m-n的矩阵，-theta-是n行列向量，所以-hat-y-是一个m行的列向量" class="headerlink" title="因为X_b是m*n的矩阵，\theta 是n行列向量，所以\hat{y}是一个m行的列向量"></a>因为<script type="math/tex">X_b</script>是m*n的矩阵，<script type="math/tex">\theta</script> 是n行列向量，所以<script type="math/tex">\hat{y}</script>是一个m行的列向量</h4><p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200731032608917.png" alt="image-20200731032608917"></p>
+<p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200731032641791.png" alt="image-20200731032641791"></p>
+<p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200731032712657.png" alt="image-20200731032712657"></p>
+<h4 id="因为-theta只是X前面的系数，与量纲无关，所以不需要归一化处理"><a href="#因为-theta只是X前面的系数，与量纲无关，所以不需要归一化处理" class="headerlink" title="因为\theta只是X前面的系数，与量纲无关，所以不需要归一化处理"></a>因为<script type="math/tex">\theta</script>只是X前面的系数，与量纲无关，所以不需要归一化处理</h4><h4 id="三、线性回归总结"><a href="#三、线性回归总结" class="headerlink" title="三、线性回归总结"></a>三、线性回归总结</h4><p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200805000611219.png" alt="image-20200805000611219"></p>
+<p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200805000625908.png" alt="image-20200805000625908"></p>
+<p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200805000642638.png" alt="image-20200805000642638"></p>
+<h4 id="关于可解释性，我们拿波士顿房价预测来说，训练得到的参数的正负表示该特征与房价呈正相关还是负相关；绝对值大小表示对房价的影响程度，越大则对房价影响越大，具体看Jupyter。"><a href="#关于可解释性，我们拿波士顿房价预测来说，训练得到的参数的正负表示该特征与房价呈正相关还是负相关；绝对值大小表示对房价的影响程度，越大则对房价影响越大，具体看Jupyter。" class="headerlink" title="关于可解释性，我们拿波士顿房价预测来说，训练得到的参数的正负表示该特征与房价呈正相关还是负相关；绝对值大小表示对房价的影响程度，越大则对房价影响越大，具体看Jupyter。"></a>关于可解释性，我们拿波士顿房价预测来说，训练得到的参数的正负表示该特征与房价呈正相关还是负相关；绝对值大小表示对房价的影响程度，越大则对房价影响越大，具体看Jupyter。</h4>]]></content>
+      <categories>
+        <category>机器学习</category>
+      </categories>
+      <tags>
+        <tag>机器学习</tag>
+        <tag>线性回归</tag>
+        <tag>多元线性回归</tag>
+        <tag>模型可解释性</tag>
       </tags>
   </entry>
 </search>
