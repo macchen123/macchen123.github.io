@@ -23,42 +23,6 @@
       </tags>
   </entry>
   <entry>
-    <title>机器学习笔记12</title>
-    <url>/2020/08/26/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B012/</url>
-    <content><![CDATA[<h3 id="逻辑回归（Logistic-Regression）"><a href="#逻辑回归（Logistic-Regression）" class="headerlink" title="逻辑回归（Logistic Regression）"></a>逻辑回归（Logistic Regression）</h3><a id="more"></a>
-<h4 id="一、什么是逻辑回归"><a href="#一、什么是逻辑回归" class="headerlink" title="一、什么是逻辑回归"></a>一、什么是逻辑回归</h4><ul>
-<li><p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200827181823137.png" alt="image-20200827181823137"></p>
-<p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200827181942648.png" alt="image-20200827181942648"></p>
-<ul>
-<li><h5 id="线性回归的预测值是我们本身就需要的指标，比如房价预测中，y就是房价。但是逻辑回归的预测值是概率值，比如预测未来一周某地下雨的可能性。这里可以将逻辑回归当作回归算法，因为概率值也属于连续值。但是通常逻辑回归被当作是分类算法，比如将下雨的可能性（回归）转换为是否下雨（分类），所以需要进一步的转换，将概率p-gt-0-5的转换为1，p-lt-0-5的转换为0。"><a href="#线性回归的预测值是我们本身就需要的指标，比如房价预测中，y就是房价。但是逻辑回归的预测值是概率值，比如预测未来一周某地下雨的可能性。这里可以将逻辑回归当作回归算法，因为概率值也属于连续值。但是通常逻辑回归被当作是分类算法，比如将下雨的可能性（回归）转换为是否下雨（分类），所以需要进一步的转换，将概率p-gt-0-5的转换为1，p-lt-0-5的转换为0。" class="headerlink" title="线性回归的预测值是我们本身就需要的指标，比如房价预测中，y就是房价。但是逻辑回归的预测值是概率值，比如预测未来一周某地下雨的可能性。这里可以将逻辑回归当作回归算法，因为概率值也属于连续值。但是通常逻辑回归被当作是分类算法，比如将下雨的可能性（回归）转换为是否下雨（分类），所以需要进一步的转换，将概率p&gt;0.5的转换为1，p&lt;0.5的转换为0。"></a>线性回归的预测值是我们本身就需要的指标，比如房价预测中，y就是房价。但是逻辑回归的预测值是概率值，比如预测未来一周某地下雨的可能性。这里可以将逻辑回归当作回归算法，因为概率值也属于连续值。但是通常逻辑回归被当作是分类算法，比如将下雨的可能性（回归）转换为是否下雨（分类），所以需要进一步的转换，将概率p&gt;0.5的转换为1，p&lt;0.5的转换为0。</h5></li>
-<li><p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200827183353872.png" alt="image-20200827183353872"></p>
-<h5 id="为了解决线性回归不适合处理分类的问题，我们在线性回归的基础上提出了逻辑回归。但是线性回归得出的预测值的值域往往是-inf-inf-，所以我们需要一个-sigma-函数将线性回归的结果映射到-0-1-上，使它符合概率的值域。那么，哪个函数能完成这一工作呢？那就是Sigmoid函数了。"><a href="#为了解决线性回归不适合处理分类的问题，我们在线性回归的基础上提出了逻辑回归。但是线性回归得出的预测值的值域往往是-inf-inf-，所以我们需要一个-sigma-函数将线性回归的结果映射到-0-1-上，使它符合概率的值域。那么，哪个函数能完成这一工作呢？那就是Sigmoid函数了。" class="headerlink" title="为了解决线性回归不适合处理分类的问题，我们在线性回归的基础上提出了逻辑回归。但是线性回归得出的预测值的值域往往是[-inf , +inf]，所以我们需要一个$\sigma$函数将线性回归的结果映射到(0 , 1)上，使它符合概率的值域。那么，哪个函数能完成这一工作呢？那就是Sigmoid函数了。"></a>为了解决线性回归不适合处理分类的问题，我们在线性回归的基础上提出了逻辑回归。但是线性回归得出的预测值的值域往往是[-inf , +inf]，所以我们需要一个$\sigma$函数将线性回归的结果映射到(0 , 1)上，使它符合概率的值域。那么，哪个函数能完成这一工作呢？那就是Sigmoid函数了。</h5></li>
-<li><p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200827184535801.png" alt="image-20200827184535801"></p>
-<p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200827184642354.png" alt="image-20200827184642354"></p>
-<h5 id="因此下面就是逻辑回归的全貌："><a href="#因此下面就是逻辑回归的全貌：" class="headerlink" title="因此下面就是逻辑回归的全貌："></a>因此下面就是逻辑回归的全貌：</h5><p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200827184806464.png" alt="image-20200827184806464"></p>
-</li>
-</ul>
-</li>
-</ul>
-<h4 id="二、逻辑回归的损失函数（cost指损失函数）"><a href="#二、逻辑回归的损失函数（cost指损失函数）" class="headerlink" title="二、逻辑回归的损失函数（cost指损失函数）"></a>二、逻辑回归的损失函数（cost指损失函数）</h4><ul>
-<li><h5 id="由于逻辑回归的标签值（真实值）是二分类，所以我们不能采用线性回归那样的损失函数，因此我们采用以下方案"><a href="#由于逻辑回归的标签值（真实值）是二分类，所以我们不能采用线性回归那样的损失函数，因此我们采用以下方案" class="headerlink" title="由于逻辑回归的标签值（真实值）是二分类，所以我们不能采用线性回归那样的损失函数，因此我们采用以下方案"></a>由于逻辑回归的标签值（真实值）是二分类，所以我们不能采用线性回归那样的损失函数，因此我们采用以下方案</h5><p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200827185300946.png" alt="image-20200827185300946"></p>
-<h5 id="第一个图的解释："><a href="#第一个图的解释：" class="headerlink" title="第一个图的解释："></a>第一个图的解释：</h5><ul>
-<li><h5 id="如果真实值y等于1，但是预测得出的概率p很小（小于0-5），使得预测出的分类-y-hat-等于0。所以预测出现了错误，自然导致损失函数的值非常大（预测出的p越小，则cost越大）。"><a href="#如果真实值y等于1，但是预测得出的概率p很小（小于0-5），使得预测出的分类-y-hat-等于0。所以预测出现了错误，自然导致损失函数的值非常大（预测出的p越小，则cost越大）。" class="headerlink" title="如果真实值y等于1，但是预测得出的概率p很小（小于0.5），使得预测出的分类$y^{hat}$等于0。所以预测出现了错误，自然导致损失函数的值非常大（预测出的p越小，则cost越大）。"></a>如果真实值y等于1，但是预测得出的概率p很小（小于0.5），使得预测出的分类$y^{hat}$等于0。所以预测出现了错误，自然导致损失函数的值非常大（预测出的p越小，则cost越大）。</h5></li>
-<li><h5 id="如果真实值y等于0，但是预测得出的概率p很大（大于0-5），使得预测出的分类-y-hat-等于1。所以预测出现了错误，自然导致损失函数的值非常小（预测出的p越大，则cost越大）。"><a href="#如果真实值y等于0，但是预测得出的概率p很大（大于0-5），使得预测出的分类-y-hat-等于1。所以预测出现了错误，自然导致损失函数的值非常小（预测出的p越大，则cost越大）。" class="headerlink" title="如果真实值y等于0，但是预测得出的概率p很大（大于0.5），使得预测出的分类$y^{hat}$等于1。所以预测出现了错误，自然导致损失函数的值非常小（预测出的p越大，则cost越大）。"></a>如果真实值y等于0，但是预测得出的概率p很大（大于0.5），使得预测出的分类$y^{hat}$等于1。所以预测出现了错误，自然导致损失函数的值非常小（预测出的p越大，则cost越大）。</h5></li>
-</ul>
-<h5 id="那么，为什么可以采用第二个图的分段函数来实现这一功能呢？（下图的x就是p）"><a href="#那么，为什么可以采用第二个图的分段函数来实现这一功能呢？（下图的x就是p）" class="headerlink" title="那么，为什么可以采用第二个图的分段函数来实现这一功能呢？（下图的x就是p）"></a>那么，为什么可以采用第二个图的分段函数来实现这一功能呢？（下图的x就是p）</h5><p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200827190453596.png" alt="image-20200827190453596"></p>
-<h5 id="很显然，这个分段函数的图像（横坐标是概率值，纵坐标是损失函数值，交点的横坐标是0-5）能很好的体现sigmoid函数的特性。"><a href="#很显然，这个分段函数的图像（横坐标是概率值，纵坐标是损失函数值，交点的横坐标是0-5）能很好的体现sigmoid函数的特性。" class="headerlink" title="很显然，这个分段函数的图像（横坐标是概率值，纵坐标是损失函数值，交点的横坐标是0.5）能很好的体现sigmoid函数的特性。"></a>很显然，这个分段函数的图像（横坐标是概率值，纵坐标是损失函数值，交点的横坐标是0.5）能很好的体现sigmoid函数的特性。</h5><h5 id="但是分段函数不太方便计算，所以我们用下面这个函数来表示分段函数："><a href="#但是分段函数不太方便计算，所以我们用下面这个函数来表示分段函数：" class="headerlink" title="但是分段函数不太方便计算，所以我们用下面这个函数来表示分段函数："></a>但是分段函数不太方便计算，所以我们用下面这个函数来表示分段函数：</h5><p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200828002537051.png" alt="image-20200828002537051"></p>
-<h5 id="将p的表达式代入进一步推导："><a href="#将p的表达式代入进一步推导：" class="headerlink" title="将p的表达式代入进一步推导："></a>将p的表达式代入进一步推导：</h5><p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200828002717063.png" alt="image-20200828002717063"></p>
-<p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200828002755119.png" alt="image-20200828002755119"></p>
-</li>
-</ul>
-]]></content>
-      <tags>
-        <tag>机器学习</tag>
-        <tag>逻辑回归</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>机器学习笔记11</title>
     <url>/2020/08/15/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B011/</url>
     <content><![CDATA[<h3 id="多项式回归"><a href="#多项式回归" class="headerlink" title="多项式回归"></a>多项式回归</h3><a id="more"></a>
@@ -215,102 +179,6 @@
       </tags>
   </entry>
   <entry>
-    <title>机器学习笔记3</title>
-    <url>/2020/07/21/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B03/</url>
-    <content><![CDATA[<h3 id="KNN-K近邻算法（K-Nearest-Neighbors）"><a href="#KNN-K近邻算法（K-Nearest-Neighbors）" class="headerlink" title="KNN -K近邻算法（K-Nearest Neighbors）"></a>KNN -K近邻算法（K-Nearest Neighbors）</h3><a id="more"></a>
-<h4 id="一：KNN—非常适合初学者入门的算法"><a href="#一：KNN—非常适合初学者入门的算法" class="headerlink" title="一：KNN—非常适合初学者入门的算法"></a>一：KNN—非常适合初学者入门的算法</h4><ul>
-<li><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200707205845716.png" alt="image-20200707205845716"></li>
-</ul>
-<h5 id="1-什么是KNN"><a href="#1-什么是KNN" class="headerlink" title="1.什么是KNN"></a>1.什么是KNN</h5><ul>
-<li><p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200707210428247.png" alt="image-20200707210428247"></p>
-</li>
-<li><ul>
-<li>上图解释：红色是良性肿瘤，蓝色是恶性肿瘤，绿色是一个新的不确定的肿瘤。这里设K=3（后面会讲如何取K值），表示选取离绿色最近的三个肿瘤，然后这3个之间进行投票（以自己的标签投票），最终蓝色：红色==3:0.因此我们有很大的概率认为绿色也是恶性肿瘤。</li>
-<li>因此，KNN表示在K个样本中，哪个样本越多，就表示目标样本有很大概率是同一类别。</li>
-</ul>
-</li>
-</ul>
-<h5 id="2-KNN的特性"><a href="#2-KNN的特性" class="headerlink" title="2.KNN的特性"></a>2.KNN的特性</h5><ul>
-<li><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200707234150755.png" alt="image-20200707234150755"></li>
-<li><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200707234227091.png" alt="image-20200707234227091"></li>
-<li><ul>
-<li>scikit_learn正是按这套流程进行的算法封装</li>
-</ul>
-</li>
-</ul>
-<h5 id="3-判断机器学习算法的性能"><a href="#3-判断机器学习算法的性能" class="headerlink" title="3.判断机器学习算法的性能"></a>3.判断机器学习算法的性能</h5><ul>
-<li>考虑到真实环境下，将所有的原始数据都当成训练数据来训练模型是不恰当的，因此我们要进行训练和测试数据集切分(train test split)</li>
-<li><ul>
-<li><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200711013945748.png" alt="image-20200710224630969"></li>
-</ul>
-</li>
-<li><p>注意：这里补充一下seed随机种子的直观理解：其实，设置seed（）里的数字就相当于设置了一个盛有随机数的“聚宝盆”，一个数字代表一个“聚宝盆”，当我们在seed（）的括号里设置相同的seed，“聚宝盆”就是一样的，那当然每次拿出的随机数就会相同（不要觉得就是从里面随机取数字，只要设置的seed相同取出地随机数就一样）。如果不设置seed，则每次会生成不同的随机数。（注：seed括号里的数值基本可以随便设置哦）<br>————————————————<br>版权声明：本文为CSDN博主「白糖炒栗子~」的原创文章，遵循CC 4.0 BY-SA版权协议，转载请附上原文出处链接及本声明。<br>原文链接：<a href="https://blog.csdn.net/weixin_41571493/article/details/80549833" target="_blank" rel="noopener">https://blog.csdn.net/weixin_41571493/article/details/80549833</a></p>
-<ul>
-<li>np.random.seed(0)<br>np.random.rand(4,3)<br>Out[362]:<br>array([[0.5488135 , 0.71518937, 0.60276338],<pre><code>   [0.54488318, 0.4236548 , 0.64589411],
-   [0.43758721, 0.891773  , 0.96366276],
-   [0.38344152, 0.79172504, 0.52889492]])
-</code></pre>np.random.seed(0)<br>np.random.rand(4,3)<br>Out[364]:<br>array([[0.5488135 , 0.71518937, 0.60276338],<pre><code>   [0.54488318, 0.4236548 , 0.64589411],
-   [0.43758721, 0.891773  , 0.96366276],
-   [0.38344152, 0.79172504, 0.52889492]])
-</code></pre></li>
-</ul>
-</li>
-<li><p>分类准确度：accuracy：详见jupyter</p>
-</li>
-<li><p>超参数</p>
-<ul>
-<li><p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200710224630969.png" alt="image-20200711013945748"></p>
-</li>
-<li><p>如何寻找好的超参数</p>
-<p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200711014228711.png" alt="image-20200711014228711"></p>
-<ul>
-<li><p>KNN中其实除了K还有一个超参数，那就是距离的权重（它是距离的倒数）</p>
-<ul>
-<li><p>设红和蓝与绿色的距离分别为1,3,4</p>
-<p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200711021206076.png" alt="image-20200711021206076"></p>
-<ul>
-<li><p>若有三个类别，而k也等于3，那么就有可能出现平票的情况</p>
-<p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200711021519742.png" alt="image-20200711021519742"></p>
-</li>
-<li><p>补充：明可夫斯基距离</p>
-<ul>
-<li><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200711023118851.png" alt="image-20200711023118851"><ul>
-<li>当p=1时是曼哈顿距离</li>
-<li>当p=2时是欧拉距离</li>
-<li>当p&gt;2时是其他距离</li>
-</ul>
-</li>
-<li>更多的距离定义（暂不做深入研究，只是了解）<ul>
-<li></li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-<p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200723233646364.png" alt="image-20200723233646364"></p>
-<ul>
-<li><h5 id="我们可以使用sklearn的网格搜索来进行超参数搜索，具体看jupyter上的‘06-Validation-and-Cross-Validation’中的回顾网格搜索"><a href="#我们可以使用sklearn的网格搜索来进行超参数搜索，具体看jupyter上的‘06-Validation-and-Cross-Validation’中的回顾网格搜索" class="headerlink" title="我们可以使用sklearn的网格搜索来进行超参数搜索，具体看jupyter上的‘06-Validation-and-Cross-Validation’中的回顾网格搜索"></a>我们可以使用sklearn的网格搜索来进行超参数搜索，具体看jupyter上的‘06-Validation-and-Cross-Validation’中的回顾网格搜索</h5></li>
-</ul>
-]]></content>
-      <categories>
-        <category>机器学习</category>
-      </categories>
-      <tags>
-        <tag>机器学习</tag>
-        <tag>Python</tag>
-        <tag>KNN</tag>
-        <tag>超参数与网格搜索</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>机器学习笔记2</title>
     <url>/2020/07/21/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B02/</url>
     <content><![CDATA[<h3 id="机器学习基础"><a href="#机器学习基础" class="headerlink" title="机器学习基础"></a>机器学习基础</h3><h4 id="一：机器学习的数据"><a href="#一：机器学习的数据" class="headerlink" title="一：机器学习的数据"></a>一：机器学习的数据</h4><a id="more"></a>
@@ -449,6 +317,165 @@
       </tags>
   </entry>
   <entry>
+    <title>机器学习笔记12</title>
+    <url>/2020/08/26/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B012/</url>
+    <content><![CDATA[<h3 id="逻辑回归（Logistic-Regression）"><a href="#逻辑回归（Logistic-Regression）" class="headerlink" title="逻辑回归（Logistic Regression）"></a>逻辑回归（Logistic Regression）</h3><a id="more"></a>
+<h4 id="一、什么是逻辑回归"><a href="#一、什么是逻辑回归" class="headerlink" title="一、什么是逻辑回归"></a>一、什么是逻辑回归</h4><ul>
+<li><p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200827181823137.png" alt="image-20200827181823137"></p>
+<p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200827181942648.png" alt="image-20200827181942648"></p>
+<ul>
+<li><h5 id="线性回归的预测值是我们本身就需要的指标，比如房价预测中，y就是房价。但是逻辑回归的预测值是概率值，比如预测未来一周某地下雨的可能性。这里可以将逻辑回归当作回归算法，因为概率值也属于连续值。但是通常逻辑回归被当作是分类算法，比如将下雨的可能性（回归）转换为是否下雨（分类），所以需要进一步的转换，将概率p-gt-0-5的转换为1，p-lt-0-5的转换为0。"><a href="#线性回归的预测值是我们本身就需要的指标，比如房价预测中，y就是房价。但是逻辑回归的预测值是概率值，比如预测未来一周某地下雨的可能性。这里可以将逻辑回归当作回归算法，因为概率值也属于连续值。但是通常逻辑回归被当作是分类算法，比如将下雨的可能性（回归）转换为是否下雨（分类），所以需要进一步的转换，将概率p-gt-0-5的转换为1，p-lt-0-5的转换为0。" class="headerlink" title="线性回归的预测值是我们本身就需要的指标，比如房价预测中，y就是房价。但是逻辑回归的预测值是概率值，比如预测未来一周某地下雨的可能性。这里可以将逻辑回归当作回归算法，因为概率值也属于连续值。但是通常逻辑回归被当作是分类算法，比如将下雨的可能性（回归）转换为是否下雨（分类），所以需要进一步的转换，将概率p&gt;0.5的转换为1，p&lt;0.5的转换为0。"></a>线性回归的预测值是我们本身就需要的指标，比如房价预测中，y就是房价。但是逻辑回归的预测值是概率值，比如预测未来一周某地下雨的可能性。这里可以将逻辑回归当作回归算法，因为概率值也属于连续值。但是通常逻辑回归被当作是分类算法，比如将下雨的可能性（回归）转换为是否下雨（分类），所以需要进一步的转换，将概率p&gt;0.5的转换为1，p&lt;0.5的转换为0。</h5></li>
+<li><p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200827183353872.png" alt="image-20200827183353872"></p>
+<h5 id="为了解决线性回归不适合处理分类的问题，我们在线性回归的基础上提出了逻辑回归。但是线性回归得出的预测值的值域往往是-inf-inf-，所以我们需要一个-sigma-函数将线性回归的结果映射到-0-1-上，使它符合概率的值域。那么，哪个函数能完成这一工作呢？那就是Sigmoid函数了。"><a href="#为了解决线性回归不适合处理分类的问题，我们在线性回归的基础上提出了逻辑回归。但是线性回归得出的预测值的值域往往是-inf-inf-，所以我们需要一个-sigma-函数将线性回归的结果映射到-0-1-上，使它符合概率的值域。那么，哪个函数能完成这一工作呢？那就是Sigmoid函数了。" class="headerlink" title="为了解决线性回归不适合处理分类的问题，我们在线性回归的基础上提出了逻辑回归。但是线性回归得出的预测值的值域往往是[-inf , +inf]，所以我们需要一个$\sigma$函数将线性回归的结果映射到(0 , 1)上，使它符合概率的值域。那么，哪个函数能完成这一工作呢？那就是Sigmoid函数了。"></a>为了解决线性回归不适合处理分类的问题，我们在线性回归的基础上提出了逻辑回归。但是线性回归得出的预测值的值域往往是[-inf , +inf]，所以我们需要一个$\sigma$函数将线性回归的结果映射到(0 , 1)上，使它符合概率的值域。那么，哪个函数能完成这一工作呢？那就是Sigmoid函数了。</h5></li>
+<li><p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200827184535801.png" alt="image-20200827184535801"></p>
+<p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200827184642354.png" alt="image-20200827184642354"></p>
+<h5 id="因此下面就是逻辑回归的全貌："><a href="#因此下面就是逻辑回归的全貌：" class="headerlink" title="因此下面就是逻辑回归的全貌："></a>因此下面就是逻辑回归的全貌：</h5><p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200827184806464.png" alt="image-20200827184806464"></p>
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="二、逻辑回归的损失函数（cost指损失函数）"><a href="#二、逻辑回归的损失函数（cost指损失函数）" class="headerlink" title="二、逻辑回归的损失函数（cost指损失函数）"></a>二、逻辑回归的损失函数（cost指损失函数）</h4><ul>
+<li><h5 id="由于逻辑回归的标签值（真实值）是二分类，所以我们不能采用线性回归那样的损失函数，因此我们采用以下方案"><a href="#由于逻辑回归的标签值（真实值）是二分类，所以我们不能采用线性回归那样的损失函数，因此我们采用以下方案" class="headerlink" title="由于逻辑回归的标签值（真实值）是二分类，所以我们不能采用线性回归那样的损失函数，因此我们采用以下方案"></a>由于逻辑回归的标签值（真实值）是二分类，所以我们不能采用线性回归那样的损失函数，因此我们采用以下方案</h5><p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200827185300946.png" alt="image-20200827185300946"></p>
+<h5 id="第一个图的解释："><a href="#第一个图的解释：" class="headerlink" title="第一个图的解释："></a>第一个图的解释：</h5><ul>
+<li><h5 id="如果真实值y等于1，但是预测得出的概率p很小（小于0-5），使得预测出的分类-y-hat-等于0。所以预测出现了错误，自然导致损失函数的值非常大（预测出的p越小，则cost越大）。"><a href="#如果真实值y等于1，但是预测得出的概率p很小（小于0-5），使得预测出的分类-y-hat-等于0。所以预测出现了错误，自然导致损失函数的值非常大（预测出的p越小，则cost越大）。" class="headerlink" title="如果真实值y等于1，但是预测得出的概率p很小（小于0.5），使得预测出的分类$y^{hat}$等于0。所以预测出现了错误，自然导致损失函数的值非常大（预测出的p越小，则cost越大）。"></a>如果真实值y等于1，但是预测得出的概率p很小（小于0.5），使得预测出的分类$y^{hat}$等于0。所以预测出现了错误，自然导致损失函数的值非常大（预测出的p越小，则cost越大）。</h5></li>
+<li><h5 id="如果真实值y等于0，但是预测得出的概率p很大（大于0-5），使得预测出的分类-y-hat-等于1。所以预测出现了错误，自然导致损失函数的值非常大（预测出的p越大，则cost越大）。"><a href="#如果真实值y等于0，但是预测得出的概率p很大（大于0-5），使得预测出的分类-y-hat-等于1。所以预测出现了错误，自然导致损失函数的值非常大（预测出的p越大，则cost越大）。" class="headerlink" title="如果真实值y等于0，但是预测得出的概率p很大（大于0.5），使得预测出的分类$y^{hat}$等于1。所以预测出现了错误，自然导致损失函数的值非常大（预测出的p越大，则cost越大）。"></a>如果真实值y等于0，但是预测得出的概率p很大（大于0.5），使得预测出的分类$y^{hat}$等于1。所以预测出现了错误，自然导致损失函数的值非常大（预测出的p越大，则cost越大）。</h5></li>
+</ul>
+<h5 id="那么，为什么可以采用第二个图的分段函数来实现这一功能呢？（下图的x就是p）"><a href="#那么，为什么可以采用第二个图的分段函数来实现这一功能呢？（下图的x就是p）" class="headerlink" title="那么，为什么可以采用第二个图的分段函数来实现这一功能呢？（下图的x就是p）"></a>那么，为什么可以采用第二个图的分段函数来实现这一功能呢？（下图的x就是p）</h5><p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200827190453596.png" alt="image-20200827190453596"></p>
+<h5 id="很显然，这个分段函数的图像（横坐标是概率值，纵坐标是损失函数值，交点的横坐标是0-5）能很好的体现sigmoid函数的特性。"><a href="#很显然，这个分段函数的图像（横坐标是概率值，纵坐标是损失函数值，交点的横坐标是0-5）能很好的体现sigmoid函数的特性。" class="headerlink" title="很显然，这个分段函数的图像（横坐标是概率值，纵坐标是损失函数值，交点的横坐标是0.5）能很好的体现sigmoid函数的特性。"></a>很显然，这个分段函数的图像（横坐标是概率值，纵坐标是损失函数值，交点的横坐标是0.5）能很好的体现sigmoid函数的特性。</h5><h5 id="但是分段函数不太方便计算，所以我们用下面这个函数来表示分段函数："><a href="#但是分段函数不太方便计算，所以我们用下面这个函数来表示分段函数：" class="headerlink" title="但是分段函数不太方便计算，所以我们用下面这个函数来表示分段函数："></a>但是分段函数不太方便计算，所以我们用下面这个函数来表示分段函数：</h5><p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200828002537051.png" alt="image-20200828002537051"></p>
+<h5 id="将p的表达式代入进一步推导："><a href="#将p的表达式代入进一步推导：" class="headerlink" title="将p的表达式代入进一步推导："></a>将p的表达式代入进一步推导：</h5><p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200828002717063.png" alt="image-20200828002717063"></p>
+<p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200828002755119.png" alt="image-20200828002755119"></p>
+</li>
+</ul>
+]]></content>
+      <tags>
+        <tag>机器学习</tag>
+        <tag>逻辑回归</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>机器学习笔记5</title>
+    <url>/2020/07/24/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B05/</url>
+    <content><![CDATA[<h3 id="更多有关KNN的思考"><a href="#更多有关KNN的思考" class="headerlink" title="更多有关KNN的思考"></a>更多有关KNN的思考</h3><a id="more"></a>
+<p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200724025657646.png" alt="image-20200724025657646"></p>
+<p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200724025727331.png" alt="image-20200724025727331"></p>
+<h4 id="解释：可以把离绿球最近的三个蓝球的均值作为绿球的值，也可以将距离权重考虑进去求加权平均数。总之，这些都是回归问题。（sklearn其实已经封装好了KNN解决回归问题的库：KNeighborsRegressor）"><a href="#解释：可以把离绿球最近的三个蓝球的均值作为绿球的值，也可以将距离权重考虑进去求加权平均数。总之，这些都是回归问题。（sklearn其实已经封装好了KNN解决回归问题的库：KNeighborsRegressor）" class="headerlink" title="解释：可以把离绿球最近的三个蓝球的均值作为绿球的值，也可以将距离权重考虑进去求加权平均数。总之，这些都是回归问题。（sklearn其实已经封装好了KNN解决回归问题的库：KNeighborsRegressor）"></a>解释：可以把离绿球最近的三个蓝球的均值作为绿球的值，也可以将距离权重考虑进去求加权平均数。总之，这些都是回归问题。（sklearn其实已经封装好了KNN解决回归问题的库：KNeighborsRegressor）</h4><h3 id="它的缺点"><a href="#它的缺点" class="headerlink" title="它的缺点"></a>它的缺点</h3><ul>
+<li><p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200724030254962.png" alt="image-20200724030254962"></p>
+</li>
+<li><p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200724030519829.png" alt="image-20200724030519829"></p>
+<ul>
+<li><h4 id="解释：缺点2：拿上图红蓝绿球来举例，假如k-3，而其中两个是红色，一个是蓝色。按照KNN就会认定绿球为红色类，但事实上绿球的标签是蓝色类"><a href="#解释：缺点2：拿上图红蓝绿球来举例，假如k-3，而其中两个是红色，一个是蓝色。按照KNN就会认定绿球为红色类，但事实上绿球的标签是蓝色类" class="headerlink" title="解释：缺点2：拿上图红蓝绿球来举例，假如k=3，而其中两个是红色，一个是蓝色。按照KNN就会认定绿球为红色类，但事实上绿球的标签是蓝色类"></a>解释：缺点2：拿上图红蓝绿球来举例，假如k=3，而其中两个是红色，一个是蓝色。按照KNN就会认定绿球为红色类，但事实上绿球的标签是蓝色类</h4></li>
+</ul>
+</li>
+<li><h4 id="缺点4："><a href="#缺点4：" class="headerlink" title="缺点4："></a>缺点4：<img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200724031158354.png" alt="image-20200724031158354"></h4></li>
+</ul>
+<h3 id="机器学习流程回顾"><a href="#机器学习流程回顾" class="headerlink" title="机器学习流程回顾"></a>机器学习流程回顾</h3><p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200724031341729.png" alt="image-20200724031341729"></p>
+]]></content>
+      <categories>
+        <category>机器学习</category>
+      </categories>
+      <tags>
+        <tag>机器学习</tag>
+        <tag>Python</tag>
+        <tag>KNN</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>机器学习笔记3</title>
+    <url>/2020/07/21/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B03/</url>
+    <content><![CDATA[<h3 id="KNN-K近邻算法（K-Nearest-Neighbors）"><a href="#KNN-K近邻算法（K-Nearest-Neighbors）" class="headerlink" title="KNN -K近邻算法（K-Nearest Neighbors）"></a>KNN -K近邻算法（K-Nearest Neighbors）</h3><a id="more"></a>
+<h4 id="一：KNN—非常适合初学者入门的算法"><a href="#一：KNN—非常适合初学者入门的算法" class="headerlink" title="一：KNN—非常适合初学者入门的算法"></a>一：KNN—非常适合初学者入门的算法</h4><ul>
+<li><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200707205845716.png" alt="image-20200707205845716"></li>
+</ul>
+<h5 id="1-什么是KNN"><a href="#1-什么是KNN" class="headerlink" title="1.什么是KNN"></a>1.什么是KNN</h5><ul>
+<li><p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200707210428247.png" alt="image-20200707210428247"></p>
+</li>
+<li><ul>
+<li>上图解释：红色是良性肿瘤，蓝色是恶性肿瘤，绿色是一个新的不确定的肿瘤。这里设K=3（后面会讲如何取K值），表示选取离绿色最近的三个肿瘤，然后这3个之间进行投票（以自己的标签投票），最终蓝色：红色==3:0.因此我们有很大的概率认为绿色也是恶性肿瘤。</li>
+<li>因此，KNN表示在K个样本中，哪个样本越多，就表示目标样本有很大概率是同一类别。</li>
+</ul>
+</li>
+</ul>
+<h5 id="2-KNN的特性"><a href="#2-KNN的特性" class="headerlink" title="2.KNN的特性"></a>2.KNN的特性</h5><ul>
+<li><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200707234150755.png" alt="image-20200707234150755"></li>
+<li><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200707234227091.png" alt="image-20200707234227091"></li>
+<li><ul>
+<li>scikit_learn正是按这套流程进行的算法封装</li>
+</ul>
+</li>
+</ul>
+<h5 id="3-判断机器学习算法的性能"><a href="#3-判断机器学习算法的性能" class="headerlink" title="3.判断机器学习算法的性能"></a>3.判断机器学习算法的性能</h5><ul>
+<li>考虑到真实环境下，将所有的原始数据都当成训练数据来训练模型是不恰当的，因此我们要进行训练和测试数据集切分(train test split)</li>
+<li><ul>
+<li><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200711013945748.png" alt="image-20200710224630969"></li>
+</ul>
+</li>
+<li><p>注意：这里补充一下seed随机种子的直观理解：其实，设置seed（）里的数字就相当于设置了一个盛有随机数的“聚宝盆”，一个数字代表一个“聚宝盆”，当我们在seed（）的括号里设置相同的seed，“聚宝盆”就是一样的，那当然每次拿出的随机数就会相同（不要觉得就是从里面随机取数字，只要设置的seed相同取出地随机数就一样）。如果不设置seed，则每次会生成不同的随机数。（注：seed括号里的数值基本可以随便设置哦）<br>————————————————<br>版权声明：本文为CSDN博主「白糖炒栗子~」的原创文章，遵循CC 4.0 BY-SA版权协议，转载请附上原文出处链接及本声明。<br>原文链接：<a href="https://blog.csdn.net/weixin_41571493/article/details/80549833" target="_blank" rel="noopener">https://blog.csdn.net/weixin_41571493/article/details/80549833</a></p>
+<ul>
+<li>np.random.seed(0)<br>np.random.rand(4,3)<br>Out[362]:<br>array([[0.5488135 , 0.71518937, 0.60276338],<pre><code>   [0.54488318, 0.4236548 , 0.64589411],
+   [0.43758721, 0.891773  , 0.96366276],
+   [0.38344152, 0.79172504, 0.52889492]])
+</code></pre>np.random.seed(0)<br>np.random.rand(4,3)<br>Out[364]:<br>array([[0.5488135 , 0.71518937, 0.60276338],<pre><code>   [0.54488318, 0.4236548 , 0.64589411],
+   [0.43758721, 0.891773  , 0.96366276],
+   [0.38344152, 0.79172504, 0.52889492]])
+</code></pre></li>
+</ul>
+</li>
+<li><p>分类准确度：accuracy：详见jupyter</p>
+</li>
+<li><p>超参数</p>
+<ul>
+<li><p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200710224630969.png" alt="image-20200711013945748"></p>
+</li>
+<li><p>如何寻找好的超参数</p>
+<p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200711014228711.png" alt="image-20200711014228711"></p>
+<ul>
+<li><p>KNN中其实除了K还有一个超参数，那就是距离的权重（它是距离的倒数）</p>
+<ul>
+<li><p>设红和蓝与绿色的距离分别为1,3,4</p>
+<p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200711021206076.png" alt="image-20200711021206076"></p>
+<ul>
+<li><p>若有三个类别，而k也等于3，那么就有可能出现平票的情况</p>
+<p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200711021519742.png" alt="image-20200711021519742"></p>
+</li>
+<li><p>补充：明可夫斯基距离</p>
+<ul>
+<li><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200711023118851.png" alt="image-20200711023118851"><ul>
+<li>当p=1时是曼哈顿距离</li>
+<li>当p=2时是欧拉距离</li>
+<li>当p&gt;2时是其他距离</li>
+</ul>
+</li>
+<li>更多的距离定义（暂不做深入研究，只是了解）<ul>
+<li></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200723233646364.png" alt="image-20200723233646364"></p>
+<ul>
+<li><h5 id="我们可以使用sklearn的网格搜索来进行超参数搜索，具体看jupyter上的‘06-Validation-and-Cross-Validation’中的回顾网格搜索"><a href="#我们可以使用sklearn的网格搜索来进行超参数搜索，具体看jupyter上的‘06-Validation-and-Cross-Validation’中的回顾网格搜索" class="headerlink" title="我们可以使用sklearn的网格搜索来进行超参数搜索，具体看jupyter上的‘06-Validation-and-Cross-Validation’中的回顾网格搜索"></a>我们可以使用sklearn的网格搜索来进行超参数搜索，具体看jupyter上的‘06-Validation-and-Cross-Validation’中的回顾网格搜索</h5></li>
+</ul>
+]]></content>
+      <categories>
+        <category>机器学习</category>
+      </categories>
+      <tags>
+        <tag>机器学习</tag>
+        <tag>Python</tag>
+        <tag>KNN</tag>
+        <tag>超参数与网格搜索</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>机器学习笔记6</title>
     <url>/2020/07/25/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B06/</url>
     <content><![CDATA[<h3 id="线性回归"><a href="#线性回归" class="headerlink" title="线性回归"></a>线性回归</h3><a id="more"></a>
@@ -498,58 +525,6 @@
         <tag>机器学习</tag>
         <tag>线性回归</tag>
         <tag>简单线性回归</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>机器学习笔记5</title>
-    <url>/2020/07/24/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B05/</url>
-    <content><![CDATA[<h3 id="更多有关KNN的思考"><a href="#更多有关KNN的思考" class="headerlink" title="更多有关KNN的思考"></a>更多有关KNN的思考</h3><a id="more"></a>
-<p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200724025657646.png" alt="image-20200724025657646"></p>
-<p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200724025727331.png" alt="image-20200724025727331"></p>
-<h4 id="解释：可以把离绿球最近的三个蓝球的均值作为绿球的值，也可以将距离权重考虑进去求加权平均数。总之，这些都是回归问题。（sklearn其实已经封装好了KNN解决回归问题的库：KNeighborsRegressor）"><a href="#解释：可以把离绿球最近的三个蓝球的均值作为绿球的值，也可以将距离权重考虑进去求加权平均数。总之，这些都是回归问题。（sklearn其实已经封装好了KNN解决回归问题的库：KNeighborsRegressor）" class="headerlink" title="解释：可以把离绿球最近的三个蓝球的均值作为绿球的值，也可以将距离权重考虑进去求加权平均数。总之，这些都是回归问题。（sklearn其实已经封装好了KNN解决回归问题的库：KNeighborsRegressor）"></a>解释：可以把离绿球最近的三个蓝球的均值作为绿球的值，也可以将距离权重考虑进去求加权平均数。总之，这些都是回归问题。（sklearn其实已经封装好了KNN解决回归问题的库：KNeighborsRegressor）</h4><h3 id="它的缺点"><a href="#它的缺点" class="headerlink" title="它的缺点"></a>它的缺点</h3><ul>
-<li><p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200724030254962.png" alt="image-20200724030254962"></p>
-</li>
-<li><p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200724030519829.png" alt="image-20200724030519829"></p>
-<ul>
-<li><h4 id="解释：缺点2：拿上图红蓝绿球来举例，假如k-3，而其中两个是红色，一个是蓝色。按照KNN就会认定绿球为红色类，但事实上绿球的标签是蓝色类"><a href="#解释：缺点2：拿上图红蓝绿球来举例，假如k-3，而其中两个是红色，一个是蓝色。按照KNN就会认定绿球为红色类，但事实上绿球的标签是蓝色类" class="headerlink" title="解释：缺点2：拿上图红蓝绿球来举例，假如k=3，而其中两个是红色，一个是蓝色。按照KNN就会认定绿球为红色类，但事实上绿球的标签是蓝色类"></a>解释：缺点2：拿上图红蓝绿球来举例，假如k=3，而其中两个是红色，一个是蓝色。按照KNN就会认定绿球为红色类，但事实上绿球的标签是蓝色类</h4></li>
-</ul>
-</li>
-<li><h4 id="缺点4："><a href="#缺点4：" class="headerlink" title="缺点4："></a>缺点4：<img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200724031158354.png" alt="image-20200724031158354"></h4></li>
-</ul>
-<h3 id="机器学习流程回顾"><a href="#机器学习流程回顾" class="headerlink" title="机器学习流程回顾"></a>机器学习流程回顾</h3><p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200724031341729.png" alt="image-20200724031341729"></p>
-]]></content>
-      <categories>
-        <category>机器学习</category>
-      </categories>
-      <tags>
-        <tag>机器学习</tag>
-        <tag>Python</tag>
-        <tag>KNN</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>机器学习笔记8</title>
-    <url>/2020/07/30/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B08/</url>
-    <content><![CDATA[<h3 id="多元线性回归"><a href="#多元线性回归" class="headerlink" title="多元线性回归"></a>多元线性回归</h3><a id="more"></a>
-<h4 id="一、什么是多元线性回归"><a href="#一、什么是多元线性回归" class="headerlink" title="一、什么是多元线性回归"></a>一、什么是多元线性回归</h4><p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200730235347025.png" alt="image-20200730235347025"></p>
-<h4 id="二、多元线性回归的正规方程解"><a href="#二、多元线性回归的正规方程解" class="headerlink" title="二、多元线性回归的正规方程解"></a>二、多元线性回归的正规方程解</h4><p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200731030050773.png" alt="image-20200731030050773"></p>
-<p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200731030338464.png" alt="image-20200731030338464"></p>
-<h4 id="因为X是一个特征矩阵，所以X-i-本身就是行向量，因此-theta必须由行向量转置为列向量"><a href="#因为X是一个特征矩阵，所以X-i-本身就是行向量，因此-theta必须由行向量转置为列向量" class="headerlink" title="因为X是一个特征矩阵，所以X^{(i)}本身就是行向量，因此\theta必须由行向量转置为列向量"></a>因为X是一个特征矩阵，所以<script type="math/tex">X^{(i)}</script>本身就是行向量，因此<script type="math/tex">\theta</script>必须由行向量转置为列向量</h4><h4 id="接下来进一步推广到整个特征矩阵"><a href="#接下来进一步推广到整个特征矩阵" class="headerlink" title="接下来进一步推广到整个特征矩阵"></a>接下来进一步推广到整个特征矩阵</h4><p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200731031136440.png" alt="image-20200731031136440"></p>
-<h4 id="因为X-b是m-n的矩阵，-theta-是n行列向量，所以-hat-y-是一个m行的列向量"><a href="#因为X-b是m-n的矩阵，-theta-是n行列向量，所以-hat-y-是一个m行的列向量" class="headerlink" title="因为X_b是m*n的矩阵，\theta 是n行列向量，所以\hat{y}是一个m行的列向量"></a>因为<script type="math/tex">X_b</script>是m*n的矩阵，<script type="math/tex">\theta</script> 是n行列向量，所以<script type="math/tex">\hat{y}</script>是一个m行的列向量</h4><p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200731032608917.png" alt="image-20200731032608917"></p>
-<p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200731032641791.png" alt="image-20200731032641791"></p>
-<p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200731032712657.png" alt="image-20200731032712657"></p>
-<h4 id="因为-theta只是X前面的系数，与量纲无关，所以不需要归一化处理"><a href="#因为-theta只是X前面的系数，与量纲无关，所以不需要归一化处理" class="headerlink" title="因为\theta只是X前面的系数，与量纲无关，所以不需要归一化处理"></a>因为<script type="math/tex">\theta</script>只是X前面的系数，与量纲无关，所以不需要归一化处理</h4><h4 id="三、线性回归总结"><a href="#三、线性回归总结" class="headerlink" title="三、线性回归总结"></a>三、线性回归总结</h4><p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200805000611219.png" alt="image-20200805000611219"></p>
-<p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200805000625908.png" alt="image-20200805000625908"></p>
-<p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200805000642638.png" alt="image-20200805000642638"></p>
-<h4 id="关于可解释性，我们拿波士顿房价预测来说，训练得到的参数的正负表示该特征与房价呈正相关还是负相关；绝对值大小表示对房价的影响程度，越大则对房价影响越大，具体看Jupyter。"><a href="#关于可解释性，我们拿波士顿房价预测来说，训练得到的参数的正负表示该特征与房价呈正相关还是负相关；绝对值大小表示对房价的影响程度，越大则对房价影响越大，具体看Jupyter。" class="headerlink" title="关于可解释性，我们拿波士顿房价预测来说，训练得到的参数的正负表示该特征与房价呈正相关还是负相关；绝对值大小表示对房价的影响程度，越大则对房价影响越大，具体看Jupyter。"></a>关于可解释性，我们拿波士顿房价预测来说，训练得到的参数的正负表示该特征与房价呈正相关还是负相关；绝对值大小表示对房价的影响程度，越大则对房价影响越大，具体看Jupyter。</h4>]]></content>
-      <categories>
-        <category>机器学习</category>
-      </categories>
-      <tags>
-        <tag>机器学习</tag>
-        <tag>线性回归</tag>
-        <tag>多元线性回归</tag>
-        <tag>模型可解释性</tag>
       </tags>
   </entry>
   <entry>
@@ -717,26 +692,28 @@
       </tags>
   </entry>
   <entry>
-    <title>机器学习笔记7</title>
-    <url>/2020/07/30/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B07/</url>
-    <content><![CDATA[<h3 id="回归算法的评价"><a href="#回归算法的评价" class="headerlink" title="回归算法的评价"></a>回归算法的评价</h3><a id="more"></a>
-<h4 id="一、从简单线性回归引出横梁标准"><a href="#一、从简单线性回归引出横梁标准" class="headerlink" title="一、从简单线性回归引出横梁标准"></a>一、从简单线性回归引出横梁标准</h4><p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200730220946800.png" alt="image-20200730220946800"></p>
-<h5 id="衡量标准就是测试集中的真实值与测试集中的预测值的差的平方，但是该衡量标准与样本数量m有关。为了避免不同样本量的数据集带来的模型优劣争议，我们要将这个式子除以m，得到下图"><a href="#衡量标准就是测试集中的真实值与测试集中的预测值的差的平方，但是该衡量标准与样本数量m有关。为了避免不同样本量的数据集带来的模型优劣争议，我们要将这个式子除以m，得到下图" class="headerlink" title="衡量标准就是测试集中的真实值与测试集中的预测值的差的平方，但是该衡量标准与样本数量m有关。为了避免不同样本量的数据集带来的模型优劣争议，我们要将这个式子除以m，得到下图"></a>衡量标准就是测试集中的真实值与测试集中的预测值的差的平方，但是该衡量标准与样本数量m有关。为了避免不同样本量的数据集带来的模型优劣争议，我们要将这个式子除以m，得到下图</h5><p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200730221356928.png" alt="image-20200730221356928"></p>
-<h5 id="但是MSE会使得该数据集的量纲（单位）为原来的平方（比如米变成平方米），所以我们可以给MSE开根号使得它和原数据集的量纲相同，这就是RMSE"><a href="#但是MSE会使得该数据集的量纲（单位）为原来的平方（比如米变成平方米），所以我们可以给MSE开根号使得它和原数据集的量纲相同，这就是RMSE" class="headerlink" title="但是MSE会使得该数据集的量纲（单位）为原来的平方（比如米变成平方米），所以我们可以给MSE开根号使得它和原数据集的量纲相同，这就是RMSE"></a>但是MSE会使得该数据集的量纲（单位）为原来的平方（比如米变成平方米），所以我们可以给MSE开根号使得它和原数据集的量纲相同，这就是RMSE</h5><p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200730221818237.png" alt="image-20200730221818237"></p>
-<h5 id="同样我们还可以使用以下的评价算法，注意线性回归模型找最优参数时不能用绝对值（不是处处可导），但是评价时就可以用，它们是互不影响的。"><a href="#同样我们还可以使用以下的评价算法，注意线性回归模型找最优参数时不能用绝对值（不是处处可导），但是评价时就可以用，它们是互不影响的。" class="headerlink" title="同样我们还可以使用以下的评价算法，注意线性回归模型找最优参数时不能用绝对值（不是处处可导），但是评价时就可以用，它们是互不影响的。"></a>同样我们还可以使用以下的评价算法，注意线性回归模型找最优参数时不能用绝对值（不是处处可导），但是评价时就可以用，它们是互不影响的。</h5><p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200730222124641.png" alt="image-20200730222124641"></p>
-<h3 id="二、RMSE-VS-MAE"><a href="#二、RMSE-VS-MAE" class="headerlink" title="二、RMSE VS  MAE"></a>二、RMSE VS  MAE</h3><p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200730230527231.png" alt="image-20200730230527231"></p>
-<h4 id="RMSE中的平方操作相当于放大了max-y-true-y-predict-，所以开根号以后依然比MAE大，因此我们要想让RMSE或MSE更有意义，就要让差值尽量小。"><a href="#RMSE中的平方操作相当于放大了max-y-true-y-predict-，所以开根号以后依然比MAE大，因此我们要想让RMSE或MSE更有意义，就要让差值尽量小。" class="headerlink" title="RMSE中的平方操作相当于放大了max(y_{true}-y_{predict})，所以开根号以后依然比MAE大，因此我们要想让RMSE或MSE更有意义，就要让差值尽量小。"></a>RMSE中的平方操作相当于放大了<script type="math/tex">max(y_{true}-y_{predict})</script>，所以开根号以后依然比MAE大，因此我们要想让RMSE或MSE更有意义，就要让差值尽量小。</h4><h3 id="三、最好的衡量线性回归法的指标"><a href="#三、最好的衡量线性回归法的指标" class="headerlink" title="三、最好的衡量线性回归法的指标"></a>三、最好的衡量线性回归法的指标</h3><h4 id="从分类算法的评价算法我们可以得出它可以通过0到1中的一个数来衡量模型的好坏。但由于RMSE和MSE只能得出平均差值，所以导致训练处理的模型不具有通用性（比如房价和学生成绩）"><a href="#从分类算法的评价算法我们可以得出它可以通过0到1中的一个数来衡量模型的好坏。但由于RMSE和MSE只能得出平均差值，所以导致训练处理的模型不具有通用性（比如房价和学生成绩）" class="headerlink" title="从分类算法的评价算法我们可以得出它可以通过0到1中的一个数来衡量模型的好坏。但由于RMSE和MSE只能得出平均差值，所以导致训练处理的模型不具有通用性（比如房价和学生成绩）"></a>从分类算法的评价算法我们可以得出它可以通过0到1中的一个数来衡量模型的好坏。但由于RMSE和MSE只能得出平均差值，所以导致训练处理的模型不具有通用性（比如房价和学生成绩）</h4><h4 id="因此，我们要使用以下算法来评价模型"><a href="#因此，我们要使用以下算法来评价模型" class="headerlink" title="因此，我们要使用以下算法来评价模型"></a>因此，我们要使用以下算法来评价模型</h4><p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200730232425399.png" alt="image-20200730232425399"></p>
-<p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200730232723872.png" alt="image-20200730232723872"></p>
-<h4 id="R2是衡量了我们模型没有产生错误的相应指标"><a href="#R2是衡量了我们模型没有产生错误的相应指标" class="headerlink" title="R2是衡量了我们模型没有产生错误的相应指标"></a>R2是衡量了我们模型没有产生错误的相应指标</h4><p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200730233257406.png" alt="image-20200730233257406"></p>
-<p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200730233453803.png" alt="image-20200730233453803"></p>
-<h4 id="注意，Var指方差"><a href="#注意，Var指方差" class="headerlink" title="注意，Var指方差"></a>注意，Var指方差</h4>]]></content>
+    <title>机器学习笔记8</title>
+    <url>/2020/07/30/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B08/</url>
+    <content><![CDATA[<h3 id="多元线性回归"><a href="#多元线性回归" class="headerlink" title="多元线性回归"></a>多元线性回归</h3><a id="more"></a>
+<h4 id="一、什么是多元线性回归"><a href="#一、什么是多元线性回归" class="headerlink" title="一、什么是多元线性回归"></a>一、什么是多元线性回归</h4><p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200730235347025.png" alt="image-20200730235347025"></p>
+<h4 id="二、多元线性回归的正规方程解"><a href="#二、多元线性回归的正规方程解" class="headerlink" title="二、多元线性回归的正规方程解"></a>二、多元线性回归的正规方程解</h4><p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200731030050773.png" alt="image-20200731030050773"></p>
+<p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200731030338464.png" alt="image-20200731030338464"></p>
+<h4 id="因为X是一个特征矩阵，所以X-i-本身就是行向量，因此-theta必须由行向量转置为列向量"><a href="#因为X是一个特征矩阵，所以X-i-本身就是行向量，因此-theta必须由行向量转置为列向量" class="headerlink" title="因为X是一个特征矩阵，所以X^{(i)}本身就是行向量，因此\theta必须由行向量转置为列向量"></a>因为X是一个特征矩阵，所以<script type="math/tex">X^{(i)}</script>本身就是行向量，因此<script type="math/tex">\theta</script>必须由行向量转置为列向量</h4><h4 id="接下来进一步推广到整个特征矩阵"><a href="#接下来进一步推广到整个特征矩阵" class="headerlink" title="接下来进一步推广到整个特征矩阵"></a>接下来进一步推广到整个特征矩阵</h4><p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200731031136440.png" alt="image-20200731031136440"></p>
+<h4 id="因为X-b是m-n的矩阵，-theta-是n行列向量，所以-hat-y-是一个m行的列向量"><a href="#因为X-b是m-n的矩阵，-theta-是n行列向量，所以-hat-y-是一个m行的列向量" class="headerlink" title="因为X_b是m*n的矩阵，\theta 是n行列向量，所以\hat{y}是一个m行的列向量"></a>因为<script type="math/tex">X_b</script>是m*n的矩阵，<script type="math/tex">\theta</script> 是n行列向量，所以<script type="math/tex">\hat{y}</script>是一个m行的列向量</h4><p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200731032608917.png" alt="image-20200731032608917"></p>
+<p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200731032641791.png" alt="image-20200731032641791"></p>
+<p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200731032712657.png" alt="image-20200731032712657"></p>
+<h4 id="因为-theta只是X前面的系数，与量纲无关，所以不需要归一化处理"><a href="#因为-theta只是X前面的系数，与量纲无关，所以不需要归一化处理" class="headerlink" title="因为\theta只是X前面的系数，与量纲无关，所以不需要归一化处理"></a>因为<script type="math/tex">\theta</script>只是X前面的系数，与量纲无关，所以不需要归一化处理</h4><h4 id="三、线性回归总结"><a href="#三、线性回归总结" class="headerlink" title="三、线性回归总结"></a>三、线性回归总结</h4><p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200805000611219.png" alt="image-20200805000611219"></p>
+<p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200805000625908.png" alt="image-20200805000625908"></p>
+<p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200805000642638.png" alt="image-20200805000642638"></p>
+<h4 id="关于可解释性，我们拿波士顿房价预测来说，训练得到的参数的正负表示该特征与房价呈正相关还是负相关；绝对值大小表示对房价的影响程度，越大则对房价影响越大，具体看Jupyter。"><a href="#关于可解释性，我们拿波士顿房价预测来说，训练得到的参数的正负表示该特征与房价呈正相关还是负相关；绝对值大小表示对房价的影响程度，越大则对房价影响越大，具体看Jupyter。" class="headerlink" title="关于可解释性，我们拿波士顿房价预测来说，训练得到的参数的正负表示该特征与房价呈正相关还是负相关；绝对值大小表示对房价的影响程度，越大则对房价影响越大，具体看Jupyter。"></a>关于可解释性，我们拿波士顿房价预测来说，训练得到的参数的正负表示该特征与房价呈正相关还是负相关；绝对值大小表示对房价的影响程度，越大则对房价影响越大，具体看Jupyter。</h4>]]></content>
       <categories>
         <category>机器学习</category>
       </categories>
       <tags>
         <tag>机器学习</tag>
         <tag>线性回归</tag>
-        <tag>回归算法评价</tag>
+        <tag>多元线性回归</tag>
+        <tag>模型可解释性</tag>
       </tags>
   </entry>
   <entry>
@@ -805,6 +782,29 @@
         <tag>PCA</tag>
         <tag>非监督学习</tag>
         <tag>数据降维</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>机器学习笔记7</title>
+    <url>/2020/07/30/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B07/</url>
+    <content><![CDATA[<h3 id="回归算法的评价"><a href="#回归算法的评价" class="headerlink" title="回归算法的评价"></a>回归算法的评价</h3><a id="more"></a>
+<h4 id="一、从简单线性回归引出横梁标准"><a href="#一、从简单线性回归引出横梁标准" class="headerlink" title="一、从简单线性回归引出横梁标准"></a>一、从简单线性回归引出横梁标准</h4><p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200730220946800.png" alt="image-20200730220946800"></p>
+<h5 id="衡量标准就是测试集中的真实值与测试集中的预测值的差的平方，但是该衡量标准与样本数量m有关。为了避免不同样本量的数据集带来的模型优劣争议，我们要将这个式子除以m，得到下图"><a href="#衡量标准就是测试集中的真实值与测试集中的预测值的差的平方，但是该衡量标准与样本数量m有关。为了避免不同样本量的数据集带来的模型优劣争议，我们要将这个式子除以m，得到下图" class="headerlink" title="衡量标准就是测试集中的真实值与测试集中的预测值的差的平方，但是该衡量标准与样本数量m有关。为了避免不同样本量的数据集带来的模型优劣争议，我们要将这个式子除以m，得到下图"></a>衡量标准就是测试集中的真实值与测试集中的预测值的差的平方，但是该衡量标准与样本数量m有关。为了避免不同样本量的数据集带来的模型优劣争议，我们要将这个式子除以m，得到下图</h5><p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200730221356928.png" alt="image-20200730221356928"></p>
+<h5 id="但是MSE会使得该数据集的量纲（单位）为原来的平方（比如米变成平方米），所以我们可以给MSE开根号使得它和原数据集的量纲相同，这就是RMSE"><a href="#但是MSE会使得该数据集的量纲（单位）为原来的平方（比如米变成平方米），所以我们可以给MSE开根号使得它和原数据集的量纲相同，这就是RMSE" class="headerlink" title="但是MSE会使得该数据集的量纲（单位）为原来的平方（比如米变成平方米），所以我们可以给MSE开根号使得它和原数据集的量纲相同，这就是RMSE"></a>但是MSE会使得该数据集的量纲（单位）为原来的平方（比如米变成平方米），所以我们可以给MSE开根号使得它和原数据集的量纲相同，这就是RMSE</h5><p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200730221818237.png" alt="image-20200730221818237"></p>
+<h5 id="同样我们还可以使用以下的评价算法，注意线性回归模型找最优参数时不能用绝对值（不是处处可导），但是评价时就可以用，它们是互不影响的。"><a href="#同样我们还可以使用以下的评价算法，注意线性回归模型找最优参数时不能用绝对值（不是处处可导），但是评价时就可以用，它们是互不影响的。" class="headerlink" title="同样我们还可以使用以下的评价算法，注意线性回归模型找最优参数时不能用绝对值（不是处处可导），但是评价时就可以用，它们是互不影响的。"></a>同样我们还可以使用以下的评价算法，注意线性回归模型找最优参数时不能用绝对值（不是处处可导），但是评价时就可以用，它们是互不影响的。</h5><p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200730222124641.png" alt="image-20200730222124641"></p>
+<h3 id="二、RMSE-VS-MAE"><a href="#二、RMSE-VS-MAE" class="headerlink" title="二、RMSE VS  MAE"></a>二、RMSE VS  MAE</h3><p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200730230527231.png" alt="image-20200730230527231"></p>
+<h4 id="RMSE中的平方操作相当于放大了max-y-true-y-predict-，所以开根号以后依然比MAE大，因此我们要想让RMSE或MSE更有意义，就要让差值尽量小。"><a href="#RMSE中的平方操作相当于放大了max-y-true-y-predict-，所以开根号以后依然比MAE大，因此我们要想让RMSE或MSE更有意义，就要让差值尽量小。" class="headerlink" title="RMSE中的平方操作相当于放大了max(y_{true}-y_{predict})，所以开根号以后依然比MAE大，因此我们要想让RMSE或MSE更有意义，就要让差值尽量小。"></a>RMSE中的平方操作相当于放大了<script type="math/tex">max(y_{true}-y_{predict})</script>，所以开根号以后依然比MAE大，因此我们要想让RMSE或MSE更有意义，就要让差值尽量小。</h4><h3 id="三、最好的衡量线性回归法的指标"><a href="#三、最好的衡量线性回归法的指标" class="headerlink" title="三、最好的衡量线性回归法的指标"></a>三、最好的衡量线性回归法的指标</h3><h4 id="从分类算法的评价算法我们可以得出它可以通过0到1中的一个数来衡量模型的好坏。但由于RMSE和MSE只能得出平均差值，所以导致训练处理的模型不具有通用性（比如房价和学生成绩）"><a href="#从分类算法的评价算法我们可以得出它可以通过0到1中的一个数来衡量模型的好坏。但由于RMSE和MSE只能得出平均差值，所以导致训练处理的模型不具有通用性（比如房价和学生成绩）" class="headerlink" title="从分类算法的评价算法我们可以得出它可以通过0到1中的一个数来衡量模型的好坏。但由于RMSE和MSE只能得出平均差值，所以导致训练处理的模型不具有通用性（比如房价和学生成绩）"></a>从分类算法的评价算法我们可以得出它可以通过0到1中的一个数来衡量模型的好坏。但由于RMSE和MSE只能得出平均差值，所以导致训练处理的模型不具有通用性（比如房价和学生成绩）</h4><h4 id="因此，我们要使用以下算法来评价模型"><a href="#因此，我们要使用以下算法来评价模型" class="headerlink" title="因此，我们要使用以下算法来评价模型"></a>因此，我们要使用以下算法来评价模型</h4><p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200730232425399.png" alt="image-20200730232425399"></p>
+<p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200730232723872.png" alt="image-20200730232723872"></p>
+<h4 id="R2是衡量了我们模型没有产生错误的相应指标"><a href="#R2是衡量了我们模型没有产生错误的相应指标" class="headerlink" title="R2是衡量了我们模型没有产生错误的相应指标"></a>R2是衡量了我们模型没有产生错误的相应指标</h4><p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200730233257406.png" alt="image-20200730233257406"></p>
+<p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200730233453803.png" alt="image-20200730233453803"></p>
+<h4 id="注意，Var指方差"><a href="#注意，Var指方差" class="headerlink" title="注意，Var指方差"></a>注意，Var指方差</h4>]]></content>
+      <categories>
+        <category>机器学习</category>
+      </categories>
+      <tags>
+        <tag>机器学习</tag>
+        <tag>线性回归</tag>
+        <tag>回归算法评价</tag>
       </tags>
   </entry>
 </search>
