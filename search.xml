@@ -1,109 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>acl论文记录</title>
-    <url>/2020/09/16/acl%E8%AE%BA%E6%96%87%E8%AE%B0%E5%BD%95/</url>
-    <content><![CDATA[<h3 id="对话系统"><a href="#对话系统" class="headerlink" title="对话系统"></a>对话系统</h3><a id="more"></a>
-<h4 id="一、Dynamic-Fusion-Network-for-Multi-Domain-End-to-end-Task-Oriented-Dialog"><a href="#一、Dynamic-Fusion-Network-for-Multi-Domain-End-to-end-Task-Oriented-Dialog" class="headerlink" title="一、Dynamic Fusion Network for Multi-Domain End-to-end Task-Oriented Dialog"></a>一、Dynamic Fusion Network for Multi-Domain End-to-end Task-Oriented Dialog</h4><h5 id="动态聚合网络，用于多领域端到端任务型对话系统"><a href="#动态聚合网络，用于多领域端到端任务型对话系统" class="headerlink" title="动态聚合网络，用于多领域端到端任务型对话系统"></a>动态聚合网络，用于多领域端到端任务型对话系统</h5><figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">Abstract： </span><br><span class="line">Recent studies have shown remarkable suc- cess in end-to-end</span><br><span class="line">task-oriented dialog system. However, most neural models rely on large</span><br><span class="line">training data, which are only available for a certain number of task domains,</span><br><span class="line">such as nav- igation and scheduling. This makes it difficult to scalable for a</span><br><span class="line">new domain with limited la- beled data. However, there has been relatively</span><br><span class="line">little research on how to effectively use data from all domains to improve the</span><br><span class="line">performance of each domain and also unseen domains. To this end, we</span><br><span class="line">investigate methods that can make explicit use of domain knowledge and intro-</span><br><span class="line">duce a shared-private network to learn shared and specific knowledge. In</span><br><span class="line">addition, we pro- pose a novel Dynamic Fusion Network (DF- Net) which</span><br><span class="line">automatically exploit the relevance between the target domain and each domain.</span><br><span class="line">Results show that our model outperforms exist- ing methods on multi-domain</span><br><span class="line">dialogue, giving the state-of-the-art in the literature. Besides, with little</span><br><span class="line">training data, we show its transfer- ability by outperforming prior best model</span><br><span class="line">by 13.9% on average.</span><br><span class="line"></span><br><span class="line">摘要：</span><br><span class="line">最近的研究表明，在端到端的面向任务的对话系统中取得了巨大的成功。但是，大多数神经模型都依赖于大量训练数据，这些训练数据仅可用于一定数量的任务领域，例如导航和调度。</span><br><span class="line">这使得对具有有限标记数据的新领域进行扩展变得很困难。但是，关于如何有效地使用所有领域的数据来改善每个领域以及未知领域的性能表现的研究相对较少。</span><br><span class="line">为此，我们研究了可以准确使用领域知识的方法，并引入了共享－私有网络来学习共享和特定知识。</span><br><span class="line">此外，我们提出了一种新颖的动态聚合网络（DFNet），该网络可自动利用目标领域与每个领域之间的相关性。结果表明，我们的模型优于现有的多领域对话方法，提供了文献中的最新技术。</span><br><span class="line">此外，在训练数据很少的情况下，我们的性能比以前的最佳模型平均高13.9％，从而显示出其可移植性。</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">Conclusion：</span><br><span class="line">In this paper, we propose to use a shared-private</span><br><span class="line">model to investigate explicit modeling domain</span><br><span class="line">knowledge for multi-domain dialog. In addition, a</span><br><span class="line">dynamic fusion layer is proposed to dynamically</span><br><span class="line">capture the correlation between a target domain and</span><br><span class="line">all source domains. Experiments on two datasets</span><br><span class="line">show the effectiveness of the proposed models. Be-</span><br><span class="line">sides, our model can quickly adapt to a new domain</span><br><span class="line">with little annotated data.</span><br><span class="line"></span><br><span class="line">结论：</span><br><span class="line">本文中，我们建议使用共享-私有模型研究多领域对话显式建模域知识。另外，提出了动态聚合以动态捕获目标域和所有源域之间的相关性。</span><br><span class="line">在两个数据集上的实验表明了所提出模型的有效性。此外，我们的模型可以在几乎没有注释数据的情况下快速适应新领域。</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">summary：</span><br><span class="line">现有的神经模型大多数都依赖大量的训练数据，且只能用在一部分任务领域。而本文引入了shared-private network（共享－私有网络）来学习共享和特定的知识。</span><br><span class="line">并提出了新的动态聚合网络（DFNET),它可以探索目标域与各个领域之间的相关性。并且该共享－私有模型同时可以应用在几乎没有标签数据的新领域中。</span><br></pre></td></tr></table></figure>
-]]></content>
-      <categories>
-        <category>顶会论文</category>
-      </categories>
-      <tags>
-        <tag>acl</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>机器学习笔记1</title>
-    <url>/2020/07/21/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B01/</url>
-    <content><![CDATA[<h1 id="机器学习笔记"><a href="#机器学习笔记" class="headerlink" title="机器学习笔记"></a>机器学习笔记</h1><a id="more"></a>
-<h3 id="一：什么是机器学习"><a href="#一：什么是机器学习" class="headerlink" title="一：什么是机器学习"></a>一：什么是机器学习</h3><p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200706165617797.png" alt="image-20200706165617797"></p>
-<h4 id="首先先了解人类如何学习（经验学习）"><a href="#首先先了解人类如何学习（经验学习）" class="headerlink" title="首先先了解人类如何学习（经验学习）"></a>首先先了解人类如何学习（经验学习）</h4><p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200706170401290.png" alt="image-20200706170401290"></p>
-<h4 id="机器学习和人类学习是非常相似的"><a href="#机器学习和人类学习是非常相似的" class="headerlink" title="机器学习和人类学习是非常相似的"></a>机器学习和人类学习是非常相似的</h4><p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200706170712331.png" alt="image-20200706170712331"></p>
-<h3 id="二：机器学习应用"><a href="#二：机器学习应用" class="headerlink" title="二：机器学习应用"></a>二：机器学习应用</h3><h4 id="1-当前应用"><a href="#1-当前应用" class="headerlink" title="1.当前应用"></a>1.当前应用</h4><p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200706171220946.png" alt="image-20200706171220946"></p>
-<h4 id="2-未来应用"><a href="#2-未来应用" class="headerlink" title="2.未来应用"></a>2.未来应用</h4><p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200706171619513.png" alt="image-20200706171619513"></p>
-<h3 id="三：机器学习的定位"><a href="#三：机器学习的定位" class="headerlink" title="三：机器学习的定位"></a>三：机器学习的定位</h3><p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200706172204133.png" alt="image-20200706172204133"></p>
-<h4 id="不要孤立的看待机器学习，它和很多领域都有密切的联系"><a href="#不要孤立的看待机器学习，它和很多领域都有密切的联系" class="headerlink" title="不要孤立的看待机器学习，它和很多领域都有密切的联系"></a>不要孤立的看待机器学习，它和很多领域都有密切的联系</h4><h3 id="四：机器学习的框架"><a href="#四：机器学习的框架" class="headerlink" title="四：机器学习的框架"></a>四：机器学习的框架</h3><p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200706172446522.png" alt="image-20200706172446522"></p>
-<p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200706172809977.png" alt="image-20200706172809977"></p>
-]]></content>
-      <categories>
-        <category>机器学习</category>
-      </categories>
-      <tags>
-        <tag>机器学习</tag>
-        <tag>Python</tag>
-        <tag>机器学习基础概念</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>机器学习笔记10</title>
-    <url>/2020/08/10/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B010/</url>
-    <content><![CDATA[<h4 id="PCA-主成分分析（Principal-Component-Analysis）"><a href="#PCA-主成分分析（Principal-Component-Analysis）" class="headerlink" title="PCA-主成分分析（Principal Component Analysis）"></a>PCA-主成分分析（Principal Component Analysis）</h4><a id="more"></a>
-<h4 id="一、PCA综述"><a href="#一、PCA综述" class="headerlink" title="一、PCA综述"></a>一、PCA综述</h4><p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200810220126595.png" alt="image-20200810220126595"></p>
-<h4 id="二、详解PCA"><a href="#二、详解PCA" class="headerlink" title="二、详解PCA"></a>二、详解PCA</h4><ul>
-<li><p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200810223917827.png" alt="image-20200810223917827"></p>
-<ul>
-<li><h4 id="我们首先想到的降维方法是舍弃特征1或舍弃特征2，这样样本点就会映射到单一坐标轴上，达到了降维的效果。如下图："><a href="#我们首先想到的降维方法是舍弃特征1或舍弃特征2，这样样本点就会映射到单一坐标轴上，达到了降维的效果。如下图：" class="headerlink" title="我们首先想到的降维方法是舍弃特征1或舍弃特征2，这样样本点就会映射到单一坐标轴上，达到了降维的效果。如下图："></a>我们首先想到的降维方法是舍弃特征1或舍弃特征2，这样样本点就会映射到单一坐标轴上，达到了降维的效果。如下图：</h4></li>
-<li><h5 id="左图为舍弃特征1；右图为舍弃特征2："><a href="#左图为舍弃特征1；右图为舍弃特征2：" class="headerlink" title="左图为舍弃特征1；右图为舍弃特征2："></a>左图为舍弃特征1；右图为舍弃特征2：</h5><p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200810224220339.png" alt="image-20200810224220339"></p>
-</li>
-<li><h4 id="显然右图的降维效果比左图好，因为样本点直接距离较大，拥有更高的可区分度"><a href="#显然右图的降维效果比左图好，因为样本点直接距离较大，拥有更高的可区分度" class="headerlink" title="显然右图的降维效果比左图好，因为样本点直接距离较大，拥有更高的可区分度"></a>显然右图的降维效果比左图好，因为样本点直接距离较大，拥有更高的可区分度</h4></li>
-</ul>
-</li>
-<li><h4 id="但是，这是最好的方案吗？显然不是。我们想象一下-能够找到下图这样的一条斜线w-将数据降维到w上-映射到w上-之后-能最好的保留原来的分布特征-且这些点分布在了一个轴上-斜线w-后点和点之间的距离也比之前的两种方案更加的大-此时的区分度也更加明显"><a href="#但是，这是最好的方案吗？显然不是。我们想象一下-能够找到下图这样的一条斜线w-将数据降维到w上-映射到w上-之后-能最好的保留原来的分布特征-且这些点分布在了一个轴上-斜线w-后点和点之间的距离也比之前的两种方案更加的大-此时的区分度也更加明显" class="headerlink" title="但是，这是最好的方案吗？显然不是。我们想象一下,能够找到下图这样的一条斜线w,将数据降维到w上(映射到w上)之后,能最好的保留原来的分布特征,且这些点分布在了一个轴上(斜线w)后点和点之间的距离也比之前的两种方案更加的大,此时的区分度也更加明显"></a>但是，这是最好的方案吗？显然不是。我们想象一下,能够找到下图这样的一条斜线w,将数据降维到w上(映射到w上)之后,能最好的保留原来的分布特征,且这些点分布在了一个轴上(斜线w)后点和点之间的距离也比之前的两种方案更加的大,此时的区分度也更加明显</h4><ul>
-<li><p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200810224703164.png" alt="image-20200810224703164"></p>
-</li>
-<li><h4 id="接下来我们要思考以下两个问题了："><a href="#接下来我们要思考以下两个问题了：" class="headerlink" title="接下来我们要思考以下两个问题了："></a>接下来我们要思考以下两个问题了：</h4><ul>
-<li><h5 id="如何找到让这个样本降维后间距最大的轴"><a href="#如何找到让这个样本降维后间距最大的轴" class="headerlink" title="如何找到让这个样本降维后间距最大的轴?"></a>如何找到让这个样本降维后间距最大的轴?</h5></li>
-<li><h5 id="如何定义样本间距"><a href="#如何定义样本间距" class="headerlink" title="如何定义样本间距?"></a>如何定义样本间距?</h5></li>
-</ul>
-</li>
-<li><h4 id="在统计学中-有一个直接的指标可以表示样本间的间距-离散程度-那就是方差-Variance"><a href="#在统计学中-有一个直接的指标可以表示样本间的间距-离散程度-那就是方差-Variance" class="headerlink" title="在统计学中,有一个直接的指标可以表示样本间的间距(离散程度),那就是方差(Variance)"></a>在统计学中,有一个直接的指标可以表示样本间的间距(离散程度),那就是方差(Variance)</h4><p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200810225109737.png" alt="image-20200810225109737"></p>
-</li>
-<li><h4 id="上述的问题就变为了：找到一个轴-使得样本空间的所有点映射到这个轴之后-方差最大"><a href="#上述的问题就变为了：找到一个轴-使得样本空间的所有点映射到这个轴之后-方差最大" class="headerlink" title="上述的问题就变为了：找到一个轴,使得样本空间的所有点映射到这个轴之后,方差最大"></a>上述的问题就变为了：找到一个轴,使得样本空间的所有点映射到这个轴之后,方差最大</h4></li>
-<li><h4 id="接下来就是求解这个轴："><a href="#接下来就是求解这个轴：" class="headerlink" title="接下来就是求解这个轴："></a>接下来就是求解这个轴：</h4><ul>
-<li><h5 id="首先，将样例的均值归为0（demean），即将所有样本减去这批样本的均值-所有的样本点都会移动，因此可以看作样本点不动，移动坐标轴-，之后就变为了下图所示"><a href="#首先，将样例的均值归为0（demean），即将所有样本减去这批样本的均值-所有的样本点都会移动，因此可以看作样本点不动，移动坐标轴-，之后就变为了下图所示" class="headerlink" title="首先，将样例的均值归为0（demean），即将所有样本减去这批样本的均值(所有的样本点都会移动，因此可以看作样本点不动，移动坐标轴)，之后就变为了下图所示"></a>首先，将样例的均值归为0（demean），即将所有样本减去这批样本的均值(所有的样本点都会移动，因此可以看作样本点不动，移动坐标轴)，之后就变为了下图所示</h5><p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200810225647955.png" alt="image-20200810225647955"></p>
-<h5 id="此时的样本的均值就为0，方差就变成了"><a href="#此时的样本的均值就为0，方差就变成了" class="headerlink" title="此时的样本的均值就为0，方差就变成了"></a>此时的样本的均值就为0，方差就变成了</h5><p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200810230237650.png" alt="image-20200810230237650"></p>
-</li>
-<li><h5 id="我们想要求w轴的方向-w1-w2-使得-Var-Xproject-最大，Xproject-是映射到w轴之后的X的坐标："><a href="#我们想要求w轴的方向-w1-w2-使得-Var-Xproject-最大，Xproject-是映射到w轴之后的X的坐标：" class="headerlink" title="我们想要求w轴的方向(w1,w2),使得 Var(Xproject) 最大，Xproject 是映射到w轴之后的X的坐标："></a>我们想要求w轴的方向(w1,w2),使得 <em>Var(X<strong>project</strong>)</em> 最大，<em>X</em>project 是映射到w轴之后的X的坐标：</h5><p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200810230906480.png" alt="image-20200810230906480"></p>
-<h5 id="注意：因为X是矩阵，X-i-是X中的一个向量，所以在公式中不能写成括号的平方，而是模的平方"><a href="#注意：因为X是矩阵，X-i-是X中的一个向量，所以在公式中不能写成括号的平方，而是模的平方" class="headerlink" title="注意：因为X是矩阵，X(i)是X中的一个向量，所以在公式中不能写成括号的平方，而是模的平方"></a>注意：因为X是矩阵，X(i)是X中的一个向量，所以在公式中不能写成括号的平方，而是模的平方</h5><h5 id="接下来求解-X-i-project-，即如何用-X-i-表示（下图点积可以参考《机器学习中的数学》13页-1-4-4）"><a href="#接下来求解-X-i-project-，即如何用-X-i-表示（下图点积可以参考《机器学习中的数学》13页-1-4-4）" class="headerlink" title="接下来求解$X^{(i)}_{project}$，即如何用$X^{(i)}$表示（下图点积可以参考《机器学习中的数学》13页 1.4.4）"></a>接下来求解$X^{(i)}_{project}$，即如何用$X^{(i)}$表示（下图点积可以参考《机器学习中的数学》13页 1.4.4）</h5><p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200810233526467.png" alt="image-20200810233526467"></p>
-<h5 id="注意：因为我们要将样本点映射到w方向上，所以将w定义为单位向量，其实最终求得是样本点向量在w方向上的分量，即蓝色线条，它对应的就是-vec-X-i-project"><a href="#注意：因为我们要将样本点映射到w方向上，所以将w定义为单位向量，其实最终求得是样本点向量在w方向上的分量，即蓝色线条，它对应的就是-vec-X-i-project" class="headerlink" title="注意：因为我们要将样本点映射到w方向上，所以将w定义为单位向量，其实最终求得是样本点向量在w方向上的分量，即蓝色线条，它对应的就是$\vec{X^{(i)}_{project}}$"></a>注意：因为我们要将样本点映射到w方向上，所以将w定义为单位向量，其实最终求得是样本点向量在w方向上的分量，即蓝色线条，它对应的就是$\vec{X^{(i)}_{project}}$</h5></li>
-</ul>
-</li>
-<li><h4 id="最终："><a href="#最终：" class="headerlink" title="最终："></a>最终：</h4><p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200810234231684.png" alt="image-20200810234231684"></p>
-</li>
-</ul>
-</li>
-</ul>
-<h4 id="三、使用梯度上升法解决PCA问题"><a href="#三、使用梯度上升法解决PCA问题" class="headerlink" title="三、使用梯度上升法解决PCA问题"></a>三、使用梯度上升法解决PCA问题</h4><p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200810235951325.png" alt="image-20200810235951325"></p>
-<h4 id="接下来进行向量化，让其运行效率更高"><a href="#接下来进行向量化，让其运行效率更高" class="headerlink" title="接下来进行向量化，让其运行效率更高"></a>接下来进行向量化，让其运行效率更高</h4><ul>
-<li><h5 id="在向量化时要想清楚谁是矩阵，谁是向量，向量是行还是列向量"><a href="#在向量化时要想清楚谁是矩阵，谁是向量，向量是行还是列向量" class="headerlink" title="在向量化时要想清楚谁是矩阵，谁是向量，向量是行还是列向量"></a>在向量化时要想清楚谁是矩阵，谁是向量，向量是行还是列向量</h5></li>
-</ul>
-<p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200811000106484.png" alt="image-20200811000106484"></p>
-<h4 id="最终结果"><a href="#最终结果" class="headerlink" title="最终结果"></a>最终结果</h4><p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200811000436388.png" alt="image-20200811000436388"></p>
-<h4 id="四、求数据的前n个主成分（即新坐标系的每一个轴对应的方向）"><a href="#四、求数据的前n个主成分（即新坐标系的每一个轴对应的方向）" class="headerlink" title="四、求数据的前n个主成分（即新坐标系的每一个轴对应的方向）"></a>四、求数据的前n个主成分（即新坐标系的每一个轴对应的方向）</h4><ul>
-<li><h5 id="PCA的本质是将数据从一个坐标系转移到另一个坐标系"><a href="#PCA的本质是将数据从一个坐标系转移到另一个坐标系" class="headerlink" title="PCA的本质是将数据从一个坐标系转移到另一个坐标系"></a>PCA的本质是将数据从一个坐标系转移到另一个坐标系</h5></li>
-<li><h5 id="下面是求解过程："><a href="#下面是求解过程：" class="headerlink" title="下面是求解过程："></a>下面是求解过程：</h5><ul>
-<li><p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200814010029327.png" alt="image-20200814010029327"></p>
-<h5 id="先将-X-i-project-乘以单位向量-vec-w-变成-vec-X-i-project-，这个就是数据X在第一主成分上的分量，我们用X减去这一分量，即-vec-X-i-vec-X-i-project-，这是向量的减法，最终得出的是图中绿色的向量。"><a href="#先将-X-i-project-乘以单位向量-vec-w-变成-vec-X-i-project-，这个就是数据X在第一主成分上的分量，我们用X减去这一分量，即-vec-X-i-vec-X-i-project-，这是向量的减法，最终得出的是图中绿色的向量。" class="headerlink" title="先将$|{X^{(i)}_{project}}|$乘以单位向量$\vec{w}$变成$\vec{X^{(i)}_{project}}$，这个就是数据X在第一主成分上的分量，我们用X减去这一分量，即$\vec{X^{(i)}} - \vec{X^{(i)}_{project}}$，这是向量的减法，最终得出的是图中绿色的向量。"></a>先将$|{X^{(i)}_{project}}|$乘以单位向量$\vec{w}$变成$\vec{X^{(i)}_{project}}$，这个就是数据X在第一主成分上的分量，我们用X减去这一分量，即$\vec{X^{(i)}} - \vec{X^{(i)}_{project}}$，这是向量的减法，最终得出的是图中绿色的向量。</h5></li>
-<li><h5 id="然后在新的数据上求第一主成分（即原数据X的第二主成分），以此类推。"><a href="#然后在新的数据上求第一主成分（即原数据X的第二主成分），以此类推。" class="headerlink" title="然后在新的数据上求第一主成分（即原数据X的第二主成分），以此类推。"></a>然后在新的数据上求第一主成分（即原数据X的第二主成分），以此类推。</h5></li>
-</ul>
-</li>
-</ul>
-<h4 id="五、高维数据向低维数据映射"><a href="#五、高维数据向低维数据映射" class="headerlink" title="五、高维数据向低维数据映射"></a>五、高维数据向低维数据映射</h4><h5 id="PCA的本质是将数据从一个坐标系转换到另一个坐标系上，即原来是n维坐标系，转换后也是n维坐标系。但是我们要将高维向低维映射，所以要从转换后的n维坐标系中取前k个坐标轴形成一个k维的坐标系。然后将X中的每一行样本都乘以W中每一个维度的坐标轴。这样就从n维降到了k维："><a href="#PCA的本质是将数据从一个坐标系转换到另一个坐标系上，即原来是n维坐标系，转换后也是n维坐标系。但是我们要将高维向低维映射，所以要从转换后的n维坐标系中取前k个坐标轴形成一个k维的坐标系。然后将X中的每一行样本都乘以W中每一个维度的坐标轴。这样就从n维降到了k维：" class="headerlink" title="PCA的本质是将数据从一个坐标系转换到另一个坐标系上，即原来是n维坐标系，转换后也是n维坐标系。但是我们要将高维向低维映射，所以要从转换后的n维坐标系中取前k个坐标轴形成一个k维的坐标系。然后将X中的每一行样本都乘以W中每一个维度的坐标轴。这样就从n维降到了k维："></a>PCA的本质是将数据从一个坐标系转换到另一个坐标系上，即原来是n维坐标系，转换后也是n维坐标系。但是我们要将高维向低维映射，所以要从转换后的n维坐标系中取前k个坐标轴形成一个k维的坐标系。然后将X中的每一行样本都乘以W中每一个维度的坐标轴。这样就从n维降到了k维：</h5><p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200814224611023.png" alt="image-20200814224611023"></p>
-<h5 id="也可以从k维恢复到n维，但是恢复回来的-X-m-不等于原来的X："><a href="#也可以从k维恢复到n维，但是恢复回来的-X-m-不等于原来的X：" class="headerlink" title="也可以从k维恢复到n维，但是恢复回来的$X_m$不等于原来的X："></a>也可以从k维恢复到n维，但是恢复回来的$X_m$不等于原来的X：</h5><p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200814224911159.png" alt="image-20200814224911159"></p>
-<h4 id="六、PCA在人脸识别中的应用"><a href="#六、PCA在人脸识别中的应用" class="headerlink" title="六、PCA在人脸识别中的应用"></a>六、PCA在人脸识别中的应用</h4><p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200815183722277.png" alt="image-20200815183722277"></p>
-<h5 id="对于-W-k-来说，本身每一行代表一个方向。那么换一种思路：如果每一行看作一个样本，那么第一行表示最能反映原数据X的样本特征，以此类推。"><a href="#对于-W-k-来说，本身每一行代表一个方向。那么换一种思路：如果每一行看作一个样本，那么第一行表示最能反映原数据X的样本特征，以此类推。" class="headerlink" title="对于$W_k$来说，本身每一行代表一个方向。那么换一种思路：如果每一行看作一个样本，那么第一行表示最能反映原数据X的样本特征，以此类推。"></a>对于$W_k$来说，本身每一行代表一个方向。那么换一种思路：如果每一行看作一个样本，那么第一行表示最能反映原数据X的样本特征，以此类推。</h5><h5 id="在人脸识别中-X的每一行对应一个人脸数据，W的每一行也是一个人脸数据，这个就被称为特征脸，所以每一个特征脸其实对应一个主成分"><a href="#在人脸识别中-X的每一行对应一个人脸数据，W的每一行也是一个人脸数据，这个就被称为特征脸，所以每一个特征脸其实对应一个主成分" class="headerlink" title="在人脸识别中,X的每一行对应一个人脸数据，W的每一行也是一个人脸数据，这个就被称为特征脸，所以每一个特征脸其实对应一个主成分"></a>在人脸识别中,X的每一行对应一个人脸数据，W的每一行也是一个人脸数据，这个就被称为特征脸，所以每一个特征脸其实对应一个主成分</h5>]]></content>
-      <categories>
-        <category>机器学习</category>
-      </categories>
-      <tags>
-        <tag>机器学习</tag>
-        <tag>PCA</tag>
-        <tag>非监督学习</tag>
-        <tag>数据降维</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>机器学习笔记11</title>
     <url>/2020/08/15/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B011/</url>
     <content><![CDATA[<h3 id="多项式回归"><a href="#多项式回归" class="headerlink" title="多项式回归"></a>多项式回归</h3><a id="more"></a>
@@ -247,8 +144,8 @@
         <category>机器学习</category>
       </categories>
       <tags>
-        <tag>机器学习</tag>
         <tag>多项式回归</tag>
+        <tag>机器学习</tag>
         <tag>Pipeline</tag>
         <tag>过拟合与欠拟合</tag>
         <tag>学习曲线</tag>
@@ -257,6 +154,29 @@
         <tag>模型正则化</tag>
         <tag>岭回归、LASSO回归</tag>
         <tag>弹性网</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>acl论文记录</title>
+    <url>/2020/09/16/acl%E8%AE%BA%E6%96%87%E8%AE%B0%E5%BD%95/</url>
+    <content><![CDATA[<h3 id="对话系统"><a href="#对话系统" class="headerlink" title="对话系统"></a>对话系统</h3><a id="more"></a>
+<h4 id="一、Dynamic-Fusion-Network-for-Multi-Domain-End-to-end-Task-Oriented-Dialog"><a href="#一、Dynamic-Fusion-Network-for-Multi-Domain-End-to-end-Task-Oriented-Dialog" class="headerlink" title="一、Dynamic Fusion Network for Multi-Domain End-to-end Task-Oriented Dialog"></a>一、Dynamic Fusion Network for Multi-Domain End-to-end Task-Oriented Dialog</h4><h5 id="动态聚合网络，用于多领域端到端任务型对话系统"><a href="#动态聚合网络，用于多领域端到端任务型对话系统" class="headerlink" title="动态聚合网络，用于多领域端到端任务型对话系统"></a>动态聚合网络，用于多领域端到端任务型对话系统</h5><ul>
+<li>Abstract：<br>Recent studies have shown remarkable suc- cess in end-to-end<br>task-oriented dialog system. However, most neural models rely on large<br>training data, which are only available for a certain number of task domains,<br>such as nav- igation and scheduling. This makes it difficult to scalable for a<br>new domain with limited la- beled data. However, there has been relatively<br>little research on how to effectively use data from all domains to improve the<br>performance of each domain and also unseen domains. To this end, we<br>investigate methods that can make explicit use of domain knowledge and intro-<br>duce a shared-private network to learn shared and specific knowledge. In<br>addition, we pro- pose a novel Dynamic Fusion Network (DF- Net) which<br>automatically exploit the relevance between the target domain and each domain.<br>Results show that our model outperforms exist- ing methods on multi-domain<br>dialogue, giving the state-of-the-art in the literature. Besides, with little<br>training data, we show its transfer- ability by outperforming prior best model<br>by 13.9% on average.</li>
+<li><p>摘要：<br>最近的研究表明，在端到端的面向任务的对话系统中取得了巨大的成功。但是，大多数神经模型都依赖于大量训练数据，这些训练数据仅可用于一定数量的任务领域，例如导航和调度。<br>这使得对具有有限标记数据的新领域进行扩展变得很困难。但是，关于如何有效地使用所有领域的数据来改善每个领域以及未知领域的性能表现的研究相对较少。<br>为此，我们研究了可以准确使用领域知识的方法，并引入了共享－私有网络来学习共享和特定知识。<br>此外，我们提出了一种新颖的动态聚合网络（DFNet），该网络可自动利用目标领域与每个领域之间的相关性。结果表明，我们的模型优于现有的多领域对话方法，提供了文献中的最新技术。<br>此外，在训练数据很少的情况下，我们的性能比以前的最佳模型平均高13.9％，从而显示出其可移植性。</p>
+</li>
+<li><p>Conclusion：<br>In this paper, we propose to use a shared-private<br>model to investigate explicit modeling domain<br>knowledge for multi-domain dialog. In addition, a<br>dynamic fusion layer is proposed to dynamically<br>capture the correlation between a target domain and<br>all source domains. Experiments on two datasets<br>show the effectiveness of the proposed models. Be-<br>sides, our model can quickly adapt to a new domain<br>with little annotated data.</p>
+</li>
+<li><p>结论：<br>本文中，我们建议使用共享-私有模型研究多领域对话显式建模域知识。另外，提出了动态聚合以动态捕获目标域和所有源域之间的相关性。<br>在两个数据集上的实验表明了所提出模型的有效性。此外，我们的模型可以在几乎没有注释数据的情况下快速适应新领域。</p>
+</li>
+<li><p>summary：<br>现有的神经模型大多数都依赖大量的训练数据，且只能用在一部分任务领域。而本文引入了shared-private network（共享－私有网络）来学习共享和特定的知识。<br>并提出了新的动态聚合网络（DFNET),它可以自动探索目标域与各个领域之间的相关性。并且该模型同时可以应用在几乎没有标签数据的新领域中。</p>
+</li>
+</ul>
+]]></content>
+      <categories>
+        <category>顶会论文</category>
+      </categories>
+      <tags>
+        <tag>acl</tag>
       </tags>
   </entry>
   <entry>
@@ -340,128 +260,243 @@
       </tags>
   </entry>
   <entry>
-    <title>机器学习笔记13</title>
-    <url>/2020/09/05/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B013/</url>
-    <content><![CDATA[<h3 id="评价分类结果"><a href="#评价分类结果" class="headerlink" title="评价分类结果"></a>评价分类结果</h3><a id="more"></a>
-<h4 id="一、分类准确度的缺陷和混淆矩阵"><a href="#一、分类准确度的缺陷和混淆矩阵" class="headerlink" title="一、分类准确度的缺陷和混淆矩阵"></a>一、分类准确度的缺陷和混淆矩阵</h4><h5 id="1、分类准确度的缺陷："><a href="#1、分类准确度的缺陷：" class="headerlink" title="1、分类准确度的缺陷："></a>1、分类准确度的缺陷：</h5><ul>
-<li><p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200905225600926.png" alt="image-20200905225600926"></p>
-<h5 id="假设这个癌症预测系统的预测准确度（分类准确度）是99-9-，若癌症产生概率只有0-01-，我们如果人为预测所有人都健康，这样准确度会达到99-99-。这比该预测系统的准确度更高，显然这个预测系统（模型）是失败的。因此，对于这类极度偏斜（Skewed-Data）的数据，只使用分类准确度是不行的。"><a href="#假设这个癌症预测系统的预测准确度（分类准确度）是99-9-，若癌症产生概率只有0-01-，我们如果人为预测所有人都健康，这样准确度会达到99-99-。这比该预测系统的准确度更高，显然这个预测系统（模型）是失败的。因此，对于这类极度偏斜（Skewed-Data）的数据，只使用分类准确度是不行的。" class="headerlink" title="假设这个癌症预测系统的预测准确度（分类准确度）是99.9%，若癌症产生概率只有0.01%，我们如果人为预测所有人都健康，这样准确度会达到99.99%。这比该预测系统的准确度更高，显然这个预测系统（模型）是失败的。因此，对于这类极度偏斜（Skewed Data）的数据，只使用分类准确度是不行的。"></a>假设这个癌症预测系统的预测准确度（分类准确度）是99.9%，若癌症产生概率只有0.01%，我们如果人为预测所有人都健康，这样准确度会达到99.99%。这比该预测系统的准确度更高，显然这个预测系统（模型）是失败的。因此，对于这类极度偏斜（Skewed Data）的数据，只使用分类准确度是不行的。</h5></li>
-</ul>
-<h5 id="2、混淆矩阵："><a href="#2、混淆矩阵：" class="headerlink" title="2、混淆矩阵："></a>2、混淆矩阵：</h5><ul>
-<li><p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200905232354868.png" alt="image-20200905232354868"></p>
-<h5 id="T表示True，F表示False，N表示Negative，P表示Positive。"><a href="#T表示True，F表示False，N表示Negative，P表示Positive。" class="headerlink" title="T表示True，F表示False，N表示Negative，P表示Positive。"></a>T表示True，F表示False，N表示Negative，P表示Positive。</h5><h5 id="具体可看https-blog-csdn-net-Orange-Spotty-Cat-article-details-80520839"><a href="#具体可看https-blog-csdn-net-Orange-Spotty-Cat-article-details-80520839" class="headerlink" title="具体可看https://blog.csdn.net/Orange_Spotty_Cat/article/details/80520839"></a>具体可看<a href="https://blog.csdn.net/Orange_Spotty_Cat/article/details/80520839" target="_blank" rel="noopener">https://blog.csdn.net/Orange_Spotty_Cat/article/details/80520839</a></h5><ul>
-<li><h5 id="真实值是positive，模型认为是positive的数量（True-Positive-TP）"><a href="#真实值是positive，模型认为是positive的数量（True-Positive-TP）" class="headerlink" title="真实值是positive，模型认为是positive的数量（True Positive=TP）"></a>真实值是positive，模型认为是positive的数量（True Positive=TP）</h5></li>
-<li><h5 id="真实值是positive，模型认为是negative的数量（False-Negative-FN）"><a href="#真实值是positive，模型认为是negative的数量（False-Negative-FN）" class="headerlink" title="真实值是positive，模型认为是negative的数量（False Negative=FN）"></a>真实值是positive，模型认为是negative的数量（False Negative=FN）</h5></li>
-<li><h5 id="真实值是negative，模型认为是positive的数量（False-Positive-FP）"><a href="#真实值是negative，模型认为是positive的数量（False-Positive-FP）" class="headerlink" title="真实值是negative，模型认为是positive的数量（False Positive=FP）"></a>真实值是negative，模型认为是positive的数量（False Positive=FP）</h5></li>
-<li><h5 id="真实值是negative，模型认为是negative的数量（True-Negative-TN）"><a href="#真实值是negative，模型认为是negative的数量（True-Negative-TN）" class="headerlink" title="真实值是negative，模型认为是negative的数量（True Negative=TN）"></a>真实值是negative，模型认为是negative的数量（True Negative=TN）</h5></li>
-</ul>
-<h5 id="举例说明：假如有10000个人，其中有（9978-12）人没患病，有（2-8）人患病"><a href="#举例说明：假如有10000个人，其中有（9978-12）人没患病，有（2-8）人患病" class="headerlink" title="举例说明：假如有10000个人，其中有（9978+12）人没患病，有（2+8）人患病"></a>举例说明：假如有10000个人，其中有（9978+12）人没患病，有（2+8）人患病</h5><ul>
-<li><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200905233743570.png" alt="image-20200905233743570"></li>
-</ul>
-</li>
-<li><h5 id="通过上例说明精准率与召回率："><a href="#通过上例说明精准率与召回率：" class="headerlink" title="通过上例说明精准率与召回率："></a>通过上例说明精准率与召回率：</h5><ul>
-<li><h5 id="精准率："><a href="#精准率：" class="headerlink" title="精准率："></a>精准率：</h5><p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200905233949626.png" alt="image-20200905233949626"></p>
-<h5 id="在分类问题中，我们一般关注的重点（预测的结果）是“1”而不是“0”，针对本例就是指患病这种情况。所以精准率指在所有预测为“1”的结果中，预测正确的比重是多少。在本例中指在所有预测为患病的人中，预测正确的比重是多少。"><a href="#在分类问题中，我们一般关注的重点（预测的结果）是“1”而不是“0”，针对本例就是指患病这种情况。所以精准率指在所有预测为“1”的结果中，预测正确的比重是多少。在本例中指在所有预测为患病的人中，预测正确的比重是多少。" class="headerlink" title="在分类问题中，我们一般关注的重点（预测的结果）是“1”而不是“0”，针对本例就是指患病这种情况。所以精准率指在所有预测为“1”的结果中，预测正确的比重是多少。在本例中指在所有预测为患病的人中，预测正确的比重是多少。"></a>在分类问题中，我们一般关注的重点（预测的结果）是“1”而不是“0”，针对本例就是指患病这种情况。所以精准率指在所有预测为“1”的结果中，预测正确的比重是多少。在本例中指在所有预测为患病的人中，预测正确的比重是多少。</h5></li>
-<li><h5 id="召回率："><a href="#召回率：" class="headerlink" title="召回率："></a>召回率：</h5><p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200905234614050.png" alt="image-20200905234614050"></p>
-<h5 id="召回率指在所有真实为“1”的结果中，预测正确的比重是多少。在本例中指在所有确实患病的人中，预测正确的比重是多少。"><a href="#召回率指在所有真实为“1”的结果中，预测正确的比重是多少。在本例中指在所有确实患病的人中，预测正确的比重是多少。" class="headerlink" title="召回率指在所有真实为“1”的结果中，预测正确的比重是多少。在本例中指在所有确实患病的人中，预测正确的比重是多少。"></a>召回率指在所有真实为“1”的结果中，预测正确的比重是多少。在本例中指在所有确实患病的人中，预测正确的比重是多少。</h5></li>
-</ul>
-</li>
-<li><h5 id="再回到最开始的例子中，我们预测在10000个人中，有9990个人健康，10个人患病，这样会得到下面的混淆矩阵："><a href="#再回到最开始的例子中，我们预测在10000个人中，有9990个人健康，10个人患病，这样会得到下面的混淆矩阵：" class="headerlink" title="再回到最开始的例子中，我们预测在10000个人中，有9990个人健康，10个人患病，这样会得到下面的混淆矩阵："></a>再回到最开始的例子中，我们预测在10000个人中，有9990个人健康，10个人患病，这样会得到下面的混淆矩阵：</h5><ul>
-<li><p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200905235343865.png" alt="image-20200905235343865"></p>
-<h5 id="虽然分类准确度达到了99-9-，但是精准率与召回率却都是0，很显然这个模型是不好的。"><a href="#虽然分类准确度达到了99-9-，但是精准率与召回率却都是0，很显然这个模型是不好的。" class="headerlink" title="虽然分类准确度达到了99.9%，但是精准率与召回率却都是0，很显然这个模型是不好的。"></a>虽然分类准确度达到了99.9%，但是精准率与召回率却都是0，很显然这个模型是不好的。</h5></li>
-</ul>
-</li>
-</ul>
-<h4 id="二、F1-Score"><a href="#二、F1-Score" class="headerlink" title="二、F1 Score"></a>二、F1 Score</h4><ul>
-<li><h5 id="关于精准率和召回率的解读要视实际情况来定："><a href="#关于精准率和召回率的解读要视实际情况来定：" class="headerlink" title="关于精准率和召回率的解读要视实际情况来定："></a>关于精准率和召回率的解读要视实际情况来定：</h5><ul>
-<li><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200907203853160.png" alt="image-20200907203853160"></li>
-<li><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200907203913917.png" alt="image-20200907203913917"></li>
-</ul>
-</li>
-<li><h5 id="是否有一个指标可以将二者都兼顾呢——F1-Score"><a href="#是否有一个指标可以将二者都兼顾呢——F1-Score" class="headerlink" title="是否有一个指标可以将二者都兼顾呢——F1 Score"></a>是否有一个指标可以将二者都兼顾呢——F1 Score</h5><ul>
-<li><h5 id="F1-Score是precision和recall的调和平均值。它的特性是只有二者都比较大才能使得F1-Score比较大；其中一个很大（很小），另一个相反，都不会使得F1-Score很大。"><a href="#F1-Score是precision和recall的调和平均值。它的特性是只有二者都比较大才能使得F1-Score比较大；其中一个很大（很小），另一个相反，都不会使得F1-Score很大。" class="headerlink" title="F1 Score是precision和recall的调和平均值。它的特性是只有二者都比较大才能使得F1 Score比较大；其中一个很大（很小），另一个相反，都不会使得F1 Score很大。"></a>F1 Score是precision和recall的调和平均值。它的特性是只有二者都比较大才能使得F1 Score比较大；其中一个很大（很小），另一个相反，都不会使得F1 Score很大。</h5></li>
-<li><p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200907204616387.png" alt="image-20200907204616387"></p>
-</li>
-</ul>
-</li>
-</ul>
-<h4 id="三、Precision-Recall的平衡"><a href="#三、Precision-Recall的平衡" class="headerlink" title="三、Precision-Recall的平衡"></a>三、Precision-Recall的平衡</h4><ul>
-<li><h5 id="在逻辑回归中"><a href="#在逻辑回归中" class="headerlink" title="在逻辑回归中"></a>在逻辑回归中</h5><ul>
-<li><p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200907222636806.png" alt="image-20200907222636806"></p>
-</li>
-<li><h5 id="为啥决策边界要以0为界限呢？其实我们可以根据需求来调节决策边界的界限，进而改变分类结果。"><a href="#为啥决策边界要以0为界限呢？其实我们可以根据需求来调节决策边界的界限，进而改变分类结果。" class="headerlink" title="为啥决策边界要以0为界限呢？其实我们可以根据需求来调节决策边界的界限，进而改变分类结果。"></a>为啥决策边界要以0为界限呢？其实我们可以根据需求来调节决策边界的界限，进而改变分类结果。</h5></li>
-</ul>
-</li>
-<li><h5 id="因此我们可以让决策边界等于threshold（阈值），让它改变分类结果，进而影响Precision与Recall的权重。"><a href="#因此我们可以让决策边界等于threshold（阈值），让它改变分类结果，进而影响Precision与Recall的权重。" class="headerlink" title="因此我们可以让决策边界等于threshold（阈值），让它改变分类结果，进而影响Precision与Recall的权重。"></a>因此我们可以让决策边界等于threshold（阈值），让它改变分类结果，进而影响Precision与Recall的权重。</h5><ul>
-<li><p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200907223244946.png" alt="image-20200907223244946"></p>
-<ul>
-<li><h5 id="threshold-0时："><a href="#threshold-0时：" class="headerlink" title="threshold=0时："></a>threshold=0时：</h5><p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200907223426718.png" alt="image-20200907223426718"></p>
-<h5 id="星星表示实际为1的样本，圆圈表示实际为0的样本。左边是预测为0的样本，右边是预测为1的样本。"><a href="#星星表示实际为1的样本，圆圈表示实际为0的样本。左边是预测为0的样本，右边是预测为1的样本。" class="headerlink" title="星星表示实际为1的样本，圆圈表示实际为0的样本。左边是预测为0的样本，右边是预测为1的样本。"></a>星星表示实际为1的样本，圆圈表示实际为0的样本。左边是预测为0的样本，右边是预测为1的样本。</h5></li>
-<li><h5 id="threshold-gt-0时："><a href="#threshold-gt-0时：" class="headerlink" title="threshold&gt;0时："></a>threshold&gt;0时：</h5><p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200907223654382.png" alt="image-20200907223654382"></p>
-</li>
-<li><h5 id="threshold-lt-0时："><a href="#threshold-lt-0时：" class="headerlink" title="threshold&lt;0时："></a>threshold&lt;0时：</h5><p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200907223734566.png" alt="image-20200907223734566"></p>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-<li><h5 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h5><ul>
-<li><h5 id="精准率与召回率互相牵制，一个升高，另一个就会降低"><a href="#精准率与召回率互相牵制，一个升高，另一个就会降低" class="headerlink" title="精准率与召回率互相牵制，一个升高，另一个就会降低"></a>精准率与召回率互相牵制，一个升高，另一个就会降低</h5></li>
-<li><h5 id="阈值越大，精准率越高，召回率越低；阈值越小，精准率越低，召回率越高"><a href="#阈值越大，精准率越高，召回率越低；阈值越小，精准率越低，召回率越高" class="headerlink" title="阈值越大，精准率越高，召回率越低；阈值越小，精准率越低，召回率越高"></a>阈值越大，精准率越高，召回率越低；阈值越小，精准率越低，召回率越高</h5></li>
-</ul>
-</li>
-</ul>
-<h4 id="四、P-R曲线"><a href="#四、P-R曲线" class="headerlink" title="四、P-R曲线"></a>四、P-R曲线</h4><ul>
-<li><h5 id="P-R曲线顾名思义横坐标是精准率，纵坐标是召回率"><a href="#P-R曲线顾名思义横坐标是精准率，纵坐标是召回率" class="headerlink" title="P-R曲线顾名思义横坐标是精准率，纵坐标是召回率"></a>P-R曲线顾名思义横坐标是精准率，纵坐标是召回率</h5><p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200907233249933.png" alt="image-20200907233249933"></p>
-<ul>
-<li><h5 id="途中曲线开始急剧下降的点，可能就是精准率和召回率平衡位置的点"><a href="#途中曲线开始急剧下降的点，可能就是精准率和召回率平衡位置的点" class="headerlink" title="途中曲线开始急剧下降的点，可能就是精准率和召回率平衡位置的点"></a>途中曲线开始急剧下降的点，可能就是精准率和召回率平衡位置的点</h5></li>
-</ul>
-</li>
-<li><h5 id="不同的模型对应的不同的-Precision-Recall-曲线"><a href="#不同的模型对应的不同的-Precision-Recall-曲线" class="headerlink" title="不同的模型对应的不同的 Precision - Recall 曲线"></a>不同的模型对应的不同的 Precision - Recall 曲线</h5><p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200907233440669.png" alt="image-20200907233440669"></p>
-<ul>
-<li><h5 id="外层曲线对应的模型更优（外层曲线的P值和R值都比里层曲线的大）；或者称与坐标轴一起包围的面积越大者越优"><a href="#外层曲线对应的模型更优（外层曲线的P值和R值都比里层曲线的大）；或者称与坐标轴一起包围的面积越大者越优" class="headerlink" title="外层曲线对应的模型更优（外层曲线的P值和R值都比里层曲线的大）；或者称与坐标轴一起包围的面积越大者越优"></a>外层曲线对应的模型更优（外层曲线的P值和R值都比里层曲线的大）；或者称与坐标轴一起包围的面积越大者越优</h5></li>
-<li><h5 id="P-R-曲线也可以作为选择算法、模型、超参数的指标；但一般不适用此曲线，而是使用-ROC-曲线"><a href="#P-R-曲线也可以作为选择算法、模型、超参数的指标；但一般不适用此曲线，而是使用-ROC-曲线" class="headerlink" title="P - R 曲线也可以作为选择算法、模型、超参数的指标；但一般不适用此曲线，而是使用 ROC 曲线"></a>P - R 曲线也可以作为选择算法、模型、超参数的指标；但一般不适用此曲线，而是使用 ROC 曲线</h5></li>
-</ul>
-</li>
-</ul>
-<h4 id="五、ROC曲线"><a href="#五、ROC曲线" class="headerlink" title="五、ROC曲线"></a>五、ROC曲线</h4><ul>
-<li><h5 id="ROC曲线描述TPR和FPR之间的关系"><a href="#ROC曲线描述TPR和FPR之间的关系" class="headerlink" title="ROC曲线描述TPR和FPR之间的关系"></a>ROC曲线描述TPR和FPR之间的关系</h5><ul>
-<li><h5 id="TPR："><a href="#TPR：" class="headerlink" title="TPR："></a>TPR：</h5><p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200913172134092.png" alt="image-20200913172134092"></p>
-</li>
-<li><h5 id="FPR"><a href="#FPR" class="headerlink" title="FPR:"></a>FPR:</h5><p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200913172216856.png" alt="image-20200913172216856"></p>
-</li>
-<li><h5 id="TPR与FPR的关系"><a href="#TPR与FPR的关系" class="headerlink" title="TPR与FPR的关系"></a>TPR与FPR的关系</h5><p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200913180416522.png" alt="image-20200913180416522"></p>
-<ul>
-<li><h5 id="随着阈值-threshold-的增大，FPR-和-TPR-都逐渐减小；"><a href="#随着阈值-threshold-的增大，FPR-和-TPR-都逐渐减小；" class="headerlink" title="随着阈值 threshold 的增大，FPR 和 TPR 都逐渐减小；"></a>随着阈值 threshold 的增大，FPR 和 TPR 都逐渐减小；</h5></li>
-<li><h5 id="FPR-和-TPR-称正相关关系，FPR-越高，TPR-相应的也越高；"><a href="#FPR-和-TPR-称正相关关系，FPR-越高，TPR-相应的也越高；" class="headerlink" title="FPR 和 TPR 称正相关关系，FPR 越高，TPR 相应的也越高；"></a>FPR 和 TPR 称正相关关系，FPR 越高，TPR 相应的也越高；</h5></li>
-</ul>
-</li>
-</ul>
-</li>
-<li><h5 id="与P-R曲线的区别"><a href="#与P-R曲线的区别" class="headerlink" title="与P-R曲线的区别"></a>与P-R曲线的区别</h5><ul>
-<li><h5 id="P-R曲线：应用于判定由极度有偏数据所训练的模型的优劣"><a href="#P-R曲线：应用于判定由极度有偏数据所训练的模型的优劣" class="headerlink" title="P-R曲线：应用于判定由极度有偏数据所训练的模型的优劣"></a>P-R曲线：应用于判定由极度有偏数据所训练的模型的优劣</h5></li>
-<li><h5 id="ROC曲线：应用于比较两个模型的优劣"><a href="#ROC曲线：应用于比较两个模型的优劣" class="headerlink" title="ROC曲线：应用于比较两个模型的优劣"></a>ROC曲线：应用于比较两个模型的优劣</h5><ul>
-<li><h5 id="可以是同样算法不同超参数得到的不同模型，也可以是不同算法得到的不同模型"><a href="#可以是同样算法不同超参数得到的不同模型，也可以是不同算法得到的不同模型" class="headerlink" title="可以是同样算法不同超参数得到的不同模型，也可以是不同算法得到的不同模型"></a>可以是同样算法不同超参数得到的不同模型，也可以是不同算法得到的不同模型</h5></li>
-</ul>
-</li>
-</ul>
-</li>
-<li><h5 id="总结："><a href="#总结：" class="headerlink" title="总结："></a>总结：</h5><ul>
-<li><h5 id="ROC曲线与图形边界围成的面积，作为衡量模型优劣的标准，面积越大，模型越优"><a href="#ROC曲线与图形边界围成的面积，作为衡量模型优劣的标准，面积越大，模型越优" class="headerlink" title="ROC曲线与图形边界围成的面积，作为衡量模型优劣的标准，面积越大，模型越优"></a>ROC曲线与图形边界围成的面积，作为衡量模型优劣的标准，面积越大，模型越优</h5></li>
-<li><h5 id="计算ROC曲线与坐标轴围成的面积：称ROC的auc；"><a href="#计算ROC曲线与坐标轴围成的面积：称ROC的auc；" class="headerlink" title="计算ROC曲线与坐标轴围成的面积：称ROC的auc；"></a>计算ROC曲线与坐标轴围成的面积：称ROC的auc；</h5></li>
-<li><h5 id="面积越大，模型越优："><a href="#面积越大，模型越优：" class="headerlink" title="面积越大，模型越优："></a>面积越大，模型越优：</h5></li>
-</ul>
-</li>
-</ul>
-<h4 id="六、-多分类问题中的混淆矩阵"><a href="#六、-多分类问题中的混淆矩阵" class="headerlink" title="六、 多分类问题中的混淆矩阵"></a>六、 多分类问题中的混淆矩阵</h4><h5 id="这块儿内容直接看‘08-Confusion-Matrix-in-Multiclass-Classification-ipynb’"><a href="#这块儿内容直接看‘08-Confusion-Matrix-in-Multiclass-Classification-ipynb’" class="headerlink" title="这块儿内容直接看‘08-Confusion-Matrix-in-Multiclass-Classification.ipynb’"></a>这块儿内容直接看‘08-Confusion-Matrix-in-Multiclass-Classification.ipynb’</h5>]]></content>
+    <title>机器学习笔记1</title>
+    <url>/2020/07/21/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B01/</url>
+    <content><![CDATA[<h1 id="机器学习笔记"><a href="#机器学习笔记" class="headerlink" title="机器学习笔记"></a>机器学习笔记</h1><a id="more"></a>
+<h3 id="一：什么是机器学习"><a href="#一：什么是机器学习" class="headerlink" title="一：什么是机器学习"></a>一：什么是机器学习</h3><p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200706165617797.png" alt="image-20200706165617797"></p>
+<h4 id="首先先了解人类如何学习（经验学习）"><a href="#首先先了解人类如何学习（经验学习）" class="headerlink" title="首先先了解人类如何学习（经验学习）"></a>首先先了解人类如何学习（经验学习）</h4><p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200706170401290.png" alt="image-20200706170401290"></p>
+<h4 id="机器学习和人类学习是非常相似的"><a href="#机器学习和人类学习是非常相似的" class="headerlink" title="机器学习和人类学习是非常相似的"></a>机器学习和人类学习是非常相似的</h4><p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200706170712331.png" alt="image-20200706170712331"></p>
+<h3 id="二：机器学习应用"><a href="#二：机器学习应用" class="headerlink" title="二：机器学习应用"></a>二：机器学习应用</h3><h4 id="1-当前应用"><a href="#1-当前应用" class="headerlink" title="1.当前应用"></a>1.当前应用</h4><p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200706171220946.png" alt="image-20200706171220946"></p>
+<h4 id="2-未来应用"><a href="#2-未来应用" class="headerlink" title="2.未来应用"></a>2.未来应用</h4><p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200706171619513.png" alt="image-20200706171619513"></p>
+<h3 id="三：机器学习的定位"><a href="#三：机器学习的定位" class="headerlink" title="三：机器学习的定位"></a>三：机器学习的定位</h3><p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200706172204133.png" alt="image-20200706172204133"></p>
+<h4 id="不要孤立的看待机器学习，它和很多领域都有密切的联系"><a href="#不要孤立的看待机器学习，它和很多领域都有密切的联系" class="headerlink" title="不要孤立的看待机器学习，它和很多领域都有密切的联系"></a>不要孤立的看待机器学习，它和很多领域都有密切的联系</h4><h3 id="四：机器学习的框架"><a href="#四：机器学习的框架" class="headerlink" title="四：机器学习的框架"></a>四：机器学习的框架</h3><p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200706172446522.png" alt="image-20200706172446522"></p>
+<p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200706172809977.png" alt="image-20200706172809977"></p>
+]]></content>
       <categories>
         <category>机器学习</category>
       </categories>
       <tags>
-        <tag>混淆矩阵</tag>
-        <tag>F1 SCORE</tag>
-        <tag>精准率与召回率</tag>
-        <tag>PR曲线与ROC曲线</tag>
+        <tag>机器学习</tag>
+        <tag>Python</tag>
+        <tag>机器学习基础概念</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>机器学习笔记10</title>
+    <url>/2020/08/10/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B010/</url>
+    <content><![CDATA[<h4 id="PCA-主成分分析（Principal-Component-Analysis）"><a href="#PCA-主成分分析（Principal-Component-Analysis）" class="headerlink" title="PCA-主成分分析（Principal Component Analysis）"></a>PCA-主成分分析（Principal Component Analysis）</h4><a id="more"></a>
+<h4 id="一、PCA综述"><a href="#一、PCA综述" class="headerlink" title="一、PCA综述"></a>一、PCA综述</h4><p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200810220126595.png" alt="image-20200810220126595"></p>
+<h4 id="二、详解PCA"><a href="#二、详解PCA" class="headerlink" title="二、详解PCA"></a>二、详解PCA</h4><ul>
+<li><p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200810223917827.png" alt="image-20200810223917827"></p>
+<ul>
+<li><h4 id="我们首先想到的降维方法是舍弃特征1或舍弃特征2，这样样本点就会映射到单一坐标轴上，达到了降维的效果。如下图："><a href="#我们首先想到的降维方法是舍弃特征1或舍弃特征2，这样样本点就会映射到单一坐标轴上，达到了降维的效果。如下图：" class="headerlink" title="我们首先想到的降维方法是舍弃特征1或舍弃特征2，这样样本点就会映射到单一坐标轴上，达到了降维的效果。如下图："></a>我们首先想到的降维方法是舍弃特征1或舍弃特征2，这样样本点就会映射到单一坐标轴上，达到了降维的效果。如下图：</h4></li>
+<li><h5 id="左图为舍弃特征1；右图为舍弃特征2："><a href="#左图为舍弃特征1；右图为舍弃特征2：" class="headerlink" title="左图为舍弃特征1；右图为舍弃特征2："></a>左图为舍弃特征1；右图为舍弃特征2：</h5><p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200810224220339.png" alt="image-20200810224220339"></p>
+</li>
+<li><h4 id="显然右图的降维效果比左图好，因为样本点直接距离较大，拥有更高的可区分度"><a href="#显然右图的降维效果比左图好，因为样本点直接距离较大，拥有更高的可区分度" class="headerlink" title="显然右图的降维效果比左图好，因为样本点直接距离较大，拥有更高的可区分度"></a>显然右图的降维效果比左图好，因为样本点直接距离较大，拥有更高的可区分度</h4></li>
+</ul>
+</li>
+<li><h4 id="但是，这是最好的方案吗？显然不是。我们想象一下-能够找到下图这样的一条斜线w-将数据降维到w上-映射到w上-之后-能最好的保留原来的分布特征-且这些点分布在了一个轴上-斜线w-后点和点之间的距离也比之前的两种方案更加的大-此时的区分度也更加明显"><a href="#但是，这是最好的方案吗？显然不是。我们想象一下-能够找到下图这样的一条斜线w-将数据降维到w上-映射到w上-之后-能最好的保留原来的分布特征-且这些点分布在了一个轴上-斜线w-后点和点之间的距离也比之前的两种方案更加的大-此时的区分度也更加明显" class="headerlink" title="但是，这是最好的方案吗？显然不是。我们想象一下,能够找到下图这样的一条斜线w,将数据降维到w上(映射到w上)之后,能最好的保留原来的分布特征,且这些点分布在了一个轴上(斜线w)后点和点之间的距离也比之前的两种方案更加的大,此时的区分度也更加明显"></a>但是，这是最好的方案吗？显然不是。我们想象一下,能够找到下图这样的一条斜线w,将数据降维到w上(映射到w上)之后,能最好的保留原来的分布特征,且这些点分布在了一个轴上(斜线w)后点和点之间的距离也比之前的两种方案更加的大,此时的区分度也更加明显</h4><ul>
+<li><p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200810224703164.png" alt="image-20200810224703164"></p>
+</li>
+<li><h4 id="接下来我们要思考以下两个问题了："><a href="#接下来我们要思考以下两个问题了：" class="headerlink" title="接下来我们要思考以下两个问题了："></a>接下来我们要思考以下两个问题了：</h4><ul>
+<li><h5 id="如何找到让这个样本降维后间距最大的轴"><a href="#如何找到让这个样本降维后间距最大的轴" class="headerlink" title="如何找到让这个样本降维后间距最大的轴?"></a>如何找到让这个样本降维后间距最大的轴?</h5></li>
+<li><h5 id="如何定义样本间距"><a href="#如何定义样本间距" class="headerlink" title="如何定义样本间距?"></a>如何定义样本间距?</h5></li>
+</ul>
+</li>
+<li><h4 id="在统计学中-有一个直接的指标可以表示样本间的间距-离散程度-那就是方差-Variance"><a href="#在统计学中-有一个直接的指标可以表示样本间的间距-离散程度-那就是方差-Variance" class="headerlink" title="在统计学中,有一个直接的指标可以表示样本间的间距(离散程度),那就是方差(Variance)"></a>在统计学中,有一个直接的指标可以表示样本间的间距(离散程度),那就是方差(Variance)</h4><p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200810225109737.png" alt="image-20200810225109737"></p>
+</li>
+<li><h4 id="上述的问题就变为了：找到一个轴-使得样本空间的所有点映射到这个轴之后-方差最大"><a href="#上述的问题就变为了：找到一个轴-使得样本空间的所有点映射到这个轴之后-方差最大" class="headerlink" title="上述的问题就变为了：找到一个轴,使得样本空间的所有点映射到这个轴之后,方差最大"></a>上述的问题就变为了：找到一个轴,使得样本空间的所有点映射到这个轴之后,方差最大</h4></li>
+<li><h4 id="接下来就是求解这个轴："><a href="#接下来就是求解这个轴：" class="headerlink" title="接下来就是求解这个轴："></a>接下来就是求解这个轴：</h4><ul>
+<li><h5 id="首先，将样例的均值归为0（demean），即将所有样本减去这批样本的均值-所有的样本点都会移动，因此可以看作样本点不动，移动坐标轴-，之后就变为了下图所示"><a href="#首先，将样例的均值归为0（demean），即将所有样本减去这批样本的均值-所有的样本点都会移动，因此可以看作样本点不动，移动坐标轴-，之后就变为了下图所示" class="headerlink" title="首先，将样例的均值归为0（demean），即将所有样本减去这批样本的均值(所有的样本点都会移动，因此可以看作样本点不动，移动坐标轴)，之后就变为了下图所示"></a>首先，将样例的均值归为0（demean），即将所有样本减去这批样本的均值(所有的样本点都会移动，因此可以看作样本点不动，移动坐标轴)，之后就变为了下图所示</h5><p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200810225647955.png" alt="image-20200810225647955"></p>
+<h5 id="此时的样本的均值就为0，方差就变成了"><a href="#此时的样本的均值就为0，方差就变成了" class="headerlink" title="此时的样本的均值就为0，方差就变成了"></a>此时的样本的均值就为0，方差就变成了</h5><p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200810230237650.png" alt="image-20200810230237650"></p>
+</li>
+<li><h5 id="我们想要求w轴的方向-w1-w2-使得-Var-Xproject-最大，Xproject-是映射到w轴之后的X的坐标："><a href="#我们想要求w轴的方向-w1-w2-使得-Var-Xproject-最大，Xproject-是映射到w轴之后的X的坐标：" class="headerlink" title="我们想要求w轴的方向(w1,w2),使得 Var(Xproject) 最大，Xproject 是映射到w轴之后的X的坐标："></a>我们想要求w轴的方向(w1,w2),使得 <em>Var(X<strong>project</strong>)</em> 最大，<em>X</em>project 是映射到w轴之后的X的坐标：</h5><p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200810230906480.png" alt="image-20200810230906480"></p>
+<h5 id="注意：因为X是矩阵，X-i-是X中的一个向量，所以在公式中不能写成括号的平方，而是模的平方"><a href="#注意：因为X是矩阵，X-i-是X中的一个向量，所以在公式中不能写成括号的平方，而是模的平方" class="headerlink" title="注意：因为X是矩阵，X(i)是X中的一个向量，所以在公式中不能写成括号的平方，而是模的平方"></a>注意：因为X是矩阵，X(i)是X中的一个向量，所以在公式中不能写成括号的平方，而是模的平方</h5><h5 id="接下来求解-X-i-project-，即如何用-X-i-表示（下图点积可以参考《机器学习中的数学》13页-1-4-4）"><a href="#接下来求解-X-i-project-，即如何用-X-i-表示（下图点积可以参考《机器学习中的数学》13页-1-4-4）" class="headerlink" title="接下来求解$X^{(i)}_{project}$，即如何用$X^{(i)}$表示（下图点积可以参考《机器学习中的数学》13页 1.4.4）"></a>接下来求解$X^{(i)}_{project}$，即如何用$X^{(i)}$表示（下图点积可以参考《机器学习中的数学》13页 1.4.4）</h5><p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200810233526467.png" alt="image-20200810233526467"></p>
+<h5 id="注意：因为我们要将样本点映射到w方向上，所以将w定义为单位向量，其实最终求得是样本点向量在w方向上的分量，即蓝色线条，它对应的就是-vec-X-i-project"><a href="#注意：因为我们要将样本点映射到w方向上，所以将w定义为单位向量，其实最终求得是样本点向量在w方向上的分量，即蓝色线条，它对应的就是-vec-X-i-project" class="headerlink" title="注意：因为我们要将样本点映射到w方向上，所以将w定义为单位向量，其实最终求得是样本点向量在w方向上的分量，即蓝色线条，它对应的就是$\vec{X^{(i)}_{project}}$"></a>注意：因为我们要将样本点映射到w方向上，所以将w定义为单位向量，其实最终求得是样本点向量在w方向上的分量，即蓝色线条，它对应的就是$\vec{X^{(i)}_{project}}$</h5></li>
+</ul>
+</li>
+<li><h4 id="最终："><a href="#最终：" class="headerlink" title="最终："></a>最终：</h4><p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200810234231684.png" alt="image-20200810234231684"></p>
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="三、使用梯度上升法解决PCA问题"><a href="#三、使用梯度上升法解决PCA问题" class="headerlink" title="三、使用梯度上升法解决PCA问题"></a>三、使用梯度上升法解决PCA问题</h4><p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200810235951325.png" alt="image-20200810235951325"></p>
+<h4 id="接下来进行向量化，让其运行效率更高"><a href="#接下来进行向量化，让其运行效率更高" class="headerlink" title="接下来进行向量化，让其运行效率更高"></a>接下来进行向量化，让其运行效率更高</h4><ul>
+<li><h5 id="在向量化时要想清楚谁是矩阵，谁是向量，向量是行还是列向量"><a href="#在向量化时要想清楚谁是矩阵，谁是向量，向量是行还是列向量" class="headerlink" title="在向量化时要想清楚谁是矩阵，谁是向量，向量是行还是列向量"></a>在向量化时要想清楚谁是矩阵，谁是向量，向量是行还是列向量</h5></li>
+</ul>
+<p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200811000106484.png" alt="image-20200811000106484"></p>
+<h4 id="最终结果"><a href="#最终结果" class="headerlink" title="最终结果"></a>最终结果</h4><p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200811000436388.png" alt="image-20200811000436388"></p>
+<h4 id="四、求数据的前n个主成分（即新坐标系的每一个轴对应的方向）"><a href="#四、求数据的前n个主成分（即新坐标系的每一个轴对应的方向）" class="headerlink" title="四、求数据的前n个主成分（即新坐标系的每一个轴对应的方向）"></a>四、求数据的前n个主成分（即新坐标系的每一个轴对应的方向）</h4><ul>
+<li><h5 id="PCA的本质是将数据从一个坐标系转移到另一个坐标系"><a href="#PCA的本质是将数据从一个坐标系转移到另一个坐标系" class="headerlink" title="PCA的本质是将数据从一个坐标系转移到另一个坐标系"></a>PCA的本质是将数据从一个坐标系转移到另一个坐标系</h5></li>
+<li><h5 id="下面是求解过程："><a href="#下面是求解过程：" class="headerlink" title="下面是求解过程："></a>下面是求解过程：</h5><ul>
+<li><p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200814010029327.png" alt="image-20200814010029327"></p>
+<h5 id="先将-X-i-project-乘以单位向量-vec-w-变成-vec-X-i-project-，这个就是数据X在第一主成分上的分量，我们用X减去这一分量，即-vec-X-i-vec-X-i-project-，这是向量的减法，最终得出的是图中绿色的向量。"><a href="#先将-X-i-project-乘以单位向量-vec-w-变成-vec-X-i-project-，这个就是数据X在第一主成分上的分量，我们用X减去这一分量，即-vec-X-i-vec-X-i-project-，这是向量的减法，最终得出的是图中绿色的向量。" class="headerlink" title="先将$|{X^{(i)}_{project}}|$乘以单位向量$\vec{w}$变成$\vec{X^{(i)}_{project}}$，这个就是数据X在第一主成分上的分量，我们用X减去这一分量，即$\vec{X^{(i)}} - \vec{X^{(i)}_{project}}$，这是向量的减法，最终得出的是图中绿色的向量。"></a>先将$|{X^{(i)}_{project}}|$乘以单位向量$\vec{w}$变成$\vec{X^{(i)}_{project}}$，这个就是数据X在第一主成分上的分量，我们用X减去这一分量，即$\vec{X^{(i)}} - \vec{X^{(i)}_{project}}$，这是向量的减法，最终得出的是图中绿色的向量。</h5></li>
+<li><h5 id="然后在新的数据上求第一主成分（即原数据X的第二主成分），以此类推。"><a href="#然后在新的数据上求第一主成分（即原数据X的第二主成分），以此类推。" class="headerlink" title="然后在新的数据上求第一主成分（即原数据X的第二主成分），以此类推。"></a>然后在新的数据上求第一主成分（即原数据X的第二主成分），以此类推。</h5></li>
+</ul>
+</li>
+</ul>
+<h4 id="五、高维数据向低维数据映射"><a href="#五、高维数据向低维数据映射" class="headerlink" title="五、高维数据向低维数据映射"></a>五、高维数据向低维数据映射</h4><h5 id="PCA的本质是将数据从一个坐标系转换到另一个坐标系上，即原来是n维坐标系，转换后也是n维坐标系。但是我们要将高维向低维映射，所以要从转换后的n维坐标系中取前k个坐标轴形成一个k维的坐标系。然后将X中的每一行样本都乘以W中每一个维度的坐标轴。这样就从n维降到了k维："><a href="#PCA的本质是将数据从一个坐标系转换到另一个坐标系上，即原来是n维坐标系，转换后也是n维坐标系。但是我们要将高维向低维映射，所以要从转换后的n维坐标系中取前k个坐标轴形成一个k维的坐标系。然后将X中的每一行样本都乘以W中每一个维度的坐标轴。这样就从n维降到了k维：" class="headerlink" title="PCA的本质是将数据从一个坐标系转换到另一个坐标系上，即原来是n维坐标系，转换后也是n维坐标系。但是我们要将高维向低维映射，所以要从转换后的n维坐标系中取前k个坐标轴形成一个k维的坐标系。然后将X中的每一行样本都乘以W中每一个维度的坐标轴。这样就从n维降到了k维："></a>PCA的本质是将数据从一个坐标系转换到另一个坐标系上，即原来是n维坐标系，转换后也是n维坐标系。但是我们要将高维向低维映射，所以要从转换后的n维坐标系中取前k个坐标轴形成一个k维的坐标系。然后将X中的每一行样本都乘以W中每一个维度的坐标轴。这样就从n维降到了k维：</h5><p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200814224611023.png" alt="image-20200814224611023"></p>
+<h5 id="也可以从k维恢复到n维，但是恢复回来的-X-m-不等于原来的X："><a href="#也可以从k维恢复到n维，但是恢复回来的-X-m-不等于原来的X：" class="headerlink" title="也可以从k维恢复到n维，但是恢复回来的$X_m$不等于原来的X："></a>也可以从k维恢复到n维，但是恢复回来的$X_m$不等于原来的X：</h5><p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200814224911159.png" alt="image-20200814224911159"></p>
+<h4 id="六、PCA在人脸识别中的应用"><a href="#六、PCA在人脸识别中的应用" class="headerlink" title="六、PCA在人脸识别中的应用"></a>六、PCA在人脸识别中的应用</h4><p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200815183722277.png" alt="image-20200815183722277"></p>
+<h5 id="对于-W-k-来说，本身每一行代表一个方向。那么换一种思路：如果每一行看作一个样本，那么第一行表示最能反映原数据X的样本特征，以此类推。"><a href="#对于-W-k-来说，本身每一行代表一个方向。那么换一种思路：如果每一行看作一个样本，那么第一行表示最能反映原数据X的样本特征，以此类推。" class="headerlink" title="对于$W_k$来说，本身每一行代表一个方向。那么换一种思路：如果每一行看作一个样本，那么第一行表示最能反映原数据X的样本特征，以此类推。"></a>对于$W_k$来说，本身每一行代表一个方向。那么换一种思路：如果每一行看作一个样本，那么第一行表示最能反映原数据X的样本特征，以此类推。</h5><h5 id="在人脸识别中-X的每一行对应一个人脸数据，W的每一行也是一个人脸数据，这个就被称为特征脸，所以每一个特征脸其实对应一个主成分"><a href="#在人脸识别中-X的每一行对应一个人脸数据，W的每一行也是一个人脸数据，这个就被称为特征脸，所以每一个特征脸其实对应一个主成分" class="headerlink" title="在人脸识别中,X的每一行对应一个人脸数据，W的每一行也是一个人脸数据，这个就被称为特征脸，所以每一个特征脸其实对应一个主成分"></a>在人脸识别中,X的每一行对应一个人脸数据，W的每一行也是一个人脸数据，这个就被称为特征脸，所以每一个特征脸其实对应一个主成分</h5>]]></content>
+      <categories>
+        <category>机器学习</category>
+      </categories>
+      <tags>
+        <tag>机器学习</tag>
+        <tag>PCA</tag>
+        <tag>非监督学习</tag>
+        <tag>数据降维</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>机器学习笔记4</title>
+    <url>/2020/07/23/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B04/</url>
+    <content><![CDATA[<h3 id="数据归一化与标准化"><a href="#数据归一化与标准化" class="headerlink" title="数据归一化与标准化"></a>数据归一化与标准化</h3><a id="more"></a>
+<h4 id="一，为什么要进行数据归一化或归一化"><a href="#一，为什么要进行数据归一化或归一化" class="headerlink" title="一，为什么要进行数据归一化或归一化"></a>一，为什么要进行数据归一化或归一化</h4><p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200723234524737.png" alt="image-20200723234524737"></p>
+<p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200723234716174.png" alt="image-20200723234716174"></p>
+<ul>
+<li><h4 id="这张图表示样本之间的距离又会被肿瘤大小来主导"><a href="#这张图表示样本之间的距离又会被肿瘤大小来主导" class="headerlink" title="这张图表示样本之间的距离又会被肿瘤大小来主导"></a>这张图表示样本之间的距离又会被肿瘤大小来主导</h4></li>
+<li><h4 id="因此我们需要统一进行数据归一化"><a href="#因此我们需要统一进行数据归一化" class="headerlink" title="因此我们需要统一进行数据归一化"></a>因此我们需要统一进行数据归一化</h4></li>
+</ul>
+<h3 id="二，什么是数据归一化或标准化"><a href="#二，什么是数据归一化或标准化" class="headerlink" title="二，什么是数据归一化或标准化"></a>二，什么是数据归一化或标准化</h3><ul>
+<li><p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200723235207881.png" alt="image-20200723235207881"></p>
+</li>
+<li><h4 id="最值归一化（normalization）适用于分布有明显边界的情况。比如像工资就不能用最值归一化（工资无上限）"><a href="#最值归一化（normalization）适用于分布有明显边界的情况。比如像工资就不能用最值归一化（工资无上限）" class="headerlink" title="最值归一化（normalization）适用于分布有明显边界的情况。比如像工资就不能用最值归一化（工资无上限）"></a>最值归一化（normalization）适用于分布有明显边界的情况。比如像工资就不能用最值归一化（工资无上限）</h4></li>
+</ul>
+<h4 id="第二种是标准化"><a href="#第二种是标准化" class="headerlink" title="第二种是标准化"></a>第二种是标准化</h4><ul>
+<li><p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200724000028651.png" alt="image-20200724000028651"></p>
+</li>
+<li><h5 id="注意："><a href="#注意：" class="headerlink" title="注意："></a>注意：</h5><ul>
+<li><h4 id="此处老师讲错，应该为标准化，而不是均值方差归一化"><a href="#此处老师讲错，应该为标准化，而不是均值方差归一化" class="headerlink" title="此处老师讲错，应该为标准化，而不是均值方差归一化"></a>此处老师讲错，应该为标准化，而不是均值方差归一化</h4></li>
+<li><h4 id="s表示标准差。除非数据集有明确的边界，（初学情况）一般情况下都使用标准化"><a href="#s表示标准差。除非数据集有明确的边界，（初学情况）一般情况下都使用标准化" class="headerlink" title="s表示标准差。除非数据集有明确的边界，（初学情况）一般情况下都使用标准化"></a>s表示标准差。除非数据集有明确的边界，（初学情况）一般情况下都使用标准化</h4></li>
+<li><h4 id="其实就是利用标准化处理将正态分布转为了标准正态分布"><a href="#其实就是利用标准化处理将正态分布转为了标准正态分布" class="headerlink" title="其实就是利用标准化处理将正态分布转为了标准正态分布"></a>其实就是利用标准化处理将正态分布转为了标准正态分布</h4></li>
+<li><h4 id="深入了解请看https-www-jiqizhixin-com-articles-19070701-https-www-zhihu-com-question-56891433"><a href="#深入了解请看https-www-jiqizhixin-com-articles-19070701-https-www-zhihu-com-question-56891433" class="headerlink" title="深入了解请看https://www.jiqizhixin.com/articles/19070701 https://www.zhihu.com/question/56891433"></a>深入了解请看<a href="https://www.jiqizhixin.com/articles/19070701" target="_blank" rel="noopener">https://www.jiqizhixin.com/articles/19070701</a> <a href="https://www.zhihu.com/question/56891433" target="_blank" rel="noopener">https://www.zhihu.com/question/56891433</a></h4></li>
+<li><h4 id="在线演示标准正态分布https-www-shuxuele-com-data-standard-normal-distribution-table-html"><a href="#在线演示标准正态分布https-www-shuxuele-com-data-standard-normal-distribution-table-html" class="headerlink" title="在线演示标准正态分布https://www.shuxuele.com/data/standard-normal-distribution-table.html"></a>在线演示标准正态分布<a href="https://www.shuxuele.com/data/standard-normal-distribution-table.html" target="_blank" rel="noopener">https://www.shuxuele.com/data/standard-normal-distribution-table.html</a></h4></li>
+</ul>
+</li>
+</ul>
+<h3 id="三，这两种的区别"><a href="#三，这两种的区别" class="headerlink" title="三，这两种的区别"></a>三，这两种的区别</h3><h5 id="最值归一化"><a href="#最值归一化" class="headerlink" title="最值归一化"></a>最值归一化</h5><ul>
+<li>数据集必须得有边界，否则会出现偏差很悬殊的值</li>
+</ul>
+<h5 id="标准化"><a href="#标准化" class="headerlink" title="标准化"></a>标准化</h5><ul>
+<li><p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200724020154141.png" alt="image-20200724020154141"></p>
+</li>
+<li><h5 id="平均值是曲线的中心。这是曲线的最高点，因为大多数点都在平均值附近；"><a href="#平均值是曲线的中心。这是曲线的最高点，因为大多数点都在平均值附近；" class="headerlink" title="平均值是曲线的中心。这是曲线的最高点，因为大多数点都在平均值附近；"></a>平均值是曲线的中心。这是曲线的最高点，因为大多数点都在平均值附近；</h5></li>
+<li><h5 id="标准化更符合统计学假设（自然界大多数符合正态分布）：对一个数值特征来说，很大可能它是服从正态分布的。标准化其实是基于这个隐含假设，只不过是略施小技，将这个正态分布调整为均值为0，方差为1的标准正态分布而已。"><a href="#标准化更符合统计学假设（自然界大多数符合正态分布）：对一个数值特征来说，很大可能它是服从正态分布的。标准化其实是基于这个隐含假设，只不过是略施小技，将这个正态分布调整为均值为0，方差为1的标准正态分布而已。" class="headerlink" title="标准化更符合统计学假设（自然界大多数符合正态分布）：对一个数值特征来说，很大可能它是服从正态分布的。标准化其实是基于这个隐含假设，只不过是略施小技，将这个正态分布调整为均值为0，方差为1的标准正态分布而已。"></a>标准化更符合统计学假设（自然界大多数符合正态分布）：对一个数值特征来说，很大可能它是服从正态分布的。标准化其实是基于这个隐含假设，只不过是略施小技，将这个正态分布调整为均值为0，方差为1的标准正态分布而已。</h5></li>
+<li><h5 id="新的数据由于对方差进行了归一化，这时候每个维度的量纲其实已经等价了，每个维度都服从均值为0、方差1的正态分布，在计算距离的时候，每个维度都是去量纲化的，避免了不同量纲的选取对距离计算产生的巨大影响。"><a href="#新的数据由于对方差进行了归一化，这时候每个维度的量纲其实已经等价了，每个维度都服从均值为0、方差1的正态分布，在计算距离的时候，每个维度都是去量纲化的，避免了不同量纲的选取对距离计算产生的巨大影响。" class="headerlink" title="新的数据由于对方差进行了归一化，这时候每个维度的量纲其实已经等价了，每个维度都服从均值为0、方差1的正态分布，在计算距离的时候，每个维度都是去量纲化的，避免了不同量纲的选取对距离计算产生的巨大影响。"></a>新的数据由于对方差进行了归一化，这时候每个维度的量纲其实已经等价了，每个维度都服从均值为0、方差1的正态分布，在计算距离的时候，每个维度都是去量纲化的，避免了不同量纲的选取对距离计算产生的巨大影响。</h5></li>
+</ul>
+<h3 id="四，对测试数据集如何归一化或标准化"><a href="#四，对测试数据集如何归一化或标准化" class="headerlink" title="四，对测试数据集如何归一化或标准化"></a>四，对测试数据集如何归一化或标准化</h3><ul>
+<li><p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200724022251989.png" alt="image-20200724022251989"></p>
+</li>
+<li><h4 id="结论：因为一个模型是要投入生产生活中的，所以我们要让测试数据集也要使用训练数据集的均值和标准差"><a href="#结论：因为一个模型是要投入生产生活中的，所以我们要让测试数据集也要使用训练数据集的均值和标准差" class="headerlink" title="结论：因为一个模型是要投入生产生活中的，所以我们要让测试数据集也要使用训练数据集的均值和标准差"></a>结论：因为一个模型是要投入生产生活中的，所以我们要让测试数据集也要使用训练数据集的均值和标准差</h4></li>
+<li><p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200724022712834.png" alt="image-20200724022712834"></p>
+</li>
+</ul>
+]]></content>
+      <categories>
+        <category>机器学习</category>
+      </categories>
+      <tags>
+        <tag>机器学习</tag>
+        <tag>Python</tag>
+        <tag>数据预处理</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>机器学习笔记3</title>
+    <url>/2020/07/21/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B03/</url>
+    <content><![CDATA[<h3 id="KNN-K近邻算法（K-Nearest-Neighbors）"><a href="#KNN-K近邻算法（K-Nearest-Neighbors）" class="headerlink" title="KNN -K近邻算法（K-Nearest Neighbors）"></a>KNN -K近邻算法（K-Nearest Neighbors）</h3><a id="more"></a>
+<h4 id="一：KNN—非常适合初学者入门的算法"><a href="#一：KNN—非常适合初学者入门的算法" class="headerlink" title="一：KNN—非常适合初学者入门的算法"></a>一：KNN—非常适合初学者入门的算法</h4><ul>
+<li><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200707205845716.png" alt="image-20200707205845716"></li>
+</ul>
+<h5 id="1-什么是KNN"><a href="#1-什么是KNN" class="headerlink" title="1.什么是KNN"></a>1.什么是KNN</h5><ul>
+<li><p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200707210428247.png" alt="image-20200707210428247"></p>
+</li>
+<li><ul>
+<li>上图解释：红色是良性肿瘤，蓝色是恶性肿瘤，绿色是一个新的不确定的肿瘤。这里设K=3（后面会讲如何取K值），表示选取离绿色最近的三个肿瘤，然后这3个之间进行投票（以自己的标签投票），最终蓝色：红色==3:0.因此我们有很大的概率认为绿色也是恶性肿瘤。</li>
+<li>因此，KNN表示在K个样本中，哪个样本越多，就表示目标样本有很大概率是同一类别。</li>
+</ul>
+</li>
+</ul>
+<h5 id="2-KNN的特性"><a href="#2-KNN的特性" class="headerlink" title="2.KNN的特性"></a>2.KNN的特性</h5><ul>
+<li><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200707234150755.png" alt="image-20200707234150755"></li>
+<li><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200707234227091.png" alt="image-20200707234227091"></li>
+<li><ul>
+<li>scikit_learn正是按这套流程进行的算法封装</li>
+</ul>
+</li>
+</ul>
+<h5 id="3-判断机器学习算法的性能"><a href="#3-判断机器学习算法的性能" class="headerlink" title="3.判断机器学习算法的性能"></a>3.判断机器学习算法的性能</h5><ul>
+<li>考虑到真实环境下，将所有的原始数据都当成训练数据来训练模型是不恰当的，因此我们要进行训练和测试数据集切分(train test split)</li>
+<li><ul>
+<li><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200711013945748.png" alt="image-20200710224630969"></li>
+</ul>
+</li>
+<li><p>注意：这里补充一下seed随机种子的直观理解：其实，设置seed（）里的数字就相当于设置了一个盛有随机数的“聚宝盆”，一个数字代表一个“聚宝盆”，当我们在seed（）的括号里设置相同的seed，“聚宝盆”就是一样的，那当然每次拿出的随机数就会相同（不要觉得就是从里面随机取数字，只要设置的seed相同取出地随机数就一样）。如果不设置seed，则每次会生成不同的随机数。（注：seed括号里的数值基本可以随便设置哦）<br>————————————————<br>版权声明：本文为CSDN博主「白糖炒栗子~」的原创文章，遵循CC 4.0 BY-SA版权协议，转载请附上原文出处链接及本声明。<br>原文链接：<a href="https://blog.csdn.net/weixin_41571493/article/details/80549833" target="_blank" rel="noopener">https://blog.csdn.net/weixin_41571493/article/details/80549833</a></p>
+<ul>
+<li>np.random.seed(0)<br>np.random.rand(4,3)<br>Out[362]:<br>array([[0.5488135 , 0.71518937, 0.60276338],<pre><code>   [0.54488318, 0.4236548 , 0.64589411],
+   [0.43758721, 0.891773  , 0.96366276],
+   [0.38344152, 0.79172504, 0.52889492]])
+</code></pre>np.random.seed(0)<br>np.random.rand(4,3)<br>Out[364]:<br>array([[0.5488135 , 0.71518937, 0.60276338],<pre><code>   [0.54488318, 0.4236548 , 0.64589411],
+   [0.43758721, 0.891773  , 0.96366276],
+   [0.38344152, 0.79172504, 0.52889492]])
+</code></pre></li>
+</ul>
+</li>
+<li><p>分类准确度：accuracy：详见jupyter</p>
+</li>
+<li><p>超参数</p>
+<ul>
+<li><p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200710224630969.png" alt="image-20200711013945748"></p>
+</li>
+<li><p>如何寻找好的超参数</p>
+<p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200711014228711.png" alt="image-20200711014228711"></p>
+<ul>
+<li><p>KNN中其实除了K还有一个超参数，那就是距离的权重（它是距离的倒数）</p>
+<ul>
+<li><p>设红和蓝与绿色的距离分别为1,3,4</p>
+<p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200711021206076.png" alt="image-20200711021206076"></p>
+<ul>
+<li><p>若有三个类别，而k也等于3，那么就有可能出现平票的情况</p>
+<p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200711021519742.png" alt="image-20200711021519742"></p>
+</li>
+<li><p>补充：明可夫斯基距离</p>
+<ul>
+<li><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200711023118851.png" alt="image-20200711023118851"><ul>
+<li>当p=1时是曼哈顿距离</li>
+<li>当p=2时是欧拉距离</li>
+<li>当p&gt;2时是其他距离</li>
+</ul>
+</li>
+<li>更多的距离定义（暂不做深入研究，只是了解）<ul>
+<li></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200723233646364.png" alt="image-20200723233646364"></p>
+<ul>
+<li><h5 id="我们可以使用sklearn的网格搜索来进行超参数搜索，具体看jupyter上的‘06-Validation-and-Cross-Validation’中的回顾网格搜索"><a href="#我们可以使用sklearn的网格搜索来进行超参数搜索，具体看jupyter上的‘06-Validation-and-Cross-Validation’中的回顾网格搜索" class="headerlink" title="我们可以使用sklearn的网格搜索来进行超参数搜索，具体看jupyter上的‘06-Validation-and-Cross-Validation’中的回顾网格搜索"></a>我们可以使用sklearn的网格搜索来进行超参数搜索，具体看jupyter上的‘06-Validation-and-Cross-Validation’中的回顾网格搜索</h5></li>
+</ul>
+]]></content>
+      <categories>
+        <category>机器学习</category>
+      </categories>
+      <tags>
+        <tag>机器学习</tag>
+        <tag>Python</tag>
+        <tag>KNN</tag>
+        <tag>超参数与网格搜索</tag>
       </tags>
   </entry>
   <entry>
@@ -603,183 +638,6 @@
       </tags>
   </entry>
   <entry>
-    <title>机器学习笔记3</title>
-    <url>/2020/07/21/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B03/</url>
-    <content><![CDATA[<h3 id="KNN-K近邻算法（K-Nearest-Neighbors）"><a href="#KNN-K近邻算法（K-Nearest-Neighbors）" class="headerlink" title="KNN -K近邻算法（K-Nearest Neighbors）"></a>KNN -K近邻算法（K-Nearest Neighbors）</h3><a id="more"></a>
-<h4 id="一：KNN—非常适合初学者入门的算法"><a href="#一：KNN—非常适合初学者入门的算法" class="headerlink" title="一：KNN—非常适合初学者入门的算法"></a>一：KNN—非常适合初学者入门的算法</h4><ul>
-<li><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200707205845716.png" alt="image-20200707205845716"></li>
-</ul>
-<h5 id="1-什么是KNN"><a href="#1-什么是KNN" class="headerlink" title="1.什么是KNN"></a>1.什么是KNN</h5><ul>
-<li><p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200707210428247.png" alt="image-20200707210428247"></p>
-</li>
-<li><ul>
-<li>上图解释：红色是良性肿瘤，蓝色是恶性肿瘤，绿色是一个新的不确定的肿瘤。这里设K=3（后面会讲如何取K值），表示选取离绿色最近的三个肿瘤，然后这3个之间进行投票（以自己的标签投票），最终蓝色：红色==3:0.因此我们有很大的概率认为绿色也是恶性肿瘤。</li>
-<li>因此，KNN表示在K个样本中，哪个样本越多，就表示目标样本有很大概率是同一类别。</li>
-</ul>
-</li>
-</ul>
-<h5 id="2-KNN的特性"><a href="#2-KNN的特性" class="headerlink" title="2.KNN的特性"></a>2.KNN的特性</h5><ul>
-<li><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200707234150755.png" alt="image-20200707234150755"></li>
-<li><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200707234227091.png" alt="image-20200707234227091"></li>
-<li><ul>
-<li>scikit_learn正是按这套流程进行的算法封装</li>
-</ul>
-</li>
-</ul>
-<h5 id="3-判断机器学习算法的性能"><a href="#3-判断机器学习算法的性能" class="headerlink" title="3.判断机器学习算法的性能"></a>3.判断机器学习算法的性能</h5><ul>
-<li>考虑到真实环境下，将所有的原始数据都当成训练数据来训练模型是不恰当的，因此我们要进行训练和测试数据集切分(train test split)</li>
-<li><ul>
-<li><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200711013945748.png" alt="image-20200710224630969"></li>
-</ul>
-</li>
-<li><p>注意：这里补充一下seed随机种子的直观理解：其实，设置seed（）里的数字就相当于设置了一个盛有随机数的“聚宝盆”，一个数字代表一个“聚宝盆”，当我们在seed（）的括号里设置相同的seed，“聚宝盆”就是一样的，那当然每次拿出的随机数就会相同（不要觉得就是从里面随机取数字，只要设置的seed相同取出地随机数就一样）。如果不设置seed，则每次会生成不同的随机数。（注：seed括号里的数值基本可以随便设置哦）<br>————————————————<br>版权声明：本文为CSDN博主「白糖炒栗子~」的原创文章，遵循CC 4.0 BY-SA版权协议，转载请附上原文出处链接及本声明。<br>原文链接：<a href="https://blog.csdn.net/weixin_41571493/article/details/80549833" target="_blank" rel="noopener">https://blog.csdn.net/weixin_41571493/article/details/80549833</a></p>
-<ul>
-<li>np.random.seed(0)<br>np.random.rand(4,3)<br>Out[362]:<br>array([[0.5488135 , 0.71518937, 0.60276338],<pre><code>   [0.54488318, 0.4236548 , 0.64589411],
-   [0.43758721, 0.891773  , 0.96366276],
-   [0.38344152, 0.79172504, 0.52889492]])
-</code></pre>np.random.seed(0)<br>np.random.rand(4,3)<br>Out[364]:<br>array([[0.5488135 , 0.71518937, 0.60276338],<pre><code>   [0.54488318, 0.4236548 , 0.64589411],
-   [0.43758721, 0.891773  , 0.96366276],
-   [0.38344152, 0.79172504, 0.52889492]])
-</code></pre></li>
-</ul>
-</li>
-<li><p>分类准确度：accuracy：详见jupyter</p>
-</li>
-<li><p>超参数</p>
-<ul>
-<li><p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200710224630969.png" alt="image-20200711013945748"></p>
-</li>
-<li><p>如何寻找好的超参数</p>
-<p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200711014228711.png" alt="image-20200711014228711"></p>
-<ul>
-<li><p>KNN中其实除了K还有一个超参数，那就是距离的权重（它是距离的倒数）</p>
-<ul>
-<li><p>设红和蓝与绿色的距离分别为1,3,4</p>
-<p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200711021206076.png" alt="image-20200711021206076"></p>
-<ul>
-<li><p>若有三个类别，而k也等于3，那么就有可能出现平票的情况</p>
-<p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200711021519742.png" alt="image-20200711021519742"></p>
-</li>
-<li><p>补充：明可夫斯基距离</p>
-<ul>
-<li><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200711023118851.png" alt="image-20200711023118851"><ul>
-<li>当p=1时是曼哈顿距离</li>
-<li>当p=2时是欧拉距离</li>
-<li>当p&gt;2时是其他距离</li>
-</ul>
-</li>
-<li>更多的距离定义（暂不做深入研究，只是了解）<ul>
-<li></li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-<p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200723233646364.png" alt="image-20200723233646364"></p>
-<ul>
-<li><h5 id="我们可以使用sklearn的网格搜索来进行超参数搜索，具体看jupyter上的‘06-Validation-and-Cross-Validation’中的回顾网格搜索"><a href="#我们可以使用sklearn的网格搜索来进行超参数搜索，具体看jupyter上的‘06-Validation-and-Cross-Validation’中的回顾网格搜索" class="headerlink" title="我们可以使用sklearn的网格搜索来进行超参数搜索，具体看jupyter上的‘06-Validation-and-Cross-Validation’中的回顾网格搜索"></a>我们可以使用sklearn的网格搜索来进行超参数搜索，具体看jupyter上的‘06-Validation-and-Cross-Validation’中的回顾网格搜索</h5></li>
-</ul>
-]]></content>
-      <categories>
-        <category>机器学习</category>
-      </categories>
-      <tags>
-        <tag>机器学习</tag>
-        <tag>Python</tag>
-        <tag>KNN</tag>
-        <tag>超参数与网格搜索</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>机器学习笔记4</title>
-    <url>/2020/07/23/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B04/</url>
-    <content><![CDATA[<h3 id="数据归一化与标准化"><a href="#数据归一化与标准化" class="headerlink" title="数据归一化与标准化"></a>数据归一化与标准化</h3><a id="more"></a>
-<h4 id="一，为什么要进行数据归一化或归一化"><a href="#一，为什么要进行数据归一化或归一化" class="headerlink" title="一，为什么要进行数据归一化或归一化"></a>一，为什么要进行数据归一化或归一化</h4><p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200723234524737.png" alt="image-20200723234524737"></p>
-<p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200723234716174.png" alt="image-20200723234716174"></p>
-<ul>
-<li><h4 id="这张图表示样本之间的距离又会被肿瘤大小来主导"><a href="#这张图表示样本之间的距离又会被肿瘤大小来主导" class="headerlink" title="这张图表示样本之间的距离又会被肿瘤大小来主导"></a>这张图表示样本之间的距离又会被肿瘤大小来主导</h4></li>
-<li><h4 id="因此我们需要统一进行数据归一化"><a href="#因此我们需要统一进行数据归一化" class="headerlink" title="因此我们需要统一进行数据归一化"></a>因此我们需要统一进行数据归一化</h4></li>
-</ul>
-<h3 id="二，什么是数据归一化或标准化"><a href="#二，什么是数据归一化或标准化" class="headerlink" title="二，什么是数据归一化或标准化"></a>二，什么是数据归一化或标准化</h3><ul>
-<li><p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200723235207881.png" alt="image-20200723235207881"></p>
-</li>
-<li><h4 id="最值归一化（normalization）适用于分布有明显边界的情况。比如像工资就不能用最值归一化（工资无上限）"><a href="#最值归一化（normalization）适用于分布有明显边界的情况。比如像工资就不能用最值归一化（工资无上限）" class="headerlink" title="最值归一化（normalization）适用于分布有明显边界的情况。比如像工资就不能用最值归一化（工资无上限）"></a>最值归一化（normalization）适用于分布有明显边界的情况。比如像工资就不能用最值归一化（工资无上限）</h4></li>
-</ul>
-<h4 id="第二种是标准化"><a href="#第二种是标准化" class="headerlink" title="第二种是标准化"></a>第二种是标准化</h4><ul>
-<li><p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200724000028651.png" alt="image-20200724000028651"></p>
-</li>
-<li><h5 id="注意："><a href="#注意：" class="headerlink" title="注意："></a>注意：</h5><ul>
-<li><h4 id="此处老师讲错，应该为标准化，而不是均值方差归一化"><a href="#此处老师讲错，应该为标准化，而不是均值方差归一化" class="headerlink" title="此处老师讲错，应该为标准化，而不是均值方差归一化"></a>此处老师讲错，应该为标准化，而不是均值方差归一化</h4></li>
-<li><h4 id="s表示标准差。除非数据集有明确的边界，（初学情况）一般情况下都使用标准化"><a href="#s表示标准差。除非数据集有明确的边界，（初学情况）一般情况下都使用标准化" class="headerlink" title="s表示标准差。除非数据集有明确的边界，（初学情况）一般情况下都使用标准化"></a>s表示标准差。除非数据集有明确的边界，（初学情况）一般情况下都使用标准化</h4></li>
-<li><h4 id="其实就是利用标准化处理将正态分布转为了标准正态分布"><a href="#其实就是利用标准化处理将正态分布转为了标准正态分布" class="headerlink" title="其实就是利用标准化处理将正态分布转为了标准正态分布"></a>其实就是利用标准化处理将正态分布转为了标准正态分布</h4></li>
-<li><h4 id="深入了解请看https-www-jiqizhixin-com-articles-19070701-https-www-zhihu-com-question-56891433"><a href="#深入了解请看https-www-jiqizhixin-com-articles-19070701-https-www-zhihu-com-question-56891433" class="headerlink" title="深入了解请看https://www.jiqizhixin.com/articles/19070701 https://www.zhihu.com/question/56891433"></a>深入了解请看<a href="https://www.jiqizhixin.com/articles/19070701" target="_blank" rel="noopener">https://www.jiqizhixin.com/articles/19070701</a> <a href="https://www.zhihu.com/question/56891433" target="_blank" rel="noopener">https://www.zhihu.com/question/56891433</a></h4></li>
-<li><h4 id="在线演示标准正态分布https-www-shuxuele-com-data-standard-normal-distribution-table-html"><a href="#在线演示标准正态分布https-www-shuxuele-com-data-standard-normal-distribution-table-html" class="headerlink" title="在线演示标准正态分布https://www.shuxuele.com/data/standard-normal-distribution-table.html"></a>在线演示标准正态分布<a href="https://www.shuxuele.com/data/standard-normal-distribution-table.html" target="_blank" rel="noopener">https://www.shuxuele.com/data/standard-normal-distribution-table.html</a></h4></li>
-</ul>
-</li>
-</ul>
-<h3 id="三，这两种的区别"><a href="#三，这两种的区别" class="headerlink" title="三，这两种的区别"></a>三，这两种的区别</h3><h5 id="最值归一化"><a href="#最值归一化" class="headerlink" title="最值归一化"></a>最值归一化</h5><ul>
-<li>数据集必须得有边界，否则会出现偏差很悬殊的值</li>
-</ul>
-<h5 id="标准化"><a href="#标准化" class="headerlink" title="标准化"></a>标准化</h5><ul>
-<li><p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200724020154141.png" alt="image-20200724020154141"></p>
-</li>
-<li><h5 id="平均值是曲线的中心。这是曲线的最高点，因为大多数点都在平均值附近；"><a href="#平均值是曲线的中心。这是曲线的最高点，因为大多数点都在平均值附近；" class="headerlink" title="平均值是曲线的中心。这是曲线的最高点，因为大多数点都在平均值附近；"></a>平均值是曲线的中心。这是曲线的最高点，因为大多数点都在平均值附近；</h5></li>
-<li><h5 id="标准化更符合统计学假设（自然界大多数符合正态分布）：对一个数值特征来说，很大可能它是服从正态分布的。标准化其实是基于这个隐含假设，只不过是略施小技，将这个正态分布调整为均值为0，方差为1的标准正态分布而已。"><a href="#标准化更符合统计学假设（自然界大多数符合正态分布）：对一个数值特征来说，很大可能它是服从正态分布的。标准化其实是基于这个隐含假设，只不过是略施小技，将这个正态分布调整为均值为0，方差为1的标准正态分布而已。" class="headerlink" title="标准化更符合统计学假设（自然界大多数符合正态分布）：对一个数值特征来说，很大可能它是服从正态分布的。标准化其实是基于这个隐含假设，只不过是略施小技，将这个正态分布调整为均值为0，方差为1的标准正态分布而已。"></a>标准化更符合统计学假设（自然界大多数符合正态分布）：对一个数值特征来说，很大可能它是服从正态分布的。标准化其实是基于这个隐含假设，只不过是略施小技，将这个正态分布调整为均值为0，方差为1的标准正态分布而已。</h5></li>
-<li><h5 id="新的数据由于对方差进行了归一化，这时候每个维度的量纲其实已经等价了，每个维度都服从均值为0、方差1的正态分布，在计算距离的时候，每个维度都是去量纲化的，避免了不同量纲的选取对距离计算产生的巨大影响。"><a href="#新的数据由于对方差进行了归一化，这时候每个维度的量纲其实已经等价了，每个维度都服从均值为0、方差1的正态分布，在计算距离的时候，每个维度都是去量纲化的，避免了不同量纲的选取对距离计算产生的巨大影响。" class="headerlink" title="新的数据由于对方差进行了归一化，这时候每个维度的量纲其实已经等价了，每个维度都服从均值为0、方差1的正态分布，在计算距离的时候，每个维度都是去量纲化的，避免了不同量纲的选取对距离计算产生的巨大影响。"></a>新的数据由于对方差进行了归一化，这时候每个维度的量纲其实已经等价了，每个维度都服从均值为0、方差1的正态分布，在计算距离的时候，每个维度都是去量纲化的，避免了不同量纲的选取对距离计算产生的巨大影响。</h5></li>
-</ul>
-<h3 id="四，对测试数据集如何归一化或标准化"><a href="#四，对测试数据集如何归一化或标准化" class="headerlink" title="四，对测试数据集如何归一化或标准化"></a>四，对测试数据集如何归一化或标准化</h3><ul>
-<li><p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200724022251989.png" alt="image-20200724022251989"></p>
-</li>
-<li><h4 id="结论：因为一个模型是要投入生产生活中的，所以我们要让测试数据集也要使用训练数据集的均值和标准差"><a href="#结论：因为一个模型是要投入生产生活中的，所以我们要让测试数据集也要使用训练数据集的均值和标准差" class="headerlink" title="结论：因为一个模型是要投入生产生活中的，所以我们要让测试数据集也要使用训练数据集的均值和标准差"></a>结论：因为一个模型是要投入生产生活中的，所以我们要让测试数据集也要使用训练数据集的均值和标准差</h4></li>
-<li><p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200724022712834.png" alt="image-20200724022712834"></p>
-</li>
-</ul>
-]]></content>
-      <categories>
-        <category>机器学习</category>
-      </categories>
-      <tags>
-        <tag>机器学习</tag>
-        <tag>Python</tag>
-        <tag>数据预处理</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>机器学习笔记5</title>
-    <url>/2020/07/24/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B05/</url>
-    <content><![CDATA[<h3 id="更多有关KNN的思考"><a href="#更多有关KNN的思考" class="headerlink" title="更多有关KNN的思考"></a>更多有关KNN的思考</h3><a id="more"></a>
-<p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200724025657646.png" alt="image-20200724025657646"></p>
-<p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200724025727331.png" alt="image-20200724025727331"></p>
-<h4 id="解释：可以把离绿球最近的三个蓝球的均值作为绿球的值，也可以将距离权重考虑进去求加权平均数。总之，这些都是回归问题。（sklearn其实已经封装好了KNN解决回归问题的库：KNeighborsRegressor）"><a href="#解释：可以把离绿球最近的三个蓝球的均值作为绿球的值，也可以将距离权重考虑进去求加权平均数。总之，这些都是回归问题。（sklearn其实已经封装好了KNN解决回归问题的库：KNeighborsRegressor）" class="headerlink" title="解释：可以把离绿球最近的三个蓝球的均值作为绿球的值，也可以将距离权重考虑进去求加权平均数。总之，这些都是回归问题。（sklearn其实已经封装好了KNN解决回归问题的库：KNeighborsRegressor）"></a>解释：可以把离绿球最近的三个蓝球的均值作为绿球的值，也可以将距离权重考虑进去求加权平均数。总之，这些都是回归问题。（sklearn其实已经封装好了KNN解决回归问题的库：KNeighborsRegressor）</h4><h3 id="它的缺点"><a href="#它的缺点" class="headerlink" title="它的缺点"></a>它的缺点</h3><ul>
-<li><p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200724030254962.png" alt="image-20200724030254962"></p>
-</li>
-<li><p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200724030519829.png" alt="image-20200724030519829"></p>
-<ul>
-<li><h4 id="解释：缺点2：拿上图红蓝绿球来举例，假如k-3，而其中两个是红色，一个是蓝色。按照KNN就会认定绿球为红色类，但事实上绿球的标签是蓝色类"><a href="#解释：缺点2：拿上图红蓝绿球来举例，假如k-3，而其中两个是红色，一个是蓝色。按照KNN就会认定绿球为红色类，但事实上绿球的标签是蓝色类" class="headerlink" title="解释：缺点2：拿上图红蓝绿球来举例，假如k=3，而其中两个是红色，一个是蓝色。按照KNN就会认定绿球为红色类，但事实上绿球的标签是蓝色类"></a>解释：缺点2：拿上图红蓝绿球来举例，假如k=3，而其中两个是红色，一个是蓝色。按照KNN就会认定绿球为红色类，但事实上绿球的标签是蓝色类</h4></li>
-</ul>
-</li>
-<li><h4 id="缺点4："><a href="#缺点4：" class="headerlink" title="缺点4："></a>缺点4：<img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200724031158354.png" alt="image-20200724031158354"></h4></li>
-</ul>
-<h3 id="机器学习流程回顾"><a href="#机器学习流程回顾" class="headerlink" title="机器学习流程回顾"></a>机器学习流程回顾</h3><p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200724031341729.png" alt="image-20200724031341729"></p>
-]]></content>
-      <categories>
-        <category>机器学习</category>
-      </categories>
-      <tags>
-        <tag>机器学习</tag>
-        <tag>Python</tag>
-        <tag>KNN</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>机器学习笔记6</title>
     <url>/2020/07/25/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B06/</url>
     <content><![CDATA[<h3 id="线性回归"><a href="#线性回归" class="headerlink" title="线性回归"></a>线性回归</h3><a id="more"></a>
@@ -852,6 +710,131 @@
         <tag>机器学习</tag>
         <tag>线性回归</tag>
         <tag>回归算法评价</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>机器学习笔记13</title>
+    <url>/2020/09/05/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B013/</url>
+    <content><![CDATA[<h3 id="评价分类结果"><a href="#评价分类结果" class="headerlink" title="评价分类结果"></a>评价分类结果</h3><a id="more"></a>
+<h4 id="一、分类准确度的缺陷和混淆矩阵"><a href="#一、分类准确度的缺陷和混淆矩阵" class="headerlink" title="一、分类准确度的缺陷和混淆矩阵"></a>一、分类准确度的缺陷和混淆矩阵</h4><h5 id="1、分类准确度的缺陷："><a href="#1、分类准确度的缺陷：" class="headerlink" title="1、分类准确度的缺陷："></a>1、分类准确度的缺陷：</h5><ul>
+<li><p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200905225600926.png" alt="image-20200905225600926"></p>
+<h5 id="假设这个癌症预测系统的预测准确度（分类准确度）是99-9-，若癌症产生概率只有0-01-，我们如果人为预测所有人都健康，这样准确度会达到99-99-。这比该预测系统的准确度更高，显然这个预测系统（模型）是失败的。因此，对于这类极度偏斜（Skewed-Data）的数据，只使用分类准确度是不行的。"><a href="#假设这个癌症预测系统的预测准确度（分类准确度）是99-9-，若癌症产生概率只有0-01-，我们如果人为预测所有人都健康，这样准确度会达到99-99-。这比该预测系统的准确度更高，显然这个预测系统（模型）是失败的。因此，对于这类极度偏斜（Skewed-Data）的数据，只使用分类准确度是不行的。" class="headerlink" title="假设这个癌症预测系统的预测准确度（分类准确度）是99.9%，若癌症产生概率只有0.01%，我们如果人为预测所有人都健康，这样准确度会达到99.99%。这比该预测系统的准确度更高，显然这个预测系统（模型）是失败的。因此，对于这类极度偏斜（Skewed Data）的数据，只使用分类准确度是不行的。"></a>假设这个癌症预测系统的预测准确度（分类准确度）是99.9%，若癌症产生概率只有0.01%，我们如果人为预测所有人都健康，这样准确度会达到99.99%。这比该预测系统的准确度更高，显然这个预测系统（模型）是失败的。因此，对于这类极度偏斜（Skewed Data）的数据，只使用分类准确度是不行的。</h5></li>
+</ul>
+<h5 id="2、混淆矩阵："><a href="#2、混淆矩阵：" class="headerlink" title="2、混淆矩阵："></a>2、混淆矩阵：</h5><ul>
+<li><p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200905232354868.png" alt="image-20200905232354868"></p>
+<h5 id="T表示True，F表示False，N表示Negative，P表示Positive。"><a href="#T表示True，F表示False，N表示Negative，P表示Positive。" class="headerlink" title="T表示True，F表示False，N表示Negative，P表示Positive。"></a>T表示True，F表示False，N表示Negative，P表示Positive。</h5><h5 id="具体可看https-blog-csdn-net-Orange-Spotty-Cat-article-details-80520839"><a href="#具体可看https-blog-csdn-net-Orange-Spotty-Cat-article-details-80520839" class="headerlink" title="具体可看https://blog.csdn.net/Orange_Spotty_Cat/article/details/80520839"></a>具体可看<a href="https://blog.csdn.net/Orange_Spotty_Cat/article/details/80520839" target="_blank" rel="noopener">https://blog.csdn.net/Orange_Spotty_Cat/article/details/80520839</a></h5><ul>
+<li><h5 id="真实值是positive，模型认为是positive的数量（True-Positive-TP）"><a href="#真实值是positive，模型认为是positive的数量（True-Positive-TP）" class="headerlink" title="真实值是positive，模型认为是positive的数量（True Positive=TP）"></a>真实值是positive，模型认为是positive的数量（True Positive=TP）</h5></li>
+<li><h5 id="真实值是positive，模型认为是negative的数量（False-Negative-FN）"><a href="#真实值是positive，模型认为是negative的数量（False-Negative-FN）" class="headerlink" title="真实值是positive，模型认为是negative的数量（False Negative=FN）"></a>真实值是positive，模型认为是negative的数量（False Negative=FN）</h5></li>
+<li><h5 id="真实值是negative，模型认为是positive的数量（False-Positive-FP）"><a href="#真实值是negative，模型认为是positive的数量（False-Positive-FP）" class="headerlink" title="真实值是negative，模型认为是positive的数量（False Positive=FP）"></a>真实值是negative，模型认为是positive的数量（False Positive=FP）</h5></li>
+<li><h5 id="真实值是negative，模型认为是negative的数量（True-Negative-TN）"><a href="#真实值是negative，模型认为是negative的数量（True-Negative-TN）" class="headerlink" title="真实值是negative，模型认为是negative的数量（True Negative=TN）"></a>真实值是negative，模型认为是negative的数量（True Negative=TN）</h5></li>
+</ul>
+<h5 id="举例说明：假如有10000个人，其中有（9978-12）人没患病，有（2-8）人患病"><a href="#举例说明：假如有10000个人，其中有（9978-12）人没患病，有（2-8）人患病" class="headerlink" title="举例说明：假如有10000个人，其中有（9978+12）人没患病，有（2+8）人患病"></a>举例说明：假如有10000个人，其中有（9978+12）人没患病，有（2+8）人患病</h5><ul>
+<li><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200905233743570.png" alt="image-20200905233743570"></li>
+</ul>
+</li>
+<li><h5 id="通过上例说明精准率与召回率："><a href="#通过上例说明精准率与召回率：" class="headerlink" title="通过上例说明精准率与召回率："></a>通过上例说明精准率与召回率：</h5><ul>
+<li><h5 id="精准率："><a href="#精准率：" class="headerlink" title="精准率："></a>精准率：</h5><p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200905233949626.png" alt="image-20200905233949626"></p>
+<h5 id="在分类问题中，我们一般关注的重点（预测的结果）是“1”而不是“0”，针对本例就是指患病这种情况。所以精准率指在所有预测为“1”的结果中，预测正确的比重是多少。在本例中指在所有预测为患病的人中，预测正确的比重是多少。"><a href="#在分类问题中，我们一般关注的重点（预测的结果）是“1”而不是“0”，针对本例就是指患病这种情况。所以精准率指在所有预测为“1”的结果中，预测正确的比重是多少。在本例中指在所有预测为患病的人中，预测正确的比重是多少。" class="headerlink" title="在分类问题中，我们一般关注的重点（预测的结果）是“1”而不是“0”，针对本例就是指患病这种情况。所以精准率指在所有预测为“1”的结果中，预测正确的比重是多少。在本例中指在所有预测为患病的人中，预测正确的比重是多少。"></a>在分类问题中，我们一般关注的重点（预测的结果）是“1”而不是“0”，针对本例就是指患病这种情况。所以精准率指在所有预测为“1”的结果中，预测正确的比重是多少。在本例中指在所有预测为患病的人中，预测正确的比重是多少。</h5></li>
+<li><h5 id="召回率："><a href="#召回率：" class="headerlink" title="召回率："></a>召回率：</h5><p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200905234614050.png" alt="image-20200905234614050"></p>
+<h5 id="召回率指在所有真实为“1”的结果中，预测正确的比重是多少。在本例中指在所有确实患病的人中，预测正确的比重是多少。"><a href="#召回率指在所有真实为“1”的结果中，预测正确的比重是多少。在本例中指在所有确实患病的人中，预测正确的比重是多少。" class="headerlink" title="召回率指在所有真实为“1”的结果中，预测正确的比重是多少。在本例中指在所有确实患病的人中，预测正确的比重是多少。"></a>召回率指在所有真实为“1”的结果中，预测正确的比重是多少。在本例中指在所有确实患病的人中，预测正确的比重是多少。</h5></li>
+</ul>
+</li>
+<li><h5 id="再回到最开始的例子中，我们预测在10000个人中，有9990个人健康，10个人患病，这样会得到下面的混淆矩阵："><a href="#再回到最开始的例子中，我们预测在10000个人中，有9990个人健康，10个人患病，这样会得到下面的混淆矩阵：" class="headerlink" title="再回到最开始的例子中，我们预测在10000个人中，有9990个人健康，10个人患病，这样会得到下面的混淆矩阵："></a>再回到最开始的例子中，我们预测在10000个人中，有9990个人健康，10个人患病，这样会得到下面的混淆矩阵：</h5><ul>
+<li><p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200905235343865.png" alt="image-20200905235343865"></p>
+<h5 id="虽然分类准确度达到了99-9-，但是精准率与召回率却都是0，很显然这个模型是不好的。"><a href="#虽然分类准确度达到了99-9-，但是精准率与召回率却都是0，很显然这个模型是不好的。" class="headerlink" title="虽然分类准确度达到了99.9%，但是精准率与召回率却都是0，很显然这个模型是不好的。"></a>虽然分类准确度达到了99.9%，但是精准率与召回率却都是0，很显然这个模型是不好的。</h5></li>
+</ul>
+</li>
+</ul>
+<h4 id="二、F1-Score"><a href="#二、F1-Score" class="headerlink" title="二、F1 Score"></a>二、F1 Score</h4><ul>
+<li><h5 id="关于精准率和召回率的解读要视实际情况来定："><a href="#关于精准率和召回率的解读要视实际情况来定：" class="headerlink" title="关于精准率和召回率的解读要视实际情况来定："></a>关于精准率和召回率的解读要视实际情况来定：</h5><ul>
+<li><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200907203853160.png" alt="image-20200907203853160"></li>
+<li><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200907203913917.png" alt="image-20200907203913917"></li>
+</ul>
+</li>
+<li><h5 id="是否有一个指标可以将二者都兼顾呢——F1-Score"><a href="#是否有一个指标可以将二者都兼顾呢——F1-Score" class="headerlink" title="是否有一个指标可以将二者都兼顾呢——F1 Score"></a>是否有一个指标可以将二者都兼顾呢——F1 Score</h5><ul>
+<li><h5 id="F1-Score是precision和recall的调和平均值。它的特性是只有二者都比较大才能使得F1-Score比较大；其中一个很大（很小），另一个相反，都不会使得F1-Score很大。"><a href="#F1-Score是precision和recall的调和平均值。它的特性是只有二者都比较大才能使得F1-Score比较大；其中一个很大（很小），另一个相反，都不会使得F1-Score很大。" class="headerlink" title="F1 Score是precision和recall的调和平均值。它的特性是只有二者都比较大才能使得F1 Score比较大；其中一个很大（很小），另一个相反，都不会使得F1 Score很大。"></a>F1 Score是precision和recall的调和平均值。它的特性是只有二者都比较大才能使得F1 Score比较大；其中一个很大（很小），另一个相反，都不会使得F1 Score很大。</h5></li>
+<li><p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200907204616387.png" alt="image-20200907204616387"></p>
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="三、Precision-Recall的平衡"><a href="#三、Precision-Recall的平衡" class="headerlink" title="三、Precision-Recall的平衡"></a>三、Precision-Recall的平衡</h4><ul>
+<li><h5 id="在逻辑回归中"><a href="#在逻辑回归中" class="headerlink" title="在逻辑回归中"></a>在逻辑回归中</h5><ul>
+<li><p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200907222636806.png" alt="image-20200907222636806"></p>
+</li>
+<li><h5 id="为啥决策边界要以0为界限呢？其实我们可以根据需求来调节决策边界的界限，进而改变分类结果。"><a href="#为啥决策边界要以0为界限呢？其实我们可以根据需求来调节决策边界的界限，进而改变分类结果。" class="headerlink" title="为啥决策边界要以0为界限呢？其实我们可以根据需求来调节决策边界的界限，进而改变分类结果。"></a>为啥决策边界要以0为界限呢？其实我们可以根据需求来调节决策边界的界限，进而改变分类结果。</h5></li>
+</ul>
+</li>
+<li><h5 id="因此我们可以让决策边界等于threshold（阈值），让它改变分类结果，进而影响Precision与Recall的权重。"><a href="#因此我们可以让决策边界等于threshold（阈值），让它改变分类结果，进而影响Precision与Recall的权重。" class="headerlink" title="因此我们可以让决策边界等于threshold（阈值），让它改变分类结果，进而影响Precision与Recall的权重。"></a>因此我们可以让决策边界等于threshold（阈值），让它改变分类结果，进而影响Precision与Recall的权重。</h5><ul>
+<li><p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200907223244946.png" alt="image-20200907223244946"></p>
+<ul>
+<li><h5 id="threshold-0时："><a href="#threshold-0时：" class="headerlink" title="threshold=0时："></a>threshold=0时：</h5><p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200907223426718.png" alt="image-20200907223426718"></p>
+<h5 id="星星表示实际为1的样本，圆圈表示实际为0的样本。左边是预测为0的样本，右边是预测为1的样本。"><a href="#星星表示实际为1的样本，圆圈表示实际为0的样本。左边是预测为0的样本，右边是预测为1的样本。" class="headerlink" title="星星表示实际为1的样本，圆圈表示实际为0的样本。左边是预测为0的样本，右边是预测为1的样本。"></a>星星表示实际为1的样本，圆圈表示实际为0的样本。左边是预测为0的样本，右边是预测为1的样本。</h5></li>
+<li><h5 id="threshold-gt-0时："><a href="#threshold-gt-0时：" class="headerlink" title="threshold&gt;0时："></a>threshold&gt;0时：</h5><p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200907223654382.png" alt="image-20200907223654382"></p>
+</li>
+<li><h5 id="threshold-lt-0时："><a href="#threshold-lt-0时：" class="headerlink" title="threshold&lt;0时："></a>threshold&lt;0时：</h5><p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200907223734566.png" alt="image-20200907223734566"></p>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><h5 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h5><ul>
+<li><h5 id="精准率与召回率互相牵制，一个升高，另一个就会降低"><a href="#精准率与召回率互相牵制，一个升高，另一个就会降低" class="headerlink" title="精准率与召回率互相牵制，一个升高，另一个就会降低"></a>精准率与召回率互相牵制，一个升高，另一个就会降低</h5></li>
+<li><h5 id="阈值越大，精准率越高，召回率越低；阈值越小，精准率越低，召回率越高"><a href="#阈值越大，精准率越高，召回率越低；阈值越小，精准率越低，召回率越高" class="headerlink" title="阈值越大，精准率越高，召回率越低；阈值越小，精准率越低，召回率越高"></a>阈值越大，精准率越高，召回率越低；阈值越小，精准率越低，召回率越高</h5></li>
+</ul>
+</li>
+</ul>
+<h4 id="四、P-R曲线"><a href="#四、P-R曲线" class="headerlink" title="四、P-R曲线"></a>四、P-R曲线</h4><ul>
+<li><h5 id="P-R曲线顾名思义横坐标是精准率，纵坐标是召回率"><a href="#P-R曲线顾名思义横坐标是精准率，纵坐标是召回率" class="headerlink" title="P-R曲线顾名思义横坐标是精准率，纵坐标是召回率"></a>P-R曲线顾名思义横坐标是精准率，纵坐标是召回率</h5><p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200907233249933.png" alt="image-20200907233249933"></p>
+<ul>
+<li><h5 id="途中曲线开始急剧下降的点，可能就是精准率和召回率平衡位置的点"><a href="#途中曲线开始急剧下降的点，可能就是精准率和召回率平衡位置的点" class="headerlink" title="途中曲线开始急剧下降的点，可能就是精准率和召回率平衡位置的点"></a>途中曲线开始急剧下降的点，可能就是精准率和召回率平衡位置的点</h5></li>
+</ul>
+</li>
+<li><h5 id="不同的模型对应的不同的-Precision-Recall-曲线"><a href="#不同的模型对应的不同的-Precision-Recall-曲线" class="headerlink" title="不同的模型对应的不同的 Precision - Recall 曲线"></a>不同的模型对应的不同的 Precision - Recall 曲线</h5><p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200907233440669.png" alt="image-20200907233440669"></p>
+<ul>
+<li><h5 id="外层曲线对应的模型更优（外层曲线的P值和R值都比里层曲线的大）；或者称与坐标轴一起包围的面积越大者越优"><a href="#外层曲线对应的模型更优（外层曲线的P值和R值都比里层曲线的大）；或者称与坐标轴一起包围的面积越大者越优" class="headerlink" title="外层曲线对应的模型更优（外层曲线的P值和R值都比里层曲线的大）；或者称与坐标轴一起包围的面积越大者越优"></a>外层曲线对应的模型更优（外层曲线的P值和R值都比里层曲线的大）；或者称与坐标轴一起包围的面积越大者越优</h5></li>
+<li><h5 id="P-R-曲线也可以作为选择算法、模型、超参数的指标；但一般不适用此曲线，而是使用-ROC-曲线"><a href="#P-R-曲线也可以作为选择算法、模型、超参数的指标；但一般不适用此曲线，而是使用-ROC-曲线" class="headerlink" title="P - R 曲线也可以作为选择算法、模型、超参数的指标；但一般不适用此曲线，而是使用 ROC 曲线"></a>P - R 曲线也可以作为选择算法、模型、超参数的指标；但一般不适用此曲线，而是使用 ROC 曲线</h5></li>
+</ul>
+</li>
+</ul>
+<h4 id="五、ROC曲线"><a href="#五、ROC曲线" class="headerlink" title="五、ROC曲线"></a>五、ROC曲线</h4><ul>
+<li><h5 id="ROC曲线描述TPR和FPR之间的关系"><a href="#ROC曲线描述TPR和FPR之间的关系" class="headerlink" title="ROC曲线描述TPR和FPR之间的关系"></a>ROC曲线描述TPR和FPR之间的关系</h5><ul>
+<li><h5 id="TPR："><a href="#TPR：" class="headerlink" title="TPR："></a>TPR：</h5><p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200913172134092.png" alt="image-20200913172134092"></p>
+</li>
+<li><h5 id="FPR"><a href="#FPR" class="headerlink" title="FPR:"></a>FPR:</h5><p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200913172216856.png" alt="image-20200913172216856"></p>
+</li>
+<li><h5 id="TPR与FPR的关系"><a href="#TPR与FPR的关系" class="headerlink" title="TPR与FPR的关系"></a>TPR与FPR的关系</h5><p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200913180416522.png" alt="image-20200913180416522"></p>
+<ul>
+<li><h5 id="随着阈值-threshold-的增大，FPR-和-TPR-都逐渐减小；"><a href="#随着阈值-threshold-的增大，FPR-和-TPR-都逐渐减小；" class="headerlink" title="随着阈值 threshold 的增大，FPR 和 TPR 都逐渐减小；"></a>随着阈值 threshold 的增大，FPR 和 TPR 都逐渐减小；</h5></li>
+<li><h5 id="FPR-和-TPR-称正相关关系，FPR-越高，TPR-相应的也越高；"><a href="#FPR-和-TPR-称正相关关系，FPR-越高，TPR-相应的也越高；" class="headerlink" title="FPR 和 TPR 称正相关关系，FPR 越高，TPR 相应的也越高；"></a>FPR 和 TPR 称正相关关系，FPR 越高，TPR 相应的也越高；</h5></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><h5 id="与P-R曲线的区别"><a href="#与P-R曲线的区别" class="headerlink" title="与P-R曲线的区别"></a>与P-R曲线的区别</h5><ul>
+<li><h5 id="P-R曲线：应用于判定由极度有偏数据所训练的模型的优劣"><a href="#P-R曲线：应用于判定由极度有偏数据所训练的模型的优劣" class="headerlink" title="P-R曲线：应用于判定由极度有偏数据所训练的模型的优劣"></a>P-R曲线：应用于判定由极度有偏数据所训练的模型的优劣</h5></li>
+<li><h5 id="ROC曲线：应用于比较两个模型的优劣"><a href="#ROC曲线：应用于比较两个模型的优劣" class="headerlink" title="ROC曲线：应用于比较两个模型的优劣"></a>ROC曲线：应用于比较两个模型的优劣</h5><ul>
+<li><h5 id="可以是同样算法不同超参数得到的不同模型，也可以是不同算法得到的不同模型"><a href="#可以是同样算法不同超参数得到的不同模型，也可以是不同算法得到的不同模型" class="headerlink" title="可以是同样算法不同超参数得到的不同模型，也可以是不同算法得到的不同模型"></a>可以是同样算法不同超参数得到的不同模型，也可以是不同算法得到的不同模型</h5></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><h5 id="总结："><a href="#总结：" class="headerlink" title="总结："></a>总结：</h5><ul>
+<li><h5 id="ROC曲线与图形边界围成的面积，作为衡量模型优劣的标准，面积越大，模型越优"><a href="#ROC曲线与图形边界围成的面积，作为衡量模型优劣的标准，面积越大，模型越优" class="headerlink" title="ROC曲线与图形边界围成的面积，作为衡量模型优劣的标准，面积越大，模型越优"></a>ROC曲线与图形边界围成的面积，作为衡量模型优劣的标准，面积越大，模型越优</h5></li>
+<li><h5 id="计算ROC曲线与坐标轴围成的面积：称ROC的auc；"><a href="#计算ROC曲线与坐标轴围成的面积：称ROC的auc；" class="headerlink" title="计算ROC曲线与坐标轴围成的面积：称ROC的auc；"></a>计算ROC曲线与坐标轴围成的面积：称ROC的auc；</h5></li>
+<li><h5 id="面积越大，模型越优："><a href="#面积越大，模型越优：" class="headerlink" title="面积越大，模型越优："></a>面积越大，模型越优：</h5></li>
+</ul>
+</li>
+</ul>
+<h4 id="六、-多分类问题中的混淆矩阵"><a href="#六、-多分类问题中的混淆矩阵" class="headerlink" title="六、 多分类问题中的混淆矩阵"></a>六、 多分类问题中的混淆矩阵</h4><h5 id="这块儿内容直接看‘08-Confusion-Matrix-in-Multiclass-Classification-ipynb’"><a href="#这块儿内容直接看‘08-Confusion-Matrix-in-Multiclass-Classification-ipynb’" class="headerlink" title="这块儿内容直接看‘08-Confusion-Matrix-in-Multiclass-Classification.ipynb’"></a>这块儿内容直接看‘08-Confusion-Matrix-in-Multiclass-Classification.ipynb’</h5>]]></content>
+      <categories>
+        <category>机器学习</category>
+      </categories>
+      <tags>
+        <tag>混淆矩阵</tag>
+        <tag>F1 SCORE</tag>
+        <tag>精准率与召回率</tag>
+        <tag>PR曲线与ROC曲线</tag>
       </tags>
   </entry>
   <entry>
@@ -987,6 +970,33 @@
       <tags>
         <tag>机器学习</tag>
         <tag>梯度下降</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>机器学习笔记5</title>
+    <url>/2020/07/24/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B05/</url>
+    <content><![CDATA[<h3 id="更多有关KNN的思考"><a href="#更多有关KNN的思考" class="headerlink" title="更多有关KNN的思考"></a>更多有关KNN的思考</h3><a id="more"></a>
+<p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200724025657646.png" alt="image-20200724025657646"></p>
+<p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200724025727331.png" alt="image-20200724025727331"></p>
+<h4 id="解释：可以把离绿球最近的三个蓝球的均值作为绿球的值，也可以将距离权重考虑进去求加权平均数。总之，这些都是回归问题。（sklearn其实已经封装好了KNN解决回归问题的库：KNeighborsRegressor）"><a href="#解释：可以把离绿球最近的三个蓝球的均值作为绿球的值，也可以将距离权重考虑进去求加权平均数。总之，这些都是回归问题。（sklearn其实已经封装好了KNN解决回归问题的库：KNeighborsRegressor）" class="headerlink" title="解释：可以把离绿球最近的三个蓝球的均值作为绿球的值，也可以将距离权重考虑进去求加权平均数。总之，这些都是回归问题。（sklearn其实已经封装好了KNN解决回归问题的库：KNeighborsRegressor）"></a>解释：可以把离绿球最近的三个蓝球的均值作为绿球的值，也可以将距离权重考虑进去求加权平均数。总之，这些都是回归问题。（sklearn其实已经封装好了KNN解决回归问题的库：KNeighborsRegressor）</h4><h3 id="它的缺点"><a href="#它的缺点" class="headerlink" title="它的缺点"></a>它的缺点</h3><ul>
+<li><p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200724030254962.png" alt="image-20200724030254962"></p>
+</li>
+<li><p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200724030519829.png" alt="image-20200724030519829"></p>
+<ul>
+<li><h4 id="解释：缺点2：拿上图红蓝绿球来举例，假如k-3，而其中两个是红色，一个是蓝色。按照KNN就会认定绿球为红色类，但事实上绿球的标签是蓝色类"><a href="#解释：缺点2：拿上图红蓝绿球来举例，假如k-3，而其中两个是红色，一个是蓝色。按照KNN就会认定绿球为红色类，但事实上绿球的标签是蓝色类" class="headerlink" title="解释：缺点2：拿上图红蓝绿球来举例，假如k=3，而其中两个是红色，一个是蓝色。按照KNN就会认定绿球为红色类，但事实上绿球的标签是蓝色类"></a>解释：缺点2：拿上图红蓝绿球来举例，假如k=3，而其中两个是红色，一个是蓝色。按照KNN就会认定绿球为红色类，但事实上绿球的标签是蓝色类</h4></li>
+</ul>
+</li>
+<li><h4 id="缺点4："><a href="#缺点4：" class="headerlink" title="缺点4："></a>缺点4：<img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200724031158354.png" alt="image-20200724031158354"></h4></li>
+</ul>
+<h3 id="机器学习流程回顾"><a href="#机器学习流程回顾" class="headerlink" title="机器学习流程回顾"></a>机器学习流程回顾</h3><p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200724031341729.png" alt="image-20200724031341729"></p>
+]]></content>
+      <categories>
+        <category>机器学习</category>
+      </categories>
+      <tags>
+        <tag>机器学习</tag>
+        <tag>Python</tag>
+        <tag>KNN</tag>
       </tags>
   </entry>
 </search>
