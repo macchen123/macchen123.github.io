@@ -1,0 +1,618 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 4.2.1">
+
+<script>
+    (function(){
+        if(''){
+            if (prompt('请输入查看密码') !== ''){
+                alert('密码不正确,请询问主编大大');
+                history.back();
+            }
+        }
+    })();
+</script>
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"macchen123.github.io","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true,"position":"right"},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="基  于  语  料  库  的  武  侠  与  仙  侠  网  络  小  说  文  体  、  词  汇  及  主  题  对  比  分  析 单位北京语言大学  文献类型ccl2020  背景 网络文学发展迅猛，但是目前尚未公开有较大规模的网络文学作品语料库。 目前没有基于语料库对网络文学具体类别作品的定量研究（从定性的角度研究网络文学的特点，把网络文学当做整体进行研究探讨）。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="论文记录">
+<meta property="og:url" content="http://macchen123.github.io/2020/11/01/%E8%AE%BA%E6%96%87%E8%AE%B0%E5%BD%95/index.html">
+<meta property="og:site_name" content="MaCcHen的个人小站">
+<meta property="og:description" content="基  于  语  料  库  的  武  侠  与  仙  侠  网  络  小  说  文  体  、  词  汇  及  主  题  对  比  分  析 单位北京语言大学  文献类型ccl2020  背景 网络文学发展迅猛，但是目前尚未公开有较大规模的网络文学作品语料库。 目前没有基于语料库对网络文学具体类别作品的定量研究（从定性的角度研究网络文学的特点，把网络文学当做整体进行研究探讨）。">
+<meta property="og:image" content="https://gitee.com/macljc/myimg/raw/master/imgs/image-20201102205324459.png">
+<meta property="og:image" content="https://gitee.com/macljc/myimg/raw/master/imgs/image-20201102212119281.png">
+<meta property="og:image" content="https://gitee.com/macljc/myimg/raw/master/imgs/image-20201102212204162.png">
+<meta property="og:image" content="https://gitee.com/macljc/myimg/raw/master/imgs/image-20201102210832646.png">
+<meta property="og:image" content="https://gitee.com/macljc/myimg/raw/master/imgs/image-20201102211021418.png">
+<meta property="og:image" content="https://gitee.com/macljc/myimg/raw/master/imgs/image-20201102212805462.png">
+<meta property="og:image" content="https://gitee.com/macljc/myimg/raw/master/imgs/image-20201102213103365.png">
+<meta property="article:published_time" content="2020-11-01T12:25:47.000Z">
+<meta property="article:modified_time" content="2020-11-04T02:00:36.426Z">
+<meta property="article:author" content="macchen">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://gitee.com/macljc/myimg/raw/master/imgs/image-20201102205324459.png">
+
+<link rel="canonical" href="http://macchen123.github.io/2020/11/01/%E8%AE%BA%E6%96%87%E8%AE%B0%E5%BD%95/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-Hans'
+  };
+</script>
+
+  <title>论文记录 | MaCcHen的个人小站</title>
+  
+
+
+  <script>
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?be46ae65323b06abe5d4115d59e20a64";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">MaCcHen的个人小站</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">谨言慎行，格物致知</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+  <div class="reading-progress-bar"></div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-Hans">
+    <link itemprop="mainEntityOfPage" href="http://macchen123.github.io/2020/11/01/%E8%AE%BA%E6%96%87%E8%AE%B0%E5%BD%95/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="macchen">
+      <meta itemprop="description" content="学习强国">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="MaCcHen的个人小站">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          论文记录
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-11-01 20:25:47" itemprop="dateCreated datePublished" datetime="2020-11-01T20:25:47+08:00">2020-11-01</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-11-04 10:00:36" itemprop="dateModified" datetime="2020-11-04T10:00:36+08:00">2020-11-04</time>
+              </span>
+
+          
+            <span class="post-meta-item" title="阅读次数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">阅读次数：</span>
+              <span id="busuanzi_value_page_pv"></span>
+            </span><br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>1.1k</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>1 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h3 id="基-于-语-料-库-的-武-侠-与-仙-侠-网-络-小-说-文-体-、-词-汇-及-主-题-对-比-分-析"><a href="#基-于-语-料-库-的-武-侠-与-仙-侠-网-络-小-说-文-体-、-词-汇-及-主-题-对-比-分-析" class="headerlink" title="基  于  语  料  库  的  武  侠  与  仙  侠  网  络  小  说  文  体  、  词  汇  及  主  题  对  比  分  析"></a>基  于  语  料  库  的  武  侠  与  仙  侠  网  络  小  说  文  体  、  词  汇  及  主  题  对  比  分  析</h3><ul>
+<li><h4 id="单位"><a href="#单位" class="headerlink" title="单位"></a>单位</h4><p>北京语言大学</p>
+</li>
+<li><h4 id="文献类型"><a href="#文献类型" class="headerlink" title="文献类型"></a>文献类型</h4><p>ccl2020</p>
+</li>
+<li><h4 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h4><ul>
+<li>网络文学发展迅猛，但是目前尚未公开有较大规模的网络文学作品语料库。</li>
+<li>目前没有基于语料库对网络文学具体类别作品的定量研究（从定性的角度研究网络文学的特点，把网络文学当做整体进行研究探讨）。</li>
+<li>在网络文学研究方面，欧美的网络文学研究成果已经相当可观，他们的网络文学研究趋势集中在文学实验的理论性研究。</li>
+<li>目前国内对于网络文学的研究以西方的理论研究为基本背景，研究点放在网络文学的个别文本，且研究角度集中在文艺批评、文学特色和文化产业等方面。</li>
+</ul>
+</li>
+<li><h4 id="本文工作"><a href="#本文工作" class="headerlink" title="本文工作"></a>本文工作</h4><ul>
+<li>建立一个包含网络原创武侠小说和仙侠小说的网络文学语料库。</li>
+<li>使用计量，词频统计和主题挖掘的方法，多层次，多角度的对这两类网络文学文本的特点进行研究。</li>
+</ul>
+</li>
+<li><h4 id="本文要解决的问题"><a href="#本文要解决的问题" class="headerlink" title="本文要解决的问题"></a>本文要解决的问题</h4><ul>
+<li>在宏观上，网络武侠与网络仙侠两类小说在文体风格上是否相同？为什么？</li>
+<li>在微观上，两类小说在具体词汇的使用上有哪些异同？各有何种特色？</li>
+<li>在内容上，两类小说在小说主题上有哪些异同？</li>
+</ul>
+</li>
+<li><h4 id="数据集"><a href="#数据集" class="headerlink" title="数据集"></a>数据集</h4><ul>
+<li><p>利用爬虫随机抓取了起点中文15-17年的“武侠”和“仙侠”小说，共计约7000万字。</p>
+<p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20201102205324459.png" alt="image-20201102205324459"></p>
+</li>
+<li><p>由于网络小说中的词汇和句法较为随意，会有一些未登录词，在后续实验中不予考虑。（未登录词即没有被收录在分词词表中但必须切分出来的词，包括各类专有名词（人名、地名、企业名等）、缩写词、新增词汇等等）</p>
+</li>
+</ul>
+</li>
+<li><h4 id="研究方法"><a href="#研究方法" class="headerlink" title="研究方法"></a>研究方法</h4><ul>
+<li><p>文本风格比较</p>
+<ul>
+<li><p>词汇丰富度</p>
+</li>
+<li><p>文本可读性</p>
+</li>
+<li><p>句子离散度</p>
+</li>
+<li><p>句子破碎度</p>
+</li>
+<li><p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20201102212119281.png" alt="image-20201102212119281"></p>
+</li>
+<li><p>词类分布</p>
+<p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20201102212204162.png" alt="image-20201102212204162"></p>
+</li>
+</ul>
+</li>
+<li><p>具体词汇使用比较</p>
+<ul>
+<li><p>本文通过编程抽取了两类小说的名词、动词和形容词，去除停用词、人名、地名以及“说、有“之类的常用词，统计两类小说按照频率排序的共用词和独用词的使用情况。</p>
+</li>
+<li><p>按照频率列出前500个高频词中名词、动词和形容词的共用词，各取前20词</p>
+<p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20201102210832646.png" alt="image-20201102210832646"></p>
+</li>
+<li><p>按照频率列出前500个高频词中名词、动词和形容词的独用词，各取前20词</p>
+<p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20201102211021418.png" alt="image-20201102211021418"></p>
+</li>
+</ul>
+</li>
+<li><p>主题比较</p>
+<ul>
+<li><p>本文利用LDA来进行主题建模，挖掘文本隐含的主题信息，对两类小说的主题进行比较。</p>
+<p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20201102212805462.png" alt="image-20201102212805462"></p>
+</li>
+<li><p>本文通过LDA得出了150个主题，设置每个主题中最能描述该主题的前20个词。下图1是武侠小说的两类主题，图2是仙侠小说的两类主题</p>
+<p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20201102213103365.png" alt="image-20201102213103365"></p>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><h4 id="结论"><a href="#结论" class="headerlink" title="结论"></a>结论</h4><ul>
+<li>宏观上，两类小说的文体风格基本相同，这可能是由于仙侠小说是在武侠小说的基础上发展起来的。</li>
+<li>微观上，本文对两类小说的名词、动词和形容词进行统计分析，发现两类小说在具体词汇使用上既有共性又各具特色。</li>
+<li>内容上，本文发现两类小说的主题具有一定的相关性，也有一些不同之处。两类小说出现了一些类似的主题，然而武侠小说的主题更加广泛，主题词更加传统、写实，具有现实色彩；而仙侠小说的主题则更加集中，主题词更加新颖、新奇，具有神化色彩。</li>
+</ul>
+</li>
+<li><h4 id="创新点"><a href="#创新点" class="headerlink" title="创新点"></a>创新点</h4><ul>
+<li>本文在进行文体对比时提出了词汇丰富度，文本可读性，句子离散度，句子破碎度，词类分布这几个创新方法。</li>
+</ul>
+</li>
+</ul>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2020/10/25/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E7%90%86%E8%A7%A3-%E5%9F%BA%E4%BA%8E3Blue1Brown%E7%9A%84%E8%A7%86%E9%A2%91/" rel="prev" title="神经网络理解-基于3Blue1Brown的视频">
+      <i class="fa fa-chevron-left"></i> 神经网络理解-基于3Blue1Brown的视频
+    </a></div>
+      <div class="post-nav-item"></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+      
+      <!-- Insert clustrmaps.com -->
+      <script type="text/javascript" id="clustrmaps" src="//cdn.clustrmaps.com/map_v2.js?d=2_M6gOO_uk_5ftA8MDj1GtyvCyzGqPStnw1k5TNBneU&cl=ffffff&w=a"></script>
+
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#基-于-语-料-库-的-武-侠-与-仙-侠-网-络-小-说-文-体-、-词-汇-及-主-题-对-比-分-析"><span class="nav-number">1.</span> <span class="nav-text">基  于  语  料  库  的  武  侠  与  仙  侠  网  络  小  说  文  体  、  词  汇  及  主  题  对  比  分  析</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#单位"><span class="nav-number">1.1.</span> <span class="nav-text">单位</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#文献类型"><span class="nav-number">1.2.</span> <span class="nav-text">文献类型</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#背景"><span class="nav-number">1.3.</span> <span class="nav-text">背景</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#本文工作"><span class="nav-number">1.4.</span> <span class="nav-text">本文工作</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#本文要解决的问题"><span class="nav-number">1.5.</span> <span class="nav-text">本文要解决的问题</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#数据集"><span class="nav-number">1.6.</span> <span class="nav-text">数据集</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#研究方法"><span class="nav-number">1.7.</span> <span class="nav-text">研究方法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#结论"><span class="nav-number">1.8.</span> <span class="nav-text">结论</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#创新点"><span class="nav-number">1.9.</span> <span class="nav-text">创新点</span></a></li></ol></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="macchen"
+      src="/images/avatar.jpg">
+  <p class="site-author-name" itemprop="name">macchen</p>
+  <div class="site-description" itemprop="description">学习强国</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">22</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">4</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">41</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">macchen</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-area"></i>
+    </span>
+      <span class="post-meta-item-text">站点总字数：</span>
+    <span title="站点总字数">23k</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+      <span class="post-meta-item-text">站点阅读时长 &asymp;</span>
+    <span title="站点阅读时长">21 分钟</span>
+</div>
+
+        
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-user"></i>
+      </span>
+      <span class="site-uv" title="总访客量">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>
+    </span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-eye"></i>
+      </span>
+      <span class="site-pv" title="总访问量">
+        <span id="busuanzi_value_site_pv"></span>
+      </span>
+    </span>
+</div>
+
+
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+  
+
+  <!-- 引入custom，就这一句，控制烟花特效 -->
+  
+  
+    <canvas class="fireworks" style="position: fixed;left: 0;top: 0;z-index: 1; pointer-events: none;" ></canvas>
+    <script src="//cdn.bootcss.com/animejs/2.2.0/anime.min.js"></script>
+    <script src="/js/cursor/explosion.min.js"></script>
+  
+
+
+<!-- 樱花特效 -->
+  
+      <script async src="/js/cursor/cherry.js"></script>
+  
+
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"log":false,"model":{"jsonPath":"/live2dw/assets/wanko.model.json"},"display":{"position":"left","width":250,"height":500},"mobile":{"show":true},"react":{"opacity":0.7}});</script></body>
+</html>
