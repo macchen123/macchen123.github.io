@@ -236,7 +236,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-11-04 10:00:36" itemprop="dateModified" datetime="2020-11-04T10:00:36+08:00">2020-11-04</time>
+                <time title="修改时间：2020-11-04 10:44:02" itemprop="dateModified" datetime="2020-11-04T10:44:02+08:00">2020-11-04</time>
               </span>
 
           <br>
@@ -264,91 +264,15 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h3 id="基-于-语-料-库-的-武-侠-与-仙-侠-网-络-小-说-文-体-、-词-汇-及-主-题-对-比-分-析"><a href="#基-于-语-料-库-的-武-侠-与-仙-侠-网-络-小-说-文-体-、-词-汇-及-主-题-对-比-分-析" class="headerlink" title="基  于  语  料  库  的  武  侠  与  仙  侠  网  络  小  说  文  体  、  词  汇  及  主  题  对  比  分  析"></a>基  于  语  料  库  的  武  侠  与  仙  侠  网  络  小  说  文  体  、  词  汇  及  主  题  对  比  分  析</h3><ul>
-<li><h4 id="单位"><a href="#单位" class="headerlink" title="单位"></a>单位</h4><p>北京语言大学</p>
-</li>
-<li><h4 id="文献类型"><a href="#文献类型" class="headerlink" title="文献类型"></a>文献类型</h4><p>ccl2020</p>
-</li>
-<li><h4 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h4><ul>
-<li>网络文学发展迅猛，但是目前尚未公开有较大规模的网络文学作品语料库。</li>
-<li>目前没有基于语料库对网络文学具体类别作品的定量研究（从定性的角度研究网络文学的特点，把网络文学当做整体进行研究探讨）。</li>
-<li>在网络文学研究方面，欧美的网络文学研究成果已经相当可观，他们的网络文学研究趋势集中在文学实验的理论性研究。</li>
-<li>目前国内对于网络文学的研究以西方的理论研究为基本背景，研究点放在网络文学的个别文本，且研究角度集中在文艺批评、文学特色和文化产业等方面。</li>
-</ul>
-</li>
-<li><h4 id="本文工作"><a href="#本文工作" class="headerlink" title="本文工作"></a>本文工作</h4><ul>
-<li>建立一个包含网络原创武侠小说和仙侠小说的网络文学语料库。</li>
-<li>使用计量，词频统计和主题挖掘的方法，多层次，多角度的对这两类网络文学文本的特点进行研究。</li>
-</ul>
-</li>
-<li><h4 id="本文要解决的问题"><a href="#本文要解决的问题" class="headerlink" title="本文要解决的问题"></a>本文要解决的问题</h4><ul>
-<li>在宏观上，网络武侠与网络仙侠两类小说在文体风格上是否相同？为什么？</li>
-<li>在微观上，两类小说在具体词汇的使用上有哪些异同？各有何种特色？</li>
-<li>在内容上，两类小说在小说主题上有哪些异同？</li>
-</ul>
-</li>
-<li><h4 id="数据集"><a href="#数据集" class="headerlink" title="数据集"></a>数据集</h4><ul>
-<li><p>利用爬虫随机抓取了起点中文15-17年的“武侠”和“仙侠”小说，共计约7000万字。</p>
-<p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20201102205324459.png" alt="image-20201102205324459"></p>
-</li>
-<li><p>由于网络小说中的词汇和句法较为随意，会有一些未登录词，在后续实验中不予考虑。（未登录词即没有被收录在分词词表中但必须切分出来的词，包括各类专有名词（人名、地名、企业名等）、缩写词、新增词汇等等）</p>
-</li>
-</ul>
-</li>
-<li><h4 id="研究方法"><a href="#研究方法" class="headerlink" title="研究方法"></a>研究方法</h4><ul>
-<li><p>文本风格比较</p>
-<ul>
-<li><p>词汇丰富度</p>
-</li>
-<li><p>文本可读性</p>
-</li>
-<li><p>句子离散度</p>
-</li>
-<li><p>句子破碎度</p>
-</li>
-<li><p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20201102212119281.png" alt="image-20201102212119281"></p>
-</li>
-<li><p>词类分布</p>
-<p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20201102212204162.png" alt="image-20201102212204162"></p>
-</li>
-</ul>
-</li>
-<li><p>具体词汇使用比较</p>
-<ul>
-<li><p>本文通过编程抽取了两类小说的名词、动词和形容词，去除停用词、人名、地名以及“说、有“之类的常用词，统计两类小说按照频率排序的共用词和独用词的使用情况。</p>
-</li>
-<li><p>按照频率列出前500个高频词中名词、动词和形容词的共用词，各取前20词</p>
-<p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20201102210832646.png" alt="image-20201102210832646"></p>
-</li>
-<li><p>按照频率列出前500个高频词中名词、动词和形容词的独用词，各取前20词</p>
-<p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20201102211021418.png" alt="image-20201102211021418"></p>
-</li>
-</ul>
-</li>
-<li><p>主题比较</p>
-<ul>
-<li><p>本文利用LDA来进行主题建模，挖掘文本隐含的主题信息，对两类小说的主题进行比较。</p>
-<p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20201102212805462.png" alt="image-20201102212805462"></p>
-</li>
-<li><p>本文通过LDA得出了150个主题，设置每个主题中最能描述该主题的前20个词。下图1是武侠小说的两类主题，图2是仙侠小说的两类主题</p>
-<p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20201102213103365.png" alt="image-20201102213103365"></p>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-<li><h4 id="结论"><a href="#结论" class="headerlink" title="结论"></a>结论</h4><ul>
-<li>宏观上，两类小说的文体风格基本相同，这可能是由于仙侠小说是在武侠小说的基础上发展起来的。</li>
-<li>微观上，本文对两类小说的名词、动词和形容词进行统计分析，发现两类小说在具体词汇使用上既有共性又各具特色。</li>
-<li>内容上，本文发现两类小说的主题具有一定的相关性，也有一些不同之处。两类小说出现了一些类似的主题，然而武侠小说的主题更加广泛，主题词更加传统、写实，具有现实色彩；而仙侠小说的主题则更加集中，主题词更加新颖、新奇，具有神化色彩。</li>
-</ul>
-</li>
-<li><h4 id="创新点"><a href="#创新点" class="headerlink" title="创新点"></a>创新点</h4><ul>
-<li>本文在进行文体对比时提出了词汇丰富度，文本可读性，句子离散度，句子破碎度，词类分布这几个创新方法。</li>
-</ul>
-</li>
-</ul>
-
+          <h3 id="基-于-语-料-库-的-武-侠-与-仙-侠-网-络-小-说-文-体-、-词-汇-及-主-题-对-比-分-析"><a href="#基-于-语-料-库-的-武-侠-与-仙-侠-网-络-小-说-文-体-、-词-汇-及-主-题-对-比-分-析" class="headerlink" title="基  于  语  料  库  的  武  侠  与  仙  侠  网  络  小  说  文  体  、  词  汇  及  主  题  对  比  分  析"></a>基  于  语  料  库  的  武  侠  与  仙  侠  网  络  小  说  文  体  、  词  汇  及  主  题  对  比  分  析</h3>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2020/11/01/%E8%AE%BA%E6%96%87%E8%AE%B0%E5%BD%95/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
@@ -485,10 +409,16 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
-              
 
-              <time title="创建时间：2020-10-25 19:25:02 / 修改时间：22:34:02" itemprop="dateCreated datePublished" datetime="2020-10-25T19:25:02+08:00">2020-10-25</time>
+              <time title="创建时间：2020-10-25 19:25:02" itemprop="dateCreated datePublished" datetime="2020-10-25T19:25:02+08:00">2020-10-25</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-11-04 10:43:40" itemprop="dateModified" datetime="2020-11-04T10:43:40+08:00">2020-11-04</time>
+              </span>
 
           <br>
             <span class="post-meta-item" title="本文字数">
@@ -575,7 +505,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-10-25 19:07:10" itemprop="dateModified" datetime="2020-10-25T19:07:10+08:00">2020-10-25</time>
+                <time title="修改时间：2020-11-04 10:43:52" itemprop="dateModified" datetime="2020-11-04T10:43:52+08:00">2020-11-04</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -612,53 +542,15 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h2 id="深度学习与硬件"><a href="#深度学习与硬件" class="headerlink" title="深度学习与硬件"></a>深度学习与硬件</h2><h3 id="一、CPU"><a href="#一、CPU" class="headerlink" title="一、CPU"></a>一、CPU</h3><ul>
-<li>一般来说，我们现在很少用CPU来训练深度学习模型。</li>
-<li>但是CPU处理非常复杂的逻辑时效率往往比GPU高。因此CPU往往用来处理一些业务逻辑或数据预处理。</li>
-<li>CPU在训练时注意的事项：<ul>
-<li><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20201025120500936.png" alt="image-20201025120500936"></li>
-</ul>
-</li>
-<li>CPU在部署时的注意事项：<ul>
-<li>避免Cache Miss。（最重要）</li>
-<li>有时需要使用足够多的核来支持读写。</li>
-</ul>
-</li>
-</ul>
-<h3 id="二、GPU"><a href="#二、GPU" class="headerlink" title="二、GPU"></a>二、GPU</h3><ul>
-<li>商用GPU与民用（游戏）GPU的区别：<ul>
-<li>商用GPU是被动散热的。</li>
-<li>商用GPU更贵。</li>
-<li>商用GPU稳定性比民用GPU好。（不一定）</li>
-</ul>
-</li>
-<li>GPU硬件的特点：<ul>
-<li>SIMT</li>
-<li>显存独立于内存，内存和显存的读取可能会成为问题。</li>
-<li>对于显存的处理，multi-stream processer并不如CPU一样强大。（显存污染）</li>
-<li>GPU是非常复杂的处理器。</li>
-</ul>
-</li>
-<li>GPU训练注意事项：<ul>
-<li><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20201025123508505.png" alt="image-20201025123508505"></li>
-</ul>
-</li>
-<li>GPU部署的注意事项：<ul>
-<li><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20201025123559470.png" alt="image-20201025123559470"></li>
-</ul>
-</li>
-</ul>
-<h3 id="三、TPU"><a href="#三、TPU" class="headerlink" title="三、TPU"></a>三、TPU</h3><ul>
-<li>TPU的特点：<ul>
-<li><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20201025143811895.png" alt="image-20201025143811895"></li>
-</ul>
-</li>
-<li>TPU与深度学习：<ul>
-<li><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20201025143851998.png" alt="image-20201025143851998"></li>
-</ul>
-</li>
-</ul>
-
+          <h2 id="深度学习与硬件"><a href="#深度学习与硬件" class="headerlink" title="深度学习与硬件"></a>深度学习与硬件</h2>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2020/10/24/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E4%B8%8E%E7%A1%AC%E4%BB%B6/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 

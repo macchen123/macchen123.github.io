@@ -31,19 +31,19 @@
     var CONFIG = {"hostname":"macchen123.github.io","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true,"position":"right"},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta name="description" content="深度学习与硬件一、CPU 一般来说，我们现在很少用CPU来训练深度学习模型。 但是CPU处理非常复杂的逻辑时效率往往比GPU高。因此CPU往往用来处理一些业务逻辑或数据预处理。 CPU在训练时注意的事项：    CPU在部署时的注意事项： 避免Cache Miss。（最重要） 有时需要使用足够多的核来支持读写。    二、GPU 商用GPU与民用（游戏）GPU的区别： 商用GPU是被动散热的。 商">
+  <meta name="description" content="深度学习与硬件">
 <meta property="og:type" content="article">
 <meta property="og:title" content="深度学习与硬件">
 <meta property="og:url" content="http://macchen123.github.io/2020/10/24/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E4%B8%8E%E7%A1%AC%E4%BB%B6/index.html">
 <meta property="og:site_name" content="MaCcHen的个人小站">
-<meta property="og:description" content="深度学习与硬件一、CPU 一般来说，我们现在很少用CPU来训练深度学习模型。 但是CPU处理非常复杂的逻辑时效率往往比GPU高。因此CPU往往用来处理一些业务逻辑或数据预处理。 CPU在训练时注意的事项：    CPU在部署时的注意事项： 避免Cache Miss。（最重要） 有时需要使用足够多的核来支持读写。    二、GPU 商用GPU与民用（游戏）GPU的区别： 商用GPU是被动散热的。 商">
+<meta property="og:description" content="深度学习与硬件">
 <meta property="og:image" content="https://gitee.com/macljc/myimg/raw/master/imgs/image-20201025120500936.png">
 <meta property="og:image" content="https://gitee.com/macljc/myimg/raw/master/imgs/image-20201025123508505.png">
 <meta property="og:image" content="https://gitee.com/macljc/myimg/raw/master/imgs/image-20201025123559470.png">
 <meta property="og:image" content="https://gitee.com/macljc/myimg/raw/master/imgs/image-20201025143811895.png">
 <meta property="og:image" content="https://gitee.com/macljc/myimg/raw/master/imgs/image-20201025143851998.png">
 <meta property="article:published_time" content="2020-10-24T09:26:32.000Z">
-<meta property="article:modified_time" content="2020-10-25T11:07:10.780Z">
+<meta property="article:modified_time" content="2020-11-04T02:43:52.108Z">
 <meta property="article:author" content="macchen">
 <meta property="article:tag" content="CPU">
 <meta property="article:tag" content="GPU">
@@ -247,7 +247,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-10-25 19:07:10" itemprop="dateModified" datetime="2020-10-25T19:07:10+08:00">2020-10-25</time>
+                <time title="修改时间：2020-11-04 10:43:52" itemprop="dateModified" datetime="2020-11-04T10:43:52+08:00">2020-11-04</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -291,7 +291,8 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <h2 id="深度学习与硬件"><a href="#深度学习与硬件" class="headerlink" title="深度学习与硬件"></a>深度学习与硬件</h2><h3 id="一、CPU"><a href="#一、CPU" class="headerlink" title="一、CPU"></a>一、CPU</h3><ul>
+        <h2 id="深度学习与硬件"><a href="#深度学习与硬件" class="headerlink" title="深度学习与硬件"></a>深度学习与硬件</h2><a id="more"></a>
+<h3 id="一、CPU"><a href="#一、CPU" class="headerlink" title="一、CPU"></a>一、CPU</h3><ul>
 <li>一般来说，我们现在很少用CPU来训练深度学习模型。</li>
 <li>但是CPU处理非常复杂的逻辑时效率往往比GPU高。因此CPU往往用来处理一些业务逻辑或数据预处理。</li>
 <li>CPU在训练时注意的事项：<ul>
