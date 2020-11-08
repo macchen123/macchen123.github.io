@@ -66,6 +66,74 @@
       </tags>
   </entry>
   <entry>
+    <title>机器学习笔记10</title>
+    <url>/2020/08/10/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B010/</url>
+    <content><![CDATA[<h4 id="PCA-主成分分析（Principal-Component-Analysis）"><a href="#PCA-主成分分析（Principal-Component-Analysis）" class="headerlink" title="PCA-主成分分析（Principal Component Analysis）"></a>PCA-主成分分析（Principal Component Analysis）</h4><a id="more"></a>
+<h4 id="一、PCA综述"><a href="#一、PCA综述" class="headerlink" title="一、PCA综述"></a>一、PCA综述</h4><p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200810220126595.png" alt="image-20200810220126595"></p>
+<h4 id="二、详解PCA"><a href="#二、详解PCA" class="headerlink" title="二、详解PCA"></a>二、详解PCA</h4><ul>
+<li><p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200810223917827.png" alt="image-20200810223917827"></p>
+<ul>
+<li><h4 id="我们首先想到的降维方法是舍弃特征1或舍弃特征2，这样样本点就会映射到单一坐标轴上，达到了降维的效果。如下图："><a href="#我们首先想到的降维方法是舍弃特征1或舍弃特征2，这样样本点就会映射到单一坐标轴上，达到了降维的效果。如下图：" class="headerlink" title="我们首先想到的降维方法是舍弃特征1或舍弃特征2，这样样本点就会映射到单一坐标轴上，达到了降维的效果。如下图："></a>我们首先想到的降维方法是舍弃特征1或舍弃特征2，这样样本点就会映射到单一坐标轴上，达到了降维的效果。如下图：</h4></li>
+<li><h5 id="左图为舍弃特征1；右图为舍弃特征2："><a href="#左图为舍弃特征1；右图为舍弃特征2：" class="headerlink" title="左图为舍弃特征1；右图为舍弃特征2："></a>左图为舍弃特征1；右图为舍弃特征2：</h5><p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200810224220339.png" alt="image-20200810224220339"></p>
+</li>
+<li><h4 id="显然右图的降维效果比左图好，因为样本点直接距离较大，拥有更高的可区分度"><a href="#显然右图的降维效果比左图好，因为样本点直接距离较大，拥有更高的可区分度" class="headerlink" title="显然右图的降维效果比左图好，因为样本点直接距离较大，拥有更高的可区分度"></a>显然右图的降维效果比左图好，因为样本点直接距离较大，拥有更高的可区分度</h4></li>
+</ul>
+</li>
+<li><h4 id="但是，这是最好的方案吗？显然不是。我们想象一下-能够找到下图这样的一条斜线w-将数据降维到w上-映射到w上-之后-能最好的保留原来的分布特征-且这些点分布在了一个轴上-斜线w-后点和点之间的距离也比之前的两种方案更加的大-此时的区分度也更加明显"><a href="#但是，这是最好的方案吗？显然不是。我们想象一下-能够找到下图这样的一条斜线w-将数据降维到w上-映射到w上-之后-能最好的保留原来的分布特征-且这些点分布在了一个轴上-斜线w-后点和点之间的距离也比之前的两种方案更加的大-此时的区分度也更加明显" class="headerlink" title="但是，这是最好的方案吗？显然不是。我们想象一下,能够找到下图这样的一条斜线w,将数据降维到w上(映射到w上)之后,能最好的保留原来的分布特征,且这些点分布在了一个轴上(斜线w)后点和点之间的距离也比之前的两种方案更加的大,此时的区分度也更加明显"></a>但是，这是最好的方案吗？显然不是。我们想象一下,能够找到下图这样的一条斜线w,将数据降维到w上(映射到w上)之后,能最好的保留原来的分布特征,且这些点分布在了一个轴上(斜线w)后点和点之间的距离也比之前的两种方案更加的大,此时的区分度也更加明显</h4><ul>
+<li><p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200810224703164.png" alt="image-20200810224703164"></p>
+</li>
+<li><h4 id="接下来我们要思考以下两个问题了："><a href="#接下来我们要思考以下两个问题了：" class="headerlink" title="接下来我们要思考以下两个问题了："></a>接下来我们要思考以下两个问题了：</h4><ul>
+<li><h5 id="如何找到让这个样本降维后间距最大的轴"><a href="#如何找到让这个样本降维后间距最大的轴" class="headerlink" title="如何找到让这个样本降维后间距最大的轴?"></a>如何找到让这个样本降维后间距最大的轴?</h5></li>
+<li><h5 id="如何定义样本间距"><a href="#如何定义样本间距" class="headerlink" title="如何定义样本间距?"></a>如何定义样本间距?</h5></li>
+</ul>
+</li>
+<li><h4 id="在统计学中-有一个直接的指标可以表示样本间的间距-离散程度-那就是方差-Variance"><a href="#在统计学中-有一个直接的指标可以表示样本间的间距-离散程度-那就是方差-Variance" class="headerlink" title="在统计学中,有一个直接的指标可以表示样本间的间距(离散程度),那就是方差(Variance)"></a>在统计学中,有一个直接的指标可以表示样本间的间距(离散程度),那就是方差(Variance)</h4><p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200810225109737.png" alt="image-20200810225109737"></p>
+</li>
+<li><h4 id="上述的问题就变为了：找到一个轴-使得样本空间的所有点映射到这个轴之后-方差最大"><a href="#上述的问题就变为了：找到一个轴-使得样本空间的所有点映射到这个轴之后-方差最大" class="headerlink" title="上述的问题就变为了：找到一个轴,使得样本空间的所有点映射到这个轴之后,方差最大"></a>上述的问题就变为了：找到一个轴,使得样本空间的所有点映射到这个轴之后,方差最大</h4></li>
+<li><h4 id="接下来就是求解这个轴："><a href="#接下来就是求解这个轴：" class="headerlink" title="接下来就是求解这个轴："></a>接下来就是求解这个轴：</h4><ul>
+<li><h5 id="首先，将样例的均值归为0（demean），即将所有样本减去这批样本的均值-所有的样本点都会移动，因此可以看作样本点不动，移动坐标轴-，之后就变为了下图所示"><a href="#首先，将样例的均值归为0（demean），即将所有样本减去这批样本的均值-所有的样本点都会移动，因此可以看作样本点不动，移动坐标轴-，之后就变为了下图所示" class="headerlink" title="首先，将样例的均值归为0（demean），即将所有样本减去这批样本的均值(所有的样本点都会移动，因此可以看作样本点不动，移动坐标轴)，之后就变为了下图所示"></a>首先，将样例的均值归为0（demean），即将所有样本减去这批样本的均值(所有的样本点都会移动，因此可以看作样本点不动，移动坐标轴)，之后就变为了下图所示</h5><p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200810225647955.png" alt="image-20200810225647955"></p>
+<h5 id="此时的样本的均值就为0，方差就变成了"><a href="#此时的样本的均值就为0，方差就变成了" class="headerlink" title="此时的样本的均值就为0，方差就变成了"></a>此时的样本的均值就为0，方差就变成了</h5><p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200810230237650.png" alt="image-20200810230237650"></p>
+</li>
+<li><h5 id="我们想要求w轴的方向-w1-w2-使得-Var-Xproject-最大，Xproject-是映射到w轴之后的X的坐标："><a href="#我们想要求w轴的方向-w1-w2-使得-Var-Xproject-最大，Xproject-是映射到w轴之后的X的坐标：" class="headerlink" title="我们想要求w轴的方向(w1,w2),使得 Var(Xproject) 最大，Xproject 是映射到w轴之后的X的坐标："></a>我们想要求w轴的方向(w1,w2),使得 <em>Var(X<strong>project</strong>)</em> 最大，<em>X</em>project 是映射到w轴之后的X的坐标：</h5><p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200810230906480.png" alt="image-20200810230906480"></p>
+<h5 id="注意：因为X是矩阵，X-i-是X中的一个向量，所以在公式中不能写成括号的平方，而是模的平方"><a href="#注意：因为X是矩阵，X-i-是X中的一个向量，所以在公式中不能写成括号的平方，而是模的平方" class="headerlink" title="注意：因为X是矩阵，X(i)是X中的一个向量，所以在公式中不能写成括号的平方，而是模的平方"></a>注意：因为X是矩阵，X(i)是X中的一个向量，所以在公式中不能写成括号的平方，而是模的平方</h5><h5 id="接下来求解-X-i-project-，即如何用-X-i-表示（下图点积可以参考《机器学习中的数学》13页-1-4-4）"><a href="#接下来求解-X-i-project-，即如何用-X-i-表示（下图点积可以参考《机器学习中的数学》13页-1-4-4）" class="headerlink" title="接下来求解$X^{(i)}_{project}$，即如何用$X^{(i)}$表示（下图点积可以参考《机器学习中的数学》13页 1.4.4）"></a>接下来求解$X^{(i)}_{project}$，即如何用$X^{(i)}$表示（下图点积可以参考《机器学习中的数学》13页 1.4.4）</h5><p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200810233526467.png" alt="image-20200810233526467"></p>
+<h5 id="注意：因为我们要将样本点映射到w方向上，所以将w定义为单位向量，其实最终求得是样本点向量在w方向上的分量，即蓝色线条，它对应的就是-vec-X-i-project"><a href="#注意：因为我们要将样本点映射到w方向上，所以将w定义为单位向量，其实最终求得是样本点向量在w方向上的分量，即蓝色线条，它对应的就是-vec-X-i-project" class="headerlink" title="注意：因为我们要将样本点映射到w方向上，所以将w定义为单位向量，其实最终求得是样本点向量在w方向上的分量，即蓝色线条，它对应的就是$\vec{X^{(i)}_{project}}$"></a>注意：因为我们要将样本点映射到w方向上，所以将w定义为单位向量，其实最终求得是样本点向量在w方向上的分量，即蓝色线条，它对应的就是$\vec{X^{(i)}_{project}}$</h5></li>
+</ul>
+</li>
+<li><h4 id="最终："><a href="#最终：" class="headerlink" title="最终："></a>最终：</h4><p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200810234231684.png" alt="image-20200810234231684"></p>
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="三、使用梯度上升法解决PCA问题"><a href="#三、使用梯度上升法解决PCA问题" class="headerlink" title="三、使用梯度上升法解决PCA问题"></a>三、使用梯度上升法解决PCA问题</h4><p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200810235951325.png" alt="image-20200810235951325"></p>
+<h4 id="接下来进行向量化，让其运行效率更高"><a href="#接下来进行向量化，让其运行效率更高" class="headerlink" title="接下来进行向量化，让其运行效率更高"></a>接下来进行向量化，让其运行效率更高</h4><ul>
+<li><h5 id="在向量化时要想清楚谁是矩阵，谁是向量，向量是行还是列向量"><a href="#在向量化时要想清楚谁是矩阵，谁是向量，向量是行还是列向量" class="headerlink" title="在向量化时要想清楚谁是矩阵，谁是向量，向量是行还是列向量"></a>在向量化时要想清楚谁是矩阵，谁是向量，向量是行还是列向量</h5></li>
+</ul>
+<p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200811000106484.png" alt="image-20200811000106484"></p>
+<h4 id="最终结果"><a href="#最终结果" class="headerlink" title="最终结果"></a>最终结果</h4><p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200811000436388.png" alt="image-20200811000436388"></p>
+<h4 id="四、求数据的前n个主成分（即新坐标系的每一个轴对应的方向）"><a href="#四、求数据的前n个主成分（即新坐标系的每一个轴对应的方向）" class="headerlink" title="四、求数据的前n个主成分（即新坐标系的每一个轴对应的方向）"></a>四、求数据的前n个主成分（即新坐标系的每一个轴对应的方向）</h4><ul>
+<li><h5 id="PCA的本质是将数据从一个坐标系转移到另一个坐标系"><a href="#PCA的本质是将数据从一个坐标系转移到另一个坐标系" class="headerlink" title="PCA的本质是将数据从一个坐标系转移到另一个坐标系"></a>PCA的本质是将数据从一个坐标系转移到另一个坐标系</h5></li>
+<li><h5 id="下面是求解过程："><a href="#下面是求解过程：" class="headerlink" title="下面是求解过程："></a>下面是求解过程：</h5><ul>
+<li><p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200814010029327.png" alt="image-20200814010029327"></p>
+<h5 id="先将-X-i-project-乘以单位向量-vec-w-变成-vec-X-i-project-，这个就是数据X在第一主成分上的分量，我们用X减去这一分量，即-vec-X-i-vec-X-i-project-，这是向量的减法，最终得出的是图中绿色的向量。"><a href="#先将-X-i-project-乘以单位向量-vec-w-变成-vec-X-i-project-，这个就是数据X在第一主成分上的分量，我们用X减去这一分量，即-vec-X-i-vec-X-i-project-，这是向量的减法，最终得出的是图中绿色的向量。" class="headerlink" title="先将$|{X^{(i)}_{project}}|$乘以单位向量$\vec{w}$变成$\vec{X^{(i)}_{project}}$，这个就是数据X在第一主成分上的分量，我们用X减去这一分量，即$\vec{X^{(i)}} - \vec{X^{(i)}_{project}}$，这是向量的减法，最终得出的是图中绿色的向量。"></a>先将$|{X^{(i)}_{project}}|$乘以单位向量$\vec{w}$变成$\vec{X^{(i)}_{project}}$，这个就是数据X在第一主成分上的分量，我们用X减去这一分量，即$\vec{X^{(i)}} - \vec{X^{(i)}_{project}}$，这是向量的减法，最终得出的是图中绿色的向量。</h5></li>
+<li><h5 id="然后在新的数据上求第一主成分（即原数据X的第二主成分），以此类推。"><a href="#然后在新的数据上求第一主成分（即原数据X的第二主成分），以此类推。" class="headerlink" title="然后在新的数据上求第一主成分（即原数据X的第二主成分），以此类推。"></a>然后在新的数据上求第一主成分（即原数据X的第二主成分），以此类推。</h5></li>
+</ul>
+</li>
+</ul>
+<h4 id="五、高维数据向低维数据映射"><a href="#五、高维数据向低维数据映射" class="headerlink" title="五、高维数据向低维数据映射"></a>五、高维数据向低维数据映射</h4><h5 id="PCA的本质是将数据从一个坐标系转换到另一个坐标系上，即原来是n维坐标系，转换后也是n维坐标系。但是我们要将高维向低维映射，所以要从转换后的n维坐标系中取前k个坐标轴形成一个k维的坐标系。然后将X中的每一行样本都乘以W中每一个维度的坐标轴。这样就从n维降到了k维："><a href="#PCA的本质是将数据从一个坐标系转换到另一个坐标系上，即原来是n维坐标系，转换后也是n维坐标系。但是我们要将高维向低维映射，所以要从转换后的n维坐标系中取前k个坐标轴形成一个k维的坐标系。然后将X中的每一行样本都乘以W中每一个维度的坐标轴。这样就从n维降到了k维：" class="headerlink" title="PCA的本质是将数据从一个坐标系转换到另一个坐标系上，即原来是n维坐标系，转换后也是n维坐标系。但是我们要将高维向低维映射，所以要从转换后的n维坐标系中取前k个坐标轴形成一个k维的坐标系。然后将X中的每一行样本都乘以W中每一个维度的坐标轴。这样就从n维降到了k维："></a>PCA的本质是将数据从一个坐标系转换到另一个坐标系上，即原来是n维坐标系，转换后也是n维坐标系。但是我们要将高维向低维映射，所以要从转换后的n维坐标系中取前k个坐标轴形成一个k维的坐标系。然后将X中的每一行样本都乘以W中每一个维度的坐标轴。这样就从n维降到了k维：</h5><p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200814224611023.png" alt="image-20200814224611023"></p>
+<h5 id="也可以从k维恢复到n维，但是恢复回来的-X-m-不等于原来的X："><a href="#也可以从k维恢复到n维，但是恢复回来的-X-m-不等于原来的X：" class="headerlink" title="也可以从k维恢复到n维，但是恢复回来的$X_m$不等于原来的X："></a>也可以从k维恢复到n维，但是恢复回来的$X_m$不等于原来的X：</h5><p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200814224911159.png" alt="image-20200814224911159"></p>
+<h4 id="六、PCA在人脸识别中的应用"><a href="#六、PCA在人脸识别中的应用" class="headerlink" title="六、PCA在人脸识别中的应用"></a>六、PCA在人脸识别中的应用</h4><p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200815183722277.png" alt="image-20200815183722277"></p>
+<h5 id="对于-W-k-来说，本身每一行代表一个方向。那么换一种思路：如果每一行看作一个样本，那么第一行表示最能反映原数据X的样本特征，以此类推。"><a href="#对于-W-k-来说，本身每一行代表一个方向。那么换一种思路：如果每一行看作一个样本，那么第一行表示最能反映原数据X的样本特征，以此类推。" class="headerlink" title="对于$W_k$来说，本身每一行代表一个方向。那么换一种思路：如果每一行看作一个样本，那么第一行表示最能反映原数据X的样本特征，以此类推。"></a>对于$W_k$来说，本身每一行代表一个方向。那么换一种思路：如果每一行看作一个样本，那么第一行表示最能反映原数据X的样本特征，以此类推。</h5><h5 id="在人脸识别中-X的每一行对应一个人脸数据，W的每一行也是一个人脸数据，这个就被称为特征脸，所以每一个特征脸其实对应一个主成分"><a href="#在人脸识别中-X的每一行对应一个人脸数据，W的每一行也是一个人脸数据，这个就被称为特征脸，所以每一个特征脸其实对应一个主成分" class="headerlink" title="在人脸识别中,X的每一行对应一个人脸数据，W的每一行也是一个人脸数据，这个就被称为特征脸，所以每一个特征脸其实对应一个主成分"></a>在人脸识别中,X的每一行对应一个人脸数据，W的每一行也是一个人脸数据，这个就被称为特征脸，所以每一个特征脸其实对应一个主成分</h5>]]></content>
+      <categories>
+        <category>机器学习</category>
+      </categories>
+      <tags>
+        <tag>机器学习</tag>
+        <tag>PCA</tag>
+        <tag>非监督学习</tag>
+        <tag>数据降维</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>机器学习笔记11</title>
     <url>/2020/08/15/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B011/</url>
     <content><![CDATA[<h3 id="多项式回归"><a href="#多项式回归" class="headerlink" title="多项式回归"></a>多项式回归</h3><a id="more"></a>
@@ -219,74 +287,6 @@
         <tag>模型正则化</tag>
         <tag>岭回归、LASSO回归</tag>
         <tag>弹性网</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>机器学习笔记10</title>
-    <url>/2020/08/10/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B010/</url>
-    <content><![CDATA[<h4 id="PCA-主成分分析（Principal-Component-Analysis）"><a href="#PCA-主成分分析（Principal-Component-Analysis）" class="headerlink" title="PCA-主成分分析（Principal Component Analysis）"></a>PCA-主成分分析（Principal Component Analysis）</h4><a id="more"></a>
-<h4 id="一、PCA综述"><a href="#一、PCA综述" class="headerlink" title="一、PCA综述"></a>一、PCA综述</h4><p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200810220126595.png" alt="image-20200810220126595"></p>
-<h4 id="二、详解PCA"><a href="#二、详解PCA" class="headerlink" title="二、详解PCA"></a>二、详解PCA</h4><ul>
-<li><p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200810223917827.png" alt="image-20200810223917827"></p>
-<ul>
-<li><h4 id="我们首先想到的降维方法是舍弃特征1或舍弃特征2，这样样本点就会映射到单一坐标轴上，达到了降维的效果。如下图："><a href="#我们首先想到的降维方法是舍弃特征1或舍弃特征2，这样样本点就会映射到单一坐标轴上，达到了降维的效果。如下图：" class="headerlink" title="我们首先想到的降维方法是舍弃特征1或舍弃特征2，这样样本点就会映射到单一坐标轴上，达到了降维的效果。如下图："></a>我们首先想到的降维方法是舍弃特征1或舍弃特征2，这样样本点就会映射到单一坐标轴上，达到了降维的效果。如下图：</h4></li>
-<li><h5 id="左图为舍弃特征1；右图为舍弃特征2："><a href="#左图为舍弃特征1；右图为舍弃特征2：" class="headerlink" title="左图为舍弃特征1；右图为舍弃特征2："></a>左图为舍弃特征1；右图为舍弃特征2：</h5><p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200810224220339.png" alt="image-20200810224220339"></p>
-</li>
-<li><h4 id="显然右图的降维效果比左图好，因为样本点直接距离较大，拥有更高的可区分度"><a href="#显然右图的降维效果比左图好，因为样本点直接距离较大，拥有更高的可区分度" class="headerlink" title="显然右图的降维效果比左图好，因为样本点直接距离较大，拥有更高的可区分度"></a>显然右图的降维效果比左图好，因为样本点直接距离较大，拥有更高的可区分度</h4></li>
-</ul>
-</li>
-<li><h4 id="但是，这是最好的方案吗？显然不是。我们想象一下-能够找到下图这样的一条斜线w-将数据降维到w上-映射到w上-之后-能最好的保留原来的分布特征-且这些点分布在了一个轴上-斜线w-后点和点之间的距离也比之前的两种方案更加的大-此时的区分度也更加明显"><a href="#但是，这是最好的方案吗？显然不是。我们想象一下-能够找到下图这样的一条斜线w-将数据降维到w上-映射到w上-之后-能最好的保留原来的分布特征-且这些点分布在了一个轴上-斜线w-后点和点之间的距离也比之前的两种方案更加的大-此时的区分度也更加明显" class="headerlink" title="但是，这是最好的方案吗？显然不是。我们想象一下,能够找到下图这样的一条斜线w,将数据降维到w上(映射到w上)之后,能最好的保留原来的分布特征,且这些点分布在了一个轴上(斜线w)后点和点之间的距离也比之前的两种方案更加的大,此时的区分度也更加明显"></a>但是，这是最好的方案吗？显然不是。我们想象一下,能够找到下图这样的一条斜线w,将数据降维到w上(映射到w上)之后,能最好的保留原来的分布特征,且这些点分布在了一个轴上(斜线w)后点和点之间的距离也比之前的两种方案更加的大,此时的区分度也更加明显</h4><ul>
-<li><p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200810224703164.png" alt="image-20200810224703164"></p>
-</li>
-<li><h4 id="接下来我们要思考以下两个问题了："><a href="#接下来我们要思考以下两个问题了：" class="headerlink" title="接下来我们要思考以下两个问题了："></a>接下来我们要思考以下两个问题了：</h4><ul>
-<li><h5 id="如何找到让这个样本降维后间距最大的轴"><a href="#如何找到让这个样本降维后间距最大的轴" class="headerlink" title="如何找到让这个样本降维后间距最大的轴?"></a>如何找到让这个样本降维后间距最大的轴?</h5></li>
-<li><h5 id="如何定义样本间距"><a href="#如何定义样本间距" class="headerlink" title="如何定义样本间距?"></a>如何定义样本间距?</h5></li>
-</ul>
-</li>
-<li><h4 id="在统计学中-有一个直接的指标可以表示样本间的间距-离散程度-那就是方差-Variance"><a href="#在统计学中-有一个直接的指标可以表示样本间的间距-离散程度-那就是方差-Variance" class="headerlink" title="在统计学中,有一个直接的指标可以表示样本间的间距(离散程度),那就是方差(Variance)"></a>在统计学中,有一个直接的指标可以表示样本间的间距(离散程度),那就是方差(Variance)</h4><p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200810225109737.png" alt="image-20200810225109737"></p>
-</li>
-<li><h4 id="上述的问题就变为了：找到一个轴-使得样本空间的所有点映射到这个轴之后-方差最大"><a href="#上述的问题就变为了：找到一个轴-使得样本空间的所有点映射到这个轴之后-方差最大" class="headerlink" title="上述的问题就变为了：找到一个轴,使得样本空间的所有点映射到这个轴之后,方差最大"></a>上述的问题就变为了：找到一个轴,使得样本空间的所有点映射到这个轴之后,方差最大</h4></li>
-<li><h4 id="接下来就是求解这个轴："><a href="#接下来就是求解这个轴：" class="headerlink" title="接下来就是求解这个轴："></a>接下来就是求解这个轴：</h4><ul>
-<li><h5 id="首先，将样例的均值归为0（demean），即将所有样本减去这批样本的均值-所有的样本点都会移动，因此可以看作样本点不动，移动坐标轴-，之后就变为了下图所示"><a href="#首先，将样例的均值归为0（demean），即将所有样本减去这批样本的均值-所有的样本点都会移动，因此可以看作样本点不动，移动坐标轴-，之后就变为了下图所示" class="headerlink" title="首先，将样例的均值归为0（demean），即将所有样本减去这批样本的均值(所有的样本点都会移动，因此可以看作样本点不动，移动坐标轴)，之后就变为了下图所示"></a>首先，将样例的均值归为0（demean），即将所有样本减去这批样本的均值(所有的样本点都会移动，因此可以看作样本点不动，移动坐标轴)，之后就变为了下图所示</h5><p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200810225647955.png" alt="image-20200810225647955"></p>
-<h5 id="此时的样本的均值就为0，方差就变成了"><a href="#此时的样本的均值就为0，方差就变成了" class="headerlink" title="此时的样本的均值就为0，方差就变成了"></a>此时的样本的均值就为0，方差就变成了</h5><p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200810230237650.png" alt="image-20200810230237650"></p>
-</li>
-<li><h5 id="我们想要求w轴的方向-w1-w2-使得-Var-Xproject-最大，Xproject-是映射到w轴之后的X的坐标："><a href="#我们想要求w轴的方向-w1-w2-使得-Var-Xproject-最大，Xproject-是映射到w轴之后的X的坐标：" class="headerlink" title="我们想要求w轴的方向(w1,w2),使得 Var(Xproject) 最大，Xproject 是映射到w轴之后的X的坐标："></a>我们想要求w轴的方向(w1,w2),使得 <em>Var(X<strong>project</strong>)</em> 最大，<em>X</em>project 是映射到w轴之后的X的坐标：</h5><p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200810230906480.png" alt="image-20200810230906480"></p>
-<h5 id="注意：因为X是矩阵，X-i-是X中的一个向量，所以在公式中不能写成括号的平方，而是模的平方"><a href="#注意：因为X是矩阵，X-i-是X中的一个向量，所以在公式中不能写成括号的平方，而是模的平方" class="headerlink" title="注意：因为X是矩阵，X(i)是X中的一个向量，所以在公式中不能写成括号的平方，而是模的平方"></a>注意：因为X是矩阵，X(i)是X中的一个向量，所以在公式中不能写成括号的平方，而是模的平方</h5><h5 id="接下来求解-X-i-project-，即如何用-X-i-表示（下图点积可以参考《机器学习中的数学》13页-1-4-4）"><a href="#接下来求解-X-i-project-，即如何用-X-i-表示（下图点积可以参考《机器学习中的数学》13页-1-4-4）" class="headerlink" title="接下来求解$X^{(i)}_{project}$，即如何用$X^{(i)}$表示（下图点积可以参考《机器学习中的数学》13页 1.4.4）"></a>接下来求解$X^{(i)}_{project}$，即如何用$X^{(i)}$表示（下图点积可以参考《机器学习中的数学》13页 1.4.4）</h5><p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200810233526467.png" alt="image-20200810233526467"></p>
-<h5 id="注意：因为我们要将样本点映射到w方向上，所以将w定义为单位向量，其实最终求得是样本点向量在w方向上的分量，即蓝色线条，它对应的就是-vec-X-i-project"><a href="#注意：因为我们要将样本点映射到w方向上，所以将w定义为单位向量，其实最终求得是样本点向量在w方向上的分量，即蓝色线条，它对应的就是-vec-X-i-project" class="headerlink" title="注意：因为我们要将样本点映射到w方向上，所以将w定义为单位向量，其实最终求得是样本点向量在w方向上的分量，即蓝色线条，它对应的就是$\vec{X^{(i)}_{project}}$"></a>注意：因为我们要将样本点映射到w方向上，所以将w定义为单位向量，其实最终求得是样本点向量在w方向上的分量，即蓝色线条，它对应的就是$\vec{X^{(i)}_{project}}$</h5></li>
-</ul>
-</li>
-<li><h4 id="最终："><a href="#最终：" class="headerlink" title="最终："></a>最终：</h4><p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200810234231684.png" alt="image-20200810234231684"></p>
-</li>
-</ul>
-</li>
-</ul>
-<h4 id="三、使用梯度上升法解决PCA问题"><a href="#三、使用梯度上升法解决PCA问题" class="headerlink" title="三、使用梯度上升法解决PCA问题"></a>三、使用梯度上升法解决PCA问题</h4><p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200810235951325.png" alt="image-20200810235951325"></p>
-<h4 id="接下来进行向量化，让其运行效率更高"><a href="#接下来进行向量化，让其运行效率更高" class="headerlink" title="接下来进行向量化，让其运行效率更高"></a>接下来进行向量化，让其运行效率更高</h4><ul>
-<li><h5 id="在向量化时要想清楚谁是矩阵，谁是向量，向量是行还是列向量"><a href="#在向量化时要想清楚谁是矩阵，谁是向量，向量是行还是列向量" class="headerlink" title="在向量化时要想清楚谁是矩阵，谁是向量，向量是行还是列向量"></a>在向量化时要想清楚谁是矩阵，谁是向量，向量是行还是列向量</h5></li>
-</ul>
-<p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200811000106484.png" alt="image-20200811000106484"></p>
-<h4 id="最终结果"><a href="#最终结果" class="headerlink" title="最终结果"></a>最终结果</h4><p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200811000436388.png" alt="image-20200811000436388"></p>
-<h4 id="四、求数据的前n个主成分（即新坐标系的每一个轴对应的方向）"><a href="#四、求数据的前n个主成分（即新坐标系的每一个轴对应的方向）" class="headerlink" title="四、求数据的前n个主成分（即新坐标系的每一个轴对应的方向）"></a>四、求数据的前n个主成分（即新坐标系的每一个轴对应的方向）</h4><ul>
-<li><h5 id="PCA的本质是将数据从一个坐标系转移到另一个坐标系"><a href="#PCA的本质是将数据从一个坐标系转移到另一个坐标系" class="headerlink" title="PCA的本质是将数据从一个坐标系转移到另一个坐标系"></a>PCA的本质是将数据从一个坐标系转移到另一个坐标系</h5></li>
-<li><h5 id="下面是求解过程："><a href="#下面是求解过程：" class="headerlink" title="下面是求解过程："></a>下面是求解过程：</h5><ul>
-<li><p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200814010029327.png" alt="image-20200814010029327"></p>
-<h5 id="先将-X-i-project-乘以单位向量-vec-w-变成-vec-X-i-project-，这个就是数据X在第一主成分上的分量，我们用X减去这一分量，即-vec-X-i-vec-X-i-project-，这是向量的减法，最终得出的是图中绿色的向量。"><a href="#先将-X-i-project-乘以单位向量-vec-w-变成-vec-X-i-project-，这个就是数据X在第一主成分上的分量，我们用X减去这一分量，即-vec-X-i-vec-X-i-project-，这是向量的减法，最终得出的是图中绿色的向量。" class="headerlink" title="先将$|{X^{(i)}_{project}}|$乘以单位向量$\vec{w}$变成$\vec{X^{(i)}_{project}}$，这个就是数据X在第一主成分上的分量，我们用X减去这一分量，即$\vec{X^{(i)}} - \vec{X^{(i)}_{project}}$，这是向量的减法，最终得出的是图中绿色的向量。"></a>先将$|{X^{(i)}_{project}}|$乘以单位向量$\vec{w}$变成$\vec{X^{(i)}_{project}}$，这个就是数据X在第一主成分上的分量，我们用X减去这一分量，即$\vec{X^{(i)}} - \vec{X^{(i)}_{project}}$，这是向量的减法，最终得出的是图中绿色的向量。</h5></li>
-<li><h5 id="然后在新的数据上求第一主成分（即原数据X的第二主成分），以此类推。"><a href="#然后在新的数据上求第一主成分（即原数据X的第二主成分），以此类推。" class="headerlink" title="然后在新的数据上求第一主成分（即原数据X的第二主成分），以此类推。"></a>然后在新的数据上求第一主成分（即原数据X的第二主成分），以此类推。</h5></li>
-</ul>
-</li>
-</ul>
-<h4 id="五、高维数据向低维数据映射"><a href="#五、高维数据向低维数据映射" class="headerlink" title="五、高维数据向低维数据映射"></a>五、高维数据向低维数据映射</h4><h5 id="PCA的本质是将数据从一个坐标系转换到另一个坐标系上，即原来是n维坐标系，转换后也是n维坐标系。但是我们要将高维向低维映射，所以要从转换后的n维坐标系中取前k个坐标轴形成一个k维的坐标系。然后将X中的每一行样本都乘以W中每一个维度的坐标轴。这样就从n维降到了k维："><a href="#PCA的本质是将数据从一个坐标系转换到另一个坐标系上，即原来是n维坐标系，转换后也是n维坐标系。但是我们要将高维向低维映射，所以要从转换后的n维坐标系中取前k个坐标轴形成一个k维的坐标系。然后将X中的每一行样本都乘以W中每一个维度的坐标轴。这样就从n维降到了k维：" class="headerlink" title="PCA的本质是将数据从一个坐标系转换到另一个坐标系上，即原来是n维坐标系，转换后也是n维坐标系。但是我们要将高维向低维映射，所以要从转换后的n维坐标系中取前k个坐标轴形成一个k维的坐标系。然后将X中的每一行样本都乘以W中每一个维度的坐标轴。这样就从n维降到了k维："></a>PCA的本质是将数据从一个坐标系转换到另一个坐标系上，即原来是n维坐标系，转换后也是n维坐标系。但是我们要将高维向低维映射，所以要从转换后的n维坐标系中取前k个坐标轴形成一个k维的坐标系。然后将X中的每一行样本都乘以W中每一个维度的坐标轴。这样就从n维降到了k维：</h5><p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200814224611023.png" alt="image-20200814224611023"></p>
-<h5 id="也可以从k维恢复到n维，但是恢复回来的-X-m-不等于原来的X："><a href="#也可以从k维恢复到n维，但是恢复回来的-X-m-不等于原来的X：" class="headerlink" title="也可以从k维恢复到n维，但是恢复回来的$X_m$不等于原来的X："></a>也可以从k维恢复到n维，但是恢复回来的$X_m$不等于原来的X：</h5><p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200814224911159.png" alt="image-20200814224911159"></p>
-<h4 id="六、PCA在人脸识别中的应用"><a href="#六、PCA在人脸识别中的应用" class="headerlink" title="六、PCA在人脸识别中的应用"></a>六、PCA在人脸识别中的应用</h4><p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200815183722277.png" alt="image-20200815183722277"></p>
-<h5 id="对于-W-k-来说，本身每一行代表一个方向。那么换一种思路：如果每一行看作一个样本，那么第一行表示最能反映原数据X的样本特征，以此类推。"><a href="#对于-W-k-来说，本身每一行代表一个方向。那么换一种思路：如果每一行看作一个样本，那么第一行表示最能反映原数据X的样本特征，以此类推。" class="headerlink" title="对于$W_k$来说，本身每一行代表一个方向。那么换一种思路：如果每一行看作一个样本，那么第一行表示最能反映原数据X的样本特征，以此类推。"></a>对于$W_k$来说，本身每一行代表一个方向。那么换一种思路：如果每一行看作一个样本，那么第一行表示最能反映原数据X的样本特征，以此类推。</h5><h5 id="在人脸识别中-X的每一行对应一个人脸数据，W的每一行也是一个人脸数据，这个就被称为特征脸，所以每一个特征脸其实对应一个主成分"><a href="#在人脸识别中-X的每一行对应一个人脸数据，W的每一行也是一个人脸数据，这个就被称为特征脸，所以每一个特征脸其实对应一个主成分" class="headerlink" title="在人脸识别中,X的每一行对应一个人脸数据，W的每一行也是一个人脸数据，这个就被称为特征脸，所以每一个特征脸其实对应一个主成分"></a>在人脸识别中,X的每一行对应一个人脸数据，W的每一行也是一个人脸数据，这个就被称为特征脸，所以每一个特征脸其实对应一个主成分</h5>]]></content>
-      <categories>
-        <category>机器学习</category>
-      </categories>
-      <tags>
-        <tag>机器学习</tag>
-        <tag>PCA</tag>
-        <tag>非监督学习</tag>
-        <tag>数据降维</tag>
       </tags>
   </entry>
   <entry>
@@ -495,47 +495,6 @@
       </tags>
   </entry>
   <entry>
-    <title>机器学习笔记14</title>
-    <url>/2020/09/21/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B014/</url>
-    <content><![CDATA[<h3 id="SVM"><a href="#SVM" class="headerlink" title="SVM"></a>SVM</h3><a id="more"></a>
-<ul>
-<li><h4 id="机器学习：SVM（基础理解）"><a href="#机器学习：SVM（基础理解）" class="headerlink" title="机器学习：SVM（基础理解）"></a><a href="https://www.cnblogs.com/volcao/p/9411514.html" target="_blank" rel="noopener">机器学习：SVM（基础理解）</a></h4></li>
-<li><h4 id="机器学习：SVM（目标函数推导：Hard-Margin-SVM、Soft-Margin-SVM）"><a href="#机器学习：SVM（目标函数推导：Hard-Margin-SVM、Soft-Margin-SVM）" class="headerlink" title="机器学习：SVM（目标函数推导：Hard Margin SVM、Soft Margin SVM）"></a><a href="https://www.cnblogs.com/volcao/p/9413528.html" target="_blank" rel="noopener">机器学习：SVM（目标函数推导：Hard Margin SVM、Soft Margin SVM）</a></h4></li>
-<li><h4 id="机器学习：SVM（scikit-learn-中的-SVM：LinearSVC）"><a href="#机器学习：SVM（scikit-learn-中的-SVM：LinearSVC）" class="headerlink" title="机器学习：SVM（scikit-learn 中的 SVM：LinearSVC）"></a><a href="https://www.cnblogs.com/volcao/p/9464009.html" target="_blank" rel="noopener">机器学习：SVM（scikit-learn 中的 SVM：LinearSVC）</a></h4></li>
-<li><h4 id="机器学习：SVM（非线性数据分类：SVM中使用多项式特征和核函数SVC）"><a href="#机器学习：SVM（非线性数据分类：SVM中使用多项式特征和核函数SVC）" class="headerlink" title="机器学习：SVM（非线性数据分类：SVM中使用多项式特征和核函数SVC）"></a><a href="https://www.cnblogs.com/volcao/p/9464991.html" target="_blank" rel="noopener">机器学习：SVM（非线性数据分类：SVM中使用多项式特征和核函数SVC）</a></h4></li>
-<li><h4 id="机器学习：SVM（核函数、高斯核函数RBF）"><a href="#机器学习：SVM（核函数、高斯核函数RBF）" class="headerlink" title="机器学习：SVM（核函数、高斯核函数RBF）"></a><a href="https://www.cnblogs.com/volcao/p/9465214.html" target="_blank" rel="noopener">机器学习：SVM（核函数、高斯核函数RBF）</a></h4></li>
-<li><h4 id="机器学习：SVM（scikit-learn-中的-RBF、RBF-中的超参数-γ）"><a href="#机器学习：SVM（scikit-learn-中的-RBF、RBF-中的超参数-γ）" class="headerlink" title="机器学习：SVM（scikit-learn 中的 RBF、RBF 中的超参数 γ）"></a><a href="https://www.cnblogs.com/volcao/p/9470209.html" target="_blank" rel="noopener">机器学习：SVM（scikit-learn 中的 RBF、RBF 中的超参数 γ）</a></h4></li>
-<li><h4 id="机器学习：SVM（SVM-思想解决回归问题）"><a href="#机器学习：SVM（SVM-思想解决回归问题）" class="headerlink" title="机器学习：SVM（SVM 思想解决回归问题）"></a><a href="https://www.cnblogs.com/volcao/p/9471800.html" target="_blank" rel="noopener">机器学习：SVM（SVM 思想解决回归问题）</a></h4></li>
-</ul>
-<h3 id="决策树"><a href="#决策树" class="headerlink" title="决策树"></a>决策树</h3><ul>
-<li><h4 id="机器学习：决策树（基本思想、信息熵、构建决策树的问题及思想）"><a href="#机器学习：决策树（基本思想、信息熵、构建决策树的问题及思想）" class="headerlink" title="机器学习：决策树（基本思想、信息熵、构建决策树的问题及思想）"></a><a href="https://www.cnblogs.com/volcao/p/9474366.html" target="_blank" rel="noopener">机器学习：决策树（基本思想、信息熵、构建决策树的问题及思想）</a></h4></li>
-<li><h4 id="机器学习：决策树（使用信息熵寻找最优划分）"><a href="#机器学习：决策树（使用信息熵寻找最优划分）" class="headerlink" title="机器学习：决策树（使用信息熵寻找最优划分）"></a><a href="https://www.cnblogs.com/volcao/p/9477776.html" target="_blank" rel="noopener">机器学习：决策树（使用信息熵寻找最优划分）</a></h4></li>
-<li><h4 id="机器学习：决策树（使用基尼系数划分节点数据集）"><a href="#机器学习：决策树（使用基尼系数划分节点数据集）" class="headerlink" title="机器学习：决策树（使用基尼系数划分节点数据集）"></a><a href="https://www.cnblogs.com/volcao/p/9478314.html" target="_blank" rel="noopener">机器学习：决策树（使用基尼系数划分节点数据集）</a></h4></li>
-<li><h4 id="机器学习：决策树（CART-、决策树中的超参数）"><a href="#机器学习：决策树（CART-、决策树中的超参数）" class="headerlink" title="机器学习：决策树（CART 、决策树中的超参数）"></a><a href="https://www.cnblogs.com/volcao/p/9480431.html" target="_blank" rel="noopener">机器学习：决策树（CART 、决策树中的超参数）</a></h4></li>
-<li><h4 id="机器学习：决策树（决策树解决回归问题、决策树算法的局限性）"><a href="#机器学习：决策树（决策树解决回归问题、决策树算法的局限性）" class="headerlink" title="机器学习：决策树（决策树解决回归问题、决策树算法的局限性）"></a><a href="https://www.cnblogs.com/volcao/p/9481634.html" target="_blank" rel="noopener">机器学习：决策树（决策树解决回归问题、决策树算法的局限性）</a></h4></li>
-</ul>
-<h3 id="集成学习"><a href="#集成学习" class="headerlink" title="集成学习"></a>集成学习</h3><ul>
-<li><h4 id="机器学习：集成学习（集成学习思想、scikit-learn-中的集成分类器）"><a href="#机器学习：集成学习（集成学习思想、scikit-learn-中的集成分类器）" class="headerlink" title="机器学习：集成学习（集成学习思想、scikit-learn 中的集成分类器）"></a><a href="https://www.cnblogs.com/volcao/p/9482268.html" target="_blank" rel="noopener">机器学习：集成学习（集成学习思想、scikit-learn 中的集成分类器）</a></h4></li>
-<li><h4 id="机器学习：集成学习（Soft-Voting-Classifier）"><a href="#机器学习：集成学习（Soft-Voting-Classifier）" class="headerlink" title="机器学习：集成学习（Soft Voting Classifier）"></a><a href="https://www.cnblogs.com/volcao/p/9483026.html" target="_blank" rel="noopener">机器学习：集成学习（Soft Voting Classifier）</a></h4></li>
-<li><h4 id="机器学习：集成学习（Bagging、Pasting）"><a href="#机器学习：集成学习（Bagging、Pasting）" class="headerlink" title="机器学习：集成学习（Bagging、Pasting）"></a><a href="https://www.cnblogs.com/volcao/p/9486417.html" target="_blank" rel="noopener">机器学习：集成学习（Bagging、Pasting）</a></h4></li>
-<li><h4 id="机器学习：集成学习（OOB-和-关于-Bagging-的更多讨论）"><a href="#机器学习：集成学习（OOB-和-关于-Bagging-的更多讨论）" class="headerlink" title="机器学习：集成学习（OOB 和 关于 Bagging 的更多讨论）"></a><a href="https://www.cnblogs.com/volcao/p/9488113.html" target="_blank" rel="noopener">机器学习：集成学习（OOB 和 关于 Bagging 的更多讨论）</a></h4></li>
-<li><h4 id="机器学习：集成学习（随机森林、集成学习参数）"><a href="#机器学习：集成学习（随机森林、集成学习参数）" class="headerlink" title="机器学习：集成学习（随机森林、集成学习参数）"></a><a href="https://www.cnblogs.com/volcao/p/9488771.html" target="_blank" rel="noopener">机器学习：集成学习（随机森林、集成学习参数）</a></h4></li>
-<li><h4 id="机器学习：集成学习（Ada-Boosting-和-Gradient-Boosting）"><a href="#机器学习：集成学习（Ada-Boosting-和-Gradient-Boosting）" class="headerlink" title="机器学习：集成学习（Ada Boosting 和 Gradient Boosting）"></a><a href="https://www.cnblogs.com/volcao/p/9490651.html" target="_blank" rel="noopener">机器学习：集成学习（Ada Boosting 和 Gradient Boosting）</a></h4></li>
-<li><h4 id="GBDT"><a href="#GBDT" class="headerlink" title="GBDT"></a><a href="http://mantchs.com/2019/07/09/ML/GBDT/" target="_blank" rel="noopener">GBDT</a></h4></li>
-<li><h4 id="XGBoost"><a href="#XGBoost" class="headerlink" title="XGBoost"></a><a href="http://mantchs.com/2019/07/10/ML/XGBoost/" target="_blank" rel="noopener">XGBoost</a></h4></li>
-</ul>
-]]></content>
-      <categories>
-        <category>机器学习</category>
-      </categories>
-      <tags>
-        <tag>SVM</tag>
-        <tag>决策树</tag>
-        <tag>随机森林</tag>
-        <tag>集成学习</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>机器学习笔记2</title>
     <url>/2020/07/21/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B02/</url>
     <content><![CDATA[<h3 id="机器学习基础"><a href="#机器学习基础" class="headerlink" title="机器学习基础"></a>机器学习基础</h3><h4 id="一：机器学习的数据"><a href="#一：机器学习的数据" class="headerlink" title="一：机器学习的数据"></a>一：机器学习的数据</h4><a id="more"></a>
@@ -671,6 +630,47 @@
         <tag>机器学习</tag>
         <tag>Python</tag>
         <tag>机器学习基础概念</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>机器学习笔记14</title>
+    <url>/2020/09/21/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B014/</url>
+    <content><![CDATA[<h3 id="SVM"><a href="#SVM" class="headerlink" title="SVM"></a>SVM</h3><a id="more"></a>
+<ul>
+<li><h4 id="机器学习：SVM（基础理解）"><a href="#机器学习：SVM（基础理解）" class="headerlink" title="机器学习：SVM（基础理解）"></a><a href="https://www.cnblogs.com/volcao/p/9411514.html" target="_blank" rel="noopener">机器学习：SVM（基础理解）</a></h4></li>
+<li><h4 id="机器学习：SVM（目标函数推导：Hard-Margin-SVM、Soft-Margin-SVM）"><a href="#机器学习：SVM（目标函数推导：Hard-Margin-SVM、Soft-Margin-SVM）" class="headerlink" title="机器学习：SVM（目标函数推导：Hard Margin SVM、Soft Margin SVM）"></a><a href="https://www.cnblogs.com/volcao/p/9413528.html" target="_blank" rel="noopener">机器学习：SVM（目标函数推导：Hard Margin SVM、Soft Margin SVM）</a></h4></li>
+<li><h4 id="机器学习：SVM（scikit-learn-中的-SVM：LinearSVC）"><a href="#机器学习：SVM（scikit-learn-中的-SVM：LinearSVC）" class="headerlink" title="机器学习：SVM（scikit-learn 中的 SVM：LinearSVC）"></a><a href="https://www.cnblogs.com/volcao/p/9464009.html" target="_blank" rel="noopener">机器学习：SVM（scikit-learn 中的 SVM：LinearSVC）</a></h4></li>
+<li><h4 id="机器学习：SVM（非线性数据分类：SVM中使用多项式特征和核函数SVC）"><a href="#机器学习：SVM（非线性数据分类：SVM中使用多项式特征和核函数SVC）" class="headerlink" title="机器学习：SVM（非线性数据分类：SVM中使用多项式特征和核函数SVC）"></a><a href="https://www.cnblogs.com/volcao/p/9464991.html" target="_blank" rel="noopener">机器学习：SVM（非线性数据分类：SVM中使用多项式特征和核函数SVC）</a></h4></li>
+<li><h4 id="机器学习：SVM（核函数、高斯核函数RBF）"><a href="#机器学习：SVM（核函数、高斯核函数RBF）" class="headerlink" title="机器学习：SVM（核函数、高斯核函数RBF）"></a><a href="https://www.cnblogs.com/volcao/p/9465214.html" target="_blank" rel="noopener">机器学习：SVM（核函数、高斯核函数RBF）</a></h4></li>
+<li><h4 id="机器学习：SVM（scikit-learn-中的-RBF、RBF-中的超参数-γ）"><a href="#机器学习：SVM（scikit-learn-中的-RBF、RBF-中的超参数-γ）" class="headerlink" title="机器学习：SVM（scikit-learn 中的 RBF、RBF 中的超参数 γ）"></a><a href="https://www.cnblogs.com/volcao/p/9470209.html" target="_blank" rel="noopener">机器学习：SVM（scikit-learn 中的 RBF、RBF 中的超参数 γ）</a></h4></li>
+<li><h4 id="机器学习：SVM（SVM-思想解决回归问题）"><a href="#机器学习：SVM（SVM-思想解决回归问题）" class="headerlink" title="机器学习：SVM（SVM 思想解决回归问题）"></a><a href="https://www.cnblogs.com/volcao/p/9471800.html" target="_blank" rel="noopener">机器学习：SVM（SVM 思想解决回归问题）</a></h4></li>
+</ul>
+<h3 id="决策树"><a href="#决策树" class="headerlink" title="决策树"></a>决策树</h3><ul>
+<li><h4 id="机器学习：决策树（基本思想、信息熵、构建决策树的问题及思想）"><a href="#机器学习：决策树（基本思想、信息熵、构建决策树的问题及思想）" class="headerlink" title="机器学习：决策树（基本思想、信息熵、构建决策树的问题及思想）"></a><a href="https://www.cnblogs.com/volcao/p/9474366.html" target="_blank" rel="noopener">机器学习：决策树（基本思想、信息熵、构建决策树的问题及思想）</a></h4></li>
+<li><h4 id="机器学习：决策树（使用信息熵寻找最优划分）"><a href="#机器学习：决策树（使用信息熵寻找最优划分）" class="headerlink" title="机器学习：决策树（使用信息熵寻找最优划分）"></a><a href="https://www.cnblogs.com/volcao/p/9477776.html" target="_blank" rel="noopener">机器学习：决策树（使用信息熵寻找最优划分）</a></h4></li>
+<li><h4 id="机器学习：决策树（使用基尼系数划分节点数据集）"><a href="#机器学习：决策树（使用基尼系数划分节点数据集）" class="headerlink" title="机器学习：决策树（使用基尼系数划分节点数据集）"></a><a href="https://www.cnblogs.com/volcao/p/9478314.html" target="_blank" rel="noopener">机器学习：决策树（使用基尼系数划分节点数据集）</a></h4></li>
+<li><h4 id="机器学习：决策树（CART-、决策树中的超参数）"><a href="#机器学习：决策树（CART-、决策树中的超参数）" class="headerlink" title="机器学习：决策树（CART 、决策树中的超参数）"></a><a href="https://www.cnblogs.com/volcao/p/9480431.html" target="_blank" rel="noopener">机器学习：决策树（CART 、决策树中的超参数）</a></h4></li>
+<li><h4 id="机器学习：决策树（决策树解决回归问题、决策树算法的局限性）"><a href="#机器学习：决策树（决策树解决回归问题、决策树算法的局限性）" class="headerlink" title="机器学习：决策树（决策树解决回归问题、决策树算法的局限性）"></a><a href="https://www.cnblogs.com/volcao/p/9481634.html" target="_blank" rel="noopener">机器学习：决策树（决策树解决回归问题、决策树算法的局限性）</a></h4></li>
+</ul>
+<h3 id="集成学习"><a href="#集成学习" class="headerlink" title="集成学习"></a>集成学习</h3><ul>
+<li><h4 id="机器学习：集成学习（集成学习思想、scikit-learn-中的集成分类器）"><a href="#机器学习：集成学习（集成学习思想、scikit-learn-中的集成分类器）" class="headerlink" title="机器学习：集成学习（集成学习思想、scikit-learn 中的集成分类器）"></a><a href="https://www.cnblogs.com/volcao/p/9482268.html" target="_blank" rel="noopener">机器学习：集成学习（集成学习思想、scikit-learn 中的集成分类器）</a></h4></li>
+<li><h4 id="机器学习：集成学习（Soft-Voting-Classifier）"><a href="#机器学习：集成学习（Soft-Voting-Classifier）" class="headerlink" title="机器学习：集成学习（Soft Voting Classifier）"></a><a href="https://www.cnblogs.com/volcao/p/9483026.html" target="_blank" rel="noopener">机器学习：集成学习（Soft Voting Classifier）</a></h4></li>
+<li><h4 id="机器学习：集成学习（Bagging、Pasting）"><a href="#机器学习：集成学习（Bagging、Pasting）" class="headerlink" title="机器学习：集成学习（Bagging、Pasting）"></a><a href="https://www.cnblogs.com/volcao/p/9486417.html" target="_blank" rel="noopener">机器学习：集成学习（Bagging、Pasting）</a></h4></li>
+<li><h4 id="机器学习：集成学习（OOB-和-关于-Bagging-的更多讨论）"><a href="#机器学习：集成学习（OOB-和-关于-Bagging-的更多讨论）" class="headerlink" title="机器学习：集成学习（OOB 和 关于 Bagging 的更多讨论）"></a><a href="https://www.cnblogs.com/volcao/p/9488113.html" target="_blank" rel="noopener">机器学习：集成学习（OOB 和 关于 Bagging 的更多讨论）</a></h4></li>
+<li><h4 id="机器学习：集成学习（随机森林、集成学习参数）"><a href="#机器学习：集成学习（随机森林、集成学习参数）" class="headerlink" title="机器学习：集成学习（随机森林、集成学习参数）"></a><a href="https://www.cnblogs.com/volcao/p/9488771.html" target="_blank" rel="noopener">机器学习：集成学习（随机森林、集成学习参数）</a></h4></li>
+<li><h4 id="机器学习：集成学习（Ada-Boosting-和-Gradient-Boosting）"><a href="#机器学习：集成学习（Ada-Boosting-和-Gradient-Boosting）" class="headerlink" title="机器学习：集成学习（Ada Boosting 和 Gradient Boosting）"></a><a href="https://www.cnblogs.com/volcao/p/9490651.html" target="_blank" rel="noopener">机器学习：集成学习（Ada Boosting 和 Gradient Boosting）</a></h4></li>
+<li><h4 id="GBDT"><a href="#GBDT" class="headerlink" title="GBDT"></a><a href="http://mantchs.com/2019/07/09/ML/GBDT/" target="_blank" rel="noopener">GBDT</a></h4></li>
+<li><h4 id="XGBoost"><a href="#XGBoost" class="headerlink" title="XGBoost"></a><a href="http://mantchs.com/2019/07/10/ML/XGBoost/" target="_blank" rel="noopener">XGBoost</a></h4></li>
+</ul>
+]]></content>
+      <categories>
+        <category>机器学习</category>
+      </categories>
+      <tags>
+        <tag>SVM</tag>
+        <tag>决策树</tag>
+        <tag>随机森林</tag>
+        <tag>集成学习</tag>
       </tags>
   </entry>
   <entry>
@@ -903,6 +903,31 @@
       </tags>
   </entry>
   <entry>
+    <title>机器学习笔记8</title>
+    <url>/2020/07/30/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B08/</url>
+    <content><![CDATA[<h3 id="多元线性回归"><a href="#多元线性回归" class="headerlink" title="多元线性回归"></a>多元线性回归</h3><a id="more"></a>
+<h4 id="一、什么是多元线性回归"><a href="#一、什么是多元线性回归" class="headerlink" title="一、什么是多元线性回归"></a>一、什么是多元线性回归</h4><p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200730235347025.png" alt="image-20200730235347025"></p>
+<h4 id="二、多元线性回归的正规方程解"><a href="#二、多元线性回归的正规方程解" class="headerlink" title="二、多元线性回归的正规方程解"></a>二、多元线性回归的正规方程解</h4><p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200731030050773.png" alt="image-20200731030050773"></p>
+<p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200731030338464.png" alt="image-20200731030338464"></p>
+<h4 id="因为X是一个特征矩阵，所以X-i-本身就是行向量，因此-theta必须由行向量转置为列向量"><a href="#因为X是一个特征矩阵，所以X-i-本身就是行向量，因此-theta必须由行向量转置为列向量" class="headerlink" title="因为X是一个特征矩阵，所以X^{(i)}本身就是行向量，因此\theta必须由行向量转置为列向量"></a>因为X是一个特征矩阵，所以<script type="math/tex">X^{(i)}</script>本身就是行向量，因此<script type="math/tex">\theta</script>必须由行向量转置为列向量</h4><h4 id="接下来进一步推广到整个特征矩阵"><a href="#接下来进一步推广到整个特征矩阵" class="headerlink" title="接下来进一步推广到整个特征矩阵"></a>接下来进一步推广到整个特征矩阵</h4><p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200731031136440.png" alt="image-20200731031136440"></p>
+<h4 id="因为X-b是m-n的矩阵，-theta-是n行列向量，所以-hat-y-是一个m行的列向量"><a href="#因为X-b是m-n的矩阵，-theta-是n行列向量，所以-hat-y-是一个m行的列向量" class="headerlink" title="因为X_b是m*n的矩阵，\theta 是n行列向量，所以\hat{y}是一个m行的列向量"></a>因为<script type="math/tex">X_b</script>是m*n的矩阵，<script type="math/tex">\theta</script> 是n行列向量，所以<script type="math/tex">\hat{y}</script>是一个m行的列向量</h4><p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200731032608917.png" alt="image-20200731032608917"></p>
+<p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200731032641791.png" alt="image-20200731032641791"></p>
+<p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200731032712657.png" alt="image-20200731032712657"></p>
+<h4 id="因为-theta只是X前面的系数，与量纲无关，所以不需要归一化处理"><a href="#因为-theta只是X前面的系数，与量纲无关，所以不需要归一化处理" class="headerlink" title="因为\theta只是X前面的系数，与量纲无关，所以不需要归一化处理"></a>因为<script type="math/tex">\theta</script>只是X前面的系数，与量纲无关，所以不需要归一化处理</h4><h4 id="三、线性回归总结"><a href="#三、线性回归总结" class="headerlink" title="三、线性回归总结"></a>三、线性回归总结</h4><p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200805000611219.png" alt="image-20200805000611219"></p>
+<p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200805000625908.png" alt="image-20200805000625908"></p>
+<p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200805000642638.png" alt="image-20200805000642638"></p>
+<h4 id="关于可解释性，我们拿波士顿房价预测来说，训练得到的参数的正负表示该特征与房价呈正相关还是负相关；绝对值大小表示对房价的影响程度，越大则对房价影响越大，具体看Jupyter。"><a href="#关于可解释性，我们拿波士顿房价预测来说，训练得到的参数的正负表示该特征与房价呈正相关还是负相关；绝对值大小表示对房价的影响程度，越大则对房价影响越大，具体看Jupyter。" class="headerlink" title="关于可解释性，我们拿波士顿房价预测来说，训练得到的参数的正负表示该特征与房价呈正相关还是负相关；绝对值大小表示对房价的影响程度，越大则对房价影响越大，具体看Jupyter。"></a>关于可解释性，我们拿波士顿房价预测来说，训练得到的参数的正负表示该特征与房价呈正相关还是负相关；绝对值大小表示对房价的影响程度，越大则对房价影响越大，具体看Jupyter。</h4>]]></content>
+      <categories>
+        <category>机器学习</category>
+      </categories>
+      <tags>
+        <tag>机器学习</tag>
+        <tag>线性回归</tag>
+        <tag>多元线性回归</tag>
+        <tag>模型可解释性</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>机器学习笔记7</title>
     <url>/2020/07/30/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B07/</url>
     <content><![CDATA[<h3 id="回归算法的评价"><a href="#回归算法的评价" class="headerlink" title="回归算法的评价"></a>回归算法的评价</h3><a id="more"></a>
@@ -926,28 +951,63 @@
       </tags>
   </entry>
   <entry>
-    <title>机器学习笔记8</title>
-    <url>/2020/07/30/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B08/</url>
-    <content><![CDATA[<h3 id="多元线性回归"><a href="#多元线性回归" class="headerlink" title="多元线性回归"></a>多元线性回归</h3><a id="more"></a>
-<h4 id="一、什么是多元线性回归"><a href="#一、什么是多元线性回归" class="headerlink" title="一、什么是多元线性回归"></a>一、什么是多元线性回归</h4><p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200730235347025.png" alt="image-20200730235347025"></p>
-<h4 id="二、多元线性回归的正规方程解"><a href="#二、多元线性回归的正规方程解" class="headerlink" title="二、多元线性回归的正规方程解"></a>二、多元线性回归的正规方程解</h4><p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200731030050773.png" alt="image-20200731030050773"></p>
-<p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200731030338464.png" alt="image-20200731030338464"></p>
-<h4 id="因为X是一个特征矩阵，所以X-i-本身就是行向量，因此-theta必须由行向量转置为列向量"><a href="#因为X是一个特征矩阵，所以X-i-本身就是行向量，因此-theta必须由行向量转置为列向量" class="headerlink" title="因为X是一个特征矩阵，所以X^{(i)}本身就是行向量，因此\theta必须由行向量转置为列向量"></a>因为X是一个特征矩阵，所以<script type="math/tex">X^{(i)}</script>本身就是行向量，因此<script type="math/tex">\theta</script>必须由行向量转置为列向量</h4><h4 id="接下来进一步推广到整个特征矩阵"><a href="#接下来进一步推广到整个特征矩阵" class="headerlink" title="接下来进一步推广到整个特征矩阵"></a>接下来进一步推广到整个特征矩阵</h4><p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200731031136440.png" alt="image-20200731031136440"></p>
-<h4 id="因为X-b是m-n的矩阵，-theta-是n行列向量，所以-hat-y-是一个m行的列向量"><a href="#因为X-b是m-n的矩阵，-theta-是n行列向量，所以-hat-y-是一个m行的列向量" class="headerlink" title="因为X_b是m*n的矩阵，\theta 是n行列向量，所以\hat{y}是一个m行的列向量"></a>因为<script type="math/tex">X_b</script>是m*n的矩阵，<script type="math/tex">\theta</script> 是n行列向量，所以<script type="math/tex">\hat{y}</script>是一个m行的列向量</h4><p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200731032608917.png" alt="image-20200731032608917"></p>
-<p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200731032641791.png" alt="image-20200731032641791"></p>
-<p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200731032712657.png" alt="image-20200731032712657"></p>
-<h4 id="因为-theta只是X前面的系数，与量纲无关，所以不需要归一化处理"><a href="#因为-theta只是X前面的系数，与量纲无关，所以不需要归一化处理" class="headerlink" title="因为\theta只是X前面的系数，与量纲无关，所以不需要归一化处理"></a>因为<script type="math/tex">\theta</script>只是X前面的系数，与量纲无关，所以不需要归一化处理</h4><h4 id="三、线性回归总结"><a href="#三、线性回归总结" class="headerlink" title="三、线性回归总结"></a>三、线性回归总结</h4><p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200805000611219.png" alt="image-20200805000611219"></p>
-<p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200805000625908.png" alt="image-20200805000625908"></p>
-<p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200805000642638.png" alt="image-20200805000642638"></p>
-<h4 id="关于可解释性，我们拿波士顿房价预测来说，训练得到的参数的正负表示该特征与房价呈正相关还是负相关；绝对值大小表示对房价的影响程度，越大则对房价影响越大，具体看Jupyter。"><a href="#关于可解释性，我们拿波士顿房价预测来说，训练得到的参数的正负表示该特征与房价呈正相关还是负相关；绝对值大小表示对房价的影响程度，越大则对房价影响越大，具体看Jupyter。" class="headerlink" title="关于可解释性，我们拿波士顿房价预测来说，训练得到的参数的正负表示该特征与房价呈正相关还是负相关；绝对值大小表示对房价的影响程度，越大则对房价影响越大，具体看Jupyter。"></a>关于可解释性，我们拿波士顿房价预测来说，训练得到的参数的正负表示该特征与房价呈正相关还是负相关；绝对值大小表示对房价的影响程度，越大则对房价影响越大，具体看Jupyter。</h4>]]></content>
+    <title>深度学习与硬件</title>
+    <url>/2020/10/24/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E4%B8%8E%E7%A1%AC%E4%BB%B6/</url>
+    <content><![CDATA[<h2 id="深度学习与硬件"><a href="#深度学习与硬件" class="headerlink" title="深度学习与硬件"></a>深度学习与硬件</h2><a id="more"></a>
+<h3 id="一、CPU"><a href="#一、CPU" class="headerlink" title="一、CPU"></a>一、CPU</h3><ul>
+<li>一般来说，我们现在很少用CPU来训练深度学习模型。</li>
+<li>但是CPU处理非常复杂的逻辑时效率往往比GPU高。因此CPU往往用来处理一些业务逻辑或数据预处理。</li>
+<li>CPU在训练时注意的事项：<ul>
+<li><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20201025120500936.png" alt="image-20201025120500936"></li>
+</ul>
+</li>
+<li>CPU在部署时的注意事项：<ul>
+<li>避免Cache Miss。（最重要）</li>
+<li>有时需要使用足够多的核来支持读写。</li>
+</ul>
+</li>
+</ul>
+<h3 id="二、GPU"><a href="#二、GPU" class="headerlink" title="二、GPU"></a>二、GPU</h3><ul>
+<li>商用GPU与民用（游戏）GPU的区别：<ul>
+<li>商用GPU是被动散热的。</li>
+<li>商用GPU更贵。</li>
+<li>商用GPU稳定性比民用GPU好。（不一定）</li>
+</ul>
+</li>
+<li>GPU硬件的特点：<ul>
+<li>SIMT</li>
+<li>显存独立于内存，内存和显存的读取可能会成为问题。</li>
+<li>对于显存的处理，multi-stream processer并不如CPU一样强大。（显存污染）</li>
+<li>GPU是非常复杂的处理器。</li>
+</ul>
+</li>
+<li>GPU训练注意事项：<ul>
+<li><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20201025123508505.png" alt="image-20201025123508505"></li>
+</ul>
+</li>
+<li>GPU部署的注意事项：<ul>
+<li><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20201025123559470.png" alt="image-20201025123559470"></li>
+</ul>
+</li>
+</ul>
+<h3 id="三、TPU"><a href="#三、TPU" class="headerlink" title="三、TPU"></a>三、TPU</h3><ul>
+<li>TPU的特点：<ul>
+<li><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20201025143811895.png" alt="image-20201025143811895"></li>
+</ul>
+</li>
+<li>TPU与深度学习：<ul>
+<li><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20201025143851998.png" alt="image-20201025143851998"></li>
+</ul>
+</li>
+</ul>
+]]></content>
       <categories>
-        <category>机器学习</category>
+        <category>NLP理论与实战</category>
       </categories>
       <tags>
-        <tag>机器学习</tag>
-        <tag>线性回归</tag>
-        <tag>多元线性回归</tag>
-        <tag>模型可解释性</tag>
+        <tag>CPU</tag>
+        <tag>GPU</tag>
+        <tag>TPU</tag>
       </tags>
   </entry>
   <entry>
@@ -1061,81 +1121,6 @@
       </tags>
   </entry>
   <entry>
-    <title>深度学习与硬件</title>
-    <url>/2020/10/24/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E4%B8%8E%E7%A1%AC%E4%BB%B6/</url>
-    <content><![CDATA[<h2 id="深度学习与硬件"><a href="#深度学习与硬件" class="headerlink" title="深度学习与硬件"></a>深度学习与硬件</h2><a id="more"></a>
-<h3 id="一、CPU"><a href="#一、CPU" class="headerlink" title="一、CPU"></a>一、CPU</h3><ul>
-<li>一般来说，我们现在很少用CPU来训练深度学习模型。</li>
-<li>但是CPU处理非常复杂的逻辑时效率往往比GPU高。因此CPU往往用来处理一些业务逻辑或数据预处理。</li>
-<li>CPU在训练时注意的事项：<ul>
-<li><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20201025120500936.png" alt="image-20201025120500936"></li>
-</ul>
-</li>
-<li>CPU在部署时的注意事项：<ul>
-<li>避免Cache Miss。（最重要）</li>
-<li>有时需要使用足够多的核来支持读写。</li>
-</ul>
-</li>
-</ul>
-<h3 id="二、GPU"><a href="#二、GPU" class="headerlink" title="二、GPU"></a>二、GPU</h3><ul>
-<li>商用GPU与民用（游戏）GPU的区别：<ul>
-<li>商用GPU是被动散热的。</li>
-<li>商用GPU更贵。</li>
-<li>商用GPU稳定性比民用GPU好。（不一定）</li>
-</ul>
-</li>
-<li>GPU硬件的特点：<ul>
-<li>SIMT</li>
-<li>显存独立于内存，内存和显存的读取可能会成为问题。</li>
-<li>对于显存的处理，multi-stream processer并不如CPU一样强大。（显存污染）</li>
-<li>GPU是非常复杂的处理器。</li>
-</ul>
-</li>
-<li>GPU训练注意事项：<ul>
-<li><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20201025123508505.png" alt="image-20201025123508505"></li>
-</ul>
-</li>
-<li>GPU部署的注意事项：<ul>
-<li><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20201025123559470.png" alt="image-20201025123559470"></li>
-</ul>
-</li>
-</ul>
-<h3 id="三、TPU"><a href="#三、TPU" class="headerlink" title="三、TPU"></a>三、TPU</h3><ul>
-<li>TPU的特点：<ul>
-<li><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20201025143811895.png" alt="image-20201025143811895"></li>
-</ul>
-</li>
-<li>TPU与深度学习：<ul>
-<li><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20201025143851998.png" alt="image-20201025143851998"></li>
-</ul>
-</li>
-</ul>
-]]></content>
-      <categories>
-        <category>NLP理论与实战</category>
-      </categories>
-      <tags>
-        <tag>CPU</tag>
-        <tag>GPU</tag>
-        <tag>TPU</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>神经网络基础</title>
-    <url>/2020/10/25/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E5%9F%BA%E7%A1%80/</url>
-    <content><![CDATA[<h2 id="神经网络基础"><a href="#神经网络基础" class="headerlink" title="神经网络基础"></a>神经网络基础</h2><h3 id="关于神经网络错误的说法"><a href="#关于神经网络错误的说法" class="headerlink" title="关于神经网络错误的说法"></a>关于神经网络错误的说法</h3><ul>
-<li>神经网络是大家根据神经科学得到的最伟大的发明</li>
-</ul>
-<h3 id="神经网络的数学本质"><a href="#神经网络的数学本质" class="headerlink" title="神经网络的数学本质"></a>神经网络的数学本质</h3><ul>
-<li><p>由于神经网络复合函数的本质，使得神经网络可以很方便地组合出很多复杂的函数。</p>
-</li>
-<li><p>由于复合函数求导法则，所以大部分神经网络的训练过程可以自动化（反向梯度传递）。</p>
-<p><a href="https://datawhalechina.github.io/leeml-notes/#/chapter14/chapter14" target="_blank" rel="noopener">https://datawhalechina.github.io/leeml-notes/#/chapter14/chapter14</a></p>
-</li>
-</ul>
-]]></content>
-  </entry>
-  <entry>
     <title>神经网络理解-基于3Blue1Brown的视频</title>
     <url>/2020/10/25/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E7%90%86%E8%A7%A3-%E5%9F%BA%E4%BA%8E3Blue1Brown%E7%9A%84%E8%A7%86%E9%A2%91/</url>
     <content><![CDATA[<h1 id="神经网络（本质是一个复杂函数）"><a href="#神经网络（本质是一个复杂函数）" class="headerlink" title="神经网络（本质是一个复杂函数）"></a>神经网络（本质是一个复杂函数）</h1><h4 id="这个笔记主要记录在学习3B1B的深度学习系列过程中的一些个人认为的难点，详细内容请看3B1B的完整视频：https-space-bilibili-com-88461692-channel-detail-cid-26587。"><a href="#这个笔记主要记录在学习3B1B的深度学习系列过程中的一些个人认为的难点，详细内容请看3B1B的完整视频：https-space-bilibili-com-88461692-channel-detail-cid-26587。" class="headerlink" title="这个笔记主要记录在学习3B1B的深度学习系列过程中的一些个人认为的难点，详细内容请看3B1B的完整视频：https://space.bilibili.com/88461692/channel/detail?cid=26587。"></a>这个笔记主要记录在学习3B1B的深度学习系列过程中的一些个人认为的难点，详细内容请看3B1B的完整视频：<a href="https://space.bilibili.com/88461692/channel/detail?cid=26587。" target="_blank" rel="noopener">https://space.bilibili.com/88461692/channel/detail?cid=26587。</a></h4><a id="more"></a>
@@ -1169,65 +1154,19 @@
       </tags>
   </entry>
   <entry>
-    <title>竞赛笔记</title>
-    <url>/2020/11/08/%E7%AB%9E%E8%B5%9B%E7%AC%94%E8%AE%B0/</url>
-    <content><![CDATA[<h2 id="新人赛"><a href="#新人赛" class="headerlink" title="新人赛"></a>新人赛</h2><a id="more"></a>
-<h3 id="员工满意度预测"><a href="#员工满意度预测" class="headerlink" title="员工满意度预测"></a>员工满意度预测</h3><ul>
-<li><h4 id="比赛地址："><a href="#比赛地址：" class="headerlink" title="比赛地址："></a>比赛地址：</h4><ul>
-<li><a href="https://www.kesci.com/home/competition/5ec3b6987ba12c002d3e42bc/" target="_blank" rel="noopener">https://www.kesci.com/home/competition/5ec3b6987ba12c002d3e42bc/</a></li>
+    <title>神经网络基础</title>
+    <url>/2020/10/25/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E5%9F%BA%E7%A1%80/</url>
+    <content><![CDATA[<h2 id="神经网络基础"><a href="#神经网络基础" class="headerlink" title="神经网络基础"></a>神经网络基础</h2><h3 id="关于神经网络错误的说法"><a href="#关于神经网络错误的说法" class="headerlink" title="关于神经网络错误的说法"></a>关于神经网络错误的说法</h3><ul>
+<li>神经网络是大家根据神经科学得到的最伟大的发明</li>
 </ul>
+<h3 id="神经网络的数学本质"><a href="#神经网络的数学本质" class="headerlink" title="神经网络的数学本质"></a>神经网络的数学本质</h3><ul>
+<li><p>由于神经网络复合函数的本质，使得神经网络可以很方便地组合出很多复杂的函数。</p>
 </li>
-<li><h4 id="流程："><a href="#流程：" class="headerlink" title="流程："></a>流程：</h4><ul>
-<li><p>数据探索：使用‘pandas_profiling’包快速生成数据报告，可以参考：<a href="https://zhuanlan.zhihu.com/p/85967505/" target="_blank" rel="noopener">https://zhuanlan.zhihu.com/p/85967505/</a></p>
-<ul>
-<li>在竞赛中，我们应保证训练集和测试集中的数值型特征的分布尽量一致。</li>
-</ul>
-<p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20201108213338763.png" alt="image-20201108213338763"></p>
-<p>train(log1p):</p>
-<p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20201108215421315.png" alt="image-20201108215421315"></p>
-<p>train(expm1):</p>
-<p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20201108215447912.png" alt="image-20201108215447912"></p>
-<p>当标签值有一些偏移时，我们可以采用‘np.log1p’或’np.expm1’来对其进行处理，让其更符合高斯分布（原理：<a href="https://www.cnblogs.com/wqbin/p/10346292.html），但是，本例偏度不是太大，所以我们不处理，处理了效果反而不好。具体可看（train(log1p)，train(expm1)），效果并不好。" target="_blank" rel="noopener">https://www.cnblogs.com/wqbin/p/10346292.html），但是，本例偏度不是太大，所以我们不处理，处理了效果反而不好。具体可看（train(log1p)，train(expm1)），效果并不好。</a></p>
-</li>
-<li><p>特征处理：</p>
-<ul>
-<li><p>特征归一化：使用minmax对’last_evaluation’,’average_monthly_hours’处理（因为这两个特征一个是值的量纲太小，一个是值的量纲太大）。如果用树模型就不需要特征归一化（因为数值缩放不影响分裂点的位置）。</p>
-</li>
-<li><p>特征标签化：对’package’,’division’,’salary’使用label_encode处理成离散数值。</p>
-<p>这里可以直接用随机森林训练，mse是0.02996238</p>
-</li>
-<li><p>特征构造：</p>
-</li>
-<li><p>数值型特征：让它们两两相乘组成二项式。</p>
-</li>
-</ul>
-</li>
-<li><p>离散型特征：分别用这几个特征分类（groupby），然后求组内的平均值，最大值，最小值，标准差，偏度，计数，不同值（numpy_unique）的个数（pandas_nunique）分别作为新的特征。</p>
-</li>
-<li><p>特征选择：</p>
-<ul>
-<li><p>这里只是初步将零方差特征删除了，没有进一步筛选。</p>
-</li>
-<li><p>删除零方差特征：因为零方差所有的样本值都一样，导致给他们分配的权重都相同。没意义。</p>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-<li><p>模型训练：</p>
-<ul>
-<li><p>只用了随机森林，没有使用交叉验证和网格搜索</p>
-</li>
-<li><p>最终结果：</p>
-<p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20201108223947884.png" alt="image-20201108223947884"></p>
-</li>
-</ul>
+<li><p>由于复合函数求导法则，所以大部分神经网络的训练过程可以自动化（反向梯度传递）。</p>
+<p><a href="https://datawhalechina.github.io/leeml-notes/#/chapter14/chapter14" target="_blank" rel="noopener">https://datawhalechina.github.io/leeml-notes/#/chapter14/chapter14</a></p>
 </li>
 </ul>
 ]]></content>
-      <tags>
-        <tag>大数据比赛</tag>
-      </tags>
   </entry>
   <entry>
     <title>论文记录</title>
@@ -1320,6 +1259,64 @@
 ]]></content>
   </entry>
   <entry>
+    <title>竞赛笔记</title>
+    <url>/2020/11/08/%E7%AB%9E%E8%B5%9B%E7%AC%94%E8%AE%B0/</url>
+    <content><![CDATA[<h2 id="新人赛"><a href="#新人赛" class="headerlink" title="新人赛"></a>新人赛</h2><a id="more"></a>
+<h3 id="员工满意度预测"><a href="#员工满意度预测" class="headerlink" title="员工满意度预测"></a>员工满意度预测</h3><ul>
+<li><h4 id="比赛地址："><a href="#比赛地址：" class="headerlink" title="比赛地址："></a>比赛地址：</h4><ul>
+<li><a href="https://www.kesci.com/home/competition/5ec3b6987ba12c002d3e42bc/" target="_blank" rel="noopener">https://www.kesci.com/home/competition/5ec3b6987ba12c002d3e42bc/</a></li>
+</ul>
+</li>
+<li><h4 id="流程："><a href="#流程：" class="headerlink" title="流程："></a>流程：</h4><ul>
+<li><p>数据探索：使用‘pandas_profiling’包快速生成数据报告，可以参考：<a href="https://zhuanlan.zhihu.com/p/85967505/" target="_blank" rel="noopener">https://zhuanlan.zhihu.com/p/85967505/</a></p>
+<ul>
+<li>在竞赛中，我们应保证训练集和测试集中的数值型特征的分布尽量一致。</li>
+</ul>
+<p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20201108213338763.png" alt="image-20201108213338763"></p>
+<p>train(log1p):</p>
+<p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20201108215421315.png" alt="image-20201108215421315"></p>
+<p>train(expm1):</p>
+<p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20201108215447912.png" alt="image-20201108215447912"></p>
+<p>当标签值有一些偏移时，我们可以采用‘np.log1p’或’np.expm1’来对其进行处理，让其更符合高斯分布（原理：<a href="https://www.cnblogs.com/wqbin/p/10346292.html），但是，本例偏度不是太大，所以我们不处理，处理了效果反而不好。具体可看（train(log1p)，train(expm1)），效果并不好。" target="_blank" rel="noopener">https://www.cnblogs.com/wqbin/p/10346292.html），但是，本例偏度不是太大，所以我们不处理，处理了效果反而不好。具体可看（train(log1p)，train(expm1)），效果并不好。</a></p>
+</li>
+<li><p>特征处理：</p>
+<ul>
+<li><p>特征归一化：使用minmax对’last_evaluation’,’average_monthly_hours’处理（因为这两个特征一个是值的量纲太小，一个是值的量纲太大）。如果用树模型就不需要特征归一化（因为数值缩放不影响分裂点的位置）。</p>
+</li>
+<li><p>特征标签化：对’package’,’division’,’salary’使用label_encode处理成离散数值。</p>
+<p>这里可以直接用随机森林训练，mse是0.02996238</p>
+</li>
+<li><p>特征构造：</p>
+</li>
+<li><p>数值型特征：让它们两两相乘组成二项式。</p>
+</li>
+</ul>
+</li>
+<li><p>离散型特征：分别用这几个特征分类（groupby），然后求组内的平均值，最大值，最小值，标准差，偏度，计数，不同值（numpy_unique）的个数（pandas_nunique）分别作为新的特征。</p>
+</li>
+<li><p>特征选择：</p>
+<ul>
+<li>这里只是初步将零方差特征删除了，没有进一步筛选。</li>
+</ul>
+</li>
+<li><p>删除零方差特征：因为零方差所有的样本值都一样，导致给他们分配的权重都相同。没意义。</p>
+</li>
+<li><p>模型训练：</p>
+<ul>
+<li>只用了随机森林，没有使用交叉验证和网格搜索</li>
+<li>最终结果：</li>
+</ul>
+</li>
+</ul>
+<p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20201108223947884.png" alt="image-20201108223947884"></p>
+</li>
+</ul>
+]]></content>
+      <tags>
+        <tag>大数据比赛</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>极客时间nlp笔记/1宣传片之外的人工智能</title>
     <url>/2020/10/13/%E6%9E%81%E5%AE%A2%E6%97%B6%E9%97%B4nlp%E7%AC%94%E8%AE%B0/1%E5%AE%A3%E4%BC%A0%E7%89%87%E4%B9%8B%E5%A4%96%E7%9A%84%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD/</url>
     <content><![CDATA[<h2 id="宣传片之外的人工智能"><a href="#宣传片之外的人工智能" class="headerlink" title="宣传片之外的人工智能"></a>宣传片之外的人工智能</h2><a id="more"></a>
@@ -1329,6 +1326,23 @@
 <p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20201013201003276.png" alt="image-20201013201003276"></p>
 <h3 id="人工智能的另一种分类："><a href="#人工智能的另一种分类：" class="headerlink" title="人工智能的另一种分类："></a>人工智能的另一种分类：</h3><p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20201013201339798.png" alt="image-20201013201339798"></p>
 <h3 id="我们该怎么做："><a href="#我们该怎么做：" class="headerlink" title="我们该怎么做："></a>我们该怎么做：</h3><p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20201013202909044.png" alt="image-20201013202909044"></p>
+]]></content>
+  </entry>
+  <entry>
+    <title>极客时间nlp笔记/2AI项目落地流程</title>
+    <url>/2020/10/13/%E6%9E%81%E5%AE%A2%E6%97%B6%E9%97%B4nlp%E7%AC%94%E8%AE%B0/2AI%E9%A1%B9%E7%9B%AE%E8%90%BD%E5%9C%B0%E6%B5%81%E7%A8%8B/</url>
+    <content><![CDATA[<h2 id="AI项目落地流程"><a href="#AI项目落地流程" class="headerlink" title="AI项目落地流程"></a>AI项目落地流程</h2><a id="more"></a>
+<p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20201013204849770.png" alt="image-20201013204849770"></p>
+<p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20201013205823575.png" alt="image-20201013205823575"></p>
+<p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20201013210712906.png" alt="image-20201013210712906"></p>
+<p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20201013210815612.png" alt="image-20201013210815612"></p>
+<p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20201013211215733.png" alt="image-20201013211215733"></p>
+<p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20201013211348762.png" alt="image-20201013211348762"></p>
+<p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20201013211416835.png" alt="image-20201013211416835"></p>
+<p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20201013213310163.png" alt="image-20201013213310163"></p>
+<p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20201013213620700.png" alt="image-20201013213620700"></p>
+<p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20201013214417364.png" alt="image-20201013214417364"></p>
+<p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20201013214804992.png" alt="image-20201013214804992"></p>
 ]]></content>
   </entry>
   <entry>
@@ -1373,22 +1387,5 @@
 </li>
 </ul>
 <h3 id="交差领域的研究"><a href="#交差领域的研究" class="headerlink" title="交差领域的研究"></a>交差领域的研究</h3>]]></content>
-  </entry>
-  <entry>
-    <title>极客时间nlp笔记/2AI项目落地流程</title>
-    <url>/2020/10/13/%E6%9E%81%E5%AE%A2%E6%97%B6%E9%97%B4nlp%E7%AC%94%E8%AE%B0/2AI%E9%A1%B9%E7%9B%AE%E8%90%BD%E5%9C%B0%E6%B5%81%E7%A8%8B/</url>
-    <content><![CDATA[<h2 id="AI项目落地流程"><a href="#AI项目落地流程" class="headerlink" title="AI项目落地流程"></a>AI项目落地流程</h2><a id="more"></a>
-<p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20201013204849770.png" alt="image-20201013204849770"></p>
-<p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20201013205823575.png" alt="image-20201013205823575"></p>
-<p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20201013210712906.png" alt="image-20201013210712906"></p>
-<p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20201013210815612.png" alt="image-20201013210815612"></p>
-<p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20201013211215733.png" alt="image-20201013211215733"></p>
-<p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20201013211348762.png" alt="image-20201013211348762"></p>
-<p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20201013211416835.png" alt="image-20201013211416835"></p>
-<p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20201013213310163.png" alt="image-20201013213310163"></p>
-<p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20201013213620700.png" alt="image-20201013213620700"></p>
-<p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20201013214417364.png" alt="image-20201013214417364"></p>
-<p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20201013214804992.png" alt="image-20201013214804992"></p>
-]]></content>
   </entry>
 </search>
