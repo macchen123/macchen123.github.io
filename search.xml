@@ -1,6 +1,155 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>多模态论文笔记</title>
+    <url>/2020/11/15/acl%E8%AE%BA%E6%96%87%E8%AE%B0%E5%BD%95/</url>
+    <content><![CDATA[<h2 id="ACL2020"><a href="#ACL2020" class="headerlink" title="ACL2020"></a>ACL2020</h2><a id="more"></a>
+<h3 id="一、CH-SIMS-A-Chinese-Multimodal-Sentiment-Analysis-Dataset-with-Fine-grained-Annotation-of-Modality"><a href="#一、CH-SIMS-A-Chinese-Multimodal-Sentiment-Analysis-Dataset-with-Fine-grained-Annotation-of-Modality" class="headerlink" title="一、CH-SIMS: A Chinese Multimodal Sentiment Analysis Dataset with Fine-grained Annotation of Modality"></a>一、CH-SIMS: A Chinese Multimodal Sentiment Analysis Dataset with Fine-grained Annotation of Modality</h3><ul>
+<li><h4 id="单位"><a href="#单位" class="headerlink" title="单位"></a>单位</h4><ul>
+<li>清华大学</li>
+</ul>
+</li>
+<li><h4 id="文献来源"><a href="#文献来源" class="headerlink" title="文献来源"></a>文献来源</h4><ul>
+<li>ACL2020</li>
+</ul>
+</li>
+<li><h4 id="论文子方向"><a href="#论文子方向" class="headerlink" title="论文子方向"></a>论文子方向</h4><ul>
+<li>多模态情感分析</li>
+</ul>
+</li>
+<li><h4 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h4><ul>
+<li>以往的数据集只包含统一的多模态情感标注，但是这种标注不能很好的反映单模态的情感类别。</li>
+<li>不能够捕获到模态之间的差异性。</li>
+</ul>
+</li>
+<li><h4 id="本文工作"><a href="#本文工作" class="headerlink" title="本文工作"></a>本文工作</h4><ul>
+<li>构建了一个中文多模态情感分析数据集——CH-SIMS；</li>
+<li>提出了一个基于后端融合的多模态多任务学习框架。</li>
+</ul>
+</li>
+<li><h4 id="本文目的"><a href="#本文目的" class="headerlink" title="本文目的"></a>本文目的</h4><ul>
+<li>通过该数据集，研究者既可以做多模态的情感分析任务，也可以做单模态的情感分析任务。</li>
+<li>研究者也可以在多模态情感分析任务上通过用独立的单模态标注来研究新的方法。</li>
+</ul>
+</li>
+<li><h4 id="数据集"><a href="#数据集" class="headerlink" title="数据集"></a>数据集</h4><ul>
+<li><p>SIMS有文本，语音，视频3个模态，并且除了有统一的多模态情感类别标注以外，对每个单模态进行了情感类别标注。</p>
+</li>
+<li><p>视频片段来自于国产电影，国产电视剧以及各种国产综艺节目。</p>
+<p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20201116203507874.png" alt="image-20201116203507874"></p>
+<p>其中M表示多模态情感标注，T表示文本情感标注，A表示音频情感标注，V表示视频情感标注。</p>
+</li>
+</ul>
+</li>
+<li><h4 id="本文方法"><a href="#本文方法" class="headerlink" title="本文方法"></a>本文方法</h4><ul>
+<li><p>后端融合是将不同模态数据分别训练好的分类器输出打分进行融合。这样做的好处是，融合模型的错误来自不同的分类器，而来自不同分类器的错误往往互不相关、互不影响，不会造成错误的进一步累加。</p>
+</li>
+<li><p>利用单模态和多模态的标注，本文构建了一个多模态多任务学习框架。</p>
+<ul>
+<li><p>在框架内，单模态与多模态任务在底部共享特征表示子网络。</p>
+</li>
+<li><p>我们引入了三种后端融合模型TFN,LMF,LF-DNN来对多模态数据建模。</p>
+<p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20201116212526804.png" alt="image-20201116212526804"></p>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><h4 id="实验表现"><a href="#实验表现" class="headerlink" title="实验表现"></a>实验表现</h4><ul>
+<li><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20201116213328166.png" alt="image-20201116213328166"></li>
+</ul>
+</li>
+</ul>
+<p>举例说明：LF-DNN是对统一的多模态标注进行多任务训练。MLF-DNN是LF-DNN的扩展，它相比前者还引入了单模态标注对单任务的训练，形成了“单模态情感标注+多模态情感标注”模型。这样使得实验表现显著提升。</p>
+]]></content>
+      <categories>
+        <category>多模态</category>
+      </categories>
+      <tags>
+        <tag>ACL/EMNLP</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>机器学习笔记12</title>
+    <url>/2020/08/26/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B012/</url>
+    <content><![CDATA[<h3 id="逻辑回归（Logistic-Regression）"><a href="#逻辑回归（Logistic-Regression）" class="headerlink" title="逻辑回归（Logistic Regression）"></a>逻辑回归（Logistic Regression）</h3><a id="more"></a>
+<h4 id="一、什么是逻辑回归"><a href="#一、什么是逻辑回归" class="headerlink" title="一、什么是逻辑回归"></a>一、什么是逻辑回归</h4><ul>
+<li><p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200827181823137.png" alt="image-20200827181823137"></p>
+<p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200827181942648.png" alt="image-20200827181942648"></p>
+<ul>
+<li><h5 id="线性回归的预测值是我们本身就需要的指标，比如房价预测中，y就是房价。但是逻辑回归的预测值是概率值，比如预测未来一周某地下雨的可能性。这里可以将逻辑回归当作回归算法，因为概率值也属于连续值。但是通常逻辑回归被当作是分类算法，比如将下雨的可能性（回归）转换为是否下雨（分类），所以需要进一步的转换，将概率p-gt-0-5的转换为1，p-lt-0-5的转换为0。"><a href="#线性回归的预测值是我们本身就需要的指标，比如房价预测中，y就是房价。但是逻辑回归的预测值是概率值，比如预测未来一周某地下雨的可能性。这里可以将逻辑回归当作回归算法，因为概率值也属于连续值。但是通常逻辑回归被当作是分类算法，比如将下雨的可能性（回归）转换为是否下雨（分类），所以需要进一步的转换，将概率p-gt-0-5的转换为1，p-lt-0-5的转换为0。" class="headerlink" title="线性回归的预测值是我们本身就需要的指标，比如房价预测中，y就是房价。但是逻辑回归的预测值是概率值，比如预测未来一周某地下雨的可能性。这里可以将逻辑回归当作回归算法，因为概率值也属于连续值。但是通常逻辑回归被当作是分类算法，比如将下雨的可能性（回归）转换为是否下雨（分类），所以需要进一步的转换，将概率p&gt;0.5的转换为1，p&lt;0.5的转换为0。"></a>线性回归的预测值是我们本身就需要的指标，比如房价预测中，y就是房价。但是逻辑回归的预测值是概率值，比如预测未来一周某地下雨的可能性。这里可以将逻辑回归当作回归算法，因为概率值也属于连续值。但是通常逻辑回归被当作是分类算法，比如将下雨的可能性（回归）转换为是否下雨（分类），所以需要进一步的转换，将概率p&gt;0.5的转换为1，p&lt;0.5的转换为0。</h5></li>
+<li><p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200827183353872.png" alt="image-20200827183353872"></p>
+<h5 id="为了解决线性回归不适合处理分类的问题，我们在线性回归的基础上提出了逻辑回归。但是线性回归得出的预测值的值域往往是-inf-inf-，所以我们需要一个-sigma-函数将线性回归的结果映射到-0-1-上，使它符合概率的值域。那么，哪个函数能完成这一工作呢？那就是Sigmoid函数了。"><a href="#为了解决线性回归不适合处理分类的问题，我们在线性回归的基础上提出了逻辑回归。但是线性回归得出的预测值的值域往往是-inf-inf-，所以我们需要一个-sigma-函数将线性回归的结果映射到-0-1-上，使它符合概率的值域。那么，哪个函数能完成这一工作呢？那就是Sigmoid函数了。" class="headerlink" title="为了解决线性回归不适合处理分类的问题，我们在线性回归的基础上提出了逻辑回归。但是线性回归得出的预测值的值域往往是[-inf , +inf]，所以我们需要一个$\sigma$函数将线性回归的结果映射到(0 , 1)上，使它符合概率的值域。那么，哪个函数能完成这一工作呢？那就是Sigmoid函数了。"></a>为了解决线性回归不适合处理分类的问题，我们在线性回归的基础上提出了逻辑回归。但是线性回归得出的预测值的值域往往是[-inf , +inf]，所以我们需要一个$\sigma$函数将线性回归的结果映射到(0 , 1)上，使它符合概率的值域。那么，哪个函数能完成这一工作呢？那就是Sigmoid函数了。</h5></li>
+<li><p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200827184535801.png" alt="image-20200827184535801"></p>
+<p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200827184642354.png" alt="image-20200827184642354"></p>
+<h5 id="因此下面就是逻辑回归的全貌："><a href="#因此下面就是逻辑回归的全貌：" class="headerlink" title="因此下面就是逻辑回归的全貌："></a>因此下面就是逻辑回归的全貌：</h5><p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200827184806464.png" alt="image-20200827184806464"></p>
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="二、逻辑回归的损失函数（cost指损失函数）"><a href="#二、逻辑回归的损失函数（cost指损失函数）" class="headerlink" title="二、逻辑回归的损失函数（cost指损失函数）"></a>二、逻辑回归的损失函数（cost指损失函数）</h4><ul>
+<li><h5 id="由于逻辑回归的标签值（真实值）是二分类，所以我们不能采用线性回归那样的损失函数，因此我们采用以下方案"><a href="#由于逻辑回归的标签值（真实值）是二分类，所以我们不能采用线性回归那样的损失函数，因此我们采用以下方案" class="headerlink" title="由于逻辑回归的标签值（真实值）是二分类，所以我们不能采用线性回归那样的损失函数，因此我们采用以下方案"></a>由于逻辑回归的标签值（真实值）是二分类，所以我们不能采用线性回归那样的损失函数，因此我们采用以下方案</h5><p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200827185300946.png" alt="image-20200827185300946"></p>
+<h5 id="第一个图的解释："><a href="#第一个图的解释：" class="headerlink" title="第一个图的解释："></a>第一个图的解释：</h5><ul>
+<li><h5 id="如果真实值y等于1，但是预测得出的概率p很小（小于0-5），使得预测出的分类-y-hat-等于0。所以预测出现了错误，自然导致损失函数的值非常大（预测出的p越小，则cost越大）。"><a href="#如果真实值y等于1，但是预测得出的概率p很小（小于0-5），使得预测出的分类-y-hat-等于0。所以预测出现了错误，自然导致损失函数的值非常大（预测出的p越小，则cost越大）。" class="headerlink" title="如果真实值y等于1，但是预测得出的概率p很小（小于0.5），使得预测出的分类$y^{hat}$等于0。所以预测出现了错误，自然导致损失函数的值非常大（预测出的p越小，则cost越大）。"></a>如果真实值y等于1，但是预测得出的概率p很小（小于0.5），使得预测出的分类$y^{hat}$等于0。所以预测出现了错误，自然导致损失函数的值非常大（预测出的p越小，则cost越大）。</h5></li>
+<li><h5 id="如果真实值y等于0，但是预测得出的概率p很大（大于0-5），使得预测出的分类-y-hat-等于1。所以预测出现了错误，自然导致损失函数的值非常大（预测出的p越大，则cost越大）。"><a href="#如果真实值y等于0，但是预测得出的概率p很大（大于0-5），使得预测出的分类-y-hat-等于1。所以预测出现了错误，自然导致损失函数的值非常大（预测出的p越大，则cost越大）。" class="headerlink" title="如果真实值y等于0，但是预测得出的概率p很大（大于0.5），使得预测出的分类$y^{hat}$等于1。所以预测出现了错误，自然导致损失函数的值非常大（预测出的p越大，则cost越大）。"></a>如果真实值y等于0，但是预测得出的概率p很大（大于0.5），使得预测出的分类$y^{hat}$等于1。所以预测出现了错误，自然导致损失函数的值非常大（预测出的p越大，则cost越大）。</h5></li>
+</ul>
+<h5 id="那么，为什么可以采用第二个图的分段函数来实现这一功能呢？（下图的x就是p）"><a href="#那么，为什么可以采用第二个图的分段函数来实现这一功能呢？（下图的x就是p）" class="headerlink" title="那么，为什么可以采用第二个图的分段函数来实现这一功能呢？（下图的x就是p）"></a>那么，为什么可以采用第二个图的分段函数来实现这一功能呢？（下图的x就是p）</h5><p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200827190453596.png" alt="image-20200827190453596"></p>
+<h5 id="很显然，这个分段函数的图像（横坐标是概率值，纵坐标是损失函数值，交点的横坐标是0-5）能很好的体现sigmoid函数的特性。"><a href="#很显然，这个分段函数的图像（横坐标是概率值，纵坐标是损失函数值，交点的横坐标是0-5）能很好的体现sigmoid函数的特性。" class="headerlink" title="很显然，这个分段函数的图像（横坐标是概率值，纵坐标是损失函数值，交点的横坐标是0.5）能很好的体现sigmoid函数的特性。"></a>很显然，这个分段函数的图像（横坐标是概率值，纵坐标是损失函数值，交点的横坐标是0.5）能很好的体现sigmoid函数的特性。</h5><h5 id="但是分段函数不太方便计算，所以我们用下面这个函数来表示分段函数："><a href="#但是分段函数不太方便计算，所以我们用下面这个函数来表示分段函数：" class="headerlink" title="但是分段函数不太方便计算，所以我们用下面这个函数来表示分段函数："></a>但是分段函数不太方便计算，所以我们用下面这个函数来表示分段函数：</h5><p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200828002537051.png" alt="image-20200828002537051"></p>
+<h5 id="将p的表达式代入进一步推导："><a href="#将p的表达式代入进一步推导：" class="headerlink" title="将p的表达式代入进一步推导："></a>将p的表达式代入进一步推导：</h5><p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200828002717063.png" alt="image-20200828002717063"></p>
+<p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200828002755119.png" alt="image-20200828002755119"></p>
+</li>
+</ul>
+<h4 id="三、逻辑回归损失函数的梯度"><a href="#三、逻辑回归损失函数的梯度" class="headerlink" title="三、逻辑回归损失函数的梯度"></a>三、逻辑回归损失函数的梯度</h4><ul>
+<li><h5 id="具体求解梯度过程请参考《神经网络与深度学习-邱锡鹏》的3-2-1参数学习部分的推导。"><a href="#具体求解梯度过程请参考《神经网络与深度学习-邱锡鹏》的3-2-1参数学习部分的推导。" class="headerlink" title="具体求解梯度过程请参考《神经网络与深度学习-邱锡鹏》的3.2.1参数学习部分的推导。"></a>具体求解梯度过程请参考《神经网络与深度学习-邱锡鹏》的3.2.1参数学习部分的推导。</h5><ul>
+<li><h5 id="最终推导得出："><a href="#最终推导得出：" class="headerlink" title="最终推导得出："></a>最终推导得出：</h5><p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200902015231936.png" alt="image-20200902015231936"></p>
+<h5 id="因为是对-theta-j-求偏导，所以在-sigma-X-b-i-theta-的基础上还要有-theta-j-前面的系数-X-j-i-。"><a href="#因为是对-theta-j-求偏导，所以在-sigma-X-b-i-theta-的基础上还要有-theta-j-前面的系数-X-j-i-。" class="headerlink" title="因为是对$\theta_j$求偏导，所以在$\sigma{(X_{b}^{(i)}\theta)}$的基础上还要有$\theta_j$前面的系数$X_{j}^{(i)}$。"></a>因为是对$\theta_j$求偏导，所以在$\sigma{(X_{b}^{(i)}\theta)}$的基础上还要有$\theta_j$前面的系数$X_{j}^{(i)}$。</h5></li>
+<li><h5 id="J-theta-的梯度为："><a href="#J-theta-的梯度为：" class="headerlink" title="$J{(\theta)}$的梯度为："></a>$J{(\theta)}$的梯度为：</h5><p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200902020905850.png" alt="image-20200902020905850"></p>
+</li>
+</ul>
+</li>
+<li><h5 id="对表达式进行向量化（参考线性回归）"><a href="#对表达式进行向量化（参考线性回归）" class="headerlink" title="对表达式进行向量化（参考线性回归）"></a>对表达式进行向量化（参考线性回归）</h5><ul>
+<li><p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200902021018913.png" alt="image-20200902021018913"></p>
+<h5 id="参考上面，逻辑回归的梯度向量化为："><a href="#参考上面，逻辑回归的梯度向量化为：" class="headerlink" title="参考上面，逻辑回归的梯度向量化为："></a>参考上面，逻辑回归的梯度向量化为：</h5><p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200902021114185.png" alt="image-20200902021114185"></p>
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="四、决策边界"><a href="#四、决策边界" class="headerlink" title="四、决策边界"></a>四、决策边界</h4><ul>
+<li><h5 id="决策边界就是将结果通过类别按区域划分"><a href="#决策边界就是将结果通过类别按区域划分" class="headerlink" title="决策边界就是将结果通过类别按区域划分"></a>决策边界就是将结果通过类别按区域划分</h5></li>
+<li><p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200903221221036.png" alt="image-20200903221221036"></p>
+<p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200903221241679.png" alt="image-20200903221241679"></p>
+</li>
+<li><h5 id="逻辑回归决策边界示例"><a href="#逻辑回归决策边界示例" class="headerlink" title="逻辑回归决策边界示例"></a>逻辑回归决策边界示例</h5><p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200903221447790.png" alt="image-20200903221447790"></p>
+</li>
+<li><h5 id="KNN决策边界示例"><a href="#KNN决策边界示例" class="headerlink" title="KNN决策边界示例"></a>KNN决策边界示例</h5><p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200903221529302.png" alt="image-20200903221529302"></p>
+</li>
+<li><h5 id="因为逻辑回归是基于线性回归的，而且现实中的数据的决策边界几乎不可能是直线，所以我们可以像线性回归那样给逻辑回归添加多项式项（原理一样），进而让逻辑回归可以应对非线性数据。"><a href="#因为逻辑回归是基于线性回归的，而且现实中的数据的决策边界几乎不可能是直线，所以我们可以像线性回归那样给逻辑回归添加多项式项（原理一样），进而让逻辑回归可以应对非线性数据。" class="headerlink" title="因为逻辑回归是基于线性回归的，而且现实中的数据的决策边界几乎不可能是直线，所以我们可以像线性回归那样给逻辑回归添加多项式项（原理一样），进而让逻辑回归可以应对非线性数据。"></a>因为逻辑回归是基于线性回归的，而且现实中的数据的决策边界几乎不可能是直线，所以我们可以像线性回归那样给逻辑回归添加多项式项（原理一样），进而让逻辑回归可以应对非线性数据。</h5><p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200903224323601.png" alt="image-20200903224323601"></p>
+</li>
+</ul>
+<h4 id="五、逻辑回归的正则化"><a href="#五、逻辑回归的正则化" class="headerlink" title="五、逻辑回归的正则化"></a>五、逻辑回归的正则化</h4><ul>
+<li><h5 id="左边是线性回归的正则化，右边是逻辑回归的正则化（因为一般情况下建议必须使用正则化，所以将权重超参数放到了损失函数上）"><a href="#左边是线性回归的正则化，右边是逻辑回归的正则化（因为一般情况下建议必须使用正则化，所以将权重超参数放到了损失函数上）" class="headerlink" title="左边是线性回归的正则化，右边是逻辑回归的正则化（因为一般情况下建议必须使用正则化，所以将权重超参数放到了损失函数上）"></a>左边是线性回归的正则化，右边是逻辑回归的正则化（因为一般情况下建议必须使用正则化，所以将权重超参数放到了损失函数上）</h5><p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200903232842954.png" alt="image-20200903232842954"></p>
+</li>
+</ul>
+<h4 id="六、OvR（或OvA）与OvO-或MvM"><a href="#六、OvR（或OvA）与OvO-或MvM" class="headerlink" title="六、OvR（或OvA）与OvO(或MvM)"></a>六、OvR（或OvA）与OvO(或MvM)</h4><h5 id="都是将多分类转换为二分类的方法"><a href="#都是将多分类转换为二分类的方法" class="headerlink" title="都是将多分类转换为二分类的方法"></a>都是将多分类转换为二分类的方法</h5><h5 id="1、OvR："><a href="#1、OvR：" class="headerlink" title="1、OvR："></a>1、OvR：</h5><ul>
+<li><h5 id="每次选取一个类别（ONE），然后将其他类别混合起来当作一个新的类别-REST"><a href="#每次选取一个类别（ONE），然后将其他类别混合起来当作一个新的类别-REST" class="headerlink" title="每次选取一个类别（ONE），然后将其他类别混合起来当作一个新的类别(REST)"></a>每次选取一个类别（ONE），然后将其他类别混合起来当作一个新的类别(REST)</h5><p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200904003819162.png" alt="image-20200904003819162"></p>
+</li>
+</ul>
+<h5 id="2、OvO："><a href="#2、OvO：" class="headerlink" title="2、OvO："></a>2、OvO：</h5><ul>
+<li><h5 id="每次从多个类别中只选出两个类别进行分类"><a href="#每次从多个类别中只选出两个类别进行分类" class="headerlink" title="每次从多个类别中只选出两个类别进行分类"></a>每次从多个类别中只选出两个类别进行分类</h5><p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200904003951785.png" alt="image-20200904003951785"></p>
+<h5 id="使用OvO准确率更高，但是更耗时间"><a href="#使用OvO准确率更高，但是更耗时间" class="headerlink" title="使用OvO准确率更高，但是更耗时间"></a>使用OvO准确率更高，但是更耗时间</h5></li>
+</ul>
+<h4 id="七、逻辑回归的总结与思考"><a href="#七、逻辑回归的总结与思考" class="headerlink" title="七、逻辑回归的总结与思考"></a>七、逻辑回归的总结与思考</h4><p><a href="https://www.cnblogs.com/lijingblog/p/11043849.html" target="_blank" rel="noopener">https://www.cnblogs.com/lijingblog/p/11043849.html</a></p>
+]]></content>
+      <categories>
+        <category>机器学习</category>
+      </categories>
+      <tags>
+        <tag>逻辑回归</tag>
+        <tag>OvR（或OvA）与OvO(或MvM)</tag>
+        <tag>Sigmoid函数</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>机器学习笔记1</title>
     <url>/2020/07/21/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B01/</url>
     <content><![CDATA[<h1 id="机器学习笔记"><a href="#机器学习笔记" class="headerlink" title="机器学习笔记"></a>机器学习笔记</h1><a id="more"></a>
@@ -20,49 +169,6 @@
         <tag>机器学习</tag>
         <tag>Python</tag>
         <tag>机器学习基础概念</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>acl论文记录</title>
-    <url>/2020/09/16/acl%E8%AE%BA%E6%96%87%E8%AE%B0%E5%BD%95/</url>
-    <content><![CDATA[<h3 id="对话系统"><a href="#对话系统" class="headerlink" title="对话系统"></a>对话系统</h3><a id="more"></a>
-<h4 id="一、Dynamic-Fusion-Network-for-Multi-Domain-End-to-end-Task-Oriented-Dialog"><a href="#一、Dynamic-Fusion-Network-for-Multi-Domain-End-to-end-Task-Oriented-Dialog" class="headerlink" title="一、Dynamic Fusion Network for Multi-Domain End-to-end Task-Oriented Dialog"></a>一、Dynamic Fusion Network for Multi-Domain End-to-end Task-Oriented Dialog</h4><h5 id="动态聚合网络，用于多领域端到端任务型对话系统"><a href="#动态聚合网络，用于多领域端到端任务型对话系统" class="headerlink" title="动态聚合网络，用于多领域端到端任务型对话系统"></a>动态聚合网络，用于多领域端到端任务型对话系统</h5><ul>
-<li>Abstract：<br>Recent studies have shown remarkable suc- cess in end-to-end<br>task-oriented dialog system. However, most neural models rely on large<br>training data, which are only available for a certain number of task domains,<br>such as nav- igation and scheduling. This makes it difficult to scalable for a<br>new domain with limited la- beled data. However, there has been relatively<br>little research on how to effectively use data from all domains to improve the<br>performance of each domain and also unseen domains. To this end, we<br>investigate methods that can make explicit use of domain knowledge and intro-<br>duce a shared-private network to learn shared and specific knowledge. In<br>addition, we pro- pose a novel Dynamic Fusion Network (DF- Net) which<br>automatically exploit the relevance between the target domain and each domain.<br>Results show that our model outperforms exist- ing methods on multi-domain<br>dialogue, giving the state-of-the-art in the literature. Besides, with little<br>training data, we show its transfer- ability by outperforming prior best model<br>by 13.9% on average.</li>
-<li>摘要：<br>最近的研究表明，在端到端的面向任务的对话系统中取得了巨大的成功。但是，大多数神经模型都依赖于大量训练数据，这些训练数据仅可用于一定数量的任务领域，例如导航和调度。<br>这使得对具有有限标记数据的新领域进行扩展变得很困难。但是，关于如何有效地使用所有领域的数据来改善每个领域以及未知领域的性能表现的研究相对较少。<br>为此，我们研究了可以准确使用领域知识的方法，并引入了共享－私有网络来学习共享和特定知识。<br>此外，我们提出了一种新颖的动态聚合网络（DFNet），该网络可自动利用目标领域与每个领域之间的相关性。结果表明，我们的模型优于现有的多领域对话方法，提供了文献中的最新技术。<br>此外，在训练数据很少的情况下，我们的性能比以前的最佳模型平均高13.9％，从而显示出其可移植性。</li>
-<li>Conclusion：<br>In this paper, we propose to use a shared-private<br>model to investigate explicit modeling domain<br>knowledge for multi-domain dialog. In addition, a<br>dynamic fusion layer is proposed to dynamically<br>capture the correlation between a target domain and<br>all source domains. Experiments on two datasets<br>show the effectiveness of the proposed models. Be-<br>sides, our model can quickly adapt to a new domain<br>with little annotated data.</li>
-<li>结论：<br>本文中，我们建议使用共享-私有模型研究多领域对话显式建模域知识。另外，提出了动态聚合以动态捕获目标域和所有源域之间的相关性。<br>在两个数据集上的实验表明了所提出模型的有效性。此外，我们的模型可以在几乎没有注释数据的情况下快速适应新领域。</li>
-<li>summary：<ul>
-<li>现有的神经模型大多数都依赖大量的训练数据，且只能用在一部分任务领域。</li>
-<li>本文引入了shared-private network（共享－私有网络）来学习共享和特定的知识。</li>
-<li>提出了新的动态聚合网络（DFNET),它可以自动探索目标域与各个领域之间的相关性。并且该模型同时可以应用在几乎没有标签数据的新领域中。</li>
-</ul>
-</li>
-</ul>
-<h4 id="二、Learning-Dialog-Policies-from-Weak-Demonstrations"><a href="#二、Learning-Dialog-Policies-from-Weak-Demonstrations" class="headerlink" title="二、Learning Dialog Policies from Weak Demonstrations"></a>二、Learning Dialog Policies from Weak Demonstrations</h4><h5 id="从弱演示中学习对话策略"><a href="#从弱演示中学习对话策略" class="headerlink" title="从弱演示中学习对话策略"></a>从弱演示中学习对话策略</h5><ul>
-<li><p>Abstract<br>Deep reinforcement learning is a promising approach to training a dialog manager, but current methods struggle with the large state and action spaces of multi-domain dialog systems. Building upon Deep Q-learning from Demonstrations (DQfD), an algorithm that scores highly in difficult Atari games, we leverage dialog data to guide the agent to successfully respond to a user’s requests. We make progressively fewer assumptions about the data needed, using labeled, reduced-labeled, and even unlabeled data to train expert demonstrators. We introduce Reinforced Fine-tune Learning, an extension to DQfD, enabling us to overcome the domain gap between the datasets and the environment. Experiments in a challenging multi-domain dialog system framework validate our approaches, and get high success rates even when trained on outof-domain data.</p>
-</li>
-<li><p>深度强化学习是一种很有前途的训练对话管理器的方法，但是目前的方法难以适应多领域对话系统的大规模状态空间和动作空间。基于深度问答学习(DQfD)，一种在困难的雅达利游戏中得分很高的算法，我们利用对话数据来指导代理来成功响应用户的请求。我们对所需数据的假设越来越少，使用标记的、简化标记的、甚至是未标记的数据来训练专家演示。我们引入了强化微调学习，这是DQfD的扩展，使我们能够克服数据集和环境之间的领域差距。在一个具有挑战性的多领域对话系统框架中进行的实验验证了我们的方法，并且即使在领域外的数据上进行训练也获得了很高的成功率。</p>
-</li>
-<li><p>Conclusion</p>
-<p>In this paper, we have shown that weak demonstrations can be leveraged to learn an accurate dialog manager with Deep Q-Learning from Demonstrations in a challenging multi-domain environment. We established that expert demonstrators can be trained on labeled, reduced-labeled, and unlabeled data and still guide the RL agent by means of their respective auxiliary losses. Evaluation has shown that all experts exceeded the performance of reinforcement and supervised learning baselines, and in some cases even approached the results of a hand-crafted rule-based dialog manager. Furthermore, we introduced Reinforced Finetune Learning (RoFL) a DAgger-inspired extension to DQfD which allows a pre-trained expert to adapt to an RL environment on-the-fly, bridging the domain-gap. Our experiments show that RoFL training is beneficial across different sources of demonstration data, boosting both the rate of convergence and final system performance. It even enables an expert trained on unannotated out-ofdomain data to guide an RL dialog manager in a challenging environment. In future, we want to continue to investigate the possibility of using even weaker demonstrations. Since our No Label Expert is trained on unannotated data, it would be interesting to leverage large and noisy conversational datasets drawn from message boards ormovie subtitles, and to see how RoFL training fares with such a significant domain gap between the data and the RL environment.</p>
-</li>
-<li><p>在本文中，我们展示了在一个具有挑战性的多领域环境中，可以利用弱演示来学习使用深度Q-Learning的精确对话管理器。我们建立了专家演示可以对标记数据、少标记数据和未标记数据进行训练，并且仍然可以通过各自的辅助损失来指导RL agent。评估表明，所有的专家都超过了增强和监督学习基线的性能，在某些情况下甚至接近了手工制作的基于规则的对话管理器的结果。此外，我们引入了增强的Finetune学习(RoFL)，这是DQfD的一种受短剑启发的扩展，它允许预先训练的专家可以动态适应RL环境，弥补了领域的差距。我们的实验表明，RoFL训练对于跨不同来源的演示数据是有益的，它提高收敛速度和最终的系统性能。它甚至可以让一个在未标注的域外数据方面受过训练的专家在一个充满挑战的环境中指导一个RL对话管理器。在将来，我们希望继续研究使用更弱的演示的可能性。由于我们的无标签专家是在未经注释的数据上训练的，所以利用从留言板或电影字幕中提取的大量嘈杂的对话数据集，并看看RoFL训练在数据和RL环境之间如此显著的领域差距下如何取得成功，这将是很有趣的。</p>
-</li>
-<li><p>Summary</p>
-<ul>
-<li>目前的方法难以适应多领域对话系统的大规模状态空间和动作空间</li>
-<li>本文提出在复杂的多领域环境下，利用DQfD算法在弱演示中可以学习到一个精确的对话管理器。</li>
-<li>本文建立的专家演示可以在数据标记受限的情况下达到非常好的效果，在某些情况甚至接近了基于规则的对话管理器的结果。</li>
-<li>本文还引入了RoFL，这是DQfD的一种扩展，它允许预先训练的专家可以动态适应RL环境，弥补了领域的差距。</li>
-</ul>
-</li>
-</ul>
-]]></content>
-      <categories>
-        <category>顶会论文</category>
-      </categories>
-      <tags>
-        <tag>acl</tag>
       </tags>
   </entry>
   <entry>
@@ -131,6 +237,131 @@
         <tag>PCA</tag>
         <tag>非监督学习</tag>
         <tag>数据降维</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>机器学习笔记13</title>
+    <url>/2020/09/05/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B013/</url>
+    <content><![CDATA[<h3 id="评价分类结果"><a href="#评价分类结果" class="headerlink" title="评价分类结果"></a>评价分类结果</h3><a id="more"></a>
+<h4 id="一、分类准确度的缺陷和混淆矩阵"><a href="#一、分类准确度的缺陷和混淆矩阵" class="headerlink" title="一、分类准确度的缺陷和混淆矩阵"></a>一、分类准确度的缺陷和混淆矩阵</h4><h5 id="1、分类准确度的缺陷："><a href="#1、分类准确度的缺陷：" class="headerlink" title="1、分类准确度的缺陷："></a>1、分类准确度的缺陷：</h5><ul>
+<li><p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200905225600926.png" alt="image-20200905225600926"></p>
+<h5 id="假设这个癌症预测系统的预测准确度（分类准确度）是99-9-，若癌症产生概率只有0-01-，我们如果人为预测所有人都健康，这样准确度会达到99-99-。这比该预测系统的准确度更高，显然这个预测系统（模型）是失败的。因此，对于这类极度偏斜（Skewed-Data）的数据，只使用分类准确度是不行的。"><a href="#假设这个癌症预测系统的预测准确度（分类准确度）是99-9-，若癌症产生概率只有0-01-，我们如果人为预测所有人都健康，这样准确度会达到99-99-。这比该预测系统的准确度更高，显然这个预测系统（模型）是失败的。因此，对于这类极度偏斜（Skewed-Data）的数据，只使用分类准确度是不行的。" class="headerlink" title="假设这个癌症预测系统的预测准确度（分类准确度）是99.9%，若癌症产生概率只有0.01%，我们如果人为预测所有人都健康，这样准确度会达到99.99%。这比该预测系统的准确度更高，显然这个预测系统（模型）是失败的。因此，对于这类极度偏斜（Skewed Data）的数据，只使用分类准确度是不行的。"></a>假设这个癌症预测系统的预测准确度（分类准确度）是99.9%，若癌症产生概率只有0.01%，我们如果人为预测所有人都健康，这样准确度会达到99.99%。这比该预测系统的准确度更高，显然这个预测系统（模型）是失败的。因此，对于这类极度偏斜（Skewed Data）的数据，只使用分类准确度是不行的。</h5></li>
+</ul>
+<h5 id="2、混淆矩阵："><a href="#2、混淆矩阵：" class="headerlink" title="2、混淆矩阵："></a>2、混淆矩阵：</h5><ul>
+<li><p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200905232354868.png" alt="image-20200905232354868"></p>
+<h5 id="T表示True，F表示False，N表示Negative，P表示Positive。"><a href="#T表示True，F表示False，N表示Negative，P表示Positive。" class="headerlink" title="T表示True，F表示False，N表示Negative，P表示Positive。"></a>T表示True，F表示False，N表示Negative，P表示Positive。</h5><h5 id="具体可看https-blog-csdn-net-Orange-Spotty-Cat-article-details-80520839"><a href="#具体可看https-blog-csdn-net-Orange-Spotty-Cat-article-details-80520839" class="headerlink" title="具体可看https://blog.csdn.net/Orange_Spotty_Cat/article/details/80520839"></a>具体可看<a href="https://blog.csdn.net/Orange_Spotty_Cat/article/details/80520839" target="_blank" rel="noopener">https://blog.csdn.net/Orange_Spotty_Cat/article/details/80520839</a></h5><ul>
+<li><h5 id="真实值是positive，模型认为是positive的数量（True-Positive-TP）"><a href="#真实值是positive，模型认为是positive的数量（True-Positive-TP）" class="headerlink" title="真实值是positive，模型认为是positive的数量（True Positive=TP）"></a>真实值是positive，模型认为是positive的数量（True Positive=TP）</h5></li>
+<li><h5 id="真实值是positive，模型认为是negative的数量（False-Negative-FN）"><a href="#真实值是positive，模型认为是negative的数量（False-Negative-FN）" class="headerlink" title="真实值是positive，模型认为是negative的数量（False Negative=FN）"></a>真实值是positive，模型认为是negative的数量（False Negative=FN）</h5></li>
+<li><h5 id="真实值是negative，模型认为是positive的数量（False-Positive-FP）"><a href="#真实值是negative，模型认为是positive的数量（False-Positive-FP）" class="headerlink" title="真实值是negative，模型认为是positive的数量（False Positive=FP）"></a>真实值是negative，模型认为是positive的数量（False Positive=FP）</h5></li>
+<li><h5 id="真实值是negative，模型认为是negative的数量（True-Negative-TN）"><a href="#真实值是negative，模型认为是negative的数量（True-Negative-TN）" class="headerlink" title="真实值是negative，模型认为是negative的数量（True Negative=TN）"></a>真实值是negative，模型认为是negative的数量（True Negative=TN）</h5></li>
+</ul>
+<h5 id="举例说明：假如有10000个人，其中有（9978-12）人没患病，有（2-8）人患病"><a href="#举例说明：假如有10000个人，其中有（9978-12）人没患病，有（2-8）人患病" class="headerlink" title="举例说明：假如有10000个人，其中有（9978+12）人没患病，有（2+8）人患病"></a>举例说明：假如有10000个人，其中有（9978+12）人没患病，有（2+8）人患病</h5><ul>
+<li><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200905233743570.png" alt="image-20200905233743570"></li>
+</ul>
+</li>
+<li><h5 id="通过上例说明精准率与召回率："><a href="#通过上例说明精准率与召回率：" class="headerlink" title="通过上例说明精准率与召回率："></a>通过上例说明精准率与召回率：</h5><ul>
+<li><h5 id="精准率："><a href="#精准率：" class="headerlink" title="精准率："></a>精准率：</h5><p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200905233949626.png" alt="image-20200905233949626"></p>
+<h5 id="在分类问题中，我们一般关注的重点（预测的结果）是“1”而不是“0”，针对本例就是指患病这种情况。所以精准率指在所有预测为“1”的结果中，预测正确的比重是多少。在本例中指在所有预测为患病的人中，预测正确的比重是多少。"><a href="#在分类问题中，我们一般关注的重点（预测的结果）是“1”而不是“0”，针对本例就是指患病这种情况。所以精准率指在所有预测为“1”的结果中，预测正确的比重是多少。在本例中指在所有预测为患病的人中，预测正确的比重是多少。" class="headerlink" title="在分类问题中，我们一般关注的重点（预测的结果）是“1”而不是“0”，针对本例就是指患病这种情况。所以精准率指在所有预测为“1”的结果中，预测正确的比重是多少。在本例中指在所有预测为患病的人中，预测正确的比重是多少。"></a>在分类问题中，我们一般关注的重点（预测的结果）是“1”而不是“0”，针对本例就是指患病这种情况。所以精准率指在所有预测为“1”的结果中，预测正确的比重是多少。在本例中指在所有预测为患病的人中，预测正确的比重是多少。</h5></li>
+<li><h5 id="召回率："><a href="#召回率：" class="headerlink" title="召回率："></a>召回率：</h5><p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200905234614050.png" alt="image-20200905234614050"></p>
+<h5 id="召回率指在所有真实为“1”的结果中，预测正确的比重是多少。在本例中指在所有确实患病的人中，预测正确的比重是多少。"><a href="#召回率指在所有真实为“1”的结果中，预测正确的比重是多少。在本例中指在所有确实患病的人中，预测正确的比重是多少。" class="headerlink" title="召回率指在所有真实为“1”的结果中，预测正确的比重是多少。在本例中指在所有确实患病的人中，预测正确的比重是多少。"></a>召回率指在所有真实为“1”的结果中，预测正确的比重是多少。在本例中指在所有确实患病的人中，预测正确的比重是多少。</h5></li>
+</ul>
+</li>
+<li><h5 id="再回到最开始的例子中，我们预测在10000个人中，有9990个人健康，10个人患病，这样会得到下面的混淆矩阵："><a href="#再回到最开始的例子中，我们预测在10000个人中，有9990个人健康，10个人患病，这样会得到下面的混淆矩阵：" class="headerlink" title="再回到最开始的例子中，我们预测在10000个人中，有9990个人健康，10个人患病，这样会得到下面的混淆矩阵："></a>再回到最开始的例子中，我们预测在10000个人中，有9990个人健康，10个人患病，这样会得到下面的混淆矩阵：</h5><ul>
+<li><p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200905235343865.png" alt="image-20200905235343865"></p>
+<h5 id="虽然分类准确度达到了99-9-，但是精准率与召回率却都是0，很显然这个模型是不好的。"><a href="#虽然分类准确度达到了99-9-，但是精准率与召回率却都是0，很显然这个模型是不好的。" class="headerlink" title="虽然分类准确度达到了99.9%，但是精准率与召回率却都是0，很显然这个模型是不好的。"></a>虽然分类准确度达到了99.9%，但是精准率与召回率却都是0，很显然这个模型是不好的。</h5></li>
+</ul>
+</li>
+</ul>
+<h4 id="二、F1-Score"><a href="#二、F1-Score" class="headerlink" title="二、F1 Score"></a>二、F1 Score</h4><ul>
+<li><h5 id="关于精准率和召回率的解读要视实际情况来定："><a href="#关于精准率和召回率的解读要视实际情况来定：" class="headerlink" title="关于精准率和召回率的解读要视实际情况来定："></a>关于精准率和召回率的解读要视实际情况来定：</h5><ul>
+<li><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200907203853160.png" alt="image-20200907203853160"></li>
+<li><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200907203913917.png" alt="image-20200907203913917"></li>
+</ul>
+</li>
+<li><h5 id="是否有一个指标可以将二者都兼顾呢——F1-Score"><a href="#是否有一个指标可以将二者都兼顾呢——F1-Score" class="headerlink" title="是否有一个指标可以将二者都兼顾呢——F1 Score"></a>是否有一个指标可以将二者都兼顾呢——F1 Score</h5><ul>
+<li><h5 id="F1-Score是precision和recall的调和平均值。它的特性是只有二者都比较大才能使得F1-Score比较大；其中一个很大（很小），另一个相反，都不会使得F1-Score很大。"><a href="#F1-Score是precision和recall的调和平均值。它的特性是只有二者都比较大才能使得F1-Score比较大；其中一个很大（很小），另一个相反，都不会使得F1-Score很大。" class="headerlink" title="F1 Score是precision和recall的调和平均值。它的特性是只有二者都比较大才能使得F1 Score比较大；其中一个很大（很小），另一个相反，都不会使得F1 Score很大。"></a>F1 Score是precision和recall的调和平均值。它的特性是只有二者都比较大才能使得F1 Score比较大；其中一个很大（很小），另一个相反，都不会使得F1 Score很大。</h5></li>
+<li><p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200907204616387.png" alt="image-20200907204616387"></p>
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="三、Precision-Recall的平衡"><a href="#三、Precision-Recall的平衡" class="headerlink" title="三、Precision-Recall的平衡"></a>三、Precision-Recall的平衡</h4><ul>
+<li><h5 id="在逻辑回归中"><a href="#在逻辑回归中" class="headerlink" title="在逻辑回归中"></a>在逻辑回归中</h5><ul>
+<li><p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200907222636806.png" alt="image-20200907222636806"></p>
+</li>
+<li><h5 id="为啥决策边界要以0为界限呢？其实我们可以根据需求来调节决策边界的界限，进而改变分类结果。"><a href="#为啥决策边界要以0为界限呢？其实我们可以根据需求来调节决策边界的界限，进而改变分类结果。" class="headerlink" title="为啥决策边界要以0为界限呢？其实我们可以根据需求来调节决策边界的界限，进而改变分类结果。"></a>为啥决策边界要以0为界限呢？其实我们可以根据需求来调节决策边界的界限，进而改变分类结果。</h5></li>
+</ul>
+</li>
+<li><h5 id="因此我们可以让决策边界等于threshold（阈值），让它改变分类结果，进而影响Precision与Recall的权重。"><a href="#因此我们可以让决策边界等于threshold（阈值），让它改变分类结果，进而影响Precision与Recall的权重。" class="headerlink" title="因此我们可以让决策边界等于threshold（阈值），让它改变分类结果，进而影响Precision与Recall的权重。"></a>因此我们可以让决策边界等于threshold（阈值），让它改变分类结果，进而影响Precision与Recall的权重。</h5><ul>
+<li><p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200907223244946.png" alt="image-20200907223244946"></p>
+<ul>
+<li><h5 id="threshold-0时："><a href="#threshold-0时：" class="headerlink" title="threshold=0时："></a>threshold=0时：</h5><p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200907223426718.png" alt="image-20200907223426718"></p>
+<h5 id="星星表示实际为1的样本，圆圈表示实际为0的样本。左边是预测为0的样本，右边是预测为1的样本。"><a href="#星星表示实际为1的样本，圆圈表示实际为0的样本。左边是预测为0的样本，右边是预测为1的样本。" class="headerlink" title="星星表示实际为1的样本，圆圈表示实际为0的样本。左边是预测为0的样本，右边是预测为1的样本。"></a>星星表示实际为1的样本，圆圈表示实际为0的样本。左边是预测为0的样本，右边是预测为1的样本。</h5></li>
+<li><h5 id="threshold-gt-0时："><a href="#threshold-gt-0时：" class="headerlink" title="threshold&gt;0时："></a>threshold&gt;0时：</h5><p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200907223654382.png" alt="image-20200907223654382"></p>
+</li>
+<li><h5 id="threshold-lt-0时："><a href="#threshold-lt-0时：" class="headerlink" title="threshold&lt;0时："></a>threshold&lt;0时：</h5><p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200907223734566.png" alt="image-20200907223734566"></p>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><h5 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h5><ul>
+<li><h5 id="精准率与召回率互相牵制，一个升高，另一个就会降低"><a href="#精准率与召回率互相牵制，一个升高，另一个就会降低" class="headerlink" title="精准率与召回率互相牵制，一个升高，另一个就会降低"></a>精准率与召回率互相牵制，一个升高，另一个就会降低</h5></li>
+<li><h5 id="阈值越大，精准率越高，召回率越低；阈值越小，精准率越低，召回率越高"><a href="#阈值越大，精准率越高，召回率越低；阈值越小，精准率越低，召回率越高" class="headerlink" title="阈值越大，精准率越高，召回率越低；阈值越小，精准率越低，召回率越高"></a>阈值越大，精准率越高，召回率越低；阈值越小，精准率越低，召回率越高</h5></li>
+</ul>
+</li>
+</ul>
+<h4 id="四、P-R曲线"><a href="#四、P-R曲线" class="headerlink" title="四、P-R曲线"></a>四、P-R曲线</h4><ul>
+<li><h5 id="P-R曲线顾名思义横坐标是精准率，纵坐标是召回率"><a href="#P-R曲线顾名思义横坐标是精准率，纵坐标是召回率" class="headerlink" title="P-R曲线顾名思义横坐标是精准率，纵坐标是召回率"></a>P-R曲线顾名思义横坐标是精准率，纵坐标是召回率</h5><p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200907233249933.png" alt="image-20200907233249933"></p>
+<ul>
+<li><h5 id="途中曲线开始急剧下降的点，可能就是精准率和召回率平衡位置的点"><a href="#途中曲线开始急剧下降的点，可能就是精准率和召回率平衡位置的点" class="headerlink" title="途中曲线开始急剧下降的点，可能就是精准率和召回率平衡位置的点"></a>途中曲线开始急剧下降的点，可能就是精准率和召回率平衡位置的点</h5></li>
+</ul>
+</li>
+<li><h5 id="不同的模型对应的不同的-Precision-Recall-曲线"><a href="#不同的模型对应的不同的-Precision-Recall-曲线" class="headerlink" title="不同的模型对应的不同的 Precision - Recall 曲线"></a>不同的模型对应的不同的 Precision - Recall 曲线</h5><p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200907233440669.png" alt="image-20200907233440669"></p>
+<ul>
+<li><h5 id="外层曲线对应的模型更优（外层曲线的P值和R值都比里层曲线的大）；或者称与坐标轴一起包围的面积越大者越优"><a href="#外层曲线对应的模型更优（外层曲线的P值和R值都比里层曲线的大）；或者称与坐标轴一起包围的面积越大者越优" class="headerlink" title="外层曲线对应的模型更优（外层曲线的P值和R值都比里层曲线的大）；或者称与坐标轴一起包围的面积越大者越优"></a>外层曲线对应的模型更优（外层曲线的P值和R值都比里层曲线的大）；或者称与坐标轴一起包围的面积越大者越优</h5></li>
+<li><h5 id="P-R-曲线也可以作为选择算法、模型、超参数的指标；但一般不适用此曲线，而是使用-ROC-曲线"><a href="#P-R-曲线也可以作为选择算法、模型、超参数的指标；但一般不适用此曲线，而是使用-ROC-曲线" class="headerlink" title="P - R 曲线也可以作为选择算法、模型、超参数的指标；但一般不适用此曲线，而是使用 ROC 曲线"></a>P - R 曲线也可以作为选择算法、模型、超参数的指标；但一般不适用此曲线，而是使用 ROC 曲线</h5></li>
+</ul>
+</li>
+</ul>
+<h4 id="五、ROC曲线"><a href="#五、ROC曲线" class="headerlink" title="五、ROC曲线"></a>五、ROC曲线</h4><ul>
+<li><h5 id="ROC曲线描述TPR和FPR之间的关系"><a href="#ROC曲线描述TPR和FPR之间的关系" class="headerlink" title="ROC曲线描述TPR和FPR之间的关系"></a>ROC曲线描述TPR和FPR之间的关系</h5><ul>
+<li><h5 id="TPR："><a href="#TPR：" class="headerlink" title="TPR："></a>TPR：</h5><p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200913172134092.png" alt="image-20200913172134092"></p>
+</li>
+<li><h5 id="FPR"><a href="#FPR" class="headerlink" title="FPR:"></a>FPR:</h5><p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200913172216856.png" alt="image-20200913172216856"></p>
+</li>
+<li><h5 id="TPR与FPR的关系"><a href="#TPR与FPR的关系" class="headerlink" title="TPR与FPR的关系"></a>TPR与FPR的关系</h5><p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200913180416522.png" alt="image-20200913180416522"></p>
+<ul>
+<li><h5 id="随着阈值-threshold-的增大，FPR-和-TPR-都逐渐减小；"><a href="#随着阈值-threshold-的增大，FPR-和-TPR-都逐渐减小；" class="headerlink" title="随着阈值 threshold 的增大，FPR 和 TPR 都逐渐减小；"></a>随着阈值 threshold 的增大，FPR 和 TPR 都逐渐减小；</h5></li>
+<li><h5 id="FPR-和-TPR-称正相关关系，FPR-越高，TPR-相应的也越高；"><a href="#FPR-和-TPR-称正相关关系，FPR-越高，TPR-相应的也越高；" class="headerlink" title="FPR 和 TPR 称正相关关系，FPR 越高，TPR 相应的也越高；"></a>FPR 和 TPR 称正相关关系，FPR 越高，TPR 相应的也越高；</h5></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><h5 id="与P-R曲线的区别"><a href="#与P-R曲线的区别" class="headerlink" title="与P-R曲线的区别"></a>与P-R曲线的区别</h5><ul>
+<li><h5 id="P-R曲线：应用于判定由极度有偏数据所训练的模型的优劣"><a href="#P-R曲线：应用于判定由极度有偏数据所训练的模型的优劣" class="headerlink" title="P-R曲线：应用于判定由极度有偏数据所训练的模型的优劣"></a>P-R曲线：应用于判定由极度有偏数据所训练的模型的优劣</h5></li>
+<li><h5 id="ROC曲线：应用于比较两个模型的优劣"><a href="#ROC曲线：应用于比较两个模型的优劣" class="headerlink" title="ROC曲线：应用于比较两个模型的优劣"></a>ROC曲线：应用于比较两个模型的优劣</h5><ul>
+<li><h5 id="可以是同样算法不同超参数得到的不同模型，也可以是不同算法得到的不同模型"><a href="#可以是同样算法不同超参数得到的不同模型，也可以是不同算法得到的不同模型" class="headerlink" title="可以是同样算法不同超参数得到的不同模型，也可以是不同算法得到的不同模型"></a>可以是同样算法不同超参数得到的不同模型，也可以是不同算法得到的不同模型</h5></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><h5 id="总结："><a href="#总结：" class="headerlink" title="总结："></a>总结：</h5><ul>
+<li><h5 id="ROC曲线与图形边界围成的面积，作为衡量模型优劣的标准，面积越大，模型越优"><a href="#ROC曲线与图形边界围成的面积，作为衡量模型优劣的标准，面积越大，模型越优" class="headerlink" title="ROC曲线与图形边界围成的面积，作为衡量模型优劣的标准，面积越大，模型越优"></a>ROC曲线与图形边界围成的面积，作为衡量模型优劣的标准，面积越大，模型越优</h5></li>
+<li><h5 id="计算ROC曲线与坐标轴围成的面积：称ROC的auc；"><a href="#计算ROC曲线与坐标轴围成的面积：称ROC的auc；" class="headerlink" title="计算ROC曲线与坐标轴围成的面积：称ROC的auc；"></a>计算ROC曲线与坐标轴围成的面积：称ROC的auc；</h5></li>
+<li><h5 id="面积越大，模型越优："><a href="#面积越大，模型越优：" class="headerlink" title="面积越大，模型越优："></a>面积越大，模型越优：</h5></li>
+</ul>
+</li>
+</ul>
+<h4 id="六、-多分类问题中的混淆矩阵"><a href="#六、-多分类问题中的混淆矩阵" class="headerlink" title="六、 多分类问题中的混淆矩阵"></a>六、 多分类问题中的混淆矩阵</h4><h5 id="这块儿内容直接看‘08-Confusion-Matrix-in-Multiclass-Classification-ipynb’"><a href="#这块儿内容直接看‘08-Confusion-Matrix-in-Multiclass-Classification-ipynb’" class="headerlink" title="这块儿内容直接看‘08-Confusion-Matrix-in-Multiclass-Classification.ipynb’"></a>这块儿内容直接看‘08-Confusion-Matrix-in-Multiclass-Classification.ipynb’</h5>]]></content>
+      <categories>
+        <category>机器学习</category>
+      </categories>
+      <tags>
+        <tag>混淆矩阵</tag>
+        <tag>F1 SCORE</tag>
+        <tag>精准率与召回率</tag>
+        <tag>PR曲线与ROC曲线</tag>
       </tags>
   </entry>
   <entry>
@@ -290,127 +521,6 @@
       </tags>
   </entry>
   <entry>
-    <title>机器学习笔记12</title>
-    <url>/2020/08/26/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B012/</url>
-    <content><![CDATA[<h3 id="逻辑回归（Logistic-Regression）"><a href="#逻辑回归（Logistic-Regression）" class="headerlink" title="逻辑回归（Logistic Regression）"></a>逻辑回归（Logistic Regression）</h3><a id="more"></a>
-<h4 id="一、什么是逻辑回归"><a href="#一、什么是逻辑回归" class="headerlink" title="一、什么是逻辑回归"></a>一、什么是逻辑回归</h4><ul>
-<li><p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200827181823137.png" alt="image-20200827181823137"></p>
-<p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200827181942648.png" alt="image-20200827181942648"></p>
-<ul>
-<li><h5 id="线性回归的预测值是我们本身就需要的指标，比如房价预测中，y就是房价。但是逻辑回归的预测值是概率值，比如预测未来一周某地下雨的可能性。这里可以将逻辑回归当作回归算法，因为概率值也属于连续值。但是通常逻辑回归被当作是分类算法，比如将下雨的可能性（回归）转换为是否下雨（分类），所以需要进一步的转换，将概率p-gt-0-5的转换为1，p-lt-0-5的转换为0。"><a href="#线性回归的预测值是我们本身就需要的指标，比如房价预测中，y就是房价。但是逻辑回归的预测值是概率值，比如预测未来一周某地下雨的可能性。这里可以将逻辑回归当作回归算法，因为概率值也属于连续值。但是通常逻辑回归被当作是分类算法，比如将下雨的可能性（回归）转换为是否下雨（分类），所以需要进一步的转换，将概率p-gt-0-5的转换为1，p-lt-0-5的转换为0。" class="headerlink" title="线性回归的预测值是我们本身就需要的指标，比如房价预测中，y就是房价。但是逻辑回归的预测值是概率值，比如预测未来一周某地下雨的可能性。这里可以将逻辑回归当作回归算法，因为概率值也属于连续值。但是通常逻辑回归被当作是分类算法，比如将下雨的可能性（回归）转换为是否下雨（分类），所以需要进一步的转换，将概率p&gt;0.5的转换为1，p&lt;0.5的转换为0。"></a>线性回归的预测值是我们本身就需要的指标，比如房价预测中，y就是房价。但是逻辑回归的预测值是概率值，比如预测未来一周某地下雨的可能性。这里可以将逻辑回归当作回归算法，因为概率值也属于连续值。但是通常逻辑回归被当作是分类算法，比如将下雨的可能性（回归）转换为是否下雨（分类），所以需要进一步的转换，将概率p&gt;0.5的转换为1，p&lt;0.5的转换为0。</h5></li>
-<li><p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200827183353872.png" alt="image-20200827183353872"></p>
-<h5 id="为了解决线性回归不适合处理分类的问题，我们在线性回归的基础上提出了逻辑回归。但是线性回归得出的预测值的值域往往是-inf-inf-，所以我们需要一个-sigma-函数将线性回归的结果映射到-0-1-上，使它符合概率的值域。那么，哪个函数能完成这一工作呢？那就是Sigmoid函数了。"><a href="#为了解决线性回归不适合处理分类的问题，我们在线性回归的基础上提出了逻辑回归。但是线性回归得出的预测值的值域往往是-inf-inf-，所以我们需要一个-sigma-函数将线性回归的结果映射到-0-1-上，使它符合概率的值域。那么，哪个函数能完成这一工作呢？那就是Sigmoid函数了。" class="headerlink" title="为了解决线性回归不适合处理分类的问题，我们在线性回归的基础上提出了逻辑回归。但是线性回归得出的预测值的值域往往是[-inf , +inf]，所以我们需要一个$\sigma$函数将线性回归的结果映射到(0 , 1)上，使它符合概率的值域。那么，哪个函数能完成这一工作呢？那就是Sigmoid函数了。"></a>为了解决线性回归不适合处理分类的问题，我们在线性回归的基础上提出了逻辑回归。但是线性回归得出的预测值的值域往往是[-inf , +inf]，所以我们需要一个$\sigma$函数将线性回归的结果映射到(0 , 1)上，使它符合概率的值域。那么，哪个函数能完成这一工作呢？那就是Sigmoid函数了。</h5></li>
-<li><p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200827184535801.png" alt="image-20200827184535801"></p>
-<p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200827184642354.png" alt="image-20200827184642354"></p>
-<h5 id="因此下面就是逻辑回归的全貌："><a href="#因此下面就是逻辑回归的全貌：" class="headerlink" title="因此下面就是逻辑回归的全貌："></a>因此下面就是逻辑回归的全貌：</h5><p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200827184806464.png" alt="image-20200827184806464"></p>
-</li>
-</ul>
-</li>
-</ul>
-<h4 id="二、逻辑回归的损失函数（cost指损失函数）"><a href="#二、逻辑回归的损失函数（cost指损失函数）" class="headerlink" title="二、逻辑回归的损失函数（cost指损失函数）"></a>二、逻辑回归的损失函数（cost指损失函数）</h4><ul>
-<li><h5 id="由于逻辑回归的标签值（真实值）是二分类，所以我们不能采用线性回归那样的损失函数，因此我们采用以下方案"><a href="#由于逻辑回归的标签值（真实值）是二分类，所以我们不能采用线性回归那样的损失函数，因此我们采用以下方案" class="headerlink" title="由于逻辑回归的标签值（真实值）是二分类，所以我们不能采用线性回归那样的损失函数，因此我们采用以下方案"></a>由于逻辑回归的标签值（真实值）是二分类，所以我们不能采用线性回归那样的损失函数，因此我们采用以下方案</h5><p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200827185300946.png" alt="image-20200827185300946"></p>
-<h5 id="第一个图的解释："><a href="#第一个图的解释：" class="headerlink" title="第一个图的解释："></a>第一个图的解释：</h5><ul>
-<li><h5 id="如果真实值y等于1，但是预测得出的概率p很小（小于0-5），使得预测出的分类-y-hat-等于0。所以预测出现了错误，自然导致损失函数的值非常大（预测出的p越小，则cost越大）。"><a href="#如果真实值y等于1，但是预测得出的概率p很小（小于0-5），使得预测出的分类-y-hat-等于0。所以预测出现了错误，自然导致损失函数的值非常大（预测出的p越小，则cost越大）。" class="headerlink" title="如果真实值y等于1，但是预测得出的概率p很小（小于0.5），使得预测出的分类$y^{hat}$等于0。所以预测出现了错误，自然导致损失函数的值非常大（预测出的p越小，则cost越大）。"></a>如果真实值y等于1，但是预测得出的概率p很小（小于0.5），使得预测出的分类$y^{hat}$等于0。所以预测出现了错误，自然导致损失函数的值非常大（预测出的p越小，则cost越大）。</h5></li>
-<li><h5 id="如果真实值y等于0，但是预测得出的概率p很大（大于0-5），使得预测出的分类-y-hat-等于1。所以预测出现了错误，自然导致损失函数的值非常大（预测出的p越大，则cost越大）。"><a href="#如果真实值y等于0，但是预测得出的概率p很大（大于0-5），使得预测出的分类-y-hat-等于1。所以预测出现了错误，自然导致损失函数的值非常大（预测出的p越大，则cost越大）。" class="headerlink" title="如果真实值y等于0，但是预测得出的概率p很大（大于0.5），使得预测出的分类$y^{hat}$等于1。所以预测出现了错误，自然导致损失函数的值非常大（预测出的p越大，则cost越大）。"></a>如果真实值y等于0，但是预测得出的概率p很大（大于0.5），使得预测出的分类$y^{hat}$等于1。所以预测出现了错误，自然导致损失函数的值非常大（预测出的p越大，则cost越大）。</h5></li>
-</ul>
-<h5 id="那么，为什么可以采用第二个图的分段函数来实现这一功能呢？（下图的x就是p）"><a href="#那么，为什么可以采用第二个图的分段函数来实现这一功能呢？（下图的x就是p）" class="headerlink" title="那么，为什么可以采用第二个图的分段函数来实现这一功能呢？（下图的x就是p）"></a>那么，为什么可以采用第二个图的分段函数来实现这一功能呢？（下图的x就是p）</h5><p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200827190453596.png" alt="image-20200827190453596"></p>
-<h5 id="很显然，这个分段函数的图像（横坐标是概率值，纵坐标是损失函数值，交点的横坐标是0-5）能很好的体现sigmoid函数的特性。"><a href="#很显然，这个分段函数的图像（横坐标是概率值，纵坐标是损失函数值，交点的横坐标是0-5）能很好的体现sigmoid函数的特性。" class="headerlink" title="很显然，这个分段函数的图像（横坐标是概率值，纵坐标是损失函数值，交点的横坐标是0.5）能很好的体现sigmoid函数的特性。"></a>很显然，这个分段函数的图像（横坐标是概率值，纵坐标是损失函数值，交点的横坐标是0.5）能很好的体现sigmoid函数的特性。</h5><h5 id="但是分段函数不太方便计算，所以我们用下面这个函数来表示分段函数："><a href="#但是分段函数不太方便计算，所以我们用下面这个函数来表示分段函数：" class="headerlink" title="但是分段函数不太方便计算，所以我们用下面这个函数来表示分段函数："></a>但是分段函数不太方便计算，所以我们用下面这个函数来表示分段函数：</h5><p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200828002537051.png" alt="image-20200828002537051"></p>
-<h5 id="将p的表达式代入进一步推导："><a href="#将p的表达式代入进一步推导：" class="headerlink" title="将p的表达式代入进一步推导："></a>将p的表达式代入进一步推导：</h5><p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200828002717063.png" alt="image-20200828002717063"></p>
-<p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200828002755119.png" alt="image-20200828002755119"></p>
-</li>
-</ul>
-<h4 id="三、逻辑回归损失函数的梯度"><a href="#三、逻辑回归损失函数的梯度" class="headerlink" title="三、逻辑回归损失函数的梯度"></a>三、逻辑回归损失函数的梯度</h4><ul>
-<li><h5 id="具体求解梯度过程请参考《神经网络与深度学习-邱锡鹏》的3-2-1参数学习部分的推导。"><a href="#具体求解梯度过程请参考《神经网络与深度学习-邱锡鹏》的3-2-1参数学习部分的推导。" class="headerlink" title="具体求解梯度过程请参考《神经网络与深度学习-邱锡鹏》的3.2.1参数学习部分的推导。"></a>具体求解梯度过程请参考《神经网络与深度学习-邱锡鹏》的3.2.1参数学习部分的推导。</h5><ul>
-<li><h5 id="最终推导得出："><a href="#最终推导得出：" class="headerlink" title="最终推导得出："></a>最终推导得出：</h5><p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200902015231936.png" alt="image-20200902015231936"></p>
-<h5 id="因为是对-theta-j-求偏导，所以在-sigma-X-b-i-theta-的基础上还要有-theta-j-前面的系数-X-j-i-。"><a href="#因为是对-theta-j-求偏导，所以在-sigma-X-b-i-theta-的基础上还要有-theta-j-前面的系数-X-j-i-。" class="headerlink" title="因为是对$\theta_j$求偏导，所以在$\sigma{(X_{b}^{(i)}\theta)}$的基础上还要有$\theta_j$前面的系数$X_{j}^{(i)}$。"></a>因为是对$\theta_j$求偏导，所以在$\sigma{(X_{b}^{(i)}\theta)}$的基础上还要有$\theta_j$前面的系数$X_{j}^{(i)}$。</h5></li>
-<li><h5 id="J-theta-的梯度为："><a href="#J-theta-的梯度为：" class="headerlink" title="$J{(\theta)}$的梯度为："></a>$J{(\theta)}$的梯度为：</h5><p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200902020905850.png" alt="image-20200902020905850"></p>
-</li>
-</ul>
-</li>
-<li><h5 id="对表达式进行向量化（参考线性回归）"><a href="#对表达式进行向量化（参考线性回归）" class="headerlink" title="对表达式进行向量化（参考线性回归）"></a>对表达式进行向量化（参考线性回归）</h5><ul>
-<li><p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200902021018913.png" alt="image-20200902021018913"></p>
-<h5 id="参考上面，逻辑回归的梯度向量化为："><a href="#参考上面，逻辑回归的梯度向量化为：" class="headerlink" title="参考上面，逻辑回归的梯度向量化为："></a>参考上面，逻辑回归的梯度向量化为：</h5><p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200902021114185.png" alt="image-20200902021114185"></p>
-</li>
-</ul>
-</li>
-</ul>
-<h4 id="四、决策边界"><a href="#四、决策边界" class="headerlink" title="四、决策边界"></a>四、决策边界</h4><ul>
-<li><h5 id="决策边界就是将结果通过类别按区域划分"><a href="#决策边界就是将结果通过类别按区域划分" class="headerlink" title="决策边界就是将结果通过类别按区域划分"></a>决策边界就是将结果通过类别按区域划分</h5></li>
-<li><p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200903221221036.png" alt="image-20200903221221036"></p>
-<p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200903221241679.png" alt="image-20200903221241679"></p>
-</li>
-<li><h5 id="逻辑回归决策边界示例"><a href="#逻辑回归决策边界示例" class="headerlink" title="逻辑回归决策边界示例"></a>逻辑回归决策边界示例</h5><p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200903221447790.png" alt="image-20200903221447790"></p>
-</li>
-<li><h5 id="KNN决策边界示例"><a href="#KNN决策边界示例" class="headerlink" title="KNN决策边界示例"></a>KNN决策边界示例</h5><p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200903221529302.png" alt="image-20200903221529302"></p>
-</li>
-<li><h5 id="因为逻辑回归是基于线性回归的，而且现实中的数据的决策边界几乎不可能是直线，所以我们可以像线性回归那样给逻辑回归添加多项式项（原理一样），进而让逻辑回归可以应对非线性数据。"><a href="#因为逻辑回归是基于线性回归的，而且现实中的数据的决策边界几乎不可能是直线，所以我们可以像线性回归那样给逻辑回归添加多项式项（原理一样），进而让逻辑回归可以应对非线性数据。" class="headerlink" title="因为逻辑回归是基于线性回归的，而且现实中的数据的决策边界几乎不可能是直线，所以我们可以像线性回归那样给逻辑回归添加多项式项（原理一样），进而让逻辑回归可以应对非线性数据。"></a>因为逻辑回归是基于线性回归的，而且现实中的数据的决策边界几乎不可能是直线，所以我们可以像线性回归那样给逻辑回归添加多项式项（原理一样），进而让逻辑回归可以应对非线性数据。</h5><p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200903224323601.png" alt="image-20200903224323601"></p>
-</li>
-</ul>
-<h4 id="五、逻辑回归的正则化"><a href="#五、逻辑回归的正则化" class="headerlink" title="五、逻辑回归的正则化"></a>五、逻辑回归的正则化</h4><ul>
-<li><h5 id="左边是线性回归的正则化，右边是逻辑回归的正则化（因为一般情况下建议必须使用正则化，所以将权重超参数放到了损失函数上）"><a href="#左边是线性回归的正则化，右边是逻辑回归的正则化（因为一般情况下建议必须使用正则化，所以将权重超参数放到了损失函数上）" class="headerlink" title="左边是线性回归的正则化，右边是逻辑回归的正则化（因为一般情况下建议必须使用正则化，所以将权重超参数放到了损失函数上）"></a>左边是线性回归的正则化，右边是逻辑回归的正则化（因为一般情况下建议必须使用正则化，所以将权重超参数放到了损失函数上）</h5><p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200903232842954.png" alt="image-20200903232842954"></p>
-</li>
-</ul>
-<h4 id="六、OvR（或OvA）与OvO-或MvM"><a href="#六、OvR（或OvA）与OvO-或MvM" class="headerlink" title="六、OvR（或OvA）与OvO(或MvM)"></a>六、OvR（或OvA）与OvO(或MvM)</h4><h5 id="都是将多分类转换为二分类的方法"><a href="#都是将多分类转换为二分类的方法" class="headerlink" title="都是将多分类转换为二分类的方法"></a>都是将多分类转换为二分类的方法</h5><h5 id="1、OvR："><a href="#1、OvR：" class="headerlink" title="1、OvR："></a>1、OvR：</h5><ul>
-<li><h5 id="每次选取一个类别（ONE），然后将其他类别混合起来当作一个新的类别-REST"><a href="#每次选取一个类别（ONE），然后将其他类别混合起来当作一个新的类别-REST" class="headerlink" title="每次选取一个类别（ONE），然后将其他类别混合起来当作一个新的类别(REST)"></a>每次选取一个类别（ONE），然后将其他类别混合起来当作一个新的类别(REST)</h5><p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200904003819162.png" alt="image-20200904003819162"></p>
-</li>
-</ul>
-<h5 id="2、OvO："><a href="#2、OvO：" class="headerlink" title="2、OvO："></a>2、OvO：</h5><ul>
-<li><h5 id="每次从多个类别中只选出两个类别进行分类"><a href="#每次从多个类别中只选出两个类别进行分类" class="headerlink" title="每次从多个类别中只选出两个类别进行分类"></a>每次从多个类别中只选出两个类别进行分类</h5><p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200904003951785.png" alt="image-20200904003951785"></p>
-<h5 id="使用OvO准确率更高，但是更耗时间"><a href="#使用OvO准确率更高，但是更耗时间" class="headerlink" title="使用OvO准确率更高，但是更耗时间"></a>使用OvO准确率更高，但是更耗时间</h5></li>
-</ul>
-<h4 id="七、逻辑回归的总结与思考"><a href="#七、逻辑回归的总结与思考" class="headerlink" title="七、逻辑回归的总结与思考"></a>七、逻辑回归的总结与思考</h4><p><a href="https://www.cnblogs.com/lijingblog/p/11043849.html" target="_blank" rel="noopener">https://www.cnblogs.com/lijingblog/p/11043849.html</a></p>
-]]></content>
-      <categories>
-        <category>机器学习</category>
-      </categories>
-      <tags>
-        <tag>逻辑回归</tag>
-        <tag>OvR（或OvA）与OvO(或MvM)</tag>
-        <tag>Sigmoid函数</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>机器学习笔记14</title>
-    <url>/2020/09/21/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B014/</url>
-    <content><![CDATA[<h3 id="SVM"><a href="#SVM" class="headerlink" title="SVM"></a>SVM</h3><a id="more"></a>
-<ul>
-<li><h4 id="机器学习：SVM（基础理解）"><a href="#机器学习：SVM（基础理解）" class="headerlink" title="机器学习：SVM（基础理解）"></a><a href="https://www.cnblogs.com/volcao/p/9411514.html" target="_blank" rel="noopener">机器学习：SVM（基础理解）</a></h4></li>
-<li><h4 id="机器学习：SVM（目标函数推导：Hard-Margin-SVM、Soft-Margin-SVM）"><a href="#机器学习：SVM（目标函数推导：Hard-Margin-SVM、Soft-Margin-SVM）" class="headerlink" title="机器学习：SVM（目标函数推导：Hard Margin SVM、Soft Margin SVM）"></a><a href="https://www.cnblogs.com/volcao/p/9413528.html" target="_blank" rel="noopener">机器学习：SVM（目标函数推导：Hard Margin SVM、Soft Margin SVM）</a></h4></li>
-<li><h4 id="机器学习：SVM（scikit-learn-中的-SVM：LinearSVC）"><a href="#机器学习：SVM（scikit-learn-中的-SVM：LinearSVC）" class="headerlink" title="机器学习：SVM（scikit-learn 中的 SVM：LinearSVC）"></a><a href="https://www.cnblogs.com/volcao/p/9464009.html" target="_blank" rel="noopener">机器学习：SVM（scikit-learn 中的 SVM：LinearSVC）</a></h4></li>
-<li><h4 id="机器学习：SVM（非线性数据分类：SVM中使用多项式特征和核函数SVC）"><a href="#机器学习：SVM（非线性数据分类：SVM中使用多项式特征和核函数SVC）" class="headerlink" title="机器学习：SVM（非线性数据分类：SVM中使用多项式特征和核函数SVC）"></a><a href="https://www.cnblogs.com/volcao/p/9464991.html" target="_blank" rel="noopener">机器学习：SVM（非线性数据分类：SVM中使用多项式特征和核函数SVC）</a></h4></li>
-<li><h4 id="机器学习：SVM（核函数、高斯核函数RBF）"><a href="#机器学习：SVM（核函数、高斯核函数RBF）" class="headerlink" title="机器学习：SVM（核函数、高斯核函数RBF）"></a><a href="https://www.cnblogs.com/volcao/p/9465214.html" target="_blank" rel="noopener">机器学习：SVM（核函数、高斯核函数RBF）</a></h4></li>
-<li><h4 id="机器学习：SVM（scikit-learn-中的-RBF、RBF-中的超参数-γ）"><a href="#机器学习：SVM（scikit-learn-中的-RBF、RBF-中的超参数-γ）" class="headerlink" title="机器学习：SVM（scikit-learn 中的 RBF、RBF 中的超参数 γ）"></a><a href="https://www.cnblogs.com/volcao/p/9470209.html" target="_blank" rel="noopener">机器学习：SVM（scikit-learn 中的 RBF、RBF 中的超参数 γ）</a></h4></li>
-<li><h4 id="机器学习：SVM（SVM-思想解决回归问题）"><a href="#机器学习：SVM（SVM-思想解决回归问题）" class="headerlink" title="机器学习：SVM（SVM 思想解决回归问题）"></a><a href="https://www.cnblogs.com/volcao/p/9471800.html" target="_blank" rel="noopener">机器学习：SVM（SVM 思想解决回归问题）</a></h4></li>
-</ul>
-<h3 id="决策树"><a href="#决策树" class="headerlink" title="决策树"></a>决策树</h3><ul>
-<li><h4 id="机器学习：决策树（基本思想、信息熵、构建决策树的问题及思想）"><a href="#机器学习：决策树（基本思想、信息熵、构建决策树的问题及思想）" class="headerlink" title="机器学习：决策树（基本思想、信息熵、构建决策树的问题及思想）"></a><a href="https://www.cnblogs.com/volcao/p/9474366.html" target="_blank" rel="noopener">机器学习：决策树（基本思想、信息熵、构建决策树的问题及思想）</a></h4></li>
-<li><h4 id="机器学习：决策树（使用信息熵寻找最优划分）"><a href="#机器学习：决策树（使用信息熵寻找最优划分）" class="headerlink" title="机器学习：决策树（使用信息熵寻找最优划分）"></a><a href="https://www.cnblogs.com/volcao/p/9477776.html" target="_blank" rel="noopener">机器学习：决策树（使用信息熵寻找最优划分）</a></h4></li>
-<li><h4 id="机器学习：决策树（使用基尼系数划分节点数据集）"><a href="#机器学习：决策树（使用基尼系数划分节点数据集）" class="headerlink" title="机器学习：决策树（使用基尼系数划分节点数据集）"></a><a href="https://www.cnblogs.com/volcao/p/9478314.html" target="_blank" rel="noopener">机器学习：决策树（使用基尼系数划分节点数据集）</a></h4></li>
-<li><h4 id="机器学习：决策树（CART-、决策树中的超参数）"><a href="#机器学习：决策树（CART-、决策树中的超参数）" class="headerlink" title="机器学习：决策树（CART 、决策树中的超参数）"></a><a href="https://www.cnblogs.com/volcao/p/9480431.html" target="_blank" rel="noopener">机器学习：决策树（CART 、决策树中的超参数）</a></h4></li>
-<li><h4 id="机器学习：决策树（决策树解决回归问题、决策树算法的局限性）"><a href="#机器学习：决策树（决策树解决回归问题、决策树算法的局限性）" class="headerlink" title="机器学习：决策树（决策树解决回归问题、决策树算法的局限性）"></a><a href="https://www.cnblogs.com/volcao/p/9481634.html" target="_blank" rel="noopener">机器学习：决策树（决策树解决回归问题、决策树算法的局限性）</a></h4></li>
-</ul>
-<h3 id="集成学习"><a href="#集成学习" class="headerlink" title="集成学习"></a>集成学习</h3><ul>
-<li><h4 id="机器学习：集成学习（集成学习思想、scikit-learn-中的集成分类器）"><a href="#机器学习：集成学习（集成学习思想、scikit-learn-中的集成分类器）" class="headerlink" title="机器学习：集成学习（集成学习思想、scikit-learn 中的集成分类器）"></a><a href="https://www.cnblogs.com/volcao/p/9482268.html" target="_blank" rel="noopener">机器学习：集成学习（集成学习思想、scikit-learn 中的集成分类器）</a></h4></li>
-<li><h4 id="机器学习：集成学习（Soft-Voting-Classifier）"><a href="#机器学习：集成学习（Soft-Voting-Classifier）" class="headerlink" title="机器学习：集成学习（Soft Voting Classifier）"></a><a href="https://www.cnblogs.com/volcao/p/9483026.html" target="_blank" rel="noopener">机器学习：集成学习（Soft Voting Classifier）</a></h4></li>
-<li><h4 id="机器学习：集成学习（Bagging、Pasting）"><a href="#机器学习：集成学习（Bagging、Pasting）" class="headerlink" title="机器学习：集成学习（Bagging、Pasting）"></a><a href="https://www.cnblogs.com/volcao/p/9486417.html" target="_blank" rel="noopener">机器学习：集成学习（Bagging、Pasting）</a></h4></li>
-<li><h4 id="机器学习：集成学习（OOB-和-关于-Bagging-的更多讨论）"><a href="#机器学习：集成学习（OOB-和-关于-Bagging-的更多讨论）" class="headerlink" title="机器学习：集成学习（OOB 和 关于 Bagging 的更多讨论）"></a><a href="https://www.cnblogs.com/volcao/p/9488113.html" target="_blank" rel="noopener">机器学习：集成学习（OOB 和 关于 Bagging 的更多讨论）</a></h4></li>
-<li><h4 id="机器学习：集成学习（随机森林、集成学习参数）"><a href="#机器学习：集成学习（随机森林、集成学习参数）" class="headerlink" title="机器学习：集成学习（随机森林、集成学习参数）"></a><a href="https://www.cnblogs.com/volcao/p/9488771.html" target="_blank" rel="noopener">机器学习：集成学习（随机森林、集成学习参数）</a></h4></li>
-<li><h4 id="机器学习：集成学习（Ada-Boosting-和-Gradient-Boosting）"><a href="#机器学习：集成学习（Ada-Boosting-和-Gradient-Boosting）" class="headerlink" title="机器学习：集成学习（Ada Boosting 和 Gradient Boosting）"></a><a href="https://www.cnblogs.com/volcao/p/9490651.html" target="_blank" rel="noopener">机器学习：集成学习（Ada Boosting 和 Gradient Boosting）</a></h4></li>
-<li><h4 id="GBDT"><a href="#GBDT" class="headerlink" title="GBDT"></a><a href="http://mantchs.com/2019/07/09/ML/GBDT/" target="_blank" rel="noopener">GBDT</a></h4></li>
-<li><h4 id="XGBoost"><a href="#XGBoost" class="headerlink" title="XGBoost"></a><a href="http://mantchs.com/2019/07/10/ML/XGBoost/" target="_blank" rel="noopener">XGBoost</a></h4></li>
-</ul>
-]]></content>
-      <categories>
-        <category>机器学习</category>
-      </categories>
-      <tags>
-        <tag>SVM</tag>
-        <tag>决策树</tag>
-        <tag>随机森林</tag>
-        <tag>集成学习</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>机器学习笔记2</title>
     <url>/2020/07/21/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B02/</url>
     <content><![CDATA[<h3 id="机器学习基础"><a href="#机器学习基础" class="headerlink" title="机器学习基础"></a>机器学习基础</h3><h4 id="一：机器学习的数据"><a href="#一：机器学习的数据" class="headerlink" title="一：机器学习的数据"></a>一：机器学习的数据</h4><a id="more"></a>
@@ -549,227 +659,6 @@
       </tags>
   </entry>
   <entry>
-    <title>机器学习笔记13</title>
-    <url>/2020/09/05/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B013/</url>
-    <content><![CDATA[<h3 id="评价分类结果"><a href="#评价分类结果" class="headerlink" title="评价分类结果"></a>评价分类结果</h3><a id="more"></a>
-<h4 id="一、分类准确度的缺陷和混淆矩阵"><a href="#一、分类准确度的缺陷和混淆矩阵" class="headerlink" title="一、分类准确度的缺陷和混淆矩阵"></a>一、分类准确度的缺陷和混淆矩阵</h4><h5 id="1、分类准确度的缺陷："><a href="#1、分类准确度的缺陷：" class="headerlink" title="1、分类准确度的缺陷："></a>1、分类准确度的缺陷：</h5><ul>
-<li><p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200905225600926.png" alt="image-20200905225600926"></p>
-<h5 id="假设这个癌症预测系统的预测准确度（分类准确度）是99-9-，若癌症产生概率只有0-01-，我们如果人为预测所有人都健康，这样准确度会达到99-99-。这比该预测系统的准确度更高，显然这个预测系统（模型）是失败的。因此，对于这类极度偏斜（Skewed-Data）的数据，只使用分类准确度是不行的。"><a href="#假设这个癌症预测系统的预测准确度（分类准确度）是99-9-，若癌症产生概率只有0-01-，我们如果人为预测所有人都健康，这样准确度会达到99-99-。这比该预测系统的准确度更高，显然这个预测系统（模型）是失败的。因此，对于这类极度偏斜（Skewed-Data）的数据，只使用分类准确度是不行的。" class="headerlink" title="假设这个癌症预测系统的预测准确度（分类准确度）是99.9%，若癌症产生概率只有0.01%，我们如果人为预测所有人都健康，这样准确度会达到99.99%。这比该预测系统的准确度更高，显然这个预测系统（模型）是失败的。因此，对于这类极度偏斜（Skewed Data）的数据，只使用分类准确度是不行的。"></a>假设这个癌症预测系统的预测准确度（分类准确度）是99.9%，若癌症产生概率只有0.01%，我们如果人为预测所有人都健康，这样准确度会达到99.99%。这比该预测系统的准确度更高，显然这个预测系统（模型）是失败的。因此，对于这类极度偏斜（Skewed Data）的数据，只使用分类准确度是不行的。</h5></li>
-</ul>
-<h5 id="2、混淆矩阵："><a href="#2、混淆矩阵：" class="headerlink" title="2、混淆矩阵："></a>2、混淆矩阵：</h5><ul>
-<li><p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200905232354868.png" alt="image-20200905232354868"></p>
-<h5 id="T表示True，F表示False，N表示Negative，P表示Positive。"><a href="#T表示True，F表示False，N表示Negative，P表示Positive。" class="headerlink" title="T表示True，F表示False，N表示Negative，P表示Positive。"></a>T表示True，F表示False，N表示Negative，P表示Positive。</h5><h5 id="具体可看https-blog-csdn-net-Orange-Spotty-Cat-article-details-80520839"><a href="#具体可看https-blog-csdn-net-Orange-Spotty-Cat-article-details-80520839" class="headerlink" title="具体可看https://blog.csdn.net/Orange_Spotty_Cat/article/details/80520839"></a>具体可看<a href="https://blog.csdn.net/Orange_Spotty_Cat/article/details/80520839" target="_blank" rel="noopener">https://blog.csdn.net/Orange_Spotty_Cat/article/details/80520839</a></h5><ul>
-<li><h5 id="真实值是positive，模型认为是positive的数量（True-Positive-TP）"><a href="#真实值是positive，模型认为是positive的数量（True-Positive-TP）" class="headerlink" title="真实值是positive，模型认为是positive的数量（True Positive=TP）"></a>真实值是positive，模型认为是positive的数量（True Positive=TP）</h5></li>
-<li><h5 id="真实值是positive，模型认为是negative的数量（False-Negative-FN）"><a href="#真实值是positive，模型认为是negative的数量（False-Negative-FN）" class="headerlink" title="真实值是positive，模型认为是negative的数量（False Negative=FN）"></a>真实值是positive，模型认为是negative的数量（False Negative=FN）</h5></li>
-<li><h5 id="真实值是negative，模型认为是positive的数量（False-Positive-FP）"><a href="#真实值是negative，模型认为是positive的数量（False-Positive-FP）" class="headerlink" title="真实值是negative，模型认为是positive的数量（False Positive=FP）"></a>真实值是negative，模型认为是positive的数量（False Positive=FP）</h5></li>
-<li><h5 id="真实值是negative，模型认为是negative的数量（True-Negative-TN）"><a href="#真实值是negative，模型认为是negative的数量（True-Negative-TN）" class="headerlink" title="真实值是negative，模型认为是negative的数量（True Negative=TN）"></a>真实值是negative，模型认为是negative的数量（True Negative=TN）</h5></li>
-</ul>
-<h5 id="举例说明：假如有10000个人，其中有（9978-12）人没患病，有（2-8）人患病"><a href="#举例说明：假如有10000个人，其中有（9978-12）人没患病，有（2-8）人患病" class="headerlink" title="举例说明：假如有10000个人，其中有（9978+12）人没患病，有（2+8）人患病"></a>举例说明：假如有10000个人，其中有（9978+12）人没患病，有（2+8）人患病</h5><ul>
-<li><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200905233743570.png" alt="image-20200905233743570"></li>
-</ul>
-</li>
-<li><h5 id="通过上例说明精准率与召回率："><a href="#通过上例说明精准率与召回率：" class="headerlink" title="通过上例说明精准率与召回率："></a>通过上例说明精准率与召回率：</h5><ul>
-<li><h5 id="精准率："><a href="#精准率：" class="headerlink" title="精准率："></a>精准率：</h5><p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200905233949626.png" alt="image-20200905233949626"></p>
-<h5 id="在分类问题中，我们一般关注的重点（预测的结果）是“1”而不是“0”，针对本例就是指患病这种情况。所以精准率指在所有预测为“1”的结果中，预测正确的比重是多少。在本例中指在所有预测为患病的人中，预测正确的比重是多少。"><a href="#在分类问题中，我们一般关注的重点（预测的结果）是“1”而不是“0”，针对本例就是指患病这种情况。所以精准率指在所有预测为“1”的结果中，预测正确的比重是多少。在本例中指在所有预测为患病的人中，预测正确的比重是多少。" class="headerlink" title="在分类问题中，我们一般关注的重点（预测的结果）是“1”而不是“0”，针对本例就是指患病这种情况。所以精准率指在所有预测为“1”的结果中，预测正确的比重是多少。在本例中指在所有预测为患病的人中，预测正确的比重是多少。"></a>在分类问题中，我们一般关注的重点（预测的结果）是“1”而不是“0”，针对本例就是指患病这种情况。所以精准率指在所有预测为“1”的结果中，预测正确的比重是多少。在本例中指在所有预测为患病的人中，预测正确的比重是多少。</h5></li>
-<li><h5 id="召回率："><a href="#召回率：" class="headerlink" title="召回率："></a>召回率：</h5><p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200905234614050.png" alt="image-20200905234614050"></p>
-<h5 id="召回率指在所有真实为“1”的结果中，预测正确的比重是多少。在本例中指在所有确实患病的人中，预测正确的比重是多少。"><a href="#召回率指在所有真实为“1”的结果中，预测正确的比重是多少。在本例中指在所有确实患病的人中，预测正确的比重是多少。" class="headerlink" title="召回率指在所有真实为“1”的结果中，预测正确的比重是多少。在本例中指在所有确实患病的人中，预测正确的比重是多少。"></a>召回率指在所有真实为“1”的结果中，预测正确的比重是多少。在本例中指在所有确实患病的人中，预测正确的比重是多少。</h5></li>
-</ul>
-</li>
-<li><h5 id="再回到最开始的例子中，我们预测在10000个人中，有9990个人健康，10个人患病，这样会得到下面的混淆矩阵："><a href="#再回到最开始的例子中，我们预测在10000个人中，有9990个人健康，10个人患病，这样会得到下面的混淆矩阵：" class="headerlink" title="再回到最开始的例子中，我们预测在10000个人中，有9990个人健康，10个人患病，这样会得到下面的混淆矩阵："></a>再回到最开始的例子中，我们预测在10000个人中，有9990个人健康，10个人患病，这样会得到下面的混淆矩阵：</h5><ul>
-<li><p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200905235343865.png" alt="image-20200905235343865"></p>
-<h5 id="虽然分类准确度达到了99-9-，但是精准率与召回率却都是0，很显然这个模型是不好的。"><a href="#虽然分类准确度达到了99-9-，但是精准率与召回率却都是0，很显然这个模型是不好的。" class="headerlink" title="虽然分类准确度达到了99.9%，但是精准率与召回率却都是0，很显然这个模型是不好的。"></a>虽然分类准确度达到了99.9%，但是精准率与召回率却都是0，很显然这个模型是不好的。</h5></li>
-</ul>
-</li>
-</ul>
-<h4 id="二、F1-Score"><a href="#二、F1-Score" class="headerlink" title="二、F1 Score"></a>二、F1 Score</h4><ul>
-<li><h5 id="关于精准率和召回率的解读要视实际情况来定："><a href="#关于精准率和召回率的解读要视实际情况来定：" class="headerlink" title="关于精准率和召回率的解读要视实际情况来定："></a>关于精准率和召回率的解读要视实际情况来定：</h5><ul>
-<li><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200907203853160.png" alt="image-20200907203853160"></li>
-<li><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200907203913917.png" alt="image-20200907203913917"></li>
-</ul>
-</li>
-<li><h5 id="是否有一个指标可以将二者都兼顾呢——F1-Score"><a href="#是否有一个指标可以将二者都兼顾呢——F1-Score" class="headerlink" title="是否有一个指标可以将二者都兼顾呢——F1 Score"></a>是否有一个指标可以将二者都兼顾呢——F1 Score</h5><ul>
-<li><h5 id="F1-Score是precision和recall的调和平均值。它的特性是只有二者都比较大才能使得F1-Score比较大；其中一个很大（很小），另一个相反，都不会使得F1-Score很大。"><a href="#F1-Score是precision和recall的调和平均值。它的特性是只有二者都比较大才能使得F1-Score比较大；其中一个很大（很小），另一个相反，都不会使得F1-Score很大。" class="headerlink" title="F1 Score是precision和recall的调和平均值。它的特性是只有二者都比较大才能使得F1 Score比较大；其中一个很大（很小），另一个相反，都不会使得F1 Score很大。"></a>F1 Score是precision和recall的调和平均值。它的特性是只有二者都比较大才能使得F1 Score比较大；其中一个很大（很小），另一个相反，都不会使得F1 Score很大。</h5></li>
-<li><p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200907204616387.png" alt="image-20200907204616387"></p>
-</li>
-</ul>
-</li>
-</ul>
-<h4 id="三、Precision-Recall的平衡"><a href="#三、Precision-Recall的平衡" class="headerlink" title="三、Precision-Recall的平衡"></a>三、Precision-Recall的平衡</h4><ul>
-<li><h5 id="在逻辑回归中"><a href="#在逻辑回归中" class="headerlink" title="在逻辑回归中"></a>在逻辑回归中</h5><ul>
-<li><p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200907222636806.png" alt="image-20200907222636806"></p>
-</li>
-<li><h5 id="为啥决策边界要以0为界限呢？其实我们可以根据需求来调节决策边界的界限，进而改变分类结果。"><a href="#为啥决策边界要以0为界限呢？其实我们可以根据需求来调节决策边界的界限，进而改变分类结果。" class="headerlink" title="为啥决策边界要以0为界限呢？其实我们可以根据需求来调节决策边界的界限，进而改变分类结果。"></a>为啥决策边界要以0为界限呢？其实我们可以根据需求来调节决策边界的界限，进而改变分类结果。</h5></li>
-</ul>
-</li>
-<li><h5 id="因此我们可以让决策边界等于threshold（阈值），让它改变分类结果，进而影响Precision与Recall的权重。"><a href="#因此我们可以让决策边界等于threshold（阈值），让它改变分类结果，进而影响Precision与Recall的权重。" class="headerlink" title="因此我们可以让决策边界等于threshold（阈值），让它改变分类结果，进而影响Precision与Recall的权重。"></a>因此我们可以让决策边界等于threshold（阈值），让它改变分类结果，进而影响Precision与Recall的权重。</h5><ul>
-<li><p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200907223244946.png" alt="image-20200907223244946"></p>
-<ul>
-<li><h5 id="threshold-0时："><a href="#threshold-0时：" class="headerlink" title="threshold=0时："></a>threshold=0时：</h5><p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200907223426718.png" alt="image-20200907223426718"></p>
-<h5 id="星星表示实际为1的样本，圆圈表示实际为0的样本。左边是预测为0的样本，右边是预测为1的样本。"><a href="#星星表示实际为1的样本，圆圈表示实际为0的样本。左边是预测为0的样本，右边是预测为1的样本。" class="headerlink" title="星星表示实际为1的样本，圆圈表示实际为0的样本。左边是预测为0的样本，右边是预测为1的样本。"></a>星星表示实际为1的样本，圆圈表示实际为0的样本。左边是预测为0的样本，右边是预测为1的样本。</h5></li>
-<li><h5 id="threshold-gt-0时："><a href="#threshold-gt-0时：" class="headerlink" title="threshold&gt;0时："></a>threshold&gt;0时：</h5><p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200907223654382.png" alt="image-20200907223654382"></p>
-</li>
-<li><h5 id="threshold-lt-0时："><a href="#threshold-lt-0时：" class="headerlink" title="threshold&lt;0时："></a>threshold&lt;0时：</h5><p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200907223734566.png" alt="image-20200907223734566"></p>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-<li><h5 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h5><ul>
-<li><h5 id="精准率与召回率互相牵制，一个升高，另一个就会降低"><a href="#精准率与召回率互相牵制，一个升高，另一个就会降低" class="headerlink" title="精准率与召回率互相牵制，一个升高，另一个就会降低"></a>精准率与召回率互相牵制，一个升高，另一个就会降低</h5></li>
-<li><h5 id="阈值越大，精准率越高，召回率越低；阈值越小，精准率越低，召回率越高"><a href="#阈值越大，精准率越高，召回率越低；阈值越小，精准率越低，召回率越高" class="headerlink" title="阈值越大，精准率越高，召回率越低；阈值越小，精准率越低，召回率越高"></a>阈值越大，精准率越高，召回率越低；阈值越小，精准率越低，召回率越高</h5></li>
-</ul>
-</li>
-</ul>
-<h4 id="四、P-R曲线"><a href="#四、P-R曲线" class="headerlink" title="四、P-R曲线"></a>四、P-R曲线</h4><ul>
-<li><h5 id="P-R曲线顾名思义横坐标是精准率，纵坐标是召回率"><a href="#P-R曲线顾名思义横坐标是精准率，纵坐标是召回率" class="headerlink" title="P-R曲线顾名思义横坐标是精准率，纵坐标是召回率"></a>P-R曲线顾名思义横坐标是精准率，纵坐标是召回率</h5><p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200907233249933.png" alt="image-20200907233249933"></p>
-<ul>
-<li><h5 id="途中曲线开始急剧下降的点，可能就是精准率和召回率平衡位置的点"><a href="#途中曲线开始急剧下降的点，可能就是精准率和召回率平衡位置的点" class="headerlink" title="途中曲线开始急剧下降的点，可能就是精准率和召回率平衡位置的点"></a>途中曲线开始急剧下降的点，可能就是精准率和召回率平衡位置的点</h5></li>
-</ul>
-</li>
-<li><h5 id="不同的模型对应的不同的-Precision-Recall-曲线"><a href="#不同的模型对应的不同的-Precision-Recall-曲线" class="headerlink" title="不同的模型对应的不同的 Precision - Recall 曲线"></a>不同的模型对应的不同的 Precision - Recall 曲线</h5><p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200907233440669.png" alt="image-20200907233440669"></p>
-<ul>
-<li><h5 id="外层曲线对应的模型更优（外层曲线的P值和R值都比里层曲线的大）；或者称与坐标轴一起包围的面积越大者越优"><a href="#外层曲线对应的模型更优（外层曲线的P值和R值都比里层曲线的大）；或者称与坐标轴一起包围的面积越大者越优" class="headerlink" title="外层曲线对应的模型更优（外层曲线的P值和R值都比里层曲线的大）；或者称与坐标轴一起包围的面积越大者越优"></a>外层曲线对应的模型更优（外层曲线的P值和R值都比里层曲线的大）；或者称与坐标轴一起包围的面积越大者越优</h5></li>
-<li><h5 id="P-R-曲线也可以作为选择算法、模型、超参数的指标；但一般不适用此曲线，而是使用-ROC-曲线"><a href="#P-R-曲线也可以作为选择算法、模型、超参数的指标；但一般不适用此曲线，而是使用-ROC-曲线" class="headerlink" title="P - R 曲线也可以作为选择算法、模型、超参数的指标；但一般不适用此曲线，而是使用 ROC 曲线"></a>P - R 曲线也可以作为选择算法、模型、超参数的指标；但一般不适用此曲线，而是使用 ROC 曲线</h5></li>
-</ul>
-</li>
-</ul>
-<h4 id="五、ROC曲线"><a href="#五、ROC曲线" class="headerlink" title="五、ROC曲线"></a>五、ROC曲线</h4><ul>
-<li><h5 id="ROC曲线描述TPR和FPR之间的关系"><a href="#ROC曲线描述TPR和FPR之间的关系" class="headerlink" title="ROC曲线描述TPR和FPR之间的关系"></a>ROC曲线描述TPR和FPR之间的关系</h5><ul>
-<li><h5 id="TPR："><a href="#TPR：" class="headerlink" title="TPR："></a>TPR：</h5><p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200913172134092.png" alt="image-20200913172134092"></p>
-</li>
-<li><h5 id="FPR"><a href="#FPR" class="headerlink" title="FPR:"></a>FPR:</h5><p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200913172216856.png" alt="image-20200913172216856"></p>
-</li>
-<li><h5 id="TPR与FPR的关系"><a href="#TPR与FPR的关系" class="headerlink" title="TPR与FPR的关系"></a>TPR与FPR的关系</h5><p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200913180416522.png" alt="image-20200913180416522"></p>
-<ul>
-<li><h5 id="随着阈值-threshold-的增大，FPR-和-TPR-都逐渐减小；"><a href="#随着阈值-threshold-的增大，FPR-和-TPR-都逐渐减小；" class="headerlink" title="随着阈值 threshold 的增大，FPR 和 TPR 都逐渐减小；"></a>随着阈值 threshold 的增大，FPR 和 TPR 都逐渐减小；</h5></li>
-<li><h5 id="FPR-和-TPR-称正相关关系，FPR-越高，TPR-相应的也越高；"><a href="#FPR-和-TPR-称正相关关系，FPR-越高，TPR-相应的也越高；" class="headerlink" title="FPR 和 TPR 称正相关关系，FPR 越高，TPR 相应的也越高；"></a>FPR 和 TPR 称正相关关系，FPR 越高，TPR 相应的也越高；</h5></li>
-</ul>
-</li>
-</ul>
-</li>
-<li><h5 id="与P-R曲线的区别"><a href="#与P-R曲线的区别" class="headerlink" title="与P-R曲线的区别"></a>与P-R曲线的区别</h5><ul>
-<li><h5 id="P-R曲线：应用于判定由极度有偏数据所训练的模型的优劣"><a href="#P-R曲线：应用于判定由极度有偏数据所训练的模型的优劣" class="headerlink" title="P-R曲线：应用于判定由极度有偏数据所训练的模型的优劣"></a>P-R曲线：应用于判定由极度有偏数据所训练的模型的优劣</h5></li>
-<li><h5 id="ROC曲线：应用于比较两个模型的优劣"><a href="#ROC曲线：应用于比较两个模型的优劣" class="headerlink" title="ROC曲线：应用于比较两个模型的优劣"></a>ROC曲线：应用于比较两个模型的优劣</h5><ul>
-<li><h5 id="可以是同样算法不同超参数得到的不同模型，也可以是不同算法得到的不同模型"><a href="#可以是同样算法不同超参数得到的不同模型，也可以是不同算法得到的不同模型" class="headerlink" title="可以是同样算法不同超参数得到的不同模型，也可以是不同算法得到的不同模型"></a>可以是同样算法不同超参数得到的不同模型，也可以是不同算法得到的不同模型</h5></li>
-</ul>
-</li>
-</ul>
-</li>
-<li><h5 id="总结："><a href="#总结：" class="headerlink" title="总结："></a>总结：</h5><ul>
-<li><h5 id="ROC曲线与图形边界围成的面积，作为衡量模型优劣的标准，面积越大，模型越优"><a href="#ROC曲线与图形边界围成的面积，作为衡量模型优劣的标准，面积越大，模型越优" class="headerlink" title="ROC曲线与图形边界围成的面积，作为衡量模型优劣的标准，面积越大，模型越优"></a>ROC曲线与图形边界围成的面积，作为衡量模型优劣的标准，面积越大，模型越优</h5></li>
-<li><h5 id="计算ROC曲线与坐标轴围成的面积：称ROC的auc；"><a href="#计算ROC曲线与坐标轴围成的面积：称ROC的auc；" class="headerlink" title="计算ROC曲线与坐标轴围成的面积：称ROC的auc；"></a>计算ROC曲线与坐标轴围成的面积：称ROC的auc；</h5></li>
-<li><h5 id="面积越大，模型越优："><a href="#面积越大，模型越优：" class="headerlink" title="面积越大，模型越优："></a>面积越大，模型越优：</h5></li>
-</ul>
-</li>
-</ul>
-<h4 id="六、-多分类问题中的混淆矩阵"><a href="#六、-多分类问题中的混淆矩阵" class="headerlink" title="六、 多分类问题中的混淆矩阵"></a>六、 多分类问题中的混淆矩阵</h4><h5 id="这块儿内容直接看‘08-Confusion-Matrix-in-Multiclass-Classification-ipynb’"><a href="#这块儿内容直接看‘08-Confusion-Matrix-in-Multiclass-Classification-ipynb’" class="headerlink" title="这块儿内容直接看‘08-Confusion-Matrix-in-Multiclass-Classification.ipynb’"></a>这块儿内容直接看‘08-Confusion-Matrix-in-Multiclass-Classification.ipynb’</h5>]]></content>
-      <categories>
-        <category>机器学习</category>
-      </categories>
-      <tags>
-        <tag>混淆矩阵</tag>
-        <tag>F1 SCORE</tag>
-        <tag>精准率与召回率</tag>
-        <tag>PR曲线与ROC曲线</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>机器学习笔记3</title>
-    <url>/2020/07/21/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B03/</url>
-    <content><![CDATA[<h3 id="KNN-K近邻算法（K-Nearest-Neighbors）"><a href="#KNN-K近邻算法（K-Nearest-Neighbors）" class="headerlink" title="KNN -K近邻算法（K-Nearest Neighbors）"></a>KNN -K近邻算法（K-Nearest Neighbors）</h3><a id="more"></a>
-<h4 id="一：KNN—非常适合初学者入门的算法"><a href="#一：KNN—非常适合初学者入门的算法" class="headerlink" title="一：KNN—非常适合初学者入门的算法"></a>一：KNN—非常适合初学者入门的算法</h4><ul>
-<li><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200707205845716.png" alt="image-20200707205845716"></li>
-</ul>
-<h5 id="1-什么是KNN"><a href="#1-什么是KNN" class="headerlink" title="1.什么是KNN"></a>1.什么是KNN</h5><ul>
-<li><p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200707210428247.png" alt="image-20200707210428247"></p>
-</li>
-<li><ul>
-<li>上图解释：红色是良性肿瘤，蓝色是恶性肿瘤，绿色是一个新的不确定的肿瘤。这里设K=3（后面会讲如何取K值），表示选取离绿色最近的三个肿瘤，然后这3个之间进行投票（以自己的标签投票），最终蓝色：红色==3:0.因此我们有很大的概率认为绿色也是恶性肿瘤。</li>
-<li>因此，KNN表示在K个样本中，哪个样本越多，就表示目标样本有很大概率是同一类别。</li>
-</ul>
-</li>
-</ul>
-<h5 id="2-KNN的特性"><a href="#2-KNN的特性" class="headerlink" title="2.KNN的特性"></a>2.KNN的特性</h5><ul>
-<li><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200707234150755.png" alt="image-20200707234150755"></li>
-<li><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200707234227091.png" alt="image-20200707234227091"></li>
-<li><ul>
-<li>scikit_learn正是按这套流程进行的算法封装</li>
-</ul>
-</li>
-</ul>
-<h5 id="3-判断机器学习算法的性能"><a href="#3-判断机器学习算法的性能" class="headerlink" title="3.判断机器学习算法的性能"></a>3.判断机器学习算法的性能</h5><ul>
-<li>考虑到真实环境下，将所有的原始数据都当成训练数据来训练模型是不恰当的，因此我们要进行训练和测试数据集切分(train test split)</li>
-<li><ul>
-<li><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200711013945748.png" alt="image-20200710224630969"></li>
-</ul>
-</li>
-<li><p>注意：这里补充一下seed随机种子的直观理解：其实，设置seed（）里的数字就相当于设置了一个盛有随机数的“聚宝盆”，一个数字代表一个“聚宝盆”，当我们在seed（）的括号里设置相同的seed，“聚宝盆”就是一样的，那当然每次拿出的随机数就会相同（不要觉得就是从里面随机取数字，只要设置的seed相同取出地随机数就一样）。如果不设置seed，则每次会生成不同的随机数。（注：seed括号里的数值基本可以随便设置哦）<br>————————————————<br>版权声明：本文为CSDN博主「白糖炒栗子~」的原创文章，遵循CC 4.0 BY-SA版权协议，转载请附上原文出处链接及本声明。<br>原文链接：<a href="https://blog.csdn.net/weixin_41571493/article/details/80549833" target="_blank" rel="noopener">https://blog.csdn.net/weixin_41571493/article/details/80549833</a></p>
-<ul>
-<li>np.random.seed(0)<br>np.random.rand(4,3)<br>Out[362]:<br>array([[0.5488135 , 0.71518937, 0.60276338],<pre><code>   [0.54488318, 0.4236548 , 0.64589411],
-   [0.43758721, 0.891773  , 0.96366276],
-   [0.38344152, 0.79172504, 0.52889492]])
-</code></pre>np.random.seed(0)<br>np.random.rand(4,3)<br>Out[364]:<br>array([[0.5488135 , 0.71518937, 0.60276338],<pre><code>   [0.54488318, 0.4236548 , 0.64589411],
-   [0.43758721, 0.891773  , 0.96366276],
-   [0.38344152, 0.79172504, 0.52889492]])
-</code></pre></li>
-</ul>
-</li>
-<li><p>分类准确度：accuracy：详见jupyter</p>
-</li>
-<li><p>超参数</p>
-<ul>
-<li><p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200710224630969.png" alt="image-20200711013945748"></p>
-</li>
-<li><p>如何寻找好的超参数</p>
-<p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200711014228711.png" alt="image-20200711014228711"></p>
-<ul>
-<li><p>KNN中其实除了K还有一个超参数，那就是距离的权重（它是距离的倒数）</p>
-<ul>
-<li><p>设红和蓝与绿色的距离分别为1,3,4</p>
-<p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200711021206076.png" alt="image-20200711021206076"></p>
-<ul>
-<li><p>若有三个类别，而k也等于3，那么就有可能出现平票的情况</p>
-<p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200711021519742.png" alt="image-20200711021519742"></p>
-</li>
-<li><p>补充：明可夫斯基距离</p>
-<ul>
-<li><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200711023118851.png" alt="image-20200711023118851"><ul>
-<li>当p=1时是曼哈顿距离</li>
-<li>当p=2时是欧拉距离</li>
-<li>当p&gt;2时是其他距离</li>
-</ul>
-</li>
-<li>更多的距离定义（暂不做深入研究，只是了解）<ul>
-<li></li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-<p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200723233646364.png" alt="image-20200723233646364"></p>
-<ul>
-<li><h5 id="我们可以使用sklearn的网格搜索来进行超参数搜索，具体看jupyter上的‘06-Validation-and-Cross-Validation’中的回顾网格搜索"><a href="#我们可以使用sklearn的网格搜索来进行超参数搜索，具体看jupyter上的‘06-Validation-and-Cross-Validation’中的回顾网格搜索" class="headerlink" title="我们可以使用sklearn的网格搜索来进行超参数搜索，具体看jupyter上的‘06-Validation-and-Cross-Validation’中的回顾网格搜索"></a>我们可以使用sklearn的网格搜索来进行超参数搜索，具体看jupyter上的‘06-Validation-and-Cross-Validation’中的回顾网格搜索</h5></li>
-</ul>
-]]></content>
-      <categories>
-        <category>机器学习</category>
-      </categories>
-      <tags>
-        <tag>机器学习</tag>
-        <tag>Python</tag>
-        <tag>KNN</tag>
-        <tag>超参数与网格搜索</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>机器学习笔记4</title>
     <url>/2020/07/23/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B04/</url>
     <content><![CDATA[<h3 id="数据归一化与标准化"><a href="#数据归一化与标准化" class="headerlink" title="数据归一化与标准化"></a>数据归一化与标准化</h3><a id="more"></a>
@@ -824,53 +713,44 @@
       </tags>
   </entry>
   <entry>
-    <title>机器学习笔记5</title>
-    <url>/2020/07/24/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B05/</url>
-    <content><![CDATA[<h3 id="更多有关KNN的思考"><a href="#更多有关KNN的思考" class="headerlink" title="更多有关KNN的思考"></a>更多有关KNN的思考</h3><a id="more"></a>
-<p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200724025657646.png" alt="image-20200724025657646"></p>
-<p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200724025727331.png" alt="image-20200724025727331"></p>
-<h4 id="解释：可以把离绿球最近的三个蓝球的均值作为绿球的值，也可以将距离权重考虑进去求加权平均数。总之，这些都是回归问题。（sklearn其实已经封装好了KNN解决回归问题的库：KNeighborsRegressor）"><a href="#解释：可以把离绿球最近的三个蓝球的均值作为绿球的值，也可以将距离权重考虑进去求加权平均数。总之，这些都是回归问题。（sklearn其实已经封装好了KNN解决回归问题的库：KNeighborsRegressor）" class="headerlink" title="解释：可以把离绿球最近的三个蓝球的均值作为绿球的值，也可以将距离权重考虑进去求加权平均数。总之，这些都是回归问题。（sklearn其实已经封装好了KNN解决回归问题的库：KNeighborsRegressor）"></a>解释：可以把离绿球最近的三个蓝球的均值作为绿球的值，也可以将距离权重考虑进去求加权平均数。总之，这些都是回归问题。（sklearn其实已经封装好了KNN解决回归问题的库：KNeighborsRegressor）</h4><h3 id="它的缺点"><a href="#它的缺点" class="headerlink" title="它的缺点"></a>它的缺点</h3><ul>
-<li><p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200724030254962.png" alt="image-20200724030254962"></p>
-</li>
-<li><p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200724030519829.png" alt="image-20200724030519829"></p>
+    <title>机器学习笔记14</title>
+    <url>/2020/09/21/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B014/</url>
+    <content><![CDATA[<h3 id="SVM"><a href="#SVM" class="headerlink" title="SVM"></a>SVM</h3><a id="more"></a>
 <ul>
-<li><h4 id="解释：缺点2：拿上图红蓝绿球来举例，假如k-3，而其中两个是红色，一个是蓝色。按照KNN就会认定绿球为红色类，但事实上绿球的标签是蓝色类"><a href="#解释：缺点2：拿上图红蓝绿球来举例，假如k-3，而其中两个是红色，一个是蓝色。按照KNN就会认定绿球为红色类，但事实上绿球的标签是蓝色类" class="headerlink" title="解释：缺点2：拿上图红蓝绿球来举例，假如k=3，而其中两个是红色，一个是蓝色。按照KNN就会认定绿球为红色类，但事实上绿球的标签是蓝色类"></a>解释：缺点2：拿上图红蓝绿球来举例，假如k=3，而其中两个是红色，一个是蓝色。按照KNN就会认定绿球为红色类，但事实上绿球的标签是蓝色类</h4></li>
+<li><h4 id="机器学习：SVM（基础理解）"><a href="#机器学习：SVM（基础理解）" class="headerlink" title="机器学习：SVM（基础理解）"></a><a href="https://www.cnblogs.com/volcao/p/9411514.html" target="_blank" rel="noopener">机器学习：SVM（基础理解）</a></h4></li>
+<li><h4 id="机器学习：SVM（目标函数推导：Hard-Margin-SVM、Soft-Margin-SVM）"><a href="#机器学习：SVM（目标函数推导：Hard-Margin-SVM、Soft-Margin-SVM）" class="headerlink" title="机器学习：SVM（目标函数推导：Hard Margin SVM、Soft Margin SVM）"></a><a href="https://www.cnblogs.com/volcao/p/9413528.html" target="_blank" rel="noopener">机器学习：SVM（目标函数推导：Hard Margin SVM、Soft Margin SVM）</a></h4></li>
+<li><h4 id="机器学习：SVM（scikit-learn-中的-SVM：LinearSVC）"><a href="#机器学习：SVM（scikit-learn-中的-SVM：LinearSVC）" class="headerlink" title="机器学习：SVM（scikit-learn 中的 SVM：LinearSVC）"></a><a href="https://www.cnblogs.com/volcao/p/9464009.html" target="_blank" rel="noopener">机器学习：SVM（scikit-learn 中的 SVM：LinearSVC）</a></h4></li>
+<li><h4 id="机器学习：SVM（非线性数据分类：SVM中使用多项式特征和核函数SVC）"><a href="#机器学习：SVM（非线性数据分类：SVM中使用多项式特征和核函数SVC）" class="headerlink" title="机器学习：SVM（非线性数据分类：SVM中使用多项式特征和核函数SVC）"></a><a href="https://www.cnblogs.com/volcao/p/9464991.html" target="_blank" rel="noopener">机器学习：SVM（非线性数据分类：SVM中使用多项式特征和核函数SVC）</a></h4></li>
+<li><h4 id="机器学习：SVM（核函数、高斯核函数RBF）"><a href="#机器学习：SVM（核函数、高斯核函数RBF）" class="headerlink" title="机器学习：SVM（核函数、高斯核函数RBF）"></a><a href="https://www.cnblogs.com/volcao/p/9465214.html" target="_blank" rel="noopener">机器学习：SVM（核函数、高斯核函数RBF）</a></h4></li>
+<li><h4 id="机器学习：SVM（scikit-learn-中的-RBF、RBF-中的超参数-γ）"><a href="#机器学习：SVM（scikit-learn-中的-RBF、RBF-中的超参数-γ）" class="headerlink" title="机器学习：SVM（scikit-learn 中的 RBF、RBF 中的超参数 γ）"></a><a href="https://www.cnblogs.com/volcao/p/9470209.html" target="_blank" rel="noopener">机器学习：SVM（scikit-learn 中的 RBF、RBF 中的超参数 γ）</a></h4></li>
+<li><h4 id="机器学习：SVM（SVM-思想解决回归问题）"><a href="#机器学习：SVM（SVM-思想解决回归问题）" class="headerlink" title="机器学习：SVM（SVM 思想解决回归问题）"></a><a href="https://www.cnblogs.com/volcao/p/9471800.html" target="_blank" rel="noopener">机器学习：SVM（SVM 思想解决回归问题）</a></h4></li>
 </ul>
-</li>
-<li><h4 id="缺点4："><a href="#缺点4：" class="headerlink" title="缺点4："></a>缺点4：<img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200724031158354.png" alt="image-20200724031158354"></h4></li>
+<h3 id="决策树"><a href="#决策树" class="headerlink" title="决策树"></a>决策树</h3><ul>
+<li><h4 id="机器学习：决策树（基本思想、信息熵、构建决策树的问题及思想）"><a href="#机器学习：决策树（基本思想、信息熵、构建决策树的问题及思想）" class="headerlink" title="机器学习：决策树（基本思想、信息熵、构建决策树的问题及思想）"></a><a href="https://www.cnblogs.com/volcao/p/9474366.html" target="_blank" rel="noopener">机器学习：决策树（基本思想、信息熵、构建决策树的问题及思想）</a></h4></li>
+<li><h4 id="机器学习：决策树（使用信息熵寻找最优划分）"><a href="#机器学习：决策树（使用信息熵寻找最优划分）" class="headerlink" title="机器学习：决策树（使用信息熵寻找最优划分）"></a><a href="https://www.cnblogs.com/volcao/p/9477776.html" target="_blank" rel="noopener">机器学习：决策树（使用信息熵寻找最优划分）</a></h4></li>
+<li><h4 id="机器学习：决策树（使用基尼系数划分节点数据集）"><a href="#机器学习：决策树（使用基尼系数划分节点数据集）" class="headerlink" title="机器学习：决策树（使用基尼系数划分节点数据集）"></a><a href="https://www.cnblogs.com/volcao/p/9478314.html" target="_blank" rel="noopener">机器学习：决策树（使用基尼系数划分节点数据集）</a></h4></li>
+<li><h4 id="机器学习：决策树（CART-、决策树中的超参数）"><a href="#机器学习：决策树（CART-、决策树中的超参数）" class="headerlink" title="机器学习：决策树（CART 、决策树中的超参数）"></a><a href="https://www.cnblogs.com/volcao/p/9480431.html" target="_blank" rel="noopener">机器学习：决策树（CART 、决策树中的超参数）</a></h4></li>
+<li><h4 id="机器学习：决策树（决策树解决回归问题、决策树算法的局限性）"><a href="#机器学习：决策树（决策树解决回归问题、决策树算法的局限性）" class="headerlink" title="机器学习：决策树（决策树解决回归问题、决策树算法的局限性）"></a><a href="https://www.cnblogs.com/volcao/p/9481634.html" target="_blank" rel="noopener">机器学习：决策树（决策树解决回归问题、决策树算法的局限性）</a></h4></li>
 </ul>
-<h3 id="机器学习流程回顾"><a href="#机器学习流程回顾" class="headerlink" title="机器学习流程回顾"></a>机器学习流程回顾</h3><p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200724031341729.png" alt="image-20200724031341729"></p>
+<h3 id="集成学习"><a href="#集成学习" class="headerlink" title="集成学习"></a>集成学习</h3><ul>
+<li><h4 id="机器学习：集成学习（集成学习思想、scikit-learn-中的集成分类器）"><a href="#机器学习：集成学习（集成学习思想、scikit-learn-中的集成分类器）" class="headerlink" title="机器学习：集成学习（集成学习思想、scikit-learn 中的集成分类器）"></a><a href="https://www.cnblogs.com/volcao/p/9482268.html" target="_blank" rel="noopener">机器学习：集成学习（集成学习思想、scikit-learn 中的集成分类器）</a></h4></li>
+<li><h4 id="机器学习：集成学习（Soft-Voting-Classifier）"><a href="#机器学习：集成学习（Soft-Voting-Classifier）" class="headerlink" title="机器学习：集成学习（Soft Voting Classifier）"></a><a href="https://www.cnblogs.com/volcao/p/9483026.html" target="_blank" rel="noopener">机器学习：集成学习（Soft Voting Classifier）</a></h4></li>
+<li><h4 id="机器学习：集成学习（Bagging、Pasting）"><a href="#机器学习：集成学习（Bagging、Pasting）" class="headerlink" title="机器学习：集成学习（Bagging、Pasting）"></a><a href="https://www.cnblogs.com/volcao/p/9486417.html" target="_blank" rel="noopener">机器学习：集成学习（Bagging、Pasting）</a></h4></li>
+<li><h4 id="机器学习：集成学习（OOB-和-关于-Bagging-的更多讨论）"><a href="#机器学习：集成学习（OOB-和-关于-Bagging-的更多讨论）" class="headerlink" title="机器学习：集成学习（OOB 和 关于 Bagging 的更多讨论）"></a><a href="https://www.cnblogs.com/volcao/p/9488113.html" target="_blank" rel="noopener">机器学习：集成学习（OOB 和 关于 Bagging 的更多讨论）</a></h4></li>
+<li><h4 id="机器学习：集成学习（随机森林、集成学习参数）"><a href="#机器学习：集成学习（随机森林、集成学习参数）" class="headerlink" title="机器学习：集成学习（随机森林、集成学习参数）"></a><a href="https://www.cnblogs.com/volcao/p/9488771.html" target="_blank" rel="noopener">机器学习：集成学习（随机森林、集成学习参数）</a></h4></li>
+<li><h4 id="机器学习：集成学习（Ada-Boosting-和-Gradient-Boosting）"><a href="#机器学习：集成学习（Ada-Boosting-和-Gradient-Boosting）" class="headerlink" title="机器学习：集成学习（Ada Boosting 和 Gradient Boosting）"></a><a href="https://www.cnblogs.com/volcao/p/9490651.html" target="_blank" rel="noopener">机器学习：集成学习（Ada Boosting 和 Gradient Boosting）</a></h4></li>
+<li><h4 id="GBDT"><a href="#GBDT" class="headerlink" title="GBDT"></a><a href="http://mantchs.com/2019/07/09/ML/GBDT/" target="_blank" rel="noopener">GBDT</a></h4></li>
+<li><h4 id="XGBoost"><a href="#XGBoost" class="headerlink" title="XGBoost"></a><a href="http://mantchs.com/2019/07/10/ML/XGBoost/" target="_blank" rel="noopener">XGBoost</a></h4></li>
+</ul>
 ]]></content>
       <categories>
         <category>机器学习</category>
       </categories>
       <tags>
-        <tag>机器学习</tag>
-        <tag>Python</tag>
-        <tag>KNN</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>机器学习笔记7</title>
-    <url>/2020/07/30/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B07/</url>
-    <content><![CDATA[<h3 id="回归算法的评价"><a href="#回归算法的评价" class="headerlink" title="回归算法的评价"></a>回归算法的评价</h3><a id="more"></a>
-<h4 id="一、从简单线性回归引出横梁标准"><a href="#一、从简单线性回归引出横梁标准" class="headerlink" title="一、从简单线性回归引出横梁标准"></a>一、从简单线性回归引出横梁标准</h4><p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200730220946800.png" alt="image-20200730220946800"></p>
-<h5 id="衡量标准就是测试集中的真实值与测试集中的预测值的差的平方，但是该衡量标准与样本数量m有关。为了避免不同样本量的数据集带来的模型优劣争议，我们要将这个式子除以m，得到下图"><a href="#衡量标准就是测试集中的真实值与测试集中的预测值的差的平方，但是该衡量标准与样本数量m有关。为了避免不同样本量的数据集带来的模型优劣争议，我们要将这个式子除以m，得到下图" class="headerlink" title="衡量标准就是测试集中的真实值与测试集中的预测值的差的平方，但是该衡量标准与样本数量m有关。为了避免不同样本量的数据集带来的模型优劣争议，我们要将这个式子除以m，得到下图"></a>衡量标准就是测试集中的真实值与测试集中的预测值的差的平方，但是该衡量标准与样本数量m有关。为了避免不同样本量的数据集带来的模型优劣争议，我们要将这个式子除以m，得到下图</h5><p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200730221356928.png" alt="image-20200730221356928"></p>
-<h5 id="但是MSE会使得该数据集的量纲（单位）为原来的平方（比如米变成平方米），所以我们可以给MSE开根号使得它和原数据集的量纲相同，这就是RMSE"><a href="#但是MSE会使得该数据集的量纲（单位）为原来的平方（比如米变成平方米），所以我们可以给MSE开根号使得它和原数据集的量纲相同，这就是RMSE" class="headerlink" title="但是MSE会使得该数据集的量纲（单位）为原来的平方（比如米变成平方米），所以我们可以给MSE开根号使得它和原数据集的量纲相同，这就是RMSE"></a>但是MSE会使得该数据集的量纲（单位）为原来的平方（比如米变成平方米），所以我们可以给MSE开根号使得它和原数据集的量纲相同，这就是RMSE</h5><p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200730221818237.png" alt="image-20200730221818237"></p>
-<h5 id="同样我们还可以使用以下的评价算法，注意线性回归模型找最优参数时不能用绝对值（不是处处可导），但是评价时就可以用，它们是互不影响的。"><a href="#同样我们还可以使用以下的评价算法，注意线性回归模型找最优参数时不能用绝对值（不是处处可导），但是评价时就可以用，它们是互不影响的。" class="headerlink" title="同样我们还可以使用以下的评价算法，注意线性回归模型找最优参数时不能用绝对值（不是处处可导），但是评价时就可以用，它们是互不影响的。"></a>同样我们还可以使用以下的评价算法，注意线性回归模型找最优参数时不能用绝对值（不是处处可导），但是评价时就可以用，它们是互不影响的。</h5><p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200730222124641.png" alt="image-20200730222124641"></p>
-<h3 id="二、RMSE-VS-MAE"><a href="#二、RMSE-VS-MAE" class="headerlink" title="二、RMSE VS  MAE"></a>二、RMSE VS  MAE</h3><p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200730230527231.png" alt="image-20200730230527231"></p>
-<h4 id="RMSE中的平方操作相当于放大了max-y-true-y-predict-，所以开根号以后依然比MAE大，因此我们要想让RMSE或MSE更有意义，就要让差值尽量小。"><a href="#RMSE中的平方操作相当于放大了max-y-true-y-predict-，所以开根号以后依然比MAE大，因此我们要想让RMSE或MSE更有意义，就要让差值尽量小。" class="headerlink" title="RMSE中的平方操作相当于放大了max(y_{true}-y_{predict})，所以开根号以后依然比MAE大，因此我们要想让RMSE或MSE更有意义，就要让差值尽量小。"></a>RMSE中的平方操作相当于放大了<script type="math/tex">max(y_{true}-y_{predict})</script>，所以开根号以后依然比MAE大，因此我们要想让RMSE或MSE更有意义，就要让差值尽量小。</h4><h3 id="三、最好的衡量线性回归法的指标"><a href="#三、最好的衡量线性回归法的指标" class="headerlink" title="三、最好的衡量线性回归法的指标"></a>三、最好的衡量线性回归法的指标</h3><h4 id="从分类算法的评价算法我们可以得出它可以通过0到1中的一个数来衡量模型的好坏。但由于RMSE和MSE只能得出平均差值，所以导致训练处理的模型不具有通用性（比如房价和学生成绩）"><a href="#从分类算法的评价算法我们可以得出它可以通过0到1中的一个数来衡量模型的好坏。但由于RMSE和MSE只能得出平均差值，所以导致训练处理的模型不具有通用性（比如房价和学生成绩）" class="headerlink" title="从分类算法的评价算法我们可以得出它可以通过0到1中的一个数来衡量模型的好坏。但由于RMSE和MSE只能得出平均差值，所以导致训练处理的模型不具有通用性（比如房价和学生成绩）"></a>从分类算法的评价算法我们可以得出它可以通过0到1中的一个数来衡量模型的好坏。但由于RMSE和MSE只能得出平均差值，所以导致训练处理的模型不具有通用性（比如房价和学生成绩）</h4><h4 id="因此，我们要使用以下算法来评价模型"><a href="#因此，我们要使用以下算法来评价模型" class="headerlink" title="因此，我们要使用以下算法来评价模型"></a>因此，我们要使用以下算法来评价模型</h4><p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200730232425399.png" alt="image-20200730232425399"></p>
-<p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200730232723872.png" alt="image-20200730232723872"></p>
-<h4 id="R2是衡量了我们模型没有产生错误的相应指标"><a href="#R2是衡量了我们模型没有产生错误的相应指标" class="headerlink" title="R2是衡量了我们模型没有产生错误的相应指标"></a>R2是衡量了我们模型没有产生错误的相应指标</h4><p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200730233257406.png" alt="image-20200730233257406"></p>
-<p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200730233453803.png" alt="image-20200730233453803"></p>
-<h4 id="注意，Var指方差"><a href="#注意，Var指方差" class="headerlink" title="注意，Var指方差"></a>注意，Var指方差</h4>]]></content>
-      <categories>
-        <category>机器学习</category>
-      </categories>
-      <tags>
-        <tag>机器学习</tag>
-        <tag>线性回归</tag>
-        <tag>回归算法评价</tag>
+        <tag>SVM</tag>
+        <tag>决策树</tag>
+        <tag>随机森林</tag>
+        <tag>集成学习</tag>
       </tags>
   </entry>
   <entry>
@@ -926,28 +806,113 @@
       </tags>
   </entry>
   <entry>
-    <title>机器学习笔记8</title>
-    <url>/2020/07/30/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B08/</url>
-    <content><![CDATA[<h3 id="多元线性回归"><a href="#多元线性回归" class="headerlink" title="多元线性回归"></a>多元线性回归</h3><a id="more"></a>
-<h4 id="一、什么是多元线性回归"><a href="#一、什么是多元线性回归" class="headerlink" title="一、什么是多元线性回归"></a>一、什么是多元线性回归</h4><p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200730235347025.png" alt="image-20200730235347025"></p>
-<h4 id="二、多元线性回归的正规方程解"><a href="#二、多元线性回归的正规方程解" class="headerlink" title="二、多元线性回归的正规方程解"></a>二、多元线性回归的正规方程解</h4><p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200731030050773.png" alt="image-20200731030050773"></p>
-<p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200731030338464.png" alt="image-20200731030338464"></p>
-<h4 id="因为X是一个特征矩阵，所以X-i-本身就是行向量，因此-theta必须由行向量转置为列向量"><a href="#因为X是一个特征矩阵，所以X-i-本身就是行向量，因此-theta必须由行向量转置为列向量" class="headerlink" title="因为X是一个特征矩阵，所以X^{(i)}本身就是行向量，因此\theta必须由行向量转置为列向量"></a>因为X是一个特征矩阵，所以<script type="math/tex">X^{(i)}</script>本身就是行向量，因此<script type="math/tex">\theta</script>必须由行向量转置为列向量</h4><h4 id="接下来进一步推广到整个特征矩阵"><a href="#接下来进一步推广到整个特征矩阵" class="headerlink" title="接下来进一步推广到整个特征矩阵"></a>接下来进一步推广到整个特征矩阵</h4><p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200731031136440.png" alt="image-20200731031136440"></p>
-<h4 id="因为X-b是m-n的矩阵，-theta-是n行列向量，所以-hat-y-是一个m行的列向量"><a href="#因为X-b是m-n的矩阵，-theta-是n行列向量，所以-hat-y-是一个m行的列向量" class="headerlink" title="因为X_b是m*n的矩阵，\theta 是n行列向量，所以\hat{y}是一个m行的列向量"></a>因为<script type="math/tex">X_b</script>是m*n的矩阵，<script type="math/tex">\theta</script> 是n行列向量，所以<script type="math/tex">\hat{y}</script>是一个m行的列向量</h4><p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200731032608917.png" alt="image-20200731032608917"></p>
-<p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200731032641791.png" alt="image-20200731032641791"></p>
-<p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200731032712657.png" alt="image-20200731032712657"></p>
-<h4 id="因为-theta只是X前面的系数，与量纲无关，所以不需要归一化处理"><a href="#因为-theta只是X前面的系数，与量纲无关，所以不需要归一化处理" class="headerlink" title="因为\theta只是X前面的系数，与量纲无关，所以不需要归一化处理"></a>因为<script type="math/tex">\theta</script>只是X前面的系数，与量纲无关，所以不需要归一化处理</h4><h4 id="三、线性回归总结"><a href="#三、线性回归总结" class="headerlink" title="三、线性回归总结"></a>三、线性回归总结</h4><p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200805000611219.png" alt="image-20200805000611219"></p>
-<p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200805000625908.png" alt="image-20200805000625908"></p>
-<p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200805000642638.png" alt="image-20200805000642638"></p>
-<h4 id="关于可解释性，我们拿波士顿房价预测来说，训练得到的参数的正负表示该特征与房价呈正相关还是负相关；绝对值大小表示对房价的影响程度，越大则对房价影响越大，具体看Jupyter。"><a href="#关于可解释性，我们拿波士顿房价预测来说，训练得到的参数的正负表示该特征与房价呈正相关还是负相关；绝对值大小表示对房价的影响程度，越大则对房价影响越大，具体看Jupyter。" class="headerlink" title="关于可解释性，我们拿波士顿房价预测来说，训练得到的参数的正负表示该特征与房价呈正相关还是负相关；绝对值大小表示对房价的影响程度，越大则对房价影响越大，具体看Jupyter。"></a>关于可解释性，我们拿波士顿房价预测来说，训练得到的参数的正负表示该特征与房价呈正相关还是负相关；绝对值大小表示对房价的影响程度，越大则对房价影响越大，具体看Jupyter。</h4>]]></content>
+    <title>机器学习笔记7</title>
+    <url>/2020/07/30/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B07/</url>
+    <content><![CDATA[<h3 id="回归算法的评价"><a href="#回归算法的评价" class="headerlink" title="回归算法的评价"></a>回归算法的评价</h3><a id="more"></a>
+<h4 id="一、从简单线性回归引出横梁标准"><a href="#一、从简单线性回归引出横梁标准" class="headerlink" title="一、从简单线性回归引出横梁标准"></a>一、从简单线性回归引出横梁标准</h4><p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200730220946800.png" alt="image-20200730220946800"></p>
+<h5 id="衡量标准就是测试集中的真实值与测试集中的预测值的差的平方，但是该衡量标准与样本数量m有关。为了避免不同样本量的数据集带来的模型优劣争议，我们要将这个式子除以m，得到下图"><a href="#衡量标准就是测试集中的真实值与测试集中的预测值的差的平方，但是该衡量标准与样本数量m有关。为了避免不同样本量的数据集带来的模型优劣争议，我们要将这个式子除以m，得到下图" class="headerlink" title="衡量标准就是测试集中的真实值与测试集中的预测值的差的平方，但是该衡量标准与样本数量m有关。为了避免不同样本量的数据集带来的模型优劣争议，我们要将这个式子除以m，得到下图"></a>衡量标准就是测试集中的真实值与测试集中的预测值的差的平方，但是该衡量标准与样本数量m有关。为了避免不同样本量的数据集带来的模型优劣争议，我们要将这个式子除以m，得到下图</h5><p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200730221356928.png" alt="image-20200730221356928"></p>
+<h5 id="但是MSE会使得该数据集的量纲（单位）为原来的平方（比如米变成平方米），所以我们可以给MSE开根号使得它和原数据集的量纲相同，这就是RMSE"><a href="#但是MSE会使得该数据集的量纲（单位）为原来的平方（比如米变成平方米），所以我们可以给MSE开根号使得它和原数据集的量纲相同，这就是RMSE" class="headerlink" title="但是MSE会使得该数据集的量纲（单位）为原来的平方（比如米变成平方米），所以我们可以给MSE开根号使得它和原数据集的量纲相同，这就是RMSE"></a>但是MSE会使得该数据集的量纲（单位）为原来的平方（比如米变成平方米），所以我们可以给MSE开根号使得它和原数据集的量纲相同，这就是RMSE</h5><p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200730221818237.png" alt="image-20200730221818237"></p>
+<h5 id="同样我们还可以使用以下的评价算法，注意线性回归模型找最优参数时不能用绝对值（不是处处可导），但是评价时就可以用，它们是互不影响的。"><a href="#同样我们还可以使用以下的评价算法，注意线性回归模型找最优参数时不能用绝对值（不是处处可导），但是评价时就可以用，它们是互不影响的。" class="headerlink" title="同样我们还可以使用以下的评价算法，注意线性回归模型找最优参数时不能用绝对值（不是处处可导），但是评价时就可以用，它们是互不影响的。"></a>同样我们还可以使用以下的评价算法，注意线性回归模型找最优参数时不能用绝对值（不是处处可导），但是评价时就可以用，它们是互不影响的。</h5><p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200730222124641.png" alt="image-20200730222124641"></p>
+<h3 id="二、RMSE-VS-MAE"><a href="#二、RMSE-VS-MAE" class="headerlink" title="二、RMSE VS  MAE"></a>二、RMSE VS  MAE</h3><p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200730230527231.png" alt="image-20200730230527231"></p>
+<h4 id="RMSE中的平方操作相当于放大了max-y-true-y-predict-，所以开根号以后依然比MAE大，因此我们要想让RMSE或MSE更有意义，就要让差值尽量小。"><a href="#RMSE中的平方操作相当于放大了max-y-true-y-predict-，所以开根号以后依然比MAE大，因此我们要想让RMSE或MSE更有意义，就要让差值尽量小。" class="headerlink" title="RMSE中的平方操作相当于放大了max(y_{true}-y_{predict})，所以开根号以后依然比MAE大，因此我们要想让RMSE或MSE更有意义，就要让差值尽量小。"></a>RMSE中的平方操作相当于放大了<script type="math/tex">max(y_{true}-y_{predict})</script>，所以开根号以后依然比MAE大，因此我们要想让RMSE或MSE更有意义，就要让差值尽量小。</h4><h3 id="三、最好的衡量线性回归法的指标"><a href="#三、最好的衡量线性回归法的指标" class="headerlink" title="三、最好的衡量线性回归法的指标"></a>三、最好的衡量线性回归法的指标</h3><h4 id="从分类算法的评价算法我们可以得出它可以通过0到1中的一个数来衡量模型的好坏。但由于RMSE和MSE只能得出平均差值，所以导致训练处理的模型不具有通用性（比如房价和学生成绩）"><a href="#从分类算法的评价算法我们可以得出它可以通过0到1中的一个数来衡量模型的好坏。但由于RMSE和MSE只能得出平均差值，所以导致训练处理的模型不具有通用性（比如房价和学生成绩）" class="headerlink" title="从分类算法的评价算法我们可以得出它可以通过0到1中的一个数来衡量模型的好坏。但由于RMSE和MSE只能得出平均差值，所以导致训练处理的模型不具有通用性（比如房价和学生成绩）"></a>从分类算法的评价算法我们可以得出它可以通过0到1中的一个数来衡量模型的好坏。但由于RMSE和MSE只能得出平均差值，所以导致训练处理的模型不具有通用性（比如房价和学生成绩）</h4><h4 id="因此，我们要使用以下算法来评价模型"><a href="#因此，我们要使用以下算法来评价模型" class="headerlink" title="因此，我们要使用以下算法来评价模型"></a>因此，我们要使用以下算法来评价模型</h4><p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200730232425399.png" alt="image-20200730232425399"></p>
+<p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200730232723872.png" alt="image-20200730232723872"></p>
+<h4 id="R2是衡量了我们模型没有产生错误的相应指标"><a href="#R2是衡量了我们模型没有产生错误的相应指标" class="headerlink" title="R2是衡量了我们模型没有产生错误的相应指标"></a>R2是衡量了我们模型没有产生错误的相应指标</h4><p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200730233257406.png" alt="image-20200730233257406"></p>
+<p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200730233453803.png" alt="image-20200730233453803"></p>
+<h4 id="注意，Var指方差"><a href="#注意，Var指方差" class="headerlink" title="注意，Var指方差"></a>注意，Var指方差</h4>]]></content>
       <categories>
         <category>机器学习</category>
       </categories>
       <tags>
         <tag>机器学习</tag>
         <tag>线性回归</tag>
-        <tag>多元线性回归</tag>
-        <tag>模型可解释性</tag>
+        <tag>回归算法评价</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>机器学习笔记5</title>
+    <url>/2020/07/24/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B05/</url>
+    <content><![CDATA[<h3 id="更多有关KNN的思考"><a href="#更多有关KNN的思考" class="headerlink" title="更多有关KNN的思考"></a>更多有关KNN的思考</h3><a id="more"></a>
+<p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200724025657646.png" alt="image-20200724025657646"></p>
+<p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200724025727331.png" alt="image-20200724025727331"></p>
+<h4 id="解释：可以把离绿球最近的三个蓝球的均值作为绿球的值，也可以将距离权重考虑进去求加权平均数。总之，这些都是回归问题。（sklearn其实已经封装好了KNN解决回归问题的库：KNeighborsRegressor）"><a href="#解释：可以把离绿球最近的三个蓝球的均值作为绿球的值，也可以将距离权重考虑进去求加权平均数。总之，这些都是回归问题。（sklearn其实已经封装好了KNN解决回归问题的库：KNeighborsRegressor）" class="headerlink" title="解释：可以把离绿球最近的三个蓝球的均值作为绿球的值，也可以将距离权重考虑进去求加权平均数。总之，这些都是回归问题。（sklearn其实已经封装好了KNN解决回归问题的库：KNeighborsRegressor）"></a>解释：可以把离绿球最近的三个蓝球的均值作为绿球的值，也可以将距离权重考虑进去求加权平均数。总之，这些都是回归问题。（sklearn其实已经封装好了KNN解决回归问题的库：KNeighborsRegressor）</h4><h3 id="它的缺点"><a href="#它的缺点" class="headerlink" title="它的缺点"></a>它的缺点</h3><ul>
+<li><p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200724030254962.png" alt="image-20200724030254962"></p>
+</li>
+<li><p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200724030519829.png" alt="image-20200724030519829"></p>
+<ul>
+<li><h4 id="解释：缺点2：拿上图红蓝绿球来举例，假如k-3，而其中两个是红色，一个是蓝色。按照KNN就会认定绿球为红色类，但事实上绿球的标签是蓝色类"><a href="#解释：缺点2：拿上图红蓝绿球来举例，假如k-3，而其中两个是红色，一个是蓝色。按照KNN就会认定绿球为红色类，但事实上绿球的标签是蓝色类" class="headerlink" title="解释：缺点2：拿上图红蓝绿球来举例，假如k=3，而其中两个是红色，一个是蓝色。按照KNN就会认定绿球为红色类，但事实上绿球的标签是蓝色类"></a>解释：缺点2：拿上图红蓝绿球来举例，假如k=3，而其中两个是红色，一个是蓝色。按照KNN就会认定绿球为红色类，但事实上绿球的标签是蓝色类</h4></li>
+</ul>
+</li>
+<li><h4 id="缺点4："><a href="#缺点4：" class="headerlink" title="缺点4："></a>缺点4：<img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200724031158354.png" alt="image-20200724031158354"></h4></li>
+</ul>
+<h3 id="机器学习流程回顾"><a href="#机器学习流程回顾" class="headerlink" title="机器学习流程回顾"></a>机器学习流程回顾</h3><p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200724031341729.png" alt="image-20200724031341729"></p>
+]]></content>
+      <categories>
+        <category>机器学习</category>
+      </categories>
+      <tags>
+        <tag>机器学习</tag>
+        <tag>Python</tag>
+        <tag>KNN</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>深度学习与硬件</title>
+    <url>/2020/10/24/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E4%B8%8E%E7%A1%AC%E4%BB%B6/</url>
+    <content><![CDATA[<h2 id="深度学习与硬件"><a href="#深度学习与硬件" class="headerlink" title="深度学习与硬件"></a>深度学习与硬件</h2><a id="more"></a>
+<h3 id="一、CPU"><a href="#一、CPU" class="headerlink" title="一、CPU"></a>一、CPU</h3><ul>
+<li>一般来说，我们现在很少用CPU来训练深度学习模型。</li>
+<li>但是CPU处理非常复杂的逻辑时效率往往比GPU高。因此CPU往往用来处理一些业务逻辑或数据预处理。</li>
+<li>CPU在训练时注意的事项：<ul>
+<li><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20201025120500936.png" alt="image-20201025120500936"></li>
+</ul>
+</li>
+<li>CPU在部署时的注意事项：<ul>
+<li>避免Cache Miss。（最重要）</li>
+<li>有时需要使用足够多的核来支持读写。</li>
+</ul>
+</li>
+</ul>
+<h3 id="二、GPU"><a href="#二、GPU" class="headerlink" title="二、GPU"></a>二、GPU</h3><ul>
+<li>商用GPU与民用（游戏）GPU的区别：<ul>
+<li>商用GPU是被动散热的。</li>
+<li>商用GPU更贵。</li>
+<li>商用GPU稳定性比民用GPU好。（不一定）</li>
+</ul>
+</li>
+<li>GPU硬件的特点：<ul>
+<li>SIMT</li>
+<li>显存独立于内存，内存和显存的读取可能会成为问题。</li>
+<li>对于显存的处理，multi-stream processer并不如CPU一样强大。（显存污染）</li>
+<li>GPU是非常复杂的处理器。</li>
+</ul>
+</li>
+<li>GPU训练注意事项：<ul>
+<li><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20201025123508505.png" alt="image-20201025123508505"></li>
+</ul>
+</li>
+<li>GPU部署的注意事项：<ul>
+<li><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20201025123559470.png" alt="image-20201025123559470"></li>
+</ul>
+</li>
+</ul>
+<h3 id="三、TPU"><a href="#三、TPU" class="headerlink" title="三、TPU"></a>三、TPU</h3><ul>
+<li>TPU的特点：<ul>
+<li><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20201025143811895.png" alt="image-20201025143811895"></li>
+</ul>
+</li>
+<li>TPU与深度学习：<ul>
+<li><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20201025143851998.png" alt="image-20201025143851998"></li>
+</ul>
+</li>
+</ul>
+]]></content>
+      <categories>
+        <category>NLP理论与实战</category>
+      </categories>
+      <tags>
+        <tag>CPU</tag>
+        <tag>GPU</tag>
+        <tag>TPU</tag>
       </tags>
   </entry>
   <entry>
@@ -1061,170 +1026,105 @@
       </tags>
   </entry>
   <entry>
-    <title>深度学习与硬件</title>
-    <url>/2020/10/24/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E4%B8%8E%E7%A1%AC%E4%BB%B6/</url>
-    <content><![CDATA[<h2 id="深度学习与硬件"><a href="#深度学习与硬件" class="headerlink" title="深度学习与硬件"></a>深度学习与硬件</h2><a id="more"></a>
-<h3 id="一、CPU"><a href="#一、CPU" class="headerlink" title="一、CPU"></a>一、CPU</h3><ul>
-<li>一般来说，我们现在很少用CPU来训练深度学习模型。</li>
-<li>但是CPU处理非常复杂的逻辑时效率往往比GPU高。因此CPU往往用来处理一些业务逻辑或数据预处理。</li>
-<li>CPU在训练时注意的事项：<ul>
-<li><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20201025120500936.png" alt="image-20201025120500936"></li>
+    <title>机器学习笔记3</title>
+    <url>/2020/07/21/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B03/</url>
+    <content><![CDATA[<h3 id="KNN-K近邻算法（K-Nearest-Neighbors）"><a href="#KNN-K近邻算法（K-Nearest-Neighbors）" class="headerlink" title="KNN -K近邻算法（K-Nearest Neighbors）"></a>KNN -K近邻算法（K-Nearest Neighbors）</h3><a id="more"></a>
+<h4 id="一：KNN—非常适合初学者入门的算法"><a href="#一：KNN—非常适合初学者入门的算法" class="headerlink" title="一：KNN—非常适合初学者入门的算法"></a>一：KNN—非常适合初学者入门的算法</h4><ul>
+<li><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200707205845716.png" alt="image-20200707205845716"></li>
 </ul>
+<h5 id="1-什么是KNN"><a href="#1-什么是KNN" class="headerlink" title="1.什么是KNN"></a>1.什么是KNN</h5><ul>
+<li><p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200707210428247.png" alt="image-20200707210428247"></p>
 </li>
-<li>CPU在部署时的注意事项：<ul>
-<li>避免Cache Miss。（最重要）</li>
-<li>有时需要使用足够多的核来支持读写。</li>
-</ul>
-</li>
-</ul>
-<h3 id="二、GPU"><a href="#二、GPU" class="headerlink" title="二、GPU"></a>二、GPU</h3><ul>
-<li>商用GPU与民用（游戏）GPU的区别：<ul>
-<li>商用GPU是被动散热的。</li>
-<li>商用GPU更贵。</li>
-<li>商用GPU稳定性比民用GPU好。（不一定）</li>
-</ul>
-</li>
-<li>GPU硬件的特点：<ul>
-<li>SIMT</li>
-<li>显存独立于内存，内存和显存的读取可能会成为问题。</li>
-<li>对于显存的处理，multi-stream processer并不如CPU一样强大。（显存污染）</li>
-<li>GPU是非常复杂的处理器。</li>
-</ul>
-</li>
-<li>GPU训练注意事项：<ul>
-<li><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20201025123508505.png" alt="image-20201025123508505"></li>
-</ul>
-</li>
-<li>GPU部署的注意事项：<ul>
-<li><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20201025123559470.png" alt="image-20201025123559470"></li>
+<li><ul>
+<li>上图解释：红色是良性肿瘤，蓝色是恶性肿瘤，绿色是一个新的不确定的肿瘤。这里设K=3（后面会讲如何取K值），表示选取离绿色最近的三个肿瘤，然后这3个之间进行投票（以自己的标签投票），最终蓝色：红色==3:0.因此我们有很大的概率认为绿色也是恶性肿瘤。</li>
+<li>因此，KNN表示在K个样本中，哪个样本越多，就表示目标样本有很大概率是同一类别。</li>
 </ul>
 </li>
 </ul>
-<h3 id="三、TPU"><a href="#三、TPU" class="headerlink" title="三、TPU"></a>三、TPU</h3><ul>
-<li>TPU的特点：<ul>
-<li><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20201025143811895.png" alt="image-20201025143811895"></li>
+<h5 id="2-KNN的特性"><a href="#2-KNN的特性" class="headerlink" title="2.KNN的特性"></a>2.KNN的特性</h5><ul>
+<li><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200707234150755.png" alt="image-20200707234150755"></li>
+<li><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200707234227091.png" alt="image-20200707234227091"></li>
+<li><ul>
+<li>scikit_learn正是按这套流程进行的算法封装</li>
 </ul>
 </li>
-<li>TPU与深度学习：<ul>
-<li><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20201025143851998.png" alt="image-20201025143851998"></li>
+</ul>
+<h5 id="3-判断机器学习算法的性能"><a href="#3-判断机器学习算法的性能" class="headerlink" title="3.判断机器学习算法的性能"></a>3.判断机器学习算法的性能</h5><ul>
+<li>考虑到真实环境下，将所有的原始数据都当成训练数据来训练模型是不恰当的，因此我们要进行训练和测试数据集切分(train test split)</li>
+<li><ul>
+<li><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200711013945748.png" alt="image-20200710224630969"></li>
 </ul>
 </li>
+<li><p>注意：这里补充一下seed随机种子的直观理解：其实，设置seed（）里的数字就相当于设置了一个盛有随机数的“聚宝盆”，一个数字代表一个“聚宝盆”，当我们在seed（）的括号里设置相同的seed，“聚宝盆”就是一样的，那当然每次拿出的随机数就会相同（不要觉得就是从里面随机取数字，只要设置的seed相同取出地随机数就一样）。如果不设置seed，则每次会生成不同的随机数。（注：seed括号里的数值基本可以随便设置哦）<br>————————————————<br>版权声明：本文为CSDN博主「白糖炒栗子~」的原创文章，遵循CC 4.0 BY-SA版权协议，转载请附上原文出处链接及本声明。<br>原文链接：<a href="https://blog.csdn.net/weixin_41571493/article/details/80549833" target="_blank" rel="noopener">https://blog.csdn.net/weixin_41571493/article/details/80549833</a></p>
+<ul>
+<li>np.random.seed(0)<br>np.random.rand(4,3)<br>Out[362]:<br>array([[0.5488135 , 0.71518937, 0.60276338],<pre><code>   [0.54488318, 0.4236548 , 0.64589411],
+   [0.43758721, 0.891773  , 0.96366276],
+   [0.38344152, 0.79172504, 0.52889492]])
+</code></pre>np.random.seed(0)<br>np.random.rand(4,3)<br>Out[364]:<br>array([[0.5488135 , 0.71518937, 0.60276338],<pre><code>   [0.54488318, 0.4236548 , 0.64589411],
+   [0.43758721, 0.891773  , 0.96366276],
+   [0.38344152, 0.79172504, 0.52889492]])
+</code></pre></li>
+</ul>
+</li>
+<li><p>分类准确度：accuracy：详见jupyter</p>
+</li>
+<li><p>超参数</p>
+<ul>
+<li><p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200710224630969.png" alt="image-20200711013945748"></p>
+</li>
+<li><p>如何寻找好的超参数</p>
+<p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200711014228711.png" alt="image-20200711014228711"></p>
+<ul>
+<li><p>KNN中其实除了K还有一个超参数，那就是距离的权重（它是距离的倒数）</p>
+<ul>
+<li><p>设红和蓝与绿色的距离分别为1,3,4</p>
+<p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200711021206076.png" alt="image-20200711021206076"></p>
+<ul>
+<li><p>若有三个类别，而k也等于3，那么就有可能出现平票的情况</p>
+<p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200711021519742.png" alt="image-20200711021519742"></p>
+</li>
+<li><p>补充：明可夫斯基距离</p>
+<ul>
+<li><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200711023118851.png" alt="image-20200711023118851"><ul>
+<li>当p=1时是曼哈顿距离</li>
+<li>当p=2时是欧拉距离</li>
+<li>当p&gt;2时是其他距离</li>
+</ul>
+</li>
+<li>更多的距离定义（暂不做深入研究，只是了解）<ul>
+<li></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200723233646364.png" alt="image-20200723233646364"></p>
+<ul>
+<li><h5 id="我们可以使用sklearn的网格搜索来进行超参数搜索，具体看jupyter上的‘06-Validation-and-Cross-Validation’中的回顾网格搜索"><a href="#我们可以使用sklearn的网格搜索来进行超参数搜索，具体看jupyter上的‘06-Validation-and-Cross-Validation’中的回顾网格搜索" class="headerlink" title="我们可以使用sklearn的网格搜索来进行超参数搜索，具体看jupyter上的‘06-Validation-and-Cross-Validation’中的回顾网格搜索"></a>我们可以使用sklearn的网格搜索来进行超参数搜索，具体看jupyter上的‘06-Validation-and-Cross-Validation’中的回顾网格搜索</h5></li>
 </ul>
 ]]></content>
       <categories>
-        <category>NLP理论与实战</category>
+        <category>机器学习</category>
       </categories>
       <tags>
-        <tag>CPU</tag>
-        <tag>GPU</tag>
-        <tag>TPU</tag>
+        <tag>机器学习</tag>
+        <tag>Python</tag>
+        <tag>KNN</tag>
+        <tag>超参数与网格搜索</tag>
       </tags>
   </entry>
   <entry>
-    <title>神经网络基础</title>
-    <url>/2020/10/25/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E5%9F%BA%E7%A1%80/</url>
-    <content><![CDATA[<h2 id="神经网络基础"><a href="#神经网络基础" class="headerlink" title="神经网络基础"></a>神经网络基础</h2><h3 id="关于神经网络错误的说法"><a href="#关于神经网络错误的说法" class="headerlink" title="关于神经网络错误的说法"></a>关于神经网络错误的说法</h3><ul>
-<li>神经网络是大家根据神经科学得到的最伟大的发明</li>
-</ul>
-<h3 id="神经网络的数学本质"><a href="#神经网络的数学本质" class="headerlink" title="神经网络的数学本质"></a>神经网络的数学本质</h3><ul>
-<li><p>由于神经网络复合函数的本质，使得神经网络可以很方便地组合出很多复杂的函数。</p>
-</li>
-<li><p>由于复合函数求导法则，所以大部分神经网络的训练过程可以自动化（反向梯度传递）。</p>
-<p><a href="https://datawhalechina.github.io/leeml-notes/#/chapter14/chapter14" target="_blank" rel="noopener">https://datawhalechina.github.io/leeml-notes/#/chapter14/chapter14</a></p>
-</li>
-</ul>
-]]></content>
-  </entry>
-  <entry>
-    <title>神经网络理解-基于3Blue1Brown的视频</title>
-    <url>/2020/10/25/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E7%90%86%E8%A7%A3-%E5%9F%BA%E4%BA%8E3Blue1Brown%E7%9A%84%E8%A7%86%E9%A2%91/</url>
-    <content><![CDATA[<h1 id="神经网络（本质是一个复杂函数）"><a href="#神经网络（本质是一个复杂函数）" class="headerlink" title="神经网络（本质是一个复杂函数）"></a>神经网络（本质是一个复杂函数）</h1><h4 id="这个笔记主要记录在学习3B1B的深度学习系列过程中的一些个人认为的难点，详细内容请看3B1B的完整视频：https-space-bilibili-com-88461692-channel-detail-cid-26587。"><a href="#这个笔记主要记录在学习3B1B的深度学习系列过程中的一些个人认为的难点，详细内容请看3B1B的完整视频：https-space-bilibili-com-88461692-channel-detail-cid-26587。" class="headerlink" title="这个笔记主要记录在学习3B1B的深度学习系列过程中的一些个人认为的难点，详细内容请看3B1B的完整视频：https://space.bilibili.com/88461692/channel/detail?cid=26587。"></a>这个笔记主要记录在学习3B1B的深度学习系列过程中的一些个人认为的难点，详细内容请看3B1B的完整视频：<a href="https://space.bilibili.com/88461692/channel/detail?cid=26587。" target="_blank" rel="noopener">https://space.bilibili.com/88461692/channel/detail?cid=26587。</a></h4><a id="more"></a>
-<h2 id="1-神经网络的结构（以图解释）"><a href="#1-神经网络的结构（以图解释）" class="headerlink" title="1 神经网络的结构（以图解释）"></a>1 神经网络的结构（以图解释）</h2><p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20201002195436873.png" alt="image-20201002195436873"></p>
-<h3 id="1-1-神经元"><a href="#1-1-神经元" class="headerlink" title="1.1 神经元"></a>1.1 神经元</h3><p>每一个神经元都与上一层的所有神经元相连接。</p>
-<h3 id="1-2-激活值"><a href="#1-2-激活值" class="headerlink" title="1.2 激活值"></a>1.2 激活值</h3><p>输入层的每一个神经元里面的值称为激活值，是0到1的一个数字。a的下标表示第几个神经元，上标表示当前处于第几层网络。</p>
-<h3 id="1-3-权重"><a href="#1-3-权重" class="headerlink" title="1.3 权重"></a>1.3 权重</h3><p>两层神经元之间的连线就是权重。下一层网络的每一个神经元的激活值都是由上一层网络的所有激活值乘以相应的权重然后加权和的到的，如图中第一个隐藏层的第一个神经元的激活值是由输入层的10个神经元的激活值与它相应的10个权重（权重一会儿细说）加权和得到。W矩阵的每一行与a向量相乘就会得到隐藏层的一个神经元的激活值，最终整个w矩阵与a向量的点乘就会得到图中隐藏层所有的的神经元的激活值。注意。在刚开始训练时我们会随机初始化所有权重和偏置。</p>
-<h3 id="1-4-偏置"><a href="#1-4-偏置" class="headerlink" title="1.4 偏置"></a>1.4 偏置</h3><p>偏置实际上是对神经元激活状态的控制，根据需求设置偏置的大小，进而决定神经元什么时候会被激活。<a href="https://www.zhihu.com/question/305340182/answer/574986775" target="_blank" rel="noopener">https://www.zhihu.com/question/305340182/answer/574986775</a></p>
-<h2 id="2-神经网络的误差与梯度下降"><a href="#2-神经网络的误差与梯度下降" class="headerlink" title="2 神经网络的误差与梯度下降"></a>2 神经网络的误差与梯度下降</h2><h3 id="2-1-代价函数"><a href="#2-1-代价函数" class="headerlink" title="2.1 代价函数"></a>2.1 代价函数</h3><p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20201003102150484.png" alt="image-20201003102150484"></p>
-<p>代价函数（cost）：整个神经网络的所有权重和偏置作为它的参数，然后求它们的均方误差，最终输出一个单个数值来表示该神经网络的性能。</p>
-<h3 id="2-2-梯度下降法"><a href="#2-2-梯度下降法" class="headerlink" title="2.2 梯度下降法"></a>2.2 梯度下降法</h3><p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20201003103446650.png" alt="image-20201003103446650"></p>
-<p>（注意，这里的w指所有的参数，即权重和偏置都有。）沿着梯度方向函数值上升的最快。所以，负梯度向量里面的每一个值的正负表示对应的参数（权重和偏置）应该增大还是减小，值的大小表示参数应该改变的程度是多少。所以这些值可以理解为每个参数对训练数据的相对重要性，标记出了改变哪个参数，性价比最高。求梯度向量就是求代价函数对每个参数的偏导数。</p>
-<p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20201003105415605.png" alt="image-20201003105415605"></p>
-<p>梯度的另一种理解：以上图为例，梯度表示第一个变量的重要性是第二个变量的3倍，起码在（1,1）附近，改变x的值对整个函数影响更大。</p>
-<h2 id="3-反向传播算法"><a href="#3-反向传播算法" class="headerlink" title="3 反向传播算法"></a>3 反向传播算法</h2><h3 id="3-1-直观理解"><a href="#3-1-直观理解" class="headerlink" title="3.1 直观理解"></a>3.1 直观理解</h3><p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20201003160858242.png" alt="image-20201003160858242"></p>
-<p>假如一个样本真实值是2，在神经网络中进行完正向传播后会输出的结果如上图，显然是非常糟糕的，我们希望让2对应的输出神经元变得更亮（激活），让其他神经元变暗（未激活）。从全局上看，这只不过是数字2的神经元所期待的变化，我们还需要最后一层其余的神经元的激发变弱。但这其余的每个输出神经元，对于如何改变倒数第二层都有各自的想法。所以我们会把数字2神经元的期待，和别的输出神经元的期待全部加起来，作为对如何改变倒数第二层神经元的指示。一直循环这个过程，直到第一层。我们对其他的训练样本，同样的过一遍反向传播，记录下每个样本想怎样修改权重与偏置，最后再取一个平均值。</p>
-<p>总之就是我们对神经网络的预测结果不太满意，需要通过优化参数来提升神经网络的性能。我们需要理解下一层的神经元激活值对上一层的神经元参数的改变量的敏感程度是多少（反向传播思想），一直到代价函数对隐藏层第一层的参数变化量的敏感程度是多少（链式法则）。</p>
-<h3 id="3-2-数学推导（这里参考李宏毅）"><a href="#3-2-数学推导（这里参考李宏毅）" class="headerlink" title="3.2 数学推导（这里参考李宏毅）"></a>3.2 数学推导（这里参考李宏毅）</h3><p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20201004210647919.png" alt="image-20201004210647919"></p>
-<p>我们都知道神经网络有很多个参数（许多w和b），为了优化这些参数，我们采用梯度下降来先求所有参数的负梯度，然后计算下降后的参数$\theta$。BP反向传播并不是一个不同于梯度下降的优化算法，它只是为了让梯度的计算更有效率的一种方法，本质还是让梯度下降更有效率的求出代价函数的最小值。</p>
-<p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20201004211422661.png" alt="image-20201004211422661"></p>
-<p>链式求导法则有两种情况，第一种是常规的，不解释。case2表示改变s的值会改变x和y的值，进而改变z的值。所以s是透过两条路径去影响z，所以z对s的偏导（李宏毅说s对z的偏微分，两种说法都行）需要把两个路径都加起来才是最终的结果。</p>
-<h3 id="3-3-总结"><a href="#3-3-总结" class="headerlink" title="3.3 总结"></a>3.3 总结</h3><p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20201027200033345.png" alt="image-20201027200033345"></p>
-]]></content>
-      <categories>
-        <category>深度学习</category>
-      </categories>
-      <tags>
-        <tag>梯度下降</tag>
-        <tag>神经网络</tag>
-        <tag>反向传播</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>竞赛笔记</title>
-    <url>/2020/11/08/%E7%AB%9E%E8%B5%9B%E7%AC%94%E8%AE%B0/</url>
-    <content><![CDATA[<h2 id="新人赛"><a href="#新人赛" class="headerlink" title="新人赛"></a>新人赛</h2><a id="more"></a>
-<h3 id="员工满意度预测"><a href="#员工满意度预测" class="headerlink" title="员工满意度预测"></a>员工满意度预测</h3><ul>
-<li><h4 id="比赛地址："><a href="#比赛地址：" class="headerlink" title="比赛地址："></a>比赛地址：</h4><ul>
-<li><a href="https://www.kesci.com/home/competition/5ec3b6987ba12c002d3e42bc/" target="_blank" rel="noopener">https://www.kesci.com/home/competition/5ec3b6987ba12c002d3e42bc/</a></li>
-</ul>
-</li>
-<li><h4 id="流程："><a href="#流程：" class="headerlink" title="流程："></a>流程：</h4><ul>
-<li><p>数据探索：使用‘pandas_profiling’包快速生成数据报告，可以参考：<a href="https://zhuanlan.zhihu.com/p/85967505/" target="_blank" rel="noopener">https://zhuanlan.zhihu.com/p/85967505/</a></p>
-<ul>
-<li>在竞赛中，我们应保证训练集和测试集中的数值型特征的分布尽量一致。</li>
-</ul>
-<p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20201108213338763.png" alt="image-20201108213338763"></p>
-<p>train(log1p):</p>
-<p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20201108215421315.png" alt="image-20201108215421315"></p>
-<p>train(expm1):</p>
-<p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20201108215447912.png" alt="image-20201108215447912"></p>
-<p>当标签值有一些偏移时，我们可以采用‘np.log1p’或’np.expm1’来对其进行处理，让其更符合高斯分布（原理：<a href="https://www.cnblogs.com/wqbin/p/10346292.html），但是，本例偏度不是太大，所以我们不处理，处理了效果反而不好。具体可看（train(log1p)，train(expm1)），效果并不好。" target="_blank" rel="noopener">https://www.cnblogs.com/wqbin/p/10346292.html），但是，本例偏度不是太大，所以我们不处理，处理了效果反而不好。具体可看（train(log1p)，train(expm1)），效果并不好。</a></p>
-</li>
-<li><p>特征处理：</p>
-<ul>
-<li><p>特征归一化：使用minmax对’last_evaluation’,’average_monthly_hours’处理（因为这两个特征一个是值的量纲太小，一个是值的量纲太大）。如果用树模型就不需要特征归一化（因为数值缩放不影响分裂点的位置）。</p>
-</li>
-<li><p>特征标签化：对’package’,’division’,’salary’使用label_encode处理成离散数值。</p>
-<p>这里可以直接用随机森林训练，mse是0.02996238</p>
-</li>
-<li><p>特征构造：</p>
-<ul>
-<li>数值型特征：让它们两两相乘组成二项式。</li>
-<li>离散型特征：分别用这几个特征分类（groupby），然后求组内的平均值，最大值，最小值，标准差，偏度，计数，不同值（numpy_unique）的个数（pandas_nunique）分别作为新的特征。</li>
-</ul>
-</li>
-</ul>
-</li>
-<li><p>特征选择：</p>
-</li>
-<li><p>这里只是初步将零方差特征删除了，没有进一步筛选。</p>
-</li>
-<li><p>删除零方差特征：因为零方差所有的样本值都一样，导致给他们分配的权重都相同。没意义。</p>
-</li>
-<li><p>模型训练：</p>
-</li>
-<li><p>只用了随机森林，没有使用交叉验证和网格搜索</p>
-<ul>
-<li>最终结果：</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-<p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20201108223947884.png" alt="image-20201108223947884"></p>
-]]></content>
-      <tags>
-        <tag>大数据比赛</tag>
-      </tags>
+    <title>自然语言处理中的预训练模型</title>
+    <url>/2020/11/09/%E8%87%AA%E7%84%B6%E8%AF%AD%E8%A8%80%E5%A4%84%E7%90%86%E4%B8%AD%E7%9A%84%E9%A2%84%E8%AE%AD%E7%BB%83%E6%A8%A1%E5%9E%8B/</url>
+    <content><![CDATA[<h3 id="自然语言处理中的预训练模型"><a href="#自然语言处理中的预训练模型" class="headerlink" title="自然语言处理中的预训练模型"></a>自然语言处理中的预训练模型</h3>]]></content>
   </entry>
   <entry>
     <title>论文记录</title>
@@ -1317,33 +1217,135 @@
 ]]></content>
   </entry>
   <entry>
-    <title>极客时间nlp笔记/2AI项目落地流程</title>
-    <url>/2020/10/13/%E6%9E%81%E5%AE%A2%E6%97%B6%E9%97%B4nlp%E7%AC%94%E8%AE%B0/2AI%E9%A1%B9%E7%9B%AE%E8%90%BD%E5%9C%B0%E6%B5%81%E7%A8%8B/</url>
-    <content><![CDATA[<h2 id="AI项目落地流程"><a href="#AI项目落地流程" class="headerlink" title="AI项目落地流程"></a>AI项目落地流程</h2><a id="more"></a>
-<p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20201013204849770.png" alt="image-20201013204849770"></p>
-<p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20201013205823575.png" alt="image-20201013205823575"></p>
-<p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20201013210712906.png" alt="image-20201013210712906"></p>
-<p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20201013210815612.png" alt="image-20201013210815612"></p>
-<p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20201013211215733.png" alt="image-20201013211215733"></p>
-<p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20201013211348762.png" alt="image-20201013211348762"></p>
-<p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20201013211416835.png" alt="image-20201013211416835"></p>
-<p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20201013213310163.png" alt="image-20201013213310163"></p>
-<p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20201013213620700.png" alt="image-20201013213620700"></p>
-<p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20201013214417364.png" alt="image-20201013214417364"></p>
-<p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20201013214804992.png" alt="image-20201013214804992"></p>
+    <title>神经网络基础</title>
+    <url>/2020/10/25/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E5%9F%BA%E7%A1%80/</url>
+    <content><![CDATA[<h2 id="神经网络基础"><a href="#神经网络基础" class="headerlink" title="神经网络基础"></a>神经网络基础</h2><h3 id="关于神经网络错误的说法"><a href="#关于神经网络错误的说法" class="headerlink" title="关于神经网络错误的说法"></a>关于神经网络错误的说法</h3><ul>
+<li>神经网络是大家根据神经科学得到的最伟大的发明</li>
+</ul>
+<h3 id="神经网络的数学本质"><a href="#神经网络的数学本质" class="headerlink" title="神经网络的数学本质"></a>神经网络的数学本质</h3><ul>
+<li><p>由于神经网络复合函数的本质，使得神经网络可以很方便地组合出很多复杂的函数。</p>
+</li>
+<li><p>由于复合函数求导法则，所以大部分神经网络的训练过程可以自动化（反向梯度传递）。</p>
+<p><a href="https://datawhalechina.github.io/leeml-notes/#/chapter14/chapter14" target="_blank" rel="noopener">https://datawhalechina.github.io/leeml-notes/#/chapter14/chapter14</a></p>
+</li>
+</ul>
 ]]></content>
   </entry>
   <entry>
-    <title>极客时间nlp笔记/1宣传片之外的人工智能</title>
-    <url>/2020/10/13/%E6%9E%81%E5%AE%A2%E6%97%B6%E9%97%B4nlp%E7%AC%94%E8%AE%B0/1%E5%AE%A3%E4%BC%A0%E7%89%87%E4%B9%8B%E5%A4%96%E7%9A%84%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD/</url>
-    <content><![CDATA[<h2 id="宣传片之外的人工智能"><a href="#宣传片之外的人工智能" class="headerlink" title="宣传片之外的人工智能"></a>宣传片之外的人工智能</h2><a id="more"></a>
-<h3 id="人工智能的一种分类："><a href="#人工智能的一种分类：" class="headerlink" title="人工智能的一种分类："></a>人工智能的一种分类：</h3><p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20201013195917302.png" alt="image-20201013195917302"></p>
-<p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20201013195942821.png" alt="image-20201013195942821"></p>
-<p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20201013200146773.png" alt="image-20201013200146773"></p>
-<p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20201013201003276.png" alt="image-20201013201003276"></p>
-<h3 id="人工智能的另一种分类："><a href="#人工智能的另一种分类：" class="headerlink" title="人工智能的另一种分类："></a>人工智能的另一种分类：</h3><p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20201013201339798.png" alt="image-20201013201339798"></p>
-<h3 id="我们该怎么做："><a href="#我们该怎么做：" class="headerlink" title="我们该怎么做："></a>我们该怎么做：</h3><p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20201013202909044.png" alt="image-20201013202909044"></p>
+    <title>机器学习笔记8</title>
+    <url>/2020/07/30/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B08/</url>
+    <content><![CDATA[<h3 id="多元线性回归"><a href="#多元线性回归" class="headerlink" title="多元线性回归"></a>多元线性回归</h3><a id="more"></a>
+<h4 id="一、什么是多元线性回归"><a href="#一、什么是多元线性回归" class="headerlink" title="一、什么是多元线性回归"></a>一、什么是多元线性回归</h4><p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200730235347025.png" alt="image-20200730235347025"></p>
+<h4 id="二、多元线性回归的正规方程解"><a href="#二、多元线性回归的正规方程解" class="headerlink" title="二、多元线性回归的正规方程解"></a>二、多元线性回归的正规方程解</h4><p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200731030050773.png" alt="image-20200731030050773"></p>
+<p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200731030338464.png" alt="image-20200731030338464"></p>
+<h4 id="因为X是一个特征矩阵，所以X-i-本身就是行向量，因此-theta必须由行向量转置为列向量"><a href="#因为X是一个特征矩阵，所以X-i-本身就是行向量，因此-theta必须由行向量转置为列向量" class="headerlink" title="因为X是一个特征矩阵，所以X^{(i)}本身就是行向量，因此\theta必须由行向量转置为列向量"></a>因为X是一个特征矩阵，所以<script type="math/tex">X^{(i)}</script>本身就是行向量，因此<script type="math/tex">\theta</script>必须由行向量转置为列向量</h4><h4 id="接下来进一步推广到整个特征矩阵"><a href="#接下来进一步推广到整个特征矩阵" class="headerlink" title="接下来进一步推广到整个特征矩阵"></a>接下来进一步推广到整个特征矩阵</h4><p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200731031136440.png" alt="image-20200731031136440"></p>
+<h4 id="因为X-b是m-n的矩阵，-theta-是n行列向量，所以-hat-y-是一个m行的列向量"><a href="#因为X-b是m-n的矩阵，-theta-是n行列向量，所以-hat-y-是一个m行的列向量" class="headerlink" title="因为X_b是m*n的矩阵，\theta 是n行列向量，所以\hat{y}是一个m行的列向量"></a>因为<script type="math/tex">X_b</script>是m*n的矩阵，<script type="math/tex">\theta</script> 是n行列向量，所以<script type="math/tex">\hat{y}</script>是一个m行的列向量</h4><p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200731032608917.png" alt="image-20200731032608917"></p>
+<p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200731032641791.png" alt="image-20200731032641791"></p>
+<p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200731032712657.png" alt="image-20200731032712657"></p>
+<h4 id="因为-theta只是X前面的系数，与量纲无关，所以不需要归一化处理"><a href="#因为-theta只是X前面的系数，与量纲无关，所以不需要归一化处理" class="headerlink" title="因为\theta只是X前面的系数，与量纲无关，所以不需要归一化处理"></a>因为<script type="math/tex">\theta</script>只是X前面的系数，与量纲无关，所以不需要归一化处理</h4><h4 id="三、线性回归总结"><a href="#三、线性回归总结" class="headerlink" title="三、线性回归总结"></a>三、线性回归总结</h4><p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200805000611219.png" alt="image-20200805000611219"></p>
+<p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200805000625908.png" alt="image-20200805000625908"></p>
+<p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200805000642638.png" alt="image-20200805000642638"></p>
+<h4 id="关于可解释性，我们拿波士顿房价预测来说，训练得到的参数的正负表示该特征与房价呈正相关还是负相关；绝对值大小表示对房价的影响程度，越大则对房价影响越大，具体看Jupyter。"><a href="#关于可解释性，我们拿波士顿房价预测来说，训练得到的参数的正负表示该特征与房价呈正相关还是负相关；绝对值大小表示对房价的影响程度，越大则对房价影响越大，具体看Jupyter。" class="headerlink" title="关于可解释性，我们拿波士顿房价预测来说，训练得到的参数的正负表示该特征与房价呈正相关还是负相关；绝对值大小表示对房价的影响程度，越大则对房价影响越大，具体看Jupyter。"></a>关于可解释性，我们拿波士顿房价预测来说，训练得到的参数的正负表示该特征与房价呈正相关还是负相关；绝对值大小表示对房价的影响程度，越大则对房价影响越大，具体看Jupyter。</h4>]]></content>
+      <categories>
+        <category>机器学习</category>
+      </categories>
+      <tags>
+        <tag>机器学习</tag>
+        <tag>线性回归</tag>
+        <tag>多元线性回归</tag>
+        <tag>模型可解释性</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>竞赛笔记</title>
+    <url>/2020/11/08/%E7%AB%9E%E8%B5%9B%E7%AC%94%E8%AE%B0/</url>
+    <content><![CDATA[<h2 id="新人赛"><a href="#新人赛" class="headerlink" title="新人赛"></a>新人赛</h2><a id="more"></a>
+<h3 id="员工满意度预测"><a href="#员工满意度预测" class="headerlink" title="员工满意度预测"></a>员工满意度预测</h3><ul>
+<li><h4 id="比赛地址："><a href="#比赛地址：" class="headerlink" title="比赛地址："></a>比赛地址：</h4><ul>
+<li><a href="https://www.kesci.com/home/competition/5ec3b6987ba12c002d3e42bc/" target="_blank" rel="noopener">https://www.kesci.com/home/competition/5ec3b6987ba12c002d3e42bc/</a></li>
+</ul>
+</li>
+<li><h4 id="流程："><a href="#流程：" class="headerlink" title="流程："></a>流程：</h4><ul>
+<li><p>数据探索：使用‘pandas_profiling’包快速生成数据报告，可以参考：<a href="https://zhuanlan.zhihu.com/p/85967505/" target="_blank" rel="noopener">https://zhuanlan.zhihu.com/p/85967505/</a></p>
+<ul>
+<li>在竞赛中，我们应保证训练集和测试集中的数值型特征的分布尽量一致。</li>
+</ul>
+<p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20201108213338763.png" alt="image-20201108213338763"></p>
+<p>train(log1p):</p>
+<p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20201108215421315.png" alt="image-20201108215421315"></p>
+<p>train(expm1):</p>
+<p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20201108215447912.png" alt="image-20201108215447912"></p>
+<p>当标签值有一些偏移时，我们可以采用‘np.log1p’或’np.expm1’来对其进行处理，让其更符合高斯分布（原理：<a href="https://www.cnblogs.com/wqbin/p/10346292.html），但是，本例偏度不是太大，所以我们不处理，处理了效果反而不好。具体可看（train(log1p)，train(expm1)），效果并不好。" target="_blank" rel="noopener">https://www.cnblogs.com/wqbin/p/10346292.html），但是，本例偏度不是太大，所以我们不处理，处理了效果反而不好。具体可看（train(log1p)，train(expm1)），效果并不好。</a></p>
+</li>
+<li><p>特征处理：</p>
+<ul>
+<li><p>特征归一化：使用minmax对’last_evaluation’,’average_monthly_hours’处理（因为这两个特征一个是值的量纲太小，一个是值的量纲太大）。如果用树模型就不需要特征归一化（因为数值缩放不影响分裂点的位置）。</p>
+</li>
+<li><p>特征标签化：对’package’,’division’,’salary’使用label_encode处理成离散数值。</p>
+<p>这里可以直接用随机森林训练，mse是0.02996238</p>
+</li>
+<li><p>特征构造：</p>
+<ul>
+<li>数值型特征：让它们两两相乘组成二项式。</li>
+<li>离散型特征：分别用这几个特征分类（groupby），然后求组内的平均值，最大值，最小值，标准差，偏度，计数，不同值（numpy_unique）的个数（pandas_nunique）分别作为新的特征。</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>特征选择：</p>
+</li>
+<li><p>这里只是初步将零方差特征删除了，没有进一步筛选。</p>
+</li>
+<li><p>删除零方差特征：因为零方差所有的样本值都一样，导致给他们分配的权重都相同。没意义。</p>
+</li>
+<li><p>模型训练：</p>
+</li>
+<li><p>只用了随机森林，没有使用交叉验证和网格搜索</p>
+<ul>
+<li>最终结果：</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20201108223947884.png" alt="image-20201108223947884"></p>
 ]]></content>
+      <tags>
+        <tag>大数据比赛</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>神经网络理解-基于3Blue1Brown的视频</title>
+    <url>/2020/10/25/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E7%90%86%E8%A7%A3-%E5%9F%BA%E4%BA%8E3Blue1Brown%E7%9A%84%E8%A7%86%E9%A2%91/</url>
+    <content><![CDATA[<h1 id="神经网络（本质是一个复杂函数）"><a href="#神经网络（本质是一个复杂函数）" class="headerlink" title="神经网络（本质是一个复杂函数）"></a>神经网络（本质是一个复杂函数）</h1><h4 id="这个笔记主要记录在学习3B1B的深度学习系列过程中的一些个人认为的难点，详细内容请看3B1B的完整视频：https-space-bilibili-com-88461692-channel-detail-cid-26587。"><a href="#这个笔记主要记录在学习3B1B的深度学习系列过程中的一些个人认为的难点，详细内容请看3B1B的完整视频：https-space-bilibili-com-88461692-channel-detail-cid-26587。" class="headerlink" title="这个笔记主要记录在学习3B1B的深度学习系列过程中的一些个人认为的难点，详细内容请看3B1B的完整视频：https://space.bilibili.com/88461692/channel/detail?cid=26587。"></a>这个笔记主要记录在学习3B1B的深度学习系列过程中的一些个人认为的难点，详细内容请看3B1B的完整视频：<a href="https://space.bilibili.com/88461692/channel/detail?cid=26587。" target="_blank" rel="noopener">https://space.bilibili.com/88461692/channel/detail?cid=26587。</a></h4><a id="more"></a>
+<h2 id="1-神经网络的结构（以图解释）"><a href="#1-神经网络的结构（以图解释）" class="headerlink" title="1 神经网络的结构（以图解释）"></a>1 神经网络的结构（以图解释）</h2><p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20201002195436873.png" alt="image-20201002195436873"></p>
+<h3 id="1-1-神经元"><a href="#1-1-神经元" class="headerlink" title="1.1 神经元"></a>1.1 神经元</h3><p>每一个神经元都与上一层的所有神经元相连接。</p>
+<h3 id="1-2-激活值"><a href="#1-2-激活值" class="headerlink" title="1.2 激活值"></a>1.2 激活值</h3><p>输入层的每一个神经元里面的值称为激活值，是0到1的一个数字。a的下标表示第几个神经元，上标表示当前处于第几层网络。</p>
+<h3 id="1-3-权重"><a href="#1-3-权重" class="headerlink" title="1.3 权重"></a>1.3 权重</h3><p>两层神经元之间的连线就是权重。下一层网络的每一个神经元的激活值都是由上一层网络的所有激活值乘以相应的权重然后加权和的到的，如图中第一个隐藏层的第一个神经元的激活值是由输入层的10个神经元的激活值与它相应的10个权重（权重一会儿细说）加权和得到。W矩阵的每一行与a向量相乘就会得到隐藏层的一个神经元的激活值，最终整个w矩阵与a向量的点乘就会得到图中隐藏层所有的的神经元的激活值。注意。在刚开始训练时我们会随机初始化所有权重和偏置。</p>
+<h3 id="1-4-偏置"><a href="#1-4-偏置" class="headerlink" title="1.4 偏置"></a>1.4 偏置</h3><p>偏置实际上是对神经元激活状态的控制，根据需求设置偏置的大小，进而决定神经元什么时候会被激活。<a href="https://www.zhihu.com/question/305340182/answer/574986775" target="_blank" rel="noopener">https://www.zhihu.com/question/305340182/answer/574986775</a></p>
+<h2 id="2-神经网络的误差与梯度下降"><a href="#2-神经网络的误差与梯度下降" class="headerlink" title="2 神经网络的误差与梯度下降"></a>2 神经网络的误差与梯度下降</h2><h3 id="2-1-代价函数"><a href="#2-1-代价函数" class="headerlink" title="2.1 代价函数"></a>2.1 代价函数</h3><p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20201003102150484.png" alt="image-20201003102150484"></p>
+<p>代价函数（cost）：整个神经网络的所有权重和偏置作为它的参数，然后求它们的均方误差，最终输出一个单个数值来表示该神经网络的性能。</p>
+<h3 id="2-2-梯度下降法"><a href="#2-2-梯度下降法" class="headerlink" title="2.2 梯度下降法"></a>2.2 梯度下降法</h3><p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20201003103446650.png" alt="image-20201003103446650"></p>
+<p>（注意，这里的w指所有的参数，即权重和偏置都有。）沿着梯度方向函数值上升的最快。所以，负梯度向量里面的每一个值的正负表示对应的参数（权重和偏置）应该增大还是减小，值的大小表示参数应该改变的程度是多少。所以这些值可以理解为每个参数对训练数据的相对重要性，标记出了改变哪个参数，性价比最高。求梯度向量就是求代价函数对每个参数的偏导数。</p>
+<p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20201003105415605.png" alt="image-20201003105415605"></p>
+<p>梯度的另一种理解：以上图为例，梯度表示第一个变量的重要性是第二个变量的3倍，起码在（1,1）附近，改变x的值对整个函数影响更大。</p>
+<h2 id="3-反向传播算法"><a href="#3-反向传播算法" class="headerlink" title="3 反向传播算法"></a>3 反向传播算法</h2><h3 id="3-1-直观理解"><a href="#3-1-直观理解" class="headerlink" title="3.1 直观理解"></a>3.1 直观理解</h3><p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20201003160858242.png" alt="image-20201003160858242"></p>
+<p>假如一个样本真实值是2，在神经网络中进行完正向传播后会输出的结果如上图，显然是非常糟糕的，我们希望让2对应的输出神经元变得更亮（激活），让其他神经元变暗（未激活）。从全局上看，这只不过是数字2的神经元所期待的变化，我们还需要最后一层其余的神经元的激发变弱。但这其余的每个输出神经元，对于如何改变倒数第二层都有各自的想法。所以我们会把数字2神经元的期待，和别的输出神经元的期待全部加起来，作为对如何改变倒数第二层神经元的指示。一直循环这个过程，直到第一层。我们对其他的训练样本，同样的过一遍反向传播，记录下每个样本想怎样修改权重与偏置，最后再取一个平均值。</p>
+<p>总之就是我们对神经网络的预测结果不太满意，需要通过优化参数来提升神经网络的性能。我们需要理解下一层的神经元激活值对上一层的神经元参数的改变量的敏感程度是多少（反向传播思想），一直到代价函数对隐藏层第一层的参数变化量的敏感程度是多少（链式法则）。</p>
+<h3 id="3-2-数学推导（这里参考李宏毅）"><a href="#3-2-数学推导（这里参考李宏毅）" class="headerlink" title="3.2 数学推导（这里参考李宏毅）"></a>3.2 数学推导（这里参考李宏毅）</h3><p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20201004210647919.png" alt="image-20201004210647919"></p>
+<p>我们都知道神经网络有很多个参数（许多w和b），为了优化这些参数，我们采用梯度下降来先求所有参数的负梯度，然后计算下降后的参数$\theta$。BP反向传播并不是一个不同于梯度下降的优化算法，它只是为了让梯度的计算更有效率的一种方法，本质还是让梯度下降更有效率的求出代价函数的最小值。</p>
+<p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20201004211422661.png" alt="image-20201004211422661"></p>
+<p>链式求导法则有两种情况，第一种是常规的，不解释。case2表示改变s的值会改变x和y的值，进而改变z的值。所以s是透过两条路径去影响z，所以z对s的偏导（李宏毅说s对z的偏微分，两种说法都行）需要把两个路径都加起来才是最终的结果。</p>
+<h3 id="3-3-总结"><a href="#3-3-总结" class="headerlink" title="3.3 总结"></a>3.3 总结</h3><p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20201027200033345.png" alt="image-20201027200033345"></p>
+]]></content>
+      <categories>
+        <category>深度学习</category>
+      </categories>
+      <tags>
+        <tag>梯度下降</tag>
+        <tag>神经网络</tag>
+        <tag>反向传播</tag>
+      </tags>
   </entry>
   <entry>
     <title>极客时间nlp笔记/NLP基本任务与研究方向</title>
@@ -1387,5 +1389,34 @@
 </li>
 </ul>
 <h3 id="交差领域的研究"><a href="#交差领域的研究" class="headerlink" title="交差领域的研究"></a>交差领域的研究</h3>]]></content>
+  </entry>
+  <entry>
+    <title>极客时间nlp笔记/1宣传片之外的人工智能</title>
+    <url>/2020/10/13/%E6%9E%81%E5%AE%A2%E6%97%B6%E9%97%B4nlp%E7%AC%94%E8%AE%B0/1%E5%AE%A3%E4%BC%A0%E7%89%87%E4%B9%8B%E5%A4%96%E7%9A%84%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD/</url>
+    <content><![CDATA[<h2 id="宣传片之外的人工智能"><a href="#宣传片之外的人工智能" class="headerlink" title="宣传片之外的人工智能"></a>宣传片之外的人工智能</h2><a id="more"></a>
+<h3 id="人工智能的一种分类："><a href="#人工智能的一种分类：" class="headerlink" title="人工智能的一种分类："></a>人工智能的一种分类：</h3><p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20201013195917302.png" alt="image-20201013195917302"></p>
+<p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20201013195942821.png" alt="image-20201013195942821"></p>
+<p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20201013200146773.png" alt="image-20201013200146773"></p>
+<p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20201013201003276.png" alt="image-20201013201003276"></p>
+<h3 id="人工智能的另一种分类："><a href="#人工智能的另一种分类：" class="headerlink" title="人工智能的另一种分类："></a>人工智能的另一种分类：</h3><p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20201013201339798.png" alt="image-20201013201339798"></p>
+<h3 id="我们该怎么做："><a href="#我们该怎么做：" class="headerlink" title="我们该怎么做："></a>我们该怎么做：</h3><p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20201013202909044.png" alt="image-20201013202909044"></p>
+]]></content>
+  </entry>
+  <entry>
+    <title>极客时间nlp笔记/2AI项目落地流程</title>
+    <url>/2020/10/13/%E6%9E%81%E5%AE%A2%E6%97%B6%E9%97%B4nlp%E7%AC%94%E8%AE%B0/2AI%E9%A1%B9%E7%9B%AE%E8%90%BD%E5%9C%B0%E6%B5%81%E7%A8%8B/</url>
+    <content><![CDATA[<h2 id="AI项目落地流程"><a href="#AI项目落地流程" class="headerlink" title="AI项目落地流程"></a>AI项目落地流程</h2><a id="more"></a>
+<p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20201013204849770.png" alt="image-20201013204849770"></p>
+<p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20201013205823575.png" alt="image-20201013205823575"></p>
+<p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20201013210712906.png" alt="image-20201013210712906"></p>
+<p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20201013210815612.png" alt="image-20201013210815612"></p>
+<p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20201013211215733.png" alt="image-20201013211215733"></p>
+<p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20201013211348762.png" alt="image-20201013211348762"></p>
+<p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20201013211416835.png" alt="image-20201013211416835"></p>
+<p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20201013213310163.png" alt="image-20201013213310163"></p>
+<p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20201013213620700.png" alt="image-20201013213620700"></p>
+<p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20201013214417364.png" alt="image-20201013214417364"></p>
+<p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20201013214804992.png" alt="image-20201013214804992"></p>
+]]></content>
   </entry>
 </search>
