@@ -40,8 +40,14 @@
 <meta property="og:image" content="https://gitee.com/macljc/myimg/raw/master/imgs/image-20201116203507874.png">
 <meta property="og:image" content="https://gitee.com/macljc/myimg/raw/master/imgs/image-20201116212526804.png">
 <meta property="og:image" content="https://gitee.com/macljc/myimg/raw/master/imgs/image-20201116213328166.png">
+<meta property="og:image" content="https://gitee.com/macljc/myimg/raw/master/imgs/image-20201122192818875.png">
+<meta property="og:image" content="https://gitee.com/macljc/myimg/raw/master/imgs/image-20201123205001853.png">
+<meta property="og:image" content="https://gitee.com/macljc/myimg/raw/master/imgs/image-20201122192046345.png">
+<meta property="og:image" content="https://gitee.com/macljc/myimg/raw/master/imgs/image-20201123201640679.png">
+<meta property="og:image" content="https://gitee.com/macljc/myimg/raw/master/imgs/image-20201123202636947.png">
+<meta property="og:image" content="https://gitee.com/macljc/myimg/raw/master/imgs/image-20201123204357129.png">
 <meta property="article:published_time" content="2020-11-15T07:35:50.000Z">
-<meta property="article:modified_time" content="2020-11-16T13:43:29.141Z">
+<meta property="article:modified_time" content="2020-11-23T12:50:09.510Z">
 <meta property="article:author" content="macchen">
 <meta property="article:tag" content="ACL&#x2F;EMNLP">
 <meta name="twitter:card" content="summary">
@@ -243,7 +249,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-11-16 21:43:29" itemprop="dateModified" datetime="2020-11-16T21:43:29+08:00">2020-11-16</time>
+                <time title="修改时间：2020-11-23 20:50:09" itemprop="dateModified" datetime="2020-11-23T20:50:09+08:00">2020-11-23</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -268,14 +274,14 @@
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>743</span>
+              <span>2.6k</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
                 <i class="far fa-clock"></i>
               </span>
                 <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>1 分钟</span>
+              <span>2 分钟</span>
             </span>
 
         </div>
@@ -303,7 +309,10 @@
 </li>
 <li><h4 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h4><ul>
 <li>以往的数据集只包含统一的多模态情感标注，但是这种标注不能很好的反映单模态的情感类别。</li>
-<li>不能够捕获到模态之间的差异性。</li>
+<li>不能够捕获到模态之间的差异性。<ul>
+<li>统一的多模态标注可能对于模型学习单模态的特征信息时造成误导。</li>
+</ul>
+</li>
 </ul>
 </li>
 <li><h4 id="本文工作"><a href="#本文工作" class="headerlink" title="本文工作"></a>本文工作</h4><ul>
@@ -345,6 +354,150 @@
 </li>
 </ul>
 <p>举例说明：LF-DNN是对统一的多模态标注进行多任务训练。MLF-DNN是LF-DNN的扩展，它相比前者还引入了单模态标注对单任务的训练，形成了“单模态情感标注+多模态情感标注”模型。这样使得实验表现显著提升。</p>
+<ul>
+<li><h4 id="不足"><a href="#不足" class="headerlink" title="不足"></a>不足</h4><ul>
+<li>在多任务学习中，子任务的异步性可能会对多模态情感分析造成不良影响。<ul>
+<li>异步性：我们首先对多模态标注用后端融合网络进行多任务学习，然后引入了一个单模态单任务学习。相当于这个单模态被学习了两次（反向传播时受多模态损失和单模态损失的影响），这样会导致异步性。</li>
+<li>如果可以引入很多单模态单任务，这个负面效果渐渐会被抵消。</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><h4 id="展望"><a href="#展望" class="headerlink" title="展望"></a>展望</h4><ul>
+<li>探索多模态与多任务之间的联系。</li>
+<li>引入更多的融合策略：前端融合、中期融合。</li>
+</ul>
+</li>
+</ul>
+<h3 id="二、Improving-Multimodal-Named-Entity-Recognition-via-Entity-Span-Detection-with-Unified-Multimodal-Transformer"><a href="#二、Improving-Multimodal-Named-Entity-Recognition-via-Entity-Span-Detection-with-Unified-Multimodal-Transformer" class="headerlink" title="二、Improving Multimodal Named Entity Recognition via Entity Span Detection with Unified Multimodal Transformer"></a>二、Improving Multimodal Named Entity Recognition via Entity Span Detection with Unified Multimodal Transformer</h3><ul>
+<li><h4 id="单位-1"><a href="#单位-1" class="headerlink" title="单位"></a>单位</h4><ul>
+<li>南京科技大学</li>
+<li>新加坡管理大学</li>
+<li>新加波DBS银行</li>
+</ul>
+</li>
+<li><h4 id="文献来源-1"><a href="#文献来源-1" class="headerlink" title="文献来源"></a>文献来源</h4><ul>
+<li>ACL2020</li>
+</ul>
+</li>
+<li><h4 id="论文子方向-1"><a href="#论文子方向-1" class="headerlink" title="论文子方向"></a>论文子方向</h4><ul>
+<li>多模态命名实体识别</li>
+</ul>
+</li>
+<li><h4 id="问题-1"><a href="#问题-1" class="headerlink" title="问题"></a>问题</h4><ul>
+<li>现有的方法在识别正式新闻文本中的实体方面比较成功。但由于其长度短且噪音大，大多数实体在非正式社交媒体文本(如推文)中表现不佳。</li>
+<li>非语境化的单词表示，其中每个单词由相同的向量表示，而不管它出现在哪个语境中。然而，社交媒体帖子中许多多义实体的含义往往依赖于其上下文词</li>
+<li>虽然大多数现有方法集中于对模态间交互进行建模以获得单词感知的视觉表示，但是它们最终隐藏层中的单词表示仍然基于文本上下文，而文本上下文对视觉上下文不敏感。</li>
+<li>大多数以前的方法在很大程度上忽略了包含视觉信息的偏差。事实上，在大多数社交媒体帖子中，相关图像往往只突出句子中的一两个实体，而不提其他实体。在这些情况下，直接整合视觉信息将不可避免地导致模型更好地识别图像突出显示的实体，但无法识别其他实体。</li>
+</ul>
+</li>
+<li><h4 id="本文工作-1"><a href="#本文工作-1" class="headerlink" title="本文工作"></a>本文工作</h4><ul>
+<li>针对MNER设计了一个多模态Transformer模型。</li>
+<li>基于这个模型设计了一个统一架构。</li>
+</ul>
+</li>
+<li><h4 id="本文目的-1"><a href="#本文目的-1" class="headerlink" title="本文目的"></a>本文目的</h4><ul>
+<li>面向(非正式)社交媒体帖子的多模态命名实体识别。</li>
+</ul>
+</li>
+<li><h4 id="数据集-1"><a href="#数据集-1" class="headerlink" title="数据集"></a>数据集</h4><ul>
+<li><p>两个公开的MNER数据集。</p>
+<ul>
+<li><p>分别是推特14-15年和16-17年的用户推文（帖子）数据（推文格式是多模态）。</p>
+</li>
+<li><p>本文将这两个数据集分别命名为’TWITTER-2015’,’TWITTER-2017’。</p>
+<p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20201122192818875.png" alt="image-20201122192818875"></p>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><h4 id="本文方法-1"><a href="#本文方法-1" class="headerlink" title="本文方法"></a>本文方法</h4><ul>
+<li><p>针对MNER设计了一个多模态Transformer模型。</p>
+<ul>
+<li>该模型为Transformer提供了一个多模态交互模块（MMI）来捕捉词和图像之间的模态间动态。</li>
+</ul>
+</li>
+<li><p>基于这个模型设计了一个统一架构。</p>
+<ul>
+<li>基于文本的实体跨度检测模块（text-based entity span detection module）。它用来减少上述模型中视觉环境中的误差偏置。</li>
+</ul>
+<p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20201123205001853.png" alt="image-20201123205001853"></p>
+</li>
+</ul>
+</li>
+<li><h4 id="实验表现-1"><a href="#实验表现-1" class="headerlink" title="实验表现"></a>实验表现</h4><ul>
+<li><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20201122192046345.png" alt="image-20201122192046345"></li>
+</ul>
+</li>
+<li><h4 id="不足-1"><a href="#不足-1" class="headerlink" title="不足"></a>不足</h4><ul>
+<li>在社交平台的帖子中，对于不匹配的图片和文本构成的帖子的情况下， UMT（统一多模态Transformer）的表现并不好。</li>
+<li>现在公开可用的MNER数据集相对较小。</li>
+</ul>
+</li>
+<li><h4 id="展望-1"><a href="#展望-1" class="headerlink" title="展望"></a>展望</h4><ul>
+<li>提高UMT的性能让它可以动态的过滤掉图片中存在的潜在噪声。</li>
+<li>计划构建一个基于多种社交平台的帖子的未标记数据集，提出一个有效的框架，将它们与少量已注释数据相结合，以获得性能更好更稳定的MNER模型。</li>
+</ul>
+</li>
+</ul>
+<h3 id="三、Reasoning-with-Multimodal-Sarcastic-Tweets-via-Modeling-Cross-Modality-Contrast-and-Semantic-Association"><a href="#三、Reasoning-with-Multimodal-Sarcastic-Tweets-via-Modeling-Cross-Modality-Contrast-and-Semantic-Association" class="headerlink" title="三、Reasoning with Multimodal Sarcastic Tweets via Modeling Cross-Modality Contrast and Semantic Association"></a>三、Reasoning with Multimodal Sarcastic Tweets via Modeling Cross-Modality Contrast and Semantic Association</h3><ul>
+<li><h4 id="单位-2"><a href="#单位-2" class="headerlink" title="单位"></a>单位</h4><ul>
+<li>中科院</li>
+<li>中科大</li>
+</ul>
+</li>
+<li><h4 id="文献来源-2"><a href="#文献来源-2" class="headerlink" title="文献来源"></a>文献来源</h4><ul>
+<li>ACL2020</li>
+</ul>
+</li>
+<li><h4 id="论文子方向-2"><a href="#论文子方向-2" class="headerlink" title="论文子方向"></a>论文子方向</h4><ul>
+<li>多模态推理</li>
+</ul>
+</li>
+<li><h4 id="问题-2"><a href="#问题-2" class="headerlink" title="问题"></a>问题</h4><ul>
+<li>传统的基于文本的方法不足以检测多模态讽刺推文。</li>
+</ul>
+</li>
+<li><h4 id="本文工作-2"><a href="#本文工作-2" class="headerlink" title="本文工作"></a>本文工作</h4><ul>
+<li>提出了一个新的方法来建模在相关语境下的跨模态对比。</li>
+</ul>
+</li>
+<li><h4 id="本文目的-2"><a href="#本文目的-2" class="headerlink" title="本文目的"></a>本文目的</h4><ul>
+<li>为了推理多模态讽刺推文。</li>
+</ul>
+</li>
+<li><h4 id="数据集-2"><a href="#数据集-2" class="headerlink" title="数据集"></a>数据集</h4><ul>
+<li><p>Twitter上hashtag为#sarcasm, #sarcastic, #irony, #ironic等的推文。</p>
+<p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20201123201640679.png" alt="image-20201123201640679"></p>
+</li>
+</ul>
+</li>
+<li><h4 id="本文方法-2"><a href="#本文方法-2" class="headerlink" title="本文方法"></a>本文方法</h4><ul>
+<li><p>构造了一个分解与关系网络（Decomposition and Relation Net）。</p>
+<ul>
+<li>分解网络通过表示推文中的图片和文本的共性与差异来隐式建模跨模态对比信息。<ul>
+<li>因为短文本通常没有足够的语境信息，所以我们需要结合对应的图片来推理推文是否带有嘲讽。</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>关系网络通过一个跨模态注意力机制来显式捕获图片和文本的语义关联信息。</li>
+</ul>
+<p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20201123202636947.png" alt="image-20201123202636947"></p>
+<pre><code>解释：ANP指形容词-名词对，它是将推文文本进行分词，筛选出名词和形容词，得到每个词的词向量，然后计算图片与（形容词-名词）之间的相似度筛选出前5个最接近的ANP，一并输入到模型中。
+
+![image-20201123204240770](https://gitee.com/macljc/myimg/raw/master/imgs/image-20201123204240770.png)
+</code></pre><ul>
+<li><h4 id="实验表现-2"><a href="#实验表现-2" class="headerlink" title="实验表现"></a>实验表现</h4><ul>
+<li><p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20201123204357129.png" alt="image-20201123204357129"></p>
+<p>Attribute表示名词。</p>
+</li>
+</ul>
+</li>
+</ul>
 
     </div>
 
@@ -429,7 +582,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#ACL2020"><span class="nav-number">1.</span> <span class="nav-text">ACL2020</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#一、CH-SIMS-A-Chinese-Multimodal-Sentiment-Analysis-Dataset-with-Fine-grained-Annotation-of-Modality"><span class="nav-number">1.1.</span> <span class="nav-text">一、CH-SIMS: A Chinese Multimodal Sentiment Analysis Dataset with Fine-grained Annotation of Modality</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#单位"><span class="nav-number">1.1.1.</span> <span class="nav-text">单位</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#文献来源"><span class="nav-number">1.1.2.</span> <span class="nav-text">文献来源</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#论文子方向"><span class="nav-number">1.1.3.</span> <span class="nav-text">论文子方向</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#问题"><span class="nav-number">1.1.4.</span> <span class="nav-text">问题</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#本文工作"><span class="nav-number">1.1.5.</span> <span class="nav-text">本文工作</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#本文目的"><span class="nav-number">1.1.6.</span> <span class="nav-text">本文目的</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#数据集"><span class="nav-number">1.1.7.</span> <span class="nav-text">数据集</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#本文方法"><span class="nav-number">1.1.8.</span> <span class="nav-text">本文方法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#实验表现"><span class="nav-number">1.1.9.</span> <span class="nav-text">实验表现</span></a></li></ol></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#ACL2020"><span class="nav-number">1.</span> <span class="nav-text">ACL2020</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#一、CH-SIMS-A-Chinese-Multimodal-Sentiment-Analysis-Dataset-with-Fine-grained-Annotation-of-Modality"><span class="nav-number">1.1.</span> <span class="nav-text">一、CH-SIMS: A Chinese Multimodal Sentiment Analysis Dataset with Fine-grained Annotation of Modality</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#单位"><span class="nav-number">1.1.1.</span> <span class="nav-text">单位</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#文献来源"><span class="nav-number">1.1.2.</span> <span class="nav-text">文献来源</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#论文子方向"><span class="nav-number">1.1.3.</span> <span class="nav-text">论文子方向</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#问题"><span class="nav-number">1.1.4.</span> <span class="nav-text">问题</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#本文工作"><span class="nav-number">1.1.5.</span> <span class="nav-text">本文工作</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#本文目的"><span class="nav-number">1.1.6.</span> <span class="nav-text">本文目的</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#数据集"><span class="nav-number">1.1.7.</span> <span class="nav-text">数据集</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#本文方法"><span class="nav-number">1.1.8.</span> <span class="nav-text">本文方法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#实验表现"><span class="nav-number">1.1.9.</span> <span class="nav-text">实验表现</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#不足"><span class="nav-number">1.1.10.</span> <span class="nav-text">不足</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#展望"><span class="nav-number">1.1.11.</span> <span class="nav-text">展望</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#二、Improving-Multimodal-Named-Entity-Recognition-via-Entity-Span-Detection-with-Unified-Multimodal-Transformer"><span class="nav-number">1.2.</span> <span class="nav-text">二、Improving Multimodal Named Entity Recognition via Entity Span Detection with Unified Multimodal Transformer</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#单位-1"><span class="nav-number">1.2.1.</span> <span class="nav-text">单位</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#文献来源-1"><span class="nav-number">1.2.2.</span> <span class="nav-text">文献来源</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#论文子方向-1"><span class="nav-number">1.2.3.</span> <span class="nav-text">论文子方向</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#问题-1"><span class="nav-number">1.2.4.</span> <span class="nav-text">问题</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#本文工作-1"><span class="nav-number">1.2.5.</span> <span class="nav-text">本文工作</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#本文目的-1"><span class="nav-number">1.2.6.</span> <span class="nav-text">本文目的</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#数据集-1"><span class="nav-number">1.2.7.</span> <span class="nav-text">数据集</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#本文方法-1"><span class="nav-number">1.2.8.</span> <span class="nav-text">本文方法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#实验表现-1"><span class="nav-number">1.2.9.</span> <span class="nav-text">实验表现</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#不足-1"><span class="nav-number">1.2.10.</span> <span class="nav-text">不足</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#展望-1"><span class="nav-number">1.2.11.</span> <span class="nav-text">展望</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#三、Reasoning-with-Multimodal-Sarcastic-Tweets-via-Modeling-Cross-Modality-Contrast-and-Semantic-Association"><span class="nav-number">1.3.</span> <span class="nav-text">三、Reasoning with Multimodal Sarcastic Tweets via Modeling Cross-Modality Contrast and Semantic Association</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#单位-2"><span class="nav-number">1.3.1.</span> <span class="nav-text">单位</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#文献来源-2"><span class="nav-number">1.3.2.</span> <span class="nav-text">文献来源</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#论文子方向-2"><span class="nav-number">1.3.3.</span> <span class="nav-text">论文子方向</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#问题-2"><span class="nav-number">1.3.4.</span> <span class="nav-text">问题</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#本文工作-2"><span class="nav-number">1.3.5.</span> <span class="nav-text">本文工作</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#本文目的-2"><span class="nav-number">1.3.6.</span> <span class="nav-text">本文目的</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#数据集-2"><span class="nav-number">1.3.7.</span> <span class="nav-text">数据集</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#本文方法-2"><span class="nav-number">1.3.8.</span> <span class="nav-text">本文方法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#实验表现-2"><span class="nav-number">1.3.9.</span> <span class="nav-text">实验表现</span></a></li></ol></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -495,13 +648,13 @@
       <i class="fa fa-chart-area"></i>
     </span>
       <span class="post-meta-item-text">站点总字数：</span>
-    <span title="站点总字数">20k</span>
+    <span title="站点总字数">22k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
       <span class="post-meta-item-text">站点阅读时长 &asymp;</span>
-    <span title="站点阅读时长">18 分钟</span>
+    <span title="站点阅读时长">20 分钟</span>
 </div>
 
         
