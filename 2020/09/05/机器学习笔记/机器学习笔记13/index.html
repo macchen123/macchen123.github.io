@@ -1,0 +1,734 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 4.2.1">
+
+<script>
+    (function(){
+        if(''){
+            if (prompt('请输入查看密码') !== ''){
+                alert('密码不正确,请询问主编大大');
+                history.back();
+            }
+        }
+    })();
+</script>
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"macchen123.github.io","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true,"position":"right"},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="评价分类结果">
+<meta property="og:type" content="article">
+<meta property="og:title" content="机器学习笔记13">
+<meta property="og:url" content="http://macchen123.github.io/2020/09/05/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B013/index.html">
+<meta property="og:site_name" content="MaCcHen的个人小站">
+<meta property="og:description" content="评价分类结果">
+<meta property="og:image" content="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200905225600926.png">
+<meta property="og:image" content="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200905232354868.png">
+<meta property="og:image" content="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200905233743570.png">
+<meta property="og:image" content="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200905233949626.png">
+<meta property="og:image" content="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200905234614050.png">
+<meta property="og:image" content="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200905235343865.png">
+<meta property="og:image" content="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200907203853160.png">
+<meta property="og:image" content="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200907203913917.png">
+<meta property="og:image" content="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200907204616387.png">
+<meta property="og:image" content="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200907222636806.png">
+<meta property="og:image" content="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200907223244946.png">
+<meta property="og:image" content="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200907223426718.png">
+<meta property="og:image" content="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200907223654382.png">
+<meta property="og:image" content="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200907223734566.png">
+<meta property="og:image" content="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200907233249933.png">
+<meta property="og:image" content="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200907233440669.png">
+<meta property="og:image" content="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200913172134092.png">
+<meta property="og:image" content="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200913172216856.png">
+<meta property="og:image" content="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200913180416522.png">
+<meta property="article:published_time" content="2020-09-04T17:13:22.000Z">
+<meta property="article:modified_time" content="2020-09-14T07:35:06.818Z">
+<meta property="article:author" content="macchen">
+<meta property="article:tag" content="混淆矩阵">
+<meta property="article:tag" content="F1 SCORE">
+<meta property="article:tag" content="精准率与召回率">
+<meta property="article:tag" content="PR曲线与ROC曲线">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200905225600926.png">
+
+<link rel="canonical" href="http://macchen123.github.io/2020/09/05/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B013/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-Hans'
+  };
+</script>
+
+  <title>机器学习笔记13 | MaCcHen的个人小站</title>
+  
+
+
+  <script>
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?be46ae65323b06abe5d4115d59e20a64";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">MaCcHen的个人小站</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">谨言慎行，格物致知</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+  <div class="reading-progress-bar"></div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-Hans">
+    <link itemprop="mainEntityOfPage" href="http://macchen123.github.io/2020/09/05/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B013/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="macchen">
+      <meta itemprop="description" content="学习强国">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="MaCcHen的个人小站">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          机器学习笔记13
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-09-05 01:13:22" itemprop="dateCreated datePublished" datetime="2020-09-05T01:13:22+08:00">2020-09-05</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-09-14 15:35:06" itemprop="dateModified" datetime="2020-09-14T15:35:06+08:00">2020-09-14</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/" itemprop="url" rel="index"><span itemprop="name">机器学习</span></a>
+                </span>
+            </span>
+
+          
+            <span class="post-meta-item" title="阅读次数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">阅读次数：</span>
+              <span id="busuanzi_value_page_pv"></span>
+            </span><br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>1.8k</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>2 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h3 id="评价分类结果"><a href="#评价分类结果" class="headerlink" title="评价分类结果"></a>评价分类结果</h3><a id="more"></a>
+<h4 id="一、分类准确度的缺陷和混淆矩阵"><a href="#一、分类准确度的缺陷和混淆矩阵" class="headerlink" title="一、分类准确度的缺陷和混淆矩阵"></a>一、分类准确度的缺陷和混淆矩阵</h4><h5 id="1、分类准确度的缺陷："><a href="#1、分类准确度的缺陷：" class="headerlink" title="1、分类准确度的缺陷："></a>1、分类准确度的缺陷：</h5><ul>
+<li><p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200905225600926.png" alt="image-20200905225600926"></p>
+<h5 id="假设这个癌症预测系统的预测准确度（分类准确度）是99-9-，若癌症产生概率只有0-01-，我们如果人为预测所有人都健康，这样准确度会达到99-99-。这比该预测系统的准确度更高，显然这个预测系统（模型）是失败的。因此，对于这类极度偏斜（Skewed-Data）的数据，只使用分类准确度是不行的。"><a href="#假设这个癌症预测系统的预测准确度（分类准确度）是99-9-，若癌症产生概率只有0-01-，我们如果人为预测所有人都健康，这样准确度会达到99-99-。这比该预测系统的准确度更高，显然这个预测系统（模型）是失败的。因此，对于这类极度偏斜（Skewed-Data）的数据，只使用分类准确度是不行的。" class="headerlink" title="假设这个癌症预测系统的预测准确度（分类准确度）是99.9%，若癌症产生概率只有0.01%，我们如果人为预测所有人都健康，这样准确度会达到99.99%。这比该预测系统的准确度更高，显然这个预测系统（模型）是失败的。因此，对于这类极度偏斜（Skewed Data）的数据，只使用分类准确度是不行的。"></a>假设这个癌症预测系统的预测准确度（分类准确度）是99.9%，若癌症产生概率只有0.01%，我们如果人为预测所有人都健康，这样准确度会达到99.99%。这比该预测系统的准确度更高，显然这个预测系统（模型）是失败的。因此，对于这类极度偏斜（Skewed Data）的数据，只使用分类准确度是不行的。</h5></li>
+</ul>
+<h5 id="2、混淆矩阵："><a href="#2、混淆矩阵：" class="headerlink" title="2、混淆矩阵："></a>2、混淆矩阵：</h5><ul>
+<li><p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200905232354868.png" alt="image-20200905232354868"></p>
+<h5 id="T表示True，F表示False，N表示Negative，P表示Positive。"><a href="#T表示True，F表示False，N表示Negative，P表示Positive。" class="headerlink" title="T表示True，F表示False，N表示Negative，P表示Positive。"></a>T表示True，F表示False，N表示Negative，P表示Positive。</h5><h5 id="具体可看https-blog-csdn-net-Orange-Spotty-Cat-article-details-80520839"><a href="#具体可看https-blog-csdn-net-Orange-Spotty-Cat-article-details-80520839" class="headerlink" title="具体可看https://blog.csdn.net/Orange_Spotty_Cat/article/details/80520839"></a>具体可看<a href="https://blog.csdn.net/Orange_Spotty_Cat/article/details/80520839" target="_blank" rel="noopener">https://blog.csdn.net/Orange_Spotty_Cat/article/details/80520839</a></h5><ul>
+<li><h5 id="真实值是positive，模型认为是positive的数量（True-Positive-TP）"><a href="#真实值是positive，模型认为是positive的数量（True-Positive-TP）" class="headerlink" title="真实值是positive，模型认为是positive的数量（True Positive=TP）"></a>真实值是positive，模型认为是positive的数量（True Positive=TP）</h5></li>
+<li><h5 id="真实值是positive，模型认为是negative的数量（False-Negative-FN）"><a href="#真实值是positive，模型认为是negative的数量（False-Negative-FN）" class="headerlink" title="真实值是positive，模型认为是negative的数量（False Negative=FN）"></a>真实值是positive，模型认为是negative的数量（False Negative=FN）</h5></li>
+<li><h5 id="真实值是negative，模型认为是positive的数量（False-Positive-FP）"><a href="#真实值是negative，模型认为是positive的数量（False-Positive-FP）" class="headerlink" title="真实值是negative，模型认为是positive的数量（False Positive=FP）"></a>真实值是negative，模型认为是positive的数量（False Positive=FP）</h5></li>
+<li><h5 id="真实值是negative，模型认为是negative的数量（True-Negative-TN）"><a href="#真实值是negative，模型认为是negative的数量（True-Negative-TN）" class="headerlink" title="真实值是negative，模型认为是negative的数量（True Negative=TN）"></a>真实值是negative，模型认为是negative的数量（True Negative=TN）</h5></li>
+</ul>
+<h5 id="举例说明：假如有10000个人，其中有（9978-12）人没患病，有（2-8）人患病"><a href="#举例说明：假如有10000个人，其中有（9978-12）人没患病，有（2-8）人患病" class="headerlink" title="举例说明：假如有10000个人，其中有（9978+12）人没患病，有（2+8）人患病"></a>举例说明：假如有10000个人，其中有（9978+12）人没患病，有（2+8）人患病</h5><ul>
+<li><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200905233743570.png" alt="image-20200905233743570"></li>
+</ul>
+</li>
+<li><h5 id="通过上例说明精准率与召回率："><a href="#通过上例说明精准率与召回率：" class="headerlink" title="通过上例说明精准率与召回率："></a>通过上例说明精准率与召回率：</h5><ul>
+<li><h5 id="精准率："><a href="#精准率：" class="headerlink" title="精准率："></a>精准率：</h5><p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200905233949626.png" alt="image-20200905233949626"></p>
+<h5 id="在分类问题中，我们一般关注的重点（预测的结果）是“1”而不是“0”，针对本例就是指患病这种情况。所以精准率指在所有预测为“1”的结果中，预测正确的比重是多少。在本例中指在所有预测为患病的人中，预测正确的比重是多少。"><a href="#在分类问题中，我们一般关注的重点（预测的结果）是“1”而不是“0”，针对本例就是指患病这种情况。所以精准率指在所有预测为“1”的结果中，预测正确的比重是多少。在本例中指在所有预测为患病的人中，预测正确的比重是多少。" class="headerlink" title="在分类问题中，我们一般关注的重点（预测的结果）是“1”而不是“0”，针对本例就是指患病这种情况。所以精准率指在所有预测为“1”的结果中，预测正确的比重是多少。在本例中指在所有预测为患病的人中，预测正确的比重是多少。"></a>在分类问题中，我们一般关注的重点（预测的结果）是“1”而不是“0”，针对本例就是指患病这种情况。所以精准率指在所有预测为“1”的结果中，预测正确的比重是多少。在本例中指在所有预测为患病的人中，预测正确的比重是多少。</h5></li>
+<li><h5 id="召回率："><a href="#召回率：" class="headerlink" title="召回率："></a>召回率：</h5><p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200905234614050.png" alt="image-20200905234614050"></p>
+<h5 id="召回率指在所有真实为“1”的结果中，预测正确的比重是多少。在本例中指在所有确实患病的人中，预测正确的比重是多少。"><a href="#召回率指在所有真实为“1”的结果中，预测正确的比重是多少。在本例中指在所有确实患病的人中，预测正确的比重是多少。" class="headerlink" title="召回率指在所有真实为“1”的结果中，预测正确的比重是多少。在本例中指在所有确实患病的人中，预测正确的比重是多少。"></a>召回率指在所有真实为“1”的结果中，预测正确的比重是多少。在本例中指在所有确实患病的人中，预测正确的比重是多少。</h5></li>
+</ul>
+</li>
+<li><h5 id="再回到最开始的例子中，我们预测在10000个人中，有9990个人健康，10个人患病，这样会得到下面的混淆矩阵："><a href="#再回到最开始的例子中，我们预测在10000个人中，有9990个人健康，10个人患病，这样会得到下面的混淆矩阵：" class="headerlink" title="再回到最开始的例子中，我们预测在10000个人中，有9990个人健康，10个人患病，这样会得到下面的混淆矩阵："></a>再回到最开始的例子中，我们预测在10000个人中，有9990个人健康，10个人患病，这样会得到下面的混淆矩阵：</h5><ul>
+<li><p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200905235343865.png" alt="image-20200905235343865"></p>
+<h5 id="虽然分类准确度达到了99-9-，但是精准率与召回率却都是0，很显然这个模型是不好的。"><a href="#虽然分类准确度达到了99-9-，但是精准率与召回率却都是0，很显然这个模型是不好的。" class="headerlink" title="虽然分类准确度达到了99.9%，但是精准率与召回率却都是0，很显然这个模型是不好的。"></a>虽然分类准确度达到了99.9%，但是精准率与召回率却都是0，很显然这个模型是不好的。</h5></li>
+</ul>
+</li>
+</ul>
+<h4 id="二、F1-Score"><a href="#二、F1-Score" class="headerlink" title="二、F1 Score"></a>二、F1 Score</h4><ul>
+<li><h5 id="关于精准率和召回率的解读要视实际情况来定："><a href="#关于精准率和召回率的解读要视实际情况来定：" class="headerlink" title="关于精准率和召回率的解读要视实际情况来定："></a>关于精准率和召回率的解读要视实际情况来定：</h5><ul>
+<li><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200907203853160.png" alt="image-20200907203853160"></li>
+<li><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200907203913917.png" alt="image-20200907203913917"></li>
+</ul>
+</li>
+<li><h5 id="是否有一个指标可以将二者都兼顾呢——F1-Score"><a href="#是否有一个指标可以将二者都兼顾呢——F1-Score" class="headerlink" title="是否有一个指标可以将二者都兼顾呢——F1 Score"></a>是否有一个指标可以将二者都兼顾呢——F1 Score</h5><ul>
+<li><h5 id="F1-Score是precision和recall的调和平均值。它的特性是只有二者都比较大才能使得F1-Score比较大；其中一个很大（很小），另一个相反，都不会使得F1-Score很大。"><a href="#F1-Score是precision和recall的调和平均值。它的特性是只有二者都比较大才能使得F1-Score比较大；其中一个很大（很小），另一个相反，都不会使得F1-Score很大。" class="headerlink" title="F1 Score是precision和recall的调和平均值。它的特性是只有二者都比较大才能使得F1 Score比较大；其中一个很大（很小），另一个相反，都不会使得F1 Score很大。"></a>F1 Score是precision和recall的调和平均值。它的特性是只有二者都比较大才能使得F1 Score比较大；其中一个很大（很小），另一个相反，都不会使得F1 Score很大。</h5></li>
+<li><p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200907204616387.png" alt="image-20200907204616387"></p>
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="三、Precision-Recall的平衡"><a href="#三、Precision-Recall的平衡" class="headerlink" title="三、Precision-Recall的平衡"></a>三、Precision-Recall的平衡</h4><ul>
+<li><h5 id="在逻辑回归中"><a href="#在逻辑回归中" class="headerlink" title="在逻辑回归中"></a>在逻辑回归中</h5><ul>
+<li><p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200907222636806.png" alt="image-20200907222636806"></p>
+</li>
+<li><h5 id="为啥决策边界要以0为界限呢？其实我们可以根据需求来调节决策边界的界限，进而改变分类结果。"><a href="#为啥决策边界要以0为界限呢？其实我们可以根据需求来调节决策边界的界限，进而改变分类结果。" class="headerlink" title="为啥决策边界要以0为界限呢？其实我们可以根据需求来调节决策边界的界限，进而改变分类结果。"></a>为啥决策边界要以0为界限呢？其实我们可以根据需求来调节决策边界的界限，进而改变分类结果。</h5></li>
+</ul>
+</li>
+<li><h5 id="因此我们可以让决策边界等于threshold（阈值），让它改变分类结果，进而影响Precision与Recall的权重。"><a href="#因此我们可以让决策边界等于threshold（阈值），让它改变分类结果，进而影响Precision与Recall的权重。" class="headerlink" title="因此我们可以让决策边界等于threshold（阈值），让它改变分类结果，进而影响Precision与Recall的权重。"></a>因此我们可以让决策边界等于threshold（阈值），让它改变分类结果，进而影响Precision与Recall的权重。</h5><ul>
+<li><p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200907223244946.png" alt="image-20200907223244946"></p>
+<ul>
+<li><h5 id="threshold-0时："><a href="#threshold-0时：" class="headerlink" title="threshold=0时："></a>threshold=0时：</h5><p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200907223426718.png" alt="image-20200907223426718"></p>
+<h5 id="星星表示实际为1的样本，圆圈表示实际为0的样本。左边是预测为0的样本，右边是预测为1的样本。"><a href="#星星表示实际为1的样本，圆圈表示实际为0的样本。左边是预测为0的样本，右边是预测为1的样本。" class="headerlink" title="星星表示实际为1的样本，圆圈表示实际为0的样本。左边是预测为0的样本，右边是预测为1的样本。"></a>星星表示实际为1的样本，圆圈表示实际为0的样本。左边是预测为0的样本，右边是预测为1的样本。</h5></li>
+<li><h5 id="threshold-gt-0时："><a href="#threshold-gt-0时：" class="headerlink" title="threshold&gt;0时："></a>threshold&gt;0时：</h5><p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200907223654382.png" alt="image-20200907223654382"></p>
+</li>
+<li><h5 id="threshold-lt-0时："><a href="#threshold-lt-0时：" class="headerlink" title="threshold&lt;0时："></a>threshold&lt;0时：</h5><p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200907223734566.png" alt="image-20200907223734566"></p>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><h5 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h5><ul>
+<li><h5 id="精准率与召回率互相牵制，一个升高，另一个就会降低"><a href="#精准率与召回率互相牵制，一个升高，另一个就会降低" class="headerlink" title="精准率与召回率互相牵制，一个升高，另一个就会降低"></a>精准率与召回率互相牵制，一个升高，另一个就会降低</h5></li>
+<li><h5 id="阈值越大，精准率越高，召回率越低；阈值越小，精准率越低，召回率越高"><a href="#阈值越大，精准率越高，召回率越低；阈值越小，精准率越低，召回率越高" class="headerlink" title="阈值越大，精准率越高，召回率越低；阈值越小，精准率越低，召回率越高"></a>阈值越大，精准率越高，召回率越低；阈值越小，精准率越低，召回率越高</h5></li>
+</ul>
+</li>
+</ul>
+<h4 id="四、P-R曲线"><a href="#四、P-R曲线" class="headerlink" title="四、P-R曲线"></a>四、P-R曲线</h4><ul>
+<li><h5 id="P-R曲线顾名思义横坐标是精准率，纵坐标是召回率"><a href="#P-R曲线顾名思义横坐标是精准率，纵坐标是召回率" class="headerlink" title="P-R曲线顾名思义横坐标是精准率，纵坐标是召回率"></a>P-R曲线顾名思义横坐标是精准率，纵坐标是召回率</h5><p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200907233249933.png" alt="image-20200907233249933"></p>
+<ul>
+<li><h5 id="途中曲线开始急剧下降的点，可能就是精准率和召回率平衡位置的点"><a href="#途中曲线开始急剧下降的点，可能就是精准率和召回率平衡位置的点" class="headerlink" title="途中曲线开始急剧下降的点，可能就是精准率和召回率平衡位置的点"></a>途中曲线开始急剧下降的点，可能就是精准率和召回率平衡位置的点</h5></li>
+</ul>
+</li>
+<li><h5 id="不同的模型对应的不同的-Precision-Recall-曲线"><a href="#不同的模型对应的不同的-Precision-Recall-曲线" class="headerlink" title="不同的模型对应的不同的 Precision - Recall 曲线"></a>不同的模型对应的不同的 Precision - Recall 曲线</h5><p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200907233440669.png" alt="image-20200907233440669"></p>
+<ul>
+<li><h5 id="外层曲线对应的模型更优（外层曲线的P值和R值都比里层曲线的大）；或者称与坐标轴一起包围的面积越大者越优"><a href="#外层曲线对应的模型更优（外层曲线的P值和R值都比里层曲线的大）；或者称与坐标轴一起包围的面积越大者越优" class="headerlink" title="外层曲线对应的模型更优（外层曲线的P值和R值都比里层曲线的大）；或者称与坐标轴一起包围的面积越大者越优"></a>外层曲线对应的模型更优（外层曲线的P值和R值都比里层曲线的大）；或者称与坐标轴一起包围的面积越大者越优</h5></li>
+<li><h5 id="P-R-曲线也可以作为选择算法、模型、超参数的指标；但一般不适用此曲线，而是使用-ROC-曲线"><a href="#P-R-曲线也可以作为选择算法、模型、超参数的指标；但一般不适用此曲线，而是使用-ROC-曲线" class="headerlink" title="P - R 曲线也可以作为选择算法、模型、超参数的指标；但一般不适用此曲线，而是使用 ROC 曲线"></a>P - R 曲线也可以作为选择算法、模型、超参数的指标；但一般不适用此曲线，而是使用 ROC 曲线</h5></li>
+</ul>
+</li>
+</ul>
+<h4 id="五、ROC曲线"><a href="#五、ROC曲线" class="headerlink" title="五、ROC曲线"></a>五、ROC曲线</h4><ul>
+<li><h5 id="ROC曲线描述TPR和FPR之间的关系"><a href="#ROC曲线描述TPR和FPR之间的关系" class="headerlink" title="ROC曲线描述TPR和FPR之间的关系"></a>ROC曲线描述TPR和FPR之间的关系</h5><ul>
+<li><h5 id="TPR："><a href="#TPR：" class="headerlink" title="TPR："></a>TPR：</h5><p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200913172134092.png" alt="image-20200913172134092"></p>
+</li>
+<li><h5 id="FPR"><a href="#FPR" class="headerlink" title="FPR:"></a>FPR:</h5><p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200913172216856.png" alt="image-20200913172216856"></p>
+</li>
+<li><h5 id="TPR与FPR的关系"><a href="#TPR与FPR的关系" class="headerlink" title="TPR与FPR的关系"></a>TPR与FPR的关系</h5><p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200913180416522.png" alt="image-20200913180416522"></p>
+<ul>
+<li><h5 id="随着阈值-threshold-的增大，FPR-和-TPR-都逐渐减小；"><a href="#随着阈值-threshold-的增大，FPR-和-TPR-都逐渐减小；" class="headerlink" title="随着阈值 threshold 的增大，FPR 和 TPR 都逐渐减小；"></a>随着阈值 threshold 的增大，FPR 和 TPR 都逐渐减小；</h5></li>
+<li><h5 id="FPR-和-TPR-称正相关关系，FPR-越高，TPR-相应的也越高；"><a href="#FPR-和-TPR-称正相关关系，FPR-越高，TPR-相应的也越高；" class="headerlink" title="FPR 和 TPR 称正相关关系，FPR 越高，TPR 相应的也越高；"></a>FPR 和 TPR 称正相关关系，FPR 越高，TPR 相应的也越高；</h5></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><h5 id="与P-R曲线的区别"><a href="#与P-R曲线的区别" class="headerlink" title="与P-R曲线的区别"></a>与P-R曲线的区别</h5><ul>
+<li><h5 id="P-R曲线：应用于判定由极度有偏数据所训练的模型的优劣"><a href="#P-R曲线：应用于判定由极度有偏数据所训练的模型的优劣" class="headerlink" title="P-R曲线：应用于判定由极度有偏数据所训练的模型的优劣"></a>P-R曲线：应用于判定由极度有偏数据所训练的模型的优劣</h5></li>
+<li><h5 id="ROC曲线：应用于比较两个模型的优劣"><a href="#ROC曲线：应用于比较两个模型的优劣" class="headerlink" title="ROC曲线：应用于比较两个模型的优劣"></a>ROC曲线：应用于比较两个模型的优劣</h5><ul>
+<li><h5 id="可以是同样算法不同超参数得到的不同模型，也可以是不同算法得到的不同模型"><a href="#可以是同样算法不同超参数得到的不同模型，也可以是不同算法得到的不同模型" class="headerlink" title="可以是同样算法不同超参数得到的不同模型，也可以是不同算法得到的不同模型"></a>可以是同样算法不同超参数得到的不同模型，也可以是不同算法得到的不同模型</h5></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><h5 id="总结："><a href="#总结：" class="headerlink" title="总结："></a>总结：</h5><ul>
+<li><h5 id="ROC曲线与图形边界围成的面积，作为衡量模型优劣的标准，面积越大，模型越优"><a href="#ROC曲线与图形边界围成的面积，作为衡量模型优劣的标准，面积越大，模型越优" class="headerlink" title="ROC曲线与图形边界围成的面积，作为衡量模型优劣的标准，面积越大，模型越优"></a>ROC曲线与图形边界围成的面积，作为衡量模型优劣的标准，面积越大，模型越优</h5></li>
+<li><h5 id="计算ROC曲线与坐标轴围成的面积：称ROC的auc；"><a href="#计算ROC曲线与坐标轴围成的面积：称ROC的auc；" class="headerlink" title="计算ROC曲线与坐标轴围成的面积：称ROC的auc；"></a>计算ROC曲线与坐标轴围成的面积：称ROC的auc；</h5></li>
+<li><h5 id="面积越大，模型越优："><a href="#面积越大，模型越优：" class="headerlink" title="面积越大，模型越优："></a>面积越大，模型越优：</h5></li>
+</ul>
+</li>
+</ul>
+<h4 id="六、-多分类问题中的混淆矩阵"><a href="#六、-多分类问题中的混淆矩阵" class="headerlink" title="六、 多分类问题中的混淆矩阵"></a>六、 多分类问题中的混淆矩阵</h4><h5 id="这块儿内容直接看‘08-Confusion-Matrix-in-Multiclass-Classification-ipynb’"><a href="#这块儿内容直接看‘08-Confusion-Matrix-in-Multiclass-Classification-ipynb’" class="headerlink" title="这块儿内容直接看‘08-Confusion-Matrix-in-Multiclass-Classification.ipynb’"></a>这块儿内容直接看‘08-Confusion-Matrix-in-Multiclass-Classification.ipynb’</h5>
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/%E6%B7%B7%E6%B7%86%E7%9F%A9%E9%98%B5/" rel="tag"># 混淆矩阵</a>
+              <a href="/tags/F1-SCORE/" rel="tag"># F1 SCORE</a>
+              <a href="/tags/%E7%B2%BE%E5%87%86%E7%8E%87%E4%B8%8E%E5%8F%AC%E5%9B%9E%E7%8E%87/" rel="tag"># 精准率与召回率</a>
+              <a href="/tags/PR%E6%9B%B2%E7%BA%BF%E4%B8%8EROC%E6%9B%B2%E7%BA%BF/" rel="tag"># PR曲线与ROC曲线</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2020/08/26/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B012/" rel="prev" title="机器学习笔记12">
+      <i class="fa fa-chevron-left"></i> 机器学习笔记12
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2020/09/21/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B014/" rel="next" title="机器学习笔记14">
+      机器学习笔记14 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+      
+      <!-- Insert clustrmaps.com -->
+      <script type="text/javascript" id="clustrmaps" src="//cdn.clustrmaps.com/map_v2.js?d=2_M6gOO_uk_5ftA8MDj1GtyvCyzGqPStnw1k5TNBneU&cl=ffffff&w=a"></script>
+
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#评价分类结果"><span class="nav-number">1.</span> <span class="nav-text">评价分类结果</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#一、分类准确度的缺陷和混淆矩阵"><span class="nav-number">1.1.</span> <span class="nav-text">一、分类准确度的缺陷和混淆矩阵</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#1、分类准确度的缺陷："><span class="nav-number">1.1.1.</span> <span class="nav-text">1、分类准确度的缺陷：</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#假设这个癌症预测系统的预测准确度（分类准确度）是99-9-，若癌症产生概率只有0-01-，我们如果人为预测所有人都健康，这样准确度会达到99-99-。这比该预测系统的准确度更高，显然这个预测系统（模型）是失败的。因此，对于这类极度偏斜（Skewed-Data）的数据，只使用分类准确度是不行的。"><span class="nav-number">1.1.2.</span> <span class="nav-text">假设这个癌症预测系统的预测准确度（分类准确度）是99.9%，若癌症产生概率只有0.01%，我们如果人为预测所有人都健康，这样准确度会达到99.99%。这比该预测系统的准确度更高，显然这个预测系统（模型）是失败的。因此，对于这类极度偏斜（Skewed Data）的数据，只使用分类准确度是不行的。</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#2、混淆矩阵："><span class="nav-number">1.1.3.</span> <span class="nav-text">2、混淆矩阵：</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#T表示True，F表示False，N表示Negative，P表示Positive。"><span class="nav-number">1.1.4.</span> <span class="nav-text">T表示True，F表示False，N表示Negative，P表示Positive。</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#具体可看https-blog-csdn-net-Orange-Spotty-Cat-article-details-80520839"><span class="nav-number">1.1.5.</span> <span class="nav-text">具体可看https:&#x2F;&#x2F;blog.csdn.net&#x2F;Orange_Spotty_Cat&#x2F;article&#x2F;details&#x2F;80520839</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#真实值是positive，模型认为是positive的数量（True-Positive-TP）"><span class="nav-number">1.1.6.</span> <span class="nav-text">真实值是positive，模型认为是positive的数量（True Positive&#x3D;TP）</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#真实值是positive，模型认为是negative的数量（False-Negative-FN）"><span class="nav-number">1.1.7.</span> <span class="nav-text">真实值是positive，模型认为是negative的数量（False Negative&#x3D;FN）</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#真实值是negative，模型认为是positive的数量（False-Positive-FP）"><span class="nav-number">1.1.8.</span> <span class="nav-text">真实值是negative，模型认为是positive的数量（False Positive&#x3D;FP）</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#真实值是negative，模型认为是negative的数量（True-Negative-TN）"><span class="nav-number">1.1.9.</span> <span class="nav-text">真实值是negative，模型认为是negative的数量（True Negative&#x3D;TN）</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#举例说明：假如有10000个人，其中有（9978-12）人没患病，有（2-8）人患病"><span class="nav-number">1.1.10.</span> <span class="nav-text">举例说明：假如有10000个人，其中有（9978+12）人没患病，有（2+8）人患病</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#通过上例说明精准率与召回率："><span class="nav-number">1.1.11.</span> <span class="nav-text">通过上例说明精准率与召回率：</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#精准率："><span class="nav-number">1.1.12.</span> <span class="nav-text">精准率：</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#在分类问题中，我们一般关注的重点（预测的结果）是“1”而不是“0”，针对本例就是指患病这种情况。所以精准率指在所有预测为“1”的结果中，预测正确的比重是多少。在本例中指在所有预测为患病的人中，预测正确的比重是多少。"><span class="nav-number">1.1.13.</span> <span class="nav-text">在分类问题中，我们一般关注的重点（预测的结果）是“1”而不是“0”，针对本例就是指患病这种情况。所以精准率指在所有预测为“1”的结果中，预测正确的比重是多少。在本例中指在所有预测为患病的人中，预测正确的比重是多少。</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#召回率："><span class="nav-number">1.1.14.</span> <span class="nav-text">召回率：</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#召回率指在所有真实为“1”的结果中，预测正确的比重是多少。在本例中指在所有确实患病的人中，预测正确的比重是多少。"><span class="nav-number">1.1.15.</span> <span class="nav-text">召回率指在所有真实为“1”的结果中，预测正确的比重是多少。在本例中指在所有确实患病的人中，预测正确的比重是多少。</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#再回到最开始的例子中，我们预测在10000个人中，有9990个人健康，10个人患病，这样会得到下面的混淆矩阵："><span class="nav-number">1.1.16.</span> <span class="nav-text">再回到最开始的例子中，我们预测在10000个人中，有9990个人健康，10个人患病，这样会得到下面的混淆矩阵：</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#虽然分类准确度达到了99-9-，但是精准率与召回率却都是0，很显然这个模型是不好的。"><span class="nav-number">1.1.17.</span> <span class="nav-text">虽然分类准确度达到了99.9%，但是精准率与召回率却都是0，很显然这个模型是不好的。</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#二、F1-Score"><span class="nav-number">1.2.</span> <span class="nav-text">二、F1 Score</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#关于精准率和召回率的解读要视实际情况来定："><span class="nav-number">1.2.1.</span> <span class="nav-text">关于精准率和召回率的解读要视实际情况来定：</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#是否有一个指标可以将二者都兼顾呢——F1-Score"><span class="nav-number">1.2.2.</span> <span class="nav-text">是否有一个指标可以将二者都兼顾呢——F1 Score</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#F1-Score是precision和recall的调和平均值。它的特性是只有二者都比较大才能使得F1-Score比较大；其中一个很大（很小），另一个相反，都不会使得F1-Score很大。"><span class="nav-number">1.2.3.</span> <span class="nav-text">F1 Score是precision和recall的调和平均值。它的特性是只有二者都比较大才能使得F1 Score比较大；其中一个很大（很小），另一个相反，都不会使得F1 Score很大。</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#三、Precision-Recall的平衡"><span class="nav-number">1.3.</span> <span class="nav-text">三、Precision-Recall的平衡</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#在逻辑回归中"><span class="nav-number">1.3.1.</span> <span class="nav-text">在逻辑回归中</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#为啥决策边界要以0为界限呢？其实我们可以根据需求来调节决策边界的界限，进而改变分类结果。"><span class="nav-number">1.3.2.</span> <span class="nav-text">为啥决策边界要以0为界限呢？其实我们可以根据需求来调节决策边界的界限，进而改变分类结果。</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#因此我们可以让决策边界等于threshold（阈值），让它改变分类结果，进而影响Precision与Recall的权重。"><span class="nav-number">1.3.3.</span> <span class="nav-text">因此我们可以让决策边界等于threshold（阈值），让它改变分类结果，进而影响Precision与Recall的权重。</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#threshold-0时："><span class="nav-number">1.3.4.</span> <span class="nav-text">threshold&#x3D;0时：</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#星星表示实际为1的样本，圆圈表示实际为0的样本。左边是预测为0的样本，右边是预测为1的样本。"><span class="nav-number">1.3.5.</span> <span class="nav-text">星星表示实际为1的样本，圆圈表示实际为0的样本。左边是预测为0的样本，右边是预测为1的样本。</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#threshold-gt-0时："><span class="nav-number">1.3.6.</span> <span class="nav-text">threshold&gt;0时：</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#threshold-lt-0时："><span class="nav-number">1.3.7.</span> <span class="nav-text">threshold&lt;0时：</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#总结"><span class="nav-number">1.3.8.</span> <span class="nav-text">总结</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#精准率与召回率互相牵制，一个升高，另一个就会降低"><span class="nav-number">1.3.9.</span> <span class="nav-text">精准率与召回率互相牵制，一个升高，另一个就会降低</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#阈值越大，精准率越高，召回率越低；阈值越小，精准率越低，召回率越高"><span class="nav-number">1.3.10.</span> <span class="nav-text">阈值越大，精准率越高，召回率越低；阈值越小，精准率越低，召回率越高</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#四、P-R曲线"><span class="nav-number">1.4.</span> <span class="nav-text">四、P-R曲线</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#P-R曲线顾名思义横坐标是精准率，纵坐标是召回率"><span class="nav-number">1.4.1.</span> <span class="nav-text">P-R曲线顾名思义横坐标是精准率，纵坐标是召回率</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#途中曲线开始急剧下降的点，可能就是精准率和召回率平衡位置的点"><span class="nav-number">1.4.2.</span> <span class="nav-text">途中曲线开始急剧下降的点，可能就是精准率和召回率平衡位置的点</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#不同的模型对应的不同的-Precision-Recall-曲线"><span class="nav-number">1.4.3.</span> <span class="nav-text">不同的模型对应的不同的 Precision - Recall 曲线</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#外层曲线对应的模型更优（外层曲线的P值和R值都比里层曲线的大）；或者称与坐标轴一起包围的面积越大者越优"><span class="nav-number">1.4.4.</span> <span class="nav-text">外层曲线对应的模型更优（外层曲线的P值和R值都比里层曲线的大）；或者称与坐标轴一起包围的面积越大者越优</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#P-R-曲线也可以作为选择算法、模型、超参数的指标；但一般不适用此曲线，而是使用-ROC-曲线"><span class="nav-number">1.4.5.</span> <span class="nav-text">P - R 曲线也可以作为选择算法、模型、超参数的指标；但一般不适用此曲线，而是使用 ROC 曲线</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#五、ROC曲线"><span class="nav-number">1.5.</span> <span class="nav-text">五、ROC曲线</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#ROC曲线描述TPR和FPR之间的关系"><span class="nav-number">1.5.1.</span> <span class="nav-text">ROC曲线描述TPR和FPR之间的关系</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#TPR："><span class="nav-number">1.5.2.</span> <span class="nav-text">TPR：</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#FPR"><span class="nav-number">1.5.3.</span> <span class="nav-text">FPR:</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#TPR与FPR的关系"><span class="nav-number">1.5.4.</span> <span class="nav-text">TPR与FPR的关系</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#随着阈值-threshold-的增大，FPR-和-TPR-都逐渐减小；"><span class="nav-number">1.5.5.</span> <span class="nav-text">随着阈值 threshold 的增大，FPR 和 TPR 都逐渐减小；</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#FPR-和-TPR-称正相关关系，FPR-越高，TPR-相应的也越高；"><span class="nav-number">1.5.6.</span> <span class="nav-text">FPR 和 TPR 称正相关关系，FPR 越高，TPR 相应的也越高；</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#与P-R曲线的区别"><span class="nav-number">1.5.7.</span> <span class="nav-text">与P-R曲线的区别</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#P-R曲线：应用于判定由极度有偏数据所训练的模型的优劣"><span class="nav-number">1.5.8.</span> <span class="nav-text">P-R曲线：应用于判定由极度有偏数据所训练的模型的优劣</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#ROC曲线：应用于比较两个模型的优劣"><span class="nav-number">1.5.9.</span> <span class="nav-text">ROC曲线：应用于比较两个模型的优劣</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#可以是同样算法不同超参数得到的不同模型，也可以是不同算法得到的不同模型"><span class="nav-number">1.5.10.</span> <span class="nav-text">可以是同样算法不同超参数得到的不同模型，也可以是不同算法得到的不同模型</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#总结："><span class="nav-number">1.5.11.</span> <span class="nav-text">总结：</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#ROC曲线与图形边界围成的面积，作为衡量模型优劣的标准，面积越大，模型越优"><span class="nav-number">1.5.12.</span> <span class="nav-text">ROC曲线与图形边界围成的面积，作为衡量模型优劣的标准，面积越大，模型越优</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#计算ROC曲线与坐标轴围成的面积：称ROC的auc；"><span class="nav-number">1.5.13.</span> <span class="nav-text">计算ROC曲线与坐标轴围成的面积：称ROC的auc；</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#面积越大，模型越优："><span class="nav-number">1.5.14.</span> <span class="nav-text">面积越大，模型越优：</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#六、-多分类问题中的混淆矩阵"><span class="nav-number">1.6.</span> <span class="nav-text">六、 多分类问题中的混淆矩阵</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#这块儿内容直接看‘08-Confusion-Matrix-in-Multiclass-Classification-ipynb’"><span class="nav-number">1.6.1.</span> <span class="nav-text">这块儿内容直接看‘08-Confusion-Matrix-in-Multiclass-Classification.ipynb’</span></a></li></ol></li></ol></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="macchen"
+      src="/images/avatar.jpg">
+  <p class="site-author-name" itemprop="name">macchen</p>
+  <div class="site-description" itemprop="description">学习强国</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">25</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">5</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">42</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2021</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">macchen</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-area"></i>
+    </span>
+      <span class="post-meta-item-text">站点总字数：</span>
+    <span title="站点总字数">25k</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+      <span class="post-meta-item-text">站点阅读时长 &asymp;</span>
+    <span title="站点阅读时长">22 分钟</span>
+</div>
+
+        
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-user"></i>
+      </span>
+      <span class="site-uv" title="总访客量">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>
+    </span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-eye"></i>
+      </span>
+      <span class="site-pv" title="总访问量">
+        <span id="busuanzi_value_site_pv"></span>
+      </span>
+    </span>
+</div>
+
+
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+      
+
+<script>
+  if (typeof MathJax === 'undefined') {
+    window.MathJax = {
+      loader: {
+          load: ['[tex]/mhchem'],
+        source: {
+          '[tex]/amsCd': '[tex]/amscd',
+          '[tex]/AMScd': '[tex]/amscd'
+        }
+      },
+      tex: {
+        inlineMath: {'[+]': [['$', '$']]},
+          packages: {'[+]': ['mhchem']},
+        tags: 'ams'
+      },
+      options: {
+        renderActions: {
+          findScript: [10, doc => {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(node => {
+              const display = !!node.type.match(/; *mode=display/);
+              const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+              const text = document.createTextNode('');
+              node.parentNode.replaceChild(text, node);
+              math.start = {node: text, delim: '', n: 0};
+              math.end = {node: text, delim: '', n: 0};
+              doc.math.push(math);
+            });
+          }, '', false],
+          insertedScript: [200, () => {
+            document.querySelectorAll('mjx-container').forEach(node => {
+              let target = node.parentNode;
+              if (target.nodeName.toLowerCase() === 'li') {
+                target.parentNode.classList.add('has-jax');
+              }
+            });
+          }, '', false]
+        }
+      }
+    };
+    (function () {
+      var script = document.createElement('script');
+      script.src = '//cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js';
+      script.defer = true;
+      document.head.appendChild(script);
+    })();
+  } else {
+    MathJax.startup.document.state(0);
+    MathJax.texReset();
+    MathJax.typeset();
+  }
+</script>
+
+    
+
+  
+
+  <!-- 引入custom，就这一句，控制烟花特效 -->
+  
+  
+    <canvas class="fireworks" style="position: fixed;left: 0;top: 0;z-index: 1; pointer-events: none;" ></canvas>
+    <script src="//cdn.bootcss.com/animejs/2.2.0/anime.min.js"></script>
+    <script src="/js/cursor/explosion.min.js"></script>
+  
+
+
+<!-- 樱花特效 -->
+  
+      <script async src="/js/cursor/cherry.js"></script>
+  
+
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"log":false,"model":{"jsonPath":"/live2dw/assets/wanko.model.json"},"display":{"position":"left","width":250,"height":500},"mobile":{"show":true},"react":{"opacity":0.7}});</script></body>
+</html>

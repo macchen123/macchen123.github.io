@@ -1,0 +1,595 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 4.2.1">
+
+<script>
+    (function(){
+        if(''){
+            if (prompt('请输入查看密码') !== ''){
+                alert('密码不正确,请询问主编大大');
+                history.back();
+            }
+        }
+    })();
+</script>
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"macchen123.github.io","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true,"position":"right"},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="数据归一化与标准化">
+<meta property="og:type" content="article">
+<meta property="og:title" content="机器学习笔记4">
+<meta property="og:url" content="http://macchen123.github.io/2020/07/23/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B04/index.html">
+<meta property="og:site_name" content="MaCcHen的个人小站">
+<meta property="og:description" content="数据归一化与标准化">
+<meta property="og:image" content="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200723234524737.png">
+<meta property="og:image" content="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200723234716174.png">
+<meta property="og:image" content="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200723235207881.png">
+<meta property="og:image" content="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200724000028651.png">
+<meta property="og:image" content="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200724020154141.png">
+<meta property="og:image" content="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200724022251989.png">
+<meta property="og:image" content="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200724022712834.png">
+<meta property="article:published_time" content="2020-07-23T15:19:11.000Z">
+<meta property="article:modified_time" content="2020-07-23T19:15:01.221Z">
+<meta property="article:author" content="macchen">
+<meta property="article:tag" content="机器学习">
+<meta property="article:tag" content="Python">
+<meta property="article:tag" content="数据预处理">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200723234524737.png">
+
+<link rel="canonical" href="http://macchen123.github.io/2020/07/23/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B04/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-Hans'
+  };
+</script>
+
+  <title>机器学习笔记4 | MaCcHen的个人小站</title>
+  
+
+
+  <script>
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?be46ae65323b06abe5d4115d59e20a64";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">MaCcHen的个人小站</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">谨言慎行，格物致知</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+  <div class="reading-progress-bar"></div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-Hans">
+    <link itemprop="mainEntityOfPage" href="http://macchen123.github.io/2020/07/23/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B04/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="macchen">
+      <meta itemprop="description" content="学习强国">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="MaCcHen的个人小站">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          机器学习笔记4
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-07-23 23:19:11" itemprop="dateCreated datePublished" datetime="2020-07-23T23:19:11+08:00">2020-07-23</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-07-24 03:15:01" itemprop="dateModified" datetime="2020-07-24T03:15:01+08:00">2020-07-24</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/" itemprop="url" rel="index"><span itemprop="name">机器学习</span></a>
+                </span>
+            </span>
+
+          
+            <span class="post-meta-item" title="阅读次数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">阅读次数：</span>
+              <span id="busuanzi_value_page_pv"></span>
+            </span><br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>732</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>1 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h3 id="数据归一化与标准化"><a href="#数据归一化与标准化" class="headerlink" title="数据归一化与标准化"></a>数据归一化与标准化</h3><a id="more"></a>
+<h4 id="一，为什么要进行数据归一化或归一化"><a href="#一，为什么要进行数据归一化或归一化" class="headerlink" title="一，为什么要进行数据归一化或归一化"></a>一，为什么要进行数据归一化或归一化</h4><p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200723234524737.png" alt="image-20200723234524737"></p>
+<p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200723234716174.png" alt="image-20200723234716174"></p>
+<ul>
+<li><h4 id="这张图表示样本之间的距离又会被肿瘤大小来主导"><a href="#这张图表示样本之间的距离又会被肿瘤大小来主导" class="headerlink" title="这张图表示样本之间的距离又会被肿瘤大小来主导"></a>这张图表示样本之间的距离又会被肿瘤大小来主导</h4></li>
+<li><h4 id="因此我们需要统一进行数据归一化"><a href="#因此我们需要统一进行数据归一化" class="headerlink" title="因此我们需要统一进行数据归一化"></a>因此我们需要统一进行数据归一化</h4></li>
+</ul>
+<h3 id="二，什么是数据归一化或标准化"><a href="#二，什么是数据归一化或标准化" class="headerlink" title="二，什么是数据归一化或标准化"></a>二，什么是数据归一化或标准化</h3><ul>
+<li><p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200723235207881.png" alt="image-20200723235207881"></p>
+</li>
+<li><h4 id="最值归一化（normalization）适用于分布有明显边界的情况。比如像工资就不能用最值归一化（工资无上限）"><a href="#最值归一化（normalization）适用于分布有明显边界的情况。比如像工资就不能用最值归一化（工资无上限）" class="headerlink" title="最值归一化（normalization）适用于分布有明显边界的情况。比如像工资就不能用最值归一化（工资无上限）"></a>最值归一化（normalization）适用于分布有明显边界的情况。比如像工资就不能用最值归一化（工资无上限）</h4></li>
+</ul>
+<h4 id="第二种是标准化"><a href="#第二种是标准化" class="headerlink" title="第二种是标准化"></a>第二种是标准化</h4><ul>
+<li><p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200724000028651.png" alt="image-20200724000028651"></p>
+</li>
+<li><h5 id="注意："><a href="#注意：" class="headerlink" title="注意："></a>注意：</h5><ul>
+<li><h4 id="此处老师讲错，应该为标准化，而不是均值方差归一化"><a href="#此处老师讲错，应该为标准化，而不是均值方差归一化" class="headerlink" title="此处老师讲错，应该为标准化，而不是均值方差归一化"></a>此处老师讲错，应该为标准化，而不是均值方差归一化</h4></li>
+<li><h4 id="s表示标准差。除非数据集有明确的边界，（初学情况）一般情况下都使用标准化"><a href="#s表示标准差。除非数据集有明确的边界，（初学情况）一般情况下都使用标准化" class="headerlink" title="s表示标准差。除非数据集有明确的边界，（初学情况）一般情况下都使用标准化"></a>s表示标准差。除非数据集有明确的边界，（初学情况）一般情况下都使用标准化</h4></li>
+<li><h4 id="其实就是利用标准化处理将正态分布转为了标准正态分布"><a href="#其实就是利用标准化处理将正态分布转为了标准正态分布" class="headerlink" title="其实就是利用标准化处理将正态分布转为了标准正态分布"></a>其实就是利用标准化处理将正态分布转为了标准正态分布</h4></li>
+<li><h4 id="深入了解请看https-www-jiqizhixin-com-articles-19070701-https-www-zhihu-com-question-56891433"><a href="#深入了解请看https-www-jiqizhixin-com-articles-19070701-https-www-zhihu-com-question-56891433" class="headerlink" title="深入了解请看https://www.jiqizhixin.com/articles/19070701 https://www.zhihu.com/question/56891433"></a>深入了解请看<a href="https://www.jiqizhixin.com/articles/19070701" target="_blank" rel="noopener">https://www.jiqizhixin.com/articles/19070701</a> <a href="https://www.zhihu.com/question/56891433" target="_blank" rel="noopener">https://www.zhihu.com/question/56891433</a></h4></li>
+<li><h4 id="在线演示标准正态分布https-www-shuxuele-com-data-standard-normal-distribution-table-html"><a href="#在线演示标准正态分布https-www-shuxuele-com-data-standard-normal-distribution-table-html" class="headerlink" title="在线演示标准正态分布https://www.shuxuele.com/data/standard-normal-distribution-table.html"></a>在线演示标准正态分布<a href="https://www.shuxuele.com/data/standard-normal-distribution-table.html" target="_blank" rel="noopener">https://www.shuxuele.com/data/standard-normal-distribution-table.html</a></h4></li>
+</ul>
+</li>
+</ul>
+<h3 id="三，这两种的区别"><a href="#三，这两种的区别" class="headerlink" title="三，这两种的区别"></a>三，这两种的区别</h3><h5 id="最值归一化"><a href="#最值归一化" class="headerlink" title="最值归一化"></a>最值归一化</h5><ul>
+<li>数据集必须得有边界，否则会出现偏差很悬殊的值</li>
+</ul>
+<h5 id="标准化"><a href="#标准化" class="headerlink" title="标准化"></a>标准化</h5><ul>
+<li><p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200724020154141.png" alt="image-20200724020154141"></p>
+</li>
+<li><h5 id="平均值是曲线的中心。这是曲线的最高点，因为大多数点都在平均值附近；"><a href="#平均值是曲线的中心。这是曲线的最高点，因为大多数点都在平均值附近；" class="headerlink" title="平均值是曲线的中心。这是曲线的最高点，因为大多数点都在平均值附近；"></a>平均值是曲线的中心。这是曲线的最高点，因为大多数点都在平均值附近；</h5></li>
+<li><h5 id="标准化更符合统计学假设（自然界大多数符合正态分布）：对一个数值特征来说，很大可能它是服从正态分布的。标准化其实是基于这个隐含假设，只不过是略施小技，将这个正态分布调整为均值为0，方差为1的标准正态分布而已。"><a href="#标准化更符合统计学假设（自然界大多数符合正态分布）：对一个数值特征来说，很大可能它是服从正态分布的。标准化其实是基于这个隐含假设，只不过是略施小技，将这个正态分布调整为均值为0，方差为1的标准正态分布而已。" class="headerlink" title="标准化更符合统计学假设（自然界大多数符合正态分布）：对一个数值特征来说，很大可能它是服从正态分布的。标准化其实是基于这个隐含假设，只不过是略施小技，将这个正态分布调整为均值为0，方差为1的标准正态分布而已。"></a>标准化更符合统计学假设（自然界大多数符合正态分布）：对一个数值特征来说，很大可能它是服从正态分布的。标准化其实是基于这个隐含假设，只不过是略施小技，将这个正态分布调整为均值为0，方差为1的标准正态分布而已。</h5></li>
+<li><h5 id="新的数据由于对方差进行了归一化，这时候每个维度的量纲其实已经等价了，每个维度都服从均值为0、方差1的正态分布，在计算距离的时候，每个维度都是去量纲化的，避免了不同量纲的选取对距离计算产生的巨大影响。"><a href="#新的数据由于对方差进行了归一化，这时候每个维度的量纲其实已经等价了，每个维度都服从均值为0、方差1的正态分布，在计算距离的时候，每个维度都是去量纲化的，避免了不同量纲的选取对距离计算产生的巨大影响。" class="headerlink" title="新的数据由于对方差进行了归一化，这时候每个维度的量纲其实已经等价了，每个维度都服从均值为0、方差1的正态分布，在计算距离的时候，每个维度都是去量纲化的，避免了不同量纲的选取对距离计算产生的巨大影响。"></a>新的数据由于对方差进行了归一化，这时候每个维度的量纲其实已经等价了，每个维度都服从均值为0、方差1的正态分布，在计算距离的时候，每个维度都是去量纲化的，避免了不同量纲的选取对距离计算产生的巨大影响。</h5></li>
+</ul>
+<h3 id="四，对测试数据集如何归一化或标准化"><a href="#四，对测试数据集如何归一化或标准化" class="headerlink" title="四，对测试数据集如何归一化或标准化"></a>四，对测试数据集如何归一化或标准化</h3><ul>
+<li><p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200724022251989.png" alt="image-20200724022251989"></p>
+</li>
+<li><h4 id="结论：因为一个模型是要投入生产生活中的，所以我们要让测试数据集也要使用训练数据集的均值和标准差"><a href="#结论：因为一个模型是要投入生产生活中的，所以我们要让测试数据集也要使用训练数据集的均值和标准差" class="headerlink" title="结论：因为一个模型是要投入生产生活中的，所以我们要让测试数据集也要使用训练数据集的均值和标准差"></a>结论：因为一个模型是要投入生产生活中的，所以我们要让测试数据集也要使用训练数据集的均值和标准差</h4></li>
+<li><p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20200724022712834.png" alt="image-20200724022712834"></p>
+</li>
+</ul>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/" rel="tag"># 机器学习</a>
+              <a href="/tags/Python/" rel="tag"># Python</a>
+              <a href="/tags/%E6%95%B0%E6%8D%AE%E9%A2%84%E5%A4%84%E7%90%86/" rel="tag"># 数据预处理</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2020/07/21/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B03/" rel="prev" title="机器学习笔记3">
+      <i class="fa fa-chevron-left"></i> 机器学习笔记3
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2020/07/24/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B05/" rel="next" title="机器学习笔记5">
+      机器学习笔记5 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+      
+      <!-- Insert clustrmaps.com -->
+      <script type="text/javascript" id="clustrmaps" src="//cdn.clustrmaps.com/map_v2.js?d=2_M6gOO_uk_5ftA8MDj1GtyvCyzGqPStnw1k5TNBneU&cl=ffffff&w=a"></script>
+
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#数据归一化与标准化"><span class="nav-number">1.</span> <span class="nav-text">数据归一化与标准化</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#一，为什么要进行数据归一化或归一化"><span class="nav-number">1.1.</span> <span class="nav-text">一，为什么要进行数据归一化或归一化</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#这张图表示样本之间的距离又会被肿瘤大小来主导"><span class="nav-number">1.2.</span> <span class="nav-text">这张图表示样本之间的距离又会被肿瘤大小来主导</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#因此我们需要统一进行数据归一化"><span class="nav-number">1.3.</span> <span class="nav-text">因此我们需要统一进行数据归一化</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#二，什么是数据归一化或标准化"><span class="nav-number">2.</span> <span class="nav-text">二，什么是数据归一化或标准化</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#最值归一化（normalization）适用于分布有明显边界的情况。比如像工资就不能用最值归一化（工资无上限）"><span class="nav-number">2.1.</span> <span class="nav-text">最值归一化（normalization）适用于分布有明显边界的情况。比如像工资就不能用最值归一化（工资无上限）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#第二种是标准化"><span class="nav-number">2.2.</span> <span class="nav-text">第二种是标准化</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#注意："><span class="nav-number">2.2.1.</span> <span class="nav-text">注意：</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#此处老师讲错，应该为标准化，而不是均值方差归一化"><span class="nav-number">2.3.</span> <span class="nav-text">此处老师讲错，应该为标准化，而不是均值方差归一化</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#s表示标准差。除非数据集有明确的边界，（初学情况）一般情况下都使用标准化"><span class="nav-number">2.4.</span> <span class="nav-text">s表示标准差。除非数据集有明确的边界，（初学情况）一般情况下都使用标准化</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#其实就是利用标准化处理将正态分布转为了标准正态分布"><span class="nav-number">2.5.</span> <span class="nav-text">其实就是利用标准化处理将正态分布转为了标准正态分布</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#深入了解请看https-www-jiqizhixin-com-articles-19070701-https-www-zhihu-com-question-56891433"><span class="nav-number">2.6.</span> <span class="nav-text">深入了解请看https:&#x2F;&#x2F;www.jiqizhixin.com&#x2F;articles&#x2F;19070701 https:&#x2F;&#x2F;www.zhihu.com&#x2F;question&#x2F;56891433</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#在线演示标准正态分布https-www-shuxuele-com-data-standard-normal-distribution-table-html"><span class="nav-number">2.7.</span> <span class="nav-text">在线演示标准正态分布https:&#x2F;&#x2F;www.shuxuele.com&#x2F;data&#x2F;standard-normal-distribution-table.html</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#三，这两种的区别"><span class="nav-number">3.</span> <span class="nav-text">三，这两种的区别</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#最值归一化"><span class="nav-number">3.0.1.</span> <span class="nav-text">最值归一化</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#标准化"><span class="nav-number">3.0.2.</span> <span class="nav-text">标准化</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#平均值是曲线的中心。这是曲线的最高点，因为大多数点都在平均值附近；"><span class="nav-number">3.0.3.</span> <span class="nav-text">平均值是曲线的中心。这是曲线的最高点，因为大多数点都在平均值附近；</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#标准化更符合统计学假设（自然界大多数符合正态分布）：对一个数值特征来说，很大可能它是服从正态分布的。标准化其实是基于这个隐含假设，只不过是略施小技，将这个正态分布调整为均值为0，方差为1的标准正态分布而已。"><span class="nav-number">3.0.4.</span> <span class="nav-text">标准化更符合统计学假设（自然界大多数符合正态分布）：对一个数值特征来说，很大可能它是服从正态分布的。标准化其实是基于这个隐含假设，只不过是略施小技，将这个正态分布调整为均值为0，方差为1的标准正态分布而已。</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#新的数据由于对方差进行了归一化，这时候每个维度的量纲其实已经等价了，每个维度都服从均值为0、方差1的正态分布，在计算距离的时候，每个维度都是去量纲化的，避免了不同量纲的选取对距离计算产生的巨大影响。"><span class="nav-number">3.0.5.</span> <span class="nav-text">新的数据由于对方差进行了归一化，这时候每个维度的量纲其实已经等价了，每个维度都服从均值为0、方差1的正态分布，在计算距离的时候，每个维度都是去量纲化的，避免了不同量纲的选取对距离计算产生的巨大影响。</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#四，对测试数据集如何归一化或标准化"><span class="nav-number">4.</span> <span class="nav-text">四，对测试数据集如何归一化或标准化</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#结论：因为一个模型是要投入生产生活中的，所以我们要让测试数据集也要使用训练数据集的均值和标准差"><span class="nav-number">4.1.</span> <span class="nav-text">结论：因为一个模型是要投入生产生活中的，所以我们要让测试数据集也要使用训练数据集的均值和标准差</span></a></li></ol></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="macchen"
+      src="/images/avatar.jpg">
+  <p class="site-author-name" itemprop="name">macchen</p>
+  <div class="site-description" itemprop="description">学习强国</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">25</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">5</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">42</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2021</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">macchen</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-area"></i>
+    </span>
+      <span class="post-meta-item-text">站点总字数：</span>
+    <span title="站点总字数">25k</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+      <span class="post-meta-item-text">站点阅读时长 &asymp;</span>
+    <span title="站点阅读时长">22 分钟</span>
+</div>
+
+        
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-user"></i>
+      </span>
+      <span class="site-uv" title="总访客量">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>
+    </span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-eye"></i>
+      </span>
+      <span class="site-pv" title="总访问量">
+        <span id="busuanzi_value_site_pv"></span>
+      </span>
+    </span>
+</div>
+
+
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+  
+
+  <!-- 引入custom，就这一句，控制烟花特效 -->
+  
+  
+    <canvas class="fireworks" style="position: fixed;left: 0;top: 0;z-index: 1; pointer-events: none;" ></canvas>
+    <script src="//cdn.bootcss.com/animejs/2.2.0/anime.min.js"></script>
+    <script src="/js/cursor/explosion.min.js"></script>
+  
+
+
+<!-- 樱花特效 -->
+  
+      <script async src="/js/cursor/cherry.js"></script>
+  
+
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"log":false,"model":{"jsonPath":"/live2dw/assets/wanko.model.json"},"display":{"position":"left","width":250,"height":500},"mobile":{"show":true},"react":{"opacity":0.7}});</script></body>
+</html>
