@@ -1,0 +1,693 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 4.2.1">
+
+<script>
+    (function(){
+        if(''){
+            if (prompt('请输入查看密码') !== ''){
+                alert('密码不正确,请询问主编大大');
+                history.back();
+            }
+        }
+    })();
+</script>
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"macchen123.github.io","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true,"position":"right"},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="[TOC]">
+<meta property="og:type" content="article">
+<meta property="og:title" content="概率第二周">
+<meta property="og:url" content="http://macchen123.github.io/2021/03/02/%E6%A6%82%E7%8E%87%E7%BB%9F%E8%AE%A1%EF%BC%88%E5%8F%B0%E5%A4%A7%E5%8F%B6%E4%B8%99%E6%88%90%EF%BC%89/%E6%A6%82%E7%8E%87%EF%BC%88%E7%AC%AC%E4%BA%8C%E5%91%A8%EF%BC%89/index.html">
+<meta property="og:site_name" content="MaCcHen的个人小站">
+<meta property="og:description" content="[TOC]">
+<meta property="og:image" content="https://gitee.com/macljc/myimg/raw/master/imgs/image-20210302104947637.png">
+<meta property="og:image" content="https://gitee.com/macljc/myimg/raw/master/imgs/image-20210302105431725.png">
+<meta property="og:image" content="https://gitee.com/macljc/myimg/raw/master/imgs/image-20210302105645915.png">
+<meta property="og:image" content="https://gitee.com/macljc/myimg/raw/master/imgs/image-20210302105849748.png">
+<meta property="og:image" content="https://gitee.com/macljc/myimg/raw/master/imgs/image-20210302110214772.png">
+<meta property="og:image" content="https://gitee.com/macljc/myimg/raw/master/imgs/image-20210302111144204.png">
+<meta property="og:image" content="https://gitee.com/macljc/myimg/raw/master/imgs/image-20210302111952904.png">
+<meta property="og:image" content="https://gitee.com/macljc/myimg/raw/master/imgs/image-20210302152325748.png">
+<meta property="og:image" content="https://gitee.com/macljc/myimg/raw/master/imgs/image-20210302152613871.png">
+<meta property="og:image" content="https://gitee.com/macljc/myimg/raw/master/imgs/image-20210302152702014.png">
+<meta property="og:image" content="https://gitee.com/macljc/myimg/raw/master/imgs/image-20210302152717863.png">
+<meta property="og:image" content="https://gitee.com/macljc/myimg/raw/master/imgs/image-20210302152731646.png">
+<meta property="og:image" content="https://gitee.com/macljc/myimg/raw/master/imgs/image-20210302204522595.png">
+<meta property="og:image" content="https://gitee.com/macljc/myimg/raw/master/imgs/image-20210302204655306.png">
+<meta property="og:image" content="https://gitee.com/macljc/myimg/raw/master/imgs/image-20210302205303648.png">
+<meta property="og:image" content="https://gitee.com/macljc/myimg/raw/master/imgs/image-20210302205604270.png">
+<meta property="og:image" content="https://gitee.com/macljc/myimg/raw/master/imgs/image-20210302205624981.png">
+<meta property="og:image" content="https://gitee.com/macljc/myimg/raw/master/imgs/image-20210302210502699.png">
+<meta property="og:image" content="https://gitee.com/macljc/myimg/raw/master/imgs/image-20210302211710927.png">
+<meta property="og:image" content="https://gitee.com/macljc/myimg/raw/master/imgs/image-20210302211830670.png">
+<meta property="og:image" content="https://gitee.com/macljc/myimg/raw/master/imgs/image-20210302212058929.png">
+<meta property="og:image" content="https://gitee.com/macljc/myimg/raw/master/imgs/image-20210302212127241.png">
+<meta property="og:image" content="https://gitee.com/macljc/myimg/raw/master/imgs/image-20210302212819389.png">
+<meta property="og:image" content="https://gitee.com/macljc/myimg/raw/master/imgs/image-20210302212947199.png">
+<meta property="article:published_time" content="2021-03-02T09:10:51.000Z">
+<meta property="article:modified_time" content="2021-03-02T13:36:17.755Z">
+<meta property="article:author" content="macchen">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://gitee.com/macljc/myimg/raw/master/imgs/image-20210302104947637.png">
+
+<link rel="canonical" href="http://macchen123.github.io/2021/03/02/%E6%A6%82%E7%8E%87%E7%BB%9F%E8%AE%A1%EF%BC%88%E5%8F%B0%E5%A4%A7%E5%8F%B6%E4%B8%99%E6%88%90%EF%BC%89/%E6%A6%82%E7%8E%87%EF%BC%88%E7%AC%AC%E4%BA%8C%E5%91%A8%EF%BC%89/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-Hans'
+  };
+</script>
+
+  <title>概率第二周 | MaCcHen的个人小站</title>
+  
+
+
+  <script>
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?be46ae65323b06abe5d4115d59e20a64";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">MaCcHen的个人小站</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">谨言慎行，格物致知</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+  <div class="reading-progress-bar"></div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-Hans">
+    <link itemprop="mainEntityOfPage" href="http://macchen123.github.io/2021/03/02/%E6%A6%82%E7%8E%87%E7%BB%9F%E8%AE%A1%EF%BC%88%E5%8F%B0%E5%A4%A7%E5%8F%B6%E4%B8%99%E6%88%90%EF%BC%89/%E6%A6%82%E7%8E%87%EF%BC%88%E7%AC%AC%E4%BA%8C%E5%91%A8%EF%BC%89/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="macchen">
+      <meta itemprop="description" content="学习强国">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="MaCcHen的个人小站">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          概率第二周
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2021-03-02 17:10:51 / 修改时间：21:36:17" itemprop="dateCreated datePublished" datetime="2021-03-02T17:10:51+08:00">2021-03-02</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E6%A6%82%E7%8E%87%E7%BB%9F%E8%AE%A1/" itemprop="url" rel="index"><span itemprop="name">概率统计</span></a>
+                </span>
+            </span>
+
+          
+            <span class="post-meta-item" title="阅读次数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">阅读次数：</span>
+              <span id="busuanzi_value_page_pv"></span>
+            </span><br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>1.3k</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>1 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <p>[TOC]</p>
+<a id="more"></a>
+<h2 id="概率（第二周）"><a href="#概率（第二周）" class="headerlink" title="概率（第二周）"></a>概率（第二周）</h2><h3 id="2-1-概率公理性质"><a href="#2-1-概率公理性质" class="headerlink" title="2.1 概率公理性质"></a>2.1 概率公理性质</h3><ul>
+<li><h4 id="公理（Axioms）"><a href="#公理（Axioms）" class="headerlink" title="公理（Axioms）"></a>公理（Axioms）</h4><ul>
+<li>近代数学常以数条公理作为整套理论的基石<ul>
+<li>ex：线性代数的8条公理</li>
+</ul>
+</li>
+<li>公理常是不能被证明的基本性质</li>
+<li>公理常是非常基本的性质（所以不是废话）</li>
+<li>公理越少条、公理越基本的数学学科越厉害！</li>
+</ul>
+</li>
+<li><h4 id="概率三公理（Axioms-of-Probability）"><a href="#概率三公理（Axioms-of-Probability）" class="headerlink" title="概率三公理（Axioms of Probability）"></a>概率三公理（Axioms of Probability）</h4><ul>
+<li>公理1：对任何事件.. 而言, P(A) ≥0。</li>
+<li>公理2：P(S)=1</li>
+<li>公理3：事件A1,A2,…互斥 =&gt; P(A1∪A2∪A3∪…) = P(A1)+P(A2)+P(A3)+…</li>
+<li>公理3搭起了集合运算与概率运算的桥梁！</li>
+<li>后面的性质都可以用这3条公理证明。</li>
+</ul>
+</li>
+<li><h4 id="衍生的概率性质"><a href="#衍生的概率性质" class="headerlink" title="衍生的概率性质"></a>衍生的概率性质</h4><ul>
+<li><p>ex：从一副52 张扑克牌抽中一张，结果为Ace 之概率为何？</p>
+<p> <img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20210302104947637.png" alt="image-20210302104947637"></p>
+</li>
+<li><p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20210302105431725.png" alt="image-20210302105431725"></p>
+</li>
+<li><p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20210302105645915.png" alt="image-20210302105645915"></p>
+</li>
+<li><p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20210302105849748.png" alt="image-20210302105849748"></p>
+</li>
+<li><p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20210302110214772.png" alt="image-20210302110214772"></p>
+</li>
+<li><p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20210302111144204.png" alt="image-20210302111144204"></p>
+<p>这个性质的证明用到了公理3以及上面刚提到的两个性质。</p>
+<p>Ex：在大陆随便碰上一个人，此人爱甜豆花或爱咸豆花概率为何？</p>
+<p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20210302111952904.png" alt="image-20210302111952904"></p>
+</li>
+<li><p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20210302152325748.png" alt="image-20210302152325748"></p>
+<ul>
+<li><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20210302152613871.png" alt="image-20210302152613871"></li>
+</ul>
+</li>
+<li><p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20210302152702014.png" alt="image-20210302152702014"></p>
+</li>
+<li><p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20210302152717863.png" alt="image-20210302152717863"></p>
+</li>
+<li><p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20210302152731646.png" alt="image-20210302152731646"></p>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="2-2-条件概率"><a href="#2-2-条件概率" class="headerlink" title="2.2 条件概率"></a>2.2 条件概率</h3><ul>
+<li><h4 id="概率常反映我们对某些事情的了解程度"><a href="#概率常反映我们对某些事情的了解程度" class="headerlink" title="概率常反映我们对某些事情的了解程度"></a>概率常反映我们对某些事情的了解程度</h4><ul>
+<li><p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20210302204522595.png" alt="image-20210302204522595"></p>
+<p>当发生这种情况时：</p>
+<p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20210302204655306.png" alt="image-20210302204655306"></p>
+<p>正确答案就只有B，D了，所以当混哥看到卷哥试卷露出的线条后，想要知道B，D为正确答案的概率就是指<strong>条件概率</strong>。</p>
+</li>
+</ul>
+</li>
+<li><h4 id="条件概率表示"><a href="#条件概率表示" class="headerlink" title="条件概率表示"></a>条件概率表示</h4><ul>
+<li><p>P( 𝑿| 𝒀 )</p>
+<p>𝑿：所关心之事件 </p>
+<p>𝒀 ：条件（观察到的,已发生的事件）</p>
+</li>
+<li><p>针对上例：</p>
+<p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20210302205303648.png" alt="image-20210302205303648"></p>
+</li>
+</ul>
+</li>
+<li><h4 id="条件概率计算（还是以上例为例子）"><a href="#条件概率计算（还是以上例为例子）" class="headerlink" title="条件概率计算（还是以上例为例子）"></a>条件概率计算（还是以上例为例子）</h4><ul>
+<li><p>𝑷( B 为正解｜卷矫漏曲) = ?（卷矫漏曲：卷哥矫情堵答案却无意漏出了答案的线条）</p>
+<ul>
+<li><p>未偷看时，正确答案未知。样本空间为：</p>
+<p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20210302205604270.png" alt="image-20210302205604270"></p>
+</li>
+<li><p>卷矫漏曲后，新的样本空间变为：</p>
+<p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20210302205624981.png" alt="image-20210302205624981"></p>
+</li>
+<li><p>由于发生了卷矫漏曲，所以以下情况就不可能发生了，即：</p>
+<p>𝑷( A 为正解｜卷矫漏曲) = 𝑷 (𝑪 为正解｜卷矫漏曲) = 0</p>
+<ul>
+<li>延伸：若某实验结果 𝒐𝒊 与某条件 𝒀 不相交，则𝑷 (𝒐𝒊 |𝒀) = 0</li>
+</ul>
+</li>
+<li><p>不管卷矫漏曲发生否，「B为正解」与「D为正解」的概率比例应该一样，故：</p>
+<p>𝑷( B 为正解｜卷矫漏曲)：𝑷 (𝑫 为正解｜卷矫漏曲) = 𝑷( B 为正解)：𝑷 (𝑫 为正解)</p>
+<p>卷矫漏曲后只有可能出现「B 为正解」或「D 为正解」，故：</p>
+<p>𝑺 ′ = {𝑩, 𝑫} , 𝑷( B 为正解｜卷矫漏曲) + 𝑷 (𝑫 为正解｜卷矫漏曲 )= 𝟏</p>
+<p>根据上述二式我们得到:</p>
+<p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20210302210502699.png" alt="image-20210302210502699"></p>
+<p>卷矫漏曲 = {B 为正解，D 为正解}</p>
+</li>
+</ul>
+</li>
+<li><p>延伸：若某条件事件 Y 包含数个实验结果：Y = { {o₁,o₂,…,on} }</p>
+<ul>
+<li><strong>P(oᵢ|Y) = P(oᵢ)/( P(o₁)+P(o₂)+ … + P(on) ) = P(oᵢ)/P(Y)</strong></li>
+<li>Ex: 考虑某事件 X = {o₁,o₂,q₁,q₂} , 已知条件事件 Y = {o₁,o₂,o₃} 发生了，则<ul>
+<li><code>P(X|Y) = P(o₁|Y) + P(o₂|Y) = P(o₁)/P(Y) + P(o₂)/P(Y) = P({o₁,o₂})/P(Y)</code></li>
+<li>因为Y已经发生了，而q1，q2不在Y里面，所以压根不用考虑它俩。</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>终极延伸: 若已知某条件事件 Y 发生了，则对于任何事件 X ，条件概率如下：</p>
+<ul>
+<li><code>P(X|Y) = P(X∩Y)/P(Y)</code></li>
+</ul>
+</li>
+<li><p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20210302211710927.png" alt="image-20210302211710927"></p>
+</li>
+</ul>
+</li>
+<li><h4 id="条件概率的性质"><a href="#条件概率的性质" class="headerlink" title="条件概率的性质"></a>条件概率的性质</h4><ul>
+<li><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20210302211830670.png" alt="image-20210302211830670"></li>
+<li>性质1,2,3分别与概率3公理对应。</li>
+</ul>
+</li>
+<li><h4 id="Total-Probability-定理（全概率公式）"><a href="#Total-Probability-定理（全概率公式）" class="headerlink" title="Total Probability 定理（全概率公式）"></a>Total Probability 定理（全概率公式）</h4><ul>
+<li>其实是切面包定理的条件概率版本。</li>
+<li><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20210302212058929.png" alt="image-20210302212058929"></li>
+<li><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20210302212127241.png" alt="image-20210302212127241"></li>
+</ul>
+</li>
+<li><p>贝叶斯定理 (Bayes’ Rule)</p>
+<ul>
+<li><p>我们有时候需要转换<strong>条件事件</strong>和<strong>关注事件</strong>，比如对于阿宅来说，条件事件是店的生意的好坏，关注事件是店员是否对他笑。</p>
+<p>而对于老板来说，条件事件是店员是否对他笑，关注事件是店的生意的好坏。</p>
+</li>
+<li><p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20210302212819389.png" alt="image-20210302212819389"></p>
+<p>证明借助了条件概率（左边）与 Total Probability 定理（全概率公式）（右边）。</p>
+</li>
+<li><p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20210302212947199.png" alt="image-20210302212947199"></p>
+</li>
+</ul>
+</li>
+</ul>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2021/03/01/%E6%A6%82%E7%8E%87%E7%BB%9F%E8%AE%A1%EF%BC%88%E5%8F%B0%E5%A4%A7%E5%8F%B6%E4%B8%99%E6%88%90%EF%BC%89/%E6%A6%82%E7%8E%87%EF%BC%88%E7%AC%AC%E4%B8%80%E5%91%A8%EF%BC%89/" rel="prev" title="概率第一周">
+      <i class="fa fa-chevron-left"></i> 概率第一周
+    </a></div>
+      <div class="post-nav-item"></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+      
+      <!-- Insert clustrmaps.com -->
+      <script type="text/javascript" id="clustrmaps" src="//cdn.clustrmaps.com/map_v2.js?d=2_M6gOO_uk_5ftA8MDj1GtyvCyzGqPStnw1k5TNBneU&cl=ffffff&w=a"></script>
+
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#概率（第二周）"><span class="nav-number">1.</span> <span class="nav-text">概率（第二周）</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#2-1-概率公理性质"><span class="nav-number">1.1.</span> <span class="nav-text">2.1 概率公理性质</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#公理（Axioms）"><span class="nav-number">1.1.1.</span> <span class="nav-text">公理（Axioms）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#概率三公理（Axioms-of-Probability）"><span class="nav-number">1.1.2.</span> <span class="nav-text">概率三公理（Axioms of Probability）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#衍生的概率性质"><span class="nav-number">1.1.3.</span> <span class="nav-text">衍生的概率性质</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-2-条件概率"><span class="nav-number">1.2.</span> <span class="nav-text">2.2 条件概率</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#概率常反映我们对某些事情的了解程度"><span class="nav-number">1.2.1.</span> <span class="nav-text">概率常反映我们对某些事情的了解程度</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#条件概率表示"><span class="nav-number">1.2.2.</span> <span class="nav-text">条件概率表示</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#条件概率计算（还是以上例为例子）"><span class="nav-number">1.2.3.</span> <span class="nav-text">条件概率计算（还是以上例为例子）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#条件概率的性质"><span class="nav-number">1.2.4.</span> <span class="nav-text">条件概率的性质</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Total-Probability-定理（全概率公式）"><span class="nav-number">1.2.5.</span> <span class="nav-text">Total Probability 定理（全概率公式）</span></a></li></ol></li></ol></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="macchen"
+      src="/images/avatar.jpg">
+  <p class="site-author-name" itemprop="name">macchen</p>
+  <div class="site-description" itemprop="description">学习强国</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">25</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">5</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">42</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2021</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">macchen</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-area"></i>
+    </span>
+      <span class="post-meta-item-text">站点总字数：</span>
+    <span title="站点总字数">25k</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+      <span class="post-meta-item-text">站点阅读时长 &asymp;</span>
+    <span title="站点阅读时长">22 分钟</span>
+</div>
+
+        
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-user"></i>
+      </span>
+      <span class="site-uv" title="总访客量">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>
+    </span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-eye"></i>
+      </span>
+      <span class="site-pv" title="总访问量">
+        <span id="busuanzi_value_site_pv"></span>
+      </span>
+    </span>
+</div>
+
+
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+  
+
+  <!-- 引入custom，就这一句，控制烟花特效 -->
+  
+  
+    <canvas class="fireworks" style="position: fixed;left: 0;top: 0;z-index: 1; pointer-events: none;" ></canvas>
+    <script src="//cdn.bootcss.com/animejs/2.2.0/anime.min.js"></script>
+    <script src="/js/cursor/explosion.min.js"></script>
+  
+
+
+<!-- 樱花特效 -->
+  
+      <script async src="/js/cursor/cherry.js"></script>
+  
+
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"log":false,"model":{"jsonPath":"/live2dw/assets/wanko.model.json"},"display":{"position":"left","width":250,"height":500},"mobile":{"show":true},"react":{"opacity":0.7}});</script></body>
+</html>
