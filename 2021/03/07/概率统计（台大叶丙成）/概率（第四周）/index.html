@@ -1,0 +1,720 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 4.2.1">
+
+<script>
+    (function(){
+        if(''){
+            if (prompt('请输入查看密码') !== ''){
+                alert('密码不正确,请询问主编大大');
+                history.back();
+            }
+        }
+    })();
+</script>
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"macchen123.github.io","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true,"position":"right"},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="概率（第四周）">
+<meta property="og:type" content="article">
+<meta property="og:title" content="概率第四周">
+<meta property="og:url" content="http://macchen123.github.io/2021/03/07/%E6%A6%82%E7%8E%87%E7%BB%9F%E8%AE%A1%EF%BC%88%E5%8F%B0%E5%A4%A7%E5%8F%B6%E4%B8%99%E6%88%90%EF%BC%89/%E6%A6%82%E7%8E%87%EF%BC%88%E7%AC%AC%E5%9B%9B%E5%91%A8%EF%BC%89/index.html">
+<meta property="og:site_name" content="MaCcHen的个人小站">
+<meta property="og:description" content="概率（第四周）">
+<meta property="og:image" content="https://gitee.com/macljc/myimg/raw/master/imgs/image-20210307104047484.png">
+<meta property="og:image" content="https://gitee.com/macljc/myimg/raw/master/imgs/image-20210307104444210.png">
+<meta property="og:image" content="https://gitee.com/macljc/myimg/raw/master/imgs/image-20210307105146400.png">
+<meta property="og:image" content="https://gitee.com/macljc/myimg/raw/master/imgs/image-20210307105922214.png">
+<meta property="og:image" content="https://gitee.com/macljc/myimg/raw/master/imgs/image-20210307110004953.png">
+<meta property="og:image" content="https://gitee.com/macljc/myimg/raw/master/imgs/image-20210307113255688.png">
+<meta property="og:image" content="https://gitee.com/macljc/myimg/raw/master/imgs/image-20210307113957869.png">
+<meta property="og:image" content="https://gitee.com/macljc/myimg/raw/master/imgs/image-20210307165758717.png">
+<meta property="og:image" content="https://gitee.com/macljc/myimg/raw/master/imgs/image-20210307170052882.png">
+<meta property="og:image" content="https://gitee.com/macljc/myimg/raw/master/imgs/image-20210307170515608.png">
+<meta property="og:image" content="https://gitee.com/macljc/myimg/raw/master/imgs/image-20210307170814779.png">
+<meta property="og:image" content="https://gitee.com/macljc/myimg/raw/master/imgs/image-20210307171237314.png">
+<meta property="og:image" content="https://gitee.com/macljc/myimg/raw/master/imgs/image-20210307171523992.png">
+<meta property="og:image" content="https://gitee.com/macljc/myimg/raw/master/imgs/image-20210307171905946.png">
+<meta property="og:image" content="https://gitee.com/macljc/myimg/raw/master/imgs/image-20210307173022733.png">
+<meta property="og:image" content="https://gitee.com/macljc/myimg/raw/master/imgs/image-20210307173047403.png">
+<meta property="og:image" content="https://gitee.com/macljc/myimg/raw/master/imgs/image-20210307173339953.png">
+<meta property="og:image" content="https://gitee.com/macljc/myimg/raw/master/imgs/image-20210307174538275.png">
+<meta property="article:published_time" content="2021-03-07T14:20:51.000Z">
+<meta property="article:modified_time" content="2021-03-07T09:46:51.239Z">
+<meta property="article:author" content="macchen">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://gitee.com/macljc/myimg/raw/master/imgs/image-20210307104047484.png">
+
+<link rel="canonical" href="http://macchen123.github.io/2021/03/07/%E6%A6%82%E7%8E%87%E7%BB%9F%E8%AE%A1%EF%BC%88%E5%8F%B0%E5%A4%A7%E5%8F%B6%E4%B8%99%E6%88%90%EF%BC%89/%E6%A6%82%E7%8E%87%EF%BC%88%E7%AC%AC%E5%9B%9B%E5%91%A8%EF%BC%89/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-Hans'
+  };
+</script>
+
+  <title>概率第四周 | MaCcHen的个人小站</title>
+  
+
+
+  <script>
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?be46ae65323b06abe5d4115d59e20a64";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">MaCcHen的个人小站</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">谨言慎行，格物致知</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+  <div class="reading-progress-bar"></div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-Hans">
+    <link itemprop="mainEntityOfPage" href="http://macchen123.github.io/2021/03/07/%E6%A6%82%E7%8E%87%E7%BB%9F%E8%AE%A1%EF%BC%88%E5%8F%B0%E5%A4%A7%E5%8F%B6%E4%B8%99%E6%88%90%EF%BC%89/%E6%A6%82%E7%8E%87%EF%BC%88%E7%AC%AC%E5%9B%9B%E5%91%A8%EF%BC%89/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="macchen">
+      <meta itemprop="description" content="学习强国">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="MaCcHen的个人小站">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          概率第四周
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2021-03-07 22:20:51 / 修改时间：17:46:51" itemprop="dateCreated datePublished" datetime="2021-03-07T22:20:51+08:00">2021-03-07</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E6%A6%82%E7%8E%87%E7%BB%9F%E8%AE%A1/" itemprop="url" rel="index"><span itemprop="name">概率统计</span></a>
+                </span>
+            </span>
+
+          
+            <span class="post-meta-item" title="阅读次数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">阅读次数：</span>
+              <span id="busuanzi_value_page_pv"></span>
+            </span><br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>1.4k</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>1 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h2 id="概率（第四周）"><a href="#概率（第四周）" class="headerlink" title="概率（第四周）"></a>概率（第四周）</h2><a id="more"></a>
+<h3 id="4-1-随机变量"><a href="#4-1-随机变量" class="headerlink" title="4.1 随机变量"></a>4.1 随机变量</h3><ul>
+<li><h4 id="我们先看一个例子："><a href="#我们先看一个例子：" class="headerlink" title="我们先看一个例子："></a>我们先看一个例子：</h4><p>ex：<img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20210307104047484.png" alt="image-20210307104047484"></p>
+<h4 id="思考一下，你觉得这样写有什么问题？"><a href="#思考一下，你觉得这样写有什么问题？" class="headerlink" title="思考一下，你觉得这样写有什么问题？"></a>思考一下，你觉得这样写有什么问题？</h4><ul>
+<li><p>很显然，光写字就累翻了！更别说数学推导了。。。。。。</p>
+</li>
+<li><p>那么有什么改进的方法吗？</p>
+<p>如果改成这样呢？</p>
+<p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20210307104444210.png" alt="image-20210307104444210"></p>
+<p>比起前面的，这简直太方便了！！！</p>
+</li>
+</ul>
+</li>
+<li><h4 id="上面所示就是应用了"><a href="#上面所示就是应用了" class="headerlink" title="上面所示就是应用了:"></a>上面所示就是应用了:</h4><h4 id="随机变量（Random-Variable，R-V-）"><a href="#随机变量（Random-Variable，R-V-）" class="headerlink" title="随机变量（Random Variable，R.V.）"></a>随机变量（Random Variable，R.V.）</h4><ul>
+<li>随机变量是一个用来把实验结果（outcome）<strong>数字化</strong>的表示方式。</li>
+<li>目的是可以让概率的推导更数学、更简明</li>
+<li>随机变量通常都是用<strong>大写的英文字母</strong>表示。</li>
+</ul>
+</li>
+<li><h4 id="随机变量的本质"><a href="#随机变量的本质" class="headerlink" title="随机变量的本质"></a>随机变量的本质</h4><ul>
+<li><p>随机变量的本质：</p>
+<p>不是变量</p>
+<p><strong>而是函数！！！</strong></p>
+</li>
+<li><p>为啥：先看例子</p>
+<p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20210307105146400.png" alt="image-20210307105146400"></p>
+<p>这显然是<strong>喂X吃一个outcome，就吐出一个对应的数字</strong></p>
+<p>数学表示：<script type="math/tex">X:S->R</script>，这表示X是一个映射，从样本空间S中任意拿一个outcome送到X里面，都会出来一个实数。</p>
+</li>
+</ul>
+</li>
+<li><h4 id="随机变量的种类"><a href="#随机变量的种类" class="headerlink" title="随机变量的种类"></a>随机变量的种类</h4><ul>
+<li><p>离散随机变量 (Discrete R. V.)</p>
+<p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20210307105922214.png" alt="image-20210307105922214"></p>
+<p><strong>离散 R.V. 的值是有限个，或是「可数的」无穷多个</strong></p>
+</li>
+<li><p>连续随机变量 (Continuous R. V.)</p>
+<p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20210307110004953.png" alt="image-20210307110004953"></p>
+<p><strong>连续 R.V. 的值是有无穷多个，而且是「不可数」的无穷多个</strong></p>
+</li>
+</ul>
+</li>
+<li><h4 id="什么是可数，什么是不可数。"><a href="#什么是可数，什么是不可数。" class="headerlink" title="什么是可数，什么是不可数。"></a>什么是可数，什么是不可数。</h4><ul>
+<li><p>可数的：一个集合如果是「可数的」 这代表它包含的东西是可以一个个被数的。不管用什么方法数它里面的东西，它里面的任何一样东西，总是会被数到的！</p>
+<p>例：正偶数集合 {𝟐, 𝟒, 𝟔, 𝟖, 𝟏𝟎, … } 是可数的 随意取一个数字 𝟖𝟗𝟐𝟖𝟑𝟎𝟕𝟎𝟏𝟐𝟑𝟕𝟒𝟎𝟗𝟕𝟏𝟏𝟐𝟑𝟕𝟗𝟐𝟐 身为有恒心跟课的 MOOC 小子，总有一天会数到它的!!</p>
+</li>
+<li><p>不可数的：一个集合若是「不可数的」 这代表它包含的东西是无法可以一个个被数的。 不管用什么方法数它里面的东西，它里面一定有 一样东西是你没数到的！</p>
+<p><strong>重要性质：𝟎 到 𝟏 之间的所有数字的集合是不可数的！</strong></p>
+<p>那么，如何证明这个性质呢？</p>
+<p>![image-20210307112810859](<a href="https://gitee.com/macljc/myimg/raw/master/imgs/image-20210307112810859.png" target="_blank" rel="noopener">https://gitee.com/macljc/myimg/raw/master/imgs/image-20210307112810859.png</a></p>
+</li>
+<li><p>我们再看几个有趣的例子</p>
+<p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20210307113255688.png" alt="image-20210307113255688"></p>
+</li>
+</ul>
+</li>
+<li><h4 id="随机变量的函数（很重要）"><a href="#随机变量的函数（很重要）" class="headerlink" title="随机变量的函数（很重要）"></a>随机变量的函数（很重要）</h4><ul>
+<li><p>阿宅若看到店员微笑，就会点 𝟐𝟎𝟎元的套餐。如果店员不笑，他就买𝟏𝟓元的饮料。 请问阿宅的消费金额 𝑾 是随机变量吗？</p>
+<p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20210307113957869.png" alt="image-20210307113957869"></p>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="4-2-累积分布函数CDF（-CUMULATIVE-DISTRIBUTION-FUNCTION）"><a href="#4-2-累积分布函数CDF（-CUMULATIVE-DISTRIBUTION-FUNCTION）" class="headerlink" title="4.2 累积分布函数CDF（(CUMULATIVE DISTRIBUTION FUNCTION）"></a>4.2 累积分布函数CDF（(CUMULATIVE DISTRIBUTION FUNCTION）</h3><ul>
+<li><h4 id="什么是累积分布函数CDF"><a href="#什么是累积分布函数CDF" class="headerlink" title="什么是累积分布函数CDF"></a>什么是累积分布函数CDF</h4><ul>
+<li><p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20210307165758717.png" alt="image-20210307165758717"></p>
+<h4 id="这个公式指的是随机变量X小于等于x的概率是多少！！！"><a href="#这个公式指的是随机变量X小于等于x的概率是多少！！！" class="headerlink" title="这个公式指的是随机变量X小于等于x的概率是多少！！！"></a><strong>这个公式指的是随机变量X小于等于x的概率是多少！！！</strong></h4></li>
+</ul>
+</li>
+<li><h4 id="用途"><a href="#用途" class="headerlink" title="用途"></a>用途</h4><ul>
+<li><p><strong>计算X落在某范围内的概率</strong></p>
+</li>
+<li><p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20210307170052882.png" alt="image-20210307170052882"></p>
+<h4 id="为啥左边没有等于，而右边有等于：这左图就很清楚，小于等于5减去小于等于3剩下的部分，很显然已经把等于3的概率除去了，而右边等于5的概率还在。所以左开右闭。"><a href="#为啥左边没有等于，而右边有等于：这左图就很清楚，小于等于5减去小于等于3剩下的部分，很显然已经把等于3的概率除去了，而右边等于5的概率还在。所以左开右闭。" class="headerlink" title="为啥左边没有等于，而右边有等于：这左图就很清楚，小于等于5减去小于等于3剩下的部分，很显然已经把等于3的概率除去了，而右边等于5的概率还在。所以左开右闭。"></a>为啥左边没有等于，而右边有等于：这左图就很清楚，小于等于5减去小于等于3剩下的部分，很显然已经把等于3的概率除去了，而右边等于5的概率还在。所以左开右闭。</h4></li>
+<li><p>我们将它们一般化</p>
+<p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20210307170515608.png" alt="image-20210307170515608"></p>
+</li>
+</ul>
+</li>
+<li><h4 id="离散随机变量的CDF"><a href="#离散随机变量的CDF" class="headerlink" title="离散随机变量的CDF"></a>离散随机变量的CDF</h4><ul>
+<li><p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20210307170814779.png" alt="image-20210307170814779"></p>
+<h4 id="5-表示无限接近（小于）5的数字；"><a href="#5-表示无限接近（小于）5的数字；" class="headerlink" title="5^-表示无限接近（小于）5的数字；"></a><strong><script type="math/tex">5^-</script>表示无限接近（小于）5的数字；</strong></h4></li>
+</ul>
+</li>
+<li><h4 id="连续随机变量的CDF"><a href="#连续随机变量的CDF" class="headerlink" title="连续随机变量的CDF"></a>连续随机变量的CDF</h4><ul>
+<li><p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20210307171237314.png" alt="image-20210307171237314"></p>
+<h4 id="因为连续性的原因，0-5-的概率与0-5的概率相同"><a href="#因为连续性的原因，0-5-的概率与0-5的概率相同" class="headerlink" title="因为连续性的原因，0.5^-的概率与0.5的概率相同"></a><strong>因为连续性的原因，<script type="math/tex">0.5^-</script>的概率与0.5的概率相同</strong></h4></li>
+</ul>
+</li>
+<li><h4 id="CDF的性质"><a href="#CDF的性质" class="headerlink" title="CDF的性质"></a>CDF的性质</h4><ul>
+<li><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20210307171523992.png" alt="image-20210307171523992"></li>
+</ul>
+</li>
+</ul>
+<h3 id="4-3-概率质量函数PMF（PROBABILITY-MASS-FUNCTION）"><a href="#4-3-概率质量函数PMF（PROBABILITY-MASS-FUNCTION）" class="headerlink" title="4.3 概率质量函数PMF（PROBABILITY MASS FUNCTION）"></a>4.3 概率质量函数PMF（PROBABILITY MASS FUNCTION）</h3><ul>
+<li><h4 id="什么是概率质量函数PMF"><a href="#什么是概率质量函数PMF" class="headerlink" title="什么是概率质量函数PMF"></a>什么是概率质量函数PMF</h4><ul>
+<li><p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20210307171905946.png" alt="image-20210307171905946"></p>
+<h4 id="注意：只有-离散随机变量-才有概率质量函数PMF"><a href="#注意：只有-离散随机变量-才有概率质量函数PMF" class="headerlink" title="注意：只有 离散随机变量 才有概率质量函数PMF"></a>注意：只有 <em>离散随机变量</em> 才有概率质量函数PMF</h4><h4 id="它表示离散随机变量X等于x的概率是多少"><a href="#它表示离散随机变量X等于x的概率是多少" class="headerlink" title="它表示离散随机变量X等于x的概率是多少"></a>它表示离散随机变量X等于x的概率是多少</h4></li>
+</ul>
+</li>
+<li><h4 id="PMF-跟-CDF-的关系"><a href="#PMF-跟-CDF-的关系" class="headerlink" title="PMF 跟 CDF 的关系"></a>PMF 跟 CDF 的关系</h4><ul>
+<li><p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20210307173022733.png" alt="image-20210307173022733"></p>
+</li>
+<li><p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20210307173047403.png" alt="image-20210307173047403"></p>
+<h4 id="很简单，比作上楼梯，把PMF有值的地方加起来就行"><a href="#很简单，比作上楼梯，把PMF有值的地方加起来就行" class="headerlink" title="很简单，比作上楼梯，把PMF有值的地方加起来就行"></a>很简单，比作上楼梯，把PMF有值的地方加起来就行</h4></li>
+<li><p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20210307173339953.png" alt="image-20210307173339953"></p>
+<h4 id="这个转换就是用楼梯前的CDF减去楼梯后的CDF就行。比如："><a href="#这个转换就是用楼梯前的CDF减去楼梯后的CDF就行。比如：" class="headerlink" title="这个转换就是用楼梯前的CDF减去楼梯后的CDF就行。比如："></a>这个转换就是用楼梯前的CDF减去楼梯后的CDF就行。比如：</h4><script type="math/tex; mode=display">
+p_X(5)=F_X(5^+)-F_X(5^-)=1-2/4=1/2</script></li>
+</ul>
+</li>
+<li><h4 id="概率分布"><a href="#概率分布" class="headerlink" title="概率分布"></a>概率分布</h4><ul>
+<li>任何一个 PMF（或是之后介绍的 PDF）都称作是一种概率分布 （将总和为 𝟏 的概率分布在点上之故）</li>
+<li>其实是和PMF、PDF等价的概念</li>
+<li><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20210307174538275.png" alt="image-20210307174538275"></li>
+</ul>
+</li>
+</ul>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2021/03/03/%E6%A6%82%E7%8E%87%E7%BB%9F%E8%AE%A1%EF%BC%88%E5%8F%B0%E5%A4%A7%E5%8F%B6%E4%B8%99%E6%88%90%EF%BC%89/%E6%A6%82%E7%8E%87%EF%BC%88%E7%AC%AC%E4%B8%89%E5%91%A8%EF%BC%89/" rel="prev" title="概率第三周">
+      <i class="fa fa-chevron-left"></i> 概率第三周
+    </a></div>
+      <div class="post-nav-item"></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+      
+      <!-- Insert clustrmaps.com -->
+      <script type="text/javascript" id="clustrmaps" src="//cdn.clustrmaps.com/map_v2.js?d=2_M6gOO_uk_5ftA8MDj1GtyvCyzGqPStnw1k5TNBneU&cl=ffffff&w=a"></script>
+
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#概率（第四周）"><span class="nav-number">1.</span> <span class="nav-text">概率（第四周）</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#4-1-随机变量"><span class="nav-number">1.1.</span> <span class="nav-text">4.1 随机变量</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#我们先看一个例子："><span class="nav-number">1.1.1.</span> <span class="nav-text">我们先看一个例子：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#思考一下，你觉得这样写有什么问题？"><span class="nav-number">1.1.2.</span> <span class="nav-text">思考一下，你觉得这样写有什么问题？</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#上面所示就是应用了"><span class="nav-number">1.1.3.</span> <span class="nav-text">上面所示就是应用了:</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#随机变量（Random-Variable，R-V-）"><span class="nav-number">1.1.4.</span> <span class="nav-text">随机变量（Random Variable，R.V.）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#随机变量的本质"><span class="nav-number">1.1.5.</span> <span class="nav-text">随机变量的本质</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#随机变量的种类"><span class="nav-number">1.1.6.</span> <span class="nav-text">随机变量的种类</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#什么是可数，什么是不可数。"><span class="nav-number">1.1.7.</span> <span class="nav-text">什么是可数，什么是不可数。</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#随机变量的函数（很重要）"><span class="nav-number">1.1.8.</span> <span class="nav-text">随机变量的函数（很重要）</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-2-累积分布函数CDF（-CUMULATIVE-DISTRIBUTION-FUNCTION）"><span class="nav-number">1.2.</span> <span class="nav-text">4.2 累积分布函数CDF（(CUMULATIVE DISTRIBUTION FUNCTION）</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#什么是累积分布函数CDF"><span class="nav-number">1.2.1.</span> <span class="nav-text">什么是累积分布函数CDF</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#这个公式指的是随机变量X小于等于x的概率是多少！！！"><span class="nav-number">1.2.2.</span> <span class="nav-text">这个公式指的是随机变量X小于等于x的概率是多少！！！</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#用途"><span class="nav-number">1.2.3.</span> <span class="nav-text">用途</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#为啥左边没有等于，而右边有等于：这左图就很清楚，小于等于5减去小于等于3剩下的部分，很显然已经把等于3的概率除去了，而右边等于5的概率还在。所以左开右闭。"><span class="nav-number">1.2.4.</span> <span class="nav-text">为啥左边没有等于，而右边有等于：这左图就很清楚，小于等于5减去小于等于3剩下的部分，很显然已经把等于3的概率除去了，而右边等于5的概率还在。所以左开右闭。</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#离散随机变量的CDF"><span class="nav-number">1.2.5.</span> <span class="nav-text">离散随机变量的CDF</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#5-表示无限接近（小于）5的数字；"><span class="nav-number">1.2.6.</span> <span class="nav-text">5^-表示无限接近（小于）5的数字；</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#连续随机变量的CDF"><span class="nav-number">1.2.7.</span> <span class="nav-text">连续随机变量的CDF</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#因为连续性的原因，0-5-的概率与0-5的概率相同"><span class="nav-number">1.2.8.</span> <span class="nav-text">因为连续性的原因，0.5^-的概率与0.5的概率相同</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#CDF的性质"><span class="nav-number">1.2.9.</span> <span class="nav-text">CDF的性质</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-3-概率质量函数PMF（PROBABILITY-MASS-FUNCTION）"><span class="nav-number">1.3.</span> <span class="nav-text">4.3 概率质量函数PMF（PROBABILITY MASS FUNCTION）</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#什么是概率质量函数PMF"><span class="nav-number">1.3.1.</span> <span class="nav-text">什么是概率质量函数PMF</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#注意：只有-离散随机变量-才有概率质量函数PMF"><span class="nav-number">1.3.2.</span> <span class="nav-text">注意：只有 离散随机变量 才有概率质量函数PMF</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#它表示离散随机变量X等于x的概率是多少"><span class="nav-number">1.3.3.</span> <span class="nav-text">它表示离散随机变量X等于x的概率是多少</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#PMF-跟-CDF-的关系"><span class="nav-number">1.3.4.</span> <span class="nav-text">PMF 跟 CDF 的关系</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#很简单，比作上楼梯，把PMF有值的地方加起来就行"><span class="nav-number">1.3.5.</span> <span class="nav-text">很简单，比作上楼梯，把PMF有值的地方加起来就行</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#这个转换就是用楼梯前的CDF减去楼梯后的CDF就行。比如："><span class="nav-number">1.3.6.</span> <span class="nav-text">这个转换就是用楼梯前的CDF减去楼梯后的CDF就行。比如：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#概率分布"><span class="nav-number">1.3.7.</span> <span class="nav-text">概率分布</span></a></li></ol></li></ol></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="macchen"
+      src="/images/avatar.jpg">
+  <p class="site-author-name" itemprop="name">macchen</p>
+  <div class="site-description" itemprop="description">学习强国</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">27</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">5</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">42</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2021</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">macchen</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-area"></i>
+    </span>
+      <span class="post-meta-item-text">站点总字数：</span>
+    <span title="站点总字数">28k</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+      <span class="post-meta-item-text">站点阅读时长 &asymp;</span>
+    <span title="站点阅读时长">25 分钟</span>
+</div>
+
+        
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-user"></i>
+      </span>
+      <span class="site-uv" title="总访客量">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>
+    </span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-eye"></i>
+      </span>
+      <span class="site-pv" title="总访问量">
+        <span id="busuanzi_value_site_pv"></span>
+      </span>
+    </span>
+</div>
+
+
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+      
+
+<script>
+  if (typeof MathJax === 'undefined') {
+    window.MathJax = {
+      loader: {
+          load: ['[tex]/mhchem'],
+        source: {
+          '[tex]/amsCd': '[tex]/amscd',
+          '[tex]/AMScd': '[tex]/amscd'
+        }
+      },
+      tex: {
+        inlineMath: {'[+]': [['$', '$']]},
+          packages: {'[+]': ['mhchem']},
+        tags: 'ams'
+      },
+      options: {
+        renderActions: {
+          findScript: [10, doc => {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(node => {
+              const display = !!node.type.match(/; *mode=display/);
+              const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+              const text = document.createTextNode('');
+              node.parentNode.replaceChild(text, node);
+              math.start = {node: text, delim: '', n: 0};
+              math.end = {node: text, delim: '', n: 0};
+              doc.math.push(math);
+            });
+          }, '', false],
+          insertedScript: [200, () => {
+            document.querySelectorAll('mjx-container').forEach(node => {
+              let target = node.parentNode;
+              if (target.nodeName.toLowerCase() === 'li') {
+                target.parentNode.classList.add('has-jax');
+              }
+            });
+          }, '', false]
+        }
+      }
+    };
+    (function () {
+      var script = document.createElement('script');
+      script.src = '//cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js';
+      script.defer = true;
+      document.head.appendChild(script);
+    })();
+  } else {
+    MathJax.startup.document.state(0);
+    MathJax.texReset();
+    MathJax.typeset();
+  }
+</script>
+
+    
+
+  
+
+  <!-- 引入custom，就这一句，控制烟花特效 -->
+  
+  
+    <canvas class="fireworks" style="position: fixed;left: 0;top: 0;z-index: 1; pointer-events: none;" ></canvas>
+    <script src="//cdn.bootcss.com/animejs/2.2.0/anime.min.js"></script>
+    <script src="/js/cursor/explosion.min.js"></script>
+  
+
+
+<!-- 樱花特效 -->
+  
+      <script async src="/js/cursor/cherry.js"></script>
+  
+
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"log":false,"model":{"jsonPath":"/live2dw/assets/wanko.model.json"},"display":{"position":"left","width":250,"height":500},"mobile":{"show":true},"react":{"opacity":0.7}});</script></body>
+</html>
