@@ -31,30 +31,28 @@
     var CONFIG = {"hostname":"macchen123.github.io","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true,"position":"right"},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta name="description" content="神经网络（本质是一个复杂函数）这个笔记主要记录在学习3B1B的深度学习系列过程中的一些个人认为的难点，详细内容请看3B1B的完整视频：https:&#x2F;&#x2F;space.bilibili.com&#x2F;88461692&#x2F;channel&#x2F;detail?cid&#x3D;26587。">
+  <meta name="description" content="概率第五周">
 <meta property="og:type" content="article">
-<meta property="og:title" content="神经网络理解-基于3Blue1Brown的视频">
-<meta property="og:url" content="http://macchen123.github.io/2020/10/25/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E7%90%86%E8%A7%A3-%E5%9F%BA%E4%BA%8E3Blue1Brown%E7%9A%84%E8%A7%86%E9%A2%91/index.html">
+<meta property="og:title" content="概率第五周">
+<meta property="og:url" content="http://macchen123.github.io/2021/03/12/%E6%A6%82%E7%8E%87%E7%BB%9F%E8%AE%A1%EF%BC%88%E5%8F%B0%E5%A4%A7%E5%8F%B6%E4%B8%99%E6%88%90%EF%BC%89/%E6%A6%82%E7%8E%87%EF%BC%88%E7%AC%AC%E4%BA%94%E5%91%A8%EF%BC%89/index.html">
 <meta property="og:site_name" content="MaCcHen的个人小站">
-<meta property="og:description" content="神经网络（本质是一个复杂函数）这个笔记主要记录在学习3B1B的深度学习系列过程中的一些个人认为的难点，详细内容请看3B1B的完整视频：https:&#x2F;&#x2F;space.bilibili.com&#x2F;88461692&#x2F;channel&#x2F;detail?cid&#x3D;26587。">
-<meta property="og:image" content="https://gitee.com/macljc/myimg/raw/master/imgs/image-20201002195436873.png">
-<meta property="og:image" content="https://gitee.com/macljc/myimg/raw/master/imgs/image-20201003102150484.png">
-<meta property="og:image" content="https://gitee.com/macljc/myimg/raw/master/imgs/image-20201003103446650.png">
-<meta property="og:image" content="https://gitee.com/macljc/myimg/raw/master/imgs/image-20201003105415605.png">
-<meta property="og:image" content="https://gitee.com/macljc/myimg/raw/master/imgs/image-20201003160858242.png">
-<meta property="og:image" content="https://gitee.com/macljc/myimg/raw/master/imgs/image-20201004210647919.png">
-<meta property="og:image" content="https://gitee.com/macljc/myimg/raw/master/imgs/image-20201004211422661.png">
-<meta property="og:image" content="https://gitee.com/macljc/myimg/raw/master/imgs/image-20201027200033345.png">
-<meta property="article:published_time" content="2020-10-25T11:45:30.000Z">
-<meta property="article:modified_time" content="2020-10-27T12:00:37.443Z">
+<meta property="og:description" content="概率第五周">
+<meta property="og:image" content="https://github.com/mebusy/notes/raw/master/imgs/TU_probability_bernoulli.png">
+<meta property="og:image" content="https://github.com/mebusy/notes/raw/master/imgs/TU_probability_binomial1.png">
+<meta property="og:image" content="https://github.com/mebusy/notes/raw/master/imgs/TU_probability_binomial2.png">
+<meta property="og:image" content="https://github.com/mebusy/notes/raw/master/imgs/TU_probability_uniform1.png">
+<meta property="og:image" content="https://github.com/mebusy/notes/raw/master/imgs/TU_probability_uniform1.png">
+<meta property="og:image" content="https://github.com/mebusy/notes/raw/master/imgs/TU_probability_geometric.png">
+<meta property="og:image" content="https://github.com/mebusy/notes/raw/master/imgs/TU_probability_pascal.png">
+<meta property="og:image" content="https://github.com/mebusy/notes/raw/master/imgs/TU_probability_poisson_PMF.png">
+<meta property="og:image" content="https://github.com/mebusy/notes/raw/master/imgs/TU_probability_poisson_CDF.png">
+<meta property="article:published_time" content="2021-03-12T14:20:51.000Z">
+<meta property="article:modified_time" content="2021-03-16T13:48:01.697Z">
 <meta property="article:author" content="macchen">
-<meta property="article:tag" content="神经网络">
-<meta property="article:tag" content="反向传播">
-<meta property="article:tag" content="梯度下降">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://gitee.com/macljc/myimg/raw/master/imgs/image-20201002195436873.png">
+<meta name="twitter:image" content="https://github.com/mebusy/notes/raw/master/imgs/TU_probability_bernoulli.png">
 
-<link rel="canonical" href="http://macchen123.github.io/2020/10/25/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E7%90%86%E8%A7%A3-%E5%9F%BA%E4%BA%8E3Blue1Brown%E7%9A%84%E8%A7%86%E9%A2%91/">
+<link rel="canonical" href="http://macchen123.github.io/2021/03/12/%E6%A6%82%E7%8E%87%E7%BB%9F%E8%AE%A1%EF%BC%88%E5%8F%B0%E5%A4%A7%E5%8F%B6%E4%B8%99%E6%88%90%EF%BC%89/%E6%A6%82%E7%8E%87%EF%BC%88%E7%AC%AC%E4%BA%94%E5%91%A8%EF%BC%89/">
 
 
 <script id="page-configurations">
@@ -67,7 +65,7 @@
   };
 </script>
 
-  <title>神经网络理解-基于3Blue1Brown的视频 | MaCcHen的个人小站</title>
+  <title>概率第五周 | MaCcHen的个人小站</title>
   
 
 
@@ -220,7 +218,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-Hans">
-    <link itemprop="mainEntityOfPage" href="http://macchen123.github.io/2020/10/25/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E7%90%86%E8%A7%A3-%E5%9F%BA%E4%BA%8E3Blue1Brown%E7%9A%84%E8%A7%86%E9%A2%91/">
+    <link itemprop="mainEntityOfPage" href="http://macchen123.github.io/2021/03/12/%E6%A6%82%E7%8E%87%E7%BB%9F%E8%AE%A1%EF%BC%88%E5%8F%B0%E5%A4%A7%E5%8F%B6%E4%B8%99%E6%88%90%EF%BC%89/%E6%A6%82%E7%8E%87%EF%BC%88%E7%AC%AC%E4%BA%94%E5%91%A8%EF%BC%89/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.jpg">
@@ -233,7 +231,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          神经网络理解-基于3Blue1Brown的视频
+          概率第五周
         </h1>
 
         <div class="post-meta">
@@ -243,14 +241,14 @@
               </span>
               <span class="post-meta-item-text">发表于</span>
 
-              <time title="创建时间：2020-10-25 19:45:30" itemprop="dateCreated datePublished" datetime="2020-10-25T19:45:30+08:00">2020-10-25</time>
+              <time title="创建时间：2021-03-12 22:20:51" itemprop="dateCreated datePublished" datetime="2021-03-12T22:20:51+08:00">2021-03-12</time>
             </span>
               <span class="post-meta-item">
                 <span class="post-meta-item-icon">
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-10-27 20:00:37" itemprop="dateModified" datetime="2020-10-27T20:00:37+08:00">2020-10-27</time>
+                <time title="修改时间：2021-03-16 21:48:01" itemprop="dateModified" datetime="2021-03-16T21:48:01+08:00">2021-03-16</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -258,7 +256,7 @@
               </span>
               <span class="post-meta-item-text">分类于</span>
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/" itemprop="url" rel="index"><span itemprop="name">深度学习</span></a>
+                  <a href="/categories/%E6%A6%82%E7%8E%87%E7%BB%9F%E8%AE%A1/" itemprop="url" rel="index"><span itemprop="name">概率统计</span></a>
                 </span>
             </span>
 
@@ -275,14 +273,14 @@
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>1.6k</span>
+              <span>2k</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
                 <i class="far fa-clock"></i>
               </span>
                 <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>1 分钟</span>
+              <span>2 分钟</span>
             </span>
 
         </div>
@@ -294,26 +292,141 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <h1 id="神经网络（本质是一个复杂函数）"><a href="#神经网络（本质是一个复杂函数）" class="headerlink" title="神经网络（本质是一个复杂函数）"></a>神经网络（本质是一个复杂函数）</h1><h4 id="这个笔记主要记录在学习3B1B的深度学习系列过程中的一些个人认为的难点，详细内容请看3B1B的完整视频：https-space-bilibili-com-88461692-channel-detail-cid-26587。"><a href="#这个笔记主要记录在学习3B1B的深度学习系列过程中的一些个人认为的难点，详细内容请看3B1B的完整视频：https-space-bilibili-com-88461692-channel-detail-cid-26587。" class="headerlink" title="这个笔记主要记录在学习3B1B的深度学习系列过程中的一些个人认为的难点，详细内容请看3B1B的完整视频：https://space.bilibili.com/88461692/channel/detail?cid=26587。"></a>这个笔记主要记录在学习3B1B的深度学习系列过程中的一些个人认为的难点，详细内容请看3B1B的完整视频：<a href="https://space.bilibili.com/88461692/channel/detail?cid=26587。" target="_blank" rel="noopener">https://space.bilibili.com/88461692/channel/detail?cid=26587。</a></h4><a id="more"></a>
-<h2 id="1-神经网络的结构（以图解释）"><a href="#1-神经网络的结构（以图解释）" class="headerlink" title="1 神经网络的结构（以图解释）"></a>1 神经网络的结构（以图解释）</h2><p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20201002195436873.png" alt="image-20201002195436873"></p>
-<h3 id="1-1-神经元"><a href="#1-1-神经元" class="headerlink" title="1.1 神经元"></a>1.1 神经元</h3><p>每一个神经元都与上一层的所有神经元相连接。</p>
-<h3 id="1-2-激活值"><a href="#1-2-激活值" class="headerlink" title="1.2 激活值"></a>1.2 激活值</h3><p>输入层的每一个神经元里面的值称为激活值，是0到1的一个数字。a的下标表示第几个神经元，上标表示当前处于第几层网络。</p>
-<h3 id="1-3-权重"><a href="#1-3-权重" class="headerlink" title="1.3 权重"></a>1.3 权重</h3><p>两层神经元之间的连线就是权重。下一层网络的每一个神经元的激活值都是由上一层网络的所有激活值乘以相应的权重然后加权和的到的，如图中第一个隐藏层的第一个神经元的激活值是由输入层的10个神经元的激活值与它相应的10个权重（权重一会儿细说）加权和得到。W矩阵的每一行与a向量相乘就会得到隐藏层的一个神经元的激活值，最终整个w矩阵与a向量的点乘就会得到图中隐藏层所有的的神经元的激活值。注意。在刚开始训练时我们会随机初始化所有权重和偏置。</p>
-<h3 id="1-4-偏置"><a href="#1-4-偏置" class="headerlink" title="1.4 偏置"></a>1.4 偏置</h3><p>偏置实际上是对神经元激活状态的控制，根据需求设置偏置的大小，进而决定神经元什么时候会被激活。<a href="https://www.zhihu.com/question/305340182/answer/574986775" target="_blank" rel="noopener">https://www.zhihu.com/question/305340182/answer/574986775</a></p>
-<h2 id="2-神经网络的误差与梯度下降"><a href="#2-神经网络的误差与梯度下降" class="headerlink" title="2 神经网络的误差与梯度下降"></a>2 神经网络的误差与梯度下降</h2><h3 id="2-1-代价函数"><a href="#2-1-代价函数" class="headerlink" title="2.1 代价函数"></a>2.1 代价函数</h3><p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20201003102150484.png" alt="image-20201003102150484"></p>
-<p>代价函数（cost）：整个神经网络的所有权重和偏置作为它的参数，然后求它们的均方误差，最终输出一个单个数值来表示该神经网络的性能。</p>
-<h3 id="2-2-梯度下降法"><a href="#2-2-梯度下降法" class="headerlink" title="2.2 梯度下降法"></a>2.2 梯度下降法</h3><p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20201003103446650.png" alt="image-20201003103446650"></p>
-<p>（注意，这里的w指所有的参数，即权重和偏置都有。）沿着梯度方向函数值上升的最快。所以，负梯度向量里面的每一个值的正负表示对应的参数（权重和偏置）应该增大还是减小，值的大小表示参数应该改变的程度是多少。所以这些值可以理解为每个参数对训练数据的相对重要性，标记出了改变哪个参数，性价比最高。求梯度向量就是求代价函数对每个参数的偏导数。</p>
-<p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20201003105415605.png" alt="image-20201003105415605"></p>
-<p>梯度的另一种理解：以上图为例，梯度表示第一个变量的重要性是第二个变量的3倍，起码在（1,1）附近，改变x的值对整个函数影响更大。</p>
-<h2 id="3-反向传播算法"><a href="#3-反向传播算法" class="headerlink" title="3 反向传播算法"></a>3 反向传播算法</h2><h3 id="3-1-直观理解"><a href="#3-1-直观理解" class="headerlink" title="3.1 直观理解"></a>3.1 直观理解</h3><p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20201003160858242.png" alt="image-20201003160858242"></p>
-<p>假如一个样本真实值是2，在神经网络中进行完正向传播后会输出的结果如上图，显然是非常糟糕的，我们希望让2对应的输出神经元变得更亮（激活），让其他神经元变暗（未激活）。从全局上看，这只不过是数字2的神经元所期待的变化，我们还需要最后一层其余的神经元的激发变弱。但这其余的每个输出神经元，对于如何改变倒数第二层都有各自的想法。所以我们会把数字2神经元的期待，和别的输出神经元的期待全部加起来，作为对如何改变倒数第二层神经元的指示。一直循环这个过程，直到第一层。我们对其他的训练样本，同样的过一遍反向传播，记录下每个样本想怎样修改权重与偏置，最后再取一个平均值。</p>
-<p>总之就是我们对神经网络的预测结果不太满意，需要通过优化参数来提升神经网络的性能。我们需要理解下一层的神经元激活值对上一层的神经元参数的改变量的敏感程度是多少（反向传播思想），一直到代价函数对隐藏层第一层的参数变化量的敏感程度是多少（链式法则）。</p>
-<h3 id="3-2-数学推导（这里参考李宏毅）"><a href="#3-2-数学推导（这里参考李宏毅）" class="headerlink" title="3.2 数学推导（这里参考李宏毅）"></a>3.2 数学推导（这里参考李宏毅）</h3><p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20201004210647919.png" alt="image-20201004210647919"></p>
-<p>我们都知道神经网络有很多个参数（许多w和b），为了优化这些参数，我们采用梯度下降来先求所有参数的负梯度，然后计算下降后的参数$\theta$。BP反向传播并不是一个不同于梯度下降的优化算法，它只是为了让梯度的计算更有效率的一种方法，本质还是让梯度下降更有效率的求出代价函数的最小值。</p>
-<p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20201004211422661.png" alt="image-20201004211422661"></p>
-<p>链式求导法则有两种情况，第一种是常规的，不解释。case2表示改变s的值会改变x和y的值，进而改变z的值。所以s是透过两条路径去影响z，所以z对s的偏导（李宏毅说s对z的偏微分，两种说法都行）需要把两个路径都加起来才是最终的结果。</p>
-<h3 id="3-3-总结"><a href="#3-3-总结" class="headerlink" title="3.3 总结"></a>3.3 总结</h3><p><img src="https://gitee.com/macljc/myimg/raw/master/imgs/image-20201027200033345.png" alt="image-20201027200033345"></p>
+        <h2 id="概率第五周"><a href="#概率第五周" class="headerlink" title="概率第五周"></a>概率第五周</h2><a id="more"></a>
+<h3 id="4-4-离散概率分布-DISCRETE-PROBABILITY-DISTRIBUTIONS"><a href="#4-4-离散概率分布-DISCRETE-PROBABILITY-DISTRIBUTIONS" class="headerlink" title="4.4 离散概率分布(DISCRETE PROBABILITY DISTRIBUTIONS)"></a>4.4 离散概率分布(DISCRETE PROBABILITY DISTRIBUTIONS)</h3><ul>
+<li><h4 id="Bernoulli-概率分布"><a href="#Bernoulli-概率分布" class="headerlink" title="Bernoulli 概率分布"></a>Bernoulli 概率分布</h4><ul>
+<li>观察一下<ul>
+<li>丢掷铜板:非正面，即反面，正面机率为 0.5</li>
+<li>出门天气:非晴天，即雨天，晴天机率为 0.6</li>
+</ul>
+</li>
+<li>1 次实验，2 种结果。 在意某结果发生否 —&gt; Bernoulli 概率分布</li>
+<li>PMF: 若实验成功概率为 p , 作 1 次实验， X 表成功次数</li>
+<li>CDF 见右图</li>
+</ul>
+<p><a href="https://github.com/mebusy/notes/blob/master/imgs/TU_probability_bernoulli.png" target="_blank" rel="noopener"><img src="https://github.com/mebusy/notes/raw/master/imgs/TU_probability_bernoulli.png" alt="img"></a></p>
+</li>
+<li><h4 id="Binomial-概率分布"><a href="#Binomial-概率分布" class="headerlink" title="Binomial 概率分布"></a>Binomial 概率分布</h4><ul>
+<li>观察一下<ul>
+<li>阿宅鼓起勇气搭讪 10 人，若每次搭讪成 功概率为 0.6，10 次成功 8 次的概率为?</li>
+<li>一周 5 天午餐在晓福买魔石汉堡，若每次制作超时概率为 0.9 ，5 天中有 3 天制作超时的概率为?</li>
+<li>一周有 3 个系举办晚会，在活动大礼堂乱停车 3 次，若每次遭阿伯拖之机率 为 0.8，那这 3 次被拖 2 次之概率为?</li>
+</ul>
+</li>
+<li>作 n 次实验，1 个机率，在意 n 次实验出 现某结果 k 次之概率 —&gt; Binomial 概率分布</li>
+<li>若实验成功概率为 0.6， 做10次实验， X表示成功次数<ul>
+<li><a href="https://github.com/mebusy/notes/blob/master/imgs/TU_probability_binomial1.png" target="_blank" rel="noopener"><img src="https://github.com/mebusy/notes/raw/master/imgs/TU_probability_binomial1.png" alt="img"></a></li>
+<li>left is PMF, right is CDF</li>
+</ul>
+</li>
+<li>PMF: 若实验成功概率为 p, 作 n 次实验， X 表成功次数<ul>
+<li><a href="https://github.com/mebusy/notes/blob/master/imgs/TU_probability_binomial2.png" target="_blank" rel="noopener"><img src="https://github.com/mebusy/notes/raw/master/imgs/TU_probability_binomial2.png" alt="img"></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><h4 id="Uniform-概率分布"><a href="#Uniform-概率分布" class="headerlink" title="Uniform 概率分布"></a>Uniform 概率分布</h4><ul>
+<li>观察一下<ul>
+<li>丢公平骰:1 到 6 各点数出现机会均等</li>
+<li>混哥考试:作答 A, B, C, D 机会均等</li>
+<li>狡兔三窟:出现在窟 1、窟 2、窟 3 机会均等</li>
+</ul>
+</li>
+<li>1 次实验，n 种结果，各结果概率均等。在意某结果发生否 —&gt; Uniform 概率分布</li>
+<li>如果 X 等于 3,4,…,7 的概率均等<ul>
+<li><a href="https://github.com/mebusy/notes/blob/master/imgs/TU_probability_uniform1.png" target="_blank" rel="noopener"><img src="https://github.com/mebusy/notes/raw/master/imgs/TU_probability_uniform1.png" alt="img"></a></li>
+</ul>
+</li>
+<li>如果X等于a,a+1…,b 的机率均等<ul>
+<li><a href="https://github.com/mebusy/notes/blob/master/imgs/TU_probability_uniform1.png" target="_blank" rel="noopener"><img src="https://github.com/mebusy/notes/raw/master/imgs/TU_probability_uniform1.png" alt="img"></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><h4 id="Geometric-概率分布"><a href="#Geometric-概率分布" class="headerlink" title="Geometric 概率分布"></a>Geometric 概率分布</h4><ul>
+<li>观察一下<ul>
+<li>阿宅告白:成功概率为 0.3，不成功誓不休。 问到第 5 次才告白成功之概率?</li>
+<li>孙文革命:成功概率为 0.1，不成功誓不休。问到第 11 次才 成功之概率?</li>
+<li>六脉神剑:那纠缠狂妈宝废物段誉每次要打出六脉神剑，打 的出来的概率为 0. 1。他在 10 次才打出六脉神剑的概率?</li>
+</ul>
+</li>
+<li>实验中出现某结果概率已知，重复操作实验至该结果出现为止。 在意某结果是在第几次实验才首次出现 —&gt; Geometric 概率分布</li>
+<li>六脉神剑:那妈宝废物段誉每次要打 六脉神剑，打的出来的概率为 0.1。他在第 10 次 才打出六脉神剑的概率?<ul>
+<li>败败败败败败败败败成 =&gt; 机率 = 0.9⁹ x 0.1</li>
+</ul>
+</li>
+<li>六脉神剑:那妈宝废物段誉每次要打 六脉神剑，打的出来的概率为 p 。他在第 X 次 尝试才成功打出六脉神剑。 X = x 的概率?<ul>
+<li>概率 = $(1-p)^{x-1}*p$</li>
+</ul>
+</li>
+<li>若实验成功概率为 p，尝 试到成功为止，作了 X 次尝试<ul>
+<li><a href="https://github.com/mebusy/notes/blob/master/imgs/TU_probability_geometric.png" target="_blank" rel="noopener"><img src="https://github.com/mebusy/notes/raw/master/imgs/TU_probability_geometric.png" alt="img"></a></li>
+</ul>
+</li>
+<li><strong>有失忆性！ 离散分布中唯一的失忆性分布</strong></li>
+</ul>
+</li>
+<li><h4 id="Pascal-概率分布"><a href="#Pascal-概率分布" class="headerlink" title="Pascal 概率分布"></a>Pascal 概率分布</h4><ul>
+<li>观察一下<ul>
+<li>自尊阿宅:阿宅邀约店员失败概率为 0.9， 若邀约失败达 4 次，阿宅便会自尊有损而放弃追求。问在阿宅第 7 次邀约时决定放弃追求之概率?</li>
+<li>六脉神剑:妈宝废物段誉每次打成功 5 次六脉神剑便功力耗 尽。若每次打的出来的概率为 0. 1。请问他在第 9 次时刚好 功力耗尽的概率?</li>
+</ul>
+</li>
+<li>实验中出现某结果概率已知，重复操作实验至该结果出现第 k 次 为止。在意到底在第几次实验才结束 —&gt; Pascal 概率分布</li>
+<li>六脉神剑:那妈宝废物段誉每次要打 六脉神剑，打的出来的概率为 0.1。成功 5 次便功 力耗尽。请问他在第 9 次时刚好功力耗尽的概率?<ul>
+<li>可能情况之一:败 成 败 成 败 成 成 败 成</li>
+<li>此情况概率 = 0.9⁴ x 0.1⁵</li>
+<li>刚好第9次才成功第5次的情况有几种? C(8,4)·C(1,1) = C(8,4)</li>
+<li>所求概率 = C(8,4) x 0.9⁴ x 0.1⁵</li>
+</ul>
+</li>
+<li>六脉神剑:那妈宝废物段誉每次要打六脉神 剑，打的出来的概率为 p 。成功 k 次便功力耗尽。 他在第 X 次尝试才成功打出 k 次六脉神剑。 X = x 的概率?<ul>
+<li>C(x-1, k-1) x (1-p)x-k x pᵏ</li>
+</ul>
+</li>
+<li>若实验成功机率为 p , 到第 k 次成功为止共作了 X 次<ul>
+<li><a href="https://github.com/mebusy/notes/blob/master/imgs/TU_probability_pascal.png" target="_blank" rel="noopener"><img src="https://github.com/mebusy/notes/raw/master/imgs/TU_probability_pascal.png" alt="img"></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><h4 id="Poisson-概率分布"><a href="#Poisson-概率分布" class="headerlink" title="Poisson 概率分布"></a>Poisson 概率分布</h4><ul>
+<li>观察一下<ul>
+<li>转角夜宵:在晚上 平均每小时会有 10 人 来 跟转角哥买夜宵。 问摆摊 5 小时 有 60 人光顾之机率?</li>
+<li>费雯被嘘:费雯兄 po 文后， 平均每分钟会有 5 人嘘之 。 问发文后 二十分钟 变成 X 之机率?</li>
+</ul>
+</li>
+<li>某结果出现之平均速率(rate: 次数/时间)已知。问持续观察某 时间长度后，看到该结果出现 k 次之机率? —&gt; Poisson 机率分布</li>
+<li>已知某事发生速率为每单位时间 λ 次，观察时间为 T 时间单位。 X 为该观察时间 内发生该事的总次数。则:<ul>
+<li>PMF: <a href="https://github.com/mebusy/notes/blob/master/imgs/TU_probability_poisson_PMF.png" target="_blank" rel="noopener"><img src="https://github.com/mebusy/notes/raw/master/imgs/TU_probability_poisson_PMF.png" alt="img"></a></li>
+<li>CDF: <a href="https://github.com/mebusy/notes/blob/master/imgs/TU_probability_poisson_CDF.png" target="_blank" rel="noopener"><img src="https://github.com/mebusy/notes/raw/master/imgs/TU_probability_poisson_CDF.png" alt="img"></a></li>
+</ul>
+</li>
+<li>费雯被嘘:费雯兄 po 文后，平均 每分钟会有 5 人嘘之。问发文后 20 分钟变 成 XX (80 嘘) 之机率?<ul>
+<li>λ = 5 嘘/分，若定义随机变量 X 为 20 分钟内的嘘数</li>
+<li>=&gt; X ~ POI(λT) = POI(100) = e⁻¹⁰⁰·100⁸⁰ / 80!</li>
+<li>若条件是 每小时 300人嘘之，答案一样</li>
+</ul>
+</li>
+<li>理解泊松分布的特性:<ul>
+<li>它常用来描述大量随机试验中稀有事件出现的次数</li>
+<li>比如 抽卡抽到 詹姆斯卡次数 ?</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><h4 id="和Binomial-的关系"><a href="#和Binomial-的关系" class="headerlink" title="和Binomial 的关系"></a>和Binomial 的关系</h4><ul>
+<li>将T 划分成 长度为ΔT的小段 , 共有 n= T/ΔT 个小段</li>
+<li>若发生速率为λ次/分, 每个小段会发生的机率 p= λΔT = λT/n</li>
+<li>故 T时间内发生的次数 X~BIN(n,p) = BIN(n,λT/n)</li>
+<li>泊松分布通常也用于二项分布的近似计算。<ul>
+<li>当n很大，而p很小时，在没有计算机时，二项分布的计算是非常麻烦的，而用泊松分布来近似计算可以降低大量的计算量。</li>
+<li>一般来讲，n≥100，np≤10近似效果较好。</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
 
     </div>
 
@@ -322,11 +435,6 @@
     
 
       <footer class="post-footer">
-          <div class="post-tags">
-              <a href="/tags/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C/" rel="tag"># 神经网络</a>
-              <a href="/tags/%E5%8F%8D%E5%90%91%E4%BC%A0%E6%92%AD/" rel="tag"># 反向传播</a>
-              <a href="/tags/%E6%A2%AF%E5%BA%A6%E4%B8%8B%E9%99%8D/" rel="tag"># 梯度下降</a>
-          </div>
 
         
 
@@ -334,13 +442,10 @@
         
     <div class="post-nav">
       <div class="post-nav-item">
-    <a href="/2020/10/24/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E4%B8%8E%E7%A1%AC%E4%BB%B6/" rel="prev" title="深度学习与硬件">
-      <i class="fa fa-chevron-left"></i> 深度学习与硬件
+    <a href="/2021/03/07/%E6%A6%82%E7%8E%87%E7%BB%9F%E8%AE%A1%EF%BC%88%E5%8F%B0%E5%A4%A7%E5%8F%B6%E4%B8%99%E6%88%90%EF%BC%89/%E6%A6%82%E7%8E%87%EF%BC%88%E7%AC%AC%E5%9B%9B%E5%91%A8%EF%BC%89/" rel="prev" title="概率第四周">
+      <i class="fa fa-chevron-left"></i> 概率第四周
     </a></div>
-      <div class="post-nav-item">
-    <a href="/2020/11/01/%E8%AE%BA%E6%96%87%E8%AE%B0%E5%BD%95/" rel="next" title="论文记录">
-      论文记录 <i class="fa fa-chevron-right"></i>
-    </a></div>
+      <div class="post-nav-item"></div>
     </div>
       </footer>
     
@@ -403,7 +508,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#神经网络（本质是一个复杂函数）"><span class="nav-number">1.</span> <span class="nav-text">神经网络（本质是一个复杂函数）</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#这个笔记主要记录在学习3B1B的深度学习系列过程中的一些个人认为的难点，详细内容请看3B1B的完整视频：https-space-bilibili-com-88461692-channel-detail-cid-26587。"><span class="nav-number">1.0.0.1.</span> <span class="nav-text">这个笔记主要记录在学习3B1B的深度学习系列过程中的一些个人认为的难点，详细内容请看3B1B的完整视频：https:&#x2F;&#x2F;space.bilibili.com&#x2F;88461692&#x2F;channel&#x2F;detail?cid&#x3D;26587。</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-神经网络的结构（以图解释）"><span class="nav-number">1.1.</span> <span class="nav-text">1 神经网络的结构（以图解释）</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-1-神经元"><span class="nav-number">1.1.1.</span> <span class="nav-text">1.1 神经元</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-2-激活值"><span class="nav-number">1.1.2.</span> <span class="nav-text">1.2 激活值</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-3-权重"><span class="nav-number">1.1.3.</span> <span class="nav-text">1.3 权重</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-4-偏置"><span class="nav-number">1.1.4.</span> <span class="nav-text">1.4 偏置</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-神经网络的误差与梯度下降"><span class="nav-number">1.2.</span> <span class="nav-text">2 神经网络的误差与梯度下降</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#2-1-代价函数"><span class="nav-number">1.2.1.</span> <span class="nav-text">2.1 代价函数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-2-梯度下降法"><span class="nav-number">1.2.2.</span> <span class="nav-text">2.2 梯度下降法</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-反向传播算法"><span class="nav-number">1.3.</span> <span class="nav-text">3 反向传播算法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#3-1-直观理解"><span class="nav-number">1.3.1.</span> <span class="nav-text">3.1 直观理解</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-2-数学推导（这里参考李宏毅）"><span class="nav-number">1.3.2.</span> <span class="nav-text">3.2 数学推导（这里参考李宏毅）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-3-总结"><span class="nav-number">1.3.3.</span> <span class="nav-text">3.3 总结</span></a></li></ol></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#概率第五周"><span class="nav-number">1.</span> <span class="nav-text">概率第五周</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#4-4-离散概率分布-DISCRETE-PROBABILITY-DISTRIBUTIONS"><span class="nav-number">1.1.</span> <span class="nav-text">4.4 离散概率分布(DISCRETE PROBABILITY DISTRIBUTIONS)</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Bernoulli-概率分布"><span class="nav-number">1.1.1.</span> <span class="nav-text">Bernoulli 概率分布</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Binomial-概率分布"><span class="nav-number">1.1.2.</span> <span class="nav-text">Binomial 概率分布</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Uniform-概率分布"><span class="nav-number">1.1.3.</span> <span class="nav-text">Uniform 概率分布</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Geometric-概率分布"><span class="nav-number">1.1.4.</span> <span class="nav-text">Geometric 概率分布</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Pascal-概率分布"><span class="nav-number">1.1.5.</span> <span class="nav-text">Pascal 概率分布</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Poisson-概率分布"><span class="nav-number">1.1.6.</span> <span class="nav-text">Poisson 概率分布</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#和Binomial-的关系"><span class="nav-number">1.1.7.</span> <span class="nav-text">和Binomial 的关系</span></a></li></ol></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
